@@ -1,0 +1,29 @@
+{
+  "name": "skillquest-website",
+  "version": "1.0.0",
+  "description": "SkillQuest Family First Landing Page",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "author": "Hans",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.4",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.4.22",
+    "framer-motion": "^12.23.24",
+    "next": "^16.0.3",
+    "next-i18next": "^15.4.2",
+    "postcss": "^8.5.6",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.18"
+  }
+}
