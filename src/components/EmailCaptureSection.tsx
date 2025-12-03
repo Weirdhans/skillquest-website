@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 export default function EmailCaptureSection() {
   const [email, setEmail] = useState('')
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error' | 'duplicate'>('idle')
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -16,16 +16,19 @@ export default function EmailCaptureSection() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           email,
-          variant: 'family-first',
-          timestamp: new Date().toISOString()
+          source: 'skill-quest-website'
         }),
       })
+
+      if (response.status === 409) {
+        // Duplicate email
+        setStatus('duplicate')
+        return
+      }
 
       if (response.ok) {
         setStatus('success')
         setEmail('')
-        // Optional: redirect to thank-you page
-        // window.location.href = '/bedankt'
       } else {
         setStatus('error')
       }
@@ -41,38 +44,35 @@ export default function EmailCaptureSection() {
 
       <div className="container-custom relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Lead magnet offer */}
+          {/* Header */}
           <div className="mb-8">
-            <div className="inline-block bg-accent-orange text-white px-6 py-3 rounded-full text-lg font-bold mb-6 shadow-xl animate-bounce-slow">
-              🎁 GRATIS E-BOOK
+            <div className="inline-block bg-white/20 backdrop-blur-sm text-white px-6 py-3 rounded-full text-lg font-semibold mb-6 border border-white/30">
+              📬 Blijf op de hoogte
             </div>
 
             <h2 className="heading-lg mb-4">
-              10 Vaardigheden Die Elk Kind Zou Moeten Leren
+              Wees de eerste die hoort over de launch
             </h2>
 
-            <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-              Download ons gratis e-book en ontvang:
+            <p className="text-xl text-blue-100 mb-8 leading-relaxed max-w-2xl mx-auto">
+              Meld je aan voor updates over nieuwe features, de officiële launch
+              en tips over skill development voor het hele gezin.
             </p>
           </div>
 
           {/* Benefits list */}
-          <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto mb-10">
+          <div className="grid md:grid-cols-3 gap-4 max-w-3xl mx-auto mb-10">
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-              <span className="text-2xl mr-2">✉️</span>
-              <span className="text-blue-100">10 essentiële skills voor de toekomst</span>
+              <span className="text-2xl mr-2">🚀</span>
+              <span className="text-blue-100">Early access bij launch</span>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-              <span className="text-2xl mr-2">✉️</span>
-              <span className="text-blue-100">Wetenschappelijke studies over skill development</span>
+              <span className="text-2xl mr-2">✨</span>
+              <span className="text-blue-100">Nieuwe feature updates</span>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-              <span className="text-2xl mr-2">✉️</span>
-              <span className="text-blue-100">Age-appropriate oefeningen per skill</span>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-              <span className="text-2xl mr-2">✉️</span>
-              <span className="text-blue-100">Exclusive early access tot premium features</span>
+              <span className="text-2xl mr-2">💡</span>
+              <span className="text-blue-100">Tips voor skill development</span>
             </div>
           </div>
 
@@ -93,13 +93,19 @@ export default function EmailCaptureSection() {
                 disabled={status === 'loading' || status === 'success'}
                 className="btn btn-large bg-accent-orange text-white hover:bg-orange-600 shadow-2xl disabled:opacity-50 whitespace-nowrap"
               >
-                {status === 'loading' ? 'Bezig...' : status === 'success' ? '✅ Verzonden!' : '📥 Download Gratis E-book'}
+                {status === 'loading' ? 'Bezig...' : status === 'success' ? '✅ Aangemeld!' : 'Houd me op de hoogte'}
               </button>
             </div>
 
             {status === 'success' && (
               <div className="bg-green-500 text-white px-6 py-3 rounded-lg mb-4 animate-slide-up">
-                ✅ Check je inbox voor de download link!
+                ✅ Je bent aangemeld! Check je inbox voor een bevestiging.
+              </div>
+            )}
+
+            {status === 'duplicate' && (
+              <div className="bg-blue-500 text-white px-6 py-3 rounded-lg mb-4 animate-slide-up">
+                📧 Je staat al op de lijst! We sturen je bericht zodra er nieuws is.
               </div>
             )}
 
@@ -110,25 +116,9 @@ export default function EmailCaptureSection() {
             )}
 
             <p className="text-sm text-blue-200">
-              We respecteren je privacy. Geen spam. Uitschrijven altijd mogelijk.
+              We respecteren je privacy. Geen spam, alleen relevante updates. Uitschrijven altijd mogelijk.
             </p>
           </form>
-
-          {/* Social proof */}
-          <div className="mt-12 flex flex-wrap justify-center items-center gap-8 text-blue-100">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white">1,247</div>
-              <div className="text-sm">Ouders ontvingen e-book</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white">4.9/5</div>
-              <div className="text-sm">Gemiddelde rating</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-white">98%</div>
-              <div className="text-sm">Beveelt aan</div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
