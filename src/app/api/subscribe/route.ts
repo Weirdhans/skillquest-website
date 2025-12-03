@@ -74,7 +74,7 @@ export async function POST(request: NextRequest) {
         {
           email: body.email.toLowerCase(),
           name: body.name || null,
-          source: body.source || "skill-quest-website",
+          source: "website",
           status: "new",
         },
       ])
