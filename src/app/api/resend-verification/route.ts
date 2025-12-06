@@ -3,7 +3,7 @@ import { createClient } from "@supabase/supabase-js";
 import { Resend } from "resend";
 import { randomUUID } from "crypto";
 
-// Lazy initialize clients (only when needed, not at build time)
+// Lazy initialize clients
 const getSupabaseClient = () => {
   if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
     throw new Error("Supabase environment variables are not configured");
@@ -21,28 +21,19 @@ const getResendClient = () => {
   return new Resend(process.env.RESEND_API_KEY);
 };
 
-// Type definitions
-type Platform = 'ios' | 'android' | 'both';
-
-interface SubscribeRequest {
+interface ResendVerificationRequest {
   email: string;
-  name?: string;
-  platform?: Platform;
 }
 
-// Validate platform value
-function isValidPlatform(value: string | undefined): value is Platform {
-  return value === 'ios' || value === 'android' || value === 'both';
-}
+// Rate limit: 2 minutes between resend requests
+const RATE_LIMIT_MS = 2 * 60 * 1000;
 
 export async function POST(request: NextRequest) {
   try {
     const supabase = getSupabaseClient();
+    const body: ResendVerificationRequest = await request.json();
 
-    // Parse request body
-    const body: SubscribeRequest = await request.json();
-
-    // Validate required fields
+    // Validate email
     if (!body.email) {
       return NextResponse.json(
         { error: "Email is required" },
@@ -50,78 +41,71 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(body.email)) {
-      return NextResponse.json({ error: "Invalid email format" }, { status: 400 });
-    }
-
-    // Validate and default platform
-    const platform: Platform = isValidPlatform(body.platform) ? body.platform : 'both';
-
     const email = body.email.toLowerCase();
 
-    // Check for duplicate email
-    const { data: existingRecord } = await supabase
+    // Find the waitlist entry
+    const { data: record, error: findError } = await supabase
       .from("waitlist")
-      .select("id, email, email_verified, created_at")
+      .select("id, email, name, email_verified, last_email_sent_at, platform_preference")
       .eq("email", email)
       .single();
 
-    if (existingRecord) {
-      // Email already exists - differentiate between verified and unverified
-      if (existingRecord.email_verified) {
+    if (findError || !record) {
+      return NextResponse.json(
+        { error: "Dit e-mailadres staat niet op de wachtlijst" },
+        { status: 404 }
+      );
+    }
+
+    // Check if already verified
+    if (record.email_verified) {
+      return NextResponse.json(
+        { error: "Dit e-mailadres is al geverifieerd" },
+        { status: 400 }
+      );
+    }
+
+    // Rate limiting check
+    if (record.last_email_sent_at) {
+      const lastSent = new Date(record.last_email_sent_at);
+      const timeSinceLastEmail = Date.now() - lastSent.getTime();
+
+      if (timeSinceLastEmail < RATE_LIMIT_MS) {
+        const waitSeconds = Math.ceil((RATE_LIMIT_MS - timeSinceLastEmail) / 1000);
         return NextResponse.json(
           {
-            error: "already_verified",
-            message: "Je staat al op de wachtlijst! We sturen je bericht zodra er nieuws is.",
+            error: `Wacht nog ${waitSeconds} seconden voordat je een nieuwe verificatie-email aanvraagt`,
+            waitSeconds
           },
-          { status: 409 }
-        );
-      } else {
-        return NextResponse.json(
-          {
-            error: "pending_verification",
-            message: "Je hebt je al aangemeld maar nog niet bevestigd. Check je inbox of vraag een nieuwe verificatie-email aan.",
-            email: email,
-          },
-          { status: 409 }
+          { status: 429 }
         );
       }
     }
 
-    // Generate confirmation token
+    // Generate new confirmation token
     const confirmationToken = randomUUID();
     const tokenExpiresAt = new Date(Date.now() + 24 * 60 * 60 * 1000); // 24 hours
 
-    // Insert into Supabase waitlist table
-    const { data: insertData, error: insertError } = await supabase
+    // Update the record with new token
+    const { error: updateError } = await supabase
       .from("waitlist")
-      .insert([
-        {
-          email: email,
-          name: body.name || null,
-          platform_preference: platform,
-          source: "website",
-          status: "new",
-          email_verified: false,
-          confirmation_token: confirmationToken,
-          confirmation_token_expires_at: tokenExpiresAt.toISOString(),
-          last_email_sent_at: new Date().toISOString(),
-        },
-      ])
-      .select()
-      .single();
+      .update({
+        confirmation_token: confirmationToken,
+        confirmation_token_expires_at: tokenExpiresAt.toISOString(),
+        last_email_sent_at: new Date().toISOString(),
+        updated_at: new Date().toISOString(),
+      })
+      .eq("id", record.id);
 
-    if (insertError) {
-      console.error("Supabase insert error:", insertError);
+    if (updateError) {
+      console.error("Failed to update token:", updateError);
       return NextResponse.json(
         { error: "Er ging iets mis. Probeer het opnieuw." },
         { status: 500 }
       );
     }
 
-    // Send verification email via Resend
+    // Send verification email
     try {
       const resend = getResendClient();
       const verifyUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://skill-quest.app'}/api/verify?token=${confirmationToken}`;
@@ -130,39 +114,30 @@ export async function POST(request: NextRequest) {
         from: "SkillQuest <hello@skill-quest.app>",
         to: email,
         subject: "Bevestig je aanmelding voor SkillQuest",
-        html: getVerificationEmailTemplate(body.name || null, verifyUrl, platform),
+        html: getVerificationEmailTemplate(record.name, verifyUrl, record.platform_preference),
       });
     } catch (emailError) {
       console.error("Failed to send verification email:", emailError);
-      // Don't fail the request - user is still on waitlist
-      // They can request a resend later
+      return NextResponse.json(
+        { error: "E-mail verzenden mislukt. Probeer het later opnieuw." },
+        { status: 500 }
+      );
     }
 
-    // Return success response
-    return NextResponse.json(
-      {
-        success: true,
-        message: "Check je inbox om je aanmelding te bevestigen!",
-        data: {
-          id: insertData.id,
-          email: insertData.email,
-          platform: platform,
-        },
-      },
-      { status: 201 }
-    );
+    return NextResponse.json({
+      success: true,
+      message: "Verificatie-email verzonden! Check je inbox.",
+    });
   } catch (error) {
-    console.error("Subscribe API error:", error);
+    console.error("Resend verification API error:", error);
     return NextResponse.json(
-      {
-        error: "Er is een onverwachte fout opgetreden. Probeer het later opnieuw.",
-      },
+      { error: "Er is een onverwachte fout opgetreden." },
       { status: 500 }
     );
   }
 }
 
-function getVerificationEmailTemplate(name: string | null, verifyUrl: string, platform: Platform): string {
+function getVerificationEmailTemplate(name: string | null, verifyUrl: string, platform: string | null): string {
   const platformText = platform === 'ios'
     ? 'voor iOS'
     : platform === 'android'

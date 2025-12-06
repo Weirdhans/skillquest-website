@@ -2,9 +2,14 @@
 
 import { useState } from 'react'
 
+type Platform = 'ios' | 'android' | 'both'
+type Status = 'idle' | 'loading' | 'success' | 'error' | 'duplicate' | 'pending_verification'
+
 export default function EmailCaptureSection() {
   const [email, setEmail] = useState('')
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error' | 'duplicate'>('idle')
+  const [platform, setPlatform] = useState<Platform>('both')
+  const [status, setStatus] = useState<Status>('idle')
+  const [pendingEmail, setPendingEmail] = useState<string | null>(null)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -16,13 +21,21 @@ export default function EmailCaptureSection() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           email,
-          source: 'skill-quest-website'
+          platform,
         }),
       })
 
+      const data = await response.json()
+
       if (response.status === 409) {
-        // Duplicate email
-        setStatus('duplicate')
+        if (data.error === 'pending_verification') {
+          // Email exists but not verified - show resend option
+          setStatus('pending_verification')
+          setPendingEmail(data.email)
+        } else {
+          // Already verified
+          setStatus('duplicate')
+        }
         return
       }
 
@@ -32,7 +45,36 @@ export default function EmailCaptureSection() {
       } else {
         setStatus('error')
       }
-    } catch (error) {
+    } catch {
+      setStatus('error')
+    }
+  }
+
+  const handleResend = async () => {
+    if (!pendingEmail) return
+
+    setStatus('loading')
+
+    try {
+      const response = await fetch('/api/resend-verification', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: pendingEmail }),
+      })
+
+      if (response.ok) {
+        setStatus('success')
+        setPendingEmail(null)
+      } else {
+        const data = await response.json()
+        if (response.status === 429) {
+          // Rate limited - show message but keep pending_verification state
+          setStatus('pending_verification')
+        } else {
+          setStatus('error')
+        }
+      }
+    } catch {
       setStatus('error')
     }
   }
@@ -76,6 +118,46 @@ export default function EmailCaptureSection() {
             </div>
           </div>
 
+          {/* Platform selector */}
+          <div className="max-w-md mx-auto mb-8">
+            <p className="text-blue-100 mb-4 text-sm">Voor welk platform wil je updates ontvangen?</p>
+            <div className="grid grid-cols-3 gap-3">
+              <button
+                type="button"
+                onClick={() => setPlatform('ios')}
+                className={`px-4 py-3 rounded-lg font-medium transition-all ${
+                  platform === 'ios'
+                    ? 'bg-white text-indigo-600 shadow-lg'
+                    : 'bg-white/10 text-white hover:bg-white/20 border border-white/20'
+                }`}
+              >
+                🍎 iOS
+              </button>
+              <button
+                type="button"
+                onClick={() => setPlatform('android')}
+                className={`px-4 py-3 rounded-lg font-medium transition-all ${
+                  platform === 'android'
+                    ? 'bg-white text-indigo-600 shadow-lg'
+                    : 'bg-white/10 text-white hover:bg-white/20 border border-white/20'
+                }`}
+              >
+                🤖 Android
+              </button>
+              <button
+                type="button"
+                onClick={() => setPlatform('both')}
+                className={`px-4 py-3 rounded-lg font-medium transition-all ${
+                  platform === 'both'
+                    ? 'bg-white text-indigo-600 shadow-lg'
+                    : 'bg-white/10 text-white hover:bg-white/20 border border-white/20'
+                }`}
+              >
+                ✨ Beide
+              </button>
+            </div>
+          </div>
+
           {/* Email form */}
           <form onSubmit={handleSubmit} className="max-w-xl mx-auto">
             <div className="flex flex-col sm:flex-row gap-4 mb-4">
@@ -99,13 +181,26 @@ export default function EmailCaptureSection() {
 
             {status === 'success' && (
               <div className="bg-green-500 text-white px-6 py-3 rounded-lg mb-4 animate-slide-up">
-                ✅ Je bent aangemeld! Check je inbox voor een bevestiging.
+                📧 Check je inbox voor de bevestigingslink!
               </div>
             )}
 
             {status === 'duplicate' && (
               <div className="bg-blue-500 text-white px-6 py-3 rounded-lg mb-4 animate-slide-up">
-                📧 Je staat al op de lijst! We sturen je bericht zodra er nieuws is.
+                ✅ Je staat al op de lijst! We sturen je bericht zodra er nieuws is.
+              </div>
+            )}
+
+            {status === 'pending_verification' && (
+              <div className="bg-amber-500 text-white px-6 py-3 rounded-lg mb-4 animate-slide-up">
+                <p className="mb-2">📬 Je hebt je al aangemeld maar nog niet bevestigd.</p>
+                <button
+                  type="button"
+                  onClick={handleResend}
+                  className="underline hover:no-underline font-medium"
+                >
+                  Nieuwe verificatie-email versturen
+                </button>
               </div>
             )}
 
