@@ -70,12 +70,12 @@ export default function HeroSection() {
               transition={{ delay: 0.6 }}
             >
               <motion.a
-                href="/download"
+                href="#waitlist"
                 className="px-8 py-4 bg-white text-gray-900 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-xl hover:scale-105 transition-all text-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Download Gratis ✨
+                Krijg Early Access ✨
               </motion.a>
               <motion.a
                 href="/features"

@@ -80,7 +80,7 @@ export default function EmailCaptureSection() {
   }
 
   return (
-    <section className="section bg-gradient-primary text-white relative overflow-hidden">
+    <section id="waitlist" className="section bg-gradient-primary text-white relative overflow-hidden scroll-mt-20">
       {/* Background pattern */}
       <div className="absolute inset-0 bg-pattern opacity-10"></div>
 
