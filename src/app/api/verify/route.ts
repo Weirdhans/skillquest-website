@@ -2,22 +2,26 @@ import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { Resend } from "resend";
 
-// Lazy initialize clients
+// Lazy initialize clients (only at runtime, not at build time)
 const getSupabaseClient = () => {
-  if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
-    throw new Error("Supabase environment variables are not configured");
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+  if (!url || !key) {
+    console.error("Supabase environment variables are not configured");
+    throw new Error("Supabase configuration missing");
   }
-  return createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL,
-    process.env.SUPABASE_SERVICE_ROLE_KEY
-  );
+  return createClient(url, key);
 };
 
 const getResendClient = () => {
-  if (!process.env.RESEND_API_KEY) {
-    throw new Error("RESEND_API_KEY is not configured");
+  const key = process.env.RESEND_API_KEY;
+
+  if (!key) {
+    console.error("RESEND_API_KEY is not configured");
+    throw new Error("Resend configuration missing");
   }
-  return new Resend(process.env.RESEND_API_KEY);
+  return new Resend(key);
 };
 
 // UUID validation regex
