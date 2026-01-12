@@ -1,0 +1,347 @@
+{
+  "hero": {
+    "title": "Track Your Skills.",
+    "titleAccent": "Level Up Your Life.",
+    "subtitle": "The ultimate skill-tracking app that helps you track every skill, visualize progress, and stay motivated through gamification.",
+    "features": {
+      "smartTimers": "Smart Timers",
+      "analytics": "Analytics",
+      "gamification": "Gamification",
+      "socialFeatures": "Social Features"
+    },
+    "cta": {
+      "primary": "Get Early Access ✨",
+      "secondary": "Explore Features"
+    },
+    "trust": {
+      "privacy": "100% Privacy",
+      "noAds": "No Ads",
+      "freeStart": "Start Free"
+    },
+    "stats": {
+      "level": "Level {level}",
+      "xp": "{xp} XP 🎯",
+      "skills": "{count} Skills",
+      "tracked": "Tracked 🚀",
+      "streak": "{days} 🔥",
+      "dayStreak": "Day Streak"
+    },
+    "app": {
+      "screenshot": "[App Screenshot]",
+      "dashboard": "SkillQuest Dashboard"
+    }
+  },
+  "features": {
+    "heading": "Why Families Choose SkillQuest",
+    "subheading": "Everything you need to help your family grow",
+    "cards": {
+      "familyMode": {
+        "title": "Family Mode",
+        "description": "Parent-child accounts with role-based permissions. You control, they focus. Perfect for ages 6-18.",
+        "highlight": "Unique!"
+      },
+      "gamification": {
+        "title": "Gamification That Works",
+        "description": "XP, levels, streaks, rankings, achievements. Learning skills feels like a game, but builds real abilities."
+      },
+      "timerTechniques": {
+        "title": "7 Timer Techniques",
+        "description": "Pomodoro, Flowtime, 52/17, Ultradian, Custom - scientifically proven methods for focus."
+      },
+      "parentDashboard": {
+        "title": "Parent Dashboard",
+        "description": "Real-time insights into what your kids practice. No micromanagement, just overview."
+      },
+      "autoFreezeStreaks": {
+        "title": "Auto-Freeze Streaks",
+        "description": "Automatically protects streaks on busy days. No frustration, just motivation."
+      },
+      "privacyFirst": {
+        "title": "Privacy First",
+        "description": "European servers, GDPR compliant, no data sold. Your family, your data.",
+        "highlight": "100% Safe"
+      }
+    },
+    "benefits": {
+      "heading": "+ Many More Benefits",
+      "items": {
+        "skills78": {
+          "title": "78 Different Skills",
+          "description": "From coding to sports, everything is trackable"
+        },
+        "multiDevice": {
+          "title": "Multi-Device Sync",
+          "description": "Works on iOS, Android, Web"
+        },
+        "offline": {
+          "title": "Offline Mode",
+          "description": "Track without internet, sync later"
+        },
+        "weeklyReports": {
+          "title": "Weekly Reports",
+          "description": "Automatic progress reports via email"
+        },
+        "familyChallenges": {
+          "title": "Family Challenges",
+          "description": "Family members can challenge each other"
+        },
+        "languages": {
+          "title": "6 Languages",
+          "description": "NL, EN, DE, FR, ES, IT fully supported"
+        }
+      }
+    }
+  },
+  "howItWorks": {
+    "heading": "How SkillQuest Helps Your Family Grow",
+    "subheading": "From chaos to structure in 4 simple steps",
+    "steps": {
+      "step1": {
+        "title": "Parent Starts Timer",
+        "description": "As a parent account, you start timers for your kids on their devices. You keep control, they get the focus tools."
+      },
+      "step2": {
+        "title": "Child Focuses on Skill",
+        "description": "Choose from 78 skills: homework, sports, music, coding, languages, mindfulness - everything that makes them stronger."
+      },
+      "step3": {
+        "title": "XP & Levels Unlock",
+        "description": "Every minute practiced = XP points. They level up, unlock achievements, and see their progress visually."
+      },
+      "step4": {
+        "title": "You See Statistics",
+        "description": "Parent dashboard shows exact time per skill, streak tracking, and progress over time. Data-driven parenting."
+      }
+    },
+    "screenshot": "[Screenshot: Step {step}]",
+    "cta": {
+      "button": "Start Free Now →",
+      "note": "No credit card required • 2-minute setup"
+    }
+  },
+  "painPoints": {
+    "heading": "Sound Familiar?",
+    "subheading": "You're not the only parent struggling with these challenges.",
+    "points": {
+      "screentime": {
+        "title": "Screen Time Battle",
+        "description": "Your child spends hours on screens, but not doing anything productive. Gaming and social media dominate their time."
+      },
+      "homework": {
+        "title": "Homework Drama",
+        "description": "Every evening the same discussion about homework. They don't know how to focus."
+      },
+      "noStructure": {
+        "title": "No Structure",
+        "description": "They have potential, but lack discipline. You don't know how to help them structure their time."
+      }
+    },
+    "successStory": {
+      "badge": "✨ Transformation Story",
+      "heading": "From Chaos to Control:",
+      "headingAccent": "The Johnson Family Transformation",
+      "quote": "My son Lucas (14) always wanted to learn programming, but couldn't focus. With SkillQuest, I can start timers for him when he comes home from school. After 3 months: {hours} hours of coding practice, first app built, and his confidence? Through the roof! 🚀",
+      "quoteHours": "47",
+      "author": "Sarah J.",
+      "authorRole": "Mother of 2",
+      "before": {
+        "title": "❌ BEFORE SkillQuest",
+        "point1": "4+ hours gaming per day",
+        "point2": "No homework focus",
+        "point3": "Low self-confidence"
+      },
+      "after": {
+        "title": "✅ AFTER SkillQuest",
+        "point1": "47 hours coding practice",
+        "point2": "First app built",
+        "point3": "Confidence through the roof"
+      }
+    }
+  },
+  "pricing": {
+    "heading": "Simple, Honest Pricing",
+    "subheading": "Start free and upgrade to Premium for advanced features",
+    "tiers": {
+      "guest": {
+        "label": "👋 GUEST",
+        "price": "€0",
+        "priceNote": "Try for free",
+        "features": {
+          "timer": "Basic timer",
+          "skills": "78 skills",
+          "xp": "XP & Levels",
+          "cloudSync": "Cloud sync"
+        },
+        "cta": "Start as Guest"
+      },
+      "free": {
+        "label": "🆓 FREE",
+        "price": "€0",
+        "priceNote": "Always free",
+        "features": {
+          "cloudSync": "Cloud sync",
+          "social": "Social features",
+          "rankings": "Rankings",
+          "streaks": "Streaks"
+        },
+        "cta": "Create Account"
+      },
+      "premium": {
+        "label": "💎 PREMIUM",
+        "badge": "🔥 POPULAR",
+        "price": "€3.99",
+        "pricePer": "/month",
+        "priceYearly": "€39.99/year (17% off)",
+        "priceLifetime": "Lifetime: €89.99",
+        "features": {
+          "deepWork": "Deep Work timer",
+          "techniques": "52-17 & Flowtime",
+          "history": "Unlimited history",
+          "themes": "19 premium themes"
+        },
+        "cta": "View Premium"
+      },
+      "family": {
+        "label": "👨‍👩‍👧‍👦 FAMILY",
+        "price": "€6.99",
+        "pricePer": "/month",
+        "priceYearly": "€69.99/year (17% off)",
+        "features": {
+          "members": "6 family members",
+          "allPremium": "All Premium features",
+          "parentChild": "Parent-child timers",
+          "challenges": "Family challenges"
+        },
+        "cta": "View Family"
+      }
+    },
+    "cta": "View full pricing & comparison →"
+  },
+  "waitlist": {
+    "badge": "📬 Stay Updated",
+    "heading": "Be the first to hear about the launch",
+    "subheading": "Sign up for updates about new features, the official launch, and tips about skill development for the whole family.",
+    "benefits": {
+      "earlyAccess": "Early access at launch",
+      "updates": "New feature updates",
+      "tips": "Skill development tips"
+    },
+    "platform": {
+      "question": "Which platform would you like updates for?",
+      "ios": "🍎 iOS",
+      "android": "🤖 Android",
+      "both": "✨ Both"
+    },
+    "form": {
+      "placeholder": "you@email.com",
+      "submit": "Keep me updated",
+      "submitting": "Submitting...",
+      "submitted": "✅ Signed up!"
+    },
+    "messages": {
+      "success": "📧 Check your inbox for the confirmation link!",
+      "duplicate": "✅ You're already on the list! We'll message you when there's news.",
+      "pendingVerification": "📬 You've already signed up but haven't confirmed yet.",
+      "resendLink": "Resend verification email",
+      "error": "❌ Something went wrong. Please try again."
+    },
+    "privacy": "We respect your privacy. No spam, only relevant updates. Unsubscribe anytime."
+  },
+  "navbar": {
+    "tagline": "LEVEL UP",
+    "cta": "Start Free"
+  },
+  "footer": {
+    "description": "Help your children reach their full potential with the first family skill-tracking app.",
+    "sections": {
+      "product": {
+        "title": "Product",
+        "features": "Features",
+        "pricing": "Pricing",
+        "howItWorks": "How It Works",
+        "webApp": "Web App"
+      },
+      "resources": {
+        "title": "Resources",
+        "blog": "Blog",
+        "guide": "Guide",
+        "faq": "FAQ",
+        "contact": "Contact"
+      },
+      "legal": {
+        "title": "Legal",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service",
+        "cookies": "Cookie Policy"
+      }
+    },
+    "copyright": "© {year} SkillQuest. All rights reserved."
+  },
+  "privacy": {
+    "meta": {
+      "title": "Privacy Policy - SkillQuest",
+      "description": "How SkillQuest protects your data and respects your privacy. GDPR compliant privacy policy."
+    },
+    "heading": "Privacy Policy",
+    "lastUpdatedLabel": "Last updated",
+    "lastUpdated": "January 12, 2026",
+    "sections": {
+      "introduction": {
+        "title": "Introduction",
+        "content": "<p>Welcome to SkillQuest. We are committed to protecting your personal data and respecting your privacy. This privacy policy explains how we collect, use, and protect data when you visit our website skill-quest.app or use our SkillQuest mobile app.</p>\n<p>This policy complies with the General Data Protection Regulation (GDPR) and Dutch and European data protection legislation.</p>"
+      },
+      "dataController": {
+        "title": "Data Controller",
+        "content": "<p>SkillQuest is the data controller for your personal information.</p>"
+      },
+      "whatDataDoWeCollect": {
+        "title": "What Data Do We Collect?",
+        "content": "<p>### 3.1 Website Analytics</p>\n<p>We use <strong>Vercel Analytics</strong> to collect anonymous usage data, including:</p>\n<ul>\n<li>Page views and navigation patterns</li>\n<li>Browser type and version</li>\n<li>Device information (desktop/mobile/tablet)</li>\n<li>Geographical location (country/region level only)</li>\n<li>Referral sources</li>\n</ul>\n<p>Vercel Analytics operates without cookies and does not track individual users.</p>\n<p>### 3.2 Android Beta Waitlist</p>\n<p>If you sign up for early access to our Android beta, we collect:</p>\n<ul>\n<li>Email address (required)</li>\n<li>Name (optional)</li>\n<li>Platform preference (Android)</li>\n</ul>\n<p>This data is securely stored in <strong>Supabase</strong> (EU servers) and used to keep you informed about the app launch.</p>\n<p>### 3.3 Contact Forms</p>\n<p>If you contact us via a contact form, we collect:</p>\n<ul>\n<li>Your name</li>\n<li>Email address</li>\n<li>Subject and message content</li>\n</ul>\n<p>This information is sent via <strong>Resend</strong> to hello @skill-quest.app for customer support.</p>\n<p>### 3.4 SkillQuest Mobile App (Future)</p>\n<p>When the SkillQuest app launches, we will collect additional data:</p>\n<ul>\n<li><strong>Account Data:</strong> Username, email, profile picture (optional)</li>\n<li><strong>Skill Tracking Data:</strong> Skills, timer logs, XP, levels, streaks</li>\n<li><strong>Family Mode Data:</strong> Parent-child account relationships, consent settings</li>\n<li><strong>Device Data:</strong> Device ID for push notifications, app version</li>\n<li><strong>Analytics:</strong> In-app usage patterns (anonymously aggregated)</li>\n</ul>\n<p>All app data is stored locally on your device and optionally synchronized to our secure servers for backup and cross-device sync.</p>"
+      },
+      "howDoWeUseYourData": {
+        "title": "How Do We Use Your Data?",
+        "content": "<p>We use your data for:</p>\n<ul>\n<li><strong>Improving User Experience:</strong> Analytics help us understand how visitors use our website</li>\n<li><strong>Product Launch:</strong> Waitlist emails for notifications about beta releases and official launches</li>\n<li><strong>Customer Support:</strong> Responding to inquiries and support requests</li>\n<li><strong>App Functionality:</strong> Skill tracking, progress synchronization, family mode features</li>\n<li><strong>Legal Compliance:</strong> Fulfilling legal obligations</li>\n</ul>\n<p>We never sell or rent your personal data to third parties. We do not display advertisements and do not use tracking pixels.</p>"
+      },
+      "legalBasisForProcessing": {
+        "title": "Legal Basis for Processing",
+        "content": "<p>Under the GDPR, we process your data based on:</p>\n<ul>\n<li><strong>Consent (Art. 6(1)(a)):</strong> Waitlist registrations, contact forms, app account creation</li>\n<li><strong>Legitimate Interest (Art. 6(1)(f)):</strong> Website analytics, security monitoring, service improvement</li>\n<li><strong>Contractual Necessity (Art. 6(1)(b)):</strong> Providing app services you request</li>\n</ul>\n<p>You can withdraw your consent at any time by contacting us.</p>"
+      },
+      "howDoWeProtectYourData": {
+        "title": "How Do We Protect Your Data?",
+        "content": "<p>We take the following security measures:</p>\n<ul>\n<li><strong>HTTPS Encryption:</strong> All data transfer is encrypted</li>\n<li><strong>Secure Database Access:</strong> Strict access controls and authentication</li>\n<li><strong>Regular Security Updates:</strong> Systems are kept up-to-date</li>\n<li><strong>Limited Access:</strong> Only authorized personnel have access to your data</li>\n<li><strong>Data Minimization:</strong> We only collect what is strictly necessary</li>\n</ul>\n<p>While we implement strong security measures, no method of transmission over the Internet is 100% secure. We cannot guarantee absolute security.</p>"
+      },
+      "thirdpartyServices": {
+        "title": "Third-Party Services",
+        "content": "<p>We use the following GDPR-compliant services:</p>\n<p>| Service | Purpose | Location | GDPR Status |</p>\n<p>|--------|------|---------|-------------|</p>\n<p>| <strong>Vercel</strong> | Website hosting and analytics | EU/US | Standard Contractual Clauses (SCC) |</p>\n<p>| <strong>Supabase</strong> | Database for waitlist and app data | EU servers | GDPR-compliant |</p>\n<p>| <strong>Resend</strong> | Email delivery for contact forms | US | GDPR-compliant, SCC |</p>\n<p>| <strong>Google Play Services</strong> | Android app distribution (future) | US | GDPR-compliant |</p>\n<p>All these services have appropriate safeguards for data transfer to countries outside the EU.</p>"
+      },
+      "cookiesAndTracking": {
+        "title": "Cookies and Tracking",
+        "content": "<p>### Minimal Cookie Usage</p>\n<ul>\n<li><strong>Vercel Analytics:</strong> No cookies, completely anonymous analytics</li>\n<li><strong>Strictly Necessary Cookies:</strong> Only for essential website functionality (session management)</li>\n</ul>\n<p>### What We DO NOT Use</p>\n<ul>\n<li>❌ Advertising cookies</li>\n<li>❌ Third-party tracking pixels</li>\n<li>❌ Social media trackers</li>\n<li>❌ Cross-site tracking</li>\n</ul>\n<p>You can manage cookies through your browser settings.</p>"
+      },
+      "yourGdprRights": {
+        "title": "Your GDPR Rights",
+        "content": "<p>As an EU/EEA resident, you have the following rights:</p>\n<ul>\n<li><strong>Right to Access (Art. 15):</strong> Request a copy of your personal data</li>\n<li><strong>Right to Rectification (Art. 16):</strong> Correct inaccurate or incomplete data</li>\n<li><strong>Right to Erasure (Art. 17):</strong> \"Right to be forgotten\" - request deletion of your data</li>\n<li><strong>Right to Data Portability (Art. 20):</strong> Receive your data in a machine-readable format</li>\n<li><strong>Right to Object (Art. 21):</strong> Object to processing based on legitimate interest</li>\n<li><strong>Right to Restriction of Processing (Art. 18):</strong> Restrict the processing of your data</li>\n<li><strong>Right to Withdraw Consent:</strong> Withdraw previously given consent</li>\n</ul>\n<ul>\n<li>Email us at hello @skill-quest.app with your request</li>\n<li>We will respond within 30 days as required by the GDPR</li>\n<li>Identity verification may be required for security purposes</li>\n</ul>\n<p>You have the right to file a complaint with the <strong>Autoriteit Persoonsgegevens (AP)</strong> in the Netherlands if you are dissatisfied with how we process your data.</p>"
+      },
+      "dataRetention": {
+        "title": "Data Retention",
+        "content": "<p>We retain your data only as long as necessary:</p>\n<ul>\n<li><strong>Website Analytics:</strong> Indefinite (anonymized, no personal identification)</li>\n<li><strong>Waitlist Emails:</strong> Until app launch or until you unsubscribe</li>\n<li><strong>Contact Form Data:</strong> Maximum 2 years for customer support purposes</li>\n<li><strong>App Account Data:</strong> As long as your account is active</li>\n<li><strong>Inactive Accounts:</strong> Deleted after 2 years of inactivity (with prior warning)</li>\n</ul>\n<p>You can request deletion of your data at any time.</p>"
+      },
+      "childrenAndPrivacy": {
+        "title": "Children and Privacy",
+        "content": "<p>### Age Requirements</p>\n<ul>\n<li><strong>Family Mode:</strong> SkillQuest is specifically designed for families with children aged <strong>6 years and older</strong></li>\n<li><strong>Parental Supervision:</strong> Parents/guardians must create and manage accounts for children under 16</li>\n<li><strong>GDPR Compliance:</strong> We comply with GDPR requirements for processing data of minors</li>\n</ul>\n<p>### Parental Controls</p>\n<ul>\n<li>Parents have full control over child accounts via Family Mode</li>\n<li>Parents can view, modify, and delete their children's data</li>\n<li>Child accounts have limited features and privacy protection by design</li>\n</ul>\n<p>If we discover that we have unintentionally collected data from a child under 16 without parental consent, we will immediately delete that data. Please contact us at hello @skill-quest.app if you have concerns about this.</p>"
+      },
+      "internationalDataTransfer": {
+        "title": "International Data Transfer",
+        "content": "<p>Some of our third-party services (e.g., Vercel, Resend) may store data on servers in the United States. We ensure that:</p>\n<ul>\n<li>All transfers are protected by <strong>Standard Contractual Clauses (SCC)</strong> approved by the European Commission</li>\n<li>Services comply with GDPR requirements</li>\n<li>Appropriate technical and organizational measures are implemented</li>\n</ul>\n<p>Your primary app data is stored on <strong>EU servers</strong> (Supabase EU region).</p>"
+      },
+      "changesToThisPrivacyPolicy": {
+        "title": "Changes to This Privacy Policy",
+        "content": "<p>We may update this privacy policy from time to time. When we do:</p>\n<ul>\n<li>We will post the updated date at the top of this document</li>\n<li>For <strong>material changes</strong>, we will send additional notification via:</li>\n<li>Email (for waitlist members and app users)</li>\n<li>Prominent banner on our website</li>\n<li>In-app notification (for app users)</li>\n</ul>\n<p>We encourage you to review this policy periodically to stay informed.</p>"
+      },
+      "contactUs": {
+        "title": "Contact Us",
+        "content": "<p>If you have any questions, concerns, or requests regarding this privacy policy or your personal data:</p>\n<p>We strive to respond to general inquiries within <strong>5 business days</strong> and to formal GDPR requests within <strong>30 days</strong>.</p>\n<p>---</p>"
+      }
+    }
+  }
+}

@@ -1,4 +1,10 @@
+'use client'
+
+import {useTranslations} from 'next-intl'
+import {Link} from '@/i18n/routing'
+
 export default function Footer() {
+  const t = useTranslations('footer')
   const currentYear = new Date().getFullYear()
 
   return (
@@ -9,39 +15,39 @@ export default function Footer() {
           <div className="md:col-span-1">
             <div className="text-2xl font-bold text-white mb-4">SkillQuest</div>
             <p className="text-sm text-gray-400 leading-relaxed">
-              Help je kinderen hun volledige potentieel bereiken met de eerste familie skill-tracking app.
+              {t('description')}
             </p>
           </div>
 
           {/* Product */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Product</h3>
+            <h3 className="text-white font-semibold mb-4">{t('sections.product.title')}</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#features" className="hover:text-white transition-colors">Features</a></li>
-              <li><a href="#pricing" className="hover:text-white transition-colors">Prijzen</a></li>
-              <li><a href="#how-it-works" className="hover:text-white transition-colors">Hoe het werkt</a></li>
-              <li><a href="/app" className="hover:text-white transition-colors">Web App</a></li>
+              <li><a href="#features" className="hover:text-white transition-colors">{t('sections.product.features')}</a></li>
+              <li><a href="#pricing" className="hover:text-white transition-colors">{t('sections.product.pricing')}</a></li>
+              <li><a href="#how-it-works" className="hover:text-white transition-colors">{t('sections.product.howItWorks')}</a></li>
+              <li><a href="/app" className="hover:text-white transition-colors">{t('sections.product.webApp')}</a></li>
             </ul>
           </div>
 
           {/* Resources */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Resources</h3>
+            <h3 className="text-white font-semibold mb-4">{t('sections.resources.title')}</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="/blog" className="hover:text-white transition-colors">Blog</a></li>
-              <li><a href="/handleiding" className="hover:text-white transition-colors">Handleiding</a></li>
-              <li><a href="/faq" className="hover:text-white transition-colors">FAQ</a></li>
-              <li><a href="/contact" className="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="/blog" className="hover:text-white transition-colors">{t('sections.resources.blog')}</a></li>
+              <li><a href="/handleiding" className="hover:text-white transition-colors">{t('sections.resources.guide')}</a></li>
+              <li><a href="/faq" className="hover:text-white transition-colors">{t('sections.resources.faq')}</a></li>
+              <li><a href="/contact" className="hover:text-white transition-colors">{t('sections.resources.contact')}</a></li>
             </ul>
           </div>
 
           {/* Legal */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Juridisch</h3>
+            <h3 className="text-white font-semibold mb-4">{t('sections.legal.title')}</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a></li>
-              <li><a href="/terms" className="hover:text-white transition-colors">Algemene Voorwaarden</a></li>
-              <li><a href="/cookies" className="hover:text-white transition-colors">Cookie Policy</a></li>
+              <li><Link href="/privacy" className="hover:text-white transition-colors">{t('sections.legal.privacy')}</Link></li>
+              <li><Link href="/terms" className="hover:text-white transition-colors">{t('sections.legal.terms')}</Link></li>
+              <li><Link href="/cookies" className="hover:text-white transition-colors">{t('sections.legal.cookies')}</Link></li>
             </ul>
           </div>
         </div>
@@ -49,7 +55,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-sm text-gray-400">
-            © {currentYear} SkillQuest. Alle rechten voorbehouden.
+            {t('copyright', {year: currentYear})}
           </div>
 
           {/* Social links */}

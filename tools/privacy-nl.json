@@ -1,0 +1,69 @@
+{
+  "privacy": {
+    "meta": {
+      "title": "Privacybeleid - SkillQuest",
+      "description": "Hoe SkillQuest jouw data beschermt en jouw privacy respecteert. AVG-compliant privacybeleid."
+    },
+    "heading": "Privacybeleid",
+    "lastUpdatedLabel": "Laatst bijgewerkt",
+    "lastUpdated": "12 januari 2026",
+    "sections": {
+      "introductie": {
+        "title": "Introductie",
+        "content": "<p>Welkom bij SkillQuest. Wij zijn toegewijd aan het beschermen van jouw persoonlijke gegevens en het respecteren van jouw privacy. Dit privacybeleid legt uit hoe wij gegevens verzamelen, gebruiken en beschermen wanneer je onze website skill-quest.app bezoekt of onze SkillQuest mobiele app gebruikt.</p>\n<p>Dit beleid voldoet aan de Algemene Verordening Gegevensbescherming (AVG/GDPR) en de Nederlandse en Europese wetgeving inzake gegevensbescherming.</p>"
+      },
+      "gegevensbeheerder": {
+        "title": "Gegevensbeheerder",
+        "content": "<p>SkillQuest is de gegevensbeheerder voor jouw persoonlijke informatie.</p>"
+      },
+      "welkeGegevensVerzamelenWe": {
+        "title": "Welke Gegevens Verzamelen We?",
+        "content": "<p>### 3.1 Website Analytics</p>\n<p>Wij gebruiken <strong>Vercel Analytics</strong> om anonieme gebruiksgegevens te verzamelen, waaronder:</p>\n<ul>\n<li>Paginaweergaven en navigatiepatronen</li>\n<li>Browsertype en versie</li>\n<li>Apparaatinformatie (desktop/mobiel/tablet)</li>\n<li>Geografische locatie (alleen land/regio niveau)</li>\n<li>Verwijzingsbronnen</li>\n</ul>\n<p>Vercel Analytics werkt zonder cookies en trackt geen individuele gebruikers.</p>\n<p>### 3.2 Wachtlijst voor Android Beta</p>\n<p>Als je je aanmeldt voor vroege toegang tot onze Android beta, verzamelen we:</p>\n<ul>\n<li>E-mailadres (verplicht)</li>\n<li>Naam (optioneel)</li>\n<li>Platformvoorkeur (Android)</li>\n</ul>\n<p>Deze gegevens worden veilig opgeslagen in <strong>Supabase</strong> (EU-servers) en gebruikt om je op de hoogte te houden over de app-lancering.</p>\n<p>### 3.3 Contactformulieren</p>\n<p>Als je contact met ons opneemt via een contactformulier, verzamelen we:</p>\n<ul>\n<li>Jouw naam</li>\n<li>E-mailadres</li>\n<li>Onderwerp en berichtinhoud</li>\n</ul>\n<p>Deze informatie wordt via <strong>Resend</strong> naar hello@skill-quest.app gestuurd voor klantenondersteuning.</p>\n<p>### 3.4 SkillQuest Mobiele App (Toekomstig)</p>\n<p>Wanneer de SkillQuest app lanceert, zullen we aanvullende gegevens verzamelen:</p>\n<ul>\n<li><strong>Accountgegevens:</strong> Gebruikersnaam, e-mail, profielfoto (optioneel)</li>\n<li><strong>Skill Tracking Data:</strong> Vaardigheden, timer logs, XP, levels, streaks</li>\n<li><strong>Family Mode Data:</strong> Ouder-kind accountrelaties, toestemmingsinstellingen</li>\n<li><strong>Apparaatgegevens:</strong> Apparaat-ID voor pushnotificaties, app versie</li>\n<li><strong>Analytics:</strong> In-app gebruikspatronen (anoniem geaggregeerd)</li>\n</ul>\n<p>Alle app-gegevens worden lokaal op jouw apparaat opgeslagen en optioneel gesynchroniseerd naar onze beveiligde servers voor backup en cross-device sync.</p>"
+      },
+      "hoeGebruikenWeJouwGegevens": {
+        "title": "Hoe Gebruiken We Jouw Gegevens?",
+        "content": "<p>Wij gebruiken jouw gegevens voor:</p>\n<ul>\n<li><strong>Gebruikerservaring Verbeteren:</strong> Analytics helpen ons te begrijpen hoe bezoekers onze website gebruiken</li>\n<li><strong>Product Lancering:</strong> Wachtlijst e-mails voor notificaties over beta releases en officiële lanceringen</li>\n<li><strong>Klantenondersteuning:</strong> Reageren op vragen en ondersteuningsverzoeken</li>\n<li><strong>App Functionaliteit:</strong> Skill tracking, progress synchronisatie, family mode features</li>\n<li><strong>Wettelijke Naleving:</strong> Voldoen aan juridische verplichtingen</li>\n</ul>\n<p>Wij verkopen of verhuren nooit jouw persoonlijke gegevens aan derden. Wij tonen geen advertenties en gebruiken geen tracking pixels.</p>"
+      },
+      "juridischeGrondslagVoorVerwerking": {
+        "title": "Juridische Grondslag voor Verwerking",
+        "content": "<p>Onder de AVG verwerken we jouw gegevens op basis van:</p>\n<ul>\n<li><strong>Toestemming (Art. 6(1)(a)):</strong> Wachtlijst aanmeldingen, contactformulieren, app account creatie</li>\n<li><strong>Gerechtvaardigd Belang (Art. 6(1)(f)):</strong> Website analytics, security monitoring, service verbetering</li>\n<li><strong>Contractuele Noodzaak (Art. 6(1)(b)):</strong> App diensten leveren die je aanvraagt</li>\n</ul>\n<p>Je kunt jouw toestemming op elk moment intrekken door contact met ons op te nemen.</p>"
+      },
+      "hoeBeschermenWeJouwGegevens": {
+        "title": "Hoe Beschermen We Jouw Gegevens?",
+        "content": "<p>Wij nemen de volgende beveiligingsmaatregelen:</p>\n<ul>\n<li><strong>HTTPS Encryptie:</strong> Alle gegevensoverdracht is versleuteld</li>\n<li><strong>Beveiligde Database Toegang:</strong> Strenge toegangscontroles en authenticatie</li>\n<li><strong>Regelmatige Security Updates:</strong> Systemen worden up-to-date gehouden</li>\n<li><strong>Beperkte Toegang:</strong> Alleen geautoriseerd personeel heeft toegang tot jouw gegevens</li>\n<li><strong>Data Minimalisatie:</strong> We verzamelen alleen wat strikt noodzakelijk is</li>\n</ul>\n<p>Hoewel we sterke beveiligingsmaatregelen implementeren, is geen enkele methode van overdracht over het internet 100% veilig. We kunnen absolute beveiliging niet garanderen.</p>"
+      },
+      "derdePartijDiensten": {
+        "title": "Derde Partij Diensten",
+        "content": "<p>We gebruiken de volgende GDPR-conforme diensten:</p>\n<p>| Dienst | Doel | Locatie | GDPR Status |</p>\n<p>|--------|------|---------|-------------|</p>\n<p>| <strong>Vercel</strong> | Website hosting en analytics | EU/US | Standard Contractual Clauses (SCC) |</p>\n<p>| <strong>Supabase</strong> | Database voor wachtlijst en app data | EU servers | GDPR-compliant |</p>\n<p>| <strong>Resend</strong> | E-mail delivery voor contactformulieren | US | GDPR-compliant, SCC |</p>\n<p>| <strong>Google Play Services</strong> | Android app distributie (toekomstig) | US | GDPR-compliant |</p>\n<p>Al deze diensten hebben passende waarborgen voor gegevensoverdracht naar landen buiten de EU.</p>"
+      },
+      "cookiesEnTracking": {
+        "title": "Cookies en Tracking",
+        "content": "<p>### Minimaal Cookiegebruik</p>\n<ul>\n<li><strong>Vercel Analytics:</strong> Geen cookies, volledige anonieme analytics</li>\n<li><strong>Strikt Noodzakelijke Cookies:</strong> Alleen voor essentiële website functionaliteit (sessie management)</li>\n</ul>\n<p>### Wat We NIET Gebruiken</p>\n<ul>\n<li>❌ Advertentiecookies</li>\n<li>❌ Tracking pixels van derden</li>\n<li>❌ Social media trackers</li>\n<li>❌ Cross-site tracking</li>\n</ul>\n<p>Je kunt cookies beheren via jouw browserinstellingen.</p>"
+      },
+      "jouwAvgRechten": {
+        "title": "Jouw AVG Rechten",
+        "content": "<p>Als EU/EEA inwoner heb je de volgende rechten:</p>\n<ul>\n<li><strong>Recht op Inzage (Art. 15):</strong> Vraag een kopie van jouw persoonlijke gegevens op</li>\n<li><strong>Recht op Rectificatie (Art. 16):</strong> Corrigeer onjuiste of incomplete gegevens</li>\n<li><strong>Recht op Verwijdering (Art. 17):</strong> \"Recht om vergeten te worden\" - vraag verwijdering van jouw gegevens</li>\n<li><strong>Recht op Dataportabiliteit (Art. 20):</strong> Ontvang jouw gegevens in een machineleesbaar formaat</li>\n<li><strong>Recht op Bezwaar (Art. 21):</strong> Maak bezwaar tegen verwerking op basis van gerechtvaardigd belang</li>\n<li><strong>Recht op Beperking (Art. 18):</strong> Beperk de verwerking van jouw gegevens</li>\n<li><strong>Recht om Toestemming in te Trekken:</strong> Intrek eerder gegeven toestemming</li>\n</ul>\n<ul>\n<li>E-mail ons op hello@skill-quest.app met jouw verzoek</li>\n<li>Wij reageren binnen 30 dagen zoals vereist door de AVG</li>\n<li>Identiteitsverificatie kan vereist zijn voor beveiligingsdoeleinden</li>\n</ul>\n<p>Je hebt het recht om een klacht in te dienen bij de <strong>Autoriteit Persoonsgegevens (AP)</strong> in Nederland als je ontevreden bent met hoe we jouw gegevens verwerken.</p>"
+      },
+      "gegevensretentie": {
+        "title": "Gegevensretentie",
+        "content": "<p>We bewaren jouw gegevens alleen zo lang als noodzakelijk:</p>\n<ul>\n<li><strong>Website Analytics:</strong> Onbepaalde tijd (geanonimiseerd, geen persoonlijke identificatie)</li>\n<li><strong>Wachtlijst E-mails:</strong> Tot app lancering of tot je je uitschrijft</li>\n<li><strong>Contactformulier Data:</strong> Maximaal 2 jaar voor klantenondersteuningsdoeleinden</li>\n<li><strong>App Account Data:</strong> Zolang je account actief is</li>\n<li><strong>Inactieve Accounts:</strong> Gedelete na 2 jaar inactiviteit (met voorafgaande waarschuwing)</li>\n</ul>\n<p>Je kunt op elk moment verwijdering van jouw gegevens aanvragen.</p>"
+      },
+      "kinderenEnPrivacy": {
+        "title": "Kinderen en Privacy",
+        "content": "<p>### Leeftijdsvereisten</p>\n<ul>\n<li><strong>Family Mode:</strong> SkillQuest is specifiek ontworpen voor gezinnen met kinderen vanaf <strong>6 jaar</strong></li>\n<li><strong>Ouderlijk Toezicht:</strong> Ouders/voogden moeten accounts voor kinderen onder de 16 jaar aanmaken en beheren</li>\n<li><strong>AVG Compliance:</strong> We voldoen aan AVG vereisten voor verwerking van gegevens van minderjarigen</li>\n</ul>\n<p>### Ouderlijke Controle</p>\n<ul>\n<li>Ouders hebben volledige controle over kind-accounts via Family Mode</li>\n<li>Ouders kunnen gegevens van hun kinderen bekijken, wijzigen en verwijderen</li>\n<li>Kind-accounts hebben beperkte functies en privacy bescherming by design</li>\n</ul>\n<p>Als we ontdekken dat we onbedoeld gegevens van een kind onder de 16 jaar zonder ouderlijke toestemming hebben verzameld, zullen we die gegevens onmiddellijk verwijderen. Neem contact op via hello@skill-quest.app als je hier zorgen over hebt.</p>"
+      },
+      "internationaleGegevensoverdracht": {
+        "title": "Internationale Gegevensoverdracht",
+        "content": "<p>Sommige van onze derde partij diensten (bijv. Vercel, Resend) kunnen gegevens opslaan op servers in de Verenigde Staten. We zorgen ervoor dat:</p>\n<ul>\n<li>Alle overdrachten beschermd zijn door <strong>Standard Contractual Clauses (SCC)</strong> goedgekeurd door de Europese Commissie</li>\n<li>Diensten voldoen aan GDPR vereisten</li>\n<li>Passende technische en organisatorische maatregelen zijn geïmplementeerd</li>\n</ul>\n<p>Jouw primaire app-gegevens worden opgeslagen op <strong>EU-servers</strong> (Supabase EU regio).</p>"
+      },
+      "wijzigingenInDitPrivacybeleid": {
+        "title": "Wijzigingen in Dit Privacybeleid",
+        "content": "<p>We kunnen dit privacybeleid van tijd tot tijd bijwerken. Wanneer we dit doen:</p>\n<ul>\n<li>Plaatsen we de bijgewerkte datum bovenaan dit document</li>\n<li>Voor <strong>materiële wijzigingen</strong> sturen we aanvullende notificatie via:</li>\n<li>E-mail (voor wachtlijst leden en app gebruikers)</li>\n<li>Prominente banner op onze website</li>\n<li>In-app notificatie (voor app gebruikers)</li>\n</ul>\n<p>We moedigen je aan om dit beleid periodiek te herzien om op de hoogte te blijven.</p>"
+      },
+      "contactOpnemen": {
+        "title": "Contact Opnemen",
+        "content": "<p>Als je vragen, zorgen of verzoeken hebt met betrekking tot dit privacybeleid of jouw persoonlijke gegevens:</p>\n<p>Wij streven ernaar om binnen <strong>5 werkdagen</strong> te reageren op algemene vragen en binnen <strong>30 dagen</strong> op formele AVG verzoeken.</p>\n<p>---</p>"
+      }
+    }
+  }
+}

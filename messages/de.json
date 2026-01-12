@@ -1,0 +1,347 @@
+{
+  "hero": {
+    "title": "Verfolgen Sie Ihre Fertigkeiten.",
+    "titleAccent": "Steigern Sie Ihr Leben.",
+    "subtitle": "Die ultimative App zur Nachverfolgung von Fähigkeiten, die Ihnen hilft, jede Fähigkeit zu verfolgen, den Fortschritt zu visualisieren und durch Gamification motiviert zu bleiben.",
+    "features": {
+      "smartTimers": "Intelligente Zeitschaltuhren",
+      "analytics": "Analytik",
+      "gamification": "Gamification",
+      "socialFeatures": "Soziale Merkmale"
+    },
+    "cta": {
+      "primary": "Frühzeitigen Zugang erhalten ✨",
+      "secondary": "Merkmale erforschen"
+    },
+    "trust": {
+      "privacy": "100% Datenschutz",
+      "noAds": "Keine Inserate",
+      "freeStart": "Start Frei"
+    },
+    "stats": {
+      "level": "Ebene {level}",
+      "xp": "{xp} XP 🎯",
+      "skills": "{count} Fertigkeiten",
+      "tracked": "Verfolgt 🚀",
+      "streak": "{days} 🔥",
+      "dayStreak": "Tagesträhne"
+    },
+    "app": {
+      "screenshot": "[App-Screenshot]",
+      "dashboard": "SkillQuest-Dashboard"
+    }
+  },
+  "features": {
+    "heading": "Warum Familien SkillQuest wählen",
+    "subheading": "Alles, was Sie brauchen, damit Ihre Familie wachsen kann",
+    "cards": {
+      "familyMode": {
+        "title": "Familien-Modus",
+        "description": "Eltern-Kind-Konten mit rollenbasierten Berechtigungen. Sie kontrollieren, sie konzentrieren sich. Perfekt für 6-18-Jährige.",
+        "highlight": "Einzigartig!"
+      },
+      "gamification": {
+        "title": "Gamification, die funktioniert",
+        "description": "XP, Stufen, Streifen, Ranglisten, Erfolge. Das Erlernen von Fähigkeiten fühlt sich wie ein Spiel an, baut aber echte Fähigkeiten auf."
+      },
+      "timerTechniques": {
+        "title": "7 Timer-Techniken",
+        "description": "Pomodoro, Flowtime, 52/17, Ultradian, Custom - wissenschaftlich erprobte Methoden zur Konzentration."
+      },
+      "parentDashboard": {
+        "title": "Dashboard für Eltern",
+        "description": "Echtzeit-Einblicke in das, was Ihre Kinder üben. Kein Mikromanagement, nur Überblick."
+      },
+      "autoFreezeStreaks": {
+        "title": "Auto-Freeze-Streifen",
+        "description": "Schützt automatisch Streifen an arbeitsreichen Tagen. Keine Frustration, nur Motivation."
+      },
+      "privacyFirst": {
+        "title": "Datenschutz zuerst",
+        "description": "Europäische Server, GDPR-konform, kein Datenverkauf. Ihre Familie, Ihre Daten.",
+        "highlight": "100% sicher"
+      }
+    },
+    "benefits": {
+      "heading": "+ Viele weitere Vorteile",
+      "items": {
+        "skills78": {
+          "title": "78 verschiedene Fertigkeiten",
+          "description": "Von der Codierung bis zum Sport, alles ist verfolgbar"
+        },
+        "multiDevice": {
+          "title": "Multi-Device-Synchronisation",
+          "description": "Funktioniert auf iOS, Android, Web"
+        },
+        "offline": {
+          "title": "Offline-Modus",
+          "description": "Ohne Internet verfolgen, später synchronisieren"
+        },
+        "weeklyReports": {
+          "title": "Wöchentliche Berichte",
+          "description": "Automatische Fortschrittsberichte per E-Mail"
+        },
+        "familyChallenges": {
+          "title": "Herausforderungen für Familien",
+          "description": "Familienmitglieder können sich gegenseitig herausfordern"
+        },
+        "languages": {
+          "title": "6 Sprachen",
+          "description": "NL, EN, DE, FR, ES, IT vollständig unterstützt"
+        }
+      }
+    }
+  },
+  "howItWorks": {
+    "heading": "Wie SkillQuest Ihrer Familie hilft, zu wachsen",
+    "subheading": "Vom Chaos zur Struktur in 4 einfachen Schritten",
+    "steps": {
+      "step1": {
+        "title": "Elternteil startet den Timer",
+        "description": "Als Elternkonto starten Sie Timer für Ihre Kinder auf deren Geräten. Sie behalten die Kontrolle, sie erhalten die Fokus-Tools."
+      },
+      "step2": {
+        "title": "Kind konzentriert sich auf seine Fähigkeiten",
+        "description": "Wählen Sie aus 78 Fähigkeiten: Hausaufgaben, Sport, Musik, Programmieren, Sprachen, Achtsamkeit - alles, was sie stärker macht."
+      },
+      "step3": {
+        "title": "XP &amp; Levels freischalten",
+        "description": "Jede geübte Minute = XP-Punkte. Sie steigen auf, schalten Erfolge frei und sehen ihren Fortschritt visuell."
+      },
+      "step4": {
+        "title": "Sie sehen Statistik",
+        "description": "Das Dashboard der Eltern zeigt die genaue Zeit pro Fähigkeit, die Verfolgung von Streifen und den Fortschritt im Laufe der Zeit. Datengesteuerte Elternschaft."
+      }
+    },
+    "screenshot": "[Screenshot: Schritt {step}]",
+    "cta": {
+      "button": "Jetzt kostenlos starten →",
+      "note": "Keine Kreditkarte erforderlich • 2-Minuten-Einrichtung"
+    }
+  },
+  "painPoints": {
+    "heading": "Kommt Ihnen das bekannt vor?",
+    "subheading": "Sie sind nicht die einzigen Eltern, die mit diesen Herausforderungen zu kämpfen haben.",
+    "points": {
+      "screentime": {
+        "title": "Kampf um die Bildschirmzeit",
+        "description": "Ihr Kind verbringt Stunden vor dem Bildschirm, ohne etwas Produktives zu tun. Spiele und soziale Medien dominieren ihre Zeit."
+      },
+      "homework": {
+        "title": "Hausaufgaben-Drama",
+        "description": "Jeden Abend die gleiche Diskussion über die Hausaufgaben. Sie wissen nicht, wie sie sich konzentrieren sollen."
+      },
+      "noStructure": {
+        "title": "Keine Struktur",
+        "description": "Sie haben Potenzial, aber es fehlt ihnen an Disziplin. Sie wissen nicht, wie Sie ihnen helfen können, ihre Zeit zu strukturieren."
+      }
+    },
+    "successStory": {
+      "badge": "✨ Geschichte der Transformation",
+      "heading": "Vom Chaos zur Kontrolle:",
+      "headingAccent": "Die Verwandlung der Familie Johnson",
+      "quote": "Mein Sohn Lucas (14) wollte schon immer programmieren lernen, konnte sich aber nicht konzentrieren. Mit SkillQuest kann ich Timer für ihn starten, wenn er von der Schule nach Hause kommt. Nach 3 Monaten: {hours} Stunden Programmierpraxis, erste App erstellt, und sein Selbstvertrauen? Durch die Decke! 🚀",
+      "quoteHours": "47",
+      "author": "Sarah J.",
+      "authorRole": "Mutter von 2 Kindern",
+      "before": {
+        "title": "❌ VOR SkillQuest",
+        "point1": "4+ Stunden Spielen pro Tag",
+        "point2": "Kein Fokus auf Hausaufgaben",
+        "point3": "Geringes Selbstvertrauen"
+      },
+      "after": {
+        "title": "✅ NACH der SkillQuest",
+        "point1": "47 Stunden Kodierpraxis",
+        "point2": "Erste App erstellt",
+        "point3": "Zuversicht durch die Decke"
+      }
+    }
+  },
+  "pricing": {
+    "heading": "Einfache, ehrliche Preisgestaltung",
+    "subheading": "Kostenlos starten und auf Premium upgraden für erweiterte Funktionen",
+    "tiers": {
+      "guest": {
+        "label": "👋 GAST",
+        "price": "€0",
+        "priceNote": "Kostenlos ausprobieren",
+        "features": {
+          "timer": "Basis-Timer",
+          "skills": "78 Fähigkeiten",
+          "xp": "XP &amp; Levels",
+          "cloudSync": "Cloud-Synchronisation"
+        },
+        "cta": "Start als Gast"
+      },
+      "free": {
+        "label": "🆓 KOSTENLOS",
+        "price": "€0",
+        "priceNote": "Immer kostenlos",
+        "features": {
+          "cloudSync": "Cloud-Synchronisation",
+          "social": "Soziale Merkmale",
+          "rankings": "Ranglisten",
+          "streaks": "Schlieren"
+        },
+        "cta": "Konto erstellen"
+      },
+      "premium": {
+        "label": "💎 PREMIUM",
+        "badge": "🔥 POPULÄRE",
+        "price": "€3.99",
+        "pricePer": "/Monat",
+        "priceYearly": "€39.99/Jahr (17% off)",
+        "priceLifetime": "Lebenslang: €89.99",
+        "features": {
+          "deepWork": "Deep Work Timer",
+          "techniques": "52-17 &amp; Durchlaufzeit",
+          "history": "Unbegrenzte Geschichte",
+          "themes": "19 Premium-Themen"
+        },
+        "cta": "Ansicht Prämie"
+      },
+      "family": {
+        "label": "👨‍👩‍👧‍👦 FAMILIE",
+        "price": "€6.99",
+        "pricePer": "/Monat",
+        "priceYearly": "€69.99/Jahr (17% off)",
+        "features": {
+          "members": "6 Familienmitglieder",
+          "allPremium": "Alle Premium-Funktionen",
+          "parentChild": "Eltern-Kind-Timer",
+          "challenges": "Familiäre Herausforderungen"
+        },
+        "cta": "Ansicht Familie"
+      }
+    },
+    "cta": "Vollständige Preise und Vergleich anzeigen →"
+  },
+  "waitlist": {
+    "badge": "📬 Bleiben Sie auf dem Laufenden",
+    "heading": "Seien Sie der Erste, der von der Einführung erfährt",
+    "subheading": "Melden Sie sich an, um über neue Funktionen, den offiziellen Start und Tipps zur Entwicklung von Fähigkeiten für die ganze Familie informiert zu werden.",
+    "benefits": {
+      "earlyAccess": "Frühzeitiger Zugang zum Start",
+      "updates": "Aktualisierungen neuer Funktionen",
+      "tips": "Tipps zur Entwicklung von Fertigkeiten"
+    },
+    "platform": {
+      "question": "Für welche Plattform wünschen Sie Updates?",
+      "ios": "🍎 iOS",
+      "android": "🤖 Android",
+      "both": "✨ Beide"
+    },
+    "form": {
+      "placeholder": "you@email.com",
+      "submit": "Halten Sie mich auf dem Laufenden",
+      "submitting": "Einreichen...",
+      "submitted": "✅ Angemeldet!"
+    },
+    "messages": {
+      "success": "📧 Prüfen Sie Ihren Posteingang auf den Bestätigungslink!",
+      "duplicate": "✅ Du stehst bereits auf der Liste! Wir benachrichtigen Sie, wenn es Neuigkeiten gibt.",
+      "pendingVerification": "📬 Sie haben sich bereits angemeldet, aber noch nicht bestätigt.",
+      "resendLink": "Verifizierungs-E-Mail erneut senden",
+      "error": "❌ Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
+    },
+    "privacy": "Wir respektieren Ihre Privatsphäre. Kein Spam, nur relevante Updates. Jederzeit abbestellen."
+  },
+  "navbar": {
+    "tagline": "NACH OBEN",
+    "cta": "Start Frei"
+  },
+  "footer": {
+    "description": "Helfen Sie Ihren Kindern, ihr volles Potenzial auszuschöpfen - mit der ersten App für die ganze Familie, die ihre Fähigkeiten aufzeichnet.",
+    "sections": {
+      "product": {
+        "title": "Produkt",
+        "features": "Eigenschaften",
+        "pricing": "Preisgestaltung",
+        "howItWorks": "Wie es funktioniert",
+        "webApp": "Web-Anwendung"
+      },
+      "resources": {
+        "title": "Ressourcen",
+        "blog": "Blog",
+        "guide": "Leitfaden",
+        "faq": "FAQ",
+        "contact": "Kontakt"
+      },
+      "legal": {
+        "title": "Rechtliches",
+        "privacy": "Datenschutzbestimmungen",
+        "terms": "Bedingungen der Dienstleistung",
+        "cookies": "Cookie-Richtlinie"
+      }
+    },
+    "copyright": "© {year} SkillQuest. Alle Rechte vorbehalten."
+  },
+  "privacy": {
+    "meta": {
+      "title": "Datenschutzrichtlinie - SkillQuest",
+      "description": "Wie SkillQuest Ihre Daten schützt und Ihre Privatsphäre respektiert. DSGVO-konforme Datenschutzrichtlinie."
+    },
+    "heading": "Datenschutzrichtlinie",
+    "lastUpdatedLabel": "Zuletzt aktualisiert",
+    "lastUpdated": "12. Januar 2026",
+    "sections": {
+      "einleitung": {
+        "title": "Einleitung",
+        "content": "<p>Willkommen bei SkillQuest. Wir verpflichten uns, Ihre persönlichen Daten zu schützen und Ihre Privatsphäre zu respektieren. Diese Datenschutzrichtlinie erklärt, wie wir Daten sammeln, verwenden und schützen, wenn Sie unsere Website skill-quest.app besuchen oder unsere SkillQuest mobile App nutzen.</p>\n<p>Diese Richtlinie entspricht der Datenschutz-Grundverordnung (DSGVO/GDPR) sowie der deutschen und europäischen Datenschutzgesetzgebung.</p>"
+      },
+      "verantwortlicherFrDieDatenverarbeitung": {
+        "title": "Verantwortlicher für die Datenverarbeitung",
+        "content": "<p>SkillQuest ist der Verantwortliche für die Verarbeitung Ihrer persönlichen Daten.</p>"
+      },
+      "welcheDatenSammelnWir": {
+        "title": "Welche Daten sammeln wir?",
+        "content": "<p>### 3.1 Website-Analysen</p>\n<p>Wir verwenden <strong>Vercel Analytics</strong>, um anonyme Nutzungsdaten zu sammeln, darunter:</p>\n<ul>\n<li>Seitenaufrufe und Navigationsmuster</li>\n<li>Browsertyp und -version</li>\n<li>Geräteinformationen (Desktop/Mobil/Tablet)</li>\n<li>Geografischer Standort (nur Länder-/Regionsebene)</li>\n<li>Verweisquellen</li>\n</ul>\n<p>Vercel Analytics funktioniert ohne Cookies und verfolgt keine einzelnen Benutzer.</p>\n<p>### 3.2 Warteliste für Android Beta</p>\n<p>Wenn Sie sich für den frühen Zugang zu unserer Android Beta anmelden, sammeln wir:</p>\n<ul>\n<li>E-Mail-Adresse (erforderlich)</li>\n<li>Name (optional)</li>\n<li>Plattformpräferenz (Android)</li>\n</ul>\n<p>Diese Daten werden sicher in <strong>Supabase</strong> (EU-Server) gespeichert und verwendet, um Sie über den Start der App auf dem Laufenden zu halten.</p>\n<p>### 3.3 Kontaktformulare</p>\n<p>Wenn Sie uns über ein Kontaktformular kontaktieren, sammeln wir:</p>\n<ul>\n<li>Ihren Namen</li>\n<li>E-Mail-Adresse</li>\n<li>Betreff und Nachrichteninhalte</li>\n</ul>\n<p>Diese Informationen werden über <strong>Resend</strong> an hello@skill-quest.app für den Kundensupport gesendet.</p>\n<p>### 3.4 SkillQuest Mobile App (Zukünftig)</p>\n<p>Wenn die SkillQuest App startet, werden wir zusätzliche Daten sammeln:</p>\n<ul>\n<li><strong>Kontodaten:</strong> Benutzername, E-Mail, Profilbild (optional)</li>\n<li><strong>Skill Tracking Daten:</strong> Fähigkeiten, Timer-Protokolle, XP, Level, Streaks</li>\n<li><strong>Family Mode Daten:</strong> Eltern-Kind-Kontobeziehungen, Zustimmungseinstellungen</li>\n<li><strong>Gerätedaten:</strong> Geräte-ID für Push-Benachrichtigungen, App-Version</li>\n<li><strong>Analysen:</strong> In-App-Nutzungsmuster (anonym aggregiert)</li>\n</ul>\n<p>Alle App-Daten werden lokal auf Ihrem Gerät gespeichert und optional zur Sicherung und geräteübergreifenden Synchronisierung auf unsere sicheren Server synchronisiert.</p>"
+      },
+      "wieVerwendenWirIhreDaten": {
+        "title": "Wie verwenden wir Ihre Daten?",
+        "content": "<p>Wir verwenden Ihre Daten für:</p>\n<ul>\n<li><strong>Verbesserung der Benutzererfahrung:</strong> Analysen helfen uns zu verstehen, wie Besucher unsere Website nutzen</li>\n<li><strong>Produkteinführung:</strong> Wartelisten-E-Mails für Benachrichtigungen über Beta-Versionen und offizielle Starts</li>\n<li><strong>Kundensupport:</strong> Beantwortung von Fragen und Supportanfragen</li>\n<li><strong>App-Funktionalität:</strong> Skill-Tracking, Fortschrittssynchronisierung, Family Mode-Funktionen</li>\n<li><strong>Einhaltung gesetzlicher Vorschriften:</strong> Erfüllung rechtlicher Verpflichtungen</li>\n</ul>\n<p>Wir verkaufen oder vermieten Ihre persönlichen Daten niemals an Dritte. Wir zeigen keine Werbung und verwenden keine Tracking-Pixel.</p>"
+      },
+      "rechtsgrundlageFrDieVerarbeitung": {
+        "title": "Rechtsgrundlage für die Verarbeitung",
+        "content": "<p>Gemäß der DSGVO verarbeiten wir Ihre Daten auf der Grundlage von:</p>\n<ul>\n<li><strong>Einwilligung (Art. 6 Abs. 1 lit. a):</strong> Anmeldungen zur Warteliste, Kontaktformulare, Erstellung von App-Konten</li>\n<li><strong>Berechtigtes Interesse (Art. 6 Abs. 1 lit. f):</strong> Website-Analysen, Sicherheitsüberwachung, Serviceverbesserung</li>\n<li><strong>Vertragliche Notwendigkeit (Art. 6 Abs. 1 lit. b):</strong> Bereitstellung von App-Diensten, die Sie anfordern</li>\n</ul>\n<p>Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie uns kontaktieren.</p>"
+      },
+      "wieSchtzenWirIhreDaten": {
+        "title": "Wie schützen wir Ihre Daten?",
+        "content": "<p>Wir ergreifen die folgenden Sicherheitsmaßnahmen:</p>\n<ul>\n<li><strong>HTTPS-Verschlüsselung:</strong> Alle Datenübertragungen sind verschlüsselt</li>\n<li><strong>Sicherer Datenbankzugriff:</strong> Strenge Zugangskontrollen und Authentifizierung</li>\n<li><strong>Regelmäßige Sicherheitsupdates:</strong> Systeme werden auf dem neuesten Stand gehalten</li>\n<li><strong>Eingeschränkter Zugriff:</strong> Nur autorisiertes Personal hat Zugriff auf Ihre Daten</li>\n<li><strong>Datenminimierung:</strong> Wir sammeln nur das, was unbedingt notwendig ist</li>\n</ul>\n<p>Obwohl wir starke Sicherheitsmaßnahmen implementieren, ist keine Methode der Übertragung über das Internet 100% sicher. Wir können absolute Sicherheit nicht garantieren.</p>"
+      },
+      "diensteDritter": {
+        "title": "Dienste Dritter",
+        "content": "<p>Wir verwenden die folgenden DSGVO-konformen Dienste:</p>\n<p>| Dienst | Zweck | Standort | DSGVO-Status |</p>\n<p>|--------|------|---------|-------------|</p>\n<p>| <strong>Vercel</strong> | Website-Hosting und -Analysen | EU/US | Standardvertragsklauseln (SCC) |</p>\n<p>| <strong>Supabase</strong> | Datenbank für Warteliste und App-Daten | EU-Server | DSGVO-konform |</p>\n<p>| <strong>Resend</strong> | E-Mail-Zustellung für Kontaktformulare | US | DSGVO-konform, SCC |</p>\n<p>| <strong>Google Play Services</strong> | Android App-Distribution (zukünftig) | US | DSGVO-konform |</p>\n<p>Alle diese Dienste verfügen über geeignete Garantien für die Datenübermittlung in Länder außerhalb der EU.</p>"
+      },
+      "cookiesUndTracking": {
+        "title": "Cookies und Tracking",
+        "content": "<p>### Minimale Cookie-Nutzung</p>\n<ul>\n<li><strong>Vercel Analytics:</strong> Keine Cookies, vollständig anonyme Analysen</li>\n<li><strong>Unbedingt notwendige Cookies:</strong> Nur für essentielle Website-Funktionalität (Sitzungsverwaltung)</li>\n</ul>\n<p>### Was wir NICHT verwenden</p>\n<ul>\n<li>❌ Werbe-Cookies</li>\n<li>❌ Tracking-Pixel von Drittanbietern</li>\n<li>❌ Social-Media-Tracker</li>\n<li>❌ Cross-Site-Tracking</li>\n</ul>\n<p>Sie können Cookies über Ihre Browsereinstellungen verwalten.</p>"
+      },
+      "ihreDsgvorechte": {
+        "title": "Ihre DSGVO-Rechte",
+        "content": "<p>Als EU/EWR-Bürger haben Sie die folgenden Rechte:</p>\n<ul>\n<li><strong>Auskunftsrecht (Art. 15):</strong> Fordern Sie eine Kopie Ihrer persönlichen Daten an</li>\n<li><strong>Recht auf Berichtigung (Art. 16):</strong> Korrigieren Sie unrichtige oder unvollständige Daten</li>\n<li><strong>Recht auf Löschung (Art. 17):</strong> \"Recht auf Vergessenwerden\" - fordern Sie die Löschung Ihrer Daten</li>\n<li><strong>Recht auf Datenübertragbarkeit (Art. 20):</strong> Erhalten Sie Ihre Daten in einem maschinenlesbaren Format</li>\n<li><strong>Widerspruchsrecht (Art. 21):</strong> Widersprechen Sie der Verarbeitung auf der Grundlage eines berechtigten Interesses</li>\n<li><strong>Recht auf Einschränkung der Verarbeitung (Art. 18):</strong> Beschränken Sie die Verarbeitung Ihrer Daten</li>\n<li><strong>Recht auf Widerruf der Einwilligung:</strong> Widerrufen Sie eine zuvor erteilte Einwilligung</li>\n</ul>\n<ul>\n<li>Senden Sie uns eine E-Mail an hello@skill-quest.app mit Ihrer Anfrage</li>\n<li>Wir antworten innerhalb von 30 Tagen, wie es die DSGVO vorschreibt</li>\n<li>Zur Sicherheitsüberprüfung kann eine Identitätsprüfung erforderlich sein</li>\n</ul>\n<p>Sie haben das Recht, eine Beschwerde bei der <strong>Autoriteit Persoonsgegevens (AP)</strong> in den Niederlanden einzureichen, wenn Sie mit der Art und Weise, wie wir Ihre Daten verarbeiten, unzufrieden sind.</p>"
+      },
+      "datenaufbewahrung": {
+        "title": "Datenaufbewahrung",
+        "content": "<p>Wir speichern Ihre Daten nur so lange wie nötig:</p>\n<ul>\n<li><strong>Website-Analysen:</strong> Unbefristet (anonymisiert, keine persönliche Identifizierung)</li>\n<li><strong>Wartelisten-E-Mails:</strong> Bis zum Start der App oder bis Sie sich abmelden</li>\n<li><strong>Kontaktformulardaten:</strong> Maximal 2 Jahre für Kundensupportzwecke</li>\n<li><strong>App-Kontodaten:</strong> Solange Ihr Konto aktiv ist</li>\n<li><strong>Inaktive Konten:</strong> Nach 2 Jahren Inaktivität gelöscht (mit vorheriger Warnung)</li>\n</ul>\n<p>Sie können jederzeit die Löschung Ihrer Daten beantragen.</p>"
+      },
+      "kinderUndDatenschutz": {
+        "title": "Kinder und Datenschutz",
+        "content": "<p>### Altersanforderungen</p>\n<ul>\n<li><strong>Family Mode:</strong> SkillQuest wurde speziell für Familien mit Kindern ab <strong>6 Jahren</strong> entwickelt</li>\n<li><strong>Elterliche Kontrolle:</strong> Eltern/Erziehungsberechtigte müssen Konten für Kinder unter 16 Jahren erstellen und verwalten</li>\n<li><strong>DSGVO-Konformität:</strong> Wir erfüllen die DSGVO-Anforderungen für die Verarbeitung von Daten Minderjähriger</li>\n</ul>\n<p>### Elterliche Kontrolle</p>\n<ul>\n<li>Eltern haben die volle Kontrolle über Kinderkonten über den Family Mode</li>\n<li>Eltern können die Daten ihrer Kinder einsehen, ändern und löschen</li>\n<li>Kinderkonten haben eingeschränkte Funktionen und Datenschutz durch Design</li>\n</ul>\n<p>Sollten wir feststellen, dass wir unbeabsichtigt Daten eines Kindes unter 16 Jahren ohne elterliche Zustimmung gesammelt haben, werden wir diese Daten unverzüglich löschen. Bitte kontaktieren Sie uns unter hello@skill-quest.app, wenn Sie diesbezüglich Bedenken haben.</p>"
+      },
+      "internationaleDatenbermittlung": {
+        "title": "Internationale Datenübermittlung",
+        "content": "<p>Einige unserer Drittanbieterdienste (z.B. Vercel, Resend) können Daten auf Servern in den Vereinigten Staaten speichern. Wir stellen sicher, dass:</p>\n<ul>\n<li>Alle Übermittlungen durch von der Europäischen Kommission genehmigte <strong>Standardvertragsklauseln (SCC)</strong> geschützt sind</li>\n<li>Dienste die DSGVO-Anforderungen erfüllen</li>\n<li>Angemessene technische und organisatorische Maßnahmen implementiert sind</li>\n</ul>\n<p>Ihre primären App-Daten werden auf <strong>EU-Servern</strong> (Supabase EU-Region) gespeichert.</p>"
+      },
+      "nderungenDieserDatenschutzrichtlinie": {
+        "title": "Änderungen dieser Datenschutzrichtlinie",
+        "content": "<p>Wir können diese Datenschutzrichtlinie von Zeit zu Zeit aktualisieren. Wenn wir dies tun:</p>\n<ul>\n<li>Wir aktualisieren das Datum oben in diesem Dokument</li>\n<li>Bei <strong>wesentlichen Änderungen</strong> senden wir zusätzliche Benachrichtigungen über:</li>\n<li>E-Mail (für Wartelistenmitglieder und App-Benutzer)</li>\n<li>Auffälliges Banner auf unserer Website</li>\n<li>In-App-Benachrichtigung (für App-Benutzer)</li>\n</ul>\n<p>Wir empfehlen Ihnen, diese Richtlinie regelmäßig zu überprüfen, um auf dem Laufenden zu bleiben.</p>"
+      },
+      "kontaktAufnehmen": {
+        "title": "Kontakt aufnehmen",
+        "content": "<p>Wenn Sie Fragen, Bedenken oder Anfragen bezüglich dieser Datenschutzrichtlinie oder Ihrer persönlichen Daten haben:</p>\n<p>Wir bemühen uns, allgemeine Anfragen innerhalb von <strong>5 Werktagen</strong> und formelle DSGVO-Anfragen innerhalb von <strong>30 Tagen</strong> zu beantworten.</p>\n<p>---</p>"
+      }
+    }
+  }
+}

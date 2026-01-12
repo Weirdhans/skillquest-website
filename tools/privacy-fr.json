@@ -1,0 +1,69 @@
+{
+  "privacy": {
+    "meta": {
+      "title": "Politique de Confidentialité - SkillQuest",
+      "description": "Comment SkillQuest protège vos données et respecte votre vie privée. Politique de confidentialité conforme au RGPD."
+    },
+    "heading": "Politique de Confidentialité",
+    "lastUpdatedLabel": "Dernière mise à jour ",
+    "lastUpdated": "12 janvier 2026",
+    "sections": {
+      "introduction": {
+        "title": "Introduction",
+        "content": "<p>Bienvenue sur SkillQuest. Nous nous engageons à protéger vos données personnelles et à respecter votre vie privée. Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons les données lorsque vous visitez notre site web skill-quest.app ou utilisez notre application mobile SkillQuest.</p>\n<p>Cette politique est conforme au Règlement Général sur la Protection des Données (RGPD) et à la législation néerlandaise et européenne en matière de protection des données.</p>"
+      },
+      "responsableDuTraitement": {
+        "title": "Responsable du Traitement",
+        "content": "<p>SkillQuest est le responsable du traitement de vos données personnelles.</p>"
+      },
+      "quellesDonnesCollectonsnous": {
+        "title": "Quelles Données Collectons-Nous ?",
+        "content": "<p>### 3.1 Analyses du Site Web</p>\n<p>Nous utilisons <strong>Vercel Analytics</strong> pour collecter des données d'utilisation anonymes, notamment :</p>\n<ul>\n<li>Vues de pages et modèles de navigation</li>\n<li>Type et version du navigateur</li>\n<li>Informations sur l'appareil (ordinateur/mobile/tablette)</li>\n<li>Localisation géographique (niveau pays/région uniquement)</li>\n<li>Sources de référence</li>\n</ul>\n<p>Vercel Analytics fonctionne sans cookies et ne suit pas les utilisateurs individuels.</p>\n<p>### 3.2 Liste d'Attente pour la Bêta Android</p>\n<p>Si vous vous inscrivez pour un accès anticipé à notre bêta Android, nous collectons :</p>\n<ul>\n<li>Adresse e-mail (obligatoire)</li>\n<li>Nom (facultatif)</li>\n<li>Préférence de plateforme (Android)</li>\n</ul>\n<p>Ces données sont stockées en toute sécurité dans <strong>Supabase</strong> (serveurs UE) et utilisées pour vous tenir informé du lancement de l'application.</p>\n<p>### 3.3 Formulaires de Contact</p>\n<p>Si vous nous contactez via un formulaire de contact, nous collectons :</p>\n<ul>\n<li>Votre nom</li>\n<li>Adresse e-mail</li>\n<li>Objet et contenu du message</li>\n</ul>\n<p>Ces informations sont envoyées via <strong>Resend</strong> à hello@skill-quest.app pour le support client.</p>\n<p>### 3.4 Application Mobile SkillQuest (À Venir)</p>\n<p>Lorsque l'application SkillQuest sera lancée, nous collecterons des données supplémentaires :</p>\n<ul>\n<li><strong>Données de compte :</strong> Nom d'utilisateur, e-mail, photo de profil (facultatif)</li>\n<li><strong>Données de suivi des compétences :</strong> Compétences, journaux de minuterie, XP, niveaux, séries</li>\n<li><strong>Données du mode famille :</strong> Relations de compte parent-enfant, paramètres de consentement</li>\n<li><strong>Données d'appareil :</strong> ID d'appareil pour les notifications push, version de l'application</li>\n<li><strong>Analyses :</strong> Modèles d'utilisation dans l'application (agrégés de manière anonyme)</li>\n</ul>\n<p>Toutes les données de l'application sont stockées localement sur votre appareil et optionnellement synchronisées avec nos serveurs sécurisés pour la sauvegarde et la synchronisation multi-appareils.</p>"
+      },
+      "commentUtilisonsnousVosDonnes": {
+        "title": "Comment Utilisons-Nous Vos Données ?",
+        "content": "<p>Nous utilisons vos données pour :</p>\n<ul>\n<li><strong>Améliorer l'expérience utilisateur :</strong> Les analyses nous aident à comprendre comment les visiteurs utilisent notre site web</li>\n<li><strong>Lancement de produit :</strong> E-mails de liste d'attente pour les notifications concernant les versions bêta et les lancements officiels</li>\n<li><strong>Support client :</strong> Répondre aux questions et demandes d'assistance</li>\n<li><strong>Fonctionnalité de l'application :</strong> Suivi des compétences, synchronisation de la progression, fonctionnalités du mode famille</li>\n<li><strong>Conformité légale :</strong> Respecter les obligations légales</li>\n</ul>\n<p>Nous ne vendons ni ne louons jamais vos données personnelles à des tiers. Nous n'affichons pas de publicité et n'utilisons pas de pixels de suivi.</p>"
+      },
+      "baseJuridiqueDuTraitement": {
+        "title": "Base Juridique du Traitement",
+        "content": "<p>En vertu du RGPD, nous traitons vos données sur la base de :</p>\n<ul>\n<li><strong>Consentement (Art. 6(1)(a)) :</strong> Inscriptions à la liste d'attente, formulaires de contact, création de compte d'application</li>\n<li><strong>Intérêt légitime (Art. 6(1)(f)) :</strong> Analyses du site web, surveillance de la sécurité, amélioration du service</li>\n<li><strong>Nécessité contractuelle (Art. 6(1)(b)) :</strong> Fourniture des services d'application que vous demandez</li>\n</ul>\n<p>Vous pouvez retirer votre consentement à tout moment en nous contactant.</p>"
+      },
+      "commentProtgeonsnousVosDonnes": {
+        "title": "Comment Protégeons-Nous Vos Données ?",
+        "content": "<p>Nous prenons les mesures de sécurité suivantes :</p>\n<ul>\n<li><strong>Chiffrement HTTPS :</strong> Toutes les transmissions de données sont chiffrées</li>\n<li><strong>Accès sécurisé à la base de données :</strong> Contrôles d'accès stricts et authentification</li>\n<li><strong>Mises à jour de sécurité régulières :</strong> Les systèmes sont maintenus à jour</li>\n<li><strong>Accès limité :</strong> Seul le personnel autorisé a accès à vos données</li>\n<li><strong>Minimisation des données :</strong> Nous ne collectons que le strict nécessaire</li>\n</ul>\n<p>Bien que nous mettions en œuvre de fortes mesures de sécurité, aucune méthode de transmission sur Internet n'est sûre à 100%. Nous ne pouvons garantir une sécurité absolue.</p>"
+      },
+      "servicesTiers": {
+        "title": "Services Tiers",
+        "content": "<p>Nous utilisons les services conformes au RGPD suivants :</p>\n<p>| Service | Objectif | Localisation | Statut RGPD |</p>\n<p>|---------|----------|--------------|-------------|</p>\n<p>| <strong>Vercel</strong> | Hébergement web et analyses | UE/US | Clauses Contractuelles Types (CCT) |</p>\n<p>| <strong>Supabase</strong> | Base de données pour liste d'attente et données d'application | Serveurs UE | Conforme RGPD |</p>\n<p>| <strong>Resend</strong> | Livraison d'e-mails pour formulaires de contact | US | Conforme RGPD, CCT |</p>\n<p>| <strong>Google Play Services</strong> | Distribution d'application Android (à venir) | US | Conforme RGPD |</p>\n<p>Tous ces services disposent de garanties appropriées pour les transferts de données vers des pays hors UE.</p>"
+      },
+      "cookiesEtSuivi": {
+        "title": "Cookies et Suivi",
+        "content": "<p>### Utilisation Minimale des Cookies</p>\n<ul>\n<li><strong>Vercel Analytics :</strong> Aucun cookie, analyses entièrement anonymes</li>\n<li><strong>Cookies strictement nécessaires :</strong> Uniquement pour les fonctionnalités essentielles du site web (gestion de session)</li>\n</ul>\n<p>### Ce Que Nous N'Utilisons PAS</p>\n<ul>\n<li>❌ Cookies publicitaires</li>\n<li>❌ Pixels de suivi tiers</li>\n<li>❌ Trackers de réseaux sociaux</li>\n<li>❌ Suivi inter-sites</li>\n</ul>\n<p>Vous pouvez gérer les cookies via les paramètres de votre navigateur.</p>"
+      },
+      "vosDroitsEnVertuDuRgpd": {
+        "title": "Vos Droits en Vertu du RGPD",
+        "content": "<p>En tant que résident de l'UE/EEE, vous disposez des droits suivants :</p>\n<ul>\n<li><strong>Droit d'accès (Art. 15) :</strong> Demander une copie de vos données personnelles</li>\n<li><strong>Droit de rectification (Art. 16) :</strong> Corriger les données incorrectes ou incomplètes</li>\n<li><strong>Droit à l'effacement (Art. 17) :</strong> \"Droit à l'oubli\" - demander la suppression de vos données</li>\n<li><strong>Droit à la portabilité des données (Art. 20) :</strong> Recevoir vos données dans un format lisible par machine</li>\n<li><strong>Droit d'opposition (Art. 21) :</strong> S'opposer au traitement fondé sur un intérêt légitime</li>\n<li><strong>Droit à la limitation (Art. 18) :</strong> Limiter le traitement de vos données</li>\n<li><strong>Droit de retirer le consentement :</strong> Retirer un consentement précédemment donné</li>\n</ul>\n<ul>\n<li>Envoyez-nous un e-mail à hello@skill-quest.app avec votre demande</li>\n<li>Nous répondons dans les 30 jours comme l'exige le RGPD</li>\n<li>Une vérification d'identité peut être requise pour des raisons de sécurité</li>\n</ul>\n<p>Vous avez le droit de déposer une plainte auprès de l'<strong>Autoriteit Persoonsgegevens (AP)</strong> aux Pays-Bas si vous n'êtes pas satisfait de la manière dont nous traitons vos données.</p>"
+      },
+      "conservationDesDonnes": {
+        "title": "Conservation des Données",
+        "content": "<p>Nous conservons vos données uniquement aussi longtemps que nécessaire :</p>\n<ul>\n<li><strong>Analyses du site web :</strong> Indéfiniment (anonymisées, aucune identification personnelle)</li>\n<li><strong>E-mails de liste d'attente :</strong> Jusqu'au lancement de l'application ou jusqu'à votre désinscription</li>\n<li><strong>Données de formulaire de contact :</strong> Maximum 2 ans à des fins de support client</li>\n<li><strong>Données de compte d'application :</strong> Tant que votre compte est actif</li>\n<li><strong>Comptes inactifs :</strong> Supprimés après 2 ans d'inactivité (avec avertissement préalable)</li>\n</ul>\n<p>Vous pouvez demander la suppression de vos données à tout moment.</p>"
+      },
+      "enfantsEtConfidentialit": {
+        "title": "Enfants et Confidentialité",
+        "content": "<p>### Exigences d'Âge</p>\n<ul>\n<li><strong>Mode Famille :</strong> SkillQuest est spécialement conçu pour les familles avec des enfants à partir de <strong>6 ans</strong></li>\n<li><strong>Supervision parentale :</strong> Les parents/tuteurs doivent créer et gérer les comptes pour les enfants de moins de 16 ans</li>\n<li><strong>Conformité RGPD :</strong> Nous respectons les exigences du RGPD pour le traitement des données des mineurs</li>\n</ul>\n<p>### Contrôle Parental</p>\n<ul>\n<li>Les parents ont un contrôle total sur les comptes enfants via le mode famille</li>\n<li>Les parents peuvent consulter, modifier et supprimer les données de leurs enfants</li>\n<li>Les comptes enfants ont des fonctionnalités limitées et une protection de la vie privée dès la conception</li>\n</ul>\n<p>Si nous découvrons que nous avons involontairement collecté des données d'un enfant de moins de 16 ans sans consentement parental, nous supprimerons immédiatement ces données. Contactez-nous à hello@skill-quest.app si vous avez des préoccupations à ce sujet.</p>"
+      },
+      "transfertInternationalDeDonnes": {
+        "title": "Transfert International de Données",
+        "content": "<p>Certains de nos services tiers (par ex. Vercel, Resend) peuvent stocker des données sur des serveurs aux États-Unis. Nous nous assurons que :</p>\n<ul>\n<li>Tous les transferts sont protégés par des <strong>Clauses Contractuelles Types (CCT)</strong> approuvées par la Commission européenne</li>\n<li>Les services respectent les exigences du RGPD</li>\n<li>Des mesures techniques et organisationnelles appropriées sont mises en œuvre</li>\n</ul>\n<p>Vos données d'application principales sont stockées sur des <strong>serveurs UE</strong> (région UE de Supabase).</p>"
+      },
+      "modificationsDeCettePolitiqueDeConfidentialit": {
+        "title": "Modifications de Cette Politique de Confidentialité",
+        "content": "<p>Nous pouvons mettre à jour cette politique de confidentialité de temps en temps. Lorsque nous le faisons :</p>\n<ul>\n<li>Nous mettons à jour la date en haut de ce document</li>\n<li>Pour les <strong>modifications substantielles</strong>, nous envoyons une notification supplémentaire via :</li>\n<li>E-mail (pour les membres de la liste d'attente et les utilisateurs de l'application)</li>\n<li>Bannière visible sur notre site web</li>\n<li>Notification dans l'application (pour les utilisateurs de l'application)</li>\n</ul>\n<p>Nous vous encourageons à consulter régulièrement cette politique pour rester informé.</p>"
+      },
+      "nousContacter": {
+        "title": "Nous Contacter",
+        "content": "<p>Si vous avez des questions, des préoccupations ou des demandes concernant cette politique de confidentialité ou vos données personnelles :</p>\n<p>Nous nous efforçons de répondre aux questions générales dans les <strong>5 jours ouvrables</strong> et aux demandes formelles au titre du RGPD dans les <strong>30 jours</strong>.</p>\n<p>---</p>"
+      }
+    }
+  }
+}
