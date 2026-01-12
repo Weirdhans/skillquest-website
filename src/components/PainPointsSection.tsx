@@ -1,21 +1,25 @@
 'use client'
 
+import {useTranslations} from 'next-intl'
+
 export default function PainPointsSection() {
+  const t = useTranslations('painPoints')
+
   const painPoints = [
     {
       emoji: '😰',
-      title: 'Schermtijd Strijd',
-      description: 'Je kind zit uren aan een scherm, maar niet met iets nuttig. Gaming en social media domineren hun tijd.'
+      titleKey: 'points.screentime.title',
+      descriptionKey: 'points.screentime.description'
     },
     {
       emoji: '📚',
-      title: 'Huiswerk Drama',
-      description: 'Elke avond dezelfde discussie over huiswerk. Ze weten niet hoe ze moeten focussen.'
+      titleKey: 'points.homework.title',
+      descriptionKey: 'points.homework.description'
     },
     {
       emoji: '🎯',
-      title: 'Geen Structuur',
-      description: 'Ze hebben potentieel, maar missen discipline. Je weet niet hoe je hen kunt helpen structureren.'
+      titleKey: 'points.noStructure.title',
+      descriptionKey: 'points.noStructure.description'
     }
   ]
 
@@ -24,9 +28,9 @@ export default function PainPointsSection() {
       <div className="container-custom">
         {/* Section header */}
         <div className="text-center mb-16">
-          <h2 className="heading-lg mb-4">Herken Je Dit?</h2>
+          <h2 className="heading-lg mb-4">{t('heading')}</h2>
           <p className="text-body max-w-2xl mx-auto">
-            Je bent niet de enige ouder die worstelt met deze uitdagingen.
+            {t('subheading')}
           </p>
         </div>
 
@@ -39,8 +43,8 @@ export default function PainPointsSection() {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="text-6xl mb-4">{point.emoji}</div>
-              <h3 className="heading-md mb-4 text-gray-900">{point.title}</h3>
-              <p className="text-body">{point.description}</p>
+              <h3 className="heading-md mb-4 text-gray-900">{t(point.titleKey)}</h3>
+              <p className="text-body">{t(point.descriptionKey)}</p>
             </div>
           ))}
         </div>
@@ -51,20 +55,17 @@ export default function PainPointsSection() {
             {/* Story content */}
             <div className="p-8 md:p-12">
               <div className="inline-block bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-                ✨ Transformatie Verhaal
+                {t('successStory.badge')}
               </div>
 
               <h3 className="heading-md mb-6 text-gray-900">
-                Van Chaos naar Controle:
+                {t('successStory.heading')}
                 <br />
-                <span className="text-primary-500">De Transformatie van Familie Jansen</span>
+                <span className="text-primary-500">{t('successStory.headingAccent')}</span>
               </h3>
 
               <blockquote className="text-lg text-gray-700 leading-relaxed mb-6 italic border-l-4 border-primary-500 pl-6">
-                "Mijn zoon Lucas (14) wilde altijd programmeren leren, maar kon zich niet focussen.
-                Met SkillQuest kan ik timers voor hem starten wanneer hij uit school komt.
-                Na 3 maanden: <strong>47 uur coding geoefend</strong>, eerste app gebouwd, en zijn zelfvertrouwen?
-                <span className="text-primary-500 font-bold"> Door het plafond! 🚀</span>"
+                {t('successStory.quote', {hours: t('successStory.quoteHours')})}
               </blockquote>
 
               <div className="flex items-center gap-4">
@@ -72,8 +73,8 @@ export default function PainPointsSection() {
                   👩
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900">Marieke J.</div>
-                  <div className="text-sm text-gray-600">Moeder van 2</div>
+                  <div className="font-semibold text-gray-900">{t('successStory.author')}</div>
+                  <div className="text-sm text-gray-600">{t('successStory.authorRole')}</div>
                 </div>
               </div>
             </div>
@@ -83,13 +84,13 @@ export default function PainPointsSection() {
               <div className="space-y-6">
                 {/* Before */}
                 <div className="bg-white/80 backdrop-blur rounded-xl p-6 border-2 border-red-200">
-                  <div className="text-sm font-semibold text-red-600 mb-2">❌ VOOR SkillQuest</div>
+                  <div className="text-sm font-semibold text-red-600 mb-2">{t('successStory.before.title')}</div>
                   <div className="text-sm text-gray-700">
-                    • 4+ uur gaming per dag
+                    • {t('successStory.before.point1')}
                     <br />
-                    • Geen focus bij huiswerk
+                    • {t('successStory.before.point2')}
                     <br />
-                    • Laag zelfvertrouwen
+                    • {t('successStory.before.point3')}
                   </div>
                 </div>
 
@@ -98,13 +99,13 @@ export default function PainPointsSection() {
 
                 {/* After */}
                 <div className="bg-white backdrop-blur rounded-xl p-6 border-2 border-green-200 shadow-lg">
-                  <div className="text-sm font-semibold text-green-600 mb-2">✅ NA SkillQuest</div>
+                  <div className="text-sm font-semibold text-green-600 mb-2">{t('successStory.after.title')}</div>
                   <div className="text-sm text-gray-700">
-                    • <strong>47 uur</strong> coding geoefend
+                    • {t('successStory.after.point1')}
                     <br />
-                    • Eerste app gebouwd
+                    • {t('successStory.after.point2')}
                     <br />
-                    • Zelfvertrouwen door het plafond
+                    • {t('successStory.after.point3')}
                   </div>
                 </div>
               </div>

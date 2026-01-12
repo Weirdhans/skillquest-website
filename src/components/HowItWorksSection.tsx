@@ -1,29 +1,33 @@
 'use client'
 
+import {useTranslations} from 'next-intl'
+
 export default function HowItWorksSection() {
+  const t = useTranslations('howItWorks')
+
   const steps = [
     {
       number: '1️⃣',
-      title: 'Ouder Start Timer',
-      description: 'Als parent account start je timers voor je kinderen op hun devices. Jij behoudt controle, zij krijgen de focus tools.',
+      titleKey: 'steps.step1.title',
+      descriptionKey: 'steps.step1.description',
       icon: '⏱️'
     },
     {
       number: '2️⃣',
-      title: 'Kind Focust op Skill',
-      description: 'Kies uit 78 skills: huiswerk, sport, muziek, coding, talen, mindfulness - alles wat hen sterker maakt.',
+      titleKey: 'steps.step2.title',
+      descriptionKey: 'steps.step2.description',
       icon: '🎯'
     },
     {
       number: '3️⃣',
-      title: 'XP & Levels Unlock',
-      description: 'Elke minuut oefenen = XP punten. Ze levelen op, unlocken achievements, en zien hun progressie visueel.',
+      titleKey: 'steps.step3.title',
+      descriptionKey: 'steps.step3.description',
       icon: '⚡'
     },
     {
       number: '4️⃣',
-      title: 'Jij Ziet Statistieken',
-      description: 'Parent dashboard toont exacte tijd per skill, streak tracking, en voortgang over tijd. Data-driven parenting.',
+      titleKey: 'steps.step4.title',
+      descriptionKey: 'steps.step4.description',
       icon: '📊'
     }
   ]
@@ -34,10 +38,10 @@ export default function HowItWorksSection() {
         {/* Section header */}
         <div className="text-center mb-16">
           <h2 className="heading-lg mb-4">
-            Zo Helpt SkillQuest Jouw Gezin Groeien
+            {t('heading')}
           </h2>
           <p className="text-body max-w-2xl mx-auto">
-            In 4 simpele stappen van chaos naar structuur
+            {t('subheading')}
           </p>
         </div>
 
@@ -51,8 +55,8 @@ export default function HowItWorksSection() {
                   <div className="flex items-start gap-4 mb-4">
                     <span className="text-5xl">{step.number}</span>
                     <div>
-                      <h3 className="heading-md text-gray-900 mb-3">{step.title}</h3>
-                      <p className="text-body">{step.description}</p>
+                      <h3 className="heading-md text-gray-900 mb-3">{t(step.titleKey)}</h3>
+                      <p className="text-body">{t(step.descriptionKey)}</p>
                     </div>
                   </div>
                 </div>
@@ -63,7 +67,7 @@ export default function HowItWorksSection() {
                     <div className="text-center">
                       <div className="text-7xl mb-4">{step.icon}</div>
                       <div className="text-sm text-gray-600">
-                        [Screenshot: Step {index + 1}]
+                        {t('screenshot', {step: index + 1})}
                       </div>
                     </div>
                   </div>
@@ -83,10 +87,10 @@ export default function HowItWorksSection() {
         {/* CTA at bottom */}
         <div className="text-center mt-16">
           <button className="btn btn-primary btn-large">
-            Start Gratis Nu →
+            {t('cta.button')}
           </button>
           <p className="text-sm text-gray-500 mt-4">
-            Geen credit card vereist • Setup in 2 minuten
+            {t('cta.note')}
           </p>
         </div>
       </div>

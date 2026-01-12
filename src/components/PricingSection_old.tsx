@@ -2,11 +2,8 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import {useTranslations} from 'next-intl'
 
 export default function PricingSection() {
-  const t = useTranslations('pricing')
-
   return (
     <section id="pricing" className="section bg-white">
       <div className="container-custom">
@@ -18,10 +15,10 @@ export default function PricingSection() {
           viewport={{ once: true }}
         >
           <h2 className="heading-lg mb-4">
-            {t('heading')}
+            Simpele, Eerlijke Prijzen
           </h2>
           <p className="text-body max-w-2xl mx-auto">
-            {t('subheading')}
+            Begin gratis en upgrade naar Premium voor geavanceerde features
           </p>
         </motion.div>
 
@@ -37,33 +34,33 @@ export default function PricingSection() {
           >
             <div className="mb-6">
               <div className="inline-block bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-semibold mb-3">
-                {t('tiers.guest.label')}
+                👋 GUEST
               </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">{t('tiers.guest.price')}</div>
-              <p className="text-sm text-gray-600">{t('tiers.guest.priceNote')}</p>
+              <div className="text-3xl font-bold text-gray-900 mb-2">€0</div>
+              <p className="text-sm text-gray-600">Probeer gratis</p>
             </div>
 
             <ul className="space-y-2 mb-6 text-xs">
               <li className="flex items-start gap-2">
                 <span className="text-green-500 text-lg flex-shrink-0">✅</span>
-                <span className="text-gray-700">{t('tiers.guest.features.timer')}</span>
+                <span className="text-gray-700">Basis timer</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-green-500 text-lg flex-shrink-0">✅</span>
-                <span className="text-gray-700">{t('tiers.guest.features.skills')}</span>
+                <span className="text-gray-700">78 skills</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-green-500 text-lg flex-shrink-0">✅</span>
-                <span className="text-gray-700">{t('tiers.guest.features.xp')}</span>
+                <span className="text-gray-700">XP & Levels</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-red-500 text-lg flex-shrink-0">❌</span>
-                <span className="text-gray-500">{t('tiers.guest.features.cloudSync')}</span>
+                <span className="text-gray-500">Cloud sync</span>
               </li>
             </ul>
 
             <Link href="/download" className="btn btn-secondary w-full text-sm py-2">
-              {t('tiers.guest.cta')}
+              Start als Gast
             </Link>
           </motion.div>
 
@@ -77,33 +74,33 @@ export default function PricingSection() {
           >
             <div className="mb-6">
               <div className="inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold mb-3">
-                {t('tiers.free.label')}
+                🆓 GRATIS
               </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">{t('tiers.free.price')}</div>
-              <p className="text-sm text-gray-600">{t('tiers.free.priceNote')}</p>
+              <div className="text-3xl font-bold text-gray-900 mb-2">€0</div>
+              <p className="text-sm text-gray-600">Altijd gratis</p>
             </div>
 
             <ul className="space-y-2 mb-6 text-xs">
               <li className="flex items-start gap-2">
                 <span className="text-green-500 text-lg flex-shrink-0">✅</span>
-                <span className="text-gray-700">{t('tiers.free.features.cloudSync')}</span>
+                <span className="text-gray-700">Cloud sync</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-green-500 text-lg flex-shrink-0">✅</span>
-                <span className="text-gray-700">{t('tiers.free.features.social')}</span>
+                <span className="text-gray-700">Social features</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-green-500 text-lg flex-shrink-0">✅</span>
-                <span className="text-gray-700">{t('tiers.free.features.rankings')}</span>
+                <span className="text-gray-700">Rankings</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-green-500 text-lg flex-shrink-0">✅</span>
-                <span className="text-gray-700">{t('tiers.free.features.streaks')}</span>
+                <span className="text-gray-700">Streaks</span>
               </li>
             </ul>
 
             <Link href="/download" className="btn btn-secondary w-full text-sm py-2">
-              {t('tiers.free.cta')}
+              Maak Account
             </Link>
           </motion.div>
 
@@ -117,46 +114,46 @@ export default function PricingSection() {
           >
             {/* Popular badge */}
             <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent-orange text-white px-4 py-1 rounded-full text-xs font-bold shadow-lg">
-              {t('tiers.premium.badge')}
+              🔥 POPULAIR
             </div>
 
             <div className="mb-6 pt-2">
               <div className="inline-block bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-xs font-semibold mb-3">
-                {t('tiers.premium.label')}
+                💎 PREMIUM
               </div>
               <div className="text-3xl font-bold text-gray-900 mb-1">
-                {t('tiers.premium.price')}
-                <span className="text-sm text-gray-500">{t('tiers.premium.pricePer')}</span>
+                €3.99
+                <span className="text-sm text-gray-500">/maand</span>
               </div>
               <p className="text-xs text-gray-600 mb-1">
-                {t('tiers.premium.priceYearly')}
+                €39.99/jaar (17% korting)
               </p>
               <p className="text-xs text-accent-orange font-semibold">
-                {t('tiers.premium.priceLifetime')}
+                Lifetime: €89.99
               </p>
             </div>
 
             <ul className="space-y-2 mb-6 text-xs">
               <li className="flex items-start gap-2">
                 <span className="text-green-500 text-lg flex-shrink-0">✅</span>
-                <span className="text-gray-700">{t('tiers.premium.features.deepWork')}</span>
+                <span className="text-gray-700">Deep Work timer</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-green-500 text-lg flex-shrink-0">✅</span>
-                <span className="text-gray-700">{t('tiers.premium.features.techniques')}</span>
+                <span className="text-gray-700">52-17 & Flowtime</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-green-500 text-lg flex-shrink-0">✅</span>
-                <span className="text-gray-700">{t('tiers.premium.features.history')}</span>
+                <span className="text-gray-700">Unlimited history</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-green-500 text-lg flex-shrink-0">✅</span>
-                <span className="text-gray-700">{t('tiers.premium.features.themes')}</span>
+                <span className="text-gray-700">19 premium themes</span>
               </li>
             </ul>
 
             <Link href="/pricing" className="btn btn-primary w-full text-sm py-2">
-              {t('tiers.premium.cta')}
+              Bekijk Premium
             </Link>
           </motion.div>
 
@@ -170,38 +167,38 @@ export default function PricingSection() {
           >
             <div className="mb-6">
               <div className="inline-block bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-semibold mb-3">
-                {t('tiers.family.label')}
+                👨‍👩‍👧‍👦 FAMILY
               </div>
               <div className="text-3xl font-bold text-gray-900 mb-1">
-                {t('tiers.family.price')}
-                <span className="text-sm text-gray-500">{t('tiers.family.pricePer')}</span>
+                €6.99
+                <span className="text-sm text-gray-500">/maand</span>
               </div>
               <p className="text-xs text-gray-600">
-                {t('tiers.family.priceYearly')}
+                €69.99/jaar (17% korting)
               </p>
             </div>
 
             <ul className="space-y-2 mb-6 text-xs">
               <li className="flex items-start gap-2">
                 <span className="text-green-500 text-lg flex-shrink-0">✅</span>
-                <span className="text-gray-700" dangerouslySetInnerHTML={{__html: t.raw('tiers.family.features.members')}}></span>
+                <span className="text-gray-700"><strong>6 familie leden</strong></span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-green-500 text-lg flex-shrink-0">✅</span>
-                <span className="text-gray-700">{t('tiers.family.features.allPremium')}</span>
+                <span className="text-gray-700">Alle Premium</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-green-500 text-lg flex-shrink-0">✅</span>
-                <span className="text-gray-700">{t('tiers.family.features.parentChild')}</span>
+                <span className="text-gray-700">Parent-child timers</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-green-500 text-lg flex-shrink-0">✅</span>
-                <span className="text-gray-700">{t('tiers.family.features.challenges')}</span>
+                <span className="text-gray-700">Family challenges</span>
               </li>
             </ul>
 
             <Link href="/pricing" className="btn btn-secondary w-full text-sm py-2">
-              {t('tiers.family.cta')}
+              Bekijk Family
             </Link>
           </motion.div>
         </div>
@@ -217,7 +214,7 @@ export default function PricingSection() {
             href="/pricing"
             className="inline-flex items-center gap-2 text-primary-500 hover:text-primary-600 font-semibold text-lg transition-colors"
           >
-            {t('cta')} →
+            Bekijk volledige prijzen & vergelijking →
           </Link>
         </motion.div>
       </div>

@@ -1,42 +1,46 @@
 'use client'
 
+import {useTranslations} from 'next-intl'
+
 export default function FeaturesSection() {
+  const t = useTranslations('features')
+
   const features = [
     {
       icon: '👨‍👩‍👧‍👦',
-      title: 'Familie Modus',
-      description: 'Parent-child accounts met role-based permissions. Jij controleert, zij focussen. Perfect voor kinderen 6-18 jaar.',
-      highlight: 'Uniek!'
+      titleKey: 'cards.familyMode.title',
+      descriptionKey: 'cards.familyMode.description',
+      highlightKey: 'cards.familyMode.highlight'
     },
     {
       icon: '🎮',
-      title: 'Gamificatie die Werkt',
-      description: 'XP, levels, streaks, rankings, achievements. Vaardigheden leren voelt als een game, maar bouwt echte skills.',
-      highlight: null
+      titleKey: 'cards.gamification.title',
+      descriptionKey: 'cards.gamification.description',
+      highlightKey: null
     },
     {
       icon: '⏱️',
-      title: '7 Timer Technieken',
-      description: 'Pomodoro, Flowtime, 52/17, Ultradian, Custom - wetenschappelijk bewezen methodes voor focus.',
-      highlight: null
+      titleKey: 'cards.timerTechniques.title',
+      descriptionKey: 'cards.timerTechniques.description',
+      highlightKey: null
     },
     {
       icon: '📊',
-      title: 'Ouder Dashboard',
-      description: 'Real-time inzicht in wat je kinderen oefenen. Geen micromanagement, wel overzicht.',
-      highlight: null
+      titleKey: 'cards.parentDashboard.title',
+      descriptionKey: 'cards.parentDashboard.description',
+      highlightKey: null
     },
     {
       icon: '🔥',
-      title: 'Auto-Freeze Streaks',
-      description: 'Beschermt streaks automatisch op drukke dagen. Geen frustratie, wel motivatie.',
-      highlight: null
+      titleKey: 'cards.autoFreezeStreaks.title',
+      descriptionKey: 'cards.autoFreezeStreaks.description',
+      highlightKey: null
     },
     {
       icon: '🌍',
-      title: 'Privacy First',
-      description: 'Nederlandse servers, GDPR compliant, geen data verkocht. Jouw gezin, jouw data.',
-      highlight: '100% Safe'
+      titleKey: 'cards.privacyFirst.title',
+      descriptionKey: 'cards.privacyFirst.description',
+      highlightKey: 'cards.privacyFirst.highlight'
     }
   ]
 
@@ -46,10 +50,10 @@ export default function FeaturesSection() {
         {/* Section header */}
         <div className="text-center mb-16">
           <h2 className="heading-lg mb-4">
-            Waarom Families SkillQuest Kiezen
+            {t('heading')}
           </h2>
           <p className="text-body max-w-2xl mx-auto">
-            Alles wat je nodig hebt om je gezin te helpen groeien
+            {t('subheading')}
           </p>
         </div>
 
@@ -62,15 +66,15 @@ export default function FeaturesSection() {
               style={{ animationDelay: `${index * 50}ms` }}
             >
               {/* Highlight badge */}
-              {feature.highlight && (
+              {feature.highlightKey && (
                 <div className="absolute -top-3 -right-3 bg-accent-orange text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                  {feature.highlight}
+                  {t(feature.highlightKey)}
                 </div>
               )}
 
               <div className="text-6xl mb-4">{feature.icon}</div>
-              <h3 className="heading-md mb-3 text-gray-900">{feature.title}</h3>
-              <p className="text-body">{feature.description}</p>
+              <h3 className="heading-md mb-3 text-gray-900">{t(feature.titleKey)}</h3>
+              <p className="text-body">{t(feature.descriptionKey)}</p>
             </div>
           ))}
         </div>
@@ -78,55 +82,55 @@ export default function FeaturesSection() {
         {/* Additional benefits list */}
         <div className="mt-16 max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-8 md:p-12">
           <h3 className="heading-md text-center mb-8 text-gray-900">
-            + Nog Veel Meer Voordelen
+            {t('benefits.heading')}
           </h3>
 
           <div className="grid md:grid-cols-2 gap-6">
             <div className="flex items-start gap-3">
               <span className="text-2xl">✅</span>
               <div>
-                <strong className="text-gray-900">78 Verschillende Skills</strong>
-                <p className="text-sm text-gray-600">Van coding tot sport, alles is trackbaar</p>
+                <strong className="text-gray-900">{t('benefits.items.skills78.title')}</strong>
+                <p className="text-sm text-gray-600">{t('benefits.items.skills78.description')}</p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
               <span className="text-2xl">✅</span>
               <div>
-                <strong className="text-gray-900">Multi-Device Sync</strong>
-                <p className="text-sm text-gray-600">Werkt op iOS, Android, Web</p>
+                <strong className="text-gray-900">{t('benefits.items.multiDevice.title')}</strong>
+                <p className="text-sm text-gray-600">{t('benefits.items.multiDevice.description')}</p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
               <span className="text-2xl">✅</span>
               <div>
-                <strong className="text-gray-900">Offline Modus</strong>
-                <p className="text-sm text-gray-600">Tracken zonder internet, sync later</p>
+                <strong className="text-gray-900">{t('benefits.items.offline.title')}</strong>
+                <p className="text-sm text-gray-600">{t('benefits.items.offline.description')}</p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
               <span className="text-2xl">✅</span>
               <div>
-                <strong className="text-gray-900">Weekly Reports</strong>
-                <p className="text-sm text-gray-600">Automatische voortgangsrapporten per email</p>
+                <strong className="text-gray-900">{t('benefits.items.weeklyReports.title')}</strong>
+                <p className="text-sm text-gray-600">{t('benefits.items.weeklyReports.description')}</p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
               <span className="text-2xl">✅</span>
               <div>
-                <strong className="text-gray-900">Familie Challenges</strong>
-                <p className="text-sm text-gray-600">Gezinsleden kunnen elkaar uitdagen</p>
+                <strong className="text-gray-900">{t('benefits.items.familyChallenges.title')}</strong>
+                <p className="text-sm text-gray-600">{t('benefits.items.familyChallenges.description')}</p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
               <span className="text-2xl">✅</span>
               <div>
-                <strong className="text-gray-900">6 Talen</strong>
-                <p className="text-sm text-gray-600">NL, EN, DE, FR, ES, IT volledig ondersteund</p>
+                <strong className="text-gray-900">{t('benefits.items.languages.title')}</strong>
+                <p className="text-sm text-gray-600">{t('benefits.items.languages.description')}</p>
               </div>
             </div>
           </div>

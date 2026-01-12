@@ -1,8 +1,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import {useTranslations} from 'next-intl'
 
 export default function HeroSection() {
+  const t = useTranslations('hero')
+
   return (
     <section className="relative bg-gradient-to-br from-primary-500 to-primary-700 text-white overflow-hidden pt-16 md:pt-20">
       {/* Background pattern */}
@@ -22,9 +25,9 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              Track Je Skills.
+              {t('title')}
               <br />
-              <span className="text-accent-orange">Level Up Je Leven.</span>
+              <span className="text-accent-orange">{t('titleAccent')}</span>
             </motion.h1>
 
             <motion.p
@@ -33,8 +36,7 @@ export default function HeroSection() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
             >
-              De ultieme skill-tracking app waarmee je elke vaardigheid bijhoudt,
-              progress visualiseert en gemotiveerd blijft door gamification.
+              {t('subtitle')}
             </motion.p>
 
             {/* Feature highlights */}
@@ -46,19 +48,19 @@ export default function HeroSection() {
             >
               <div className="flex items-center gap-3">
                 <span className="text-3xl">⏱️</span>
-                <span className="text-lg font-semibold">Smart Timers</span>
+                <span className="text-lg font-semibold">{t('features.smartTimers')}</span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="text-3xl">📊</span>
-                <span className="text-lg font-semibold">Analytics</span>
+                <span className="text-lg font-semibold">{t('features.analytics')}</span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="text-3xl">🎮</span>
-                <span className="text-lg font-semibold">Gamification</span>
+                <span className="text-lg font-semibold">{t('features.gamification')}</span>
               </div>
               <div className="flex items-center gap-3">
                 <span className="text-3xl">👥</span>
-                <span className="text-lg font-semibold">Social Features</span>
+                <span className="text-lg font-semibold">{t('features.socialFeatures')}</span>
               </div>
             </motion.div>
 
@@ -75,7 +77,7 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Krijg Early Access ✨
+                {t('cta.primary')}
               </motion.a>
               <motion.a
                 href="/features"
@@ -83,7 +85,7 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Ontdek Features
+                {t('cta.secondary')}
               </motion.a>
             </motion.div>
 
@@ -96,15 +98,15 @@ export default function HeroSection() {
             >
               <div className="flex items-center gap-2">
                 <span className="text-2xl">🔒</span>
-                <span>100% Privacy</span>
+                <span>{t('trust.privacy')}</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-2xl">🚫</span>
-                <span>Geen Ads</span>
+                <span>{t('trust.noAds')}</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-2xl">💰</span>
-                <span>Gratis Starten</span>
+                <span>{t('trust.freeStart')}</span>
               </div>
             </motion.div>
           </motion.div>
@@ -135,9 +137,9 @@ export default function HeroSection() {
                     📱
                   </motion.div>
                   <p className="text-white/80 text-lg px-8">
-                    [App Screenshot]
+                    {t('app.screenshot')}
                     <br />
-                    <span className="text-sm">SkillQuest Dashboard</span>
+                    <span className="text-sm">{t('app.dashboard')}</span>
                   </p>
                 </div>
               </div>
@@ -154,8 +156,8 @@ export default function HeroSection() {
                   ease: "easeInOut"
                 }}
               >
-                <div className="text-2xl font-bold text-primary-500">Level 15</div>
-                <div className="text-sm text-gray-600">2,450 XP 🎯</div>
+                <div className="text-2xl font-bold text-primary-500">{t('stats.level', {level: 15})}</div>
+                <div className="text-sm text-gray-600">{t('stats.xp', {xp: '2,450'})}</div>
               </motion.div>
 
               <motion.div
@@ -170,8 +172,8 @@ export default function HeroSection() {
                   delay: 0.5
                 }}
               >
-                <div className="text-lg font-bold">78 Skills</div>
-                <div className="text-sm opacity-90">Tracked 🚀</div>
+                <div className="text-lg font-bold">{t('stats.skills', {count: 78})}</div>
+                <div className="text-sm opacity-90">{t('stats.tracked')}</div>
               </motion.div>
 
               <motion.div
@@ -185,8 +187,8 @@ export default function HeroSection() {
                   ease: "easeInOut",
                 }}
               >
-                <div className="text-lg font-bold">14 🔥</div>
-                <div className="text-xs opacity-90">Day Streak</div>
+                <div className="text-lg font-bold">{t('stats.streak', {days: 14})}</div>
+                <div className="text-xs opacity-90">{t('stats.dayStreak')}</div>
               </motion.div>
             </div>
           </motion.div>
