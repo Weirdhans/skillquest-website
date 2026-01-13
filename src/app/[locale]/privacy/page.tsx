@@ -25,41 +25,59 @@ export async function generateMetadata({
   }
 }
 
-export default function PrivacyPage() {
-  const t = useTranslations('privacy')
-
-  // Get all section keys - these are language-specific camelCase keys
-  // We need to get them from the actual translations object
-  // Try common keys across all languages
-  const possibleSectionKeys = [
-    // Dutch
+// Define section keys per locale - these must match the keys in messages/{locale}.json
+const SECTION_KEYS_BY_LOCALE: Record<string, string[]> = {
+  nl: [
     'introductie', 'gegevensbeheerder', 'welkeGegevensVerzamelenWe', 'hoeGebruikenWeJouwGegevens',
     'juridischeGrondslagVoorVerwerking', 'hoeBeschermenWeJouwGegevens', 'derdePartijDiensten',
     'cookiesEnTracking', 'jouwAvgRechten', 'gegevensretentie', 'kinderenEnPrivacy',
-    'internationaleGegevensoverdracht', 'wijzigingenInDitPrivacybeleid', 'contactOpnemen',
-    // English
+    'internationaleGegevensoverdracht', 'wijzigingenInDitPrivacybeleid', 'contactOpnemen'
+  ],
+  en: [
     'introduction', 'dataController', 'whatDataDoWeCollect', 'howDoWeUseYourData',
     'legalBasisForProcessing', 'howDoWeProtectYourData', 'thirdPartyServices',
     'cookiesAndTracking', 'yourGdprRights', 'dataRetention', 'childrenAndPrivacy',
-    'internationalDataTransfers', 'changesToThisPrivacyPolicy', 'contactUs',
-    // German
-    'einleitung', 'verantwortlicherFuerDieDatenverarbeitung', 'welcheDatenSammelnWir',
-    // French
-    'quellesDonneesCollectonsNous',
-    // Spanish
-    'queDatosRecopilamos',
-    // Italian
-    'qualiDatiRaccogliamo'
+    'internationalDataTransfers', 'changesToThisPrivacyPolicy', 'contactUs'
+  ],
+  de: [
+    'einleitung', 'verantwortlicherFrDieDatenverarbeitung', 'welcheDatenSammelnWir',
+    'wieVerwendenWirIhreDaten', 'rechtsgrundlageFrDieVerarbeitung', 'wieSchtzenWirIhreDaten',
+    'diensteDritter', 'cookiesUndTracking', 'ihreDsgvorechte', 'datenaufbewahrung',
+    'kinderUndDatenschutz', 'internationaleDatenbermittlung', 'nderungenDieserDatenschutzrichtlinie',
+    'kontaktAufnehmen'
+  ],
+  fr: [
+    'introduction', 'responsableDuTraitement', 'quellesDonnesCollectonsnous',
+    'commentUtilisonsnousVosDonnes', 'baseJuridiqueDuTraitement', 'commentProtgeonsnousVosDonnes',
+    'servicesTiers', 'cookiesEtSuivi', 'vosDroitsEnVertuDuRgpd', 'conservationDesDonnes',
+    'enfantsEtConfidentialit', 'transfertInternationalDeDonnes',
+    'modificationsDeCettePolitiqueDeConfidentialit', 'nousContacter'
+  ],
+  es: [
+    'introduccin', 'responsableDelTratamiento', 'quDatosRecopilamos', 'cmoUsamosTusDatos',
+    'baseLegalParaElTratamiento', 'cmoProtegemosTusDatos', 'serviciosDeTerceros',
+    'cookiesYSeguimiento', 'tusDerechosBajoElRgpd', 'retencinDeDatos', 'niosYPrivacidad',
+    'transferenciaInternacionalDeDatos', 'cambiosAEstaPolticaDePrivacidad', 'contactar'
+  ],
+  it: [
+    'introduzione', 'titolareDelTrattamento', 'qualiDatiRaccogliamo', 'comeUtilizziamoITuoiDati',
+    'baseGiuridicaPerIlTrattamento', 'comeProteggiamoITuoiDati', 'serviziDiTerzeParti',
+    'cookieETracciamento', 'iTuoiDirittiAiSensiDelGdpr', 'conservazioneDeiDati',
+    'bambiniEPrivacy', 'trasferimentoInternazionaleDiDati',
+    'modificheAQuestaInformativaSullaPrivacy', 'contattaci'
   ]
+}
 
-  const sectionKeys = possibleSectionKeys.filter(key => {
-    try {
-      t(`sections.${key}.title`)
-      return true
-    } catch {
-      return false
-    }
-  })
+export default async function PrivacyPage({
+  params
+}: {
+  params: Promise<{locale: string}>
+}) {
+  const { locale } = await params
+  const t = useTranslations('privacy')
+
+  // Get section keys for current locale
+  const sectionKeys = SECTION_KEYS_BY_LOCALE[locale] || SECTION_KEYS_BY_LOCALE['nl']
 
   return (
     <>
@@ -95,25 +113,20 @@ export default function PrivacyPage() {
             <article className="prose prose-lg prose-primary max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-8 md:p-12">
               {/* Render all sections dynamically */}
               {sectionKeys.map((key) => {
-                try {
-                  const title = t(`sections.${key}.title`)
-                  const content = t.raw(`sections.${key}.content`)
+                const title = t(`sections.${key}.title`)
+                const content = t.raw(`sections.${key}.content`)
 
-                  return (
-                    <section key={key} className="mb-10 last:mb-0">
-                      <h2 className="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-4 border-b-2 border-primary-200 pb-2">
-                        {title}
-                      </h2>
-                      <div
-                        className="text-gray-700 leading-relaxed space-y-4"
-                        dangerouslySetInnerHTML={{ __html: content }}
-                      />
-                    </section>
-                  )
-                } catch (error) {
-                  // Skip sections that don't exist in this locale
-                  return null
-                }
+                return (
+                  <section key={key} className="mb-10 last:mb-0">
+                    <h2 className="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-4 border-b-2 border-primary-200 pb-2">
+                      {title}
+                    </h2>
+                    <div
+                      className="text-gray-700 leading-relaxed space-y-4"
+                      dangerouslySetInnerHTML={{ __html: content }}
+                    />
+                  </section>
+                )
               })}
 
               {/* Contact Information at Bottom */}
