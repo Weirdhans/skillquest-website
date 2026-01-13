@@ -1,4 +1,3 @@
-import { useTranslations } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import Footer from '@/components/Footer'
@@ -35,9 +34,9 @@ const SECTION_KEYS_BY_LOCALE: Record<string, string[]> = {
   ],
   en: [
     'introduction', 'dataController', 'whatDataDoWeCollect', 'howDoWeUseYourData',
-    'legalBasisForProcessing', 'howDoWeProtectYourData', 'thirdPartyServices',
+    'legalBasisForProcessing', 'howDoWeProtectYourData', 'thirdpartyServices',
     'cookiesAndTracking', 'yourGdprRights', 'dataRetention', 'childrenAndPrivacy',
-    'internationalDataTransfers', 'changesToThisPrivacyPolicy', 'contactUs'
+    'internationalDataTransfer', 'changesToThisPrivacyPolicy', 'contactUs'
   ],
   de: [
     'einleitung', 'verantwortlicherFrDieDatenverarbeitung', 'welcheDatenSammelnWir',
@@ -74,7 +73,7 @@ export default async function PrivacyPage({
   params: Promise<{locale: string}>
 }) {
   const { locale } = await params
-  const t = useTranslations('privacy')
+  const t = await getTranslations({ locale, namespace: 'privacy' })
 
   // Get section keys for current locale
   const sectionKeys = SECTION_KEYS_BY_LOCALE[locale] || SECTION_KEYS_BY_LOCALE['nl']
