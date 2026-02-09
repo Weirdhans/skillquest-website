@@ -271,6 +271,7 @@
       "legal": {
         "title": "Wettelijk",
         "privacy": "Privacybeleid",
+        "accountDeletion": "Account verwijderen",
         "terms": "Servicevoorwaarden",
         "cookies": "Cookiebeleid"
       }
@@ -341,6 +342,69 @@
       "contactOpnemen": {
         "title": "Contact Opnemen",
         "content": "<p>Als je vragen, zorgen of verzoeken hebt met betrekking tot dit privacybeleid of jouw persoonlijke gegevens:</p>\n<p>Wij streven ernaar om binnen <strong>5 werkdagen</strong> te reageren op algemene vragen en binnen <strong>30 dagen</strong> op formele AVG verzoeken.</p>\n<p>---</p>"
+      }
+    }
+  },
+  "deleteAccount": {
+    "meta": {
+      "title": "Account verwijderen - SkillQuest",
+      "description": "Hoe je verwijdering van je SkillQuest-account en bijbehorende gegevens aanvraagt."
+    },
+    "heading": "Account verwijderen",
+    "subtitle": "Vraag verwijdering van je SkillQuest-account en bijbehorende gegevens aan.",
+    "lastUpdatedLabel": "Laatst bijgewerkt",
+    "lastUpdated": "2026-02-09",
+    "intro": "Je kunt op elk moment verzoeken om je SkillQuest-account te verwijderen.",
+    "emailSubject": "SkillQuest accountverwijdering",
+    "cta": {
+      "title": "Verwijdering aanvragen via e-mail",
+      "description": "Stuur je verzoek naar {email}. We bevestigen je verzoek en verwerken het zo snel mogelijk.",
+      "button": "E-mail sturen"
+    },
+    "sections": {
+      "howToRequest": {
+        "title": "Hoe vraag ik accountverwijdering aan?",
+        "steps": {
+          "email": "Stuur een e-mail naar {email} vanaf het e-mailadres dat aan je SkillQuest-account is gekoppeld.",
+          "subject": "Gebruik als onderwerp: \"{subject}\".",
+          "includeTitle": "Vermeld in je e-mail:",
+          "includeItems": {
+            "accountEmail": "Het e-mailadres van je SkillQuest-account",
+            "platform": "Je platform (Android/iOS)",
+            "optionalDetails": "Optioneel: je gebruikersnaam/user ID en extra details waarmee we je account kunnen vinden"
+          },
+          "verification": "Ter bescherming van je account kunnen we je vragen om eigenaarschap te verifiëren voordat we verwijderen.",
+          "processing": "We bevestigen ontvangst en verwerken daarna het verwijderingsverzoek."
+        }
+      },
+      "whatWillBeDeleted": {
+        "title": "Welke gegevens worden verwijderd?",
+        "items": {
+          "account": "Je account- en profielgegevens (bijv. e-mail, weergavenaam, avatar).",
+          "progress": "Je skills en voortgang die in onze backend staan (sessies, XP, streaks en historie).",
+          "social": "Je sociale data die in onze backend staat (vrienden, challenges, berichten).",
+          "push": "Push-notification tokens die aan je account gekoppeld zijn."
+        }
+      },
+      "whatWeMayRetain": {
+        "title": "Welke gegevens kunnen we bewaren?",
+        "note": "Sommige informatie kunnen we bewaren als dit nodig is voor wettelijke verplichtingen, beveiliging of fraudepreventie.",
+        "items": {
+          "payments": "Betaal- en transactiegegevens die door app stores en betaalproviders worden beheerd (bijv. aankoopbewijzen).",
+          "subscriptions": "Abonnementen lopen via Google Play / Apple. Accountverwijdering annuleert niet automatisch; annuleer indien nodig in de store.",
+          "support": "Support-communicatie (bijv. e-mails) voor maximaal 2 jaar voor klantenservice-doeleinden.",
+          "security": "Beveiligings- en fraudepreventielogs zolang dat nodig is om onze diensten veilig te houden.",
+          "analytics": "Geaggregeerde en geanonimiseerde analytics die niet naar jou te herleiden zijn."
+        }
+      },
+      "timing": {
+        "title": "Hoe lang duurt het?",
+        "body": "We streven ernaar om account- en dataverwijderingsverzoeken binnen 30 dagen af te handelen.",
+        "note": "Als we bepaalde informatie moeten bewaren, leggen we uit wat we bewaren en waarom."
+      },
+      "contact": {
+        "title": "Contact",
+        "body": "Heb je vragen of lukt het niet? Neem contact op via {email}."
       }
     }
   }

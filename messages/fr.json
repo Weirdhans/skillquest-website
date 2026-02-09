@@ -271,6 +271,7 @@
       "legal": {
         "title": "Juridique",
         "privacy": "Politique de confidentialité",
+        "accountDeletion": "Suppression de compte",
         "terms": "Conditions d'utilisation",
         "cookies": "Politique en matière de cookies"
       }
@@ -341,6 +342,69 @@
       "nousContacter": {
         "title": "Nous Contacter",
         "content": "<p>Si vous avez des questions, des préoccupations ou des demandes concernant cette politique de confidentialité ou vos données personnelles :</p>\n<p>Nous nous efforçons de répondre aux questions générales dans les <strong>5 jours ouvrables</strong> et aux demandes formelles au titre du RGPD dans les <strong>30 jours</strong>.</p>\n<p>---</p>"
+      }
+    }
+  },
+  "deleteAccount": {
+    "meta": {
+      "title": "Suppression de compte - SkillQuest",
+      "description": "Comment demander la suppression de votre compte SkillQuest et des données associées."
+    },
+    "heading": "Suppression de compte",
+    "subtitle": "Demandez la suppression de votre compte SkillQuest et des données associées.",
+    "lastUpdatedLabel": "Dernière mise à jour",
+    "lastUpdated": "2026-02-09",
+    "intro": "Vous pouvez demander la suppression de votre compte SkillQuest à tout moment.",
+    "emailSubject": "Demande de suppression de compte SkillQuest",
+    "cta": {
+      "title": "Demander la suppression par e-mail",
+      "description": "Envoyez votre demande à {email}. Nous confirmerons la réception et traiterons votre demande dès que possible.",
+      "button": "Envoyer un e-mail"
+    },
+    "sections": {
+      "howToRequest": {
+        "title": "Comment demander la suppression du compte",
+        "steps": {
+          "email": "Envoyez un e-mail à {email} depuis l'adresse e-mail associée à votre compte SkillQuest.",
+          "subject": "Utilisez l'objet : \"{subject}\".",
+          "includeTitle": "Incluez les informations suivantes dans votre e-mail :",
+          "includeItems": {
+            "accountEmail": "L'adresse e-mail de votre compte SkillQuest",
+            "platform": "Votre plateforme (Android/iOS)",
+            "optionalDetails": "Facultatif : votre nom d'utilisateur/ID utilisateur et tout détail pouvant nous aider à retrouver votre compte"
+          },
+          "verification": "Pour protéger votre compte, nous pouvons vous demander de vérifier que vous en êtes bien le propriétaire avant la suppression.",
+          "processing": "Nous confirmerons la réception puis traiterons la demande de suppression."
+        }
+      },
+      "whatWillBeDeleted": {
+        "title": "Quelles données seront supprimées",
+        "items": {
+          "account": "Votre compte et les informations de profil (par ex. e-mail, nom d'affichage, avatar).",
+          "progress": "Vos données de compétences et de progression stockées dans notre backend (sessions, XP, séries et historique).",
+          "social": "Vos données sociales stockées dans notre backend (amis, défis, messages).",
+          "push": "Les jetons de notifications push liés à votre compte."
+        }
+      },
+      "whatWeMayRetain": {
+        "title": "Quelles données pouvons-nous conserver",
+        "note": "Certaines informations peuvent être conservées si cela est requis pour des raisons légales, de sécurité ou de prévention de la fraude.",
+        "items": {
+          "payments": "Les enregistrements de paiement et de transaction gérés par les boutiques d'applications et les prestataires de paiement (par ex. reçus d'achat).",
+          "subscriptions": "Les abonnements sont gérés par Google Play / Apple. La suppression du compte n'annule pas automatiquement les abonnements ; veuillez annuler dans la boutique si nécessaire.",
+          "support": "Les communications avec le support (par ex. e-mails) pendant une durée maximale de 2 ans à des fins de service client.",
+          "security": "Les journaux de sécurité et de prévention de la fraude, selon les besoins pour protéger nos services.",
+          "analytics": "Des analyses agrégées et anonymisées qui ne peuvent pas vous être rattachées."
+        }
+      },
+      "timing": {
+        "title": "Combien de temps cela prend-il ?",
+        "body": "Nous visons à traiter les demandes de suppression de compte et de données dans un délai de 30 jours.",
+        "note": "Si nous devons conserver certaines informations, nous expliquerons ce que nous conservons et pourquoi."
+      },
+      "contact": {
+        "title": "Contact",
+        "body": "Si vous avez des questions ou des difficultés, contactez-nous à {email}."
       }
     }
   }

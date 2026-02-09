@@ -271,6 +271,7 @@
       "legal": {
         "title": "Legale",
         "privacy": "Informativa sulla privacy",
+        "accountDeletion": "Eliminazione account",
         "terms": "Termini di servizio",
         "cookies": "Informativa sui cookie"
       }
@@ -341,6 +342,69 @@
       "contattaci": {
         "title": "Contattaci",
         "content": "<p>Se hai domande, dubbi o richieste relative a questa informativa sulla privacy o ai tuoi dati personali:</p>\n<p>Ci impegniamo a rispondere alle domande generali entro <strong>5 giorni lavorativi</strong> e alle richieste formali ai sensi del GDPR entro <strong>30 giorni</strong>.</p>\n<p>---</p>"
+      }
+    }
+  },
+  "deleteAccount": {
+    "meta": {
+      "title": "Eliminazione account - SkillQuest",
+      "description": "Come richiedere l'eliminazione del tuo account SkillQuest e dei dati associati."
+    },
+    "heading": "Eliminazione account",
+    "subtitle": "Richiedi l'eliminazione del tuo account SkillQuest e dei dati associati.",
+    "lastUpdatedLabel": "Ultimo aggiornamento",
+    "lastUpdated": "2026-02-09",
+    "intro": "Puoi richiedere l'eliminazione del tuo account SkillQuest in qualsiasi momento.",
+    "emailSubject": "Richiesta eliminazione account SkillQuest",
+    "cta": {
+      "title": "Richiedi l'eliminazione via e-mail",
+      "description": "Invia la tua richiesta a {email}. Confermeremo la ricezione e la elaboreremo il prima possibile.",
+      "button": "Invia e-mail"
+    },
+    "sections": {
+      "howToRequest": {
+        "title": "Come richiedere l'eliminazione dell'account",
+        "steps": {
+          "email": "Invia un'e-mail a {email} dall'indirizzo e-mail associato al tuo account SkillQuest.",
+          "subject": "Usa l'oggetto: \"{subject}\".",
+          "includeTitle": "Includi quanto segue nella tua e-mail:",
+          "includeItems": {
+            "accountEmail": "L'indirizzo e-mail del tuo account SkillQuest",
+            "platform": "La tua piattaforma (Android/iOS)",
+            "optionalDetails": "Facoltativo: il tuo nome utente/ID utente e ulteriori dettagli che possano aiutarci a trovare il tuo account"
+          },
+          "verification": "Per proteggere il tuo account, potremmo chiederti di verificare la titolarità prima dell'eliminazione.",
+          "processing": "Confermeremo la ricezione e poi elaboreremo la richiesta di eliminazione."
+        }
+      },
+      "whatWillBeDeleted": {
+        "title": "Cosa verrà eliminato",
+        "items": {
+          "account": "Il tuo account e le informazioni del profilo (ad es. e-mail, nome visualizzato, avatar).",
+          "progress": "I tuoi dati di competenze e progresso archiviati nel nostro backend (sessioni, XP, serie e cronologia).",
+          "social": "I tuoi dati social archiviati nel nostro backend (amici, sfide, messaggi).",
+          "push": "Token di notifiche push collegati al tuo account."
+        }
+      },
+      "whatWeMayRetain": {
+        "title": "Cosa possiamo conservare",
+        "note": "Alcune informazioni potrebbero essere conservate per motivi legali, di sicurezza o di prevenzione delle frodi.",
+        "items": {
+          "payments": "Registri di pagamento e transazione gestiti da app store e fornitori di pagamento (ad es. ricevute di acquisto).",
+          "subscriptions": "Gli abbonamenti sono gestiti da Google Play / Apple. L'eliminazione dell'account non annulla automaticamente gli abbonamenti; annulla nello store se necessario.",
+          "support": "Comunicazioni con il supporto (ad es. e-mail) fino a 2 anni per finalità di assistenza clienti.",
+          "security": "Log di sicurezza e prevenzione frodi, se necessario, per proteggere i nostri servizi.",
+          "analytics": "Analisi aggregate e anonimizzate che non possono essere ricondotte a te."
+        }
+      },
+      "timing": {
+        "title": "Quanto tempo ci vuole?",
+        "body": "Puntiamo a gestire le richieste di eliminazione dell'account e dei dati entro 30 giorni.",
+        "note": "Se dobbiamo conservare alcune informazioni, spiegheremo cosa conserviamo e perché."
+      },
+      "contact": {
+        "title": "Contatto",
+        "body": "Se hai domande o problemi con la richiesta, contattaci a {email}."
       }
     }
   }

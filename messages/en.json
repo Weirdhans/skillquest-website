@@ -271,6 +271,7 @@
       "legal": {
         "title": "Legal",
         "privacy": "Privacy Policy",
+        "accountDeletion": "Account deletion",
         "terms": "Terms of Service",
         "cookies": "Cookie Policy"
       }
@@ -341,6 +342,69 @@
       "contactUs": {
         "title": "Contact Us",
         "content": "<p>If you have any questions, concerns, or requests regarding this privacy policy or your personal data:</p>\n<p>We strive to respond to general inquiries within <strong>5 business days</strong> and to formal GDPR requests within <strong>30 days</strong>.</p>\n<p>---</p>"
+      }
+    }
+  },
+  "deleteAccount": {
+    "meta": {
+      "title": "Delete your SkillQuest account",
+      "description": "How to request deletion of your SkillQuest account and associated data."
+    },
+    "heading": "Account deletion",
+    "subtitle": "Request deletion of your SkillQuest account and associated data.",
+    "lastUpdatedLabel": "Last updated",
+    "lastUpdated": "2026-02-09",
+    "intro": "You can request deletion of your SkillQuest account at any time.",
+    "emailSubject": "SkillQuest account deletion request",
+    "cta": {
+      "title": "Request deletion by email",
+      "description": "Send your request to {email}. We'll confirm and process your request as soon as possible.",
+      "button": "Email us"
+    },
+    "sections": {
+      "howToRequest": {
+        "title": "How to request account deletion",
+        "steps": {
+          "email": "Send an email to {email} from the email address associated with your SkillQuest account.",
+          "subject": "Use the subject: \"{subject}\".",
+          "includeTitle": "Include the following in your email:",
+          "includeItems": {
+            "accountEmail": "Your SkillQuest account email address",
+            "platform": "Your platform (Android/iOS)",
+            "optionalDetails": "Optional: your username/user ID and any additional details that can help us locate your account"
+          },
+          "verification": "To protect your account, we may ask you to verify ownership before deletion.",
+          "processing": "We will confirm receipt and then process the deletion request."
+        }
+      },
+      "whatWillBeDeleted": {
+        "title": "What will be deleted",
+        "items": {
+          "account": "Your account and profile information (e.g., email, display name, avatar).",
+          "progress": "Your skills and progress stored in our backend (sessions, XP, streaks and history).",
+          "social": "Your social data stored in our backend (friends, challenges, messages).",
+          "push": "Push notification tokens linked to your account."
+        }
+      },
+      "whatWeMayRetain": {
+        "title": "What we may retain",
+        "note": "Some information may be retained if required for legal, security, or fraud-prevention reasons.",
+        "items": {
+          "payments": "Payment and transaction records managed by app stores and payment providers (e.g., purchase receipts).",
+          "subscriptions": "Subscription status is managed by Google Play / Apple. Deleting your account does not automatically cancel subscriptions; please cancel in the store if needed.",
+          "support": "Support communications (e.g., emails) for up to 2 years for customer support purposes.",
+          "security": "Security and fraud-prevention logs as needed to keep our services safe.",
+          "analytics": "Aggregated and anonymized analytics that cannot be linked back to you."
+        }
+      },
+      "timing": {
+        "title": "How long does it take?",
+        "body": "We aim to handle account and data deletion requests within 30 days.",
+        "note": "If we need to retain certain information, we will explain what we keep and why."
+      },
+      "contact": {
+        "title": "Contact",
+        "body": "If you have questions or issues requesting deletion, contact us at {email}."
       }
     }
   }

@@ -271,6 +271,7 @@
       "legal": {
         "title": "Rechtliches",
         "privacy": "Datenschutzbestimmungen",
+        "accountDeletion": "Konto löschen",
         "terms": "Bedingungen der Dienstleistung",
         "cookies": "Cookie-Richtlinie"
       }
@@ -341,6 +342,69 @@
       "kontaktAufnehmen": {
         "title": "Kontakt aufnehmen",
         "content": "<p>Wenn Sie Fragen, Bedenken oder Anfragen bezüglich dieser Datenschutzrichtlinie oder Ihrer persönlichen Daten haben:</p>\n<p>Wir bemühen uns, allgemeine Anfragen innerhalb von <strong>5 Werktagen</strong> und formelle DSGVO-Anfragen innerhalb von <strong>30 Tagen</strong> zu beantworten.</p>\n<p>---</p>"
+      }
+    }
+  },
+  "deleteAccount": {
+    "meta": {
+      "title": "Konto löschen - SkillQuest",
+      "description": "So forderst du die Löschung deines SkillQuest-Kontos und der zugehörigen Daten an."
+    },
+    "heading": "Konto löschen",
+    "subtitle": "Fordere die Löschung deines SkillQuest-Kontos und der zugehörigen Daten an.",
+    "lastUpdatedLabel": "Zuletzt aktualisiert",
+    "lastUpdated": "2026-02-09",
+    "intro": "Du kannst jederzeit die Löschung deines SkillQuest-Kontos anfordern.",
+    "emailSubject": "SkillQuest Kontolöschung",
+    "cta": {
+      "title": "Löschung per E-Mail anfordern",
+      "description": "Sende deine Anfrage an {email}. Wir bestätigen den Eingang und bearbeiten die Anfrage so schnell wie möglich.",
+      "button": "E-Mail senden"
+    },
+    "sections": {
+      "howToRequest": {
+        "title": "So forderst du die Kontolöschung an",
+        "steps": {
+          "email": "Sende eine E-Mail an {email} von der E-Mail-Adresse, die mit deinem SkillQuest-Konto verknüpft ist.",
+          "subject": "Verwende den Betreff: \"{subject}\".",
+          "includeTitle": "Bitte gib in deiner E-Mail Folgendes an:",
+          "includeItems": {
+            "accountEmail": "Die E-Mail-Adresse deines SkillQuest-Kontos",
+            "platform": "Deine Plattform (Android/iOS)",
+            "optionalDetails": "Optional: dein Benutzername/deine User-ID und weitere Details, die uns helfen, dein Konto zu finden"
+          },
+          "verification": "Zum Schutz deines Kontos können wir vor der Löschung eine Bestätigung der Inhaberschaft anfordern.",
+          "processing": "Wir bestätigen den Eingang und bearbeiten anschließend die Löschanfrage."
+        }
+      },
+      "whatWillBeDeleted": {
+        "title": "Welche Daten werden gelöscht?",
+        "items": {
+          "account": "Dein Konto und Profilinformationen (z. B. E-Mail, Anzeigename, Avatar).",
+          "progress": "Deine Skills- und Fortschrittsdaten in unserem Backend (Sitzungen, XP, Streaks und Historie).",
+          "social": "Deine sozialen Daten in unserem Backend (Freunde, Challenges, Nachrichten).",
+          "push": "Push-Benachrichtigungstokens, die mit deinem Konto verknüpft sind."
+        }
+      },
+      "whatWeMayRetain": {
+        "title": "Welche Daten können wir behalten?",
+        "note": "Einige Informationen können wir aus rechtlichen Gründen oder für Sicherheit bzw. Betrugsprävention aufbewahren.",
+        "items": {
+          "payments": "Zahlungs- und Transaktionsdaten, die von App-Stores und Zahlungsanbietern verwaltet werden (z. B. Kaufbelege).",
+          "subscriptions": "Abonnements werden über Google Play / Apple verwaltet. Das Löschen deines Kontos kündigt Abonnements nicht automatisch; bitte kündige bei Bedarf im Store.",
+          "support": "Support-Kommunikation (z. B. E-Mails) für bis zu 2 Jahre für Kundensupport-Zwecke.",
+          "security": "Sicherheits- und Betrugspräventions-Logs, soweit erforderlich, um unsere Dienste zu schützen.",
+          "analytics": "Aggregierte und anonymisierte Analysen, die nicht auf dich zurückgeführt werden können."
+        }
+      },
+      "timing": {
+        "title": "Wie lange dauert das?",
+        "body": "Wir bemühen uns, Anfragen zur Konto- und Datenlöschung innerhalb von 30 Tagen zu bearbeiten.",
+        "note": "Wenn wir bestimmte Informationen aufbewahren müssen, erklären wir dir, was wir behalten und warum."
+      },
+      "contact": {
+        "title": "Kontakt",
+        "body": "Wenn du Fragen hast oder Probleme bei der Anfrage, kontaktiere uns unter {email}."
       }
     }
   }

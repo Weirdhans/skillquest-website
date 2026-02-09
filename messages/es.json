@@ -271,6 +271,7 @@
       "legal": {
         "title": "Legal",
         "privacy": "Política de privacidad",
+        "accountDeletion": "Eliminar cuenta",
         "terms": "Condiciones de uso",
         "cookies": "Política de cookies"
       }
@@ -341,6 +342,69 @@
       "contactar": {
         "title": "Contactar",
         "content": "<p>Si tienes preguntas, inquietudes o solicitudes relacionadas con esta política de privacidad o tus datos personales:</p>\n<p>Nos esforzamos por responder a preguntas generales en <strong>5 días hábiles</strong> y a solicitudes formales del RGPD en <strong>30 días</strong>.</p>\n<p>---</p>"
+      }
+    }
+  },
+  "deleteAccount": {
+    "meta": {
+      "title": "Eliminar cuenta - SkillQuest",
+      "description": "Cómo solicitar la eliminación de tu cuenta de SkillQuest y los datos asociados."
+    },
+    "heading": "Eliminar cuenta",
+    "subtitle": "Solicita la eliminación de tu cuenta de SkillQuest y los datos asociados.",
+    "lastUpdatedLabel": "Última actualización",
+    "lastUpdated": "2026-02-09",
+    "intro": "Puedes solicitar la eliminación de tu cuenta de SkillQuest en cualquier momento.",
+    "emailSubject": "Solicitud de eliminación de cuenta SkillQuest",
+    "cta": {
+      "title": "Solicitar eliminación por correo",
+      "description": "Envía tu solicitud a {email}. Confirmaremos la recepción y la procesaremos lo antes posible.",
+      "button": "Enviar correo"
+    },
+    "sections": {
+      "howToRequest": {
+        "title": "Cómo solicitar la eliminación de la cuenta",
+        "steps": {
+          "email": "Envía un correo a {email} desde la dirección asociada a tu cuenta de SkillQuest.",
+          "subject": "Usa el asunto: \"{subject}\".",
+          "includeTitle": "Incluye lo siguiente en tu correo:",
+          "includeItems": {
+            "accountEmail": "La dirección de correo de tu cuenta de SkillQuest",
+            "platform": "Tu plataforma (Android/iOS)",
+            "optionalDetails": "Opcional: tu nombre de usuario/ID de usuario y cualquier detalle adicional que nos ayude a encontrar tu cuenta"
+          },
+          "verification": "Para proteger tu cuenta, es posible que te pidamos verificar la titularidad antes de eliminarla.",
+          "processing": "Confirmaremos la recepción y luego procesaremos la solicitud."
+        }
+      },
+      "whatWillBeDeleted": {
+        "title": "Qué se eliminará",
+        "items": {
+          "account": "Tu cuenta e información de perfil (p. ej., correo, nombre para mostrar, avatar).",
+          "progress": "Tus datos de habilidades y progreso almacenados en nuestro backend (sesiones, XP, rachas e historial).",
+          "social": "Tus datos sociales almacenados en nuestro backend (amigos, desafíos, mensajes).",
+          "push": "Tokens de notificaciones push vinculados a tu cuenta."
+        }
+      },
+      "whatWeMayRetain": {
+        "title": "Qué podemos conservar",
+        "note": "Algunos datos pueden conservarse por motivos legales, de seguridad o de prevención de fraude.",
+        "items": {
+          "payments": "Registros de pago y transacciones gestionados por tiendas de aplicaciones y proveedores de pago (p. ej., recibos de compra).",
+          "subscriptions": "Las suscripciones las gestiona Google Play / Apple. Eliminar tu cuenta no cancela automáticamente la suscripción; cancélala en la tienda si es necesario.",
+          "support": "Comunicaciones de soporte (p. ej., correos) hasta 2 años con fines de atención al cliente.",
+          "security": "Registros de seguridad y prevención de fraude según sea necesario para mantener nuestros servicios seguros.",
+          "analytics": "Analítica agregada y anonimizada que no puede vincularse contigo."
+        }
+      },
+      "timing": {
+        "title": "Cuánto tiempo tarda",
+        "body": "Nuestro objetivo es gestionar las solicitudes de eliminación de cuenta y datos en un plazo de 30 días.",
+        "note": "Si debemos conservar cierta información, explicaremos qué conservamos y por qué."
+      },
+      "contact": {
+        "title": "Contacto",
+        "body": "Si tienes preguntas o problemas para solicitar la eliminación, contáctanos en {email}."
       }
     }
   }

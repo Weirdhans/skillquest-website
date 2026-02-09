@@ -46,6 +46,7 @@ export default function Footer() {
             <h3 className="text-white font-semibold mb-4">{t('sections.legal.title')}</h3>
             <ul className="space-y-2 text-sm">
               <li><Link href="/privacy" className="hover:text-white transition-colors">{t('sections.legal.privacy')}</Link></li>
+              <li><Link href="/delete-account" className="hover:text-white transition-colors">{t('sections.legal.accountDeletion')}</Link></li>
               <li><Link href="/terms" className="hover:text-white transition-colors">{t('sections.legal.terms')}</Link></li>
               <li><Link href="/cookies" className="hover:text-white transition-colors">{t('sections.legal.cookies')}</Link></li>
             </ul>
