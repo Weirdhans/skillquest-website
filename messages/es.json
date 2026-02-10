@@ -325,7 +325,7 @@
       },
       "retencinDeDatos": {
         "title": "Retención de Datos",
-        "content": "<p>Conservamos tus datos solo durante el tiempo necesario:</p>\n<ul>\n<li><strong>Analítica del sitio web:</strong> Indefinidamente (anonimizada, sin identificación personal)</li>\n<li><strong>Correos electrónicos de lista de espera:</strong> Hasta el lanzamiento de la aplicación o hasta que te des de baja</li>\n<li><strong>Datos de formulario de contacto:</strong> Máximo 2 años para fines de atención al cliente</li>\n<li><strong>Datos de cuenta de la aplicación:</strong> Mientras tu cuenta esté activa</li>\n<li><strong>Cuentas inactivas:</strong> Eliminadas después de 2 años de inactividad (con advertencia previa)</li>\n</ul>\n<p>Puedes solicitar la eliminación de tus datos en cualquier momento.</p>"
+        "content": "<p>Conservamos tus datos solo durante el tiempo necesario:</p>\n<ul>\n<li><strong>Analítica del sitio web:</strong> Indefinidamente (anonimizada, sin identificación personal)</li>\n<li><strong>Correos electrónicos de lista de espera:</strong> Hasta el lanzamiento de la aplicación o hasta que te des de baja</li>\n<li><strong>Datos de formulario de contacto:</strong> Máximo 2 años para fines de atención al cliente</li>\n<li><strong>Datos de cuenta de la aplicación:</strong> Hasta que elimines tu cuenta</li>\n</ul>\n<p>Puedes solicitar la eliminación de tus datos en cualquier momento.</p>"
       },
       "niosYPrivacidad": {
         "title": "Niños y Privacidad",
@@ -353,11 +353,11 @@
     "heading": "Eliminar cuenta",
     "subtitle": "Solicita la eliminación de tu cuenta de SkillQuest y los datos asociados.",
     "lastUpdatedLabel": "Última actualización",
-    "lastUpdated": "2026-02-09",
-    "intro": "Puedes solicitar la eliminación de tu cuenta de SkillQuest en cualquier momento.",
+    "lastUpdated": "2026-02-10",
+    "intro": "Si puedes acceder a la app SkillQuest, puedes programar la eliminación de tu cuenta en Ajustes > Eliminar cuenta. Tu cuenta y tus datos se eliminarán de forma permanente después de 7 días (puedes cancelar durante ese periodo). Si no puedes acceder a la app, puedes solicitar la eliminación por correo electrónico.",
     "emailSubject": "Solicitud de eliminación de cuenta SkillQuest",
     "cta": {
-      "title": "Solicitar eliminación por correo",
+      "title": "Solicitar eliminación por correo (si no puedes acceder a la app)",
       "description": "Envía tu solicitud a {email}. Confirmaremos la recepción y la procesaremos lo antes posible.",
       "button": "Enviar correo"
     },
@@ -399,7 +399,7 @@
       },
       "timing": {
         "title": "Cuánto tiempo tarda",
-        "body": "Nuestro objetivo es gestionar las solicitudes de eliminación de cuenta y datos en un plazo de 30 días.",
+        "body": "Las solicitudes realizadas desde la app se programan para eliminarse después de 7 días. Las solicitudes por correo se suelen gestionar en un plazo de 30 días.",
         "note": "Si debemos conservar cierta información, explicaremos qué conservamos y por qué."
       },
       "contact": {

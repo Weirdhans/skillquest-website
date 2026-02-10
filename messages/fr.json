@@ -325,7 +325,7 @@
       },
       "conservationDesDonnes": {
         "title": "Conservation des Données",
-        "content": "<p>Nous conservons vos données uniquement aussi longtemps que nécessaire :</p>\n<ul>\n<li><strong>Analyses du site web :</strong> Indéfiniment (anonymisées, aucune identification personnelle)</li>\n<li><strong>E-mails de liste d'attente :</strong> Jusqu'au lancement de l'application ou jusqu'à votre désinscription</li>\n<li><strong>Données de formulaire de contact :</strong> Maximum 2 ans à des fins de support client</li>\n<li><strong>Données de compte d'application :</strong> Tant que votre compte est actif</li>\n<li><strong>Comptes inactifs :</strong> Supprimés après 2 ans d'inactivité (avec avertissement préalable)</li>\n</ul>\n<p>Vous pouvez demander la suppression de vos données à tout moment.</p>"
+        "content": "<p>Nous conservons vos données uniquement aussi longtemps que nécessaire :</p>\n<ul>\n<li><strong>Analyses du site web :</strong> Indéfiniment (anonymisées, aucune identification personnelle)</li>\n<li><strong>E-mails de liste d'attente :</strong> Jusqu'au lancement de l'application ou jusqu'à votre désinscription</li>\n<li><strong>Données de formulaire de contact :</strong> Maximum 2 ans à des fins de support client</li>\n<li><strong>Données de compte d'application :</strong> Jusqu'à la suppression de votre compte</li>\n</ul>\n<p>Vous pouvez demander la suppression de vos données à tout moment.</p>"
       },
       "enfantsEtConfidentialit": {
         "title": "Enfants et Confidentialité",
@@ -353,11 +353,11 @@
     "heading": "Suppression de compte",
     "subtitle": "Demandez la suppression de votre compte SkillQuest et des données associées.",
     "lastUpdatedLabel": "Dernière mise à jour",
-    "lastUpdated": "2026-02-09",
-    "intro": "Vous pouvez demander la suppression de votre compte SkillQuest à tout moment.",
+    "lastUpdated": "2026-02-10",
+    "intro": "Si vous avez accès à l'application SkillQuest, vous pouvez programmer la suppression du compte via Paramètres > Suppression de compte. Votre compte et vos données seront supprimés définitivement après 7 jours (vous pouvez annuler pendant cette période). Si vous ne pouvez pas accéder à l'application, vous pouvez demander la suppression par e-mail.",
     "emailSubject": "Demande de suppression de compte SkillQuest",
     "cta": {
-      "title": "Demander la suppression par e-mail",
+      "title": "Demander la suppression par e-mail (si vous ne pouvez pas accéder à l'application)",
       "description": "Envoyez votre demande à {email}. Nous confirmerons la réception et traiterons votre demande dès que possible.",
       "button": "Envoyer un e-mail"
     },
@@ -399,7 +399,7 @@
       },
       "timing": {
         "title": "Combien de temps cela prend-il ?",
-        "body": "Nous visons à traiter les demandes de suppression de compte et de données dans un délai de 30 jours.",
+        "body": "Les demandes de suppression effectuées dans l'application sont programmées et supprimées après 7 jours. Les demandes par e-mail sont généralement traitées dans un délai de 30 jours.",
         "note": "Si nous devons conserver certaines informations, nous expliquerons ce que nous conservons et pourquoi."
       },
       "contact": {

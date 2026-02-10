@@ -325,7 +325,7 @@
       },
       "dataRetention": {
         "title": "Data Retention",
-        "content": "<p>We retain your data only as long as necessary:</p>\n<ul>\n<li><strong>Website Analytics:</strong> Indefinite (anonymized, no personal identification)</li>\n<li><strong>Waitlist Emails:</strong> Until app launch or until you unsubscribe</li>\n<li><strong>Contact Form Data:</strong> Maximum 2 years for customer support purposes</li>\n<li><strong>App Account Data:</strong> As long as your account is active</li>\n<li><strong>Inactive Accounts:</strong> Deleted after 2 years of inactivity (with prior warning)</li>\n</ul>\n<p>You can request deletion of your data at any time.</p>"
+        "content": "<p>We retain your data only as long as necessary:</p>\n<ul>\n<li><strong>Website Analytics:</strong> Indefinite (anonymized, no personal identification)</li>\n<li><strong>Waitlist Emails:</strong> Until app launch or until you unsubscribe</li>\n<li><strong>Contact Form Data:</strong> Maximum 2 years for customer support purposes</li>\n<li><strong>App Account Data:</strong> Until you delete your account</li>\n</ul>\n<p>You can request deletion of your data at any time.</p>"
       },
       "childrenAndPrivacy": {
         "title": "Children and Privacy",
@@ -353,11 +353,11 @@
     "heading": "Account deletion",
     "subtitle": "Request deletion of your SkillQuest account and associated data.",
     "lastUpdatedLabel": "Last updated",
-    "lastUpdated": "2026-02-09",
-    "intro": "You can request deletion of your SkillQuest account at any time.",
+    "lastUpdated": "2026-02-10",
+    "intro": "If you can access the SkillQuest app, you can schedule account deletion from Settings > Account deletion. Your account and data will be permanently deleted after 7 days (you can cancel during this period). If you can't access the app, you can request deletion by email.",
     "emailSubject": "SkillQuest account deletion request",
     "cta": {
-      "title": "Request deletion by email",
+      "title": "Request deletion by email (if you can't access the app)",
       "description": "Send your request to {email}. We'll confirm and process your request as soon as possible.",
       "button": "Email us"
     },
@@ -399,7 +399,7 @@
       },
       "timing": {
         "title": "How long does it take?",
-        "body": "We aim to handle account and data deletion requests within 30 days.",
+        "body": "In-app deletion requests are scheduled for deletion after 7 days. Email requests are typically handled within 30 days.",
         "note": "If we need to retain certain information, we will explain what we keep and why."
       },
       "contact": {

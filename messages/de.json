@@ -325,7 +325,7 @@
       },
       "datenaufbewahrung": {
         "title": "Datenaufbewahrung",
-        "content": "<p>Wir speichern Ihre Daten nur so lange wie nötig:</p>\n<ul>\n<li><strong>Website-Analysen:</strong> Unbefristet (anonymisiert, keine persönliche Identifizierung)</li>\n<li><strong>Wartelisten-E-Mails:</strong> Bis zum Start der App oder bis Sie sich abmelden</li>\n<li><strong>Kontaktformulardaten:</strong> Maximal 2 Jahre für Kundensupportzwecke</li>\n<li><strong>App-Kontodaten:</strong> Solange Ihr Konto aktiv ist</li>\n<li><strong>Inaktive Konten:</strong> Nach 2 Jahren Inaktivität gelöscht (mit vorheriger Warnung)</li>\n</ul>\n<p>Sie können jederzeit die Löschung Ihrer Daten beantragen.</p>"
+        "content": "<p>Wir speichern Ihre Daten nur so lange wie nötig:</p>\n<ul>\n<li><strong>Website-Analysen:</strong> Unbefristet (anonymisiert, keine persönliche Identifizierung)</li>\n<li><strong>Wartelisten-E-Mails:</strong> Bis zum Start der App oder bis Sie sich abmelden</li>\n<li><strong>Kontaktformulardaten:</strong> Maximal 2 Jahre für Kundensupportzwecke</li>\n<li><strong>App-Kontodaten:</strong> Bis Sie Ihr Konto löschen</li>\n</ul>\n<p>Sie können jederzeit die Löschung Ihrer Daten beantragen.</p>"
       },
       "kinderUndDatenschutz": {
         "title": "Kinder und Datenschutz",
@@ -353,11 +353,11 @@
     "heading": "Konto löschen",
     "subtitle": "Fordere die Löschung deines SkillQuest-Kontos und der zugehörigen Daten an.",
     "lastUpdatedLabel": "Zuletzt aktualisiert",
-    "lastUpdated": "2026-02-09",
-    "intro": "Du kannst jederzeit die Löschung deines SkillQuest-Kontos anfordern.",
+    "lastUpdated": "2026-02-10",
+    "intro": "Wenn du Zugriff auf die SkillQuest App hast, kannst du die Kontolöschung unter Einstellungen > Konto löschen planen. Dein Konto und deine Daten werden nach 7 Tagen dauerhaft gelöscht (du kannst in dieser Zeit abbrechen). Wenn du keinen Zugriff auf die App hast, kannst du die Löschung per E-Mail anfordern.",
     "emailSubject": "SkillQuest Kontolöschung",
     "cta": {
-      "title": "Löschung per E-Mail anfordern",
+      "title": "Löschung per E-Mail anfordern (wenn du keinen Zugriff auf die App hast)",
       "description": "Sende deine Anfrage an {email}. Wir bestätigen den Eingang und bearbeiten die Anfrage so schnell wie möglich.",
       "button": "E-Mail senden"
     },
@@ -399,7 +399,7 @@
       },
       "timing": {
         "title": "Wie lange dauert das?",
-        "body": "Wir bemühen uns, Anfragen zur Konto- und Datenlöschung innerhalb von 30 Tagen zu bearbeiten.",
+        "body": "In der App angeforderte Löschungen werden nach 7 Tagen automatisch ausgeführt. Anfragen per E-Mail werden in der Regel innerhalb von 30 Tagen bearbeitet.",
         "note": "Wenn wir bestimmte Informationen aufbewahren müssen, erklären wir dir, was wir behalten und warum."
       },
       "contact": {

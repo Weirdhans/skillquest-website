@@ -325,7 +325,7 @@
       },
       "gegevensretentie": {
         "title": "Gegevensretentie",
-        "content": "<p>We bewaren jouw gegevens alleen zo lang als noodzakelijk:</p>\n<ul>\n<li><strong>Website Analytics:</strong> Onbepaalde tijd (geanonimiseerd, geen persoonlijke identificatie)</li>\n<li><strong>Wachtlijst E-mails:</strong> Tot app lancering of tot je je uitschrijft</li>\n<li><strong>Contactformulier Data:</strong> Maximaal 2 jaar voor klantenondersteuningsdoeleinden</li>\n<li><strong>App Account Data:</strong> Zolang je account actief is</li>\n<li><strong>Inactieve Accounts:</strong> Gedelete na 2 jaar inactiviteit (met voorafgaande waarschuwing)</li>\n</ul>\n<p>Je kunt op elk moment verwijdering van jouw gegevens aanvragen.</p>"
+        "content": "<p>We bewaren jouw gegevens alleen zo lang als noodzakelijk:</p>\n<ul>\n<li><strong>Website Analytics:</strong> Onbepaalde tijd (geanonimiseerd, geen persoonlijke identificatie)</li>\n<li><strong>Wachtlijst E-mails:</strong> Tot app lancering of tot je je uitschrijft</li>\n<li><strong>Contactformulier Data:</strong> Maximaal 2 jaar voor klantenondersteuningsdoeleinden</li>\n<li><strong>App Account Data:</strong> Totdat je je account verwijdert</li>\n</ul>\n<p>Je kunt op elk moment verwijdering van jouw gegevens aanvragen.</p>"
       },
       "kinderenEnPrivacy": {
         "title": "Kinderen en Privacy",
@@ -353,11 +353,11 @@
     "heading": "Account verwijderen",
     "subtitle": "Vraag verwijdering van je SkillQuest-account en bijbehorende gegevens aan.",
     "lastUpdatedLabel": "Laatst bijgewerkt",
-    "lastUpdated": "2026-02-09",
-    "intro": "Je kunt op elk moment verzoeken om je SkillQuest-account te verwijderen.",
+    "lastUpdated": "2026-02-10",
+    "intro": "Als je toegang hebt tot de SkillQuest app, kun je accountverwijdering inplannen via Instellingen > Account verwijderen. Je account en data worden dan na 7 dagen permanent verwijderd (je kunt binnen deze periode annuleren). Kun je niet inloggen in de app? Vraag verwijdering aan via e-mail.",
     "emailSubject": "SkillQuest accountverwijdering",
     "cta": {
-      "title": "Verwijdering aanvragen via e-mail",
+      "title": "Verwijdering aanvragen via e-mail (als je geen toegang hebt tot de app)",
       "description": "Stuur je verzoek naar {email}. We bevestigen je verzoek en verwerken het zo snel mogelijk.",
       "button": "E-mail sturen"
     },
@@ -399,7 +399,7 @@
       },
       "timing": {
         "title": "Hoe lang duurt het?",
-        "body": "We streven ernaar om account- en dataverwijderingsverzoeken binnen 30 dagen af te handelen.",
+        "body": "In-app verzoeken worden ingepland en na 7 dagen automatisch uitgevoerd. Verzoeken per e-mail handelen we meestal binnen 30 dagen af.",
         "note": "Als we bepaalde informatie moeten bewaren, leggen we uit wat we bewaren en waarom."
       },
       "contact": {
