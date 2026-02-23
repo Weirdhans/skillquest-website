@@ -26,7 +26,7 @@ export default function Footer() {
               <li><a href="#features" className="hover:text-white transition-colors">{t('sections.product.features')}</a></li>
               <li><a href="#pricing" className="hover:text-white transition-colors">{t('sections.product.pricing')}</a></li>
               <li><a href="#how-it-works" className="hover:text-white transition-colors">{t('sections.product.howItWorks')}</a></li>
-              <li><a href="/app" className="hover:text-white transition-colors">{t('sections.product.webApp')}</a></li>
+              <li><Link href="/app" className="hover:text-white transition-colors">{t('sections.product.webApp')}</Link></li>
             </ul>
           </div>
 
@@ -34,10 +34,10 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4">{t('sections.resources.title')}</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="/blog" className="hover:text-white transition-colors">{t('sections.resources.blog')}</a></li>
-              <li><a href="/handleiding" className="hover:text-white transition-colors">{t('sections.resources.guide')}</a></li>
-              <li><a href="/faq" className="hover:text-white transition-colors">{t('sections.resources.faq')}</a></li>
-              <li><a href="/contact" className="hover:text-white transition-colors">{t('sections.resources.contact')}</a></li>
+              <li><Link href="/blog" className="hover:text-white transition-colors">{t('sections.resources.blog')}</Link></li>
+              <li><Link href="/handleiding" className="hover:text-white transition-colors">{t('sections.resources.guide')}</Link></li>
+              <li><Link href="/faq" className="hover:text-white transition-colors">{t('sections.resources.faq')}</Link></li>
+              <li><Link href="/contact" className="hover:text-white transition-colors">{t('sections.resources.contact')}</Link></li>
             </ul>
           </div>
 

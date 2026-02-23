@@ -73,7 +73,6 @@ export default function EmailCaptureSection() {
         setStatus('success')
         setPendingEmail(null)
       } else {
-        const data = await response.json()
         if (response.status === 429) {
           // Rate limited - show message but keep pending_verification state
           setStatus('pending_verification')
@@ -228,7 +227,7 @@ export default function EmailCaptureSection() {
                       Je huidige email ({email}) werkt niet voor Android testing.
                     </p>
                     <p className="text-sm text-white/90 mt-2">
-                      💡 <strong>Tip:</strong> Gebruik je persoonlijke Gmail account, of kies alleen "iOS" als platform.
+                      💡 <strong>Tip:</strong> Gebruik je persoonlijke Gmail account, of kies alleen &quot;iOS&quot; als platform.
                     </p>
                   </div>
                 </div>

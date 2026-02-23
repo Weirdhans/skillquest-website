@@ -1,0 +1,20 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "J6LP2U5GZG.com.zenithreborn.skillquest",
+        "paths": [
+          "/invite/*",
+          "/nl/invite/*",
+          "/en/invite/*",
+          "/de/invite/*",
+          "/fr/invite/*",
+          "/es/invite/*",
+          "/it/invite/*"
+        ]
+      }
+    ]
+  }
+}
+
