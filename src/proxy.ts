@@ -8,7 +8,10 @@ export function proxy(request: NextRequest) {
   const {pathname} = request.nextUrl;
 
   // Keep invite links stable without locale prefixes for app/universal links.
-  if (pathname.startsWith('/invite/')) {
+  if (
+    pathname.startsWith('/invite/') ||
+    pathname.startsWith('/family/invite/')
+  ) {
     return NextResponse.next();
   }
 
