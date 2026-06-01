@@ -7,8 +7,10 @@ const intlMiddleware = createMiddleware(routing);
 export function proxy(request: NextRequest) {
   const {pathname} = request.nextUrl;
 
-  // Keep invite links stable without locale prefixes for app/universal links.
+  // Keep app callback links stable without locale prefixes for mobile links.
   if (
+    pathname === '/auth-callback' ||
+    pathname === '/auth-callback/' ||
     pathname.startsWith('/invite/') ||
     pathname.startsWith('/family/invite/')
   ) {

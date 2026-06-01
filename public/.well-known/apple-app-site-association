@@ -5,6 +5,9 @@
       {
         "appID": "J6LP2U5GZG.com.zenithreborn.skillquest",
         "paths": [
+          "/auth-callback",
+          "/auth-callback/*",
+          "/auth-callback.html",
           "/invite/*",
           "/nl/invite/*",
           "/en/invite/*",
@@ -17,4 +20,3 @@
     ]
   }
 }
-
