@@ -14,6 +14,18 @@ Set these values in Supabase Dashboard > Authentication > URL Configuration:
   - `io.skillquest.app://**` temporarily for older app builds
   - `com.skillquest.app://**` temporarily for legacy app builds
 
+## Supabase Password Policy
+
+Set these values in Supabase Dashboard > Authentication > Providers > Email:
+
+- Minimum password length: `12`
+- Required character classes: disabled / none
+- Leaked password protection: enabled if the project plan supports it
+
+Do not require symbols, uppercase letters, or digits. Password managers can
+generate strong long passwords that do not always include every character class,
+and forcing users to edit generated passwords makes the reset flow worse.
+
 ## Recovery Email Template
 
 Update Supabase Dashboard > Authentication > Email Templates > Reset password.

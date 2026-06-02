@@ -13,22 +13,6 @@ function getPasswordValidationError(password: string, confirmPassword: string) {
     return 'Gebruik minimaal 12 tekens.';
   }
 
-  if (!/[a-z]/.test(password)) {
-    return 'Gebruik minimaal 1 kleine letter.';
-  }
-
-  if (!/[A-Z]/.test(password)) {
-    return 'Gebruik minimaal 1 hoofdletter.';
-  }
-
-  if (!/[0-9]/.test(password)) {
-    return 'Gebruik minimaal 1 cijfer.';
-  }
-
-  if (!/[^A-Za-z0-9]/.test(password)) {
-    return 'Gebruik minimaal 1 speciaal teken.';
-  }
-
   if (password !== confirmPassword) {
     return 'De wachtwoorden komen niet overeen.';
   }
@@ -40,7 +24,7 @@ function getUserFriendlyError(message: string) {
   const lowerMessage = message.toLowerCase();
 
   if (lowerMessage.includes('weak') || lowerMessage.includes('password')) {
-    return 'Je wachtwoord voldoet nog niet aan de eisen.';
+    return 'Gebruik minimaal 12 tekens.';
   }
 
   if (lowerMessage.includes('session') || lowerMessage.includes('jwt')) {
@@ -173,6 +157,7 @@ export default function PasswordResetForm({
                     onChange={(event) => setPassword(event.target.value)}
                     className="input"
                     disabled={status === 'checking' || status === 'submitting'}
+                    minLength={minPasswordLength}
                     required
                   />
                 </label>
@@ -195,8 +180,8 @@ export default function PasswordResetForm({
                 </label>
 
                 <p className="text-sm text-gray-600">
-                  Minimaal 12 tekens, met een kleine letter, hoofdletter,
-                  cijfer en speciaal teken.
+                  Minimaal 12 tekens. Gebruik bij voorkeur een uniek wachtwoord
+                  uit je password manager.
                 </p>
 
                 {error != null && (
