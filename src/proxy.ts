@@ -11,6 +11,8 @@ export function proxy(request: NextRequest) {
   if (
     pathname === '/auth-callback' ||
     pathname === '/auth-callback/' ||
+    pathname === '/auth' ||
+    pathname.startsWith('/auth/') ||
     pathname.startsWith('/invite/') ||
     pathname.startsWith('/family/invite/')
   ) {
