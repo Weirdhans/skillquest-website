@@ -31,6 +31,13 @@ of controlled React password state. Chrome and Google Password Manager can fill
 generated passwords directly into the DOM, and a React re-render must not
 overwrite those values. Validation reads both values with `FormData` on submit.
 
+## Auth Flow Localization
+
+The `/auth/*` routes stay unprefixed so Supabase and mobile app links remain
+stable. These pages choose their copy from `?locale=nl|en|de|fr|es|it` when
+present, otherwise from the browser `Accept-Language` header, and finally fall
+back to Dutch.
+
 ## Recovery Email Template
 
 Update Supabase Dashboard > Authentication > Email Templates > Reset password.

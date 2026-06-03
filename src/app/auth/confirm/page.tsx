@@ -1,10 +1,13 @@
 import Link from 'next/link';
+import {headers} from 'next/headers';
+import {getAuthCopy, resolveAuthLocale, withAuthLocale} from '@/lib/authI18n';
 
 type ConfirmPageProps = {
   searchParams: Promise<{
     token_hash?: string;
     type?: string;
     next?: string;
+    locale?: string;
   }>;
 };
 
@@ -19,6 +22,11 @@ export default async function ConfirmPasswordResetPage({
   const tokenHash = params.token_hash ?? '';
   const type = params.type ?? '';
   const next = safeNext(params.next);
+  const requestHeaders = await headers();
+  const locale = resolveAuthLocale(
+    params.locale ?? requestHeaders.get('accept-language')
+  );
+  const copy = getAuthCopy(locale);
   const hasRecoveryToken = tokenHash.length > 0 && type === 'recovery';
 
   return (
@@ -26,37 +34,35 @@ export default async function ConfirmPasswordResetPage({
       <section className="mx-auto flex min-h-[80vh] w-full max-w-xl items-center">
         <div className="w-full rounded-lg border border-gray-200 bg-white p-8 shadow-lg">
           <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-phoenix text-lg font-bold text-white">
-            SQ
+            {copy.logoText}
           </div>
 
           {hasRecoveryToken ? (
             <>
-              <h1 className="heading-md mb-4">Wachtwoord opnieuw instellen</h1>
-              <p className="text-body mb-6">
-                Bevestig dat je je SkillQuest-wachtwoord wilt wijzigen. Daarna
-                kun je een nieuw wachtwoord kiezen.
-              </p>
+              <h1 className="heading-md mb-4">{copy.confirmTitle}</h1>
+              <p className="text-body mb-6">{copy.confirmIntro}</p>
 
               <form action="/api/auth/confirm" method="post" className="space-y-4">
                 <input type="hidden" name="token_hash" value={tokenHash} />
                 <input type="hidden" name="type" value={type} />
                 <input type="hidden" name="next" value={next} />
+                <input type="hidden" name="locale" value={locale} />
 
                 <button type="submit" className="btn btn-primary w-full">
-                  Doorgaan
+                  {copy.continueButton}
                 </button>
               </form>
             </>
           ) : (
             <>
-              <h1 className="heading-md mb-4">Resetlink verlopen</h1>
-              <p className="text-body mb-6">
-                Deze link mist gegevens of is niet meer geldig. Vraag een nieuwe
-                wachtwoordreset aan.
-              </p>
+              <h1 className="heading-md mb-4">{copy.expiredTitle}</h1>
+              <p className="text-body mb-6">{copy.confirmExpiredBody}</p>
 
-              <Link href="/auth/forgot-password" className="btn btn-primary w-full">
-                Nieuwe resetlink aanvragen
+              <Link
+                href={withAuthLocale('/auth/forgot-password', locale)}
+                className="btn btn-primary w-full"
+              >
+                {copy.requestNewLink}
               </Link>
             </>
           )}

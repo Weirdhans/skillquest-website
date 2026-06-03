@@ -1,5 +1,6 @@
 import type {EmailOtpType} from '@supabase/supabase-js';
 import {NextRequest, NextResponse} from 'next/server';
+import {resolveAuthLocale, withAuthLocale} from '@/lib/authI18n';
 import {createSupabaseServerClient} from '@/lib/supabase/server';
 
 function safeNext(next: FormDataEntryValue | null) {
@@ -11,6 +12,12 @@ export async function POST(request: NextRequest) {
   const tokenHash = formData.get('token_hash');
   const type = formData.get('type');
   const next = safeNext(formData.get('next'));
+  const localeEntry = formData.get('locale');
+  const locale = resolveAuthLocale(
+    typeof localeEntry === 'string'
+      ? localeEntry
+      : request.headers.get('accept-language')
+  );
   const origin = new URL(request.url).origin;
 
   if (
@@ -25,12 +32,12 @@ export async function POST(request: NextRequest) {
     });
 
     if (error == null) {
-      return NextResponse.redirect(new URL(next, origin), 303);
+      return NextResponse.redirect(new URL(withAuthLocale(next, locale), origin), 303);
     }
   }
 
   return NextResponse.redirect(
-    new URL('/auth/reset-password?error=expired', origin),
+    new URL(withAuthLocale('/auth/reset-password?error=expired', locale), origin),
     303
   );
 }

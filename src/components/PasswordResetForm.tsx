@@ -2,42 +2,51 @@
 
 import Link from 'next/link';
 import {FormEvent, useEffect, useState} from 'react';
+import {
+  AuthCopy,
+  AuthLocale,
+  getAuthCopy,
+  localizedSitePath,
+  withAuthLocale
+} from '@/lib/authI18n';
 import {createSupabaseBrowserClient} from '@/lib/supabase/client';
 
 type ResetStatus = 'checking' | 'ready' | 'submitting' | 'success' | 'expired';
 
 const minPasswordLength = 12;
-const passwordRequirementsText =
-  'Minimaal 12 tekens met een kleine letter, hoofdletter en cijfer.';
 
-function getPasswordValidationError(password: string, confirmPassword: string) {
+function getPasswordValidationError(
+  password: string,
+  confirmPassword: string,
+  copy: AuthCopy
+) {
   if (password.length < minPasswordLength) {
-    return passwordRequirementsText;
+    return copy.passwordRequirements;
   }
 
   if (!/[a-z]/.test(password) || !/[A-Z]/.test(password) || !/\d/.test(password)) {
-    return passwordRequirementsText;
+    return copy.passwordRequirements;
   }
 
   if (password !== confirmPassword) {
-    return 'De wachtwoorden komen niet overeen.';
+    return copy.mismatchError;
   }
 
   return null;
 }
 
-function getUserFriendlyError(message: string) {
+function getUserFriendlyError(message: string, copy: AuthCopy) {
   const lowerMessage = message.toLowerCase();
 
   if (lowerMessage.includes('weak') || lowerMessage.includes('password')) {
-    return passwordRequirementsText;
+    return copy.passwordRequirements;
   }
 
   if (lowerMessage.includes('session') || lowerMessage.includes('jwt')) {
-    return 'Je resetlink is verlopen. Vraag een nieuwe link aan.';
+    return copy.resetExpiredBody;
   }
 
-  return 'Je wachtwoord kon niet worden gewijzigd. Probeer het opnieuw.';
+  return copy.resetGenericError;
 }
 
 function VisibilityIcon({isVisible}: {isVisible: boolean}) {
@@ -82,15 +91,19 @@ function PasswordField({
   id,
   name,
   label,
-  disabled
+  disabled,
+  copy
 }: {
   id: string;
   name: string;
   label: string;
   disabled: boolean;
+  copy: AuthCopy;
 }) {
   const [isVisible, setIsVisible] = useState(false);
-  const toggleLabel = isVisible ? `${label} verbergen` : `${label} tonen`;
+  const toggleLabel = isVisible
+    ? `${label} ${copy.hidePasswordSuffix}`
+    : `${label} ${copy.showPasswordSuffix}`;
 
   return (
     <label className="block">
@@ -124,10 +137,13 @@ function PasswordField({
 }
 
 export default function PasswordResetForm({
-  initialExpired = false
+  initialExpired = false,
+  locale
 }: {
   initialExpired?: boolean;
+  locale: AuthLocale;
 }) {
+  const copy = getAuthCopy(locale);
   const [status, setStatus] = useState<ResetStatus>(
     initialExpired ? 'expired' : 'checking'
   );
@@ -177,7 +193,11 @@ export default function PasswordResetForm({
     const formData = new FormData(event.currentTarget);
     const password = String(formData.get('password') ?? '');
     const confirmPassword = String(formData.get('confirm-password') ?? '');
-    const validationError = getPasswordValidationError(password, confirmPassword);
+    const validationError = getPasswordValidationError(
+      password,
+      confirmPassword,
+      copy
+    );
 
     if (validationError != null) {
       setError(validationError);
@@ -191,7 +211,7 @@ export default function PasswordResetForm({
     const {error: updateError} = await supabase.auth.updateUser({password});
 
     if (updateError != null) {
-      setError(getUserFriendlyError(updateError.message));
+      setError(getUserFriendlyError(updateError.message, copy));
       setStatus('ready');
       return;
     }
@@ -206,37 +226,35 @@ export default function PasswordResetForm({
       <section className="mx-auto flex min-h-[80vh] w-full max-w-xl items-center">
         <div className="w-full rounded-lg border border-gray-200 bg-white p-8 shadow-lg">
           <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-phoenix text-lg font-bold text-white">
-            SQ
+            {copy.logoText}
           </div>
 
           {status === 'success' ? (
             <>
-              <h1 className="heading-md mb-4">Wachtwoord gewijzigd</h1>
-              <p className="text-body mb-6">
-                Je wachtwoord is bijgewerkt. We hebben je sessies uitgelogd;
-                log opnieuw in met je nieuwe wachtwoord.
-              </p>
-              <Link href="/nl/download" className="btn btn-primary w-full">
-                Open SkillQuest
+              <h1 className="heading-md mb-4">{copy.resetSuccessTitle}</h1>
+              <p className="text-body mb-6">{copy.resetSuccessBody}</p>
+              <Link
+                href={localizedSitePath(locale, '/download')}
+                className="btn btn-primary w-full"
+              >
+                {copy.openSkillQuest}
               </Link>
             </>
           ) : status === 'expired' ? (
             <>
-              <h1 className="heading-md mb-4">Resetlink verlopen</h1>
-              <p className="text-body mb-6">
-                Vraag een nieuwe wachtwoordreset aan en open de nieuwste link
-                uit je e-mail.
-              </p>
-              <Link href="/auth/forgot-password" className="btn btn-primary w-full">
-                Nieuwe resetlink aanvragen
+              <h1 className="heading-md mb-4">{copy.expiredTitle}</h1>
+              <p className="text-body mb-6">{copy.resetExpiredBody}</p>
+              <Link
+                href={withAuthLocale('/auth/forgot-password', locale)}
+                className="btn btn-primary w-full"
+              >
+                {copy.requestNewLink}
               </Link>
             </>
           ) : (
             <>
-              <h1 className="heading-md mb-4">Nieuw wachtwoord instellen</h1>
-              <p className="text-body mb-6">
-                Kies een sterk nieuw wachtwoord voor je SkillQuest-account.
-              </p>
+              <h1 className="heading-md mb-4">{copy.resetTitle}</h1>
+              <p className="text-body mb-6">{copy.resetIntro}</p>
 
               <form onSubmit={handleSubmit} className="space-y-5">
                 <input
@@ -253,20 +271,21 @@ export default function PasswordResetForm({
                 <PasswordField
                   id="password"
                   name="password"
-                  label="Nieuw wachtwoord"
+                  label={copy.newPasswordLabel}
                   disabled={status === 'checking' || status === 'submitting'}
+                  copy={copy}
                 />
 
                 <PasswordField
                   id="confirm-password"
                   name="confirm-password"
-                  label="Bevestig wachtwoord"
+                  label={copy.confirmPasswordLabel}
                   disabled={status === 'checking' || status === 'submitting'}
+                  copy={copy}
                 />
 
                 <p className="text-sm text-gray-600">
-                  {passwordRequirementsText} Gebruik bij voorkeur een uniek
-                  wachtwoord uit je password manager.
+                  {copy.passwordRequirements} {copy.passwordManagerHint}
                 </p>
 
                 {error != null && (
@@ -281,10 +300,10 @@ export default function PasswordResetForm({
                   disabled={status === 'checking' || status === 'submitting'}
                 >
                   {status === 'checking'
-                    ? 'Controleren...'
+                    ? copy.checkingButton
                     : status === 'submitting'
-                      ? 'Bijwerken...'
-                      : 'Wachtwoord wijzigen'}
+                      ? copy.updatingButton
+                      : copy.updatePasswordButton}
                 </button>
               </form>
             </>
