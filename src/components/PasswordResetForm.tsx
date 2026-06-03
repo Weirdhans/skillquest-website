@@ -8,13 +8,9 @@ type ResetStatus = 'checking' | 'ready' | 'submitting' | 'success' | 'expired';
 
 const minPasswordLength = 12;
 
-function getPasswordValidationError(password: string, confirmPassword: string) {
+function getPasswordValidationError(password: string) {
   if (password.length < minPasswordLength) {
     return 'Gebruik minimaal 12 tekens.';
-  }
-
-  if (password !== confirmPassword) {
-    return 'De wachtwoorden komen niet overeen.';
   }
 
   return null;
@@ -42,8 +38,6 @@ export default function PasswordResetForm({
   const [status, setStatus] = useState<ResetStatus>(
     initialExpired ? 'expired' : 'checking'
   );
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -80,10 +74,9 @@ export default function PasswordResetForm({
       return;
     }
 
-    const validationError = getPasswordValidationError(
-      password,
-      confirmPassword
-    );
+    const formData = new FormData(event.currentTarget);
+    const password = String(formData.get('password') ?? '');
+    const validationError = getPasswordValidationError(password);
 
     if (validationError != null) {
       setError(validationError);
@@ -103,8 +96,7 @@ export default function PasswordResetForm({
     }
 
     await supabase.auth.signOut({scope: 'global'});
-    setPassword('');
-    setConfirmPassword('');
+    event.currentTarget.reset();
     setStatus('success');
   }
 
@@ -151,30 +143,12 @@ export default function PasswordResetForm({
                     Nieuw wachtwoord
                   </span>
                   <input
+                    name="password"
                     type="password"
                     autoComplete="new-password"
-                    value={password}
-                    onChange={(event) => setPassword(event.target.value)}
                     className="input"
                     disabled={status === 'checking' || status === 'submitting'}
                     minLength={minPasswordLength}
-                    required
-                  />
-                </label>
-
-                <label className="block">
-                  <span className="mb-2 block font-semibold text-gray-800">
-                    Bevestig wachtwoord
-                  </span>
-                  <input
-                    type="password"
-                    autoComplete="new-password"
-                    value={confirmPassword}
-                    onChange={(event) =>
-                      setConfirmPassword(event.target.value)
-                    }
-                    className="input"
-                    disabled={status === 'checking' || status === 'submitting'}
                     required
                   />
                 </label>

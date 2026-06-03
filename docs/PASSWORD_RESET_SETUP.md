@@ -26,6 +26,11 @@ Do not require symbols, uppercase letters, or digits. Password managers can
 generate strong long passwords that do not always include every character class,
 and forcing users to edit generated passwords makes the reset flow worse.
 
+The reset page intentionally uses one uncontrolled `new-password` input instead
+of controlled React state and a second confirmation field. Chrome and Google
+Password Manager can fill generated passwords directly into the DOM, and a
+React re-render must not overwrite that value.
+
 ## Recovery Email Template
 
 Update Supabase Dashboard > Authentication > Email Templates > Reset password.
