@@ -8,9 +8,13 @@ type ResetStatus = 'checking' | 'ready' | 'submitting' | 'success' | 'expired';
 
 const minPasswordLength = 12;
 
-function getPasswordValidationError(password: string) {
+function getPasswordValidationError(password: string, confirmPassword: string) {
   if (password.length < minPasswordLength) {
     return 'Gebruik minimaal 12 tekens.';
+  }
+
+  if (password !== confirmPassword) {
+    return 'De wachtwoorden komen niet overeen.';
   }
 
   return null;
@@ -38,6 +42,7 @@ export default function PasswordResetForm({
   const [status, setStatus] = useState<ResetStatus>(
     initialExpired ? 'expired' : 'checking'
   );
+  const [email, setEmail] = useState('');
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -57,7 +62,13 @@ export default function PasswordResetForm({
         return;
       }
 
-      setStatus(session == null ? 'expired' : 'ready');
+      if (session == null) {
+        setStatus('expired');
+        return;
+      }
+
+      setEmail(session.user.email ?? '');
+      setStatus('ready');
     }
 
     checkSession();
@@ -76,7 +87,8 @@ export default function PasswordResetForm({
 
     const formData = new FormData(event.currentTarget);
     const password = String(formData.get('password') ?? '');
-    const validationError = getPasswordValidationError(password);
+    const confirmPassword = String(formData.get('confirm-password') ?? '');
+    const validationError = getPasswordValidationError(password, confirmPassword);
 
     if (validationError != null) {
       setError(validationError);
@@ -138,12 +150,40 @@ export default function PasswordResetForm({
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-5">
+                <input
+                  type="email"
+                  name="username"
+                  autoComplete="username"
+                  value={email}
+                  readOnly
+                  tabIndex={-1}
+                  aria-hidden="true"
+                  className="sr-only"
+                />
+
                 <label className="block">
                   <span className="mb-2 block font-semibold text-gray-800">
                     Nieuw wachtwoord
                   </span>
                   <input
+                    id="password"
                     name="password"
+                    type="password"
+                    autoComplete="new-password"
+                    className="input"
+                    disabled={status === 'checking' || status === 'submitting'}
+                    minLength={minPasswordLength}
+                    required
+                  />
+                </label>
+
+                <label className="block">
+                  <span className="mb-2 block font-semibold text-gray-800">
+                    Bevestig wachtwoord
+                  </span>
+                  <input
+                    id="confirm-password"
+                    name="confirm-password"
                     type="password"
                     autoComplete="new-password"
                     className="input"

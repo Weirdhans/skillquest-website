@@ -26,10 +26,10 @@ Do not require symbols, uppercase letters, or digits. Password managers can
 generate strong long passwords that do not always include every character class,
 and forcing users to edit generated passwords makes the reset flow worse.
 
-The reset page intentionally uses one uncontrolled `new-password` input instead
-of controlled React state and a second confirmation field. Chrome and Google
-Password Manager can fill generated passwords directly into the DOM, and a
-React re-render must not overwrite that value.
+The reset page intentionally uses two uncontrolled `new-password` inputs instead
+of controlled React password state. Chrome and Google Password Manager can fill
+generated passwords directly into the DOM, and a React re-render must not
+overwrite those values. Validation reads both values with `FormData` on submit.
 
 ## Recovery Email Template
 
