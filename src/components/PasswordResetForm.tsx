@@ -14,6 +14,30 @@ import {createSupabaseBrowserClient} from '@/lib/supabase/client';
 type ResetStatus = 'checking' | 'ready' | 'submitting' | 'success' | 'expired';
 
 const minPasswordLength = 12;
+const authRequestTimeoutMs = 15000;
+const signOutTimeoutMs = 5000;
+
+async function withTimeout<T>(
+  promise: Promise<T>,
+  timeoutMs: number,
+  message: string
+) {
+  let timeoutId: ReturnType<typeof setTimeout> | undefined;
+
+  const timeoutPromise = new Promise<never>((_, reject) => {
+    timeoutId = setTimeout(() => {
+      reject(new Error(message));
+    }, timeoutMs);
+  });
+
+  try {
+    return await Promise.race([promise, timeoutPromise]);
+  } finally {
+    if (timeoutId != null) {
+      clearTimeout(timeoutId);
+    }
+  }
+}
 
 function getPasswordValidationError(
   password: string,
@@ -38,7 +62,14 @@ function getPasswordValidationError(
 function getUserFriendlyError(message: string, copy: AuthCopy) {
   const lowerMessage = message.toLowerCase();
 
-  if (lowerMessage.includes('weak') || lowerMessage.includes('password')) {
+  if (
+    lowerMessage.includes('weak') ||
+    lowerMessage.includes('should be at least') ||
+    lowerMessage.includes('should contain') ||
+    lowerMessage.includes('characters') ||
+    lowerMessage.includes('length') ||
+    lowerMessage.includes('422')
+  ) {
     return copy.passwordRequirements;
   }
 
@@ -208,17 +239,52 @@ export default function PasswordResetForm({
     setStatus('submitting');
 
     const supabase = createSupabaseBrowserClient();
-    const {error: updateError} = await supabase.auth.updateUser({password});
 
-    if (updateError != null) {
-      setError(getUserFriendlyError(updateError.message, copy));
+    try {
+      const {error: updateError} = await withTimeout(
+        supabase.auth.updateUser({password}),
+        authRequestTimeoutMs,
+        'Request timed out'
+      );
+
+      if (updateError != null) {
+        setError(getUserFriendlyError(updateError.message, copy));
+        setStatus('ready');
+        return;
+      }
+
+      try {
+        await withTimeout(
+          supabase.auth.signOut({scope: 'global'}),
+          signOutTimeoutMs,
+          'Global sign out timed out'
+        );
+      } catch (signOutError) {
+        console.warn('Global sign out failed after password reset', signOutError);
+
+        try {
+          await withTimeout(
+            supabase.auth.signOut({scope: 'local'}),
+            signOutTimeoutMs,
+            'Local sign out timed out'
+          );
+        } catch (localSignOutError) {
+          console.warn(
+            'Local sign out fallback failed after password reset',
+            localSignOutError
+          );
+        }
+      }
+
+      event.currentTarget.reset();
+      setStatus('success');
+    } catch (submitError) {
+      const message =
+        submitError instanceof Error ? submitError.message : 'Unexpected error';
+
+      setError(getUserFriendlyError(message, copy));
       setStatus('ready');
-      return;
     }
-
-    await supabase.auth.signOut({scope: 'global'});
-    event.currentTarget.reset();
-    setStatus('success');
   }
 
   return (
