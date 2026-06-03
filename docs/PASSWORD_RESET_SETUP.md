@@ -19,12 +19,12 @@ Set these values in Supabase Dashboard > Authentication > URL Configuration:
 Set these values in Supabase Dashboard > Authentication > Providers > Email:
 
 - Minimum password length: `12`
-- Required character classes: disabled / none
+- Required character classes: lowercase, uppercase letters, and digits
 - Leaked password protection: enabled if the project plan supports it
 
-Do not require symbols, uppercase letters, or digits. Password managers can
-generate strong long passwords that do not always include every character class,
-and forcing users to edit generated passwords makes the reset flow worse.
+Do not require symbols unless the Supabase policy is changed. The reset page
+shows the same password requirements that Supabase enforces, so users do not
+need to discover the rules through a failed submit.
 
 The reset page intentionally uses two uncontrolled `new-password` inputs instead
 of controlled React password state. Chrome and Google Password Manager can fill
