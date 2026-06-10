@@ -1,10 +1,12 @@
 'use client'
 
-import {useTranslations} from 'next-intl'
+import NextLink from 'next/link'
+import {useLocale, useTranslations} from 'next-intl'
 import {Link} from '@/i18n/routing'
 
 export default function Footer() {
   const t = useTranslations('footer')
+  const locale = useLocale()
   const currentYear = new Date().getFullYear()
 
   return (
@@ -37,6 +39,7 @@ export default function Footer() {
               <li><Link href="/blog" className="hover:text-white transition-colors">{t('sections.resources.blog')}</Link></li>
               <li><Link href="/handleiding" className="hover:text-white transition-colors">{t('sections.resources.guide')}</Link></li>
               <li><Link href="/faq" className="hover:text-white transition-colors">{t('sections.resources.faq')}</Link></li>
+              <li><NextLink href={`/auth/forgot-password?locale=${locale}`} className="hover:text-white transition-colors">{t('sections.resources.changePassword')}</NextLink></li>
               <li><Link href="/support" className="hover:text-white transition-colors">{t('sections.resources.contact')}</Link></li>
             </ul>
           </div>
