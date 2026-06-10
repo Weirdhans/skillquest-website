@@ -221,7 +221,8 @@ export default function PasswordResetForm({
       return;
     }
 
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
     const password = String(formData.get('password') ?? '');
     const confirmPassword = String(formData.get('confirm-password') ?? '');
     const validationError = getPasswordValidationError(
@@ -276,7 +277,7 @@ export default function PasswordResetForm({
         }
       }
 
-      event.currentTarget.reset();
+      form.reset();
       setStatus('success');
     } catch (submitError) {
       const message =
