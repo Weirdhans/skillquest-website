@@ -12,6 +12,10 @@ import {
   screenshotPath,
   softwareApplicationJsonLd
 } from '@/lib/marketing';
+import {
+  getFeatureLandingOverview,
+  getFeatureLandingPages
+} from '@/lib/feature-pages';
 
 type PageProps = {
   locale: Locale;
@@ -161,6 +165,55 @@ function FamilySupportSection({locale, copy}: PageProps) {
   );
 }
 
+function FeatureLandingGrid({locale}: {locale: Locale}) {
+  const overview = getFeatureLandingOverview(locale);
+  const pages = getFeatureLandingPages(locale);
+
+  return (
+    <section className="py-16 md:py-20">
+      <div className="container-custom">
+        <SectionHeader
+          eyebrow={overview.eyebrow}
+          title={overview.title}
+          body={overview.body}
+        />
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {pages.map((page) => (
+            <Link
+              key={page.slug}
+              href={`/features/${page.slug}`}
+              className="group rounded-lg p-5 theme-card transition hover:-translate-y-1"
+            >
+              <div className="overflow-hidden rounded-lg border border-black/5 dark:border-white/10">
+                <Image
+                  src={screenshotPath(locale, page.screenshot)}
+                  alt={page.title}
+                  width={1080}
+                  height={1920}
+                  className="aspect-[9/16] w-full object-cover object-top transition duration-300 group-hover:scale-[1.02]"
+                  sizes="(max-width: 768px) 45vw, 220px"
+                />
+              </div>
+              <p className="mt-5 text-xs font-semibold uppercase tracking-wide theme-eyebrow">
+                {page.eyebrow}
+              </p>
+              <h3 className="mt-2 font-display text-xl font-bold theme-title">
+                {page.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed theme-copy">
+                {page.cardSummary}
+              </p>
+              <span className="mt-5 inline-flex text-sm font-semibold text-primary-700 dark:text-primary-200">
+                {overview.cta}
+              </span>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function HomeMarketingPage({locale, copy}: PageProps) {
   return (
     <>
@@ -213,7 +266,7 @@ export function HomeMarketingPage({locale, copy}: PageProps) {
               </div>
             </div>
           </div>
-        </section>
+      </section>
 
         <section className="py-16 md:py-20">
           <div className="container-custom">
@@ -261,6 +314,8 @@ export function HomeMarketingPage({locale, copy}: PageProps) {
             </div>
           </div>
         </section>
+
+        <FeatureLandingGrid locale={locale} />
 
         <section className="theme-highlight-band py-16 md:py-20">
           <div className="container-custom">
@@ -567,7 +622,9 @@ export function FeaturesMarketingPage({locale, copy}: PageProps) {
             ))}
           </div>
         </div>
-      </section>
+        </section>
+
+      <FeatureLandingGrid locale={locale} />
 
       <section className="theme-section-muted py-16 md:py-20">
         <div className="container-custom">

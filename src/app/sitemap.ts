@@ -1,8 +1,9 @@
 import type {MetadataRoute} from 'next';
 import {routing} from '@/i18n/routing';
 import {alternateLanguages, localizedPath} from '@/lib/marketing';
+import {featureLandingSlugs} from '@/lib/feature-pages';
 
-const routes = [
+const baseRoutes = [
   '',
   '/download',
   '/pricing',
@@ -11,6 +12,11 @@ const routes = [
   '/delete-account',
   '/support'
 ] as const;
+
+const routes = [
+  ...baseRoutes,
+  ...featureLandingSlugs.map((slug) => `/features/${slug}`)
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();

@@ -339,7 +339,7 @@ export const marketingCopy = {
     trust: {
       heading: 'Built for trust before scale',
       items: [
-        'No fake download counts or ratings on this site.',
+        'Store and release information is kept factual and current.',
         'App Store is live. Android is clearly marked as alpha/closed testing.',
         'Support is available at hello@skill-quest.app.',
         'Account deletion and privacy pages are linked from every locale.'
@@ -452,12 +452,12 @@ export const marketingCopy = {
           price: `${PRICING.familyMonthly}/month`,
           cadence: `${PRICING.familyYearly}/year`,
           description:
-            'For parents who want Premium plus family structure, child timer support, and shared goals.',
+            'For parents who want Premium plus family structure, child statistics, timer support, goals, and compliments.',
           features: [
             'Family management',
-            'View child timer activity',
+            'View child timer activity and stats',
             'Start timers for children',
-            'Shared goals and motivation',
+            'Shared goals and compliments',
             'Premium features for the household'
           ]
         }
@@ -645,7 +645,7 @@ export const marketingCopy = {
     trust: {
       heading: 'Gebouwd voor vertrouwen',
       items: [
-        'Geen neppe downloadcijfers of ratings op deze site.',
+        'Store- en release-informatie blijft feitelijk en actueel.',
         'App Store is live. Android staat duidelijk als alpha/closed testing.',
         'Support is bereikbaar via hello@skill-quest.app.',
         'Privacy en accountverwijdering zijn in elke taal gelinkt.'
@@ -758,12 +758,12 @@ export const marketingCopy = {
           price: `${PRICING.familyMonthly}/maand`,
           cadence: `${PRICING.familyYearly}/jaar`,
           description:
-            'Voor ouders die Premium willen combineren met gezinsstructuur, timerondersteuning voor kinderen en gezamenlijke doelen.',
+            'Voor ouders die Premium willen combineren met gezinsstructuur, kindstatistieken, timerondersteuning, doelen en complimenten.',
           features: [
             'Familiebeheer',
-            'Bekijk timeractiviteit van kinderen',
+            'Bekijk timeractiviteit en statistieken van kinderen',
             'Start timers voor kinderen',
-            'Gedeelde doelen en motivatie',
+            'Gedeelde doelen en complimenten',
             'Premium functies voor het huishouden'
           ]
         }
@@ -951,7 +951,7 @@ export const marketingCopy = {
     trust: {
       heading: 'Erst Vertrauen, dann Wachstum',
       items: [
-        'Keine erfundenen Downloadzahlen oder Bewertungen auf dieser Website.',
+        'Store- und Release-Informationen bleiben sachlich und aktuell.',
         'Der App Store ist live. Android ist klar als Alpha/Closed Testing gekennzeichnet.',
         'Support gibt es über hello@skill-quest.app.',
         'Datenschutz und Kontolöschung sind in jeder Sprache verlinkt.'
@@ -1064,12 +1064,12 @@ export const marketingCopy = {
           price: `${PRICING.familyMonthly}/Monat`,
           cadence: `${PRICING.familyYearly}/Jahr`,
           description:
-            'Für Eltern, die Premium mit Familienstruktur, Timerunterstützung für Kinder und gemeinsamen Zielen wollen.',
+            'Für Eltern, die Premium mit Familienstruktur, Kinderstatistiken, Timerunterstützung, Zielen und Komplimenten wollen.',
           features: [
             'Familienverwaltung',
-            'Timeraktivität von Kindern sehen',
+            'Timeraktivität und Statistiken von Kindern sehen',
             'Timer für Kinder starten',
-            'Gemeinsame Ziele und Motivation',
+            'Gemeinsame Ziele und Komplimente',
             'Premium-Funktionen für den Haushalt'
           ]
         }
@@ -1257,7 +1257,7 @@ export const marketingCopy = {
     trust: {
       heading: 'La confiance avant la croissance',
       items: [
-        'Aucun faux nombre de téléchargements ou avis sur ce site.',
+        'Les informations de store et de release restent factuelles et à jour.',
         'L’App Store est disponible. Android est indiqué comme alpha/closed testing.',
         'Le support est disponible via hello@skill-quest.app.',
         'La confidentialité et la suppression de compte sont liées dans chaque langue.'
@@ -1370,12 +1370,12 @@ export const marketingCopy = {
           price: `${PRICING.familyMonthly}/mois`,
           cadence: `${PRICING.familyYearly}/an`,
           description:
-            'Pour les parents qui veulent Premium avec structure familiale, timers pour enfants et objectifs partagés.',
+            'Pour les parents qui veulent Premium avec structure familiale, statistiques enfant, timers, objectifs et compliments.',
           features: [
             'Gestion familiale',
-            'Voir l’activité des timers enfants',
+            'Voir l’activité timer et les statistiques enfant',
             'Lancer des timers pour les enfants',
-            'Objectifs et motivation partagés',
+            'Objectifs et compliments partagés',
             'Fonctions Premium pour le foyer'
           ]
         }
@@ -1563,7 +1563,7 @@ export const marketingCopy = {
     trust: {
       heading: 'Confianza antes de crecer',
       items: [
-        'Sin cifras falsas de descargas o valoraciones en este sitio.',
+        'La información de tiendas y releases se mantiene factual y actualizada.',
         'App Store está disponible. Android se marca claramente como alpha/closed testing.',
         'Soporte disponible en hello@skill-quest.app.',
         'Privacidad y eliminación de cuenta están enlazadas en cada idioma.'
@@ -1676,12 +1676,12 @@ export const marketingCopy = {
           price: `${PRICING.familyMonthly}/mes`,
           cadence: `${PRICING.familyYearly}/año`,
           description:
-            'Para padres que quieren Premium con estructura familiar, apoyo de temporizadores para niños y metas compartidas.',
+            'Para padres que quieren Premium con estructura familiar, estadísticas infantiles, timers, metas y cumplidos.',
           features: [
             'Gestión familiar',
-            'Ver actividad de temporizadores de niños',
-            'Iniciar temporizadores para niños',
-            'Metas y motivación compartidas',
+            'Ver actividad de timers y estadísticas infantiles',
+            'Iniciar timers para niños',
+            'Metas y cumplidos compartidos',
             'Funciones Premium para el hogar'
           ]
         }
@@ -1869,7 +1869,7 @@ export const marketingCopy = {
     trust: {
       heading: 'Fiducia prima della crescita',
       items: [
-        'Nessun numero falso di download o valutazioni su questo sito.',
+        'Le informazioni su store e release restano fattuali e aggiornate.',
         'App Store è live. Android è indicato chiaramente come alpha/closed testing.',
         'Il supporto è disponibile a hello@skill-quest.app.',
         'Privacy ed eliminazione account sono linkate in ogni lingua.'
@@ -1982,12 +1982,12 @@ export const marketingCopy = {
           price: `${PRICING.familyMonthly}/mese`,
           cadence: `${PRICING.familyYearly}/anno`,
           description:
-            'Per genitori che vogliono Premium con struttura familiare, supporto timer per i figli e obiettivi condivisi.',
+            'Per genitori che vogliono Premium con struttura familiare, statistiche dei figli, timer, obiettivi e complimenti.',
           features: [
             'Gestione famiglia',
-            'Vedi l’attività timer dei figli',
+            'Vedi attività timer e statistiche dei figli',
             'Avvia timer per i figli',
-            'Obiettivi e motivazione condivisi',
+            'Obiettivi e complimenti condivisi',
             'Funzioni Premium per la famiglia'
           ]
         }
