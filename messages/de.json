@@ -10,7 +10,7 @@
       "socialFeatures": "Soziale Merkmale"
     },
     "cta": {
-      "primary": "Frühzeitigen Zugang erhalten ✨",
+      "primary": "SkillQuest laden",
       "secondary": "Merkmale erforschen"
     },
     "trust": {
@@ -27,7 +27,7 @@
       "dayStreak": "Tagesträhne"
     },
     "app": {
-      "screenshot": "[App-Screenshot]",
+      "screenshot": "SkillQuest app preview",
       "dashboard": "SkillQuest-Dashboard"
     }
   },
@@ -113,7 +113,7 @@
         "description": "Das Dashboard der Eltern zeigt die genaue Zeit pro Fähigkeit, die Verfolgung von Streifen und den Fortschritt im Laufe der Zeit. Datengesteuerte Elternschaft."
       }
     },
-    "screenshot": "[Screenshot: Schritt {step}]",
+    "screenshot": "SkillQuest step {step} preview",
     "cta": {
       "button": "Jetzt kostenlos starten →",
       "note": "Keine Kreditkarte erforderlich • 2-Minuten-Einrichtung"
@@ -192,7 +192,6 @@
         "price": "€3.99",
         "pricePer": "/Monat",
         "priceYearly": "€39.99/Jahr (17% off)",
-        "priceLifetime": "Lebenslang: €89.99",
         "features": {
           "deepWork": "Deep Work Timer",
           "techniques": "52-17 &amp; Durchlaufzeit",
@@ -219,10 +218,10 @@
   },
   "waitlist": {
     "badge": "📬 Bleiben Sie auf dem Laufenden",
-    "heading": "Seien Sie der Erste, der von der Einführung erfährt",
-    "subheading": "Melden Sie sich an, um über neue Funktionen, den offiziellen Start und Tipps zur Entwicklung von Fähigkeiten für die ganze Familie informiert zu werden.",
+    "heading": "SkillQuest Updates erhalten",
+    "subheading": "Erhalte Android Alpha-News, Produktupdates und praktische Tipps zur Skillentwicklung.",
     "benefits": {
-      "earlyAccess": "Frühzeitiger Zugang zum Start",
+      "earlyAccess": "Android Alpha Updates",
       "updates": "Aktualisierungen neuer Funktionen",
       "tips": "Tipps zur Entwicklung von Fertigkeiten"
     },

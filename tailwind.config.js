@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -8,18 +9,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // SkillQuest brand colors (Ocean Blue primary)
+        // SkillQuest brand colors (teal primary, coral CTA)
         primary: {
-          50: '#e6f1ff',
-          100: '#cce3ff',
-          200: '#99c7ff',
-          300: '#66abff',
-          400: '#338fff',
-          500: '#007AFF', // Main Ocean Blue
-          600: '#0062cc',
-          700: '#004999',
-          800: '#003166',
-          900: '#001833',
+          50: '#EAF8F5',
+          100: '#D2F0EA',
+          200: '#A8E0D7',
+          300: '#74CBC2',
+          400: '#3DAFA8',
+          500: '#168F89',
+          600: '#0F766E',
+          700: '#115E59',
+          800: '#134E4A',
+          900: '#0F302E',
         },
         // Duolingo-style playful colors
         accent: {

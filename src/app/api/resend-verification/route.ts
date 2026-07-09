@@ -56,7 +56,7 @@ export async function POST(request: NextRequest) {
 
     if (findError || !record) {
       return NextResponse.json(
-        { error: "Dit e-mailadres staat niet op de wachtlijst" },
+        { error: "Dit e-mailadres staat niet op de update-lijst" },
         { status: 404 }
       );
     }
@@ -112,7 +112,7 @@ export async function POST(request: NextRequest) {
     // Send verification email
     try {
       const resend = getResendClient();
-      const verifyUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://skill-quest.app'}/api/verify?token=${confirmationToken}`;
+      const verifyUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.skill-quest.app'}/api/verify?token=${confirmationToken}`;
 
       await resend.emails.send({
         from: "SkillQuest <hello@skill-quest.app>",
@@ -183,10 +183,10 @@ function getVerificationEmailTemplate(name: string | null, verifyUrl: string, pl
             <td style="padding-bottom: 32px; font-size: 16px; line-height: 1.6; color: #475569;">
               <p style="margin: 0 0 16px 0;">Hey${name ? ` ${name}` : ""}!</p>
               <p style="margin: 0 0 16px 0;">
-                Bijna klaar! Klik op de knop hieronder om je aanmelding voor de <strong style="color: #6366F1;">SkillQuest</strong> wachtlijst te bevestigen.
+                Bijna klaar! Klik op de knop hieronder om je aanmelding voor <strong style="color: #6366F1;">SkillQuest</strong> updates te bevestigen.
               </p>
               <p style="margin: 0 0 16px 0;">
-                Je krijgt updates ${platformText} zodra we lanceren.
+                Je krijgt relevante SkillQuest updates ${platformText}, waaronder Android alpha-informatie als je daarvoor kiest.
               </p>
             </td>
           </tr>
@@ -214,7 +214,7 @@ function getVerificationEmailTemplate(name: string | null, verifyUrl: string, pl
           <tr>
             <td align="center" style="padding-top: 24px; border-top: 1px solid rgba(99, 102, 241, 0.2);">
               <p style="margin: 0; font-size: 12px; color: #94A3B8; line-height: 1.6;">
-                SkillQuest | <a href="https://skill-quest.app" style="color: #6366F1; text-decoration: none;">skill-quest.app</a><br>
+                SkillQuest | <a href="https://www.skill-quest.app" style="color: #6366F1; text-decoration: none;">www.skill-quest.app</a><br>
                 Vragen? Stuur een e-mail naar <a href="mailto:hello@skill-quest.app" style="color: #6366F1; text-decoration: none;">hello@skill-quest.app</a>
               </p>
             </td>

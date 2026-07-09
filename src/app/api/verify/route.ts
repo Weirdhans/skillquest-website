@@ -104,7 +104,7 @@ export async function GET(request: NextRequest) {
       await resend.emails.send({
         from: "SkillQuest <hello@skill-quest.app>",
         to: record.email,
-        subject: "Welkom bij SkillQuest!",
+        subject: "Welkom bij SkillQuest updates!",
         html: getWelcomeEmailTemplate(record.name, record.platform_preference),
       });
     } catch (emailError) {
@@ -156,7 +156,7 @@ function getWelcomeEmailTemplate(name: string | null, platform: string | null): 
           <tr>
             <td align="center" style="padding-bottom: 24px;">
               <h1 style="margin: 0; font-size: 32px; font-weight: bold; background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #A855F7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-                Je staat op de lijst!
+                Je aanmelding is bevestigd
               </h1>
             </td>
           </tr>
@@ -166,12 +166,11 @@ function getWelcomeEmailTemplate(name: string | null, platform: string | null): 
             <td style="padding-bottom: 32px; font-size: 16px; line-height: 1.6; color: #475569;">
               <p style="margin: 0 0 16px 0;">Hey${name ? ` ${name}` : ""}!</p>
               <p style="margin: 0 0 16px 0;">
-                Bedankt voor het bevestigen van je aanmelding voor <strong style="color: #6366F1;">SkillQuest</strong>!
-                Je bent nu officieel onderdeel van onze community en hoort als eerste wanneer we lanceren ${platformText}.
+                Bedankt voor het bevestigen van je aanmelding voor <strong style="color: #6366F1;">SkillQuest</strong> updates ${platformText}.
               </p>
               <p style="margin: 0 0 16px 0;">
-                SkillQuest helpt je gezin om samen vaardigheden te ontwikkelen door gamification,
-                timer technieken en real-time inzichten. Perfect voor kinderen van 6-18 jaar.
+                SkillQuest helpt mensen en gezinnen vaardigheden op te bouwen met focus timers,
+                XP, levels, statistieken, vrienden, challenges en familie-tools.
               </p>
             </td>
           </tr>
@@ -180,14 +179,14 @@ function getWelcomeEmailTemplate(name: string | null, platform: string | null): 
           <tr>
             <td style="padding: 20px; background-color: rgba(99, 102, 241, 0.1); border-radius: 12px; border: 1px solid rgba(99, 102, 241, 0.2); margin-bottom: 24px;">
               <h2 style="margin: 0 0 16px 0; font-size: 18px; font-weight: bold; color: #6366F1;">
-                Wat maakt SkillQuest uniek?
+                Wat maakt SkillQuest nuttig?
               </h2>
               <ul style="margin: 0; padding-left: 20px; color: #475569; line-height: 1.8;">
-                <li>Familie modus met parent-child accounts</li>
-                <li>Gamification die echt werkt (XP, levels, streaks)</li>
-                <li>7 wetenschappelijk bewezen timer technieken</li>
-                <li>Real-time ouder dashboard</li>
-                <li>Auto-freeze streaks op drukke dagen</li>
+                <li>Focus timers voor je vaardigheden</li>
+                <li>XP, levels en streaks</li>
+                <li>Statistieken per skill</li>
+                <li>Vrienden, challenges en rankings</li>
+                <li>Familie-tools voor ouders en kinderen</li>
               </ul>
             </td>
           </tr>
@@ -199,9 +198,9 @@ function getWelcomeEmailTemplate(name: string | null, platform: string | null): 
                 Wat kun je verwachten?
               </h2>
               <ul style="margin: 0; padding-left: 20px; color: #475569; line-height: 1.8;">
-                <li>Updates over nieuwe features en de launch</li>
-                <li>Exclusieve early access voor de eerste supporters</li>
-                <li>Tips over skill development voor het hele gezin</li>
+                <li>Updates over nieuwe functies</li>
+                <li>Informatie over Android alpha en Google Play closed testing</li>
+                <li>Tips over skill development voor jezelf en je gezin</li>
               </ul>
             </td>
           </tr>
@@ -209,8 +208,8 @@ function getWelcomeEmailTemplate(name: string | null, platform: string | null): 
           <!-- CTA Button -->
           <tr>
             <td align="center" style="padding: 32px 0 24px 0;">
-              <a href="https://skill-quest.app" style="display: inline-block; padding: 16px 32px; background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #A855F7 100%); color: #FFFFFF; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 16px; box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.3);">
-                Bezoek skill-quest.app
+              <a href="https://www.skill-quest.app" style="display: inline-block; padding: 16px 32px; background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #A855F7 100%); color: #FFFFFF; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 16px; box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.3);">
+                Bezoek www.skill-quest.app
               </a>
             </td>
           </tr>
@@ -219,11 +218,11 @@ function getWelcomeEmailTemplate(name: string | null, platform: string | null): 
           <tr>
             <td align="center" style="padding-top: 32px; border-top: 1px solid rgba(99, 102, 241, 0.2);">
               <p style="margin: 0; font-size: 12px; color: #94A3B8; line-height: 1.6;">
-                SkillQuest | <a href="https://skill-quest.app" style="color: #6366F1; text-decoration: none;">skill-quest.app</a><br>
+                SkillQuest | <a href="https://www.skill-quest.app" style="color: #6366F1; text-decoration: none;">www.skill-quest.app</a><br>
                 Vragen? Stuur een e-mail naar <a href="mailto:hello@skill-quest.app" style="color: #6366F1; text-decoration: none;">hello@skill-quest.app</a>
               </p>
               <p style="margin: 16px 0 0 0; font-size: 11px; color: #CBD5E1;">
-                Je ontvangt deze e-mail omdat je je aanmelding hebt bevestigd voor de SkillQuest wachtlijst.<br>
+                Je ontvangt deze e-mail omdat je je aanmelding hebt bevestigd voor SkillQuest updates.<br>
                 We respecteren je privacy en sturen alleen relevante updates.
               </p>
             </td>

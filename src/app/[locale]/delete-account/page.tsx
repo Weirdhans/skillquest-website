@@ -6,7 +6,7 @@ const locales = routing.locales;
 
 // Keep these in sync with your public-facing contact details.
 const SUPPORT_EMAIL = 'hello@skill-quest.app';
-const WEBSITE_URL = 'https://skill-quest.app';
+const WEBSITE_URL = 'https://www.skill-quest.app';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({locale}));
@@ -175,7 +175,7 @@ export default async function DeleteAccountPage({
                     href={WEBSITE_URL}
                     className="text-primary-600 hover:text-primary-700 underline"
                   >
-                    skill-quest.app
+                    www.skill-quest.app
                   </a>
                 </p>
               </div>
@@ -188,4 +188,3 @@ export default async function DeleteAccountPage({
     </>
   );
 }
-

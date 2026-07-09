@@ -132,7 +132,7 @@ export default async function PrivacyPage({
               <div className="mt-12 pt-8 border-t-2 border-gray-200">
                 <p className="text-center text-sm text-gray-600">
                   <strong>Contact:</strong> hello@skill-quest.app<br />
-                  <strong>Website:</strong> <a href="https://skill-quest.app" className="text-primary-600 hover:text-primary-700 underline">skill-quest.app</a>
+                  <strong>Website:</strong> <a href="https://www.skill-quest.app" className="text-primary-600 hover:text-primary-700 underline">www.skill-quest.app</a>
                 </p>
               </div>
             </article>

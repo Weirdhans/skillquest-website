@@ -2,7 +2,7 @@ import Footer from '@/components/Footer';
 import {Link, routing} from '@/i18n/routing';
 
 const SUPPORT_EMAIL = 'hello@skill-quest.app';
-const WEBSITE_URL = 'https://skill-quest.app';
+const WEBSITE_URL = 'https://www.skill-quest.app';
 
 const locales = routing.locales;
 
@@ -434,7 +434,7 @@ export default async function SupportPage({
                       {copy.deleteAccountLink}
                     </Link>
                     <a href={WEBSITE_URL} className="text-primary-700 hover:text-primary-900 underline">
-                      skill-quest.app
+                      www.skill-quest.app
                     </a>
                   </div>
                 </section>

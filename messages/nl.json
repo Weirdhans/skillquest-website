@@ -10,7 +10,7 @@
       "socialFeatures": "Sociale functies"
     },
     "cta": {
-      "primary": "Vroege toegang krijgen ✨",
+      "primary": "Download SkillQuest",
       "secondary": "Verken functies"
     },
     "trust": {
@@ -27,7 +27,7 @@
       "dayStreak": "Dag Streak"
     },
     "app": {
-      "screenshot": "[Schermafbeelding]",
+      "screenshot": "SkillQuest app preview",
       "dashboard": "SkillQuest-dashboard"
     }
   },
@@ -113,7 +113,7 @@
         "description": "Het ouderdashboard toont de exacte tijd per vaardigheid, het bijhouden van strepen en de voortgang in de loop van de tijd. Gegevensgestuurd ouderschap."
       }
     },
-    "screenshot": "[Schermafbeelding: Stap {step}]",
+    "screenshot": "SkillQuest step {step} preview",
     "cta": {
       "button": "Nu gratis beginnen →",
       "note": "Geen creditcard nodig • 2 minuten installeren"
@@ -192,7 +192,6 @@
         "price": "€3.99",
         "pricePer": "/maand",
         "priceYearly": "€39.99/jaar (17% off)",
-        "priceLifetime": "Levenslang: €89.99",
         "features": {
           "deepWork": "Diepe werktimer",
           "techniques": "52-17 &amp; Stroomtijd",
@@ -219,10 +218,10 @@
   },
   "waitlist": {
     "badge": "📬 Blijf op de hoogte",
-    "heading": "Hoor als eerste over de lancering",
-    "subheading": "Meld je aan voor updates over nieuwe functies, de officiële lancering en tips over het ontwikkelen van vaardigheden voor het hele gezin.",
+    "heading": "Ontvang SkillQuest updates",
+    "subheading": "Meld je aan voor Android alpha-nieuws, productupdates en praktische tips over skillontwikkeling.",
     "benefits": {
-      "earlyAccess": "Vroege toegang bij lancering",
+      "earlyAccess": "Android alpha updates",
       "updates": "Nieuwe functie-updates",
       "tips": "Tips voor het ontwikkelen van vaardigheden"
     },
@@ -298,11 +297,11 @@
       },
       "welkeGegevensVerzamelenWe": {
         "title": "Welke Gegevens Verzamelen We?",
-        "content": "<p>### 3.1 Website Analytics</p>\n<p>Wij gebruiken <strong>Vercel Analytics</strong> om anonieme gebruiksgegevens te verzamelen, waaronder:</p>\n<ul>\n<li>Paginaweergaven en navigatiepatronen</li>\n<li>Browsertype en versie</li>\n<li>Apparaatinformatie (desktop/mobiel/tablet)</li>\n<li>Geografische locatie (alleen land/regio niveau)</li>\n<li>Verwijzingsbronnen</li>\n</ul>\n<p>Vercel Analytics werkt zonder cookies en trackt geen individuele gebruikers.</p>\n<p>### 3.2 Wachtlijst voor Android Beta</p>\n<p>Als je je aanmeldt voor vroege toegang tot onze Android beta, verzamelen we:</p>\n<ul>\n<li>E-mailadres (verplicht)</li>\n<li>Naam (optioneel)</li>\n<li>Platformvoorkeur (Android)</li>\n</ul>\n<p>Deze gegevens worden veilig opgeslagen in <strong>Supabase</strong> (EU-servers) en gebruikt om je op de hoogte te houden over de app-lancering.</p>\n<p>### 3.3 Contactformulieren</p>\n<p>Als je contact met ons opneemt via een contactformulier, verzamelen we:</p>\n<ul>\n<li>Jouw naam</li>\n<li>E-mailadres</li>\n<li>Onderwerp en berichtinhoud</li>\n</ul>\n<p>Deze informatie wordt via <strong>Resend</strong> naar hello@skill-quest.app gestuurd voor klantenondersteuning.</p>\n<p>### 3.4 SkillQuest Mobiele App (Toekomstig)</p>\n<p>Wanneer de SkillQuest app lanceert, zullen we aanvullende gegevens verzamelen:</p>\n<ul>\n<li><strong>Accountgegevens:</strong> Gebruikersnaam, e-mail, profielfoto (optioneel)</li>\n<li><strong>Skill Tracking Data:</strong> Vaardigheden, timer logs, XP, levels, streaks</li>\n<li><strong>Family Mode Data:</strong> Ouder-kind accountrelaties, toestemmingsinstellingen</li>\n<li><strong>Apparaatgegevens:</strong> Apparaat-ID voor pushnotificaties, app versie</li>\n<li><strong>Analytics:</strong> In-app gebruikspatronen (anoniem geaggregeerd)</li>\n</ul>\n<p>Alle app-gegevens worden lokaal op jouw apparaat opgeslagen en optioneel gesynchroniseerd naar onze beveiligde servers voor backup en cross-device sync.</p>"
+        "content": "<p>### 3.1 Website Analytics</p>\n<p>Wij gebruiken <strong>Vercel Analytics</strong> om anonieme gebruiksgegevens te verzamelen, waaronder:</p>\n<ul>\n<li>Paginaweergaven en navigatiepatronen</li>\n<li>Browsertype en versie</li>\n<li>Apparaatinformatie (desktop/mobiel/tablet)</li>\n<li>Geografische locatie (alleen land/regio niveau)</li>\n<li>Verwijzingsbronnen</li>\n</ul>\n<p>Vercel Analytics werkt zonder cookies en trackt geen individuele gebruikers.</p>\n<p>### 3.2 Android Alpha Updates</p>\n<p>Als je je aanmeldt voor SkillQuest updates of Android alpha-informatie, verzamelen we:</p>\n<ul>\n<li>E-mailadres (verplicht)</li>\n<li>Naam (optioneel)</li>\n<li>Platformvoorkeur (Android)</li>\n</ul>\n<p>Deze gegevens worden veilig opgeslagen in <strong>Supabase</strong> (EU-servers) en gebruikt om je op de hoogte te houden over SkillQuest updates.</p>\n<p>### 3.3 Contactformulieren</p>\n<p>Als je contact met ons opneemt via een contactformulier, verzamelen we:</p>\n<ul>\n<li>Jouw naam</li>\n<li>E-mailadres</li>\n<li>Onderwerp en berichtinhoud</li>\n</ul>\n<p>Deze informatie wordt via <strong>Resend</strong> naar hello@skill-quest.app gestuurd voor klantenondersteuning.</p>\n<p>### 3.4 SkillQuest Mobiele App</p>\n<p>Wanneer je de SkillQuest app gebruikt, verzamelen we appgegevens zoals:</p>\n<ul>\n<li><strong>Accountgegevens:</strong> Gebruikersnaam, e-mail, profielfoto (optioneel)</li>\n<li><strong>Skill Tracking Data:</strong> Vaardigheden, timer logs, XP, levels, streaks</li>\n<li><strong>Family Mode Data:</strong> Ouder-kind accountrelaties, toestemmingsinstellingen</li>\n<li><strong>Apparaatgegevens:</strong> Apparaat-ID voor pushnotificaties, app versie</li>\n<li><strong>Analytics:</strong> In-app gebruikspatronen (anoniem geaggregeerd)</li>\n</ul>\n<p>Alle app-gegevens worden lokaal op jouw apparaat opgeslagen en optioneel gesynchroniseerd naar onze beveiligde servers voor backup en cross-device sync.</p>"
       },
       "hoeGebruikenWeJouwGegevens": {
         "title": "Hoe Gebruiken We Jouw Gegevens?",
-        "content": "<p>Wij gebruiken jouw gegevens voor:</p>\n<ul>\n<li><strong>Gebruikerservaring Verbeteren:</strong> Analytics helpen ons te begrijpen hoe bezoekers onze website gebruiken</li>\n<li><strong>Product Lancering:</strong> Wachtlijst e-mails voor notificaties over beta releases en officiële lanceringen</li>\n<li><strong>Klantenondersteuning:</strong> Reageren op vragen en ondersteuningsverzoeken</li>\n<li><strong>App Functionaliteit:</strong> Skill tracking, progress synchronisatie, family mode features</li>\n<li><strong>Wettelijke Naleving:</strong> Voldoen aan juridische verplichtingen</li>\n</ul>\n<p>Wij verkopen of verhuren nooit jouw persoonlijke gegevens aan derden. Wij tonen geen advertenties en gebruiken geen tracking pixels.</p>"
+        "content": "<p>Wij gebruiken jouw gegevens voor:</p>\n<ul>\n<li><strong>Gebruikerservaring Verbeteren:</strong> Analytics helpen ons te begrijpen hoe bezoekers onze website gebruiken</li>\n<li><strong>Productupdates:</strong> E-mails met updates over Android testing en productnieuws</li>\n<li><strong>Klantenondersteuning:</strong> Reageren op vragen en ondersteuningsverzoeken</li>\n<li><strong>App Functionaliteit:</strong> Skill tracking, progress synchronisatie, family mode features</li>\n<li><strong>Wettelijke Naleving:</strong> Voldoen aan juridische verplichtingen</li>\n</ul>\n<p>Wij verkopen of verhuren nooit jouw persoonlijke gegevens aan derden. Wij tonen geen advertenties en gebruiken geen tracking pixels.</p>"
       },
       "juridischeGrondslagVoorVerwerking": {
         "title": "Juridische Grondslag voor Verwerking",
@@ -314,7 +313,7 @@
       },
       "derdePartijDiensten": {
         "title": "Derde Partij Diensten",
-        "content": "<p>We gebruiken de volgende GDPR-conforme diensten:</p>\n<p>| Dienst | Doel | Locatie | GDPR Status |</p>\n<p>|--------|------|---------|-------------|</p>\n<p>| <strong>Vercel</strong> | Website hosting en analytics | EU/US | Standard Contractual Clauses (SCC) |</p>\n<p>| <strong>Supabase</strong> | Database voor wachtlijst en app data | EU servers | GDPR-compliant |</p>\n<p>| <strong>Resend</strong> | E-mail delivery voor contactformulieren | US | GDPR-compliant, SCC |</p>\n<p>| <strong>Google Play Services</strong> | Android app distributie (toekomstig) | US | GDPR-compliant |</p>\n<p>Al deze diensten hebben passende waarborgen voor gegevensoverdracht naar landen buiten de EU.</p>"
+        "content": "<p>We gebruiken de volgende GDPR-conforme diensten:</p>\n<p>| Dienst | Doel | Locatie | GDPR Status |</p>\n<p>|--------|------|---------|-------------|</p>\n<p>| <strong>Vercel</strong> | Website hosting en analytics | EU/US | Standard Contractual Clauses (SCC) |</p>\n<p>| <strong>Supabase</strong> | Database voor update- en appdata | EU servers | GDPR-compliant |</p>\n<p>| <strong>Resend</strong> | E-mail delivery voor contactformulieren | US | GDPR-compliant, SCC |</p>\n<p>| <strong>Google Play Services</strong> | Android closed testing en app-distributie | US | GDPR-compliant |</p>\n<p>Al deze diensten hebben passende waarborgen voor gegevensoverdracht naar landen buiten de EU.</p>"
       },
       "cookiesEnTracking": {
         "title": "Cookies en Tracking",
@@ -326,7 +325,7 @@
       },
       "gegevensretentie": {
         "title": "Gegevensretentie",
-        "content": "<p>We bewaren jouw gegevens alleen zo lang als noodzakelijk:</p>\n<ul>\n<li><strong>Website Analytics:</strong> Onbepaalde tijd (geanonimiseerd, geen persoonlijke identificatie)</li>\n<li><strong>Wachtlijst E-mails:</strong> Tot app lancering of tot je je uitschrijft</li>\n<li><strong>Contactformulier Data:</strong> Maximaal 2 jaar voor klantenondersteuningsdoeleinden</li>\n<li><strong>App Account Data:</strong> Totdat je je account verwijdert</li>\n</ul>\n<p>Je kunt op elk moment verwijdering van jouw gegevens aanvragen.</p>"
+        "content": "<p>We bewaren jouw gegevens alleen zo lang als noodzakelijk:</p>\n<ul>\n<li><strong>Website Analytics:</strong> Onbepaalde tijd (geanonimiseerd, geen persoonlijke identificatie)</li>\n<li><strong>Update-e-mails:</strong> Tot je je uitschrijft</li>\n<li><strong>Contactformulier Data:</strong> Maximaal 2 jaar voor klantenondersteuningsdoeleinden</li>\n<li><strong>App Account Data:</strong> Totdat je je account verwijdert</li>\n</ul>\n<p>Je kunt op elk moment verwijdering van jouw gegevens aanvragen.</p>"
       },
       "kinderenEnPrivacy": {
         "title": "Kinderen en Privacy",
@@ -338,7 +337,7 @@
       },
       "wijzigingenInDitPrivacybeleid": {
         "title": "Wijzigingen in Dit Privacybeleid",
-        "content": "<p>We kunnen dit privacybeleid van tijd tot tijd bijwerken. Wanneer we dit doen:</p>\n<ul>\n<li>Plaatsen we de bijgewerkte datum bovenaan dit document</li>\n<li>Voor <strong>materiële wijzigingen</strong> sturen we aanvullende notificatie via:</li>\n<li>E-mail (voor wachtlijst leden en app gebruikers)</li>\n<li>Prominente banner op onze website</li>\n<li>In-app notificatie (voor app gebruikers)</li>\n</ul>\n<p>We moedigen je aan om dit beleid periodiek te herzien om op de hoogte te blijven.</p>"
+        "content": "<p>We kunnen dit privacybeleid van tijd tot tijd bijwerken. Wanneer we dit doen:</p>\n<ul>\n<li>Plaatsen we de bijgewerkte datum bovenaan dit document</li>\n<li>Voor <strong>materiële wijzigingen</strong> sturen we aanvullende notificatie via:</li>\n<li>E-mail (voor e-mailabonnees en app gebruikers)</li>\n<li>Prominente banner op onze website</li>\n<li>In-app notificatie (voor app gebruikers)</li>\n</ul>\n<p>We moedigen je aan om dit beleid periodiek te herzien om op de hoogte te blijven.</p>"
       },
       "contactOpnemen": {
         "title": "Contact Opnemen",

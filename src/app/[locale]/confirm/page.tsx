@@ -50,7 +50,7 @@ function ConfirmContent() {
         </h1>
         <p className="text-xl text-gray-600 mb-8 max-w-md mx-auto">
           Bedankt voor het bevestigen van je e-mailadres. We houden je op de hoogte
-          van de SkillQuest launch!
+          van SkillQuest updates.
         </p>
         <Link
           href="/"
@@ -80,7 +80,7 @@ function ConfirmContent() {
         break
       case 'already_verified':
         title = 'Al geverifieerd'
-        message = 'Je e-mailadres is al bevestigd. Je staat op de wachtlijst!'
+        message = 'Je e-mailadres is al bevestigd. Je staat op de update-lijst.'
         break
       case 'missing':
         title = 'Geen token gevonden'

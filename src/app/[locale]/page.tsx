@@ -1,28 +1,47 @@
-import HeroSection from '@/components/HeroSection'
-import PainPointsSection from '@/components/PainPointsSection'
-import HowItWorksSection from '@/components/HowItWorksSection'
-import FeaturesSection from '@/components/FeaturesSection'
-import PricingSection from '@/components/PricingSection'
-import EmailCaptureSection from '@/components/EmailCaptureSection'
-import Footer from '@/components/Footer'
+import type {Metadata} from 'next';
+import Footer from '@/components/Footer';
+import {HomeMarketingPage} from '@/components/MarketingPages';
+import {
+  createPageMetadata,
+  getMarketingCopy,
+  isLocale,
+  type Locale
+} from '@/lib/marketing';
 import {routing} from '@/i18n/routing';
 
-const locales = routing.locales;
-
 export function generateStaticParams() {
-  return locales.map((locale) => ({locale}))
+  return routing.locales.map((locale) => ({locale}));
 }
 
-export default function Home() {
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{locale: string}>;
+}): Promise<Metadata> {
+  const {locale} = await params;
+  const safeLocale: Locale = isLocale(locale) ? locale : routing.defaultLocale;
+  const copy = getMarketingCopy(safeLocale);
+
+  return createPageMetadata({
+    locale: safeLocale,
+    title: copy.meta.title,
+    description: copy.meta.description
+  });
+}
+
+export default async function Home({
+  params
+}: {
+  params: Promise<{locale: string}>;
+}) {
+  const {locale} = await params;
+  const safeLocale: Locale = isLocale(locale) ? locale : routing.defaultLocale;
+  const copy = getMarketingCopy(safeLocale);
+
   return (
-    <main className="min-h-screen">
-      <HeroSection />
-      <PainPointsSection />
-      <HowItWorksSection />
-      <FeaturesSection />
-      <PricingSection />
-      <EmailCaptureSection />
+    <>
+      <HomeMarketingPage locale={safeLocale} copy={copy} />
       <Footer />
-    </main>
-  )
+    </>
+  );
 }

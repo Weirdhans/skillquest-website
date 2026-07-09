@@ -10,7 +10,7 @@
       "socialFeatures": "Características sociales"
     },
     "cta": {
-      "primary": "Acceso anticipado ✨",
+      "primary": "Descargar SkillQuest",
       "secondary": "Explorar funciones"
     },
     "trust": {
@@ -27,7 +27,7 @@
       "dayStreak": "Racha diurna"
     },
     "app": {
-      "screenshot": "[Captura de pantalla de la aplicación]",
+      "screenshot": "SkillQuest app preview",
       "dashboard": "Panel SkillQuest"
     }
   },
@@ -113,7 +113,7 @@
         "description": "El panel de control para padres muestra el tiempo exacto por habilidad, el seguimiento de las rachas y el progreso a lo largo del tiempo. Crianza basada en datos."
       }
     },
-    "screenshot": "[Captura de pantalla: Paso {step}]",
+    "screenshot": "SkillQuest step {step} preview",
     "cta": {
       "button": "Empezar gratis →",
       "note": "No se necesita tarjeta de crédito • 2-minute setup"
@@ -192,7 +192,6 @@
         "price": "€3.99",
         "pricePer": "/mes",
         "priceYearly": "€39.99/año (17% off)",
-        "priceLifetime": "De por vida: €89.99",
         "features": {
           "deepWork": "Temporizador de trabajo en profundidad",
           "techniques": "52-17 y Flowtime",
@@ -219,10 +218,10 @@
   },
   "waitlist": {
     "badge": "📬 Mantente al día",
-    "heading": "Sea el primero en enterarse del lanzamiento",
-    "subheading": "Inscríbete para recibir información actualizada sobre las nuevas funciones, el lanzamiento oficial y consejos sobre el desarrollo de habilidades para toda la familia.",
+    "heading": "Recibe novedades de SkillQuest",
+    "subheading": "Regístrate para noticias de Android alpha, actualizaciones de producto y consejos prácticos para desarrollar habilidades.",
     "benefits": {
-      "earlyAccess": "Acceso anticipado al lanzamiento",
+      "earlyAccess": "Actualizaciones de Android alpha",
       "updates": "Novedades",
       "tips": "Consejos para desarrollar habilidades"
     },
@@ -298,11 +297,11 @@
       },
       "quDatosRecopilamos": {
         "title": "¿Qué Datos Recopilamos?",
-        "content": "<p>### 3.1 Analítica del Sitio Web</p>\n<p>Utilizamos <strong>Vercel Analytics</strong> para recopilar datos de uso anónimos, incluyendo:</p>\n<ul>\n<li>Vistas de páginas y patrones de navegación</li>\n<li>Tipo y versión del navegador</li>\n<li>Información del dispositivo (escritorio/móvil/tableta)</li>\n<li>Ubicación geográfica (solo nivel de país/región)</li>\n<li>Fuentes de referencia</li>\n</ul>\n<p>Vercel Analytics funciona sin cookies y no rastrea usuarios individuales.</p>\n<p>### 3.2 Lista de Espera para la Beta de Android</p>\n<p>Si te registras para acceso anticipado a nuestra beta de Android, recopilamos:</p>\n<ul>\n<li>Dirección de correo electrónico (obligatorio)</li>\n<li>Nombre (opcional)</li>\n<li>Preferencia de plataforma (Android)</li>\n</ul>\n<p>Estos datos se almacenan de forma segura en <strong>Supabase</strong> (servidores de la UE) y se utilizan para mantenerte informado sobre el lanzamiento de la aplicación.</p>\n<p>### 3.3 Formularios de Contacto</p>\n<p>Si nos contactas a través de un formulario de contacto, recopilamos:</p>\n<ul>\n<li>Tu nombre</li>\n<li>Dirección de correo electrónico</li>\n<li>Asunto y contenido del mensaje</li>\n</ul>\n<p>Esta información se envía a través de <strong>Resend</strong> a hello@skill-quest.app para atención al cliente.</p>\n<p>### 3.4 Aplicación Móvil SkillQuest (Futura)</p>\n<p>Cuando se lance la aplicación SkillQuest, recopilaremos datos adicionales:</p>\n<ul>\n<li><strong>Datos de cuenta:</strong> Nombre de usuario, correo electrónico, foto de perfil (opcional)</li>\n<li><strong>Datos de seguimiento de habilidades:</strong> Habilidades, registros de temporizador, XP, niveles, rachas</li>\n<li><strong>Datos del modo familiar:</strong> Relaciones de cuenta padre-hijo, configuración de consentimiento</li>\n<li><strong>Datos del dispositivo:</strong> ID del dispositivo para notificaciones push, versión de la aplicación</li>\n<li><strong>Analítica:</strong> Patrones de uso dentro de la aplicación (agregados de forma anónima)</li>\n</ul>\n<p>Todos los datos de la aplicación se almacenan localmente en tu dispositivo y opcionalmente se sincronizan con nuestros servidores seguros para copia de seguridad y sincronización entre dispositivos.</p>"
+        "content": "<p>### 3.1 Analítica del Sitio Web</p>\n<p>Utilizamos <strong>Vercel Analytics</strong> para recopilar datos de uso anónimos, incluyendo:</p>\n<ul>\n<li>Vistas de páginas y patrones de navegación</li>\n<li>Tipo y versión del navegador</li>\n<li>Información del dispositivo (escritorio/móvil/tableta)</li>\n<li>Ubicación geográfica (solo nivel de país/región)</li>\n<li>Fuentes de referencia</li>\n</ul>\n<p>Vercel Analytics funciona sin cookies y no rastrea usuarios individuales.</p>\n<p>### 3.2 Actualizaciones de Android Alpha</p>\n<p>Si te registras para recibir actualizaciones de SkillQuest o información de Android alpha, recopilamos:</p>\n<ul>\n<li>Dirección de correo electrónico (obligatorio)</li>\n<li>Nombre (opcional)</li>\n<li>Preferencia de plataforma (Android)</li>\n</ul>\n<p>Estos datos se almacenan de forma segura en <strong>Supabase</strong> (servidores de la UE) y se utilizan para mantenerte informado sobre actualizaciones de SkillQuest.</p>\n<p>### 3.3 Formularios de Contacto</p>\n<p>Si nos contactas a través de un formulario de contacto, recopilamos:</p>\n<ul>\n<li>Tu nombre</li>\n<li>Dirección de correo electrónico</li>\n<li>Asunto y contenido del mensaje</li>\n</ul>\n<p>Esta información se envía a través de <strong>Resend</strong> a hello@skill-quest.app para atención al cliente.</p>\n<p>### 3.4 Aplicación móvil SkillQuest</p>\n<p>Cuando usas la aplicación SkillQuest, recopilamos datos de la app como:</p>\n<ul>\n<li><strong>Datos de cuenta:</strong> Nombre de usuario, correo electrónico, foto de perfil (opcional)</li>\n<li><strong>Datos de seguimiento de habilidades:</strong> Habilidades, registros de temporizador, XP, niveles, rachas</li>\n<li><strong>Datos del modo familiar:</strong> Relaciones de cuenta padre-hijo, configuración de consentimiento</li>\n<li><strong>Datos del dispositivo:</strong> ID del dispositivo para notificaciones push, versión de la aplicación</li>\n<li><strong>Analítica:</strong> Patrones de uso dentro de la aplicación (agregados de forma anónima)</li>\n</ul>\n<p>Todos los datos de la aplicación se almacenan localmente en tu dispositivo y opcionalmente se sincronizan con nuestros servidores seguros para copia de seguridad y sincronización entre dispositivos.</p>"
       },
       "cmoUsamosTusDatos": {
         "title": "¿Cómo Usamos Tus Datos?",
-        "content": "<p>Utilizamos tus datos para:</p>\n<ul>\n<li><strong>Mejorar la experiencia del usuario:</strong> La analítica nos ayuda a entender cómo los visitantes usan nuestro sitio web</li>\n<li><strong>Lanzamiento de producto:</strong> Correos electrónicos de lista de espera para notificaciones sobre lanzamientos beta y oficiales</li>\n<li><strong>Atención al cliente:</strong> Responder a preguntas y solicitudes de soporte</li>\n<li><strong>Funcionalidad de la aplicación:</strong> Seguimiento de habilidades, sincronización de progreso, funciones del modo familiar</li>\n<li><strong>Cumplimiento legal:</strong> Cumplir con obligaciones legales</li>\n</ul>\n<p>Nunca vendemos ni alquilamos tus datos personales a terceros. No mostramos publicidad ni utilizamos píxeles de seguimiento.</p>"
+        "content": "<p>Utilizamos tus datos para:</p>\n<ul>\n<li><strong>Mejorar la experiencia del usuario:</strong> La analítica nos ayuda a entender cómo los visitantes usan nuestro sitio web</li>\n<li><strong>Actualizaciones de producto:</strong> Correos con novedades de Android testing y actualizaciones de producto</li>\n<li><strong>Atención al cliente:</strong> Responder a preguntas y solicitudes de soporte</li>\n<li><strong>Funcionalidad de la aplicación:</strong> Seguimiento de habilidades, sincronización de progreso, funciones del modo familiar</li>\n<li><strong>Cumplimiento legal:</strong> Cumplir con obligaciones legales</li>\n</ul>\n<p>Nunca vendemos ni alquilamos tus datos personales a terceros. No mostramos publicidad ni utilizamos píxeles de seguimiento.</p>"
       },
       "baseLegalParaElTratamiento": {
         "title": "Base Legal para el Tratamiento",
@@ -326,7 +325,7 @@
       },
       "retencinDeDatos": {
         "title": "Retención de Datos",
-        "content": "<p>Conservamos tus datos solo durante el tiempo necesario:</p>\n<ul>\n<li><strong>Analítica del sitio web:</strong> Indefinidamente (anonimizada, sin identificación personal)</li>\n<li><strong>Correos electrónicos de lista de espera:</strong> Hasta el lanzamiento de la aplicación o hasta que te des de baja</li>\n<li><strong>Datos de formulario de contacto:</strong> Máximo 2 años para fines de atención al cliente</li>\n<li><strong>Datos de cuenta de la aplicación:</strong> Hasta que elimines tu cuenta</li>\n</ul>\n<p>Puedes solicitar la eliminación de tus datos en cualquier momento.</p>"
+        "content": "<p>Conservamos tus datos solo durante el tiempo necesario:</p>\n<ul>\n<li><strong>Analítica del sitio web:</strong> Indefinidamente (anonimizada, sin identificación personal)</li>\n<li><strong>Correos de actualización:</strong> Hasta que te des de baja</li>\n<li><strong>Datos de formulario de contacto:</strong> Máximo 2 años para fines de atención al cliente</li>\n<li><strong>Datos de cuenta de la aplicación:</strong> Hasta que elimines tu cuenta</li>\n</ul>\n<p>Puedes solicitar la eliminación de tus datos en cualquier momento.</p>"
       },
       "niosYPrivacidad": {
         "title": "Niños y Privacidad",

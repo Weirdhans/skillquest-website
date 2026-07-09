@@ -1,155 +1,266 @@
-'use client'
+'use client';
 
-import { useEffect, useState } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { motion, AnimatePresence } from 'framer-motion'
-import {useTranslations, useLocale} from 'next-intl'
-import {usePathname, useRouter} from 'next/navigation'
+import type {CSSProperties} from 'react';
+import {useEffect, useState} from 'react';
+import Image from 'next/image';
+import {AnimatePresence, motion} from 'framer-motion';
+import {useLocale} from 'next-intl';
+import {usePathname, useRouter} from 'next/navigation';
+import {Link, routing} from '@/i18n/routing';
+import {getMarketingCopy, isLocale, type Locale} from '@/lib/marketing';
 
-const languages = [
-  { code: 'nl', name: 'Nederlands', flag: '🇳🇱' },
-  { code: 'en', name: 'English', flag: '🇬🇧' },
-  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
-  { code: 'fr', name: 'Français', flag: '🇫🇷' },
-  { code: 'es', name: 'Español', flag: '🇪🇸' },
-]
+type Theme = 'light' | 'dark';
 
-export default function Navbar() {
-  const t = useTranslations('navbar')
-  const locale = useLocale()
-  const pathname = usePathname()
-  const router = useRouter()
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [showCTA, setShowCTA] = useState(false)
-  const [showLangMenu, setShowLangMenu] = useState(false)
+const THEME_STORAGE_KEY = 'skillquest-theme';
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY
+function getActiveTheme(): Theme {
+  if (typeof document === 'undefined') return 'light';
+  return document.documentElement.classList.contains('dark') ||
+    document.documentElement.dataset.theme === 'dark'
+    ? 'dark'
+    : 'light';
+}
 
-      // Change navbar background after 10px scroll
-      setIsScrolled(scrollPosition > 10)
+function getPreferredTheme(): Theme {
+  if (typeof window === 'undefined') return 'light';
 
-      // Show CTA button after 100px scroll
-      setShowCTA(scrollPosition > 100)
+  try {
+    const storedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
+    if (storedTheme === 'light' || storedTheme === 'dark') {
+      return storedTheme;
     }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  // Close language menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as HTMLElement
-      if (showLangMenu && !target.closest('.language-switcher')) {
-        setShowLangMenu(false)
-      }
-    }
-
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [showLangMenu])
-
-  const switchLanguage = (newLocale: string) => {
-    // Remove current locale from pathname and add new one
-    const pathWithoutLocale = pathname.replace(`/${locale}`, '')
-    router.push(`/${newLocale}${pathWithoutLocale}`)
-    setShowLangMenu(false)
+  } catch {
+    return 'light';
   }
 
-  const currentLanguage = languages.find(lang => lang.code === locale) || languages[0]
+  return window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? 'dark'
+    : 'light';
+}
+
+function applyTheme(theme: Theme) {
+  document.documentElement.classList.toggle('dark', theme === 'dark');
+  document.documentElement.dataset.theme = theme;
+}
+
+function SunIcon() {
+  return (
+    <svg
+      className="h-4 w-4"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2" />
+      <path d="M12 20v2" />
+      <path d="m4.93 4.93 1.41 1.41" />
+      <path d="m17.66 17.66 1.41 1.41" />
+      <path d="M2 12h2" />
+      <path d="M20 12h2" />
+      <path d="m6.34 17.66-1.41 1.41" />
+      <path d="m19.07 4.93-1.41 1.41" />
+    </svg>
+  );
+}
+
+function MoonIcon() {
+  return (
+    <svg
+      className="h-4 w-4"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      aria-hidden="true"
+    >
+      <path d="M20.99 13.18A8.5 8.5 0 1 1 10.82 3.01 7 7 0 0 0 20.99 13.18Z" />
+    </svg>
+  );
+}
+
+const languageOptions = routing.locales.map((locale) => ({
+  code: locale,
+  label: getMarketingCopy(locale).localeName
+}));
+
+export default function Navbar() {
+  const currentLocale = useLocale();
+  const locale: Locale = isLocale(currentLocale)
+    ? currentLocale
+    : routing.defaultLocale;
+  const copy = getMarketingCopy(locale);
+  const pathname = usePathname();
+  const router = useRouter();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [showLangMenu, setShowLangMenu] = useState(false);
+  const [theme, setTheme] = useState<Theme>('light');
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 8);
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const syncTheme = () => {
+      const preferredTheme = getPreferredTheme();
+      applyTheme(preferredTheme);
+      setTheme(preferredTheme);
+    };
+    const frame = window.requestAnimationFrame(syncTheme);
+
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (showLangMenu && !target.closest('.language-switcher')) {
+        setShowLangMenu(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [showLangMenu]);
+
+  function switchLanguage(newLocale: Locale) {
+    const parts = pathname.split('/');
+
+    if (isLocale(parts[1] ?? '')) {
+      parts[1] = newLocale;
+      router.push(parts.join('/') || `/${newLocale}`);
+    } else {
+      router.push(`/${newLocale}${pathname}`);
+    }
+
+    setShowLangMenu(false);
+  }
+
+  function toggleTheme() {
+    const nextTheme: Theme = getActiveTheme() === 'dark' ? 'light' : 'dark';
+
+    applyTheme(nextTheme);
+    setTheme(nextTheme);
+
+    try {
+      window.localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+    } catch {
+      // The visible theme should still change if storage is unavailable.
+    }
+  }
+
+  const navLinks = [
+    {href: '/features', label: copy.nav.features},
+    {href: '/pricing', label: copy.nav.pricing},
+    {href: '/download', label: copy.nav.download},
+    {href: '/support', label: copy.nav.support}
+  ] as const;
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed left-0 right-0 top-0 z-50 border-b transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/70 backdrop-blur-xl backdrop-saturate-150 shadow-sm border-b border-gray-200/50'
-          : 'bg-white/40 backdrop-blur-2xl backdrop-saturate-200'
+          ? 'shadow-sm backdrop-blur-xl'
+          : 'backdrop-blur-lg'
       }`}
       style={{
-        WebkitBackdropFilter: isScrolled ? 'blur(40px) saturate(150%)' : 'blur(60px) saturate(200%)',
+        backgroundColor: 'var(--sq-nav-bg)',
+        borderColor: 'var(--sq-nav-border)'
       }}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.3 }}
+      initial={{y: -80}}
+      animate={{y: 0}}
+      transition={{duration: 0.25}}
     >
       <div className="container-custom">
-        <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            {/* Official Logo Image */}
-            <div className="relative w-10 h-10 md:w-12 md:h-12">
-              <Image
-                src="/skillquest-logo.png"
-                alt="SkillQuest Logo"
-                width={48}
-                height={48}
-                className="w-full h-full object-contain transition-all group-hover:scale-110"
-                priority
-              />
-            </div>
-
-            {/* Text Logo */}
-            <div className="flex flex-col leading-none">
-              <span className="text-xl md:text-2xl font-display font-extrabold text-gray-900 group-hover:text-primary-600 transition-colors">
-                SkillQuest
-              </span>
-              <span className="text-[10px] md:text-xs font-semibold text-primary-500 tracking-wider">
-                {t('tagline')}
-              </span>
-            </div>
+        <div className="flex h-16 items-center justify-between gap-4 md:h-20">
+          <Link href="/" className="flex min-w-0 items-center gap-3">
+            <Image
+              src="/skillquest-logo.png"
+              alt="SkillQuest"
+              width={44}
+              height={44}
+              className="h-10 w-10 shrink-0 object-contain md:h-11 md:w-11"
+              priority
+            />
+            <span className="hidden truncate font-display text-xl font-extrabold sm:block md:text-2xl theme-title">
+              SkillQuest
+            </span>
           </Link>
 
-          {/* Right side - Language Switcher + CTA */}
-          <div className="flex items-center gap-3 md:gap-4">
-            {/* Language Switcher */}
+          <div className="hidden items-center gap-6 md:flex">
+            {navLinks.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-sm font-semibold transition hover:text-primary-700 theme-muted-strong"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-2 md:gap-3">
             <div className="relative language-switcher">
               <button
-                onClick={() => setShowLangMenu(!showLangMenu)}
-                className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/50 hover:bg-white/80 border border-gray-200/50 hover:border-gray-300/50 transition-all"
+                type="button"
+                onClick={() => setShowLangMenu((value) => !value)}
+                className="inline-flex min-h-10 items-center gap-2 rounded-lg border px-3 py-2 text-sm font-semibold shadow-sm transition hover:-translate-y-0.5 theme-card"
                 aria-label="Change language"
+                aria-expanded={showLangMenu}
               >
-                <span className="text-lg">{currentLanguage.flag}</span>
-                <span className="hidden md:inline text-sm font-medium text-gray-700">
-                  {currentLanguage.code.toUpperCase()}
-                </span>
+                <span>{locale.toUpperCase()}</span>
                 <svg
-                  className={`w-4 h-4 text-gray-500 transition-transform ${showLangMenu ? 'rotate-180' : ''}`}
+                  className={`h-4 w-4 transition-transform theme-copy ${
+                    showLangMenu ? 'rotate-180' : ''
+                  }`}
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
                 </svg>
               </button>
 
-              {/* Language Dropdown */}
               <AnimatePresence>
                 {showLangMenu && (
                   <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden z-50"
+                    initial={{opacity: 0, y: -8}}
+                    animate={{opacity: 1, y: 0}}
+                    exit={{opacity: 0, y: -8}}
+                    transition={{duration: 0.16}}
+                    className="absolute right-0 mt-2 w-52 overflow-hidden rounded-lg theme-card"
                   >
-                    {languages.map((lang) => (
+                    {languageOptions.map((item) => (
                       <button
-                        key={lang.code}
-                        onClick={() => switchLanguage(lang.code)}
-                        className={`w-full flex items-center gap-3 px-4 py-3 hover:bg-primary-50 transition-colors ${
-                          locale === lang.code ? 'bg-primary-100 text-primary-700 font-semibold' : 'text-gray-700'
+                        type="button"
+                        key={item.code}
+                        onClick={() => switchLanguage(item.code)}
+                        className={`flex w-full items-center justify-between px-4 py-3 text-left text-sm transition hover:bg-primary-50 dark:hover:bg-primary-900/30 ${
+                          item.code === locale
+                            ? 'bg-primary-50 font-semibold text-primary-800 dark:bg-primary-900/40 dark:text-primary-100'
+                            : 'theme-muted-strong'
                         }`}
                       >
-                        <span className="text-xl">{lang.flag}</span>
-                        <span className="text-sm">{lang.name}</span>
-                        {locale === lang.code && (
-                          <svg className="w-4 h-4 ml-auto text-primary-600" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                          </svg>
-                        )}
+                        <span>{item.label}</span>
+                        <span className="text-xs font-bold uppercase">
+                          {item.code}
+                        </span>
                       </button>
                     ))}
                   </motion.div>
@@ -157,27 +268,34 @@ export default function Navbar() {
               </AnimatePresence>
             </div>
 
-            {/* CTA Button - shows on scroll */}
-            <AnimatePresence>
-              {showCTA && (
-                <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Link
-                    href="/download"
-                    className="btn btn-primary px-4 py-2 md:px-6 md:py-3 text-sm md:text-base"
-                  >
-                    {t('cta')}
-                  </Link>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border shadow-sm transition hover:-translate-y-0.5 focus:outline-none focus:ring-4"
+              style={{
+                backgroundColor: 'var(--sq-surface)',
+                borderColor: 'var(--sq-border)',
+                color: 'var(--sq-muted-strong)',
+                '--tw-ring-color':
+                  'color-mix(in srgb, var(--sq-brand) 24%, transparent)'
+              } as CSSProperties}
+              aria-label={theme === 'dark' ? 'Light mode' : 'Dark mode'}
+              title={theme === 'dark' ? 'Light mode' : 'Dark mode'}
+              suppressHydrationWarning
+            >
+              {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+            </button>
+
+
+            <Link
+              href="/download"
+              className="inline-flex min-h-10 items-center justify-center whitespace-nowrap rounded-lg bg-phoenix-flame px-3 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-phoenix-fire sm:text-sm md:px-4"
+            >
+              {copy.nav.cta}
+            </Link>
           </div>
         </div>
       </div>
     </motion.nav>
-  )
+  );
 }
