@@ -120,19 +120,19 @@ function installEmailTemplate(name) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Je kunt SkillQuest nu installeren</title>
 </head>
-<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #F8FAFC; color: #1E293B;">
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #F9FAFB; color: #14201B;">
   <table role="presentation" style="width: 100%; border-collapse: collapse;">
     <tr>
       <td align="center" style="padding: 40px 20px;">
-        <table role="presentation" style="max-width: 600px; width: 100%; background: linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 100%); border-radius: 16px; border: 1px solid rgba(99, 102, 241, 0.2); padding: 40px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+        <table role="presentation" style="max-width: 600px; width: 100%; background: #FFFFFF; border-radius: 16px; border: 1px solid #DCE5DF; padding: 40px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06);">
           <tr>
-            <td align="center" style="padding-bottom: 30px;">
-              <div style="font-size: 64px; line-height: 1;">🎉</div>
+            <td align="center" style="padding-bottom: 24px;">
+              <img src="https://www.skill-quest.app/skillquest-logo.png" width="120" height="120" alt="SkillQuest" style="display: block; border-radius: 24px;">
             </td>
           </tr>
           <tr>
             <td align="center" style="padding-bottom: 24px;">
-              <h1 style="margin: 0; font-size: 28px; font-weight: bold; color: #1E293B;">
+              <h1 style="margin: 0; font-size: 28px; font-weight: bold; color: #115E59;">
                 Je bent toegevoegd als Android tester!
               </h1>
             </td>
@@ -149,7 +149,7 @@ function installEmailTemplate(name) {
           </tr>
           <tr>
             <td align="center" style="padding: 0 0 32px 0;">
-              <a href="${ANDROID_ALPHA_JOIN_URL}" style="display: inline-block; padding: 18px 40px; background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #A855F7 100%); color: #FFFFFF; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 18px; box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.3);">
+              <a href="${ANDROID_ALPHA_JOIN_URL}" style="display: inline-block; padding: 18px 40px; background: linear-gradient(135deg, #FF6B35 0%, #D2381C 100%); color: #FFFFFF; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 18px; box-shadow: 0 4px 6px -1px rgba(210, 56, 28, 0.3);">
                 Word tester en installeer
               </a>
             </td>
@@ -162,10 +162,10 @@ function installEmailTemplate(name) {
             </td>
           </tr>
           <tr>
-            <td align="center" style="padding-top: 24px; border-top: 1px solid rgba(99, 102, 241, 0.2);">
+            <td align="center" style="padding-top: 24px; border-top: 1px solid #DCE5DF;">
               <p style="margin: 0; font-size: 12px; color: #94A3B8; line-height: 1.6;">
-                SkillQuest | <a href="https://www.skill-quest.app" style="color: #6366F1; text-decoration: none;">www.skill-quest.app</a><br>
-                Vragen? Stuur een e-mail naar <a href="mailto:hello@skill-quest.app" style="color: #6366F1; text-decoration: none;">hello@skill-quest.app</a>
+                SkillQuest | <a href="https://www.skill-quest.app" style="color: #0F766E; text-decoration: none;">www.skill-quest.app</a><br>
+                Vragen? Stuur een e-mail naar <a href="mailto:hello@skill-quest.app" style="color: #0F766E; text-decoration: none;">hello@skill-quest.app</a>
               </p>
             </td>
           </tr>
