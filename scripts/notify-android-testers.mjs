@@ -5,7 +5,11 @@
 // Run scripts/list-pending-android-testers.mjs first, paste those emails
 // into the Play Console tester list, THEN run this script.
 //
-// Requires (run once first: sql/add_android_tester_tracking.sql):
+// The waitlist table lives in the skillquest-prod Supabase project (the same
+// one the app uses); see list-pending-android-testers.mjs for details on the
+// tracking columns.
+//
+// Requires (same values Vercel already has configured for this project):
 //   NEXT_PUBLIC_SUPABASE_URL
 //   SUPABASE_SERVICE_ROLE_KEY
 //   RESEND_API_KEY

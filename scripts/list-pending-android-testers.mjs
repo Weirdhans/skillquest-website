@@ -2,7 +2,13 @@
 // yet been added to the Play Console tester list. Read-only — safe to run
 // any time.
 //
-// Requires (run once first: sql/add_android_tester_tracking.sql):
+// The waitlist table lives in the skillquest-prod Supabase project (the same
+// one the app uses). The android_tester_added_at/notified_at tracking
+// columns were added there via
+// supabase/migrations/20260723120000_add_android_tester_tracking_to_waitlist.sql
+// in the skillquest app repo.
+//
+// Requires (same values Vercel already has configured for this project):
 //   NEXT_PUBLIC_SUPABASE_URL
 //   SUPABASE_SERVICE_ROLE_KEY
 //
