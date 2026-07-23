@@ -205,6 +205,16 @@ function getWelcomeEmailTemplate(name: string | null, platform: string | null): 
             </td>
           </tr>
 
+          ${platform !== 'ios' ? `<tr>
+            <td style="padding-bottom: 24px; font-size: 15px; line-height: 1.6; color: #475569;">
+              <p style="margin: 0;">
+                <strong>Over de Android alpha:</strong> je staat nu op de wachtlijst voor de Google Play closed test.
+                Zodra we je hebt toegevoegd aan de tester-lijst, sturen we je een aparte e-mail met de installatielink.
+                Gebruik dan hetzelfde Google-account op je Android-toestel als het e-mailadres waarmee je je hebt aangemeld.
+              </p>
+            </td>
+          </tr>` : ''}
+
           <!-- CTA Button -->
           <tr>
             <td align="center" style="padding: 32px 0 24px 0;">

@@ -4,6 +4,7 @@ import LeadCapture from '@/components/LeadCapture';
 import StoreLinks from '@/components/StoreLinks';
 import {
   ANDROID_ALPHA_JOIN_URL,
+  ANDROID_SIGNUP_URL,
   APP_STORE_URL,
   type Locale,
   type MarketingCopy,
@@ -356,7 +357,26 @@ export function HomeMarketingPage({locale, copy}: PageProps) {
   );
 }
 
-export function DownloadMarketingPage({locale, copy}: PageProps) {
+type DownloadMarketingPageProps = PageProps & {
+  // From the ?platform= query string, e.g. set by the Android CTAs so the
+  // lead capture form below opens with Android pre-selected.
+  requestedPlatform?: string;
+};
+
+function isLeadPlatform(
+  value: string | undefined
+): value is 'ios' | 'android' | 'both' {
+  return value === 'ios' || value === 'android' || value === 'both';
+}
+
+export function DownloadMarketingPage({
+  locale,
+  copy,
+  requestedPlatform
+}: DownloadMarketingPageProps) {
+  const initialPlatform = isLeadPlatform(requestedPlatform)
+    ? requestedPlatform
+    : 'both';
   return (
     <main className="theme-page pt-20">
       <section className="theme-hero-band py-16 text-white md:py-20">
@@ -420,21 +440,30 @@ export function DownloadMarketingPage({locale, copy}: PageProps) {
               <p className="mt-4 leading-relaxed theme-copy">
                 {copy.download.androidBody}
               </p>
+              <Link href={ANDROID_SIGNUP_URL} className="btn btn-primary mt-6">
+                {copy.download.androidCta}
+              </Link>
+              <p className="mt-4 text-sm leading-relaxed theme-copy">
+                {copy.download.testerNote}
+              </p>
               <a
                 href={ANDROID_ALPHA_JOIN_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="btn btn-primary mt-6"
+                className="mt-2 inline-block text-sm underline theme-copy"
               >
-                {copy.download.androidCta}
+                {copy.download.androidAlreadyAdded}
               </a>
-              <p className="mt-4 text-sm leading-relaxed theme-copy">
-                {copy.download.testerNote}
-              </p>
             </article>
           </div>
         </div>
       </section>
+
+      <LeadCapture
+        key={initialPlatform}
+        copy={copy.lead}
+        initialPlatform={initialPlatform}
+      />
 
       <section className="theme-section-muted py-16 md:py-20">
         <div className="container-custom">

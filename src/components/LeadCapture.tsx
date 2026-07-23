@@ -14,11 +14,19 @@ type Status =
 
 type LeadCaptureProps = {
   copy: MarketingCopy['lead'];
+  // Pass a `key` matching this value from the caller when it can change
+  // (e.g. `key={initialPlatform}`) so a same-page navigation that only
+  // changes the query remounts this component instead of being ignored by
+  // the lazy useState initializer below.
+  initialPlatform?: Platform;
 };
 
-export default function LeadCapture({copy}: LeadCaptureProps) {
+export default function LeadCapture({
+  copy,
+  initialPlatform = 'both'
+}: LeadCaptureProps) {
   const [email, setEmail] = useState('');
-  const [platform, setPlatform] = useState<Platform>('both');
+  const [platform, setPlatform] = useState<Platform>(initialPlatform);
   const [status, setStatus] = useState<Status>('idle');
   const [pendingEmail, setPendingEmail] = useState<string | null>(null);
 
@@ -94,7 +102,10 @@ export default function LeadCapture({copy}: LeadCaptureProps) {
   ];
 
   return (
-    <section className="theme-final-band py-16 text-white md:py-20">
+    <section
+      id="android-alpha"
+      className="scroll-mt-20 theme-final-band py-16 text-white md:py-20"
+    >
       <div className="container-custom">
         <div className="mx-auto max-w-3xl">
           <div className="mb-8">

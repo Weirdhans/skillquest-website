@@ -213,6 +213,11 @@ function getVerificationEmailTemplate(name: string | null, verifyUrl: string, pl
               <p style="margin: 0 0 16px 0;">
                 Je krijgt relevante SkillQuest updates ${platformText}, waaronder Android alpha-informatie als je daarvoor kiest.
               </p>
+              ${platform !== 'ios' ? `<p style="margin: 0 0 16px 0;">
+                Voor Android geldt: na deze bevestiging sta je op de wachtlijst voor de Google Play closed test.
+                Zodra we je e-mailadres hebben toegevoegd aan de tester-lijst, ontvang je een aparte e-mail met de
+                installatielink. Dat kan even duren &mdash; we voegen testers in batches toe.
+              </p>` : ''}
             </td>
           </tr>
 

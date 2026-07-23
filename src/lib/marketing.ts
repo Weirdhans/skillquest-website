@@ -11,6 +11,10 @@ export const ANDROID_ALPHA_JOIN_URL =
   'https://play.google.com/apps/testing/com.skillquest.app';
 export const ANDROID_STORE_URL =
   'https://play.google.com/store/apps/details?id=com.skillquest.app';
+// Testers must be added to the Play Console tester list before
+// ANDROID_ALPHA_JOIN_URL works for them, so every "join the alpha" CTA
+// routes here first instead of straight to Google Play.
+export const ANDROID_SIGNUP_URL = '/download?platform=android#android-alpha';
 
 export const PRICING = {
   premiumMonthly: '€3.99',
@@ -349,7 +353,7 @@ export const marketingCopy = {
       badge: 'Product updates',
       heading: 'Get Android alpha and feature updates',
       subheading:
-        'Leave your email for SkillQuest updates. Android testers can also join the Google Play closed test directly.',
+        'Leave your email for SkillQuest updates. Choose Android to join the waitlist for our Google Play closed test.',
       platformQuestion: 'Which updates do you want?',
       platforms: {
         ios: 'iOS',
@@ -366,7 +370,7 @@ export const marketingCopy = {
       resendLink: 'Resend verification email',
       error: 'Something went wrong. Please try again.',
       gmailHint:
-        'Google Play closed testing usually works best with a Gmail address.',
+        "Use the Google account email you'll install SkillQuest with — that's the address we add to the Play Console tester list.",
       privacy: 'No spam. Unsubscribe anytime.'
     },
     finalCta: {
@@ -405,10 +409,11 @@ export const marketingCopy = {
       androidTitle: 'Android',
       androidStatus: 'Alpha / closed testing',
       androidBody:
-        'Join the Google Play closed test. The public Play Store listing may not be visible until your Google account is accepted as a tester.',
+        "Sign up below with the Google account email you use on Android. Once we add you to the Google Play tester list, we'll email you the install link.",
       androidCta: 'Join Android alpha',
       testerNote:
-        'After joining the test, use the Google account that accepted the testing invite when opening Google Play.',
+        "We add new testers in batches. You'll get an email as soon as you can install — open it with the same Google account you signed up with.",
+      androidAlreadyAdded: 'Already accepted as a tester? Open the Play Store test page.',
       screenshotsHeading: 'See the app before you install',
       screenshotsBody:
         'These screenshots are generated from the real SkillQuest app using clean demo data.',
@@ -655,7 +660,7 @@ export const marketingCopy = {
       badge: 'Productupdates',
       heading: 'Ontvang Android alpha- en feature-updates',
       subheading:
-        'Laat je e-mail achter voor SkillQuest updates. Android testers kunnen ook direct deelnemen aan de Google Play closed test.',
+        'Laat je e-mail achter voor SkillQuest-updates. Kies Android om je aan te melden voor de wachtlijst van onze Google Play closed test.',
       platformQuestion: 'Welke updates wil je ontvangen?',
       platforms: {
         ios: 'iOS',
@@ -672,7 +677,7 @@ export const marketingCopy = {
       resendLink: 'Verificatiemail opnieuw sturen',
       error: 'Er ging iets mis. Probeer het opnieuw.',
       gmailHint:
-        'Google Play closed testing werkt meestal het best met een Gmail-adres.',
+        'Gebruik het Google-account e-mailadres waarmee je SkillQuest op Android gaat installeren — dat adres voegen we toe aan de Play Console tester-lijst.',
       privacy: 'Geen spam. Uitschrijven kan altijd.'
     },
     finalCta: {
@@ -711,10 +716,11 @@ export const marketingCopy = {
       androidTitle: 'Android',
       androidStatus: 'Alpha / closed testing',
       androidBody:
-        'Doe mee met de Google Play closed test. De publieke Play Store pagina is mogelijk pas zichtbaar nadat je Google-account als tester is geaccepteerd.',
+        'Meld je hieronder aan met het Google-account e-mailadres dat je op Android gebruikt. Zodra we je hebben toegevoegd aan de Google Play tester-lijst, sturen we je een e-mail met de installatielink.',
       androidCta: 'Doe mee met Android alpha',
       testerNote:
-        'Gebruik na deelname hetzelfde Google-account in Google Play als waarmee je de test hebt geaccepteerd.',
+        'We voegen nieuwe testers in batches toe. Zodra je kunt installeren ontvang je een e-mail — open die met hetzelfde Google-account waarmee je je hebt aangemeld.',
+      androidAlreadyAdded: 'Al geaccepteerd als tester? Open de Play Store testpagina.',
       screenshotsHeading: 'Bekijk de app voordat je installeert',
       screenshotsBody:
         'Deze screenshots komen uit de echte SkillQuest app met schone demodata.',
@@ -961,7 +967,7 @@ export const marketingCopy = {
       badge: 'Produktupdates',
       heading: 'Android Alpha- und Feature-Updates erhalten',
       subheading:
-        'Hinterlasse deine E-Mail für SkillQuest Updates. Android Tester können auch direkt dem Google Play Closed Test beitreten.',
+        'Hinterlasse deine E-Mail für SkillQuest Updates. Wähle Android, um dich für die Warteliste unseres Google Play Closed Tests anzumelden.',
       platformQuestion: 'Welche Updates möchtest du?',
       platforms: {
         ios: 'iOS',
@@ -978,7 +984,7 @@ export const marketingCopy = {
       resendLink: 'Bestätigung erneut senden',
       error: 'Etwas ist schiefgelaufen. Bitte versuche es erneut.',
       gmailHint:
-        'Google Play Closed Testing funktioniert meist am besten mit einer Gmail-Adresse.',
+        'Nutze die Google-Konto-E-Mail, mit der du SkillQuest installieren wirst — diese Adresse fügen wir der Play-Console-Tester-Liste hinzu.',
       privacy: 'Kein Spam. Abmeldung jederzeit möglich.'
     },
     finalCta: {
@@ -1017,10 +1023,11 @@ export const marketingCopy = {
       androidTitle: 'Android',
       androidStatus: 'Alpha / Closed Testing',
       androidBody:
-        'Tritt dem Google Play Closed Test bei. Die öffentliche Play Store Seite ist möglicherweise erst sichtbar, wenn dein Google-Konto als Tester akzeptiert wurde.',
+        'Melde dich unten mit der Google-Konto-E-Mail an, die du auf Android nutzt. Sobald wir dich zur Google Play Tester-Liste hinzugefügt haben, senden wir dir eine E-Mail mit dem Installationslink.',
       androidCta: 'Android Alpha beitreten',
       testerNote:
-        'Nutze nach dem Beitritt dasselbe Google-Konto in Google Play, mit dem du den Test akzeptiert hast.',
+        'Wir fügen neue Tester in Gruppen hinzu. Sobald du installieren kannst, erhältst du eine E-Mail — öffne den Link mit demselben Google-Konto, mit dem du dich angemeldet hast.',
+      androidAlreadyAdded: 'Bereits als Tester akzeptiert? Öffne die Play Store Testseite.',
       screenshotsHeading: 'Sieh dir die App vor der Installation an',
       screenshotsBody:
         'Diese Screenshots stammen aus der echten SkillQuest App mit sauberen Demodaten.',
@@ -1267,7 +1274,7 @@ export const marketingCopy = {
       badge: 'Actualités produit',
       heading: 'Recevoir les actualités Android alpha et fonctionnalités',
       subheading:
-        'Laissez votre e-mail pour recevoir les nouvelles de SkillQuest. Les testeurs Android peuvent aussi rejoindre directement le test fermé Google Play.',
+        "Laissez votre e-mail pour recevoir les nouvelles de SkillQuest. Choisissez Android pour rejoindre la liste d'attente de notre test fermé Google Play.",
       platformQuestion: 'Quelles actualités voulez-vous recevoir ?',
       platforms: {
         ios: 'iOS',
@@ -1284,7 +1291,7 @@ export const marketingCopy = {
       resendLink: 'Renvoyer l’e-mail de vérification',
       error: 'Une erreur est survenue. Réessayez.',
       gmailHint:
-        'Le closed testing Google Play fonctionne souvent mieux avec une adresse Gmail.',
+        "Utilisez l'adresse de votre compte Google avec laquelle vous installerez SkillQuest — c'est cette adresse que nous ajoutons à la liste de testeurs Play Console.",
       privacy: 'Pas de spam. Désinscription possible à tout moment.'
     },
     finalCta: {
@@ -1323,10 +1330,11 @@ export const marketingCopy = {
       androidTitle: 'Android',
       androidStatus: 'Alpha / closed testing',
       androidBody:
-        'Rejoignez le test fermé Google Play. La fiche publique Play Store peut ne pas être visible avant que votre compte Google soit accepté comme testeur.',
+        "Inscrivez-vous ci-dessous avec l'adresse de votre compte Google utilisée sur Android. Dès que nous vous ajoutons à la liste de testeurs Google Play, nous vous envoyons un e-mail avec le lien d'installation.",
       androidCta: 'Rejoindre l’alpha Android',
       testerNote:
-        'Après l’inscription, utilisez dans Google Play le même compte Google que celui qui a accepté le test.',
+        'Nous ajoutons les nouveaux testeurs par lots. Vous recevrez un e-mail dès que vous pourrez installer — ouvrez le lien avec le même compte Google utilisé lors de l’inscription.',
+      androidAlreadyAdded: 'Déjà accepté comme testeur ? Ouvrez la page de test Play Store.',
       screenshotsHeading: 'Voir l’app avant installation',
       screenshotsBody:
         'Ces captures proviennent de la vraie app SkillQuest avec des données de démonstration propres.',
@@ -1573,7 +1581,7 @@ export const marketingCopy = {
       badge: 'Actualizaciones',
       heading: 'Recibe noticias de Android alpha y nuevas funciones',
       subheading:
-        'Deja tu email para recibir novedades de SkillQuest. Los testers de Android también pueden unirse directamente al test cerrado de Google Play.',
+        'Deja tu email para recibir novedades de SkillQuest. Elige Android para unirte a la lista de espera de nuestro test cerrado de Google Play.',
       platformQuestion: '¿Qué novedades quieres recibir?',
       platforms: {
         ios: 'iOS',
@@ -1590,7 +1598,7 @@ export const marketingCopy = {
       resendLink: 'Reenviar email de verificación',
       error: 'Algo salió mal. Inténtalo de nuevo.',
       gmailHint:
-        'Google Play closed testing suele funcionar mejor con una dirección Gmail.',
+        'Usa el email de la cuenta de Google con la que instalarás SkillQuest — esa es la dirección que añadimos a la lista de testers de Play Console.',
       privacy: 'Sin spam. Puedes darte de baja cuando quieras.'
     },
     finalCta: {
@@ -1629,10 +1637,11 @@ export const marketingCopy = {
       androidTitle: 'Android',
       androidStatus: 'Alpha / closed testing',
       androidBody:
-        'Únete al test cerrado de Google Play. La ficha pública de Play Store puede no estar visible hasta que tu cuenta de Google sea aceptada como tester.',
+        'Regístrate abajo con el email de la cuenta de Google que usas en Android. En cuanto te añadamos a la lista de testers de Google Play, te enviaremos un email con el enlace de instalación.',
       androidCta: 'Unirse a Android alpha',
       testerNote:
-        'Después de unirte, usa en Google Play la misma cuenta de Google con la que aceptaste el test.',
+        'Añadimos testers nuevos por tandas. Recibirás un email en cuanto puedas instalar — abre el enlace con la misma cuenta de Google con la que te registraste.',
+      androidAlreadyAdded: '¿Ya aceptado como tester? Abre la página de test de Play Store.',
       screenshotsHeading: 'Mira la app antes de instalar',
       screenshotsBody:
         'Estas capturas provienen de la app real SkillQuest con datos demo limpios.',
@@ -1879,7 +1888,7 @@ export const marketingCopy = {
       badge: 'Aggiornamenti prodotto',
       heading: 'Ricevi aggiornamenti Android alpha e nuove funzioni',
       subheading:
-        'Lascia la tua email per ricevere novità su SkillQuest. I tester Android possono anche unirsi direttamente al closed test di Google Play.',
+        "Lascia la tua email per ricevere novità su SkillQuest. Scegli Android per iscriverti alla lista d'attesa del nostro closed test Google Play.",
       platformQuestion: 'Quali aggiornamenti vuoi?',
       platforms: {
         ios: 'iOS',
@@ -1896,7 +1905,7 @@ export const marketingCopy = {
       resendLink: 'Rinvia email di verifica',
       error: 'Qualcosa è andato storto. Riprova.',
       gmailHint:
-        'Google Play closed testing di solito funziona meglio con un indirizzo Gmail.',
+        "Usa l'email dell'account Google con cui installerai SkillQuest — è l'indirizzo che aggiungiamo alla lista tester di Play Console.",
       privacy: 'Niente spam. Puoi annullare l’iscrizione quando vuoi.'
     },
     finalCta: {
@@ -1935,10 +1944,11 @@ export const marketingCopy = {
       androidTitle: 'Android',
       androidStatus: 'Alpha / closed testing',
       androidBody:
-        'Unisciti al closed test di Google Play. La scheda pubblica di Play Store potrebbe non essere visibile finché il tuo account Google non viene accettato come tester.',
+        "Iscriviti qui sotto con l'email dell'account Google che usi su Android. Non appena ti aggiungiamo alla lista tester di Google Play, ti inviamo un'email con il link per installare.",
       androidCta: 'Unisciti ad Android alpha',
       testerNote:
-        'Dopo l’adesione, usa in Google Play lo stesso account Google con cui hai accettato il test.',
+        'Aggiungiamo nuovi tester a gruppi. Riceverai un’email non appena potrai installare — apri il link con lo stesso account Google usato per l’iscrizione.',
+      androidAlreadyAdded: 'Già accettato come tester? Apri la pagina di test di Play Store.',
       screenshotsHeading: 'Guarda l’app prima di installare',
       screenshotsBody:
         'Questi screenshot provengono dalla vera app SkillQuest con dati demo puliti.',
