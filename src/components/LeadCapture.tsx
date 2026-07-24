@@ -31,6 +31,10 @@ export default function LeadCapture({
   const [platform, setPlatform] = useState<Platform>(initialPlatform);
   const [status, setStatus] = useState<Status>('idle');
   const [pendingEmail, setPendingEmail] = useState<string | null>(null);
+  // Honeypot: real users never see or fill this field. Bots that
+  // auto-fill every input on the page do, and we quietly drop those
+  // submissions server-side instead of telling the bot it was rejected.
+  const [company, setCompany] = useState('');
 
   const showGmailHint = useMemo(
     () =>
@@ -48,7 +52,7 @@ export default function LeadCapture({
       const response = await fetch('/api/subscribe', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({email, platform, locale})
+        body: JSON.stringify({email, platform, locale, company})
       });
 
       const data = await response.json();
@@ -123,6 +127,22 @@ export default function LeadCapture({
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">
+            <input
+              type="text"
+              name="company"
+              value={company}
+              onChange={(event) => setCompany(event.target.value)}
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              style={{
+                position: 'absolute',
+                left: '-9999px',
+                width: '1px',
+                height: '1px',
+                opacity: 0
+              }}
+            />
             <div>
               <p className="mb-3 text-sm font-medium text-primary-100">
                 {copy.platformQuestion}

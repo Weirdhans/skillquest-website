@@ -34,6 +34,9 @@ interface SubscribeRequest {
   name?: string;
   platform?: Platform;
   locale?: string;
+  // Honeypot: must stay empty. Real users never see this field (see
+  // LeadCapture.tsx); bots that auto-fill every input do.
+  company?: string;
 }
 
 // Validate platform value
@@ -41,12 +44,30 @@ function isValidPlatform(value: string | undefined): value is Platform {
   return value === 'ios' || value === 'android' || value === 'both';
 }
 
+function getClientIp(request: NextRequest): string {
+  const forwardedFor = request.headers.get('x-forwarded-for');
+  if (forwardedFor) return forwardedFor.split(',')[0].trim();
+  return request.headers.get('x-real-ip') ?? 'unknown';
+}
+
+const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour
+const RATE_LIMIT_MAX_ATTEMPTS = 5;
+
 export async function POST(request: NextRequest) {
   try {
     const supabase = getSupabaseClient();
 
     // Parse request body
     const body: SubscribeRequest = await request.json();
+
+    // Honeypot: a real visitor never fills this in. Pretend success so a
+    // bot doesn't learn to look for a different signal, but do nothing.
+    if (body.company) {
+      return NextResponse.json(
+        { success: true, message: "Check je inbox om je aanmelding te bevestigen!" },
+        { status: 201 }
+      );
+    }
 
     // Validate required fields
     if (!body.email) {
@@ -61,6 +82,25 @@ export async function POST(request: NextRequest) {
     if (!emailRegex.test(body.email)) {
       return NextResponse.json({ error: "Invalid email format" }, { status: 400 });
     }
+
+    // Rate limit by IP: max RATE_LIMIT_MAX_ATTEMPTS submissions per
+    // RATE_LIMIT_WINDOW_MS, regardless of which email address is used.
+    const ip = getClientIp(request);
+    const windowStart = new Date(Date.now() - RATE_LIMIT_WINDOW_MS).toISOString();
+    const { count: recentAttempts } = await supabase
+      .from("subscribe_attempts")
+      .select("id", { count: "exact", head: true })
+      .eq("ip_address", ip)
+      .gte("created_at", windowStart);
+
+    if ((recentAttempts ?? 0) >= RATE_LIMIT_MAX_ATTEMPTS) {
+      return NextResponse.json(
+        { error: "rate_limited", message: "Te veel aanmeldpogingen. Probeer het later opnieuw." },
+        { status: 429 }
+      );
+    }
+
+    await supabase.from("subscribe_attempts").insert([{ ip_address: ip }]);
 
     // Validate and default platform
     const platform: Platform = isValidPlatform(body.platform) ? body.platform : 'both';
