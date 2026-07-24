@@ -28,12 +28,16 @@ function JsonLd({data}: {data: unknown}) {
 }
 
 function primaryHref(slug: string) {
-  return slug === 'family' ? '/pricing' : '/download';
+  if (slug === 'family' || slug === 'deep-work-flowtime') return '/pricing';
+  return '/download';
 }
 
 function secondaryHref(slug: string) {
   if (slug === 'family') return '/download';
-  if (slug === 'focus-timer' || slug === 'progress-statistics') return '/pricing';
+  if (slug === 'focus-timer' || slug === 'progress-statistics' || slug === 'guest-mode') return '/pricing';
+  if (slug === 'friends-challenges') return '/features/leaderboards';
+  if (slug === 'leaderboards') return '/features/friends-challenges';
+  if (slug === 'themes') return '/features/streaks';
   return '/features/focus-timer';
 }
 
@@ -78,9 +82,9 @@ export default async function FeatureLandingPage({
     notFound();
   }
 
-  const relatedPages = getFeatureLandingPages(safeLocale).filter(
-    (item) => item.slug !== page.slug
-  );
+  const relatedPages = getFeatureLandingPages(safeLocale)
+    .filter((item) => item.slug !== page.slug)
+    .slice(0, 3);
 
   return (
     <>
