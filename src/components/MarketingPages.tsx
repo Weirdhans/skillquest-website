@@ -15,7 +15,7 @@ import {
 } from '@/lib/marketing';
 import {
   getFeatureLandingOverview,
-  getFeatureLandingPages
+  getFeaturedFeatureLandingPages
 } from '@/lib/feature-pages';
 
 type PageProps = {
@@ -168,7 +168,7 @@ function FamilySupportSection({locale, copy}: PageProps) {
 
 function FeatureLandingGrid({locale}: {locale: Locale}) {
   const overview = getFeatureLandingOverview(locale);
-  const pages = getFeatureLandingPages(locale);
+  const pages = getFeaturedFeatureLandingPages(locale);
 
   return (
     <section className="py-16 md:py-20">
@@ -209,6 +209,14 @@ function FeatureLandingGrid({locale}: {locale: Locale}) {
               </span>
             </Link>
           ))}
+        </div>
+        <div className="mt-10 text-center">
+          <Link
+            href="/guides"
+            className="inline-flex text-sm font-semibold text-primary-700 hover:underline dark:text-primary-200"
+          >
+            {overview.guidesCta} →
+          </Link>
         </div>
       </div>
     </section>

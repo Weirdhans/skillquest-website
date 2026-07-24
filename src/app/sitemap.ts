@@ -11,7 +11,8 @@ const baseRoutes = [
   '/privacy',
   '/delete-account',
   '/support',
-  '/changelog'
+  '/changelog',
+  '/guides'
 ] as const;
 
 const routes = [

@@ -393,7 +393,8 @@ export const marketingCopy = {
       privacy: 'Privacy Policy',
       deleteAccount: 'Account deletion',
       changePassword: 'Change password',
-      changelog: "What's new"
+      changelog: "What's new",
+      guides: 'Guides'
     },
     download: {
       metaTitle: 'Download SkillQuest | App Store and Android Alpha',
@@ -701,7 +702,8 @@ export const marketingCopy = {
       privacy: 'Privacybeleid',
       deleteAccount: 'Account verwijderen',
       changePassword: 'Wachtwoord wijzigen',
-      changelog: 'Wat is er nieuw'
+      changelog: 'Wat is er nieuw',
+      guides: 'Guides'
     },
     download: {
       metaTitle: 'Download SkillQuest | App Store en Android Alpha',
@@ -1009,7 +1011,8 @@ export const marketingCopy = {
       privacy: 'Datenschutz',
       deleteAccount: 'Konto löschen',
       changePassword: 'Passwort ändern',
-      changelog: 'Neuigkeiten'
+      changelog: 'Neuigkeiten',
+      guides: 'Guides'
     },
     download: {
       metaTitle: 'SkillQuest herunterladen | App Store und Android Alpha',
@@ -1317,7 +1320,8 @@ export const marketingCopy = {
       privacy: 'Confidentialité',
       deleteAccount: 'Suppression de compte',
       changePassword: 'Changer le mot de passe',
-      changelog: 'Nouveautés'
+      changelog: 'Nouveautés',
+      guides: 'Guides'
     },
     download: {
       metaTitle: 'Télécharger SkillQuest | App Store et Android Alpha',
@@ -1625,7 +1629,8 @@ export const marketingCopy = {
       privacy: 'Privacidad',
       deleteAccount: 'Eliminar cuenta',
       changePassword: 'Cambiar contraseña',
-      changelog: 'Novedades'
+      changelog: 'Novedades',
+      guides: 'Guías'
     },
     download: {
       metaTitle: 'Descargar SkillQuest | App Store y Android Alpha',
@@ -1933,7 +1938,8 @@ export const marketingCopy = {
       privacy: 'Privacy',
       deleteAccount: 'Eliminazione account',
       changePassword: 'Cambia password',
-      changelog: 'Novità'
+      changelog: 'Novità',
+      guides: 'Guide'
     },
     download: {
       metaTitle: 'Scarica SkillQuest | App Store e Android Alpha',

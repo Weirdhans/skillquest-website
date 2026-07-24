@@ -48,6 +48,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/guides" className="hover:text-white">
+                  {copy.footer.guides}
+                </Link>
+              </li>
+              <li>
                 <Link href="/pricing" className="hover:text-white">
                   {copy.footer.pricing}
                 </Link>

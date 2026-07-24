@@ -17,6 +17,16 @@ export const featureLandingSlugs = [
 
 export type FeatureLandingSlug = (typeof featureLandingSlugs)[number];
 
+// The 4 flagship pages shown in the featured grid on the homepage and
+// /features. The rest are still fully built, indexed, and linked, just
+// surfaced through the lighter /guides list instead of a big card grid.
+export const featuredFeatureLandingSlugs = [
+  'focus-timer',
+  'family',
+  'skill-tracker',
+  'progress-statistics'
+] as const satisfies readonly FeatureLandingSlug[];
+
 export type FeatureLandingPage = {
   slug: FeatureLandingSlug;
   eyebrow: string;
@@ -45,6 +55,7 @@ type FeatureOverviewCopy = {
   title: string;
   body: string;
   cta: string;
+  guidesCta: string;
 };
 
 const featureOverviewCopy: Record<Locale, FeatureOverviewCopy> = {
@@ -53,42 +64,48 @@ const featureOverviewCopy: Record<Locale, FeatureOverviewCopy> = {
     title: 'Ontdek hoe SkillQuest helpt in echte routines',
     body:
       'Van focus timers tot Family-tools: deze pagina’s leggen uit wat SkillQuest doet, voor wie het werkt en welke voortgang zichtbaar wordt.',
-    cta: 'Bekijk functie'
+    cta: 'Bekijk functie',
+    guidesCta: 'Bekijk alle guides'
   },
   en: {
     eyebrow: 'Features by use case',
     title: 'Explore how SkillQuest helps in real routines',
     body:
       'From focus timers to Family tools, these pages explain what SkillQuest does, who it helps, and which progress becomes visible.',
-    cta: 'View feature'
+    cta: 'View feature',
+    guidesCta: 'Browse all guides'
   },
   de: {
     eyebrow: 'Funktionen nach Bedarf',
     title: 'So hilft SkillQuest in echten Routinen',
     body:
       'Von Fokus-Timern bis zu Family-Tools: Diese Seiten zeigen, was SkillQuest kann, wem es hilft und welcher Fortschritt sichtbar wird.',
-    cta: 'Funktion ansehen'
+    cta: 'Funktion ansehen',
+    guidesCta: 'Alle Guides ansehen'
   },
   fr: {
     eyebrow: 'Fonctions par usage',
     title: 'Découvrez comment SkillQuest aide au quotidien',
     body:
       'Des minuteurs de concentration aux outils Family, ces pages expliquent ce que fait SkillQuest, pour qui cela fonctionne et quels progrès deviennent visibles.',
-    cta: 'Voir la fonction'
+    cta: 'Voir la fonction',
+    guidesCta: 'Voir tous les guides'
   },
   es: {
     eyebrow: 'Funciones por necesidad',
     title: 'Descubre cómo SkillQuest ayuda en rutinas reales',
     body:
       'Desde temporizadores de enfoque hasta herramientas Family, estas páginas explican qué hace SkillQuest, a quién ayuda y qué progreso se vuelve visible.',
-    cta: 'Ver función'
+    cta: 'Ver función',
+    guidesCta: 'Ver todas las guías'
   },
   it: {
     eyebrow: 'Funzioni per uso',
     title: 'Scopri come SkillQuest aiuta nelle routine reali',
     body:
       'Dai timer di concentrazione agli strumenti Family, queste pagine spiegano cosa fa SkillQuest, a chi serve e quali progressi diventano visibili.',
-    cta: 'Vedi funzione'
+    cta: 'Vedi funzione',
+    guidesCta: 'Vedi tutte le guide'
   }
 };
 
@@ -5290,6 +5307,11 @@ export function getFeatureLandingOverview(locale: Locale): FeatureOverviewCopy {
 export function getFeatureLandingPages(locale: Locale): FeatureLandingPage[] {
   const localizedPages = pages[locale] ?? pages.en;
   return featureLandingSlugs.map((slug) => localizedPages[slug]);
+}
+
+export function getFeaturedFeatureLandingPages(locale: Locale): FeatureLandingPage[] {
+  const localizedPages = pages[locale] ?? pages.en;
+  return featuredFeatureLandingSlugs.map((slug) => localizedPages[slug]);
 }
 
 export function getFeatureLandingPage(
