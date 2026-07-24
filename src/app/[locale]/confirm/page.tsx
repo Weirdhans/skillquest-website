@@ -21,33 +21,33 @@ type ConfirmCopy = {
 
 const copyByLocale: Record<Locale, ConfirmCopy> = {
   nl: {
-    loading: 'Laden...',
+    loading: 'Bezig met laden...',
     success: {
       heading: 'Je bent aangemeld!',
-      body: 'Bedankt voor het bevestigen van je e-mailadres. We houden je op de hoogte van SkillQuest updates.',
-      button: 'Terug naar homepage'
+      body: 'Bedankt voor het bevestigen van je e-mailadres. We houden je op de hoogte van het laatste nieuws over SkillQuest.',
+      button: 'Terug naar de startpagina'
     },
     errors: {
-      expired: { title: 'Link verlopen', message: 'Deze verificatielink is verlopen. Vraag een nieuwe aan.' },
-      invalid: { title: 'Ongeldige link', message: 'Deze verificatielink is ongeldig of al gebruikt.' },
-      already_verified: { title: 'Al geverifieerd', message: 'Je e-mailadres is al bevestigd. Je staat op de update-lijst.' },
-      missing: { title: 'Geen token gevonden', message: 'Er ontbreekt informatie in de verificatielink.' },
-      server_error: { title: 'Server fout', message: 'Er ging iets mis aan onze kant. Probeer het later opnieuw.' },
-      generic: { title: 'Er ging iets mis', message: 'We konden je aanmelding niet verwerken.' }
+      expired: { title: 'De link is verlopen', message: 'Deze verificatielink is verlopen. Vraag een nieuwe aan.' },
+      invalid: { title: 'Ongeldige link', message: 'Deze verificatielink is ongeldig of is al gebruikt.' },
+      already_verified: { title: 'Al geverifieerd', message: 'Je e-mailadres is al bevestigd. Je staat op de lijst voor updates.' },
+      missing: { title: 'Geen token gevonden', message: 'Er ontbreekt wat informatie in de verificatielink.' },
+      server_error: { title: 'Serverfout', message: 'Er is iets misgegaan aan onze kant. Probeer het later nog eens.' },
+      generic: { title: 'Er is iets misgegaan', message: 'We konden je aanmelding niet verwerken.' }
     },
     resend: {
-      button: 'Nieuwe verificatie-email aanvragen',
-      sending: 'Verzenden...',
-      success: '✅ Nieuwe verificatie-email verzonden! Check je inbox.',
-      genericError: 'Er ging iets mis. Probeer het later opnieuw.'
+      button: 'Vraag een nieuwe verificatiemail aan',
+      sending: 'Bezig met verzenden...',
+      success: '✅ Er is een nieuwe bevestigingsmail verstuurd! Kijk even in je inbox.',
+      genericError: 'Er is iets misgegaan. Probeer het later nog eens.'
     },
-    backHome: '← Terug naar homepage',
+    backHome: '← Terug naar de startpagina',
     default: {
-      heading: 'Check je inbox',
-      body: 'We hebben je een e-mail gestuurd met een bevestigingslink. Klik op de link om je aanmelding te voltooien.',
-      noEmail: 'Geen e-mail ontvangen? Check je spam folder of',
+      heading: 'Kijk even in je inbox',
+      body: 'We hebben je een e-mail gestuurd met een bevestigingslink. Klik op de link om je aanmelding af te ronden.',
+      noEmail: 'Heb je geen e-mail gekregen? Kijk dan even in je spamfolder of',
       resignup: 'meld je opnieuw aan',
-      backHome: '← Terug naar homepage'
+      backHome: '← Terug naar de startpagina'
     }
   },
   en: {
@@ -81,123 +81,123 @@ const copyByLocale: Record<Locale, ConfirmCopy> = {
     }
   },
   de: {
-    loading: 'Lädt...',
+    loading: 'Wird geladen...',
     success: {
       heading: 'Du bist angemeldet!',
-      body: 'Danke, dass du deine E-Mail-Adresse bestätigt hast. Wir halten dich über SkillQuest Updates auf dem Laufenden.',
+      body: 'Danke, dass du deine E-Mail-Adresse bestätigt hast. Wir halten dich über Neuigkeiten zu SkillQuest auf dem Laufenden.',
       button: 'Zurück zur Startseite'
     },
     errors: {
-      expired: { title: 'Link abgelaufen', message: 'Dieser Bestätigungslink ist abgelaufen. Fordere einen neuen an.' },
+      expired: { title: 'Der Link ist abgelaufen', message: 'Dieser Bestätigungslink ist abgelaufen. Fordere einen neuen an.' },
       invalid: { title: 'Ungültiger Link', message: 'Dieser Bestätigungslink ist ungültig oder wurde bereits verwendet.' },
-      already_verified: { title: 'Bereits bestätigt', message: 'Deine E-Mail-Adresse ist bereits bestätigt. Du stehst auf der Update-Liste.' },
-      missing: { title: 'Kein Token gefunden', message: 'Im Bestätigungslink fehlen Informationen.' },
-      server_error: { title: 'Serverfehler', message: 'Bei uns ist etwas schiefgelaufen. Bitte versuche es später erneut.' },
-      generic: { title: 'Etwas ist schiefgelaufen', message: 'Wir konnten deine Anmeldung nicht verarbeiten.' }
+      already_verified: { title: 'Bereits verifiziert', message: 'Deine E-Mail-Adresse ist bereits bestätigt. Du stehst auf der Update-Liste.' },
+      missing: { title: 'Kein Token gefunden', message: 'Im Bestätigungslink fehlen einige Angaben.' },
+      server_error: { title: 'Serverfehler', message: 'Bei uns ist ein Fehler aufgetreten. Bitte versuch es später noch einmal.' },
+      generic: { title: 'Da ist was schiefgelaufen', message: 'Wir konnten deine Anmeldung nicht bearbeiten.' }
     },
     resend: {
-      button: 'Neue Bestätigungs-E-Mail anfordern',
-      sending: 'Senden...',
-      success: '✅ Neue Bestätigungs-E-Mail gesendet! Prüfe deinen Posteingang.',
-      genericError: 'Etwas ist schiefgelaufen. Bitte versuche es später erneut.'
+      button: 'Eine neue Bestätigungs-E-Mail anfordern',
+      sending: 'Wird gesendet...',
+      success: '✅ Eine neue Bestätigungs-E-Mail wurde gesendet! Schau mal in deinen Posteingang.',
+      genericError: 'Es ist ein Fehler aufgetreten. Bitte versuch es später noch einmal.'
     },
     backHome: '← Zurück zur Startseite',
     default: {
-      heading: 'Prüfe deinen Posteingang',
-      body: 'Wir haben dir eine E-Mail mit einem Bestätigungslink gesendet. Klicke auf den Link, um deine Anmeldung abzuschließen.',
-      noEmail: 'Keine E-Mail erhalten? Prüfe deinen Spam-Ordner oder',
+      heading: 'Schau mal in deinen Posteingang',
+      body: 'Wir haben dir eine E-Mail mit einem Bestätigungslink geschickt. Klicke auf den Link, um deine Anmeldung abzuschließen.',
+      noEmail: 'Hast du keine E-Mail bekommen? Schau mal in deinem Spam-Ordner nach oder',
       resignup: 'melde dich erneut an',
       backHome: '← Zurück zur Startseite'
     }
   },
   fr: {
-    loading: 'Chargement...',
+    loading: 'Chargement en cours...',
     success: {
-      heading: 'Vous êtes inscrit !',
-      body: "Merci d'avoir confirmé votre adresse e-mail. Nous vous tiendrons informé des actualités SkillQuest.",
-      button: "Retour à l'accueil"
+      heading: 'Tu es inscrit !',
+      body: "Merci d'avoir confirmé ton adresse e-mail. On te tiendra au courant des dernières actualités de SkillQuest.",
+      button: "Retour à la page d'accueil"
     },
     errors: {
-      expired: { title: 'Lien expiré', message: 'Ce lien de vérification a expiré. Demandez-en un nouveau.' },
-      invalid: { title: 'Lien invalide', message: 'Ce lien de vérification est invalide ou déjà utilisé.' },
-      already_verified: { title: 'Déjà vérifié', message: 'Votre adresse e-mail est déjà confirmée. Vous êtes sur la liste des actualités.' },
-      missing: { title: 'Aucun jeton trouvé', message: 'Des informations manquent dans le lien de vérification.' },
-      server_error: { title: 'Erreur serveur', message: "Une erreur s'est produite de notre côté. Réessayez plus tard." },
-      generic: { title: "Une erreur s'est produite", message: "Nous n'avons pas pu traiter votre inscription." }
+      expired: { title: "Le lien n'est plus valide", message: 'Ce lien de vérification a expiré. Demande-en un nouveau.' },
+      invalid: { title: 'Lien invalide', message: "Ce lien de vérification n'est pas valide ou a déjà été utilisé." },
+      already_verified: { title: 'Déjà vérifié', message: 'Ton adresse e-mail a déjà été validée. Tu es inscrit à la liste de mise à jour.' },
+      missing: { title: 'Aucun jeton trouvé', message: 'Il manque des infos dans le lien de vérification.' },
+      server_error: { title: 'Erreur serveur', message: "Il y a eu un problème de notre côté. Essaie à nouveau plus tard." },
+      generic: { title: 'Il y a eu un problème', message: "On n'a pas pu traiter ton inscription." }
     },
     resend: {
       button: 'Demander un nouvel e-mail de vérification',
-      sending: 'Envoi...',
-      success: '✅ Nouvel e-mail de vérification envoyé ! Vérifiez votre boîte mail.',
-      genericError: "Une erreur s'est produite. Réessayez plus tard."
+      sending: 'Envoi en cours...',
+      success: '✅ Un nouvel e-mail de vérification t\'a été envoyé ! Va jeter un œil dans ta boîte de réception.',
+      genericError: "Une erreur s'est produite. Réessaie plus tard."
     },
-    backHome: "← Retour à l'accueil",
+    backHome: "← Retour à la page d'accueil",
     default: {
-      heading: 'Vérifiez votre boîte mail',
-      body: 'Nous vous avons envoyé un e-mail avec un lien de confirmation. Cliquez sur le lien pour finaliser votre inscription.',
-      noEmail: "Vous n'avez pas reçu d'e-mail ? Vérifiez vos spams ou",
-      resignup: 'inscrivez-vous à nouveau',
-      backHome: "← Retour à l'accueil"
+      heading: 'Vérifie ta boîte de réception',
+      body: "On t'a envoyé un e-mail avec un lien de confirmation. Clique sur ce lien pour finaliser ton inscription.",
+      noEmail: "Tu n'as pas reçu d'e-mail ? Vérifie ton dossier « Spam » ou",
+      resignup: 'réinscris-toi',
+      backHome: "← Retour à la page d'accueil"
     }
   },
   es: {
     loading: 'Cargando...',
     success: {
-      heading: '¡Te has registrado!',
-      body: 'Gracias por confirmar tu dirección de correo. Te mantendremos al día con las novedades de SkillQuest.',
-      button: 'Volver al inicio'
+      heading: '¡Ya estás registrado!',
+      body: 'Gracias por confirmar tu dirección de correo electrónico. Te mantendremos al tanto de las novedades de SkillQuest.',
+      button: 'Volver a la página de inicio'
     },
     errors: {
-      expired: { title: 'Enlace caducado', message: 'Este enlace de verificación ha caducado. Solicita uno nuevo.' },
-      invalid: { title: 'Enlace no válido', message: 'Este enlace de verificación no es válido o ya se ha usado.' },
-      already_verified: { title: 'Ya verificado', message: 'Tu correo ya está confirmado. Estás en la lista de novedades.' },
-      missing: { title: 'No se encontró el token', message: 'Falta información en el enlace de verificación.' },
-      server_error: { title: 'Error del servidor', message: 'Algo salió mal por nuestra parte. Inténtalo de nuevo más tarde.' },
-      generic: { title: 'Algo salió mal', message: 'No pudimos procesar tu registro.' }
+      expired: { title: 'El enlace ha caducado', message: 'Este enlace de verificación ha caducado. Solicita uno nuevo.' },
+      invalid: { title: 'Enlace no válido', message: 'Este enlace de verificación no es válido o ya se ha utilizado.' },
+      already_verified: { title: 'Ya verificado', message: 'Ya hemos confirmado tu correo electrónico. Estás en la lista de actualizaciones.' },
+      missing: { title: 'No se ha encontrado ningún token', message: 'Falta algo de información en el enlace de verificación.' },
+      server_error: { title: 'Error del servidor', message: 'Ha habido un problema por nuestra parte. Inténtalo de nuevo más tarde.' },
+      generic: { title: 'Ha pasado algo raro', message: 'No hemos podido procesar tu registro.' }
     },
     resend: {
-      button: 'Solicitar un nuevo correo de verificación',
+      button: 'Solicita un nuevo correo electrónico de verificación',
       sending: 'Enviando...',
-      success: '✅ ¡Nuevo correo de verificación enviado! Revisa tu bandeja de entrada.',
-      genericError: 'Algo salió mal. Inténtalo de nuevo más tarde.'
+      success: '✅ ¡Te acabamos de enviar un nuevo correo de verificación! Echa un vistazo a tu bandeja de entrada.',
+      genericError: 'Ha habido un error. Inténtalo de nuevo más tarde.'
     },
-    backHome: '← Volver al inicio',
+    backHome: '← Volver a la página de inicio',
     default: {
-      heading: 'Revisa tu bandeja de entrada',
+      heading: 'Echa un vistazo a tu bandeja de entrada',
       body: 'Te hemos enviado un correo con un enlace de confirmación. Haz clic en el enlace para completar tu registro.',
-      noEmail: '¿No recibiste el correo? Revisa tu carpeta de spam o',
-      resignup: 'regístrate de nuevo',
-      backHome: '← Volver al inicio'
+      noEmail: '¿No has recibido el correo? Echa un vistazo a tu carpeta de spam o',
+      resignup: 'vuelve a registrarte',
+      backHome: '← Volver a la página de inicio'
     }
   },
   it: {
-    loading: 'Caricamento...',
+    loading: 'Caricamento in corso...',
     success: {
-      heading: 'Ti sei iscritto!',
-      body: "Grazie per aver confermato il tuo indirizzo email. Ti terremo aggiornato sulle novità di SkillQuest.",
-      button: 'Torna alla home'
+      heading: 'Ti sei registrato!',
+      body: "Grazie per aver confermato il tuo indirizzo e-mail. Ti terremo aggiornato sulle novità di SkillQuest.",
+      button: 'Torna alla home page'
     },
     errors: {
-      expired: { title: 'Link scaduto', message: 'Questo link di verifica è scaduto. Richiedine uno nuovo.' },
-      invalid: { title: 'Link non valido', message: 'Questo link di verifica non è valido o è già stato usato.' },
-      already_verified: { title: 'Già verificato', message: 'Il tuo indirizzo email è già confermato. Sei nella lista degli aggiornamenti.' },
-      missing: { title: 'Nessun token trovato', message: 'Mancano informazioni nel link di verifica.' },
-      server_error: { title: 'Errore del server', message: 'Qualcosa è andato storto da parte nostra. Riprova più tardi.' },
-      generic: { title: 'Qualcosa è andato storto', message: 'Non siamo riusciti a elaborare la tua iscrizione.' }
+      expired: { title: 'Il link è scaduto', message: 'Questo link di verifica è scaduto. Richiedine uno nuovo.' },
+      invalid: { title: 'Link non valido', message: 'Questo link di verifica non è valido o è già stato utilizzato.' },
+      already_verified: { title: 'Già verificato', message: 'La tua email è già stata confermata. Sei nella lista degli aggiornamenti.' },
+      missing: { title: 'Non è stato trovato alcun token', message: 'Nel link di verifica mancano alcune informazioni.' },
+      server_error: { title: 'Errore del server', message: 'Si è verificato un errore da parte nostra. Prova di nuovo più tardi.' },
+      generic: { title: "C'è stato un problema", message: 'Non siamo riusciti a elaborare la tua registrazione.' }
     },
     resend: {
       button: 'Richiedi una nuova email di verifica',
-      sending: 'Invio...',
-      success: '✅ Nuova email di verifica inviata! Controlla la posta.',
-      genericError: 'Qualcosa è andato storto. Riprova più tardi.'
+      sending: 'Invio in corso...',
+      success: '✅ Ti è stata inviata una nuova email di verifica! Controlla la tua casella di posta.',
+      genericError: 'Si è verificato un errore. Riprova più tardi.'
     },
-    backHome: '← Torna alla home',
+    backHome: '← Torna alla home page',
     default: {
-      heading: 'Controlla la posta',
-      body: 'Ti abbiamo inviato un\'email con un link di conferma. Clicca sul link per completare l\'iscrizione.',
-      noEmail: 'Non hai ricevuto l\'email? Controlla lo spam oppure',
+      heading: 'Controlla la tua casella di posta',
+      body: 'Ti abbiamo inviato un\'e-mail con un link di conferma. Clicca sul link per completare la registrazione.',
+      noEmail: 'Non hai ricevuto l\'e-mail? Controlla la cartella dello spam oppure',
       resignup: 'iscriviti di nuovo',
-      backHome: '← Torna alla home'
+      backHome: '← Torna alla home page'
     }
   }
 };
