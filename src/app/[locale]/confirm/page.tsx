@@ -3,6 +3,7 @@
 import { useSearchParams } from 'next/navigation'
 import { Suspense, useState } from 'react'
 import Link from 'next/link'
+import Footer from '@/components/Footer'
 
 function ConfirmContent() {
   const searchParams = useSearchParams()
@@ -45,17 +46,14 @@ function ConfirmContent() {
     return (
       <div className="text-center">
         <div className="text-8xl mb-8">🎉</div>
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+        <h1 className="font-display text-4xl font-bold text-gray-900 mb-4">
           Je bent aangemeld!
         </h1>
-        <p className="text-xl text-gray-600 mb-8 max-w-md mx-auto">
+        <p className="text-xl text-gray-700 mb-8 max-w-md mx-auto">
           Bedankt voor het bevestigen van je e-mailadres. We houden je op de hoogte
           van SkillQuest updates.
         </p>
-        <Link
-          href="/"
-          className="inline-block px-8 py-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity"
-        >
+        <Link href="/" className="btn btn-primary inline-flex">
           Terug naar homepage
         </Link>
       </div>
@@ -97,13 +95,13 @@ function ConfirmContent() {
         <div className="text-8xl mb-8">
           {reason === 'already_verified' ? '✅' : '😕'}
         </div>
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">{title}</h1>
-        <p className="text-xl text-gray-600 mb-8 max-w-md mx-auto">{message}</p>
+        <h1 className="font-display text-4xl font-bold text-gray-900 mb-4">{title}</h1>
+        <p className="text-xl text-gray-700 mb-8 max-w-md mx-auto">{message}</p>
 
         {showResend && email && (
           <div className="mb-8">
             {resendStatus === 'success' ? (
-              <div className="bg-green-100 text-green-800 px-6 py-4 rounded-lg inline-block">
+              <div className="bg-primary-50 text-primary-800 px-6 py-4 rounded-lg inline-block">
                 ✅ Nieuwe verificatie-email verzonden! Check je inbox.
               </div>
             ) : (
@@ -111,7 +109,7 @@ function ConfirmContent() {
                 <button
                   onClick={handleResend}
                   disabled={resendStatus === 'loading'}
-                  className="px-8 py-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50"
+                  className="btn btn-primary disabled:opacity-50"
                 >
                   {resendStatus === 'loading'
                     ? 'Verzenden...'
@@ -125,7 +123,7 @@ function ConfirmContent() {
           </div>
         )}
 
-        <Link href="/" className="text-indigo-600 hover:text-indigo-800 font-medium">
+        <Link href="/" className="text-primary-700 hover:text-primary-900 font-medium">
           ← Terug naar homepage
         </Link>
       </div>
@@ -136,21 +134,21 @@ function ConfirmContent() {
   return (
     <div className="text-center">
       <div className="text-8xl mb-8">📧</div>
-      <h1 className="text-4xl font-bold text-gray-900 mb-4">
+      <h1 className="font-display text-4xl font-bold text-gray-900 mb-4">
         Check je inbox
       </h1>
-      <p className="text-xl text-gray-600 mb-8 max-w-md mx-auto">
+      <p className="text-xl text-gray-700 mb-8 max-w-md mx-auto">
         We hebben je een e-mail gestuurd met een bevestigingslink.
         Klik op de link om je aanmelding te voltooien.
       </p>
-      <p className="text-gray-500 mb-8">
+      <p className="text-gray-600 mb-8">
         Geen e-mail ontvangen? Check je spam folder of{' '}
-        <Link href="/" className="text-indigo-600 hover:text-indigo-800">
+        <Link href="/" className="text-primary-700 hover:text-primary-900">
           meld je opnieuw aan
         </Link>
         .
       </p>
-      <Link href="/" className="text-indigo-600 hover:text-indigo-800 font-medium">
+      <Link href="/" className="text-primary-700 hover:text-primary-900 font-medium">
         ← Terug naar homepage
       </Link>
     </div>
@@ -159,19 +157,22 @@ function ConfirmContent() {
 
 export default function ConfirmPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-50 to-white flex items-center justify-center p-4">
-      <div className="max-w-2xl w-full">
-        <Suspense
-          fallback={
-            <div className="text-center">
-              <div className="text-6xl mb-8 animate-pulse">⏳</div>
-              <p className="text-gray-600">Laden...</p>
-            </div>
-          }
-        >
-          <ConfirmContent />
-        </Suspense>
-      </div>
-    </main>
+    <>
+      <main className="min-h-screen bg-background-50 flex items-center justify-center p-4 pt-32 pb-24">
+        <div className="max-w-2xl w-full bg-white rounded-2xl shadow-lg p-8 md:p-12">
+          <Suspense
+            fallback={
+              <div className="text-center">
+                <div className="text-6xl mb-8 animate-pulse">⏳</div>
+                <p className="text-gray-600">Laden...</p>
+              </div>
+            }
+          >
+            <ConfirmContent />
+          </Suspense>
+        </div>
+      </main>
+      <Footer />
+    </>
   )
 }
