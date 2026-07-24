@@ -7,7 +7,8 @@
 //
 // The waitlist table lives in the skillquest-prod Supabase project (the same
 // one the app uses); see list-pending-android-testers.mjs for details on the
-// tracking columns.
+// tracking columns. The email is sent in each signup's own locale (see
+// src/lib/email-templates.mjs).
 //
 // Requires (same values Vercel already has configured for this project):
 //   NEXT_PUBLIC_SUPABASE_URL
@@ -22,6 +23,7 @@
 
 import { createClient } from "@supabase/supabase-js";
 import { Resend } from "resend";
+import { renderInstallEmail } from "../src/lib/email-templates.mjs";
 
 // Keep in sync with ANDROID_ALPHA_JOIN_URL in src/lib/marketing.ts
 const ANDROID_ALPHA_JOIN_URL =
@@ -49,7 +51,7 @@ const resend = confirm ? new Resend(resendKey) : null;
 
 const { data, error } = await supabase
   .from("waitlist")
-  .select("id, email, name")
+  .select("id, email, name, locale")
   .eq("email_verified", true)
   .in("platform_preference", ["android", "both"])
   .is("android_tester_added_at", null)
@@ -58,7 +60,7 @@ const { data, error } = await supabase
 if (error) {
   console.error("Query failed:", error.message);
   console.error(
-    "If this mentions a missing column, run sql/add_android_tester_tracking.sql first."
+    "If this mentions a missing column, run the tracking-column migration first (see sql/ history in git log)."
   );
   process.exit(1);
 }
@@ -72,7 +74,7 @@ if (!confirm) {
   console.log(
     `Dry run: ${data.length} tester(s) would be emailed and marked as added:\n`
   );
-  for (const row of data) console.log(row.email);
+  for (const row of data) console.log(`${row.email} (${row.locale ?? "nl"})`);
   console.log("\nRe-run with --confirm to actually send and mark them.");
   process.exit(0);
 }
@@ -82,11 +84,17 @@ let failed = 0;
 
 for (const row of data) {
   try {
+    const { subject, html } = renderInstallEmail({
+      locale: row.locale,
+      name: row.name,
+      androidJoinUrl: ANDROID_ALPHA_JOIN_URL,
+    });
+
     await resend.emails.send({
       from: "SkillQuest <hello@skill-quest.app>",
       to: row.email,
-      subject: "Je kunt SkillQuest nu installeren op Android!",
-      html: installEmailTemplate(row.name),
+      subject,
+      html,
     });
 
     const now = new Date().toISOString();
@@ -110,70 +118,3 @@ for (const row of data) {
 }
 
 console.log(`\nDone. Sent: ${sent}, failed: ${failed}.`);
-
-function installEmailTemplate(name) {
-  return `
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Je kunt SkillQuest nu installeren</title>
-</head>
-<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #F9FAFB; color: #14201B;">
-  <table role="presentation" style="width: 100%; border-collapse: collapse;">
-    <tr>
-      <td align="center" style="padding: 40px 20px;">
-        <table role="presentation" style="max-width: 600px; width: 100%; background: #FFFFFF; border-radius: 16px; border: 1px solid #DCE5DF; padding: 40px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06);">
-          <tr>
-            <td align="center" style="padding-bottom: 24px;">
-              <img src="https://www.skill-quest.app/skillquest-logo.png" width="120" height="120" alt="SkillQuest" style="display: block; border-radius: 24px;">
-            </td>
-          </tr>
-          <tr>
-            <td align="center" style="padding-bottom: 24px;">
-              <h1 style="margin: 0; font-size: 28px; font-weight: bold; color: #115E59;">
-                Je bent toegevoegd als Android tester!
-              </h1>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding-bottom: 32px; font-size: 16px; line-height: 1.6; color: #475569;">
-              <p style="margin: 0 0 16px 0;">Hey${name ? ` ${name}` : ""}!</p>
-              <p style="margin: 0 0 16px 0;">
-                Je e-mailadres staat nu op de Google Play tester-lijst voor SkillQuest. Open onderstaande link
-                <strong>met hetzelfde Google-account op je Android-toestel</strong> om deel te nemen aan de test
-                en de app te installeren.
-              </p>
-            </td>
-          </tr>
-          <tr>
-            <td align="center" style="padding: 0 0 32px 0;">
-              <a href="${ANDROID_ALPHA_JOIN_URL}" style="display: inline-block; padding: 18px 40px; background: linear-gradient(135deg, #FF6B35 0%, #D2381C 100%); color: #FFFFFF; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 18px; box-shadow: 0 4px 6px -1px rgba(210, 56, 28, 0.3);">
-                Word tester en installeer
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding-bottom: 24px; font-size: 14px; color: #94A3B8; text-align: center;">
-              <p style="margin: 0;">
-                Werkt de link niet meteen? Het kan tot een uur duren voordat Google Play je toevoeging verwerkt.
-              </p>
-            </td>
-          </tr>
-          <tr>
-            <td align="center" style="padding-top: 24px; border-top: 1px solid #DCE5DF;">
-              <p style="margin: 0; font-size: 12px; color: #94A3B8; line-height: 1.6;">
-                SkillQuest | <a href="https://www.skill-quest.app" style="color: #0F766E; text-decoration: none;">www.skill-quest.app</a><br>
-                Vragen? Stuur een e-mail naar <a href="mailto:hello@skill-quest.app" style="color: #0F766E; text-decoration: none;">hello@skill-quest.app</a>
-              </p>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-</body>
-</html>
-  `;
-}

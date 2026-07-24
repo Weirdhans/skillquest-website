@@ -2,10 +2,214 @@
 
 import { useSearchParams } from 'next/navigation'
 import { Suspense, useState } from 'react'
+import { useLocale } from 'next-intl'
 import Link from 'next/link'
 import Footer from '@/components/Footer'
+import { isLocale, type Locale } from '@/lib/marketing'
+
+type ConfirmCopy = {
+  loading: string;
+  success: { heading: string; body: string; button: string };
+  errors: Record<
+    'expired' | 'invalid' | 'already_verified' | 'missing' | 'server_error' | 'generic',
+    { title: string; message: string }
+  >;
+  resend: { button: string; sending: string; success: string; genericError: string };
+  backHome: string;
+  default: { heading: string; body: string; noEmail: string; resignup: string; backHome: string };
+};
+
+const copyByLocale: Record<Locale, ConfirmCopy> = {
+  nl: {
+    loading: 'Laden...',
+    success: {
+      heading: 'Je bent aangemeld!',
+      body: 'Bedankt voor het bevestigen van je e-mailadres. We houden je op de hoogte van SkillQuest updates.',
+      button: 'Terug naar homepage'
+    },
+    errors: {
+      expired: { title: 'Link verlopen', message: 'Deze verificatielink is verlopen. Vraag een nieuwe aan.' },
+      invalid: { title: 'Ongeldige link', message: 'Deze verificatielink is ongeldig of al gebruikt.' },
+      already_verified: { title: 'Al geverifieerd', message: 'Je e-mailadres is al bevestigd. Je staat op de update-lijst.' },
+      missing: { title: 'Geen token gevonden', message: 'Er ontbreekt informatie in de verificatielink.' },
+      server_error: { title: 'Server fout', message: 'Er ging iets mis aan onze kant. Probeer het later opnieuw.' },
+      generic: { title: 'Er ging iets mis', message: 'We konden je aanmelding niet verwerken.' }
+    },
+    resend: {
+      button: 'Nieuwe verificatie-email aanvragen',
+      sending: 'Verzenden...',
+      success: '✅ Nieuwe verificatie-email verzonden! Check je inbox.',
+      genericError: 'Er ging iets mis. Probeer het later opnieuw.'
+    },
+    backHome: '← Terug naar homepage',
+    default: {
+      heading: 'Check je inbox',
+      body: 'We hebben je een e-mail gestuurd met een bevestigingslink. Klik op de link om je aanmelding te voltooien.',
+      noEmail: 'Geen e-mail ontvangen? Check je spam folder of',
+      resignup: 'meld je opnieuw aan',
+      backHome: '← Terug naar homepage'
+    }
+  },
+  en: {
+    loading: 'Loading...',
+    success: {
+      heading: "You're signed up!",
+      body: "Thanks for confirming your email address. We'll keep you posted on SkillQuest updates.",
+      button: 'Back to homepage'
+    },
+    errors: {
+      expired: { title: 'Link expired', message: 'This verification link has expired. Request a new one.' },
+      invalid: { title: 'Invalid link', message: 'This verification link is invalid or has already been used.' },
+      already_verified: { title: 'Already verified', message: "Your email is already confirmed. You're on the update list." },
+      missing: { title: 'No token found', message: 'Some information is missing from the verification link.' },
+      server_error: { title: 'Server error', message: 'Something went wrong on our end. Please try again later.' },
+      generic: { title: 'Something went wrong', message: "We couldn't process your signup." }
+    },
+    resend: {
+      button: 'Request a new verification email',
+      sending: 'Sending...',
+      success: '✅ New verification email sent! Check your inbox.',
+      genericError: 'Something went wrong. Please try again later.'
+    },
+    backHome: '← Back to homepage',
+    default: {
+      heading: 'Check your inbox',
+      body: "We've sent you an email with a confirmation link. Click the link to complete your signup.",
+      noEmail: "Didn't get an email? Check your spam folder or",
+      resignup: 'sign up again',
+      backHome: '← Back to homepage'
+    }
+  },
+  de: {
+    loading: 'Lädt...',
+    success: {
+      heading: 'Du bist angemeldet!',
+      body: 'Danke, dass du deine E-Mail-Adresse bestätigt hast. Wir halten dich über SkillQuest Updates auf dem Laufenden.',
+      button: 'Zurück zur Startseite'
+    },
+    errors: {
+      expired: { title: 'Link abgelaufen', message: 'Dieser Bestätigungslink ist abgelaufen. Fordere einen neuen an.' },
+      invalid: { title: 'Ungültiger Link', message: 'Dieser Bestätigungslink ist ungültig oder wurde bereits verwendet.' },
+      already_verified: { title: 'Bereits bestätigt', message: 'Deine E-Mail-Adresse ist bereits bestätigt. Du stehst auf der Update-Liste.' },
+      missing: { title: 'Kein Token gefunden', message: 'Im Bestätigungslink fehlen Informationen.' },
+      server_error: { title: 'Serverfehler', message: 'Bei uns ist etwas schiefgelaufen. Bitte versuche es später erneut.' },
+      generic: { title: 'Etwas ist schiefgelaufen', message: 'Wir konnten deine Anmeldung nicht verarbeiten.' }
+    },
+    resend: {
+      button: 'Neue Bestätigungs-E-Mail anfordern',
+      sending: 'Senden...',
+      success: '✅ Neue Bestätigungs-E-Mail gesendet! Prüfe deinen Posteingang.',
+      genericError: 'Etwas ist schiefgelaufen. Bitte versuche es später erneut.'
+    },
+    backHome: '← Zurück zur Startseite',
+    default: {
+      heading: 'Prüfe deinen Posteingang',
+      body: 'Wir haben dir eine E-Mail mit einem Bestätigungslink gesendet. Klicke auf den Link, um deine Anmeldung abzuschließen.',
+      noEmail: 'Keine E-Mail erhalten? Prüfe deinen Spam-Ordner oder',
+      resignup: 'melde dich erneut an',
+      backHome: '← Zurück zur Startseite'
+    }
+  },
+  fr: {
+    loading: 'Chargement...',
+    success: {
+      heading: 'Vous êtes inscrit !',
+      body: "Merci d'avoir confirmé votre adresse e-mail. Nous vous tiendrons informé des actualités SkillQuest.",
+      button: "Retour à l'accueil"
+    },
+    errors: {
+      expired: { title: 'Lien expiré', message: 'Ce lien de vérification a expiré. Demandez-en un nouveau.' },
+      invalid: { title: 'Lien invalide', message: 'Ce lien de vérification est invalide ou déjà utilisé.' },
+      already_verified: { title: 'Déjà vérifié', message: 'Votre adresse e-mail est déjà confirmée. Vous êtes sur la liste des actualités.' },
+      missing: { title: 'Aucun jeton trouvé', message: 'Des informations manquent dans le lien de vérification.' },
+      server_error: { title: 'Erreur serveur', message: "Une erreur s'est produite de notre côté. Réessayez plus tard." },
+      generic: { title: "Une erreur s'est produite", message: "Nous n'avons pas pu traiter votre inscription." }
+    },
+    resend: {
+      button: 'Demander un nouvel e-mail de vérification',
+      sending: 'Envoi...',
+      success: '✅ Nouvel e-mail de vérification envoyé ! Vérifiez votre boîte mail.',
+      genericError: "Une erreur s'est produite. Réessayez plus tard."
+    },
+    backHome: "← Retour à l'accueil",
+    default: {
+      heading: 'Vérifiez votre boîte mail',
+      body: 'Nous vous avons envoyé un e-mail avec un lien de confirmation. Cliquez sur le lien pour finaliser votre inscription.',
+      noEmail: "Vous n'avez pas reçu d'e-mail ? Vérifiez vos spams ou",
+      resignup: 'inscrivez-vous à nouveau',
+      backHome: "← Retour à l'accueil"
+    }
+  },
+  es: {
+    loading: 'Cargando...',
+    success: {
+      heading: '¡Te has registrado!',
+      body: 'Gracias por confirmar tu dirección de correo. Te mantendremos al día con las novedades de SkillQuest.',
+      button: 'Volver al inicio'
+    },
+    errors: {
+      expired: { title: 'Enlace caducado', message: 'Este enlace de verificación ha caducado. Solicita uno nuevo.' },
+      invalid: { title: 'Enlace no válido', message: 'Este enlace de verificación no es válido o ya se ha usado.' },
+      already_verified: { title: 'Ya verificado', message: 'Tu correo ya está confirmado. Estás en la lista de novedades.' },
+      missing: { title: 'No se encontró el token', message: 'Falta información en el enlace de verificación.' },
+      server_error: { title: 'Error del servidor', message: 'Algo salió mal por nuestra parte. Inténtalo de nuevo más tarde.' },
+      generic: { title: 'Algo salió mal', message: 'No pudimos procesar tu registro.' }
+    },
+    resend: {
+      button: 'Solicitar un nuevo correo de verificación',
+      sending: 'Enviando...',
+      success: '✅ ¡Nuevo correo de verificación enviado! Revisa tu bandeja de entrada.',
+      genericError: 'Algo salió mal. Inténtalo de nuevo más tarde.'
+    },
+    backHome: '← Volver al inicio',
+    default: {
+      heading: 'Revisa tu bandeja de entrada',
+      body: 'Te hemos enviado un correo con un enlace de confirmación. Haz clic en el enlace para completar tu registro.',
+      noEmail: '¿No recibiste el correo? Revisa tu carpeta de spam o',
+      resignup: 'regístrate de nuevo',
+      backHome: '← Volver al inicio'
+    }
+  },
+  it: {
+    loading: 'Caricamento...',
+    success: {
+      heading: 'Ti sei iscritto!',
+      body: "Grazie per aver confermato il tuo indirizzo email. Ti terremo aggiornato sulle novità di SkillQuest.",
+      button: 'Torna alla home'
+    },
+    errors: {
+      expired: { title: 'Link scaduto', message: 'Questo link di verifica è scaduto. Richiedine uno nuovo.' },
+      invalid: { title: 'Link non valido', message: 'Questo link di verifica non è valido o è già stato usato.' },
+      already_verified: { title: 'Già verificato', message: 'Il tuo indirizzo email è già confermato. Sei nella lista degli aggiornamenti.' },
+      missing: { title: 'Nessun token trovato', message: 'Mancano informazioni nel link di verifica.' },
+      server_error: { title: 'Errore del server', message: 'Qualcosa è andato storto da parte nostra. Riprova più tardi.' },
+      generic: { title: 'Qualcosa è andato storto', message: 'Non siamo riusciti a elaborare la tua iscrizione.' }
+    },
+    resend: {
+      button: 'Richiedi una nuova email di verifica',
+      sending: 'Invio...',
+      success: '✅ Nuova email di verifica inviata! Controlla la posta.',
+      genericError: 'Qualcosa è andato storto. Riprova più tardi.'
+    },
+    backHome: '← Torna alla home',
+    default: {
+      heading: 'Controlla la posta',
+      body: 'Ti abbiamo inviato un\'email con un link di conferma. Clicca sul link per completare l\'iscrizione.',
+      noEmail: 'Non hai ricevuto l\'email? Controlla lo spam oppure',
+      resignup: 'iscriviti di nuovo',
+      backHome: '← Torna alla home'
+    }
+  }
+};
+
+function useConfirmCopy(): ConfirmCopy {
+  const currentLocale = useLocale();
+  const locale: Locale = isLocale(currentLocale) ? currentLocale : 'nl';
+  return copyByLocale[locale];
+}
 
 function ConfirmContent() {
+  const copy = useConfirmCopy();
   const searchParams = useSearchParams()
   const status = searchParams.get('status')
   const reason = searchParams.get('reason')
@@ -33,11 +237,11 @@ function ConfirmContent() {
         setResendStatus('success')
       } else {
         setResendStatus('error')
-        setResendError(data.error || 'Er ging iets mis')
+        setResendError(data.error || copy.resend.genericError)
       }
     } catch {
       setResendStatus('error')
-      setResendError('Er ging iets mis. Probeer het later opnieuw.')
+      setResendError(copy.resend.genericError)
     }
   }
 
@@ -47,14 +251,13 @@ function ConfirmContent() {
       <div className="text-center">
         <div className="text-8xl mb-8">🎉</div>
         <h1 className="font-display text-4xl font-bold text-gray-900 mb-4">
-          Je bent aangemeld!
+          {copy.success.heading}
         </h1>
         <p className="text-xl text-gray-700 mb-8 max-w-md mx-auto">
-          Bedankt voor het bevestigen van je e-mailadres. We houden je op de hoogte
-          van SkillQuest updates.
+          {copy.success.body}
         </p>
         <Link href="/" className="btn btn-primary inline-flex">
-          Terug naar homepage
+          {copy.success.button}
         </Link>
       </div>
     )
@@ -62,33 +265,9 @@ function ConfirmContent() {
 
   // Error states
   if (status === 'error') {
-    let title = 'Er ging iets mis'
-    let message = 'We konden je aanmelding niet verwerken.'
-    let showResend = false
-
-    switch (reason) {
-      case 'expired':
-        title = 'Link verlopen'
-        message = 'Deze verificatielink is verlopen. Vraag een nieuwe aan.'
-        showResend = true
-        break
-      case 'invalid':
-        title = 'Ongeldige link'
-        message = 'Deze verificatielink is ongeldig of al gebruikt.'
-        break
-      case 'already_verified':
-        title = 'Al geverifieerd'
-        message = 'Je e-mailadres is al bevestigd. Je staat op de update-lijst.'
-        break
-      case 'missing':
-        title = 'Geen token gevonden'
-        message = 'Er ontbreekt informatie in de verificatielink.'
-        break
-      case 'server_error':
-        title = 'Server fout'
-        message = 'Er ging iets mis aan onze kant. Probeer het later opnieuw.'
-        break
-    }
+    const reasonKey = (reason && reason in copy.errors ? reason : 'generic') as keyof ConfirmCopy['errors'];
+    const { title, message } = copy.errors[reasonKey];
+    const showResend = reason === 'expired'
 
     return (
       <div className="text-center">
@@ -102,7 +281,7 @@ function ConfirmContent() {
           <div className="mb-8">
             {resendStatus === 'success' ? (
               <div className="bg-primary-50 text-primary-800 px-6 py-4 rounded-lg inline-block">
-                ✅ Nieuwe verificatie-email verzonden! Check je inbox.
+                {copy.resend.success}
               </div>
             ) : (
               <>
@@ -111,9 +290,7 @@ function ConfirmContent() {
                   disabled={resendStatus === 'loading'}
                   className="btn btn-primary disabled:opacity-50"
                 >
-                  {resendStatus === 'loading'
-                    ? 'Verzenden...'
-                    : 'Nieuwe verificatie-email aanvragen'}
+                  {resendStatus === 'loading' ? copy.resend.sending : copy.resend.button}
                 </button>
                 {resendStatus === 'error' && resendError && (
                   <p className="mt-4 text-red-600">{resendError}</p>
@@ -124,7 +301,7 @@ function ConfirmContent() {
         )}
 
         <Link href="/" className="text-primary-700 hover:text-primary-900 font-medium">
-          ← Terug naar homepage
+          {copy.backHome}
         </Link>
       </div>
     )
@@ -135,27 +312,28 @@ function ConfirmContent() {
     <div className="text-center">
       <div className="text-8xl mb-8">📧</div>
       <h1 className="font-display text-4xl font-bold text-gray-900 mb-4">
-        Check je inbox
+        {copy.default.heading}
       </h1>
       <p className="text-xl text-gray-700 mb-8 max-w-md mx-auto">
-        We hebben je een e-mail gestuurd met een bevestigingslink.
-        Klik op de link om je aanmelding te voltooien.
+        {copy.default.body}
       </p>
       <p className="text-gray-600 mb-8">
-        Geen e-mail ontvangen? Check je spam folder of{' '}
+        {copy.default.noEmail}{' '}
         <Link href="/" className="text-primary-700 hover:text-primary-900">
-          meld je opnieuw aan
+          {copy.default.resignup}
         </Link>
         .
       </p>
       <Link href="/" className="text-primary-700 hover:text-primary-900 font-medium">
-        ← Terug naar homepage
+        {copy.default.backHome}
       </Link>
     </div>
   )
 }
 
 export default function ConfirmPage() {
+  const copy = useConfirmCopy();
+
   return (
     <>
       <main className="min-h-screen bg-background-50 flex items-center justify-center p-4 pt-32 pb-24">
@@ -164,7 +342,7 @@ export default function ConfirmPage() {
             fallback={
               <div className="text-center">
                 <div className="text-6xl mb-8 animate-pulse">⏳</div>
-                <p className="text-gray-600">Laden...</p>
+                <p className="text-gray-600">{copy.loading}</p>
               </div>
             }
           >

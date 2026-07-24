@@ -1,6 +1,7 @@
 'use client';
 
 import {useMemo, useState} from 'react';
+import {useLocale} from 'next-intl';
 import type {MarketingCopy} from '@/lib/marketing';
 
 type Platform = 'ios' | 'android' | 'both';
@@ -25,6 +26,7 @@ export default function LeadCapture({
   copy,
   initialPlatform = 'both'
 }: LeadCaptureProps) {
+  const locale = useLocale();
   const [email, setEmail] = useState('');
   const [platform, setPlatform] = useState<Platform>(initialPlatform);
   const [status, setStatus] = useState<Status>('idle');
@@ -46,7 +48,7 @@ export default function LeadCapture({
       const response = await fetch('/api/subscribe', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({email, platform})
+        body: JSON.stringify({email, platform, locale})
       });
 
       const data = await response.json();

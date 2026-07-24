@@ -35,7 +35,7 @@ const supabase = createClient(url, key);
 
 const { data, error } = await supabase
   .from("waitlist")
-  .select("email, name, created_at")
+  .select("email, name, locale, created_at")
   .eq("email_verified", true)
   .in("platform_preference", ["android", "both"])
   .is("android_tester_added_at", null)
@@ -44,7 +44,7 @@ const { data, error } = await supabase
 if (error) {
   console.error("Query failed:", error.message);
   console.error(
-    "If this mentions a missing column, run sql/add_android_tester_tracking.sql first."
+    "If this mentions a missing column, run the tracking-column migrations first (see supabase/migrations/ in the skillquest app repo)."
   );
   process.exit(1);
 }

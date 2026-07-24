@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { Resend } from "resend";
 import { randomUUID } from "crypto";
+import { renderVerificationEmail, normalizeEmailLocale } from "@/lib/email-templates.mjs";
 
 // Lazy initialize clients (only when needed at runtime, not at build time)
 const getSupabaseClient = () => {
@@ -32,6 +33,7 @@ interface SubscribeRequest {
   email: string;
   name?: string;
   platform?: Platform;
+  locale?: string;
 }
 
 // Validate platform value
@@ -62,6 +64,7 @@ export async function POST(request: NextRequest) {
 
     // Validate and default platform
     const platform: Platform = isValidPlatform(body.platform) ? body.platform : 'both';
+    const locale = normalizeEmailLocale(body.locale);
 
     const email = body.email.toLowerCase();
 
@@ -106,6 +109,7 @@ export async function POST(request: NextRequest) {
           email: email,
           name: body.name || null,
           platform_preference: platform,
+          locale: locale,
           source: "website",
           status: "new",
           email_verified: false,
@@ -129,12 +133,18 @@ export async function POST(request: NextRequest) {
     try {
       const resend = getResendClient();
       const verifyUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.skill-quest.app'}/api/verify?token=${confirmationToken}`;
+      const { subject, html } = renderVerificationEmail({
+        locale,
+        name: body.name || null,
+        verifyUrl,
+        platform,
+      });
 
       await resend.emails.send({
         from: "SkillQuest <hello@skill-quest.app>",
         to: email,
-        subject: "Bevestig je aanmelding voor SkillQuest",
-        html: getVerificationEmailTemplate(body.name || null, verifyUrl, platform),
+        subject,
+        html,
       });
     } catch (emailError) {
       console.error("Failed to send verification email:", emailError);
@@ -166,95 +176,3 @@ export async function POST(request: NextRequest) {
   }
 }
 
-function getVerificationEmailTemplate(name: string | null, verifyUrl: string, platform: Platform): string {
-  const platformText = platform === 'ios'
-    ? 'voor iOS'
-    : platform === 'android'
-    ? 'voor Android'
-    : 'voor iOS en Android';
-
-  return `
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bevestig je aanmelding</title>
-</head>
-<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #F9FAFB; color: #14201B;">
-  <table role="presentation" style="width: 100%; border-collapse: collapse;">
-    <tr>
-      <td align="center" style="padding: 40px 20px;">
-        <table role="presentation" style="max-width: 600px; width: 100%; background: #FFFFFF; border-radius: 16px; border: 1px solid #DCE5DF; padding: 40px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06);">
-
-          <!-- Logo -->
-          <tr>
-            <td align="center" style="padding-bottom: 24px;">
-              <img src="https://www.skill-quest.app/skillquest-logo.png" width="120" height="120" alt="SkillQuest" style="display: block; border-radius: 24px;">
-            </td>
-          </tr>
-
-          <!-- Heading -->
-          <tr>
-            <td align="center" style="padding-bottom: 24px;">
-              <h1 style="margin: 0; font-size: 28px; font-weight: bold; color: #115E59;">
-                Bevestig je aanmelding
-              </h1>
-            </td>
-          </tr>
-
-          <!-- Body Text -->
-          <tr>
-            <td style="padding-bottom: 32px; font-size: 16px; line-height: 1.6; color: #475569;">
-              <p style="margin: 0 0 16px 0;">Hey${name ? ` ${name}` : ""}!</p>
-              <p style="margin: 0 0 16px 0;">
-                Bijna klaar! Klik op de knop hieronder om je aanmelding voor <strong style="color: #0F766E;">SkillQuest</strong> updates te bevestigen.
-              </p>
-              <p style="margin: 0 0 16px 0;">
-                Je krijgt relevante SkillQuest updates ${platformText}, waaronder Android alpha-informatie als je daarvoor kiest.
-              </p>
-              ${platform !== 'ios' ? `<p style="margin: 0 0 16px 0;">
-                Voor Android geldt: na deze bevestiging sta je op de wachtlijst voor de Google Play closed test.
-                Zodra we je e-mailadres hebben toegevoegd aan de tester-lijst, ontvang je een aparte e-mail met de
-                installatielink. Dat kan even duren &mdash; we voegen testers in batches toe.
-              </p>` : ''}
-            </td>
-          </tr>
-
-          <!-- CTA Button -->
-          <tr>
-            <td align="center" style="padding: 0 0 32px 0;">
-              <a href="${verifyUrl}" style="display: inline-block; padding: 18px 40px; background: linear-gradient(135deg, #FF6B35 0%, #D2381C 100%); color: #FFFFFF; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 18px; box-shadow: 0 4px 6px -1px rgba(210, 56, 28, 0.3);">
-                Bevestig mijn aanmelding
-              </a>
-            </td>
-          </tr>
-
-          <!-- Link expiry notice -->
-          <tr>
-            <td style="padding-bottom: 24px; font-size: 14px; color: #94A3B8; text-align: center;">
-              <p style="margin: 0;">
-                Deze link is 24 uur geldig.<br>
-                Niet aangevraagd? Dan kun je deze e-mail negeren.
-              </p>
-            </td>
-          </tr>
-
-          <!-- Footer -->
-          <tr>
-            <td align="center" style="padding-top: 24px; border-top: 1px solid #DCE5DF;">
-              <p style="margin: 0; font-size: 12px; color: #94A3B8; line-height: 1.6;">
-                SkillQuest | <a href="https://www.skill-quest.app" style="color: #0F766E; text-decoration: none;">www.skill-quest.app</a><br>
-                Vragen? Stuur een e-mail naar <a href="mailto:hello@skill-quest.app" style="color: #0F766E; text-decoration: none;">hello@skill-quest.app</a>
-              </p>
-            </td>
-          </tr>
-
-        </table>
-      </td>
-    </tr>
-  </table>
-</body>
-</html>
-  `;
-}
