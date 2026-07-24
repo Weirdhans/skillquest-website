@@ -91,6 +91,11 @@ export default function Footer() {
                   {copy.footer.support}
                 </Link>
               </li>
+              <li>
+                <Link href="/changelog" className="hover:text-white">
+                  {copy.footer.changelog}
+                </Link>
+              </li>
             </ul>
           </div>
 

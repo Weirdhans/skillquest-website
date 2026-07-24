@@ -392,7 +392,8 @@ export const marketingCopy = {
       support: 'Support',
       privacy: 'Privacy Policy',
       deleteAccount: 'Account deletion',
-      changePassword: 'Change password'
+      changePassword: 'Change password',
+      changelog: "What's new"
     },
     download: {
       metaTitle: 'Download SkillQuest | App Store and Android Alpha',
@@ -699,7 +700,8 @@ export const marketingCopy = {
       support: 'Support',
       privacy: 'Privacybeleid',
       deleteAccount: 'Account verwijderen',
-      changePassword: 'Wachtwoord wijzigen'
+      changePassword: 'Wachtwoord wijzigen',
+      changelog: 'Wat is er nieuw'
     },
     download: {
       metaTitle: 'Download SkillQuest | App Store en Android Alpha',
@@ -1006,7 +1008,8 @@ export const marketingCopy = {
       support: 'Support',
       privacy: 'Datenschutz',
       deleteAccount: 'Konto löschen',
-      changePassword: 'Passwort ändern'
+      changePassword: 'Passwort ändern',
+      changelog: 'Neuigkeiten'
     },
     download: {
       metaTitle: 'SkillQuest herunterladen | App Store und Android Alpha',
@@ -1313,7 +1316,8 @@ export const marketingCopy = {
       support: 'Support',
       privacy: 'Confidentialité',
       deleteAccount: 'Suppression de compte',
-      changePassword: 'Changer le mot de passe'
+      changePassword: 'Changer le mot de passe',
+      changelog: 'Nouveautés'
     },
     download: {
       metaTitle: 'Télécharger SkillQuest | App Store et Android Alpha',
@@ -1620,7 +1624,8 @@ export const marketingCopy = {
       support: 'Soporte',
       privacy: 'Privacidad',
       deleteAccount: 'Eliminar cuenta',
-      changePassword: 'Cambiar contraseña'
+      changePassword: 'Cambiar contraseña',
+      changelog: 'Novedades'
     },
     download: {
       metaTitle: 'Descargar SkillQuest | App Store y Android Alpha',
@@ -1927,7 +1932,8 @@ export const marketingCopy = {
       support: 'Supporto',
       privacy: 'Privacy',
       deleteAccount: 'Eliminazione account',
-      changePassword: 'Cambia password'
+      changePassword: 'Cambia password',
+      changelog: 'Novità'
     },
     download: {
       metaTitle: 'Scarica SkillQuest | App Store e Android Alpha',
