@@ -118,7 +118,7 @@ export default function LeadCapture({
             <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-primary-200">
               {copy.badge}
             </p>
-            <h2 className="font-display text-3xl font-bold leading-tight md:text-4xl">
+            <h2 className="font-display text-section text-balance">
               {copy.heading}
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-primary-100">

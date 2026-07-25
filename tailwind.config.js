@@ -5,11 +5,14 @@ module.exports = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    // lib/ holds the marketing copy and feature-page data. No class strings today,
+    // but keeping it scanned means moving a className here will not silently purge.
+    './src/lib/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       colors: {
-        // SkillQuest brand colors (teal primary, coral CTA)
+        // Brand teal. Used for structure, eyebrows, links - never for CTAs.
         primary: {
           50: '#EAF8F5',
           100: '#D2F0EA',
@@ -22,48 +25,44 @@ module.exports = {
           800: '#134E4A',
           900: '#0F302E',
         },
-        // Duolingo-style playful colors
-        accent: {
-          orange: '#FF9500', // Bright orange for CTAs
-          green: '#58CC02', // Duolingo green
-          mint: '#88DCBE', // Soft mint
-          purple: '#CE82FF', // Soft purple
-          yellow: '#FFC800', // Warm yellow
-          pink: '#FF85C0', // Playful pink
-        },
-        // Phoenix fire colors (Zenith Reborn inspired)
+        // Action orange. CTAs only, so the accent keeps meaning something.
         phoenix: {
-          fire: '#D2381C', // Deep orange/red (core)
-          flame: '#FF6B35', // Warm orange (wings)
-          gold: '#FFB627', // Gold/yellow (wing tips)
-          ember: '#8B2635', // Bordeaux/purple (accents)
-          shadow: '#3D1F2E', // Deep purple (shadows)
+          fire: '#D2381C',
+          flame: '#FF6B35',
         },
-        // Background colors
         background: {
-          50: '#F9FAFB', // Off-white (not pure white)
-          100: '#F3F4F6',
-          900: '#111827',
-        }
+          50: '#F9FAFB',
+        },
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        display: ['var(--font-nunito)', 'system-ui', 'sans-serif'], // Rounded headlines
+        sans: ['var(--font-geist)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-bricolage)', 'system-ui', 'sans-serif'],
+        // Numerals: XP, minutes, levels, streaks, prices. The product measures
+        // things, so the numbers should read as measured.
+        mono: ['var(--font-geist-mono)', 'ui-monospace', 'monospace'],
       },
-      animation: {
-        'fade-in': 'fadeIn 0.5s ease-in',
-        'slide-up': 'slideUp 0.6s ease-out',
-        'bounce-slow': 'bounce 3s infinite',
-      },
-      keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        slideUp: {
-          '0%': { transform: 'translateY(20px)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' },
-        },
+      // A real type scale. Previously every heading was ad-hoc, which is why all
+      // ten homepage <h2>s rendered at an identical 36px. clamp() means headings
+      // scale continuously instead of jumping at breakpoints.
+      fontSize: {
+        // Max capped at 4rem, not 5rem: the headline has to hold two lines in
+        // every locale, and the French string is 56 characters.
+        display: [
+          'clamp(2.5rem, 4.6vw, 4rem)',
+          { lineHeight: '1.08', letterSpacing: '-0.025em', fontWeight: '700' },
+        ],
+        section: [
+          'clamp(2rem, 3.5vw, 3.25rem)',
+          { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '700' },
+        ],
+        subsection: [
+          'clamp(1.25rem, 1.6vw, 1.5rem)',
+          { lineHeight: '1.25', letterSpacing: '-0.01em', fontWeight: '700' },
+        ],
+        lead: [
+          'clamp(1.125rem, 1.4vw, 1.375rem)',
+          { lineHeight: '1.6' },
+        ],
       },
     },
   },

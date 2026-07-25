@@ -1,4 +1,4 @@
-import { Inter, Nunito } from 'next/font/google'
+import {fontVariables} from '@/lib/fonts'
 import '../../styles/globals.css'
 import Navbar from '@/components/Navbar'
 import {NextIntlClientProvider} from 'next-intl';
@@ -13,17 +13,6 @@ import {
 } from '@/lib/marketing';
 
 const locales = routing.locales;
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-})
-
-const nunito = Nunito({
-  subsets: ['latin'],
-  variable: '--font-nunito',
-  weight: ['400', '600', '700', '800'],
-})
 
 const themeInitScript = `
 (() => {
@@ -88,7 +77,7 @@ export default async function LocaleLayout({
       <head>
         <script dangerouslySetInnerHTML={{__html: themeInitScript}} />
       </head>
-      <body className={`${inter.variable} ${nunito.variable} font-sans`}>
+      <body className={`${fontVariables} font-sans`}>
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           {children}
