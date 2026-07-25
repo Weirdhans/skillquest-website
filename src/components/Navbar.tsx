@@ -3,7 +3,8 @@
 import type {CSSProperties} from 'react';
 import {useEffect, useState} from 'react';
 import Image from 'next/image';
-import {AnimatePresence, motion} from 'framer-motion';
+import {AnimatePresence, motion, useMotionValueEvent, useScroll} from 'framer-motion';
+import {CaretDown, Moon, Sun} from '@phosphor-icons/react';
 import {useLocale} from 'next-intl';
 import {usePathname, useRouter} from 'next/navigation';
 import {Link, routing} from '@/i18n/routing';
@@ -43,48 +44,6 @@ function applyTheme(theme: Theme) {
   document.documentElement.dataset.theme = theme;
 }
 
-function SunIcon() {
-  return (
-    <svg
-      className="h-4 w-4"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      aria-hidden="true"
-    >
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2" />
-      <path d="M12 20v2" />
-      <path d="m4.93 4.93 1.41 1.41" />
-      <path d="m17.66 17.66 1.41 1.41" />
-      <path d="M2 12h2" />
-      <path d="M20 12h2" />
-      <path d="m6.34 17.66-1.41 1.41" />
-      <path d="m19.07 4.93-1.41 1.41" />
-    </svg>
-  );
-}
-
-function MoonIcon() {
-  return (
-    <svg
-      className="h-4 w-4"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      aria-hidden="true"
-    >
-      <path d="M20.99 13.18A8.5 8.5 0 1 1 10.82 3.01 7 7 0 0 0 20.99 13.18Z" />
-    </svg>
-  );
-}
-
 const languageOptions = routing.locales.map((locale) => ({
   code: locale,
   label: getMarketingCopy(locale).localeName
@@ -102,13 +61,13 @@ export default function Navbar() {
   const [showLangMenu, setShowLangMenu] = useState(false);
   const [theme, setTheme] = useState<Theme>('light');
 
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 8);
-
-    handleScroll();
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  // useScroll instead of a raw scroll listener: that ran on every scroll frame
+  // with no batching, and setState per frame re-rendered the whole nav.
+  const {scrollY} = useScroll();
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    const next = latest > 8;
+    setIsScrolled((prev) => (prev === next ? prev : next));
+  });
 
   useEffect(() => {
     const syncTheme = () => {
@@ -182,7 +141,9 @@ export default function Navbar() {
       transition={{duration: 0.25}}
     >
       <div className="container-custom">
-        <div className="flex h-16 items-center justify-between gap-4 md:h-20">
+        {/* Capped at 72px so the nav never eats into the hero. It measured 81px
+            before, which pushed the hero CTA below a 900px fold. */}
+        <div className="flex h-16 items-center justify-between gap-4 md:h-[72px]">
           <Link href="/" className="flex min-w-0 items-center gap-3">
             <Image
               src="/skillquest-logo.png"
@@ -219,22 +180,14 @@ export default function Navbar() {
                 aria-expanded={showLangMenu}
               >
                 <span>{locale.toUpperCase()}</span>
-                <svg
-                  className={`h-4 w-4 transition-transform theme-copy ${
+                <CaretDown
+                  size={16}
+                  weight="bold"
+                  aria-hidden
+                  className={`transition-transform theme-copy ${
                     showLangMenu ? 'rotate-180' : ''
                   }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
+                />
               </button>
 
               <AnimatePresence>
@@ -283,7 +236,11 @@ export default function Navbar() {
               title={theme === 'dark' ? 'Light mode' : 'Dark mode'}
               suppressHydrationWarning
             >
-              {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+              {theme === 'dark' ? (
+                <Sun size={18} weight="bold" aria-hidden />
+              ) : (
+                <Moon size={18} weight="bold" aria-hidden />
+              )}
             </button>
 
 

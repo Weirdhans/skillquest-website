@@ -20,6 +20,12 @@
     --sq-brand-deep: #103c39;
     --sq-accent: #ff6b35;
     --sq-accent-strong: #d2381c;
+    /* Single source of truth for the CTA gradient. It used to be hardcoded in
+       three separate places in this file. The email templates keep their own
+       copy (inline CSS is mandatory in mail) - see src/lib/email-templates.mjs. */
+    --sq-cta-gradient: linear-gradient(135deg, #ff6b35 0%, #d2381c 100%);
+    --sq-cta-gradient-hover: linear-gradient(135deg, #ff7e4a 0%, #e64a2e 100%);
+    --sq-cta-shadow: 0 8px 25px rgba(210, 56, 28, 0.4);
     --sq-nav-bg: rgba(255, 255, 255, 0.88);
     --sq-nav-border: rgba(196, 210, 202, 0.85);
     --sq-hero-start: #101714;
@@ -46,6 +52,9 @@
     --sq-brand-deep: #0d2725;
     --sq-accent: #ff7a45;
     --sq-accent-strong: #ff9a68;
+    --sq-cta-gradient: linear-gradient(135deg, #ff7a45 0%, #d94425 100%);
+    --sq-cta-gradient-hover: linear-gradient(135deg, #ff8d5d 0%, #e85333 100%);
+    --sq-cta-shadow: 0 8px 25px rgba(255, 122, 69, 0.28);
     --sq-nav-bg: rgba(18, 21, 18, 0.86);
     --sq-nav-border: rgba(70, 82, 68, 0.75);
     --sq-hero-start: #0b0d0b;
@@ -64,52 +73,76 @@
     color: var(--sq-text);
     @apply antialiased;
   }
+
+  /* Safety net. Individual components also gate their motion behind
+     useReducedMotion(), but this catches any transition that slips through -
+     including scroll-smooth above, which is itself a motion effect. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }
 
 @layer components {
-  /* Button styles */
+  /* Radius system - one scale, applied everywhere:
+       interactive (buttons, pills) -> rounded-full
+       cards, panels                -> rounded-2xl
+       inputs                       -> rounded-lg
+     Anything outside this set is a bug. */
+
   .btn {
-    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-200 inline-flex items-center justify-center;
+    @apply px-6 py-3 rounded-full font-semibold transition-all duration-200 inline-flex items-center justify-center;
   }
 
   .btn-primary {
     @apply text-white active:scale-95 shadow-lg hover:shadow-xl;
-    background: linear-gradient(135deg, #FF6B35 0%, #D2381C 100%);
+    background: var(--sq-cta-gradient);
     transition: all 0.3s ease;
   }
 
   .btn-primary:hover {
-    background: linear-gradient(135deg, #FF7E4A 0%, #E64A2E 100%);
-    box-shadow: 0 8px 25px rgba(210, 56, 28, 0.4);
+    background: var(--sq-cta-gradient-hover);
+    box-shadow: var(--sq-cta-shadow);
   }
 
   .btn-secondary {
     color: var(--sq-brand);
     border-color: var(--sq-brand);
     background-color: var(--sq-surface);
-    @apply border-2 hover:bg-primary-50;
+    @apply border-2;
   }
 
-  .btn-large {
-    @apply px-8 py-4 text-lg;
+  .btn-secondary:hover {
+    /* Was hover:bg-primary-50, a near-white that blew out in dark mode. */
+    background-color: var(--sq-brand-soft);
   }
 
-  /* Section styles */
-  .section {
+  /* Section rhythm. Three deliberate steps instead of the uniform 80px that made
+     every section on the page carry identical weight. */
+  .section-hero {
+    @apply py-24 md:py-32;
+  }
+
+  .section-standard {
     @apply py-16 md:py-24;
+  }
+
+  .section-tight {
+    @apply py-12 md:py-16;
   }
 
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-  }
-
-  /* Text styles */
-  .heading-xl {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-tight;
-  }
-
-  .heading-lg {
-    @apply text-3xl md:text-4xl font-bold leading-tight;
   }
 
   .heading-md {
@@ -121,18 +154,6 @@
     @apply text-base md:text-lg leading-relaxed;
   }
 
-  /* Card styles */
-  .card {
-    background-color: var(--sq-surface);
-    border-color: var(--sq-border);
-    @apply rounded-2xl border shadow-lg p-6 md:p-8 transition-transform hover:scale-105;
-  }
-
-  .card-feature {
-    @apply card border border-gray-100 hover:border-primary-200 hover:shadow-xl;
-  }
-
-  /* Input styles */
   .input {
     background-color: var(--sq-surface);
     border-color: var(--sq-border-strong);
@@ -262,39 +283,15 @@
     --tw-gradient-to: var(--sq-bg-muted) var(--tw-gradient-to-position);
   }
 
-  .text-gradient {
-    @apply bg-gradient-to-r from-primary-500 to-accent-purple bg-clip-text text-transparent;
-  }
-
-  .bg-gradient-primary {
-    @apply bg-gradient-to-br from-primary-500 to-primary-700;
-  }
-
-  /* Phoenix fire gradient utilities */
   .bg-gradient-phoenix {
-    background: linear-gradient(135deg, #FF6B35 0%, #D2381C 100%);
+    background: var(--sq-cta-gradient);
   }
 
-  .bg-gradient-gold {
-    background: linear-gradient(135deg, #FFB627 0%, #FF6B35 100%);
-  }
-
-  .text-gradient-phoenix {
-    background: linear-gradient(135deg, #FF6B35 0%, #D2381C 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .phoenix-glow {
-    box-shadow: 0 4px 20px rgba(255, 107, 53, 0.3);
-  }
-
-  .phoenix-glow-hover:hover {
-    box-shadow: 0 6px 30px rgba(255, 107, 53, 0.5);
-  }
-
-  .bg-pattern {
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23007AFF' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  /* Tabular numerals for anything measured (XP, minutes, levels, prices) so
+     digits line up in columns and do not jitter when they change. */
+  .nums {
+    font-family: theme('fontFamily.mono');
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum';
   }
 }

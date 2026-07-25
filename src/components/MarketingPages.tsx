@@ -2,6 +2,9 @@ import Image from 'next/image';
 import {Link} from '@/i18n/routing';
 import LeadCapture from '@/components/LeadCapture';
 import StoreLinks from '@/components/StoreLinks';
+import {Reveal, Stagger, StaggerItem} from '@/components/Reveal';
+import ProductScrollTour from '@/components/ProductScrollTour';
+import {CheckCircle} from '@phosphor-icons/react/dist/ssr';
 import {
   ANDROID_ALPHA_JOIN_URL,
   ANDROID_SIGNUP_URL,
@@ -35,23 +38,30 @@ function JsonLd({data}: {data: unknown}) {
 function SectionHeader({
   eyebrow,
   title,
-  body
+  body,
+  align = 'center'
 }: {
   eyebrow?: string;
   title: string;
   body?: string;
+  align?: 'center' | 'left';
 }) {
+  const centered = align === 'center';
   return (
-    <div className="mx-auto mb-10 max-w-3xl text-center">
+    <div
+      className={
+        centered ? 'mx-auto max-w-3xl text-center' : 'max-w-3xl text-left'
+      }
+    >
       {eyebrow && (
-        <p className="mb-3 text-sm font-semibold uppercase tracking-wide theme-eyebrow">
+        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.14em] theme-eyebrow">
           {eyebrow}
         </p>
       )}
-      <h2 className="font-display text-3xl font-bold leading-tight theme-title md:text-4xl">
+      <h2 className="font-display text-section text-balance theme-title">
         {title}
       </h2>
-      {body && <p className="mt-4 text-lg leading-relaxed theme-copy">{body}</p>}
+      {body && <p className="mt-4 text-lead theme-copy">{body}</p>}
     </div>
   );
 }
@@ -93,13 +103,13 @@ function ScreenshotGallery({
 
 function FinalCta({copy}: {copy: MarketingCopy}) {
   return (
-    <section className="theme-final-band py-16 text-white md:py-20">
+    <section className="section-hero theme-final-band text-white">
       <div className="container-custom">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-display text-3xl font-bold md:text-4xl">
+          <h2 className="font-display text-section text-balance">
             {copy.finalCta.heading}
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-gray-200">
+          <p className="mt-4 text-lead text-gray-200">
             {copy.finalCta.body}
           </p>
           <StoreLinks
@@ -113,53 +123,56 @@ function FinalCta({copy}: {copy: MarketingCopy}) {
   );
 }
 
+// Family: image-led split, screenshot on the LEFT. The other two split sections
+// on this page lead with text, so flipping the axis here keeps the page from
+// reading as one long zigzag.
 function FamilySupportSection({locale, copy}: PageProps) {
   return (
-    <section className="theme-highlight-band py-16 md:py-20">
+    <section className="section-hero theme-final-band text-white">
       <div className="container-custom">
-        <div className="grid items-center gap-10 lg:grid-cols-[1fr_360px]">
-          <div>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-wide theme-eyebrow">
+        <div className="grid items-center gap-12 lg:grid-cols-[360px_1fr] lg:gap-16">
+          <Reveal className="order-2 lg:order-1">
+            <div className="mx-auto w-56 overflow-hidden rounded-2xl border border-white/15 shadow-2xl md:w-72">
+              <Image
+                src={screenshotPath(locale, '06-social-family.png')}
+                alt={copy.familySupport.imageAlt}
+                width={1080}
+                height={1920}
+                className="h-auto w-full"
+                sizes="(max-width: 768px) 224px, 288px"
+              />
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.08} className="order-1 lg:order-2">
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary-200">
               {copy.familySupport.badge}
             </p>
-            <h2 className="font-display text-3xl font-bold leading-tight theme-title md:text-4xl">
+            <h2 className="mt-3 max-w-[20ch] font-display text-section text-balance">
               {copy.familySupport.heading}
             </h2>
-            <p className="mt-5 max-w-3xl text-lg leading-relaxed theme-copy">
+            <p className="mt-5 max-w-2xl text-lead text-gray-200">
               {copy.familySupport.body}
             </p>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            <ul className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2">
               {copy.familySupport.items.map((item) => (
-                <article key={item.title} className="rounded-lg p-5 theme-card">
-                  <h3 className="font-display text-xl font-bold theme-title">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed theme-copy">
+                <li key={item.title}>
+                  <h3 className="font-display text-lg font-bold">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-gray-300">
                     {item.body}
                   </p>
-                </article>
+                </li>
               ))}
-            </div>
+            </ul>
 
-            <p className="mt-5 text-sm font-medium theme-muted-strong">
+            <p className="mt-7 text-sm font-medium text-gray-300">
               {copy.familySupport.note}
             </p>
             <Link href="/pricing" className="btn btn-primary mt-7">
               {copy.familySupport.cta}
             </Link>
-          </div>
-
-          <div className="mx-auto w-56 overflow-hidden rounded-lg theme-card md:w-64">
-            <Image
-              src={screenshotPath(locale, '06-social-family.png')}
-              alt={copy.familySupport.imageAlt}
-              width={1080}
-              height={1920}
-              className="h-auto w-full"
-              sizes="(max-width: 768px) 224px, 256px"
-            />
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>
@@ -171,43 +184,45 @@ function FeatureLandingGrid({locale}: {locale: Locale}) {
   const pages = getFeaturedFeatureLandingPages(locale);
 
   return (
-    <section className="py-16 md:py-20">
+    <section className="section-standard">
       <div className="container-custom">
-        <SectionHeader
-          eyebrow={overview.eyebrow}
-          title={overview.title}
-          body={overview.body}
-        />
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-          {pages.map((page) => (
-            <Link
-              key={page.slug}
-              href={`/features/${page.slug}`}
-              className="group rounded-lg p-5 theme-card transition hover:-translate-y-1"
-            >
-              <div className="overflow-hidden rounded-lg border border-black/5 dark:border-white/10">
-                <Image
-                  src={screenshotPath(locale, page.screenshot)}
-                  alt={page.title}
-                  width={1080}
-                  height={1920}
-                  className="aspect-[9/16] w-full object-cover object-top transition duration-300 group-hover:scale-[1.02]"
-                  sizes="(max-width: 768px) 45vw, 220px"
-                />
-              </div>
-              <p className="mt-5 text-xs font-semibold uppercase tracking-wide theme-eyebrow">
-                {page.eyebrow}
-              </p>
-              <h3 className="mt-2 font-display text-xl font-bold theme-title">
-                {page.title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed theme-copy">
-                {page.cardSummary}
-              </p>
-              <span className="mt-5 inline-flex text-sm font-semibold text-primary-700 dark:text-primary-200">
-                {overview.cta}
-              </span>
-            </Link>
+        <Reveal>
+          <SectionHeader
+            eyebrow={overview.eyebrow}
+            title={overview.title}
+            body={overview.body}
+          />
+        </Reveal>
+        {/* No card boxes. The screenshot carries the visual weight and the text
+            sits under it, the way an editorial index would set it. */}
+        <div className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
+          {pages.map((page, i) => (
+            <Reveal key={page.slug} delay={Math.min(i, 3) * 0.06}>
+              <Link
+                href={`/features/${page.slug}`}
+                className="group block"
+              >
+                <div className="overflow-hidden rounded-2xl">
+                  <Image
+                    src={screenshotPath(locale, page.screenshot)}
+                    alt={page.title}
+                    width={1080}
+                    height={1920}
+                    className="aspect-[9/14] w-full object-cover object-top transition duration-500 group-hover:scale-[1.04]"
+                    sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 260px"
+                  />
+                </div>
+                <p className="mt-5 text-xs font-semibold uppercase tracking-[0.14em] theme-eyebrow">
+                  {page.eyebrow}
+                </p>
+                <h3 className="mt-2 font-display text-xl font-bold theme-title group-hover:underline">
+                  {page.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed theme-copy">
+                  {page.cardSummary}
+                </p>
+              </Link>
+            </Reveal>
           ))}
         </div>
         <div className="mt-10 text-center">
@@ -228,69 +243,100 @@ export function HomeMarketingPage({locale, copy}: PageProps) {
     <>
       <JsonLd data={softwareApplicationJsonLd(locale)} />
       <main className="theme-page">
-        <section className="relative isolate overflow-hidden pt-20 text-white theme-hero-band">
-          <Image
-            src={screenshotPath(locale, '01-home-progress.png')}
-            alt=""
-            width={1080}
-            height={1920}
-            priority
-            className="absolute bottom-[-10%] right-[-52%] z-0 h-[72%] w-auto max-w-none opacity-[0.18] sm:right-[-28%] sm:h-[80%] sm:opacity-25 md:right-[4%] md:h-[94%] md:opacity-35 lg:opacity-45"
-            sizes="(max-width: 768px) 60vw, 520px"
-          />
-          <div className="absolute inset-0 z-0 bg-gradient-to-r from-black/92 via-black/80 to-black/55 md:from-black/78 md:via-black/60 md:to-primary-900/35" />
-          <div className="container-custom relative z-10 flex min-h-[82svh] items-center py-14 md:min-h-[86svh] md:py-20">
-            <div className="max-w-3xl">
-              <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-primary-200">
-                {copy.hero.eyebrow}
-              </p>
-              <h1 className="font-display text-5xl font-extrabold leading-none md:text-7xl">
-                {copy.hero.title}
-              </h1>
-              <p className="mt-6 max-w-2xl text-xl leading-relaxed text-gray-100 md:text-2xl">
-                {copy.hero.subtitle}
-              </p>
-              <StoreLinks
-                appStoreLabel={copy.hero.primaryCta}
-                androidLabel={copy.hero.secondaryCta}
-                className="mt-8"
-              />
-              <div className="mt-5">
-                <Link
-                  href="/pricing"
-                  className="inline-flex text-sm font-semibold text-primary-100 underline-offset-4 hover:underline"
-                >
-                  {copy.hero.tertiaryCta}
-                </Link>
-              </div>
-              <div className="mt-10 flex flex-wrap gap-3">
-                {copy.hero.trust.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm font-medium text-white"
-                  >
-                    {item}
-                  </span>
-                ))}
+        {/* Hero: asymmetric split. The headline is a promise, not the brand name -
+            the brand already appears in the nav, the logo and the tab title. */}
+        <section className="relative isolate overflow-hidden text-white theme-hero-band">
+          <div className="container-custom relative z-10 flex min-h-[100dvh] items-center pb-16 pt-24">
+            {/* 9/3, not 8/4: the French headline is 57 characters and needs
+                ~765px to hold two lines. The phone is capped at 300px anyway,
+                so the extra width costs it nothing. */}
+            <div className="grid w-full items-center gap-12 lg:grid-cols-[9fr_3fr] lg:gap-12">
+              <Stagger>
+                <StaggerItem>
+                  <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary-200">
+                    {copy.hero.eyebrow}
+                  </p>
+                </StaggerItem>
+                <StaggerItem>
+                  {/* No ch-based max-width here. A ch cap scales with font-size,
+                      so it pins the headline to a fixed character count and the
+                      longer locales wrap to three lines no matter how the type
+                      scale is tuned. The grid column is the only limit. */}
+                  <h1 className="mt-5 font-display text-display text-balance">
+                    {copy.hero.title}
+                  </h1>
+                </StaggerItem>
+                <StaggerItem>
+                  <p className="mt-6 max-w-[46ch] text-lead text-gray-200">
+                    {copy.hero.subtitle}
+                  </p>
+                </StaggerItem>
+                <StaggerItem>
+                  <StoreLinks
+                    appStoreLabel={copy.hero.primaryCta}
+                    androidLabel={copy.hero.secondaryCta}
+                    className="mt-9"
+                  />
+                </StaggerItem>
+              </Stagger>
+
+              {/* The screenshot was a 0.18-opacity background wash. Shipping the
+                  full 1080x1920 PNG for a decorative blur was also the LCP cost
+                  centre. It is a real element now, at a bounded size. */}
+              <div className="relative mx-auto hidden w-full max-w-[300px] lg:block">
+                <div
+                  aria-hidden
+                  className="absolute -inset-8 rounded-full bg-primary-400/20 blur-3xl"
+                />
+                <div className="relative overflow-hidden rounded-2xl border border-white/15 shadow-2xl">
+                  <Image
+                    src={screenshotPath(locale, '01-home-progress.png')}
+                    alt={copy.product.captions[0] ?? ''}
+                    width={1080}
+                    height={1920}
+                    priority
+                    className="h-auto w-full"
+                    sizes="300px"
+                  />
+                </div>
               </div>
             </div>
           </div>
-      </section>
+        </section>
 
-        <section className="py-16 md:py-20">
+        {/* Trust strip. Used to be pills inside the hero, which pushed the hero
+            past the fold. It is its own quiet band now. */}
+        <section className="border-b theme-section-muted" style={{borderColor: 'var(--sq-border)'}}>
           <div className="container-custom">
-            <SectionHeader title={copy.audiences.heading} />
-            <div className="grid gap-5 md:grid-cols-2">
-              {copy.audiences.items.map((item) => (
-                <article
-                  key={item.title}
-                  className="rounded-lg p-6 theme-card"
+            <ul className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 py-5">
+              {copy.hero.trust.map((item) => (
+                <li
+                  key={item}
+                  className="text-sm font-semibold theme-muted-strong"
                 >
-                  <h3 className="font-display text-2xl font-bold theme-title">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 leading-relaxed theme-copy">{item.body}</p>
-                </article>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* Audiences: asymmetric 60/40, not two equal cards. */}
+        <section className="section-standard">
+          <div className="container-custom">
+            <Reveal>
+              <SectionHeader title={copy.audiences.heading} align="left" />
+            </Reveal>
+            <div className="mt-10 grid gap-8 lg:grid-cols-[3fr_2fr]">
+              {copy.audiences.items.map((item, i) => (
+                <Reveal key={item.title} delay={i * 0.08}>
+                  <article className="h-full border-t pt-6" style={{borderColor: 'var(--sq-border-strong)'}}>
+                    <h3 className="font-display text-subsection theme-title">
+                      {item.title}
+                    </h3>
+                    <p className="mt-3 leading-relaxed theme-copy">{item.body}</p>
+                  </article>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -298,27 +344,44 @@ export function HomeMarketingPage({locale, copy}: PageProps) {
 
         <FamilySupportSection locale={locale} copy={copy} />
 
-        <section className="theme-section-muted py-16 md:py-20">
-          <div className="container-custom">
-            <SectionHeader title={copy.product.heading} body={copy.product.body} />
-            <ScreenshotGallery locale={locale} captions={copy.product.captions} />
-          </div>
-        </section>
+        {/* Product loop: the phone pins and the screen follows the caption you
+            are reading. Replaces a sideways-scrolling strip of thumbnails. */}
+        <ProductScrollTour
+          locale={locale}
+          captions={copy.product.captions}
+          heading={copy.product.heading}
+          body={copy.product.body}
+        />
 
-        <section className="py-16 md:py-20">
+        {/* Benefits: hairline grid, no boxes. Six white rounded cards here was
+            the most templated block on the page. */}
+        <section className="section-standard theme-section-muted">
           <div className="container-custom">
-            <SectionHeader title={copy.benefits.heading} />
-            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {copy.benefits.items.map((item) => (
-                <article
-                  key={item.title}
-                  className="rounded-lg p-6 theme-card"
-                >
-                  <h3 className="font-display text-xl font-bold theme-title">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 leading-relaxed theme-copy">{item.body}</p>
-                </article>
+            <Reveal>
+              <SectionHeader title={copy.benefits.heading} align="left" />
+            </Reveal>
+            <div
+              className="mt-12 grid gap-px overflow-hidden md:grid-cols-2 lg:grid-cols-3"
+              style={{backgroundColor: 'var(--sq-border)'}}
+            >
+              {copy.benefits.items.map((item, i) => (
+                <Reveal key={item.title} delay={Math.min(i, 3) * 0.05}>
+                  <article
+                    className="h-full p-8 lg:p-10 theme-section-muted"
+                  >
+                    <span
+                      className="nums text-xs"
+                      style={{color: 'var(--sq-brand)'}}
+                      aria-hidden
+                    >
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <h3 className="mt-4 font-display text-subsection theme-title">
+                      {item.title}
+                    </h3>
+                    <p className="mt-3 leading-relaxed theme-copy">{item.body}</p>
+                  </article>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -326,34 +389,53 @@ export function HomeMarketingPage({locale, copy}: PageProps) {
 
         <FeatureLandingGrid locale={locale} />
 
-        <section className="theme-highlight-band py-16 md:py-20">
+        {/* Pricing preview: one deliberate centred moment, given extra room
+            because it is a conversion step rather than a reading step. */}
+        <section className="section-hero theme-highlight-band">
           <div className="container-custom">
-            <div className="mx-auto max-w-4xl rounded-lg p-8 text-center theme-card md:p-10">
-              <h2 className="font-display text-3xl font-bold theme-title md:text-4xl">
-                {copy.pricingPreview.heading}
-              </h2>
-              <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed theme-copy">
-                {copy.pricingPreview.body}
-              </p>
-              <Link href="/pricing" className="btn btn-primary mt-7">
-                {copy.pricingPreview.cta}
-              </Link>
-            </div>
+            <Reveal>
+              <div className="mx-auto max-w-3xl text-center">
+                <h2 className="font-display text-section text-balance theme-title">
+                  {copy.pricingPreview.heading}
+                </h2>
+                <p className="mx-auto mt-4 max-w-2xl text-lead theme-copy">
+                  {copy.pricingPreview.body}
+                </p>
+                <Link href="/pricing" className="btn btn-primary mt-8">
+                  {copy.pricingPreview.cta}
+                </Link>
+              </div>
+            </Reveal>
           </div>
         </section>
 
-        <section className="py-16 md:py-20">
+        {/* Trust: plain divided rows. No cards - four boxes here would repeat the
+            benefits grid two sections up. Tighter, since it is supporting
+            detail rather than a headline moment. */}
+        <section className="section-tight">
           <div className="container-custom">
-            <SectionHeader title={copy.trust.heading} />
-            <div className="mx-auto grid max-w-5xl gap-4 md:grid-cols-2">
-              {copy.trust.items.map((item) => (
-                <div
-                  key={item}
-                  className="rounded-lg p-5 theme-card theme-muted-strong"
-                >
-                  {item}
-                </div>
-              ))}
+            <div className="mx-auto max-w-4xl">
+              <Reveal>
+                <SectionHeader title={copy.trust.heading} align="left" />
+              </Reveal>
+              <ul className="mt-8 divide-y" style={{borderColor: 'var(--sq-border)'}}>
+                {copy.trust.items.map((item, i) => (
+                  <Reveal key={item} delay={i * 0.05}>
+                    <li
+                      className="flex gap-4 py-4 theme-muted-strong"
+                      style={{borderColor: 'var(--sq-border)'}}
+                    >
+                      <CheckCircle
+                        size={22}
+                        weight="fill"
+                        className="mt-0.5 shrink-0 text-primary-600 dark:text-primary-300"
+                        aria-hidden
+                      />
+                      <span>{item}</span>
+                    </li>
+                  </Reveal>
+                ))}
+              </ul>
             </div>
           </div>
         </section>

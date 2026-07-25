@@ -230,9 +230,9 @@ export const marketingCopy = {
     },
     hero: {
       eyebrow: 'Live on the App Store. Android alpha on Google Play.',
-      title: 'SkillQuest',
+      title: 'Every focused minute counts toward a skill',
       subtitle:
-        'Build skills with focus timers, XP, levels, statistics, friends, challenges, and family tools. Start for free and turn every focused minute into visible progress.',
+        'A skill tracker with built-in focus timers. Earn XP, build streaks, and see exactly where your practice time goes.',
       primaryCta: 'Download on the App Store',
       secondaryCta: 'Join Android alpha',
       tertiaryCta: 'Compare pricing',
@@ -539,9 +539,9 @@ export const marketingCopy = {
     },
     hero: {
       eyebrow: 'Live in de App Store. Android alpha via Google Play.',
-      title: 'SkillQuest',
+      title: 'Elke minuut focus telt mee voor een vaardigheid',
       subtitle:
-        'Bouw vaardigheden met focus timers, XP, levels, statistieken, vrienden, challenges en familie-tools. Start gratis en maak elke focusminuut zichtbaar.',
+        'Een skill tracker met ingebouwde focus timers. Verdien XP, bouw streaks op en zie precies waar je oefentijd heen gaat.',
       primaryCta: 'Download in de App Store',
       secondaryCta: 'Doe mee met Android alpha',
       tertiaryCta: 'Vergelijk prijzen',
@@ -848,9 +848,9 @@ export const marketingCopy = {
     },
     hero: {
       eyebrow: 'Live im App Store. Android Alpha über Google Play.',
-      title: 'SkillQuest',
+      title: 'Jede fokussierte Minute zählt für einen Skill',
       subtitle:
-        'Baue Skills mit Fokus-Timern, XP, Levels, Statistiken, Freunden, Challenges und Familienfunktionen auf. Starte kostenlos und mache jede Fokusminute sichtbar.',
+        'Ein Skill-Tracker mit integrierten Focus-Timern. Sammle XP, baue Streaks auf und sieh genau, wohin deine Übungszeit fließt.',
       primaryCta: 'Im App Store laden',
       secondaryCta: 'Android Alpha beitreten',
       tertiaryCta: 'Preise vergleichen',
@@ -1157,9 +1157,9 @@ export const marketingCopy = {
     },
     hero: {
       eyebrow: 'Disponible sur l’App Store. Android alpha via Google Play.',
-      title: 'SkillQuest',
+      title: 'Chaque minute de focus compte pour une compétence',
       subtitle:
-        'Développez vos compétences avec des minuteurs de concentration, XP, niveaux, statistiques, amis, défis et fonctions famille. Commencez gratuitement et rendez chaque minute visible.',
+        'Un skill tracker avec focus timers intégrés. Gagne des XP, construis des streaks et suis exactement ton temps de pratique.',
       primaryCta: 'Télécharger sur l’App Store',
       secondaryCta: 'Rejoindre l’alpha Android',
       tertiaryCta: 'Comparer les prix',
@@ -1466,9 +1466,9 @@ export const marketingCopy = {
     },
     hero: {
       eyebrow: 'Disponible en App Store. Alpha de Android en Google Play.',
-      title: 'SkillQuest',
+      title: 'Cada minuto de concentración cuenta para una habilidad',
       subtitle:
-        'Desarrolla habilidades con temporizadores de enfoque, XP, niveles, estadísticas, amigos, desafíos y funciones familiares. Empieza gratis y convierte cada minuto en progreso visible.',
+        'Un skill tracker con focus timers integrados. Gana XP, crea streaks y ve exactamente adónde va tu tiempo de práctica.',
       primaryCta: 'Descargar en App Store',
       secondaryCta: 'Unirse a Android alpha',
       tertiaryCta: 'Comparar precios',
@@ -1775,9 +1775,9 @@ export const marketingCopy = {
     },
     hero: {
       eyebrow: 'Disponibile su App Store. Android alpha su Google Play.',
-      title: 'SkillQuest',
+      title: 'Ogni minuto di concentrazione conta per un’abilità',
       subtitle:
-        'Sviluppa competenze con timer di concentrazione, XP, livelli, statistiche, amici, sfide e funzioni famiglia. Inizia gratis e trasforma ogni minuto in progresso visibile.',
+        'Skill tracker con focus timer integrati. Guadagna XP, costruisci streaks e vedi esattamente dove va il tuo tempo di pratica.',
       primaryCta: 'Scarica da App Store',
       secondaryCta: 'Unisciti ad Android alpha',
       tertiaryCta: 'Confronta i prezzi',
