@@ -2,6 +2,8 @@ import type {Metadata} from 'next';
 import Image from 'next/image';
 import {notFound} from 'next/navigation';
 import Footer from '@/components/Footer';
+import {Reveal, Stagger, StaggerItem} from '@/components/Reveal';
+import {Check} from '@phosphor-icons/react/dist/ssr';
 import {Link} from '@/i18n/routing';
 import {routing} from '@/i18n/routing';
 import {
@@ -90,151 +92,155 @@ export default async function FeatureLandingPage({
     <>
       <JsonLd data={faqJsonLd(page.faq)} />
       <main className="theme-page pt-20">
-        <section className="theme-hero-band py-16 text-white md:py-20">
+        <section className="theme-hero-band section-hero text-white">
           <div className="container-custom">
-            <div className="grid items-center gap-10 lg:grid-cols-[1fr_360px]">
-              <div>
-                <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-primary-200">
-                  {page.eyebrow}
-                </p>
-                <h1 className="font-display text-4xl font-bold leading-tight md:text-6xl">
-                  {page.title}
-                </h1>
-                <p className="mt-5 max-w-3xl text-xl leading-relaxed text-gray-200">
-                  {page.summary}
-                </p>
-                <div className="mt-8 flex flex-wrap gap-3">
-                  <Link href={primaryHref(page.slug)} className="btn btn-primary">
-                    {page.primaryCta}
-                  </Link>
-                  <Link
-                    href={secondaryHref(page.slug)}
-                    className="btn border border-white/25 bg-white/10 text-white hover:bg-white/15"
-                  >
-                    {page.secondaryCta}
-                  </Link>
+            <div className="grid items-center gap-12 lg:grid-cols-[9fr_3fr] lg:gap-12">
+              <Stagger>
+                <StaggerItem>
+                  <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary-200">
+                    {page.eyebrow}
+                  </p>
+                </StaggerItem>
+                <StaggerItem>
+                  <h1 className="mt-4 font-display text-display text-balance">
+                    {page.title}
+                  </h1>
+                </StaggerItem>
+                <StaggerItem>
+                  <p className="mt-5 max-w-[52ch] text-lead text-gray-200">
+                    {page.summary}
+                  </p>
+                </StaggerItem>
+                <StaggerItem>
+                  <div className="mt-9 flex flex-wrap gap-3">
+                    <Link href={primaryHref(page.slug)} className="btn btn-primary">
+                      {page.primaryCta}
+                    </Link>
+                    <Link
+                      href={secondaryHref(page.slug)}
+                      className="btn border border-white/25 bg-white/10 text-white hover:bg-white/15"
+                    >
+                      {page.secondaryCta}
+                    </Link>
+                  </div>
+                </StaggerItem>
+              </Stagger>
+
+              <div className="mx-auto hidden w-full max-w-[280px] lg:block">
+                <div className="overflow-hidden rounded-2xl border border-white/15 shadow-2xl">
+                  <Image
+                    src={screenshotPath(safeLocale, page.screenshot)}
+                    alt={page.title}
+                    width={1080}
+                    height={1920}
+                    priority
+                    className="h-auto w-full"
+                    sizes="280px"
+                  />
                 </div>
               </div>
-
-              <div className="mx-auto w-56 overflow-hidden rounded-lg border border-white/15 bg-white/5 shadow-2xl md:w-64">
-                <Image
-                  src={screenshotPath(safeLocale, page.screenshot)}
-                  alt={page.title}
-                  width={1080}
-                  height={1920}
-                  priority
-                  className="h-auto w-full"
-                  sizes="(max-width: 768px) 224px, 256px"
-                />
-              </div>
             </div>
           </div>
         </section>
 
-        <section className="py-16 md:py-20">
+        {/* Numbered sections on hairlines. Three shadowed cards side by side was
+            the most templated block on this page. */}
+        <section className="section-standard">
           <div className="container-custom">
-            <div className="grid gap-5 lg:grid-cols-3">
-              {page.sections.map((section) => (
-                <article
-                  key={section.title}
-                  className="rounded-lg p-6 theme-card md:p-8"
-                >
-                  <h2 className="font-display text-2xl font-bold theme-title">
-                    {section.title}
-                  </h2>
-                  <p className="mt-4 leading-relaxed theme-copy">
-                    {section.body}
-                  </p>
-                  <ul className="mt-6 space-y-3">
-                    {section.bullets.map((item) => (
-                      <li key={item} className="flex gap-3 theme-muted-strong">
-                        <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-primary-600" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </article>
+            <div className="grid gap-x-10 gap-y-12 lg:grid-cols-3">
+              {page.sections.map((section, i) => (
+                <Reveal key={section.title} delay={i * 0.08}>
+                  <article
+                    className="h-full border-t pt-6"
+                    style={{borderColor: 'var(--sq-border-strong)'}}
+                  >
+                    <span
+                      className="nums text-xs"
+                      style={{color: 'var(--sq-brand)'}}
+                      aria-hidden
+                    >
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <h2 className="mt-3 font-display text-subsection theme-title">
+                      {section.title}
+                    </h2>
+                    <p className="mt-3 leading-relaxed theme-copy">
+                      {section.body}
+                    </p>
+                    <ul className="mt-6 space-y-3">
+                      {section.bullets.map((item) => (
+                        <li key={item} className="flex gap-3 theme-muted-strong">
+                          <Check
+                            size={18}
+                            weight="bold"
+                            className="mt-1 shrink-0 text-primary-600 dark:text-primary-300"
+                            aria-hidden
+                          />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                </Reveal>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="theme-section-muted py-16 md:py-20">
-          <div className="container-custom">
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-wide theme-eyebrow">
-                SEO
-              </p>
-              <h2 className="font-display text-3xl font-bold theme-title md:text-4xl">
-                {copy.featuresPage.title}
-              </h2>
-              <p className="mt-4 text-lg leading-relaxed theme-copy">
-                {copy.featuresPage.subtitle}
-              </p>
-            </div>
+        {/* The block that used to sit here printed page.seoTerms as pills under
+            a heading that literally said "SEO". Those are internal keyword
+            targets, not content: they read as keyword stuffing and give a
+            visitor nothing. The terms still do their job in metaTitle and
+            metaDescription. */}
 
-            <div className="mx-auto mt-8 flex max-w-4xl flex-wrap justify-center gap-3">
-              {page.seoTerms.map((term) => (
-                <span
-                  key={term}
-                  className="rounded-lg border px-3 py-2 text-sm font-semibold theme-card theme-muted-strong"
-                >
-                  {term}
-                </span>
-              ))}
+        <section className="section-standard theme-section-muted">
+          <div className="container-custom">
+            <div className="mx-auto max-w-3xl">
+              <Reveal>
+                <h2 className="font-display text-section text-balance theme-title">
+                  FAQ
+                </h2>
+              </Reveal>
+              <dl className="mt-8 divide-y" style={{borderColor: 'var(--sq-border)'}}>
+                {page.faq.map((item, i) => (
+                  <Reveal key={item.question} delay={i * 0.05}>
+                    <div className="py-6">
+                      <dt className="font-display text-subsection theme-title">
+                        {item.question}
+                      </dt>
+                      <dd className="mt-2 leading-relaxed theme-copy">
+                        {item.answer}
+                      </dd>
+                    </div>
+                  </Reveal>
+                ))}
+              </dl>
             </div>
           </div>
         </section>
 
-        <section className="py-16 md:py-20">
+        <section className="section-standard">
           <div className="container-custom">
-            <div className="mx-auto max-w-3xl text-center">
-              <h2 className="font-display text-3xl font-bold theme-title md:text-4xl">
-                FAQ
-              </h2>
-            </div>
-            <div className="mx-auto mt-10 grid max-w-5xl gap-4 md:grid-cols-2">
-              {page.faq.map((item) => (
-                <article
-                  key={item.question}
-                  className="rounded-lg p-6 theme-card"
-                >
-                  <h3 className="font-display text-xl font-bold theme-title">
-                    {item.question}
-                  </h3>
-                  <p className="mt-3 leading-relaxed theme-copy">
-                    {item.answer}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="theme-highlight-band py-16 md:py-20">
-          <div className="container-custom">
-            <div className="mx-auto max-w-3xl text-center">
-              <h2 className="font-display text-3xl font-bold theme-title md:text-4xl">
+            <Reveal>
+              <h2 className="font-display text-section text-balance theme-title">
                 {copy.nav.features}
               </h2>
-            </div>
-            <div className="mt-10 grid gap-5 md:grid-cols-3">
-              {relatedPages.map((item) => (
-                <Link
-                  key={item.slug}
-                  href={`/features/${item.slug}`}
-                  className="rounded-lg p-6 theme-card transition hover:-translate-y-1"
-                >
-                  <p className="text-sm font-semibold uppercase tracking-wide theme-eyebrow">
-                    {item.eyebrow}
-                  </p>
-                  <h3 className="mt-3 font-display text-xl font-bold theme-title">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed theme-copy">
-                    {item.cardSummary}
-                  </p>
-                </Link>
+            </Reveal>
+            <div className="mt-10 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+              {relatedPages.map((item, i) => (
+                <Reveal key={item.slug} delay={i * 0.06}>
+                  <Link href={`/features/${item.slug}`} className="group block">
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] theme-eyebrow">
+                      {item.eyebrow}
+                    </p>
+                    <h3 className="mt-2 font-display text-xl font-bold theme-title group-hover:underline">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed theme-copy">
+                      {item.cardSummary}
+                    </p>
+                  </Link>
+                </Reveal>
               ))}
             </div>
           </div>

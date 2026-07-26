@@ -119,13 +119,13 @@ export default async function ChangelogPage({
   return (
     <>
       <main className="theme-page pt-20">
-        <section className="theme-hero-band py-16 text-white md:py-20">
+        <section className="theme-hero-band section-hero text-white">
           <div className="container-custom">
             <div className="mx-auto max-w-3xl text-center">
               <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-primary-200">
                 {copy.eyebrow}
               </p>
-              <h1 className="font-display text-4xl font-bold leading-tight md:text-5xl">
+              <h1 className="font-display text-display text-balance">
                 {copy.heading}
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-gray-200">
@@ -135,13 +135,13 @@ export default async function ChangelogPage({
           </div>
         </section>
 
-        <section className="py-16 md:py-20">
+        <section className="section-standard">
           <div className="container-custom">
             <ol className="mx-auto max-w-3xl space-y-6">
               {entries.map((entry, index) => (
                 <li
                   key={`${entry.date}-${entry.title}-${index}`}
-                  className="rounded-lg p-6 theme-card md:p-8"
+                  className="border-t pt-6" style={{borderColor: 'var(--sq-border)'}}
                 >
                   <time
                     dateTime={entry.date}
