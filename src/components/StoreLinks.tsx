@@ -28,7 +28,7 @@ export default function StoreLinks({
         href={APP_STORE_URL}
         target="_blank"
         rel="noreferrer"
-        className="inline-flex min-h-12 items-center justify-center rounded-lg bg-phoenix-flame px-5 py-3 text-center font-semibold text-white shadow-sm transition hover:bg-phoenix-fire focus:outline-none focus:ring-4 focus:ring-phoenix-flame/30"
+        className="inline-flex btn-cta-solid min-h-12 items-center justify-center rounded-full px-5 py-3 text-center font-semibold shadow-sm transition focus:outline-none focus:ring-4 focus:ring-phoenix-flame/30"
       >
         {appStoreLabel}
       </a>

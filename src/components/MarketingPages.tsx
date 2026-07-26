@@ -4,7 +4,7 @@ import LeadCapture from '@/components/LeadCapture';
 import StoreLinks from '@/components/StoreLinks';
 import {Reveal, Stagger, StaggerItem} from '@/components/Reveal';
 import ProductScrollTour from '@/components/ProductScrollTour';
-import {CheckCircle} from '@phosphor-icons/react/dist/ssr';
+import {Check, CheckCircle} from '@phosphor-icons/react/dist/ssr';
 import {
   ANDROID_ALPHA_JOIN_URL,
   ANDROID_SIGNUP_URL,
@@ -469,82 +469,95 @@ export function DownloadMarketingPage({
     : 'both';
   return (
     <main className="theme-page pt-20">
-      <section className="theme-hero-band py-16 text-white md:py-20">
+      <section className="theme-hero-band section-hero text-white">
         <div className="container-custom">
-          <div className="grid items-center gap-10 lg:grid-cols-[1fr_360px]">
-            <div>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-primary-200">
-                SkillQuest
-              </p>
-              <h1 className="font-display text-4xl font-bold md:text-6xl">
-                {copy.download.title}
-              </h1>
-              <p className="mt-5 max-w-2xl text-xl leading-relaxed text-gray-200">
-                {copy.download.subtitle}
-              </p>
-            </div>
-            <div className="mx-auto w-56 overflow-hidden rounded-lg border border-white/15 bg-white/5 shadow-2xl">
-              <Image
-                src={screenshotPath(locale, '02-focus-timer.png')}
-                alt="SkillQuest focus timer"
-                width={1080}
-                height={1920}
-                priority
-                className="h-auto w-full"
-              />
+          <div className="grid items-center gap-12 lg:grid-cols-[9fr_3fr]">
+            <Stagger>
+              <StaggerItem>
+                <h1 className="font-display text-display text-balance">
+                  {copy.download.title}
+                </h1>
+              </StaggerItem>
+              <StaggerItem>
+                <p className="mt-5 max-w-[52ch] text-lead text-gray-200">
+                  {copy.download.subtitle}
+                </p>
+              </StaggerItem>
+            </Stagger>
+            <div className="mx-auto hidden w-full max-w-[280px] lg:block">
+              <div className="overflow-hidden rounded-2xl border border-white/15 shadow-2xl">
+                <Image
+                  src={screenshotPath(locale, '02-focus-timer.png')}
+                  alt=""
+                  width={1080}
+                  height={1920}
+                  priority
+                  className="h-auto w-full"
+                  sizes="280px"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-16 md:py-20">
+      {/* Two platforms, two states. A vertical rule between them reads as
+          "these are the two routes in" without boxing each one. */}
+      <section className="section-standard">
         <div className="container-custom">
-          <div className="grid gap-5 md:grid-cols-2">
-            <article className="rounded-lg p-6 theme-card md:p-8">
-              <p className="text-sm font-semibold uppercase tracking-wide theme-eyebrow">
-                {copy.download.iosStatus}
-              </p>
-              <h2 className="mt-3 font-display text-3xl font-bold theme-title">
-                {copy.download.iosTitle}
-              </h2>
-              <p className="mt-4 leading-relaxed theme-copy">
-                {copy.download.iosBody}
-              </p>
-              <a
-                href={APP_STORE_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="btn btn-primary mt-6"
-              >
-                {copy.download.iosCta}
-              </a>
-            </article>
+          <div className="grid gap-x-14 gap-y-12 md:grid-cols-2">
+            <Reveal>
+              <article className="h-full border-t pt-6 md:border-t-0 md:pt-0">
+                <p className="text-sm font-semibold uppercase tracking-[0.14em] theme-eyebrow">
+                  {copy.download.iosStatus}
+                </p>
+                <h2 className="mt-3 font-display text-subsection theme-title">
+                  {copy.download.iosTitle}
+                </h2>
+                <p className="mt-4 leading-relaxed theme-copy">
+                  {copy.download.iosBody}
+                </p>
+                <a
+                  href={APP_STORE_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-primary mt-7"
+                >
+                  {copy.download.iosCta}
+                </a>
+              </article>
+            </Reveal>
 
-            <article className="rounded-lg p-6 theme-card md:p-8">
-              <p className="text-sm font-semibold uppercase tracking-wide theme-eyebrow">
-                {copy.download.androidStatus}
-              </p>
-              <h2 className="mt-3 font-display text-3xl font-bold theme-title">
-                {copy.download.androidTitle}
-              </h2>
-              <p className="mt-4 leading-relaxed theme-copy">
-                {copy.download.androidBody}
-              </p>
-              <Link href={ANDROID_SIGNUP_URL} className="btn btn-primary mt-6">
-                {copy.download.androidCta}
-              </Link>
-              <p className="mt-4 text-sm leading-relaxed theme-copy">
-                {copy.download.testerNote}
-              </p>
-              <a
-                href={ANDROID_ALPHA_JOIN_URL}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-2 inline-block text-sm underline theme-copy"
+            <Reveal delay={0.08}>
+              <article
+                className="h-full border-t pt-6 md:border-l md:border-t-0 md:pl-14 md:pt-0"
+                style={{borderColor: 'var(--sq-border)'}}
               >
-                {copy.download.androidAlreadyAdded}
-              </a>
-            </article>
+                <p className="text-sm font-semibold uppercase tracking-[0.14em] theme-eyebrow">
+                  {copy.download.androidStatus}
+                </p>
+                <h2 className="mt-3 font-display text-subsection theme-title">
+                  {copy.download.androidTitle}
+                </h2>
+                <p className="mt-4 leading-relaxed theme-copy">
+                  {copy.download.androidBody}
+                </p>
+                <Link href={ANDROID_SIGNUP_URL} className="btn btn-primary mt-7">
+                  {copy.download.androidCta}
+                </Link>
+                <p className="mt-4 text-sm leading-relaxed theme-copy">
+                  {copy.download.testerNote}
+                </p>
+                <a
+                  href={ANDROID_ALPHA_JOIN_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-2 inline-block text-sm underline theme-copy"
+                >
+                  {copy.download.androidAlreadyAdded}
+                </a>
+              </article>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -555,27 +568,31 @@ export function DownloadMarketingPage({
         initialPlatform={initialPlatform}
       />
 
-      <section className="theme-section-muted py-16 md:py-20">
+      <section className="section-standard theme-section-muted">
         <div className="container-custom">
-          <SectionHeader
-            title={copy.download.screenshotsHeading}
-            body={copy.download.screenshotsBody}
-          />
-          <ScreenshotGallery
-            locale={locale}
-            captions={copy.product.captions}
-            compact
-          />
+          <Reveal>
+            <SectionHeader
+              title={copy.download.screenshotsHeading}
+              body={copy.download.screenshotsBody}
+            />
+          </Reveal>
+          <div className="mt-10">
+            <ScreenshotGallery
+              locale={locale}
+              captions={copy.product.captions}
+              compact
+            />
+          </div>
         </div>
       </section>
 
-      <section className="py-16 md:py-20">
+      <section className="section-hero">
         <div className="container-custom">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="font-display text-3xl font-bold theme-title md:text-4xl">
+            <h2 className="font-display text-section text-balance theme-title">
               {copy.download.finalHeading}
             </h2>
-            <p className="mt-4 text-lg leading-relaxed theme-copy">
+            <p className="mt-4 text-lead theme-copy">
               {copy.download.finalBody}
             </p>
             <StoreLinks
@@ -596,83 +613,95 @@ export function PricingMarketingPage({copy}: PageProps) {
     <>
       <JsonLd data={faqJsonLd(copy.pricing.faq)} />
       <main className="theme-page pt-20">
-        <section className="theme-hero-band py-16 text-white md:py-20">
+        <section className="theme-hero-band section-hero text-white">
           <div className="container-custom">
             <div className="mx-auto max-w-3xl text-center">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-primary-200">
-                SkillQuest
-              </p>
-              <h1 className="font-display text-4xl font-bold md:text-6xl">
+              <h1 className="font-display text-display text-balance">
                 {copy.pricing.title}
               </h1>
-              <p className="mt-5 text-xl leading-relaxed text-primary-100">
+              <p className="mt-5 text-lead text-gray-200">
                 {copy.pricing.subtitle}
               </p>
             </div>
           </div>
         </section>
 
-        <section className="py-16 md:py-20">
+        {/* Plans stay as bounded cards. This is the one place on the site where
+            a box earns its keep: you are comparing discrete options, and the
+            border is what tells you where one option ends. */}
+        <section className="section-standard">
           <div className="container-custom">
-            <div className="grid gap-5 lg:grid-cols-3">
-              {copy.pricing.plans.map((plan) => (
-                <article
-                  key={plan.name}
-                  className={`rounded-lg p-6 theme-card md:p-8 ${
-                    'highlighted' in plan && plan.highlighted
-                      ? 'border-phoenix-flame ring-2 ring-phoenix-flame/20'
-                      : ''
-                  }`}
-                >
-                  <h2 className="font-display text-2xl font-bold theme-title">
-                    {plan.name}
-                  </h2>
-                  <div className="mt-5">
-                    <p className="text-4xl font-bold theme-title">{plan.price}</p>
-                    <p className="mt-1 text-sm font-medium theme-copy">
-                      {plan.cadence}
+            <div className="grid gap-6 lg:grid-cols-3">
+              {copy.pricing.plans.map((plan, i) => (
+                <Reveal key={plan.name} delay={i * 0.08}>
+                  <article
+                    className={`flex h-full flex-col rounded-2xl p-7 md:p-8 theme-card ${
+                      'highlighted' in plan && plan.highlighted
+                        ? 'ring-2 ring-phoenix-flame/40'
+                        : ''
+                    }`}
+                  >
+                    <h2 className="font-display text-subsection theme-title">
+                      {plan.name}
+                    </h2>
+                    <div className="mt-5">
+                      <p className="nums text-4xl theme-title">{plan.price}</p>
+                      <p className="mt-1 text-sm font-medium theme-copy">
+                        {plan.cadence}
+                      </p>
+                    </div>
+                    <p className="mt-5 leading-relaxed theme-copy">
+                      {plan.description}
                     </p>
-                  </div>
-                  <p className="mt-5 leading-relaxed theme-copy">
-                    {plan.description}
-                  </p>
-                  <ul className="mt-6 space-y-3">
-                    {plan.features.map((feature) => (
-                      <li key={feature} className="flex gap-3 theme-muted-strong">
-                        <span className="mt-2 h-2 w-2 rounded-full bg-primary-600" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link href="/download" className="btn btn-primary mt-7 w-full">
-                    {copy.nav.download}
-                  </Link>
-                </article>
+                    <ul className="mt-6 space-y-3">
+                      {plan.features.map((feature) => (
+                        <li key={feature} className="flex gap-3 theme-muted-strong">
+                          <Check
+                            size={18}
+                            weight="bold"
+                            className="mt-1 shrink-0 text-primary-600 dark:text-primary-300"
+                            aria-hidden
+                          />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <Link
+                      href="/download"
+                      className="btn btn-primary mt-8 w-full self-end"
+                    >
+                      {copy.nav.download}
+                    </Link>
+                  </article>
+                </Reveal>
               ))}
             </div>
-            <p className="mt-6 text-center text-sm theme-copy">
+            <p className="mt-8 text-center text-sm theme-copy">
               {copy.pricing.billingNote}
             </p>
           </div>
         </section>
 
-        <section className="theme-section-muted py-16 md:py-20">
+        <section className="section-standard theme-section-muted">
           <div className="container-custom">
-            <SectionHeader title="FAQ" />
-            <div className="mx-auto grid max-w-5xl gap-4 md:grid-cols-2">
-              {copy.pricing.faq.map((item) => (
-                <article
-                  key={item.question}
-                  className="rounded-lg p-6 theme-card"
-                >
-                  <h2 className="font-display text-xl font-bold theme-title">
-                    {item.question}
-                  </h2>
-                  <p className="mt-3 leading-relaxed theme-copy">
-                    {item.answer}
-                  </p>
-                </article>
-              ))}
+            <div className="mx-auto max-w-3xl">
+              <Reveal>
+                <h2 className="font-display text-section theme-title">FAQ</h2>
+              </Reveal>
+              <dl className="mt-8 divide-y" style={{borderColor: 'var(--sq-border)'}}>
+                {copy.pricing.faq.map((item, i) => (
+                  <Reveal key={item.question} delay={i * 0.05}>
+                    <div className="py-6">
+                      <dt className="font-display text-subsection theme-title">
+                        {item.question}
+                      </dt>
+                      <dd className="mt-2 leading-relaxed theme-copy">
+                        {item.answer}
+                      </dd>
+                    </div>
+                  </Reveal>
+                ))}
+              </dl>
             </div>
           </div>
         </section>
@@ -686,34 +715,38 @@ export function PricingMarketingPage({copy}: PageProps) {
 export function FeaturesMarketingPage({locale, copy}: PageProps) {
   return (
     <main className="theme-page pt-20">
-      <section className="theme-hero-band py-16 text-white md:py-20">
+      <section className="theme-hero-band section-hero text-white">
         <div className="container-custom">
-          <div className="grid items-center gap-10 lg:grid-cols-[1fr_420px]">
-            <div>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-primary-200">
-                SkillQuest
-              </p>
-              <h1 className="font-display text-4xl font-bold md:text-6xl">
-                {copy.featuresPage.title}
-              </h1>
-              <p className="mt-5 max-w-3xl text-xl leading-relaxed text-gray-200">
-                {copy.featuresPage.subtitle}
-              </p>
-            </div>
-            <div className="grid grid-cols-2 gap-3">
+          <div className="grid items-center gap-12 lg:grid-cols-[8fr_4fr]">
+            <Stagger>
+              <StaggerItem>
+                <h1 className="font-display text-display text-balance">
+                  {copy.featuresPage.title}
+                </h1>
+              </StaggerItem>
+              <StaggerItem>
+                <p className="mt-5 max-w-[52ch] text-lead text-gray-200">
+                  {copy.featuresPage.subtitle}
+                </p>
+              </StaggerItem>
+            </Stagger>
+            <div className="mx-auto hidden w-full max-w-[340px] grid-cols-2 gap-4 lg:grid">
               {(['01-home-progress.png', '04-statistics.png'] as const).map(
-                (name) => (
+                (name, i) => (
                   <div
                     key={name}
-                    className="overflow-hidden rounded-lg border border-white/15 bg-white/5 shadow-xl"
+                    className={`overflow-hidden rounded-2xl border border-white/15 shadow-2xl ${
+                      i === 1 ? 'mt-10' : ''
+                    }`}
                   >
                     <Image
                       src={screenshotPath(locale, name)}
-                      alt="SkillQuest app screen"
+                      alt=""
                       width={1080}
                       height={1920}
                       className="h-auto w-full"
-                      priority={name === '01-home-progress.png'}
+                      priority={i === 0}
+                      sizes="160px"
                     />
                   </div>
                 )
@@ -723,32 +756,39 @@ export function FeaturesMarketingPage({locale, copy}: PageProps) {
         </div>
       </section>
 
-      <section className="py-16 md:py-20">
+      {/* Two-column prose on hairlines, not two shadowed cards. */}
+      <section className="section-standard">
         <div className="container-custom">
-          <div className="grid gap-5 md:grid-cols-2">
-            {copy.featuresPage.sections.map((section) => (
-              <article
-                key={section.title}
-                className="rounded-lg p-6 theme-card md:p-8"
-              >
-                <h2 className="font-display text-2xl font-bold theme-title">
-                  {section.title}
-                </h2>
-                <p className="mt-4 leading-relaxed theme-copy">
-                  {section.body}
-                </p>
-              </article>
+          <div className="grid gap-x-12 gap-y-10 md:grid-cols-2">
+            {copy.featuresPage.sections.map((section, i) => (
+              <Reveal key={section.title} delay={i * 0.06}>
+                <article
+                  className="h-full border-t pt-6"
+                  style={{borderColor: 'var(--sq-border-strong)'}}
+                >
+                  <h2 className="font-display text-subsection theme-title">
+                    {section.title}
+                  </h2>
+                  <p className="mt-3 leading-relaxed theme-copy">
+                    {section.body}
+                  </p>
+                </article>
+              </Reveal>
             ))}
           </div>
         </div>
-        </section>
+      </section>
 
       <FeatureLandingGrid locale={locale} />
 
-      <section className="theme-section-muted py-16 md:py-20">
+      <section className="section-standard theme-section-muted">
         <div className="container-custom">
-          <SectionHeader title={copy.product.heading} body={copy.product.body} />
-          <ScreenshotGallery locale={locale} captions={copy.product.captions} />
+          <Reveal>
+            <SectionHeader title={copy.product.heading} body={copy.product.body} />
+          </Reveal>
+          <div className="mt-10">
+            <ScreenshotGallery locale={locale} captions={copy.product.captions} />
+          </div>
         </div>
       </section>
 

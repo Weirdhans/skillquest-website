@@ -185,13 +185,13 @@ export default async function GuidesPage({
   return (
     <>
       <main className="theme-page pt-20">
-        <section className="theme-hero-band py-16 text-white md:py-20">
+        <section className="theme-hero-band section-hero text-white">
           <div className="container-custom">
             <div className="mx-auto max-w-3xl text-center">
               <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-primary-200">
                 {copy.eyebrow}
               </p>
-              <h1 className="font-display text-4xl font-bold leading-tight md:text-5xl">
+              <h1 className="font-display text-display text-balance">
                 {copy.heading}
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-gray-200">
@@ -201,7 +201,7 @@ export default async function GuidesPage({
           </div>
         </section>
 
-        <section className="py-16 md:py-20">
+        <section className="section-standard">
           <div className="container-custom">
             <div className="mx-auto max-w-3xl space-y-14">
               {CATEGORY_ORDER.map((category) => {
@@ -210,7 +210,7 @@ export default async function GuidesPage({
 
                 return (
                   <div key={category}>
-                    <h2 className="font-display text-2xl font-bold theme-title md:text-3xl">
+                    <h2 className="font-display text-section text-balance theme-title">
                       {copy.categories[category]}
                     </h2>
                     <ul className="mt-6 divide-y divide-black/5 dark:divide-white/10">

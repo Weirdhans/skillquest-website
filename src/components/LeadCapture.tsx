@@ -181,7 +181,7 @@ export default function LeadCapture({
               <button
                 type="submit"
                 disabled={status === 'loading' || status === 'success'}
-                className="min-h-12 rounded-lg bg-phoenix-flame px-5 py-3 font-semibold text-white transition hover:bg-phoenix-fire focus:outline-none focus:ring-4 focus:ring-phoenix-flame/30 disabled:opacity-60"
+                className="btn-cta-solid min-h-12 rounded-full px-5 py-3 font-semibold transition focus:outline-none focus:ring-4 focus:ring-phoenix-flame/30 disabled:opacity-60"
               >
                 {status === 'loading'
                   ? copy.submitting
