@@ -427,146 +427,157 @@ export default async function SupportPage({
   const mailSubject = `SkillQuest support (${locale})`;
   const mailtoHref = `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(mailSubject)}`;
 
+  const hairline = {borderColor: 'var(--sq-border)'};
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{__html: JSON.stringify(faqJsonLd(copy.faq))}}
       />
-      <main className="min-h-screen bg-background-50">
-        <section className="relative bg-gradient-to-br from-primary-500 to-primary-700 text-white py-16 pt-32 md:pt-36">
-          <div className="container-custom">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="font-display text-4xl md:text-5xl font-bold mb-4">
-                {copy.heading}
-              </h1>
-              <p className="text-lg text-white/90 mb-4">{copy.subtitle}</p>
-              <p className="text-sm text-white/80">
-                {copy.updatedLabel}: {copy.updated}
+      <main className="theme-page min-h-screen">
+        <header className="container-custom pb-10 pt-32 md:pt-36">
+          <div className="max-w-3xl border-b pb-10" style={hairline}>
+            <p className="text-sm font-semibold uppercase tracking-wide theme-eyebrow">
+              {copy.updatedLabel}: <span className="nums">{copy.updated}</span>
+            </p>
+            <h1 className="mt-4 font-display text-section text-balance theme-title">
+              {copy.heading}
+            </h1>
+            <p className="mt-4 text-lead theme-copy">{copy.subtitle}</p>
+          </div>
+        </header>
+
+        <div className="container-custom pb-20">
+          {/* Getting an email written is the job of this page, so the contact
+              block leads and everything else is reference material below it. */}
+          <div className="theme-highlight-band flex flex-col gap-5 rounded-2xl p-6 md:p-8 lg:flex-row lg:items-center lg:justify-between">
+            <div className="max-w-2xl">
+              <h2 className="font-display text-subsection font-bold theme-title">
+                {copy.emailTitle}
+              </h2>
+              <p className="mt-2 theme-copy">
+                {copy.emailBody.replace('{email}', SUPPORT_EMAIL)}
               </p>
             </div>
+            <a href={mailtoHref} className="btn btn-primary whitespace-nowrap">
+              {copy.emailButton}
+            </a>
           </div>
 
-          <div className="absolute bottom-0 left-0 right-0">
-            <svg
-              viewBox="0 0 1200 120"
-              preserveAspectRatio="none"
-              className="w-full h-12 md:h-16 fill-background-50"
+          <section className="mt-16">
+            <h2 className="font-display text-subsection font-bold theme-title">
+              {copy.helpTitle}
+            </h2>
+            {/* Hairline grid rather than four boxes: the gap-px trick draws one
+                shared rule between cells instead of four separate borders. */}
+            <div
+              className="mt-6 grid gap-px sm:grid-cols-2"
+              style={{backgroundColor: 'var(--sq-border)'}}
             >
-              <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" />
-            </svg>
-          </div>
-        </section>
-
-        <section className="py-16">
-          <div className="container-custom">
-            <div className="max-w-5xl mx-auto grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-              <article className="bg-white rounded-2xl shadow-lg p-8 md:p-10">
-                <h2 className="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                  {copy.emailTitle}
-                </h2>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  {copy.emailBody.replace('{email}', SUPPORT_EMAIL)}
-                </p>
-                <a href={mailtoHref} className="btn btn-primary inline-flex">
-                  {copy.emailButton}
-                </a>
-
-                <div className="mt-10 pt-8 border-t border-gray-200">
-                  <h2 className="font-display text-2xl font-bold text-gray-900 mb-4">
-                    {copy.helpTitle}
-                  </h2>
-                  <div className="grid gap-4 sm:grid-cols-2">
-                    {copy.helpItems.map((item) => (
-                      <section
-                        key={item.title}
-                        className="rounded-xl border border-primary-100 bg-primary-50/60 p-5"
-                      >
-                        <h3 className="font-semibold text-gray-900 mb-2">{item.title}</h3>
-                        <p className="text-sm text-gray-700 leading-relaxed">{item.body}</p>
-                      </section>
-                    ))}
-                  </div>
+              {copy.helpItems.map((item) => (
+                <div
+                  key={item.title}
+                  className="theme-page p-6"
+                >
+                  <h3 className="font-semibold theme-title">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed theme-copy">
+                    {item.body}
+                  </p>
                 </div>
-              </article>
-
-              <aside className="space-y-8">
-                <section className="bg-white rounded-2xl shadow-lg p-8">
-                  <h2 className="font-display text-2xl font-bold text-gray-900 mb-4">
-                    {copy.responseTitle}
-                  </h2>
-                  <ul className="space-y-3 text-gray-700">
-                    {copy.responseItems.map((item) => (
-                      <li key={item} className="flex gap-3">
-                        <span className="mt-1 h-2 w-2 rounded-full bg-primary-500" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </section>
-
-                <section className="bg-white rounded-2xl shadow-lg p-8">
-                  <h2 className="font-display text-2xl font-bold text-gray-900 mb-4">
-                    {copy.includeTitle}
-                  </h2>
-                  <ul className="space-y-3 text-gray-700">
-                    {copy.includeItems.map((item) => (
-                      <li key={item} className="flex gap-3">
-                        <span className="text-primary-600 font-bold">-</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </section>
-
-                <section className="bg-white rounded-2xl shadow-lg p-8">
-                  <h2 className="font-display text-2xl font-bold text-gray-900 mb-4">
-                    {copy.linksTitle}
-                  </h2>
-                  <div className="flex flex-col gap-3">
-                    <Link href="/privacy" className="text-primary-700 hover:text-primary-900 underline">
-                      {copy.privacyLink}
-                    </Link>
-                    <Link href="/delete-account" className="text-primary-700 hover:text-primary-900 underline">
-                      {copy.deleteAccountLink}
-                    </Link>
-                    <a href={WEBSITE_URL} className="text-primary-700 hover:text-primary-900 underline">
-                      www.skill-quest.app
-                    </a>
-                  </div>
-                </section>
-              </aside>
+              ))}
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section className="pb-16">
-          <div className="container-custom">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-                {copy.faqHeading}
+          <div className="mt-16 grid gap-10 border-t pt-12 md:grid-cols-2 md:gap-12" style={hairline}>
+            <section>
+              <h2 className="font-display text-subsection font-bold theme-title">
+                {copy.responseTitle}
               </h2>
-              <div className="space-y-4">
-                {copy.faq.map((item) => (
-                  <details
-                    key={item.question}
-                    className="group rounded-xl border border-primary-100 bg-white p-5"
-                  >
-                    <summary className="cursor-pointer list-none font-semibold text-gray-900 marker:content-none">
-                      {item.question}
-                    </summary>
-                    <p className="mt-3 text-sm text-gray-700 leading-relaxed">
-                      {item.answer}
-                    </p>
-                  </details>
+              <ul className="mt-5 space-y-3">
+                {copy.responseItems.map((item) => (
+                  <li key={item} className="flex gap-3 theme-copy">
+                    <span
+                      aria-hidden
+                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full"
+                      style={{backgroundColor: 'var(--sq-brand)'}}
+                    />
+                    <span>{item}</span>
+                  </li>
                 ))}
-              </div>
-            </div>
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="font-display text-subsection font-bold theme-title">
+                {copy.includeTitle}
+              </h2>
+              <ul className="mt-5 space-y-3">
+                {copy.includeItems.map((item) => (
+                  <li key={item} className="flex gap-3 theme-copy">
+                    <span
+                      aria-hidden
+                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full"
+                      style={{backgroundColor: 'var(--sq-border-strong)'}}
+                    />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
           </div>
-        </section>
+
+          <section className="mt-16 border-t pt-12" style={hairline}>
+            <h2 className="font-display text-section text-balance theme-title">
+              {copy.faqHeading}
+            </h2>
+            {/* Twelve answers open at once would bury the rest of the page, so
+                they stay collapsed - a divided list, not twelve cards. */}
+            <div className="mt-8 max-w-3xl border-t" style={hairline}>
+              {copy.faq.map((item) => (
+                <details
+                  key={item.question}
+                  className="group border-b"
+                  style={hairline}
+                >
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 font-semibold marker:content-none theme-title">
+                    <span>{item.question}</span>
+                    <span
+                      aria-hidden
+                      className="shrink-0 text-xl leading-none transition-transform group-open:rotate-45 theme-eyebrow"
+                    >
+                      +
+                    </span>
+                  </summary>
+                  <p className="pb-5 pr-8 text-sm leading-relaxed theme-copy">
+                    {item.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </section>
+
+          <section className="mt-16 border-t pt-12" style={hairline}>
+            <h2 className="font-display text-subsection font-bold theme-title">
+              {copy.linksTitle}
+            </h2>
+            <div className="mt-4 flex flex-wrap gap-x-8 gap-y-2 theme-copy">
+              <Link href="/privacy" className="underline hover:theme-title">
+                {copy.privacyLink}
+              </Link>
+              <Link href="/delete-account" className="underline hover:theme-title">
+                {copy.deleteAccountLink}
+              </Link>
+              <a href={WEBSITE_URL} className="underline hover:theme-title">
+                www.skill-quest.app
+              </a>
+            </div>
+          </section>
+        </div>
       </main>
 
       <Footer />
     </>
   );
 }
+
