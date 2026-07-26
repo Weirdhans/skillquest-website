@@ -14,14 +14,17 @@ import {
 
 const locales = routing.locales;
 
+// Runs before first paint so the page never flashes the wrong theme.
+// The stored value is a preference ('light' | 'dark' | 'system'), not a resolved
+// theme, so 'system' keeps deferring to the OS on every load. Anything else,
+// including the absence of a value, resolves to the OS as well.
 const themeInitScript = `
 (() => {
   try {
-    const storedTheme = window.localStorage.getItem('skillquest-theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const theme = storedTheme === 'light' || storedTheme === 'dark'
-      ? storedTheme
-      : prefersDark
+    const pref = window.localStorage.getItem('skillquest-theme');
+    const theme = pref === 'light' || pref === 'dark'
+      ? pref
+      : window.matchMedia('(prefers-color-scheme: dark)').matches
         ? 'dark'
         : 'light';
     document.documentElement.classList.toggle('dark', theme === 'dark');

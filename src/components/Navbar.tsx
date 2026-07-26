@@ -4,45 +4,59 @@ import type {CSSProperties} from 'react';
 import {useEffect, useState} from 'react';
 import Image from 'next/image';
 import {AnimatePresence, motion, useMotionValueEvent, useScroll} from 'framer-motion';
-import {CaretDown, Moon, Sun} from '@phosphor-icons/react';
+import {CaretDown, Monitor, Moon, Sun} from '@phosphor-icons/react';
 import {useLocale} from 'next-intl';
 import {usePathname, useRouter} from 'next/navigation';
 import {Link, routing} from '@/i18n/routing';
 import {getMarketingCopy, isLocale, type Locale} from '@/lib/marketing';
 
+// Three preferences, two resolved themes. The stored value is the *preference*,
+// so 'system' keeps following the OS instead of freezing whatever it resolved to
+// at the moment of the click. Before this there was no way back to 'system'
+// once you had picked a side.
+type ThemePref = 'light' | 'dark' | 'system';
 type Theme = 'light' | 'dark';
 
 const THEME_STORAGE_KEY = 'skillquest-theme';
+const THEME_CYCLE: ThemePref[] = ['light', 'dark', 'system'];
 
-function getActiveTheme(): Theme {
-  if (typeof document === 'undefined') return 'light';
-  return document.documentElement.classList.contains('dark') ||
-    document.documentElement.dataset.theme === 'dark'
+function readStoredPref(): ThemePref {
+  if (typeof window === 'undefined') return 'system';
+  try {
+    const stored = window.localStorage.getItem(THEME_STORAGE_KEY);
+    if (stored === 'light' || stored === 'dark' || stored === 'system') {
+      return stored;
+    }
+  } catch {
+    return 'system';
+  }
+  return 'system';
+}
+
+function systemTheme(): Theme {
+  if (typeof window === 'undefined') return 'light';
+  return window.matchMedia('(prefers-color-scheme: dark)').matches
     ? 'dark'
     : 'light';
 }
 
-function getPreferredTheme(): Theme {
-  if (typeof window === 'undefined') return 'light';
-
-  try {
-    const storedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
-    if (storedTheme === 'light' || storedTheme === 'dark') {
-      return storedTheme;
-    }
-  } catch {
-    return 'light';
-  }
-
-  return window.matchMedia('(prefers-color-scheme: dark)').matches
-    ? 'dark'
-    : 'light';
+function resolveTheme(pref: ThemePref): Theme {
+  return pref === 'system' ? systemTheme() : pref;
 }
 
 function applyTheme(theme: Theme) {
   document.documentElement.classList.toggle('dark', theme === 'dark');
   document.documentElement.dataset.theme = theme;
 }
+
+const THEME_LABELS: Record<Locale, Record<ThemePref, string>> = {
+  nl: {light: 'Licht', dark: 'Donker', system: 'Systeem'},
+  en: {light: 'Light', dark: 'Dark', system: 'System'},
+  de: {light: 'Hell', dark: 'Dunkel', system: 'System'},
+  fr: {light: 'Clair', dark: 'Sombre', system: 'Système'},
+  es: {light: 'Claro', dark: 'Oscuro', system: 'Sistema'},
+  it: {light: 'Chiaro', dark: 'Scuro', system: 'Sistema'}
+};
 
 const languageOptions = routing.locales.map((locale) => ({
   code: locale,
@@ -59,7 +73,8 @@ export default function Navbar() {
   const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
   const [showLangMenu, setShowLangMenu] = useState(false);
-  const [theme, setTheme] = useState<Theme>('light');
+  const [themePref, setThemePref] = useState<ThemePref>('system');
+  const themeLabels = THEME_LABELS[locale] ?? THEME_LABELS.en;
 
   // useScroll instead of a raw scroll listener: that ran on every scroll frame
   // with no batching, and setState per frame re-rendered the whole nav.
@@ -69,16 +84,25 @@ export default function Navbar() {
     setIsScrolled((prev) => (prev === next ? prev : next));
   });
 
+  // Adopt whatever the inline head script already resolved, without re-applying
+  // it. Re-applying here was pointless work and it briefly fought the script.
   useEffect(() => {
-    const syncTheme = () => {
-      const preferredTheme = getPreferredTheme();
-      applyTheme(preferredTheme);
-      setTheme(preferredTheme);
-    };
-    const frame = window.requestAnimationFrame(syncTheme);
-
-    return () => window.cancelAnimationFrame(frame);
+    setThemePref(readStoredPref());
   }, []);
+
+  // While the preference is 'system', follow the OS live. Without this the page
+  // would keep the theme it resolved to at load even if the OS flips (which it
+  // does on a schedule for a lot of people).
+  useEffect(() => {
+    if (themePref !== 'system') return;
+
+    const query = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = () => applyTheme(systemTheme());
+
+    handleChange();
+    query.addEventListener('change', handleChange);
+    return () => query.removeEventListener('change', handleChange);
+  }, [themePref]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -105,14 +129,15 @@ export default function Navbar() {
     setShowLangMenu(false);
   }
 
-  function toggleTheme() {
-    const nextTheme: Theme = getActiveTheme() === 'dark' ? 'light' : 'dark';
+  function cycleTheme() {
+    const next =
+      THEME_CYCLE[(THEME_CYCLE.indexOf(themePref) + 1) % THEME_CYCLE.length]!;
 
-    applyTheme(nextTheme);
-    setTheme(nextTheme);
+    applyTheme(resolveTheme(next));
+    setThemePref(next);
 
     try {
-      window.localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+      window.localStorage.setItem(THEME_STORAGE_KEY, next);
     } catch {
       // The visible theme should still change if storage is unavailable.
     }
@@ -221,10 +246,13 @@ export default function Navbar() {
               </AnimatePresence>
             </div>
 
+            {/* Cycles light -> dark -> system. The icon shows the current
+                preference, not the resolved theme, so the monitor icon means
+                "following your device" rather than a third colour scheme. */}
             <button
               type="button"
-              onClick={toggleTheme}
-              className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border shadow-sm transition hover:-translate-y-0.5 focus:outline-none focus:ring-4"
+              onClick={cycleTheme}
+              className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border shadow-sm transition hover:-translate-y-0.5 focus:outline-none focus:ring-4"
               style={{
                 backgroundColor: 'var(--sq-surface)',
                 borderColor: 'var(--sq-border)',
@@ -232,14 +260,17 @@ export default function Navbar() {
                 '--tw-ring-color':
                   'color-mix(in srgb, var(--sq-brand) 24%, transparent)'
               } as CSSProperties}
-              aria-label={theme === 'dark' ? 'Light mode' : 'Dark mode'}
-              title={theme === 'dark' ? 'Light mode' : 'Dark mode'}
+              aria-label={`${themeLabels.light} / ${themeLabels.dark} / ${themeLabels.system}`}
+              title={themeLabels[themePref]}
               suppressHydrationWarning
             >
-              {theme === 'dark' ? (
+              <span className="sr-only">{themeLabels[themePref]}</span>
+              {themePref === 'light' ? (
                 <Sun size={18} weight="bold" aria-hidden />
-              ) : (
+              ) : themePref === 'dark' ? (
                 <Moon size={18} weight="bold" aria-hidden />
+              ) : (
+                <Monitor size={18} weight="bold" aria-hidden />
               )}
             </button>
 
