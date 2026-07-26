@@ -121,7 +121,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-white/10 pt-6 text-sm text-gray-500">
+        {/* gray-400, not gray-500: the footer ground is near-black in both
+            themes, where gray-500 lands at 3.4:1 against AA's 4.5:1. A dark-mode
+            override used to paper over this; there is no override now. */}
+        <div className="mt-10 border-t border-white/10 pt-6 text-sm text-gray-400">
           © {currentYear} SkillQuest. All rights reserved.
         </div>
       </div>
