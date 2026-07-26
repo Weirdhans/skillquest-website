@@ -246,7 +246,7 @@ export default function Navbar() {
 
             <Link
               href="/download"
-              className="inline-flex min-h-10 items-center justify-center whitespace-nowrap rounded-lg bg-phoenix-flame px-3 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-phoenix-fire sm:text-sm md:px-4"
+              className="btn-cta-solid inline-flex min-h-10 items-center justify-center whitespace-nowrap rounded-full px-3 py-2 text-xs font-semibold shadow-sm transition sm:text-sm md:px-4"
             >
               {copy.nav.cta}
             </Link>

@@ -22,10 +22,16 @@
     --sq-accent-strong: #d2381c;
     /* Single source of truth for the CTA gradient. It used to be hardcoded in
        three separate places in this file. The email templates keep their own
-       copy (inline CSS is mandatory in mail) - see src/lib/email-templates.mjs. */
-    --sq-cta-gradient: linear-gradient(135deg, #ff6b35 0%, #d2381c 100%);
-    --sq-cta-gradient-hover: linear-gradient(135deg, #ff7e4a 0%, #e64a2e 100%);
-    --sq-cta-shadow: 0 8px 25px rgba(210, 56, 28, 0.4);
+       copy (inline CSS is mandatory in mail) - see src/lib/email-templates.mjs.
+       The gradient stops shallower than the old #ff6b35 -> #d2381c because the
+       label is dark, and dark text over #d2381c only reaches 3.65:1. Both stops
+       here clear 4.5:1 (6.25 and 5.52), so the label passes across the whole
+       button and not just its lighter half. */
+    --sq-cta-gradient: linear-gradient(135deg, #ff6b35 0%, #f4601f 100%);
+    --sq-cta-gradient-hover: linear-gradient(135deg, #ff7d4f 0%, #fa6529 100%);
+    --sq-cta-shadow: 0 8px 25px rgba(210, 56, 28, 0.32);
+    --sq-cta-text: #300d02;
+    --sq-cta-solid: #ff6b35;
     --sq-nav-bg: rgba(255, 255, 255, 0.88);
     --sq-nav-border: rgba(196, 210, 202, 0.85);
     --sq-hero-start: #101714;
@@ -59,9 +65,11 @@
     --sq-brand-deep: #071d1b;
     --sq-accent: #ff7a45;
     --sq-accent-strong: #ff9a68;
-    --sq-cta-gradient: linear-gradient(135deg, #ff7a45 0%, #d94425 100%);
-    --sq-cta-gradient-hover: linear-gradient(135deg, #ff8d5d 0%, #e85333 100%);
+    --sq-cta-gradient: linear-gradient(135deg, #ff7a45 0%, #f4601f 100%);
+    --sq-cta-gradient-hover: linear-gradient(135deg, #ff8d5d 0%, #fa6529 100%);
     --sq-cta-shadow: 0 8px 25px rgba(255, 122, 69, 0.28);
+    --sq-cta-text: #300d02;
+    --sq-cta-solid: #ff7a45;
     --sq-nav-bg: rgba(10, 15, 14, 0.82);
     --sq-nav-border: rgba(59, 79, 72, 0.7);
     /* On a dark page the hero is not a separate dark band any more - that
@@ -114,10 +122,25 @@
     @apply px-6 py-3 rounded-full font-semibold transition-all duration-200 inline-flex items-center justify-center;
   }
 
+  /* Dark label, not white. White on the brand orange reaches 2.84:1 where AA
+     asks 4.5:1 at this size, and darkening the orange enough to carry white
+     text would have visibly changed the brand colour. */
   .btn-primary {
-    @apply text-white active:scale-95 shadow-lg hover:shadow-xl;
+    @apply active:scale-95 shadow-lg hover:shadow-xl;
+    color: var(--sq-cta-text);
     background: var(--sq-cta-gradient);
     transition: all 0.3s ease;
+  }
+
+  /* Solid variant for the smaller orange buttons (nav CTA, store links, the
+     lead-capture submit). Same label colour so the family stays consistent. */
+  .btn-cta-solid {
+    color: var(--sq-cta-text);
+    background-color: var(--sq-cta-solid);
+  }
+
+  .btn-cta-solid:hover {
+    filter: brightness(1.06);
   }
 
   .btn-primary:hover {
