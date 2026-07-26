@@ -2,6 +2,13 @@
 
 import Link from 'next/link';
 import {useCallback, useEffect, useState} from 'react';
+import AuthShell from '@/components/AuthShell';
+import {
+  defaultAuthLocale,
+  getHandoffCopy,
+  resolveAuthLocale,
+  type AuthLocale
+} from '@/lib/authI18n';
 
 const APP_AUTH_CALLBACK = 'io.skillquest.app://auth/callback';
 
@@ -54,6 +61,11 @@ export default function AuthCallbackLanding() {
     hasAuthParams: false
   });
   const [showFallback, setShowFallback] = useState(false);
+  // This route sits outside [locale] and is reached straight from an email, so
+  // the language has to come from the link itself, then the browser. Resolved
+  // after mount to keep the server and client markup identical.
+  const [locale, setLocale] = useState<AuthLocale>(defaultAuthLocale);
+  const copy = getHandoffCopy(locale);
 
   const openInApp = useCallback(() => {
     if (callbackState.appUrl == null) {
@@ -65,9 +77,11 @@ export default function AuthCallbackLanding() {
 
   useEffect(() => {
     const callback = buildAppCallbackUrl();
+    const requested = new URL(window.location.href).searchParams.get('locale');
 
     const stateTimer = window.setTimeout(() => {
       setCallbackState(callback);
+      setLocale(resolveAuthLocale(requested ?? navigator.language));
     }, 0);
 
     const attemptTimer = window.setTimeout(() => {
@@ -88,56 +102,50 @@ export default function AuthCallbackLanding() {
   }, []);
 
   const title = callbackState.isRecovery
-    ? 'Reset je wachtwoord in SkillQuest'
-    : 'Open SkillQuest om verder te gaan';
+    ? copy.callbackRecoveryTitle
+    : copy.callbackTitle;
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-950 to-black text-white">
-      <section className="mx-auto flex min-h-screen w-full max-w-xl items-center px-6 py-12">
-        <div className="w-full rounded-3xl border border-white/10 bg-white/5 p-8 shadow-2xl backdrop-blur-sm">
-          <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-phoenix text-2xl font-bold">
-            <span aria-hidden="true">SQ</span>
-          </div>
+    <AuthShell homeHref={`/${locale}`}>
+      <h1 className="font-display text-subsection font-bold theme-title">
+        {title}
+      </h1>
 
-          <h1 className="text-3xl font-bold leading-tight text-white">{title}</h1>
+      <p className="mt-3 theme-copy">{copy.callbackIntro}</p>
 
-          <p className="mt-4 text-white/80">
-            We proberen SkillQuest automatisch te openen. Als je deze pagina op
-            je computer bekijkt, open dezelfde e-mail dan op je telefoon met
-            SkillQuest geinstalleerd.
+      <button
+        type="button"
+        onClick={openInApp}
+        disabled={callbackState.appUrl == null}
+        className="btn btn-primary mt-6 w-full disabled:cursor-not-allowed disabled:opacity-60"
+      >
+        {copy.openInApp}
+      </button>
+
+      {showFallback && (
+        <div
+          className="mt-6 rounded-2xl border p-5"
+          style={{
+            borderColor: 'var(--sq-border)',
+            backgroundColor: 'var(--sq-brand-soft)'
+          }}
+        >
+          <p className="text-sm leading-relaxed theme-muted-strong">
+            {copy.callbackFallback}
           </p>
-
-          <button
-            type="button"
-            onClick={openInApp}
-            disabled={callbackState.appUrl == null}
-            className="btn btn-primary mt-6 w-full disabled:cursor-not-allowed disabled:opacity-60"
-          >
-            Open in SkillQuest
-          </button>
-
-          {showFallback && (
-            <div className="mt-6 rounded-2xl border border-amber-400/40 bg-amber-500/10 p-4">
-              <p className="text-sm text-amber-100">
-                Gebeurt er niets? Gebruik deze link op je iPhone of Android
-                toestel. Op een computer kan de mobiele app meestal niet worden
-                geopend.
-              </p>
-              {!callbackState.hasAuthParams && (
-                <p className="mt-3 text-sm text-amber-100">
-                  Deze link mist ook authenticatiegegevens. Vraag in dat geval
-                  een nieuwe e-mail aan vanuit SkillQuest.
-                </p>
-              )}
-              <div className="mt-4">
-                <Link href="/nl/download" className="btn btn-secondary w-full">
-                  App downloaden
-                </Link>
-              </div>
-            </div>
+          {!callbackState.hasAuthParams && (
+            <p className="mt-3 text-sm leading-relaxed theme-muted-strong">
+              {copy.callbackMissingParams}
+            </p>
           )}
+          <Link
+            href={`/${locale}/download`}
+            className="btn btn-secondary mt-4 w-full"
+          >
+            {copy.downloadApp}
+          </Link>
         </div>
-      </section>
-    </main>
+      )}
+    </AuthShell>
   );
 }

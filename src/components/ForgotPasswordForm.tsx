@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import {FormEvent, useState} from 'react';
+import AuthShell from '@/components/AuthShell';
 import {
   AuthLocale,
   getAuthCopy,
@@ -44,65 +45,67 @@ export default function ForgotPasswordForm({locale}: {locale: AuthLocale}) {
   }
 
   return (
-    <main className="min-h-screen bg-background-50 px-6 py-12 text-gray-900">
-      <section className="mx-auto flex min-h-[80vh] w-full max-w-xl items-center">
-        <div className="w-full rounded-lg border border-gray-200 bg-white p-8 shadow-lg">
-          <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-phoenix text-lg font-bold text-white">
-            {copy.logoText}
-          </div>
+    <AuthShell homeHref={localizedSitePath(locale)}>
+      {status === 'sent' ? (
+        <>
+          <h1 className="font-display text-subsection font-bold theme-title">
+            {copy.forgotSentTitle}
+          </h1>
+          <p className="mt-3 theme-copy">{copy.forgotSentBody}</p>
+          <Link
+            href={localizedSitePath(locale)}
+            className="btn btn-secondary mt-6 w-full"
+          >
+            {copy.backToSkillQuest}
+          </Link>
+        </>
+      ) : (
+        <>
+          <h1 className="font-display text-subsection font-bold theme-title">
+            {copy.forgotTitle}
+          </h1>
+          <p className="mt-3 theme-copy">{copy.forgotIntro}</p>
 
-          {status === 'sent' ? (
-            <>
-              <h1 className="heading-md mb-4">{copy.forgotSentTitle}</h1>
-              <p className="text-body mb-6">{copy.forgotSentBody}</p>
-              <Link
-                href={localizedSitePath(locale)}
-                className="btn btn-secondary w-full"
+          <form onSubmit={handleSubmit} className="mt-6 space-y-5">
+            <label className="block">
+              <span className="mb-2 block font-semibold theme-muted-strong">
+                {copy.emailLabel}
+              </span>
+              <input
+                type="email"
+                autoComplete="email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                className="input"
+                disabled={status === 'submitting'}
+                required
+              />
+            </label>
+
+            {status === 'error' && (
+              <p
+                className="rounded-lg border px-4 py-3 text-sm"
+                style={{
+                  borderColor: 'var(--sq-accent-strong)',
+                  color: 'var(--sq-accent-strong)'
+                }}
               >
-                {copy.backToSkillQuest}
-              </Link>
-            </>
-          ) : (
-            <>
-              <h1 className="heading-md mb-4">{copy.forgotTitle}</h1>
-              <p className="text-body mb-6">{copy.forgotIntro}</p>
+                {copy.forgotError}
+              </p>
+            )}
 
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <label className="block">
-                  <span className="mb-2 block font-semibold text-gray-800">
-                    {copy.emailLabel}
-                  </span>
-                  <input
-                    type="email"
-                    autoComplete="email"
-                    value={email}
-                    onChange={(event) => setEmail(event.target.value)}
-                    className="input"
-                    disabled={status === 'submitting'}
-                    required
-                  />
-                </label>
-
-                {status === 'error' && (
-                  <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
-                    {copy.forgotError}
-                  </div>
-                )}
-
-                <button
-                  type="submit"
-                  className="btn btn-primary w-full"
-                  disabled={status === 'submitting'}
-                >
-                  {status === 'submitting'
-                    ? copy.forgotSubmitting
-                    : copy.forgotSubmit}
-                </button>
-              </form>
-            </>
-          )}
-        </div>
-      </section>
-    </main>
+            <button
+              type="submit"
+              className="btn btn-primary w-full"
+              disabled={status === 'submitting'}
+            >
+              {status === 'submitting'
+                ? copy.forgotSubmitting
+                : copy.forgotSubmit}
+            </button>
+          </form>
+        </>
+      )}
+    </AuthShell>
   );
 }

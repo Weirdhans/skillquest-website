@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import {FormEvent, useEffect, useState} from 'react';
+import AuthShell from '@/components/AuthShell';
 import {
   AuthCopy,
   AuthLocale,
@@ -138,7 +139,7 @@ function PasswordField({
 
   return (
     <label className="block">
-      <span className="mb-2 block font-semibold text-gray-800">{label}</span>
+      <span className="mb-2 block font-semibold theme-muted-strong">{label}</span>
       <div className="relative">
         <input
           id={id}
@@ -152,7 +153,7 @@ function PasswordField({
         />
         <button
           type="button"
-          className="absolute right-3 top-1/2 inline-flex -translate-y-1/2 rounded-md p-1 text-gray-500 transition-colors hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500 disabled:cursor-not-allowed disabled:opacity-50"
+          className="absolute right-3 top-1/2 inline-flex -translate-y-1/2 rounded-md p-1 transition-colors hover:opacity-70 focus:outline-none focus:ring-2 focus:ring-primary-500 disabled:cursor-not-allowed disabled:opacity-50 theme-copy"
           onClick={() => setIsVisible((current) => !current)}
           disabled={disabled}
           aria-label={toggleLabel}
@@ -289,41 +290,41 @@ export default function PasswordResetForm({
   }
 
   return (
-    <main className="min-h-screen bg-background-50 px-6 py-12 text-gray-900">
-      <section className="mx-auto flex min-h-[80vh] w-full max-w-xl items-center">
-        <div className="w-full rounded-lg border border-gray-200 bg-white p-8 shadow-lg">
-          <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-phoenix text-lg font-bold text-white">
-            {copy.logoText}
-          </div>
+    <AuthShell homeHref={localizedSitePath(locale)}>
+      {status === 'success' ? (
+        <>
+          <h1 className="font-display text-subsection font-bold theme-title">
+            {copy.resetSuccessTitle}
+          </h1>
+          <p className="mt-3 theme-copy">{copy.resetSuccessBody}</p>
+          <Link
+            href={localizedSitePath(locale, '/download')}
+            className="btn btn-primary mt-6 w-full"
+          >
+            {copy.openSkillQuest}
+          </Link>
+        </>
+      ) : status === 'expired' ? (
+        <>
+          <h1 className="font-display text-subsection font-bold theme-title">
+            {copy.expiredTitle}
+          </h1>
+          <p className="mt-3 theme-copy">{copy.resetExpiredBody}</p>
+          <Link
+            href={withAuthLocale('/auth/forgot-password', locale)}
+            className="btn btn-primary mt-6 w-full"
+          >
+            {copy.requestNewLink}
+          </Link>
+        </>
+      ) : (
+        <>
+          <h1 className="font-display text-subsection font-bold theme-title">
+            {copy.resetTitle}
+          </h1>
+          <p className="mt-3 theme-copy">{copy.resetIntro}</p>
 
-          {status === 'success' ? (
-            <>
-              <h1 className="heading-md mb-4">{copy.resetSuccessTitle}</h1>
-              <p className="text-body mb-6">{copy.resetSuccessBody}</p>
-              <Link
-                href={localizedSitePath(locale, '/download')}
-                className="btn btn-primary w-full"
-              >
-                {copy.openSkillQuest}
-              </Link>
-            </>
-          ) : status === 'expired' ? (
-            <>
-              <h1 className="heading-md mb-4">{copy.expiredTitle}</h1>
-              <p className="text-body mb-6">{copy.resetExpiredBody}</p>
-              <Link
-                href={withAuthLocale('/auth/forgot-password', locale)}
-                className="btn btn-primary w-full"
-              >
-                {copy.requestNewLink}
-              </Link>
-            </>
-          ) : (
-            <>
-              <h1 className="heading-md mb-4">{copy.resetTitle}</h1>
-              <p className="text-body mb-6">{copy.resetIntro}</p>
-
-              <form onSubmit={handleSubmit} className="space-y-5">
+          <form onSubmit={handleSubmit} className="mt-6 space-y-5">
                 <input
                   type="email"
                   name="username"
@@ -351,32 +352,36 @@ export default function PasswordResetForm({
                   copy={copy}
                 />
 
-                <p className="text-sm text-gray-600">
-                  {copy.passwordRequirements} {copy.passwordManagerHint}
-                </p>
+            <p className="text-sm theme-copy">
+              {copy.passwordRequirements} {copy.passwordManagerHint}
+            </p>
 
-                {error != null && (
-                  <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
-                    {error}
-                  </div>
-                )}
+            {error != null && (
+              <p
+                className="rounded-lg border px-4 py-3 text-sm"
+                style={{
+                  borderColor: 'var(--sq-accent-strong)',
+                  color: 'var(--sq-accent-strong)'
+                }}
+              >
+                {error}
+              </p>
+            )}
 
-                <button
-                  type="submit"
-                  className="btn btn-primary w-full"
-                  disabled={status === 'checking' || status === 'submitting'}
-                >
-                  {status === 'checking'
-                    ? copy.checkingButton
-                    : status === 'submitting'
-                      ? copy.updatingButton
-                      : copy.updatePasswordButton}
-                </button>
-              </form>
-            </>
-          )}
-        </div>
-      </section>
-    </main>
+            <button
+              type="submit"
+              className="btn btn-primary w-full"
+              disabled={status === 'checking' || status === 'submitting'}
+            >
+              {status === 'checking'
+                ? copy.checkingButton
+                : status === 'submitting'
+                  ? copy.updatingButton
+                  : copy.updatePasswordButton}
+            </button>
+          </form>
+        </>
+      )}
+    </AuthShell>
   );
 }

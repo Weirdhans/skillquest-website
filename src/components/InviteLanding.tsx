@@ -2,13 +2,52 @@
 
 import Link from 'next/link';
 import {useCallback, useEffect, useMemo, useState} from 'react';
+import AuthShell from '@/components/AuthShell';
+import {
+  getHandoffCopy,
+  resolveAuthLocale,
+  type HandoffCopy
+} from '@/lib/authI18n';
+
+export type InviteVariant = 'friend' | 'family';
 
 interface InviteLandingProps {
   locale: string;
   rawCode: string;
+  variant?: InviteVariant;
 }
 
 const INVITE_CODE_PATTERN = /^[A-Z0-9]{6,12}$/;
+
+// The friend and family screens were two near-identical files that had already
+// drifted apart (different accent colours on the same fallback panel, one code
+// shown with a # and one without). One component with a variant keeps them in
+// step; only these four things actually differ.
+const VARIANTS: Record<
+  InviteVariant,
+  {
+    deepLinkPath: string;
+    codePrefix: string;
+    title: (copy: HandoffCopy) => string;
+    intro: (copy: HandoffCopy) => string;
+    fallback: (copy: HandoffCopy) => string;
+  }
+> = {
+  friend: {
+    deepLinkPath: 'friends',
+    codePrefix: '#',
+    title: (copy) => copy.friendInviteTitle,
+    intro: (copy) => copy.friendInviteIntro,
+    fallback: (copy) => copy.friendInviteFallback
+  },
+  family: {
+    deepLinkPath: 'family',
+    codePrefix: '',
+    title: (copy) => copy.familyInviteTitle,
+    intro: (copy) => copy.familyInviteIntro,
+    fallback: (copy) => copy.familyInviteFallback
+  }
+};
 
 function normalizeInviteCode(rawCode: string): string | null {
   const normalized = rawCode.replace(/[^A-Za-z0-9]/g, '').toUpperCase();
@@ -18,17 +57,42 @@ function normalizeInviteCode(rawCode: string): string | null {
   return normalized;
 }
 
-export default function InviteLanding({locale, rawCode}: InviteLandingProps) {
+// Renders the {code} placeholder as bold text without dropping to
+// dangerouslySetInnerHTML for a string we control.
+function withCode(template: string, code: string) {
+  const parts = template.split('{code}');
+  return parts.flatMap((part, index) =>
+    index === parts.length - 1
+      ? [part]
+      : [
+          part,
+          <strong key={index} className="font-semibold">
+            {code}
+          </strong>
+        ]
+  );
+}
+
+export default function InviteLanding({
+  locale,
+  rawCode,
+  variant = 'friend'
+}: InviteLandingProps) {
+  const config = VARIANTS[variant];
+  const copy = getHandoffCopy(resolveAuthLocale(locale));
   const inviteCode = useMemo(() => normalizeInviteCode(rawCode), [rawCode]);
   const [copied, setCopied] = useState(false);
   const [showFallback, setShowFallback] = useState(false);
+
+  const displayCode =
+    inviteCode == null ? null : `${config.codePrefix}${inviteCode}`;
 
   const appLink = useMemo(() => {
     if (inviteCode == null) {
       return null;
     }
-    return `io.skillquest.app://friends?invite=${inviteCode}`;
-  }, [inviteCode]);
+    return `io.skillquest.app://${config.deepLinkPath}?invite=${inviteCode}`;
+  }, [config.deepLinkPath, inviteCode]);
 
   const openInApp = useCallback(() => {
     if (appLink == null) {
@@ -57,12 +121,12 @@ export default function InviteLanding({locale, rawCode}: InviteLandingProps) {
   }, [appLink, openInApp]);
 
   const copyInviteCode = useCallback(async () => {
-    if (inviteCode == null) {
+    if (displayCode == null) {
       return;
     }
 
     try {
-      await navigator.clipboard.writeText(`#${inviteCode}`);
+      await navigator.clipboard.writeText(displayCode);
       setCopied(true);
       window.setTimeout(() => {
         setCopied(false);
@@ -70,81 +134,76 @@ export default function InviteLanding({locale, rawCode}: InviteLandingProps) {
     } catch {
       setCopied(false);
     }
-  }, [inviteCode]);
+  }, [displayCode]);
 
   const downloadPath = `/${locale}/download`;
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-950 to-black text-white">
-      <section className="mx-auto flex min-h-screen w-full max-w-xl items-center px-6 py-12">
-        <div className="w-full rounded-3xl border border-white/10 bg-white/5 p-8 shadow-2xl backdrop-blur-sm">
-          <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-phoenix text-2xl">
-            <span aria-hidden="true">SQ</span>
+    <AuthShell homeHref={`/${locale}`}>
+      <h1 className="font-display text-subsection font-bold theme-title">
+        {config.title(copy)}
+      </h1>
+
+      {inviteCode == null || displayCode == null ? (
+        <>
+          <p className="mt-3 theme-copy">{copy.inviteInvalid}</p>
+          <Link href={downloadPath} className="btn btn-primary mt-6 w-full">
+            {copy.downloadApp}
+          </Link>
+        </>
+      ) : (
+        <>
+          <p className="mt-3 theme-copy">{config.intro(copy)}</p>
+
+          <button
+            type="button"
+            onClick={openInApp}
+            className="btn btn-primary mt-6 w-full"
+          >
+            {copy.openInApp}
+          </button>
+
+          <div
+            className="mt-6 rounded-2xl p-5"
+            style={{backgroundColor: 'var(--sq-bg-muted)'}}
+          >
+            <p className="text-xs font-semibold uppercase tracking-wide theme-eyebrow">
+              {copy.manualCodeLabel}
+            </p>
+            <p className="nums mt-2 text-2xl font-semibold tracking-widest theme-title">
+              {displayCode}
+            </p>
+            <button
+              type="button"
+              onClick={copyInviteCode}
+              className="mt-4 rounded-full border px-4 py-1.5 text-sm font-semibold transition hover:opacity-80 theme-muted-strong"
+              style={{borderColor: 'var(--sq-border-strong)'}}
+            >
+              {copied ? copy.codeCopied : copy.copyCode}
+            </button>
           </div>
 
-          <h1 className="text-3xl font-bold leading-tight text-white">
-            Vriendschapsuitnodiging
-          </h1>
-
-          {inviteCode == null ? (
-            <>
-              <p className="mt-4 text-white/80">
-                Deze uitnodigingslink is ongeldig of onvolledig.
+          {showFallback && (
+            <div
+              className="mt-6 rounded-2xl border p-5"
+              style={{
+                borderColor: 'var(--sq-border)',
+                backgroundColor: 'var(--sq-brand-soft)'
+              }}
+            >
+              <p className="text-sm leading-relaxed theme-muted-strong">
+                {withCode(config.fallback(copy), displayCode)}
               </p>
-              <div className="mt-8">
-                <Link href={downloadPath} className="btn btn-primary">
-                  Open SkillQuest
-                </Link>
-              </div>
-            </>
-          ) : (
-            <>
-              <p className="mt-4 text-white/80">
-                We proberen SkillQuest te openen met je uitnodiging.
-              </p>
-
-              <button
-                type="button"
-                onClick={openInApp}
-                className="btn btn-primary mt-6 w-full"
+              <Link
+                href={downloadPath}
+                className="btn btn-secondary mt-4 w-full"
               >
-                Open in SkillQuest
-              </button>
-
-              <div className="mt-6 rounded-2xl border border-white/15 bg-black/30 p-4">
-                <p className="text-xs uppercase tracking-wide text-white/60">
-                  Handmatige code
-                </p>
-                <p className="mt-2 text-2xl font-semibold tracking-widest text-white">
-                  #{inviteCode}
-                </p>
-                <button
-                  type="button"
-                  onClick={copyInviteCode}
-                  className="mt-3 rounded-lg border border-white/30 px-3 py-1 text-sm text-white/90 transition hover:bg-white/10"
-                >
-                  {copied ? 'Gekopieerd' : 'Kopieer code'}
-                </button>
-              </div>
-
-              {showFallback && (
-                <div className="mt-6 rounded-2xl border border-amber-400/40 bg-amber-500/10 p-4">
-                  <p className="text-sm text-amber-100">
-                    Lukt openen niet direct? Open SkillQuest en gebruik
-                    <span className="font-semibold"> #{inviteCode}</span> in
-                    Vrienden - Vriend toevoegen.
-                  </p>
-                  <div className="mt-4">
-                    <Link href={downloadPath} className="btn btn-secondary w-full">
-                      App downloaden
-                    </Link>
-                  </div>
-                </div>
-              )}
-            </>
+                {copy.downloadApp}
+              </Link>
+            </div>
           )}
-        </div>
-      </section>
-    </main>
+        </>
+      )}
+    </AuthShell>
   );
 }
