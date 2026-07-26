@@ -35,33 +35,43 @@
     --sq-footer-text: #d8e0da;
   }
 
+  /* Dark is the designed mode, not a token swap of the light one.
+     Two things changed from the derived version:
+     - the neutrals carry a teal undertone instead of being flat grey, so the
+       brand is present in the surfaces and not only in the accents
+     - the bg -> muted -> surface steps are far enough apart to actually read
+       as layers. They used to be #0f110f / #151915 / #191c19, which is a
+       four-point spread nobody can see. */
   .dark {
     color-scheme: dark;
-    --sq-bg: #0f110f;
-    --sq-bg-muted: #151915;
-    --sq-surface: #191c19;
-    --sq-surface-raised: #20251f;
-    --sq-border: #30382f;
-    --sq-border-strong: #465244;
-    --sq-text: #f3f7f1;
-    --sq-muted: #aeb9ae;
-    --sq-muted-strong: #d6e0d5;
+    --sq-bg: #0a0f0e;
+    --sq-bg-muted: #101817;
+    --sq-surface: #16211f;
+    --sq-surface-raised: #1d2c29;
+    --sq-border: #26352f;
+    --sq-border-strong: #3b4f48;
+    --sq-text: #eef5f2;
+    --sq-muted: #94a5a0;
+    --sq-muted-strong: #c9d8d3;
     --sq-brand: #5eead4;
     --sq-brand-strong: #2dd4bf;
-    --sq-brand-soft: #143d38;
-    --sq-brand-deep: #0d2725;
+    --sq-brand-soft: #0f2f2b;
+    --sq-brand-deep: #071d1b;
     --sq-accent: #ff7a45;
     --sq-accent-strong: #ff9a68;
     --sq-cta-gradient: linear-gradient(135deg, #ff7a45 0%, #d94425 100%);
     --sq-cta-gradient-hover: linear-gradient(135deg, #ff8d5d 0%, #e85333 100%);
     --sq-cta-shadow: 0 8px 25px rgba(255, 122, 69, 0.28);
-    --sq-nav-bg: rgba(18, 21, 18, 0.86);
-    --sq-nav-border: rgba(70, 82, 68, 0.75);
-    --sq-hero-start: #0b0d0b;
-    --sq-hero-mid: #111811;
-    --sq-hero-end: #123b35;
-    --sq-footer-bg: #090b09;
-    --sq-footer-text: #c8d2c7;
+    --sq-nav-bg: rgba(10, 15, 14, 0.82);
+    --sq-nav-border: rgba(59, 79, 72, 0.7);
+    /* On a dark page the hero is not a separate dark band any more - that
+       device only works against a light page. It is the page surface with a
+       teal lift towards the corner instead. */
+    --sq-hero-start: #0a0f0e;
+    --sq-hero-mid: #0d1918;
+    --sq-hero-end: #10403a;
+    --sq-footer-bg: #060b0a;
+    --sq-footer-text: #c9d8d3;
   }
 
   html {
