@@ -43,7 +43,6 @@ export type FeatureLandingPage = {
     body: string;
     bullets: string[];
   }>;
-  seoTerms: string[];
   faq: Array<{
     question: string;
     answer: string;
@@ -159,13 +158,6 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
           ]
         }
       ],
-      seoTerms: [
-        'focus timer app',
-        'pomodoro timer',
-        'deep work timer',
-        'flowtime timer',
-        'study timer'
-      ],
       faq: [
         {
           question: 'Kan ik SkillQuest als Pomodoro timer gebruiken?',
@@ -230,13 +222,6 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
             'Family kost EUR 6.99 per maand of EUR 69.99 per jaar.'
           ]
         }
-      ],
-      seoTerms: [
-        'parent dashboard app',
-        'kids habit tracker',
-        'child progress tracker',
-        'family productivity app',
-        'ouder kind app'
       ],
       faq: [
         {
@@ -307,13 +292,6 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
           ]
         }
       ],
-      seoTerms: [
-        'skill tracker app',
-        'skill development app',
-        'practice tracker',
-        'learning progress tracker',
-        'vaardigheden bijhouden'
-      ],
       faq: [
         {
           question: 'Is SkillQuest een habit tracker?',
@@ -377,13 +355,6 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
             'Doelen en complimenten maken begeleiding concreter.'
           ]
         }
-      ],
-      seoTerms: [
-        'progress tracking app',
-        'productivity statistics',
-        'skill progress dashboard',
-        'time tracking statistics',
-        'child progress tracker'
       ],
       faq: [
         {
@@ -449,13 +420,6 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
           ]
         }
       ],
-      seoTerms: [
-        'pomodoro timer app',
-        'pomodoro timer studeren',
-        '25 minuten timer',
-        'studie pomodoro app',
-        'gratis pomodoro timer'
-      ],
       faq: [
         {
           question: 'Is de Pomodoro-timer gratis in SkillQuest?',
@@ -519,13 +483,6 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
             'Gebruik streak-mijlpalen als natuurlijke momenten om even te kijken hoe het gaat.'
           ]
         }
-      ],
-      seoTerms: [
-        'streak tracker app',
-        'gewoonte tracker met streaks',
-        'dagelijkse streak app',
-        'xp gewoonte app',
-        'gamified habit tracker'
       ],
       faq: [
         {
@@ -591,13 +548,6 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
           ]
         }
       ],
-      seoTerms: [
-        'vrienden challenges app',
-        'accountability app',
-        'skill challenges',
-        'leaderboard productiviteits-app',
-        'sociale gewoonte app'
-      ],
       faq: [
         {
           question: 'Heb ik vrienden nodig om SkillQuest te gebruiken?',
@@ -661,13 +611,6 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
             'Statistieken tonen welke vakken aandacht krijgen en welke niet.'
           ]
         }
-      ],
-      seoTerms: [
-        'studietimer app',
-        'studie tracker app',
-        'examen studietimer',
-        'huiswerk timer',
-        'studie pomodoro app'
       ],
       faq: [
         {
@@ -733,13 +676,6 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
           ]
         }
       ],
-      seoTerms: [
-        'deep work timer',
-        'flowtime timer',
-        '52 17 regel timer',
-        'aangepaste focus timer',
-        'lange focussessie app'
-      ],
       faq: [
         {
           question: 'Wat is het verschil tussen Deep Work en Flowtime?',
@@ -803,13 +739,6 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
             'Nuttig voor competitieve gebruikers, optioneel voor de rest.'
           ]
         }
-      ],
-      seoTerms: [
-        'leaderboard app',
-        'skill ranglijst',
-        'ranking productiviteits-app',
-        'xp ranglijst',
-        'competitieve gewoonte app'
       ],
       faq: [
         {
@@ -875,13 +804,6 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
           ]
         }
       ],
-      seoTerms: [
-        'app thema’s',
-        'donkere modus gewoonte app',
-        'personalisatie app',
-        'ontgrendelbare thema’s app',
-        'licht donker modus app'
-      ],
       faq: [
         {
           question: 'Ondersteunt SkillQuest donkere modus?',
@@ -945,13 +867,6 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
             'Alleen-lokale voortgang wordt niet geback-upt totdat je een account maakt.'
           ]
         }
-      ],
-      seoTerms: [
-        'app proberen zonder account',
-        'gewoonte tracker zonder aanmelden',
-        'guest mode app',
-        'skill tracker zonder account',
-        'gratis proberen gewoonte app'
       ],
       faq: [
         {
@@ -1021,13 +936,6 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
           ]
         }
       ],
-      seoTerms: [
-        'focus timer app',
-        'pomodoro timer',
-        'deep work timer',
-        'flowtime timer',
-        'study timer'
-      ],
       faq: [
         {
           question: 'Can I use SkillQuest as a Pomodoro timer?',
@@ -1092,13 +1000,6 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
             'Family is EUR 6.99/month or EUR 69.99/year.'
           ]
         }
-      ],
-      seoTerms: [
-        'parent dashboard app',
-        'kids habit tracker',
-        'child progress tracker',
-        'family productivity app',
-        'family plan app'
       ],
       faq: [
         {
@@ -1169,13 +1070,6 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
           ]
         }
       ],
-      seoTerms: [
-        'skill tracker app',
-        'skill development app',
-        'practice tracker',
-        'learning progress tracker',
-        'track skills'
-      ],
       faq: [
         {
           question: 'Is SkillQuest a habit tracker?',
@@ -1239,13 +1133,6 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
             'Goals and compliments make guidance more concrete.'
           ]
         }
-      ],
-      seoTerms: [
-        'progress tracking app',
-        'productivity statistics',
-        'skill progress dashboard',
-        'time tracking statistics',
-        'child progress tracker'
       ],
       faq: [
         {
@@ -1311,13 +1198,6 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
           ]
         }
       ],
-      seoTerms: [
-        'pomodoro timer app',
-        'pomodoro timer for studying',
-        '25 minute timer',
-        'study pomodoro app',
-        'free pomodoro timer'
-      ],
       faq: [
         {
           question: 'Is the Pomodoro timer free in SkillQuest?',
@@ -1381,13 +1261,6 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
             'Use streak milestones as natural check-in points.'
           ]
         }
-      ],
-      seoTerms: [
-        'streak tracker app',
-        'habit tracker with streaks',
-        'daily streak app',
-        'xp habit tracker',
-        'gamified habit tracker'
       ],
       faq: [
         {
@@ -1453,13 +1326,6 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
           ]
         }
       ],
-      seoTerms: [
-        'friends challenges app',
-        'accountability app',
-        'skill challenges',
-        'leaderboard productivity app',
-        'social habit tracker'
-      ],
       faq: [
         {
           question: 'Do I need friends to use SkillQuest?',
@@ -1523,13 +1389,6 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
             'Statistics show which subjects are getting attention and which are not.'
           ]
         }
-      ],
-      seoTerms: [
-        'study timer app',
-        'study tracker app',
-        'exam study timer',
-        'homework timer',
-        'study pomodoro app'
       ],
       faq: [
         {
@@ -1595,13 +1454,6 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
           ]
         }
       ],
-      seoTerms: [
-        'deep work timer',
-        'flowtime timer',
-        '52 17 rule timer',
-        'custom focus timer',
-        'long focus session app'
-      ],
       faq: [
         {
           question: 'What is the difference between Deep Work and Flowtime?',
@@ -1665,13 +1517,6 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
             'Useful for competitive users, optional for everyone else.'
           ]
         }
-      ],
-      seoTerms: [
-        'leaderboard app',
-        'skill leaderboard',
-        'ranking productivity app',
-        'xp leaderboard',
-        'competitive habit tracker'
       ],
       faq: [
         {
@@ -1737,13 +1582,6 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
           ]
         }
       ],
-      seoTerms: [
-        'app themes',
-        'dark mode habit app',
-        'personalization app',
-        'unlockable themes app',
-        'light dark mode app'
-      ],
       faq: [
         {
           question: 'Does SkillQuest support dark mode?',
@@ -1807,13 +1645,6 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
             'Local-only progress is not backed up until you create an account.'
           ]
         }
-      ],
-      seoTerms: [
-        'try app without account',
-        'no signup habit tracker',
-        'guest mode app',
-        'skill tracker no account',
-        'free trial habit app'
       ],
       faq: [
         {
@@ -1888,14 +1719,6 @@ pages.de = {
         ]
       }
     ],
-    seoTerms: [
-      'focus timer app',
-      'pomodoro app',
-      'deep work timer',
-      'flowtime timer',
-      'skill timer',
-      'productivity timer'
-    ],
     faq: [
       {
         question: 'Ist SkillQuest eine Pomodoro App?',
@@ -1960,13 +1783,6 @@ pages.de = {
           'Family kostet EUR 6.99 pro Monat oder EUR 69.99 pro Jahr.'
         ]
       }
-    ],
-    seoTerms: [
-      'family productivity app',
-      'app fuer eltern',
-      'kind timer app',
-      'lern timer fuer kinder',
-      'eltern kind app'
     ],
     faq: [
       {
@@ -2038,13 +1854,6 @@ pages.de = {
         ]
       }
     ],
-    seoTerms: [
-      'skill tracker app',
-      'habit tracker alternative',
-      'xp productivity app',
-      'skill progress tracker',
-      'practice tracker'
-    ],
     faq: [
       {
         question: 'Welche Skills kann ich verfolgen?',
@@ -2110,13 +1919,6 @@ pages.de = {
         ]
       }
     ],
-    seoTerms: [
-      'productivity statistics',
-      'skill statistics app',
-      'time tracking statistics',
-      'xp progress tracker',
-      'family progress app'
-    ],
     faq: [
       {
         question: 'Welche Statistiken zeigt SkillQuest?',
@@ -2180,13 +1982,6 @@ pages.de = {
           'Mit Premium schaltest du alle Timer-Techniken frei.'
         ]
       }
-    ],
-    seoTerms: [
-      'Pomodoro-Timer-App',
-      'Pomodoro-Timer fürs Lernen',
-      '25-Minuten-Timer',
-      'Pomodoro-App zum Lernen',
-      'Kostenloser Pomodoro-Timer'
     ],
     faq: [
       {
@@ -2252,13 +2047,6 @@ pages.de = {
         ]
       }
     ],
-    seoTerms: [
-      'App zum Nachverfolgen von Serien',
-      'Gewohnheits-Tracker mit Serien',
-      'App für tägliche Serien',
-      'xp-Gewohnheits-Tracker',
-      'Habit-Tracker mit Gamification-Elementen'
-    ],
     faq: [
       {
         question: 'Wie funktioniert das Streak-System bei SkillQuest?',
@@ -2322,13 +2110,6 @@ pages.de = {
           'Für Freunde und akzeptierte Kontakte gedacht, nicht als öffentliche Pinnwand.'
         ]
       }
-    ],
-    seoTerms: [
-      'App für Herausforderungen unter Freunden',
-      'App zur Selbstkontrolle',
-      'Geschicklichkeitsherausforderungen',
-      'Produktivitäts-App mit Rangliste',
-      'Tracker für soziale Gewohnheiten'
     ],
     faq: [
       {
@@ -2394,13 +2175,6 @@ pages.de = {
         ]
       }
     ],
-    seoTerms: [
-      'Lern-Timer-App',
-      'App zum Nachverfolgen des Lernfortschritts',
-      'Lern-Timer für Prüfungen',
-      'Hausaufgaben-Timer',
-      'Pomodoro-App zum Lernen'
-    ],
     faq: [
       {
         question: 'Kann ich die Lernzeit pro Fach nachverfolgen?',
@@ -2464,13 +2238,6 @@ pages.de = {
           'Die Länge der Smart-Pausen richtet sich danach, wie lange du konzentriert gearbeitet hast.'
         ]
       }
-    ],
-    seoTerms: [
-      'Timer für konzentriertes Arbeiten',
-      'Laufzeit-Timer',
-      '52 17-Regel-Timer',
-      'Individueller Fokussier-Timer',
-      'App für lange Fokus-Sitzungen'
     ],
     faq: [
       {
@@ -2536,13 +2303,6 @@ pages.de = {
         ]
       }
     ],
-    seoTerms: [
-      'Ranglisten-App',
-      'Rangliste nach Fähigkeiten',
-      'App zur Bewertung der Produktivität',
-      'XP-Rangliste',
-      'Wettbewerbsorientierter Gewohnheits-Tracker'
-    ],
     faq: [
       {
         question: 'Wie werden die Ranglisten berechnet?',
@@ -2607,13 +2367,6 @@ pages.de = {
         ]
       }
     ],
-    seoTerms: [
-      'App-Designs',
-      'App zur Gewöhnung an den Dunkelmodus',
-      'Personalisierungs-App',
-      'App mit freischaltbaren Designs',
-      'App mit hellem und dunklem Modus'
-    ],
     faq: [
       {
         question: 'Unterstützt SkillQuest den Dunkelmodus?',
@@ -2677,13 +2430,6 @@ pages.de = {
           'Der lokal gespeicherte Spielfortschritt wird erst gesichert, wenn du ein Konto erstellst.'
         ]
       }
-    ],
-    seoTerms: [
-      'App ohne Konto ausprobieren',
-      'Gewohnheits-Tracker ohne Anmeldung',
-      'App im Guest Mode',
-      'Skill Tracker ohne Konto',
-      'Kostenlose Testversion der Gewohnheits-App'
     ],
     faq: [
       {
@@ -2753,14 +2499,6 @@ pages.fr = {
         ]
       }
     ],
-    seoTerms: [
-      'application focus timer',
-      'application pomodoro',
-      'deep work timer',
-      'flowtime timer',
-      'timer de competence',
-      'timer productivite'
-    ],
     faq: [
       {
         question: 'SkillQuest est-elle une application Pomodoro ?',
@@ -2825,13 +2563,6 @@ pages.fr = {
           'Family coûte EUR 6.99 par mois ou EUR 69.99 par an.'
         ]
       }
-    ],
-    seoTerms: [
-      'application productivite famille',
-      'application pour parents',
-      'timer enfant',
-      'timer apprentissage enfant',
-      'application parent enfant'
     ],
     faq: [
       {
@@ -2903,13 +2634,6 @@ pages.fr = {
         ]
       }
     ],
-    seoTerms: [
-      'application skill tracker',
-      'alternative habit tracker',
-      'application productivite xp',
-      'suivi progression competence',
-      'practice tracker'
-    ],
     faq: [
       {
         question: 'Quelles compétences puis-je suivre ?',
@@ -2975,13 +2699,6 @@ pages.fr = {
         ]
       }
     ],
-    seoTerms: [
-      'statistiques productivite',
-      'application statistiques competence',
-      'statistiques time tracking',
-      'suivi progression xp',
-      'application progression famille'
-    ],
     faq: [
       {
         question: 'Quelles statistiques SkillQuest affiche-t-elle ?',
@@ -3045,13 +2762,6 @@ pages.fr = {
           'Avec l\'abonnement Premium, tu débloques l\'ensemble des techniques de chronomètre.',
         ]
       },
-    ],
-    seoTerms: [
-      'appli de chronomètre Pomodoro',
-      'minuterie Pomodoro pour étudier',
-      'Minuterie de 25 minutes',
-      'application Pomodoro pour étudier',
-      'minuterie Pomodoro gratuite',
     ],
     faq: [
       {
@@ -3117,13 +2827,6 @@ pages.fr = {
         ]
       },
     ],
-    seoTerms: [
-      'appli pour suivre ses streaks de jours sans interruption',
-      'suivi d\'habitudes avec streaks de jours consécutifs',
-      'appli de défi quotidien',
-      'Suivi des habitudes xp',
-      'suivi des habitudes sous forme de jeu',
-    ],
     faq: [
       {
         question: 'Comment fonctionne le système de streaks dans SkillQuest ?',
@@ -3187,13 +2890,6 @@ pages.fr = {
           'Conçu pour tes amis et tes contacts approuvés, pas pour un mur public.',
         ]
       },
-    ],
-    seoTerms: [
-      'application de défis entre amis',
-      'appli de suivi',
-      'épreuves d\'habileté',
-      'appli de productivité avec classement',
-      'suivi des habitudes sociales',
     ],
     faq: [
       {
@@ -3259,13 +2955,6 @@ pages.fr = {
         ]
       },
     ],
-    seoTerms: [
-      'appli de minuterie pour étudier',
-      'appli de suivi des révisions',
-      'minuterie pour réviser les examens',
-      'minuterie pour les devoirs',
-      'application Pomodoro pour étudier',
-    ],
     faq: [
       {
         question: 'Est-ce que je peux suivre le temps d\'étude par matière ?',
@@ -3329,13 +3018,6 @@ pages.fr = {
           'La durée des pauses intelligentes s\'adapte à la durée de ta concentration.',
         ]
       },
-    ],
-    seoTerms: [
-      'minuterie pour le « deep work »',
-      'minuterie de durée d\'écoulement',
-      'Minuterie « 52 17 »',
-      'minuterie de mise au point personnalisée',
-      'appli pour les sessions de concentration prolongées',
     ],
     faq: [
       {
@@ -3401,13 +3083,6 @@ pages.fr = {
         ]
       },
     ],
-    seoTerms: [
-      'appli de classement',
-      'classement des compétences',
-      'classement des applis de productivité',
-      'Classement XP',
-      'application pour suivre ses habitudes, dans un esprit de compétition',
-    ],
     faq: [
       {
         question: 'Comment les classements sont-ils calculés ?',
@@ -3472,13 +3147,6 @@ pages.fr = {
         ]
       },
     ],
-    seoTerms: [
-      'thèmes d\'appli',
-      'appli pour prendre l\'habitude du mode sombre',
-      'appli de personnalisation',
-      'appli de thèmes à débloquer',
-      'appli en mode clair/foncé',
-    ],
     faq: [
       {
         question: 'Est-ce que SkillQuest prend en charge le mode sombre ?',
@@ -3542,13 +3210,6 @@ pages.fr = {
           'Ta progression locale n\'est pas sauvegardée tant que tu n\'as pas créé de compte.',
         ]
       },
-    ],
-    seoTerms: [
-      'Essaie l\'appli sans compte',
-      'suivi d\'habitudes sans inscription',
-      'appli « Guest Mode »',
-      'Suivi des compétences sans compte',
-      'application pour prendre de bonnes habitudes en essai gratuit',
     ],
     faq: [
       {
@@ -3618,14 +3279,6 @@ pages.es = {
         ]
       }
     ],
-    seoTerms: [
-      'app focus timer',
-      'app pomodoro',
-      'deep work timer',
-      'flowtime timer',
-      'timer de habilidades',
-      'timer productividad'
-    ],
     faq: [
       {
         question: '¿SkillQuest es una app Pomodoro?',
@@ -3690,13 +3343,6 @@ pages.es = {
           'Family cuesta EUR 6.99 al mes o EUR 69.99 al año.'
         ]
       }
-    ],
-    seoTerms: [
-      'app productividad familiar',
-      'app para padres',
-      'timer infantil',
-      'timer aprendizaje ninos',
-      'app padres hijos'
     ],
     faq: [
       {
@@ -3768,13 +3414,6 @@ pages.es = {
         ]
       }
     ],
-    seoTerms: [
-      'app skill tracker',
-      'alternativa habit tracker',
-      'app productividad xp',
-      'seguimiento progreso habilidades',
-      'practice tracker'
-    ],
     faq: [
       {
         question: '¿Qué habilidades puedo seguir?',
@@ -3840,13 +3479,6 @@ pages.es = {
         ]
       }
     ],
-    seoTerms: [
-      'estadisticas productividad',
-      'app estadisticas habilidades',
-      'estadisticas time tracking',
-      'seguimiento progreso xp',
-      'app progreso familiar'
-    ],
     faq: [
       {
         question: '¿Qué estadísticas muestra SkillQuest?',
@@ -3910,13 +3542,6 @@ pages.es = {
           'Con la versión Premium se desbloquean todas las técnicas de temporizador.',
         ]
       },
-    ],
-    seoTerms: [
-      'app de temporizador Pomodoro',
-      'Temporizador Pomodoro para estudiar',
-      'Temporizador de 25 minutos',
-      'Aplicación para estudiar con el método Pomodoro',
-      'temporizador Pomodoro gratis',
     ],
     faq: [
       {
@@ -3982,13 +3607,6 @@ pages.es = {
         ]
       },
     ],
-    seoTerms: [
-      'app para llevar la cuenta de rachas',
-      'registro de hábitos con rachas',
-      'app de rachas diarias',
-      'xp registro de hábitos',
-      'aplicación para llevar un seguimiento de hábitos con elementos de juego',
-    ],
     faq: [
       {
         question: '¿Cómo funciona el sistema de rachas en SkillQuest?',
@@ -4052,13 +3670,6 @@ pages.es = {
           'Hecho para amigos y contactos aceptados, no para un muro público.',
         ]
       },
-    ],
-    seoTerms: [
-      'app de retos entre amigos',
-      'app para mantenerte responsable',
-      'retos de habilidad',
-      'app de productividad con tabla de clasificación',
-      'registro de hábitos sociales',
     ],
     faq: [
       {
@@ -4124,13 +3735,6 @@ pages.es = {
         ]
       },
     ],
-    seoTerms: [
-      'app de temporizador para estudiar',
-      'app para llevar un seguimiento de tus estudios',
-      'temporizador para estudiar para los exámenes',
-      'temporizador para los deberes',
-      'Aplicación para estudiar con el método Pomodoro',
-    ],
     faq: [
       {
         question: '¿Puedo llevar un control del tiempo de estudio por asignatura?',
@@ -4194,13 +3798,6 @@ pages.es = {
           'Los descansos inteligentes varían en función del tiempo que hayas estado concentrado.',
         ]
       },
-    ],
-    seoTerms: [
-      'temporizador para el trabajo profundo',
-      'temporizador de tiempo de flujo',
-      '52 17 temporizador de reglas',
-      'temporizador de enfoque personalizado',
-      'app para sesiones de concentración prolongada',
     ],
     faq: [
       {
@@ -4266,13 +3863,6 @@ pages.es = {
         ]
       },
     ],
-    seoTerms: [
-      'app de clasificaciones',
-      'clasificación por habilidades',
-      'app de productividad mejor valorada',
-      'clasificación de XP',
-      'aplicación para llevar un seguimiento de hábitos competitiva',
-    ],
     faq: [
       {
         question: '¿Cómo se calculan las clasificaciones?',
@@ -4337,13 +3927,6 @@ pages.es = {
         ]
       },
     ],
-    seoTerms: [
-      'temas de aplicaciones',
-      'app para crear hábitos en modo oscuro',
-      'app de personalización',
-      'app de temas desbloqueables',
-      'app con modo claro y oscuro',
-    ],
     faq: [
       {
         question: '¿SkillQuest es compatible con el modo oscuro?',
@@ -4407,13 +3990,6 @@ pages.es = {
           'El progreso que solo se guarda localmente no se guarda en la nube hasta que crees una cuenta.',
         ]
       },
-    ],
-    seoTerms: [
-      'Prueba la app sin necesidad de crear una cuenta',
-      'registro de hábitos sin necesidad de registrarte',
-      'app del Guest Mode',
-      'Seguimiento de habilidades sin cuenta',
-      'app para crear hábitos con prueba gratuita',
     ],
     faq: [
       {
@@ -4483,14 +4059,6 @@ pages.it = {
         ]
       }
     ],
-    seoTerms: [
-      'app focus timer',
-      'app pomodoro',
-      'deep work timer',
-      'flowtime timer',
-      'timer competenze',
-      'timer produttivita'
-    ],
     faq: [
       {
         question: 'SkillQuest è un’app Pomodoro?',
@@ -4555,13 +4123,6 @@ pages.it = {
           'Family costa EUR 6.99 al mese o EUR 69.99 all’anno.'
         ]
       }
-    ],
-    seoTerms: [
-      'app produttivita famiglia',
-      'app per genitori',
-      'timer bambini',
-      'timer apprendimento bambini',
-      'app genitori figli'
     ],
     faq: [
       {
@@ -4633,13 +4194,6 @@ pages.it = {
         ]
       }
     ],
-    seoTerms: [
-      'app skill tracker',
-      'alternativa habit tracker',
-      'app produttivita xp',
-      'tracker progresso competenze',
-      'practice tracker'
-    ],
     faq: [
       {
         question: 'Quali competenze posso monitorare?',
@@ -4705,13 +4259,6 @@ pages.it = {
         ]
       }
     ],
-    seoTerms: [
-      'statistiche produttivita',
-      'app statistiche skill',
-      'statistiche time tracking',
-      'tracker progresso xp',
-      'app progresso famiglia'
-    ],
     faq: [
       {
         question: 'Quali statistiche mostra SkillQuest?',
@@ -4775,13 +4322,6 @@ pages.it = {
           'Con l\'abbonamento Premium sblocchi tutte le tecniche relative al timer.',
         ]
       },
-    ],
-    seoTerms: [
-      'app con timer Pomodoro',
-      'timer del pomodoro per studiare',
-      'Timer da 25 minuti',
-      'app per lo studio con il metodo Pomodoro',
-      'timer Pomodoro gratuito',
     ],
     faq: [
       {
@@ -4847,13 +4387,6 @@ pages.it = {
         ]
       },
     ],
-    seoTerms: [
-      'app per tenere traccia della serie di giorni consecutivi',
-      'app per monitorare le abitudini con le serie consecutive',
-      'app per la serie di giorni consecutivi',
-      'xp tracker delle abitudini',
-      'app per monitorare le abitudini con elementi di gioco',
-    ],
     faq: [
       {
         question: 'Come funziona il sistema delle serie in SkillQuest?',
@@ -4917,13 +4450,6 @@ pages.it = {
           'Pensato per gli amici e i contatti approvati, non per una bacheca pubblica.',
         ]
       },
-    ],
-    seoTerms: [
-      'app con sfide tra amici',
-      'app per la responsabilità',
-      'sfide di abilità',
-      'app per la produttività con classifica',
-      'app per monitorare le abitudini sociali',
     ],
     faq: [
       {
@@ -4989,13 +4515,6 @@ pages.it = {
         ]
       },
     ],
-    seoTerms: [
-      'app con timer per lo studio',
-      'app per tenere traccia dello studio',
-      'timer per lo studio in vista degli esami',
-      'timer per i compiti',
-      'app per lo studio con il metodo Pomodoro',
-    ],
     faq: [
       {
         question: 'Posso tenere traccia del tempo dedicato allo studio per ogni materia?',
@@ -5059,13 +4578,6 @@ pages.it = {
           'Le pause intelligenti variano in base a quanto tempo sei rimasto concentrato.',
         ]
       },
-    ],
-    seoTerms: [
-      'timer per il lavoro approfondito',
-      'timer del tempo di flusso',
-      '52 17 timer di regola',
-      'timer di messa a fuoco personalizzato',
-      'app per sessioni di concentrazione prolungata',
     ],
     faq: [
       {
@@ -5131,13 +4643,6 @@ pages.it = {
         ]
       },
     ],
-    seoTerms: [
-      'app con classifica',
-      'classifica delle abilità',
-      'app per misurare la produttività',
-      'Classifica XP',
-      'app per monitorare le abitudini in chiave competitiva',
-    ],
     faq: [
       {
         question: 'Come vengono calcolate le classifiche?',
@@ -5202,13 +4707,6 @@ pages.it = {
         ]
       },
     ],
-    seoTerms: [
-      'temi delle app',
-      'app per le abitudini in modalità scura',
-      'app di personalizzazione',
-      'app con temi sbloccabili',
-      'app con modalità chiara e scura',
-    ],
     faq: [
       {
         question: 'SkillQuest supporta la modalità scura?',
@@ -5272,13 +4770,6 @@ pages.it = {
           'I progressi salvati solo in locale non vengono sottoposti a backup finché non crei un account.',
         ]
       },
-    ],
-    seoTerms: [
-      'Prova l\'app senza account',
-      'tracker delle abitudini senza registrazione',
-      'app in Guest Mode',
-      'Skill Tracker senza account',
-      'app per le abitudini con prova gratuita',
     ],
     faq: [
       {

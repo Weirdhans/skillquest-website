@@ -187,12 +187,6 @@ export default async function FeatureLandingPage({
           </div>
         </section>
 
-        {/* The block that used to sit here printed page.seoTerms as pills under
-            a heading that literally said "SEO". Those are internal keyword
-            targets, not content: they read as keyword stuffing and give a
-            visitor nothing. The terms still do their job in metaTitle and
-            metaDescription. */}
-
         <section className="section-standard theme-section-muted">
           <div className="container-custom">
             <div className="mx-auto max-w-3xl">

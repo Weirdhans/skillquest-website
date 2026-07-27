@@ -73,7 +73,12 @@ export default function Navbar() {
   const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
   const [showLangMenu, setShowLangMenu] = useState(false);
-  const [themePref, setThemePref] = useState<ThemePref>('system');
+  // Lazy initializer, not an effect: readStoredPref() returns 'system' on the
+  // server (no window), matching the SSR markup, then reads the real
+  // preference during the client's first render. The button below carries
+  // suppressHydrationWarning for exactly this swap, so there is no mismatch
+  // to correct after mount - only a value to adopt before paint.
+  const [themePref, setThemePref] = useState<ThemePref>(() => readStoredPref());
   const themeLabels = THEME_LABELS[locale] ?? THEME_LABELS.en;
 
   // useScroll instead of a raw scroll listener: that ran on every scroll frame
@@ -83,12 +88,6 @@ export default function Navbar() {
     const next = latest > 8;
     setIsScrolled((prev) => (prev === next ? prev : next));
   });
-
-  // Adopt whatever the inline head script already resolved, without re-applying
-  // it. Re-applying here was pointless work and it briefly fought the script.
-  useEffect(() => {
-    setThemePref(readStoredPref());
-  }, []);
 
   // While the preference is 'system', follow the OS live. Without this the page
   // would keep the theme it resolved to at load even if the OS flips (which it
