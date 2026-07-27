@@ -1,5 +1,5 @@
-import { getTranslations } from 'next-intl/server'
-import { routing } from '@/i18n/routing'
+import {getTranslations} from 'next-intl/server'
+import {routing} from '@/i18n/routing'
 import Footer from '@/components/Footer'
 
 const locales = routing.locales
@@ -78,66 +78,92 @@ export default async function PrivacyPage({
   // Get section keys for current locale
   const sectionKeys = SECTION_KEYS_BY_LOCALE[locale] || SECTION_KEYS_BY_LOCALE['nl']
 
+  const sections = sectionKeys.map((key, index) => ({
+    key,
+    // Anchor ids are positional rather than derived from the translated key, so
+    // the same section is /privacy#s-9 in every language.
+    id: `s-${index + 1}`,
+    number: String(index + 1).padStart(2, '0'),
+    title: t(`sections.${key}.title`),
+    content: t.raw(`sections.${key}.content`) as string
+  }))
+
   return (
     <>
-      <main className="min-h-screen bg-background-50">
-        {/* Header Section */}
-        <section className="relative bg-gradient-to-br from-primary-500 to-primary-700 text-white py-16 pt-32 md:pt-36">
-          <div className="container-custom">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="font-display text-4xl md:text-5xl font-bold mb-4">
-                {t('heading')}
-              </h1>
-              <p className="text-lg text-white/90">
-                {t('lastUpdatedLabel')}: {t('lastUpdated')}
-              </p>
-            </div>
+      <main className="theme-page min-h-screen">
+        <header className="container-custom pb-10 pt-32 md:pt-36">
+          <div className="max-w-3xl border-b pb-10" style={{borderColor: 'var(--sq-border)'}}>
+            <p className="text-sm font-semibold uppercase tracking-wide theme-eyebrow">
+              {t('lastUpdatedLabel')}: <span className="nums">{t('lastUpdated')}</span>
+            </p>
+            <h1 className="mt-4 font-display text-section text-balance theme-title">
+              {t('heading')}
+            </h1>
           </div>
+        </header>
 
-          {/* Bottom wave divider */}
-          <div className="absolute bottom-0 left-0 right-0">
-            <svg
-              viewBox="0 0 1200 120"
-              preserveAspectRatio="none"
-              className="w-full h-12 md:h-16 fill-background-50"
+        <div className="container-custom pb-20">
+          <div className="grid gap-12 lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-16">
+            {/* Fourteen sections is too many to scroll blind. On desktop the
+                index rides along; on mobile it is skipped entirely rather than
+                stacked, where it would just be a second copy of the page. */}
+            <nav
+              aria-label={t('heading')}
+              className="hidden lg:sticky lg:top-28 lg:block lg:self-start"
             >
-              <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
-            </svg>
-          </div>
-        </section>
+              <ol className="space-y-1 border-l" style={{borderColor: 'var(--sq-border)'}}>
+                {sections.map((section) => (
+                  <li key={section.id}>
+                    <a
+                      href={`#${section.id}`}
+                      className="-ml-px flex gap-3 border-l-2 border-transparent py-1.5 pl-4 text-sm transition hover:border-current theme-copy hover:theme-title"
+                    >
+                      <span className="nums text-xs opacity-60">{section.number}</span>
+                      <span>{section.title}</span>
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </nav>
 
-        {/* Content Section */}
-        <section className="py-16">
-          <div className="container-custom">
-            <article className="prose prose-lg prose-primary max-w-4xl mx-auto bg-white rounded-2xl shadow-lg p-8 md:p-12">
-              {/* Render all sections dynamically */}
-              {sectionKeys.map((key) => {
-                const title = t(`sections.${key}.title`)
-                const content = t.raw(`sections.${key}.content`)
+            <article className="max-w-3xl">
+              {sections.map((section, index) => (
+                <section
+                  key={section.key}
+                  id={section.id}
+                  className={`scroll-mt-28 ${index === 0 ? '' : 'mt-12 border-t pt-12'}`}
+                  style={index === 0 ? undefined : {borderColor: 'var(--sq-border)'}}
+                >
+                  <p className="nums mb-3 text-sm theme-eyebrow">{section.number}</p>
+                  <h2 className="font-display text-subsection font-bold theme-title">
+                    {section.title}
+                  </h2>
+                  {/* The translated bodies are HTML fragments, so this is the
+                      one place a prose context is still the right tool. */}
+                  <div
+                    className="prose prose-lg mt-4 max-w-none theme-copy"
+                    dangerouslySetInnerHTML={{ __html: section.content }}
+                  />
+                </section>
+              ))}
 
-                return (
-                  <section key={key} className="mb-10 last:mb-0">
-                    <h2 className="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-4 border-b-2 border-primary-200 pb-2">
-                      {title}
-                    </h2>
-                    <div
-                      className="text-gray-700 leading-relaxed space-y-4"
-                      dangerouslySetInnerHTML={{ __html: content }}
-                    />
-                  </section>
-                )
-              })}
-
-              {/* Contact Information at Bottom */}
-              <div className="mt-12 pt-8 border-t-2 border-gray-200">
-                <p className="text-center text-sm text-gray-600">
-                  <strong>Contact:</strong> hello@skill-quest.app<br />
-                  <strong>Website:</strong> <a href="https://www.skill-quest.app" className="text-primary-600 hover:text-primary-700 underline">www.skill-quest.app</a>
+              <div className="mt-12 border-t pt-8 text-sm theme-copy" style={{borderColor: 'var(--sq-border)'}}>
+                <p>
+                  <strong className="theme-title">Contact:</strong>{' '}
+                  <a href="mailto:hello@skill-quest.app" className="underline">
+                    hello@skill-quest.app
+                  </a>
+                </p>
+                <p className="mt-1">
+                  <strong className="theme-title">Website:</strong>{' '}
+                  <a href="https://www.skill-quest.app" className="underline">
+                    www.skill-quest.app
+                  </a>
                 </p>
               </div>
             </article>
           </div>
-        </section>
+        </div>
       </main>
 
       <Footer />

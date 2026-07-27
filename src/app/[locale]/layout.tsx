@@ -5,6 +5,7 @@ import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
+import {themeInitScript} from '@/lib/theme-script';
 import {
   createPageMetadata,
   getMarketingCopy,
@@ -13,27 +14,6 @@ import {
 } from '@/lib/marketing';
 
 const locales = routing.locales;
-
-// Runs before first paint so the page never flashes the wrong theme.
-// The stored value is a preference ('light' | 'dark' | 'system'), not a resolved
-// theme, so 'system' keeps deferring to the OS on every load. Anything else,
-// including the absence of a value, resolves to the OS as well.
-const themeInitScript = `
-(() => {
-  try {
-    const pref = window.localStorage.getItem('skillquest-theme');
-    const theme = pref === 'light' || pref === 'dark'
-      ? pref
-      : window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? 'dark'
-        : 'light';
-    document.documentElement.classList.toggle('dark', theme === 'dark');
-    document.documentElement.dataset.theme = theme;
-  } catch {
-    document.documentElement.dataset.theme = 'light';
-  }
-})();
-`;
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({

@@ -4,6 +4,7 @@ import { useSearchParams } from 'next/navigation'
 import { Suspense, useState } from 'react'
 import { useLocale } from 'next-intl'
 import Link from 'next/link'
+import {CheckCircle, EnvelopeSimple, WarningCircle} from '@phosphor-icons/react'
 import Footer from '@/components/Footer'
 import { isLocale, type Locale } from '@/lib/marketing'
 
@@ -38,7 +39,7 @@ const copyByLocale: Record<Locale, ConfirmCopy> = {
     resend: {
       button: 'Vraag een nieuwe verificatiemail aan',
       sending: 'Bezig met verzenden...',
-      success: '✅ Er is een nieuwe bevestigingsmail verstuurd! Kijk even in je inbox.',
+      success: 'Er is een nieuwe bevestigingsmail verstuurd! Kijk even in je inbox.',
       genericError: 'Er is iets misgegaan. Probeer het later nog eens.'
     },
     backHome: '← Terug naar de startpagina',
@@ -68,7 +69,7 @@ const copyByLocale: Record<Locale, ConfirmCopy> = {
     resend: {
       button: 'Request a new verification email',
       sending: 'Sending...',
-      success: '✅ New verification email sent! Check your inbox.',
+      success: 'New verification email sent! Check your inbox.',
       genericError: 'Something went wrong. Please try again later.'
     },
     backHome: '← Back to homepage',
@@ -98,7 +99,7 @@ const copyByLocale: Record<Locale, ConfirmCopy> = {
     resend: {
       button: 'Eine neue Bestätigungs-E-Mail anfordern',
       sending: 'Wird gesendet...',
-      success: '✅ Eine neue Bestätigungs-E-Mail wurde gesendet! Schau mal in deinen Posteingang.',
+      success: 'Eine neue Bestätigungs-E-Mail wurde gesendet! Schau mal in deinen Posteingang.',
       genericError: 'Es ist ein Fehler aufgetreten. Bitte versuch es später noch einmal.'
     },
     backHome: '← Zurück zur Startseite',
@@ -128,7 +129,7 @@ const copyByLocale: Record<Locale, ConfirmCopy> = {
     resend: {
       button: 'Demander un nouvel e-mail de vérification',
       sending: 'Envoi en cours...',
-      success: '✅ Un nouvel e-mail de vérification t\'a été envoyé ! Va jeter un œil dans ta boîte de réception.',
+      success: 'Un nouvel e-mail de vérification t\'a été envoyé ! Va jeter un œil dans ta boîte de réception.',
       genericError: "Une erreur s'est produite. Réessaie plus tard."
     },
     backHome: "← Retour à la page d'accueil",
@@ -158,7 +159,7 @@ const copyByLocale: Record<Locale, ConfirmCopy> = {
     resend: {
       button: 'Solicita un nuevo correo electrónico de verificación',
       sending: 'Enviando...',
-      success: '✅ ¡Te acabamos de enviar un nuevo correo de verificación! Echa un vistazo a tu bandeja de entrada.',
+      success: '¡Te acabamos de enviar un nuevo correo de verificación! Echa un vistazo a tu bandeja de entrada.',
       genericError: 'Ha habido un error. Inténtalo de nuevo más tarde.'
     },
     backHome: '← Volver a la página de inicio',
@@ -188,7 +189,7 @@ const copyByLocale: Record<Locale, ConfirmCopy> = {
     resend: {
       button: 'Richiedi una nuova email di verifica',
       sending: 'Invio in corso...',
-      success: '✅ Ti è stata inviata una nuova email di verifica! Controlla la tua casella di posta.',
+      success: 'Ti è stata inviata una nuova email di verifica! Controlla la tua casella di posta.',
       genericError: 'Si è verificato un errore. Riprova più tardi.'
     },
     backHome: '← Torna alla home page',
@@ -248,18 +249,15 @@ function ConfirmContent() {
   // Success state
   if (status === 'success') {
     return (
-      <div className="text-center">
-        <div className="text-8xl mb-8">🎉</div>
-        <h1 className="font-display text-4xl font-bold text-gray-900 mb-4">
+      <StatusPanel tone="brand" icon={<CheckCircle size={28} weight="fill" aria-hidden />}>
+        <h1 className="font-display text-section text-balance theme-title">
           {copy.success.heading}
         </h1>
-        <p className="text-xl text-gray-700 mb-8 max-w-md mx-auto">
-          {copy.success.body}
-        </p>
-        <Link href="/" className="btn btn-primary inline-flex">
+        <p className="mt-4 text-lead theme-copy">{copy.success.body}</p>
+        <Link href="/" className="btn btn-primary mt-8 inline-flex">
           {copy.success.button}
         </Link>
-      </div>
+      </StatusPanel>
     )
   }
 
@@ -268,21 +266,28 @@ function ConfirmContent() {
     const reasonKey = (reason && reason in copy.errors ? reason : 'generic') as keyof ConfirmCopy['errors'];
     const { title, message } = copy.errors[reasonKey];
     const showResend = reason === 'expired'
+    const alreadyVerified = reason === 'already_verified'
 
     return (
-      <div className="text-center">
-        <div className="text-8xl mb-8">
-          {reason === 'already_verified' ? '✅' : '😕'}
-        </div>
-        <h1 className="font-display text-4xl font-bold text-gray-900 mb-4">{title}</h1>
-        <p className="text-xl text-gray-700 mb-8 max-w-md mx-auto">{message}</p>
+      <StatusPanel
+        tone={alreadyVerified ? 'brand' : 'warn'}
+        icon={
+          alreadyVerified ? (
+            <CheckCircle size={28} weight="fill" aria-hidden />
+          ) : (
+            <WarningCircle size={28} weight="fill" aria-hidden />
+          )
+        }
+      >
+        <h1 className="font-display text-section text-balance theme-title">{title}</h1>
+        <p className="mt-4 text-lead theme-copy">{message}</p>
 
         {showResend && email && (
-          <div className="mb-8">
+          <div className="mt-8">
             {resendStatus === 'success' ? (
-              <div className="bg-primary-50 text-primary-800 px-6 py-4 rounded-lg inline-block">
+              <p className="theme-highlight-band inline-block rounded-lg px-4 py-3 text-sm theme-title">
                 {copy.resend.success}
-              </div>
+              </p>
             ) : (
               <>
                 <button
@@ -293,42 +298,80 @@ function ConfirmContent() {
                   {resendStatus === 'loading' ? copy.resend.sending : copy.resend.button}
                 </button>
                 {resendStatus === 'error' && resendError && (
-                  <p className="mt-4 text-red-600">{resendError}</p>
+                  <p className="mt-4 text-sm" style={{color: 'var(--sq-accent-strong)'}}>
+                    {resendError}
+                  </p>
                 )}
               </>
             )}
           </div>
         )}
 
-        <Link href="/" className="text-primary-700 hover:text-primary-900 font-medium">
-          {copy.backHome}
-        </Link>
-      </div>
+        <p className="mt-8">
+          <Link href="/" className="font-medium underline theme-copy hover:theme-title">
+            {copy.backHome}
+          </Link>
+        </p>
+      </StatusPanel>
     )
   }
 
   // Default: No status parameter - show generic page
   return (
-    <div className="text-center">
-      <div className="text-8xl mb-8">📧</div>
-      <h1 className="font-display text-4xl font-bold text-gray-900 mb-4">
+    <StatusPanel tone="brand" icon={<EnvelopeSimple size={28} weight="fill" aria-hidden />}>
+      <h1 className="font-display text-section text-balance theme-title">
         {copy.default.heading}
       </h1>
-      <p className="text-xl text-gray-700 mb-8 max-w-md mx-auto">
-        {copy.default.body}
-      </p>
-      <p className="text-gray-600 mb-8">
+      <p className="mt-4 text-lead theme-copy">{copy.default.body}</p>
+      <p className="mt-6 text-sm theme-copy">
         {copy.default.noEmail}{' '}
-        <Link href="/" className="text-primary-700 hover:text-primary-900">
+        <Link href="/" className="underline hover:theme-title">
           {copy.default.resignup}
         </Link>
         .
       </p>
-      <Link href="/" className="text-primary-700 hover:text-primary-900 font-medium">
-        {copy.default.backHome}
-      </Link>
-    </div>
+      <p className="mt-8">
+        <Link href="/" className="font-medium underline theme-copy hover:theme-title">
+          {copy.default.backHome}
+        </Link>
+      </p>
+    </StatusPanel>
   )
+}
+
+// The three outcomes used to be told apart by a 96px emoji. An icon in a tinted
+// disc carries the same signal, scales with the type, and does not change shape
+// between platforms.
+function StatusPanel({
+  tone,
+  icon,
+  children
+}: {
+  tone: 'brand' | 'warn';
+  icon: React.ReactNode;
+  children: React.ReactNode;
+}) {
+  return (
+    <div>
+      <span
+        className="mb-8 inline-flex h-14 w-14 items-center justify-center rounded-full"
+        style={
+          tone === 'brand'
+            ? {backgroundColor: 'var(--sq-brand-soft)', color: 'var(--sq-brand)'}
+            : {
+                // Surface rather than bg-muted: the accent lands at 4.42:1 on
+                // muted in light mode, 4.86:1 on surface.
+                backgroundColor: 'var(--sq-surface)',
+                border: '1px solid var(--sq-border)',
+                color: 'var(--sq-accent-strong)'
+              }
+        }
+      >
+        {icon}
+      </span>
+      {children}
+    </div>
+  );
 }
 
 export default function ConfirmPage() {
@@ -336,18 +379,15 @@ export default function ConfirmPage() {
 
   return (
     <>
-      <main className="min-h-screen bg-background-50 flex items-center justify-center p-4 pt-32 pb-24">
-        <div className="max-w-2xl w-full bg-white rounded-2xl shadow-lg p-8 md:p-12">
-          <Suspense
-            fallback={
-              <div className="text-center">
-                <div className="text-6xl mb-8 animate-pulse">⏳</div>
-                <p className="text-gray-600">{copy.loading}</p>
-              </div>
-            }
-          >
-            <ConfirmContent />
-          </Suspense>
+      <main className="theme-page flex min-h-screen items-center px-5 pb-24 pt-32">
+        <div className="container-custom">
+          <div className="max-w-xl">
+            <Suspense
+              fallback={<p className="theme-copy">{copy.loading}</p>}
+            >
+              <ConfirmContent />
+            </Suspense>
+          </div>
         </div>
       </main>
       <Footer />

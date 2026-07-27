@@ -308,6 +308,188 @@ export const authCopy: Record<AuthLocale, AuthCopy> = {
   }
 };
 
+// The invite and app-handoff screens were Dutch-only strings baked into the
+// components, even though they are reached from emails and share links that go
+// out in every language. Kept separate from AuthCopy because these screens are
+// about opening the app, not about signing in.
+export type HandoffCopy = {
+  friendInviteTitle: string;
+  familyInviteTitle: string;
+  inviteInvalid: string;
+  friendInviteIntro: string;
+  familyInviteIntro: string;
+  openInApp: string;
+  manualCodeLabel: string;
+  copyCode: string;
+  codeCopied: string;
+  downloadApp: string;
+  // {code} is replaced with the invite code, rendered in bold.
+  friendInviteFallback: string;
+  familyInviteFallback: string;
+  callbackRecoveryTitle: string;
+  callbackTitle: string;
+  callbackIntro: string;
+  callbackFallback: string;
+  callbackMissingParams: string;
+};
+
+export const handoffCopy: Record<AuthLocale, HandoffCopy> = {
+  nl: {
+    friendInviteTitle: 'Vriendschapsuitnodiging',
+    familyInviteTitle: 'Familie-uitnodiging',
+    inviteInvalid: 'Deze uitnodigingslink is ongeldig of onvolledig.',
+    friendInviteIntro: 'We proberen SkillQuest te openen met je uitnodiging.',
+    familyInviteIntro:
+      'We proberen SkillQuest te openen zodat je meteen bij het familiescherm uitkomt.',
+    openInApp: 'Open in SkillQuest',
+    manualCodeLabel: 'Handmatige code',
+    copyCode: 'Kopieer code',
+    codeCopied: 'Gekopieerd',
+    downloadApp: 'App downloaden',
+    friendInviteFallback:
+      'Lukt openen niet? Open SkillQuest en gebruik {code} bij Vrienden, Vriend toevoegen.',
+    familyInviteFallback:
+      'Lukt openen niet? Open SkillQuest en ga naar Profiel, Familie, Ik heb een invite-code. Gebruik daar {code}.',
+    callbackRecoveryTitle: 'Reset je wachtwoord in SkillQuest',
+    callbackTitle: 'Open SkillQuest om verder te gaan',
+    callbackIntro:
+      'We proberen SkillQuest automatisch te openen. Bekijk je deze pagina op je computer, open dan dezelfde e-mail op de telefoon waar SkillQuest op staat.',
+    callbackFallback:
+      'Gebeurt er niets? Gebruik deze link op je iPhone of Android-toestel. Op een computer kan de app meestal niet worden geopend.',
+    callbackMissingParams:
+      'Deze link mist ook authenticatiegegevens. Vraag een nieuwe e-mail aan vanuit SkillQuest.'
+  },
+  en: {
+    friendInviteTitle: 'Friend invite',
+    familyInviteTitle: 'Family invite',
+    inviteInvalid: 'This invite link is invalid or incomplete.',
+    friendInviteIntro: 'We are trying to open SkillQuest with your invite.',
+    familyInviteIntro:
+      'We are trying to open SkillQuest so you land straight on the family screen.',
+    openInApp: 'Open in SkillQuest',
+    manualCodeLabel: 'Manual code',
+    copyCode: 'Copy code',
+    codeCopied: 'Copied',
+    downloadApp: 'Download the app',
+    friendInviteFallback:
+      'Nothing happening? Open SkillQuest and use {code} under Friends, Add friend.',
+    familyInviteFallback:
+      'Nothing happening? Open SkillQuest and go to Profile, Family, I have an invite code. Use {code} there.',
+    callbackRecoveryTitle: 'Reset your password in SkillQuest',
+    callbackTitle: 'Open SkillQuest to continue',
+    callbackIntro:
+      'We are trying to open SkillQuest automatically. If you are reading this on a computer, open the same email on the phone that has SkillQuest installed.',
+    callbackFallback:
+      'Nothing happening? Use this link on your iPhone or Android device. A computer usually cannot open the mobile app.',
+    callbackMissingParams:
+      'This link is also missing its authentication details. Request a new email from SkillQuest.'
+  },
+  de: {
+    friendInviteTitle: 'Freundschaftseinladung',
+    familyInviteTitle: 'Familieneinladung',
+    inviteInvalid: 'Dieser Einladungslink ist ungültig oder unvollständig.',
+    friendInviteIntro: 'Wir versuchen, SkillQuest mit deiner Einladung zu öffnen.',
+    familyInviteIntro:
+      'Wir versuchen, SkillQuest zu öffnen, damit du direkt beim Familienbereich landest.',
+    openInApp: 'In SkillQuest öffnen',
+    manualCodeLabel: 'Code manuell eingeben',
+    copyCode: 'Code kopieren',
+    codeCopied: 'Kopiert',
+    downloadApp: 'App herunterladen',
+    friendInviteFallback:
+      'Passiert nichts? Öffne SkillQuest und nutze {code} unter Freunde, Freund hinzufügen.',
+    familyInviteFallback:
+      'Passiert nichts? Öffne SkillQuest und gehe zu Profil, Familie, Ich habe einen Einladungscode. Nutze dort {code}.',
+    callbackRecoveryTitle: 'Setze dein Passwort in SkillQuest zurück',
+    callbackTitle: 'Öffne SkillQuest, um fortzufahren',
+    callbackIntro:
+      'Wir versuchen, SkillQuest automatisch zu öffnen. Wenn du diese Seite am Computer liest, öffne dieselbe E-Mail auf dem Handy, auf dem SkillQuest installiert ist.',
+    callbackFallback:
+      'Passiert nichts? Nutze diesen Link auf deinem iPhone oder Android-Gerät. Am Computer lässt sich die App meist nicht öffnen.',
+    callbackMissingParams:
+      'Diesem Link fehlen außerdem die Authentifizierungsdaten. Fordere eine neue E-Mail aus SkillQuest an.'
+  },
+  fr: {
+    friendInviteTitle: 'Invitation entre amis',
+    familyInviteTitle: 'Invitation familiale',
+    inviteInvalid: "Ce lien d'invitation est invalide ou incomplet.",
+    friendInviteIntro: "Nous essayons d'ouvrir SkillQuest avec ton invitation.",
+    familyInviteIntro:
+      "Nous essayons d'ouvrir SkillQuest pour que tu arrives directement sur l'écran famille.",
+    openInApp: 'Ouvrir dans SkillQuest',
+    manualCodeLabel: 'Code manuel',
+    copyCode: 'Copier le code',
+    codeCopied: 'Copié',
+    downloadApp: "Télécharger l'app",
+    friendInviteFallback:
+      'Rien ne se passe ? Ouvre SkillQuest et saisis {code} dans Amis, Ajouter un ami.',
+    familyInviteFallback:
+      "Rien ne se passe ? Ouvre SkillQuest et va dans Profil, Famille, J'ai un code d'invitation. Saisis-y {code}.",
+    callbackRecoveryTitle: 'Réinitialise ton mot de passe dans SkillQuest',
+    callbackTitle: 'Ouvre SkillQuest pour continuer',
+    callbackIntro:
+      "Nous essayons d'ouvrir SkillQuest automatiquement. Si tu lis cette page sur un ordinateur, ouvre le même e-mail sur le téléphone où SkillQuest est installé.",
+    callbackFallback:
+      "Rien ne se passe ? Utilise ce lien sur ton iPhone ou ton appareil Android. Un ordinateur ne peut généralement pas ouvrir l'app mobile.",
+    callbackMissingParams:
+      "Il manque aussi les données d'authentification dans ce lien. Demande un nouvel e-mail depuis SkillQuest."
+  },
+  es: {
+    friendInviteTitle: 'Invitación de amistad',
+    familyInviteTitle: 'Invitación familiar',
+    inviteInvalid: 'Este enlace de invitación no es válido o está incompleto.',
+    friendInviteIntro: 'Estamos intentando abrir SkillQuest con tu invitación.',
+    familyInviteIntro:
+      'Estamos intentando abrir SkillQuest para que llegues directamente a la pantalla de familia.',
+    openInApp: 'Abrir en SkillQuest',
+    manualCodeLabel: 'Código manual',
+    copyCode: 'Copiar código',
+    codeCopied: 'Copiado',
+    downloadApp: 'Descargar la app',
+    friendInviteFallback:
+      '¿No pasa nada? Abre SkillQuest y usa {code} en Amigos, Añadir amigo.',
+    familyInviteFallback:
+      '¿No pasa nada? Abre SkillQuest y ve a Perfil, Familia, Tengo un código de invitación. Usa allí {code}.',
+    callbackRecoveryTitle: 'Restablece tu contraseña en SkillQuest',
+    callbackTitle: 'Abre SkillQuest para continuar',
+    callbackIntro:
+      'Estamos intentando abrir SkillQuest automáticamente. Si estás leyendo esto en un ordenador, abre el mismo correo en el teléfono que tiene SkillQuest instalado.',
+    callbackFallback:
+      '¿No pasa nada? Usa este enlace en tu iPhone o dispositivo Android. Un ordenador normalmente no puede abrir la app móvil.',
+    callbackMissingParams:
+      'A este enlace también le faltan los datos de autenticación. Solicita un correo nuevo desde SkillQuest.'
+  },
+  it: {
+    friendInviteTitle: 'Invito di amicizia',
+    familyInviteTitle: 'Invito famiglia',
+    inviteInvalid: 'Questo link di invito non è valido o è incompleto.',
+    friendInviteIntro: 'Stiamo provando ad aprire SkillQuest con il tuo invito.',
+    familyInviteIntro:
+      'Stiamo provando ad aprire SkillQuest per portarti subito sulla schermata famiglia.',
+    openInApp: 'Apri in SkillQuest',
+    manualCodeLabel: 'Codice manuale',
+    copyCode: 'Copia codice',
+    codeCopied: 'Copiato',
+    downloadApp: "Scarica l'app",
+    friendInviteFallback:
+      'Non succede nulla? Apri SkillQuest e usa {code} in Amici, Aggiungi amico.',
+    familyInviteFallback:
+      'Non succede nulla? Apri SkillQuest e vai su Profilo, Famiglia, Ho un codice invito. Usa lì {code}.',
+    callbackRecoveryTitle: 'Reimposta la password in SkillQuest',
+    callbackTitle: 'Apri SkillQuest per continuare',
+    callbackIntro:
+      "Stiamo provando ad aprire SkillQuest automaticamente. Se stai leggendo questa pagina sul computer, apri la stessa email sul telefono su cui è installato SkillQuest.",
+    callbackFallback:
+      "Non succede nulla? Usa questo link sul tuo iPhone o dispositivo Android. Da computer di solito non è possibile aprire l'app.",
+    callbackMissingParams:
+      'A questo link mancano anche i dati di autenticazione. Richiedi una nuova email da SkillQuest.'
+  }
+};
+
+export function getHandoffCopy(locale: AuthLocale) {
+  return handoffCopy[locale];
+}
+
 function isAuthLocale(value: string): value is AuthLocale {
   return authLocales.includes(value as AuthLocale);
 }
