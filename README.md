@@ -1,145 +1,86 @@
 # SkillQuest Website
 
-Marketing website voor SkillQuest - De ultieme skill-tracking app voor gezinnen.
+Marketing website voor SkillQuest, de skill-tracking app met focus timers, XP en
+Family-tools. Live op [skill-quest.app](https://www.skill-quest.app).
 
-## 🚀 Tech Stack
+## Tech stack
 
-- **Framework**: Next.js 16 (App Router)
-- **Styling**: Tailwind CSS v3
-- **Animations**: Framer Motion
-- **Font**: Inter + Nunito (Google Fonts)
-- **Deployment**: Vercel
+- **Framework**: Next.js 16 (App Router, Turbopack)
+- **Talen**: next-intl, 6 locales (`nl` default, `en`, `de`, `fr`, `es`, `it`), altijd
+  met prefix (`/nl/...`)
+- **Styling**: Tailwind CSS v3, dark mode via een `.dark`-class
+- **Motion**: framer-motion, altijd achter `useReducedMotion()`
+- **Iconen**: `@phosphor-icons/react`
+- **Fonts**: Bricolage Grotesque (display), Geist (body), Geist Mono (cijfers) via
+  `next/font/google`, gedeeld in `src/lib/fonts.ts`
+- **Backend**: Supabase (auth, tester-lijst), Resend (verificatie- en reset-mails)
+- **Deployment**: Vercel, auto-deploy vanaf `master`
 
-## 🎨 Design System
+## Design system
 
-### Branding Kleuren
+Het volledige tokensysteem en de regels erachter staan in
+[docs/DESIGN_SYSTEM.md](./docs/DESIGN_SYSTEM.md). Kort:
 
-**Primary (Ocean Blue):**
-- `primary-500`: `#007AFF` - Main brand color
+- Kleuren zijn CSS custom properties (`--sq-*`) in `src/styles/globals.css`, dual-themed
+  via `:root` en `.dark`. Nooit een Tailwind-grijstint direct gebruiken op tekst of
+  achtergrond — gebruik de `theme-*` utility-classes of de `--sq-*` variabelen.
+- Type-schaal in `tailwind.config.js`: `text-display` / `text-section` /
+  `text-subsection` / `text-lead`, elk een `clamp()` zodat koppen meeschalen zonder
+  breakpoint-sprongen.
+- Sectie-ritme: `.section-hero` / `.section-standard` / `.section-tight`, drie
+  bewuste niveaus in plaats van overal dezelfde padding.
+- Radius: interactief = `rounded-full`, kaarten = `rounded-2xl`, inputs = `rounded-lg`.
 
-**Phoenix Fire Gradient (Zenith Reborn inspired):**
-- `phoenix-fire`: `#D2381C` - Deep orange/red
-- `phoenix-flame`: `#FF6B35` - Warm orange
-- `phoenix-gold`: `#FFB627` - Gold/yellow
-- `phoenix-ember`: `#8B2635` - Bordeaux accent
-- `phoenix-shadow`: `#3D1F2E` - Deep purple
-
-### CTA Buttons - Phoenix Fire Gradient
-
-Alle primaire call-to-action buttons gebruiken de phoenix fire gradient voor maximum visual impact:
-
-```css
-.btn-primary {
-  background: linear-gradient(135deg, #FF6B35 0%, #D2381C 100%);
-}
-
-.btn-primary:hover {
-  background: linear-gradient(135deg, #FF7E4A 0%, #E64A2E 100%);
-  box-shadow: 0 8px 25px rgba(210, 56, 28, 0.4);
-}
-```
-
-**Rationale**: De phoenix symboliseert groei en transformatie - perfect voor skill development. De vurige kleuren roepen actie op zonder de blauwe SkillQuest branding te overschaduwen.
-
-### Utility Classes
-
-```css
-/* Phoenix gradients */
-.bg-gradient-phoenix  /* Orange → Red gradient */
-.bg-gradient-gold     /* Gold → Orange gradient */
-.text-gradient-phoenix /* Phoenix gradient text */
-
-/* Phoenix effects */
-.phoenix-glow         /* Orange glow shadow */
-.phoenix-glow-hover   /* Hover glow effect */
-```
-
-## 📂 Project Structure
+## Project-structuur
 
 ```
 skillquest-website/
 ├── src/
-│   ├── app/              # Next.js app router pages
-│   │   ├── page.tsx      # Homepage
-│   │   ├── download/     # Download page
-│   │   ├── pricing/      # Pricing page
-│   │   └── features/     # Features page
-│   ├── components/       # Reusable components
-│   │   ├── Navbar.tsx    # Sticky navbar met glassmorphism
-│   │   └── ...
+│   ├── app/
+│   │   ├── [locale]/          # Alle gelokaliseerde marketingpagina's en juridische pagina's
+│   │   ├── auth/               # Wachtwoord-reset flow, geen locale-prefix (Supabase-links)
+│   │   ├── auth-callback/      # App-handoff na OAuth/magic link
+│   │   ├── invite/[code]/      # Vriendschapsuitnodiging, geen locale-prefix (deellinks)
+│   │   ├── family/invite/[code]/
+│   │   └── api/                # subscribe, resend-verification, auth/confirm, verify
+│   ├── components/             # MarketingPages, Navbar, AuthShell, Reveal, ProductScrollTour, ...
+│   ├── lib/                    # marketing.ts, feature-pages.ts, authI18n.ts, theme-script.ts, fonts.ts
 │   └── styles/
-│       └── globals.css   # Global styles + utilities
-├── public/
-│   └── skillquest-logo.png  # Official app logo
-└── tailwind.config.js    # Tailwind configuration
+│       └── globals.css         # Token-laag, ritme, radius-lock, CTA-tokens
+├── docs/                       # DESIGN_SYSTEM.md, PASSWORD_RESET_SETUP.md, ...
+├── messages/                   # next-intl vertalingen per locale
+└── tailwind.config.js
 ```
 
-## 🏃 Development
+De routes onder `auth/`, `auth-callback/` en `invite/` staan bewust buiten `[locale]`,
+omdat ze bereikt worden via Supabase-links en deellinks die geen locale-prefix kennen.
+Ze delen wel dezelfde fonts, tokens en het theme-script via `StandaloneLayout` en
+`AuthShell` in `src/components/`.
+
+## Development
 
 ```bash
-# Install dependencies
+# Dependencies installeren
 npm install
 
-# Run development server
+# Development server
 npm run dev
 
-# Build for production
-npm run build
+# Type-check
+npx tsc --noEmit
 
-# Start production server
-npm start
+# Lint
+npm run lint
+
+# Productie-build
+npm run build
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in je browser.
 
-## ✨ Features
+Kopieer `.env.example` naar `.env.local` en vul de Supabase- en Resend-sleutels in
+voordat je de tester-inschrijving of e-mailflows lokaal test.
 
-- **Duolingo-style sticky navbar** met scroll-triggered CTA button
-- **Apple glassmorphism** navbar achtergrond
-- **Phoenix fire gradients** op alle CTA buttons
-- **Framer Motion** animations
-- **Responsive design** - Mobile-first approach
-- **SEO optimized** - Metadata, OpenGraph, Twitter cards
+## Licentie
 
-## 🎯 Key Components
-
-### Navbar
-- Sticky top navbar met glassmorphism effect
-- Official SkillQuest logo (stopwatch met growth arrow)
-- Scroll-triggered "Begin Gratis" button (verschijnt na 100px)
-- Smooth animations met Framer Motion
-
-### Hero Section
-- Full-width gradient background (Ocean Blue)
-- Phoenix fire CTA buttons
-- App screenshot mockup
-- Key features highlight
-
-### Pricing Cards
-- 4 tiers: Guest, Gratis, Premium, Family
-- Phoenix fire "Bekijk" buttons
-- Feature comparison lists
-
-## 📱 Logo
-
-Het officiële SkillQuest logo toont:
-- 🕐 Stopwatch (time tracking)
-- ⬆️ Upward arrow (skill growth)
-- ✨ Sparkles (achievements)
-- 🎨 Green-blue gradient (brand colors)
-
-## 🔥 Phoenix Fire Integration
-
-De phoenix kleuren komen van **Zenith Reborn** en symboliseren:
-- 🔥 **Transformatie** - Van chaos naar controle
-- ⚡ **Groei** - Skills ontwikkelen en levelen
-- 🎯 **Urgentie** - Call-to-action energie
-
-**Implementatie**:
-- CTA buttons: Phoenix fire gradient
-- Hover states: Intensified gradient + glow
-- Future: Level badges, XP bars, achievement accents
-
-## 📄 License
-
-Copyright © 2025 SkillQuest. All rights reserved.
+Copyright © 2026 SkillQuest. All rights reserved.

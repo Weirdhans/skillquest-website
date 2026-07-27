@@ -136,18 +136,17 @@ export async function generateMetadata({ params }) {
 
 ## Styling
 
-**Tailwind Typography Integration:**
-```jsx
-<article className="prose prose-lg prose-primary max-w-4xl mx-auto">
-  {/* Privacy content */}
-</article>
-```
+**Update 2026-07:** the gradient header, wave divider and white content card
+described below were replaced during the site-wide redesign. The page now runs on
+the shared `--sq-*` tokens (`theme-page`, `theme-title`, `theme-copy`, `theme-eyebrow`)
+with a sticky section index on desktop instead of a single long scroll. See
+[docs/DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md) for the current token system. Tailwind
+Typography (`prose`) is still used for the translated HTML section bodies only.
 
-**Custom Styling:**
-- Gradient header with wave divider (brand consistency)
-- Primary color scheme matching SkillQuest brand
-- Responsive container (`container-custom`)
-- Clean white content card with shadow
+**Tailwind Typography Integration (section bodies only):**
+```jsx
+<div className="prose prose-lg mt-4 max-w-none theme-copy" dangerouslySetInnerHTML={{__html: section.content}} />
+```
 
 ## Footer Integration
 
