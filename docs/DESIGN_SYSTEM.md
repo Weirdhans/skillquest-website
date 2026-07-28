@@ -115,6 +115,13 @@ Drie voorkeuren (`ThemePref`), twee opgeloste thema's. De opgeslagen waarde in
   en leest de echte voorkeur tijdens de eerste render op de client. De knop draagt
   `suppressHydrationWarning` voor exact deze overgang.
 
+**Geverifieerd (2026-07-27):** zowel het laadgedrag (pagina resolvet meteen naar de
+OS-instelling bij `'system'`, in beide richtingen) als het live meeschakelen zonder
+herladen wanneer de OS-instelling verandert terwijl de pagina open staat, getest op
+een echt apparaat. Laadgedrag is los geverifieerd in de browser-preview; het live
+meeschakelen niet — de CDP/DevTools-kleurenschema-emulatie in die preview vuurt geen
+`matchMedia`-`change`-event, dus dat deel is alleen op echte hardware te testen.
+
 ## Standalone routes (buiten `[locale]`)
 
 `auth/*`, `auth-callback/`, `invite/[code]/`, `family/invite/[code]/` liggen buiten de
