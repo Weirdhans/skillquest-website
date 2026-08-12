@@ -37,7 +37,7 @@
     "cards": {
       "familyMode": {
         "title": "Modalità famiglia",
-        "description": "Account padre-figlio con autorizzazioni basate sui ruoli. Voi controllate, loro si concentrano. Perfetto per i bambini dai 6 ai 18 anni.",
+        "description": "Account padre-figlio con autorizzazioni basate sui ruoli. Voi controllate, loro si concentrano. Utile per le famiglie con bambini dai 6 ai 18 anni.",
         "highlight": "Unico!"
       },
       "gamification": {
@@ -329,7 +329,7 @@
       },
       "bambiniEPrivacy": {
         "title": "Bambini e Privacy",
-        "content": "<p>### Requisiti di Età</p>\n<ul>\n<li><strong>Modalità Famiglia:</strong> SkillQuest è specificamente progettato per famiglie con bambini a partire da <strong>6 anni</strong></li>\n<li><strong>Supervisione genitoriale:</strong> I genitori/tutori devono creare e gestire gli account per i bambini di età inferiore ai 16 anni</li>\n<li><strong>Conformità GDPR:</strong> Rispettiamo i requisiti del GDPR per il trattamento dei dati dei minori</li>\n</ul>\n<p>### Controllo Genitoriale</p>\n<ul>\n<li>I genitori hanno il controllo completo sugli account dei bambini tramite la modalità famiglia</li>\n<li>I genitori possono visualizzare, modificare ed eliminare i dati dei loro figli</li>\n<li>Gli account dei bambini hanno funzionalità limitate e protezione della privacy by design</li>\n</ul>\n<p>Se scopriamo di aver raccolto involontariamente dati di un bambino di età inferiore ai 16 anni senza consenso genitoriale, elimineremo immediatamente tali dati. Contattaci a hello@skill-quest.app se hai preoccupazioni al riguardo.</p>"
+        "content": "<p>### Requisiti di Età</p>\n<ul>\n<li><strong>Modalità Famiglia:</strong> SkillQuest supporta le famiglie con bambini a partire da <strong>6 anni</strong></li>\n<li><strong>Supervisione genitoriale:</strong> I genitori/tutori devono creare e gestire gli account per i bambini di età inferiore ai 16 anni</li>\n<li><strong>Conformità GDPR:</strong> Rispettiamo i requisiti del GDPR per il trattamento dei dati dei minori</li>\n</ul>\n<p>### Controllo Genitoriale</p>\n<ul>\n<li>I genitori hanno il controllo completo sugli account dei bambini tramite la modalità famiglia</li>\n<li>I genitori possono visualizzare, modificare ed eliminare i dati dei loro figli</li>\n<li>Gli account dei bambini hanno funzionalità limitate e protezione della privacy by design</li>\n</ul>\n<p>Se scopriamo di aver raccolto involontariamente dati di un bambino di età inferiore ai 16 anni senza consenso genitoriale, elimineremo immediatamente tali dati. Contattaci a hello@skill-quest.app se hai preoccupazioni al riguardo.</p>"
       },
       "trasferimentoInternazionaleDiDati": {
         "title": "Trasferimento Internazionale di Dati",

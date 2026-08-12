@@ -37,7 +37,7 @@
     "cards": {
       "familyMode": {
         "title": "Gezinsmodus",
-        "description": "Ouder-kind accounts met rolgebaseerde rechten. Jij bepaalt, zij concentreren. Perfect voor de leeftijd van 6-18 jaar.",
+        "description": "Ouder-kind accounts met rolgebaseerde rechten. Jij bepaalt, zij concentreren. Handig voor gezinnen met kinderen van 6-18 jaar.",
         "highlight": "Uniek!"
       },
       "gamification": {
@@ -329,7 +329,7 @@
       },
       "kinderenEnPrivacy": {
         "title": "Kinderen en Privacy",
-        "content": "<p>### Leeftijdsvereisten</p>\n<ul>\n<li><strong>Family Mode:</strong> SkillQuest is specifiek ontworpen voor gezinnen met kinderen vanaf <strong>6 jaar</strong></li>\n<li><strong>Ouderlijk Toezicht:</strong> Ouders/voogden moeten accounts voor kinderen onder de 16 jaar aanmaken en beheren</li>\n<li><strong>AVG Compliance:</strong> We voldoen aan AVG vereisten voor verwerking van gegevens van minderjarigen</li>\n</ul>\n<p>### Ouderlijke Controle</p>\n<ul>\n<li>Ouders hebben volledige controle over kind-accounts via Family Mode</li>\n<li>Ouders kunnen gegevens van hun kinderen bekijken, wijzigen en verwijderen</li>\n<li>Kind-accounts hebben beperkte functies en privacy bescherming by design</li>\n</ul>\n<p>Als we ontdekken dat we onbedoeld gegevens van een kind onder de 16 jaar zonder ouderlijke toestemming hebben verzameld, zullen we die gegevens onmiddellijk verwijderen. Neem contact op via hello@skill-quest.app als je hier zorgen over hebt.</p>"
+        "content": "<p>### Leeftijdsvereisten</p>\n<ul>\n<li><strong>Family Mode:</strong> SkillQuest ondersteunt gezinnen met kinderen vanaf <strong>6 jaar</strong></li>\n<li><strong>Ouderlijk Toezicht:</strong> Ouders/voogden moeten accounts voor kinderen onder de 16 jaar aanmaken en beheren</li>\n<li><strong>AVG Compliance:</strong> We voldoen aan AVG vereisten voor verwerking van gegevens van minderjarigen</li>\n</ul>\n<p>### Ouderlijke Controle</p>\n<ul>\n<li>Ouders hebben volledige controle over kind-accounts via Family Mode</li>\n<li>Ouders kunnen gegevens van hun kinderen bekijken, wijzigen en verwijderen</li>\n<li>Kind-accounts hebben beperkte functies en privacy bescherming by design</li>\n</ul>\n<p>Als we ontdekken dat we onbedoeld gegevens van een kind onder de 16 jaar zonder ouderlijke toestemming hebben verzameld, zullen we die gegevens onmiddellijk verwijderen. Neem contact op via hello@skill-quest.app als je hier zorgen over hebt.</p>"
       },
       "internationaleGegevensoverdracht": {
         "title": "Internationale Gegevensoverdracht",

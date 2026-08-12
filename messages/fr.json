@@ -37,7 +37,7 @@
     "cards": {
       "familyMode": {
         "title": "Mode familial",
-        "description": "Comptes parents-enfants avec autorisations basées sur les rôles. Vous contrôlez, ils se concentrent. Parfait pour les 6-18 ans.",
+        "description": "Comptes parents-enfants avec autorisations basées sur les rôles. Vous contrôlez, ils se concentrent. Utile pour les familles avec des enfants de 6 à 18 ans.",
         "highlight": "Unique !"
       },
       "gamification": {
@@ -329,7 +329,7 @@
       },
       "enfantsEtConfidentialit": {
         "title": "Enfants et Confidentialité",
-        "content": "<p>### Exigences d'Âge</p>\n<ul>\n<li><strong>Mode Famille :</strong> SkillQuest est spécialement conçu pour les familles avec des enfants à partir de <strong>6 ans</strong></li>\n<li><strong>Supervision parentale :</strong> Les parents/tuteurs doivent créer et gérer les comptes pour les enfants de moins de 16 ans</li>\n<li><strong>Conformité RGPD :</strong> Nous respectons les exigences du RGPD pour le traitement des données des mineurs</li>\n</ul>\n<p>### Contrôle Parental</p>\n<ul>\n<li>Les parents ont un contrôle total sur les comptes enfants via le mode famille</li>\n<li>Les parents peuvent consulter, modifier et supprimer les données de leurs enfants</li>\n<li>Les comptes enfants ont des fonctionnalités limitées et une protection de la vie privée dès la conception</li>\n</ul>\n<p>Si nous découvrons que nous avons involontairement collecté des données d'un enfant de moins de 16 ans sans consentement parental, nous supprimerons immédiatement ces données. Contactez-nous à hello@skill-quest.app si vous avez des préoccupations à ce sujet.</p>"
+        "content": "<p>### Exigences d'Âge</p>\n<ul>\n<li><strong>Mode Famille :</strong> SkillQuest accompagne les familles avec des enfants à partir de <strong>6 ans</strong></li>\n<li><strong>Supervision parentale :</strong> Les parents/tuteurs doivent créer et gérer les comptes pour les enfants de moins de 16 ans</li>\n<li><strong>Conformité RGPD :</strong> Nous respectons les exigences du RGPD pour le traitement des données des mineurs</li>\n</ul>\n<p>### Contrôle Parental</p>\n<ul>\n<li>Les parents ont un contrôle total sur les comptes enfants via le mode famille</li>\n<li>Les parents peuvent consulter, modifier et supprimer les données de leurs enfants</li>\n<li>Les comptes enfants ont des fonctionnalités limitées et une protection de la vie privée dès la conception</li>\n</ul>\n<p>Si nous découvrons que nous avons involontairement collecté des données d'un enfant de moins de 16 ans sans consentement parental, nous supprimerons immédiatement ces données. Contactez-nous à hello@skill-quest.app si vous avez des préoccupations à ce sujet.</p>"
       },
       "transfertInternationalDeDonnes": {
         "title": "Transfert International de Données",

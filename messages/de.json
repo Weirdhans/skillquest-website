@@ -37,7 +37,7 @@
     "cards": {
       "familyMode": {
         "title": "Familien-Modus",
-        "description": "Eltern-Kind-Konten mit rollenbasierten Berechtigungen. Sie kontrollieren, sie konzentrieren sich. Perfekt für 6-18-Jährige.",
+        "description": "Eltern-Kind-Konten mit rollenbasierten Berechtigungen. Sie kontrollieren, sie konzentrieren sich. Hilfreich für Familien mit Kindern im Alter von 6-18 Jahren.",
         "highlight": "Einzigartig!"
       },
       "gamification": {
@@ -329,7 +329,7 @@
       },
       "kinderUndDatenschutz": {
         "title": "Kinder und Datenschutz",
-        "content": "<p>### Altersanforderungen</p>\n<ul>\n<li><strong>Family Mode:</strong> SkillQuest wurde speziell für Familien mit Kindern ab <strong>6 Jahren</strong> entwickelt</li>\n<li><strong>Elterliche Kontrolle:</strong> Eltern/Erziehungsberechtigte müssen Konten für Kinder unter 16 Jahren erstellen und verwalten</li>\n<li><strong>DSGVO-Konformität:</strong> Wir erfüllen die DSGVO-Anforderungen für die Verarbeitung von Daten Minderjähriger</li>\n</ul>\n<p>### Elterliche Kontrolle</p>\n<ul>\n<li>Eltern haben die volle Kontrolle über Kinderkonten über den Family Mode</li>\n<li>Eltern können die Daten ihrer Kinder einsehen, ändern und löschen</li>\n<li>Kinderkonten haben eingeschränkte Funktionen und Datenschutz durch Design</li>\n</ul>\n<p>Sollten wir feststellen, dass wir unbeabsichtigt Daten eines Kindes unter 16 Jahren ohne elterliche Zustimmung gesammelt haben, werden wir diese Daten unverzüglich löschen. Bitte kontaktieren Sie uns unter hello@skill-quest.app, wenn Sie diesbezüglich Bedenken haben.</p>"
+        "content": "<p>### Altersanforderungen</p>\n<ul>\n<li><strong>Family Mode:</strong> SkillQuest unterstützt Familien mit Kindern ab <strong>6 Jahren</strong></li>\n<li><strong>Elterliche Kontrolle:</strong> Eltern/Erziehungsberechtigte müssen Konten für Kinder unter 16 Jahren erstellen und verwalten</li>\n<li><strong>DSGVO-Konformität:</strong> Wir erfüllen die DSGVO-Anforderungen für die Verarbeitung von Daten Minderjähriger</li>\n</ul>\n<p>### Elterliche Kontrolle</p>\n<ul>\n<li>Eltern haben die volle Kontrolle über Kinderkonten über den Family Mode</li>\n<li>Eltern können die Daten ihrer Kinder einsehen, ändern und löschen</li>\n<li>Kinderkonten haben eingeschränkte Funktionen und Datenschutz durch Design</li>\n</ul>\n<p>Sollten wir feststellen, dass wir unbeabsichtigt Daten eines Kindes unter 16 Jahren ohne elterliche Zustimmung gesammelt haben, werden wir diese Daten unverzüglich löschen. Bitte kontaktieren Sie uns unter hello@skill-quest.app, wenn Sie diesbezüglich Bedenken haben.</p>"
       },
       "internationaleDatenbermittlung": {
         "title": "Internationale Datenübermittlung",

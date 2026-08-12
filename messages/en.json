@@ -37,7 +37,7 @@
     "cards": {
       "familyMode": {
         "title": "Family Mode",
-        "description": "Parent-child accounts with role-based permissions. You control, they focus. Perfect for ages 6-18.",
+        "description": "Parent-child accounts with role-based permissions. You control, they focus. Useful for families with children ages 6-18.",
         "highlight": "Unique!"
       },
       "gamification": {
@@ -329,7 +329,7 @@
       },
       "childrenAndPrivacy": {
         "title": "Children and Privacy",
-        "content": "<p>### Age Requirements</p>\n<ul>\n<li><strong>Family Mode:</strong> SkillQuest is specifically designed for families with children aged <strong>6 years and older</strong></li>\n<li><strong>Parental Supervision:</strong> Parents/guardians must create and manage accounts for children under 16</li>\n<li><strong>GDPR Compliance:</strong> We comply with GDPR requirements for processing data of minors</li>\n</ul>\n<p>### Parental Controls</p>\n<ul>\n<li>Parents have full control over child accounts via Family Mode</li>\n<li>Parents can view, modify, and delete their children's data</li>\n<li>Child accounts have limited features and privacy protection by design</li>\n</ul>\n<p>If we discover that we have unintentionally collected data from a child under 16 without parental consent, we will immediately delete that data. Please contact us at hello@skill-quest.app if you have concerns about this.</p>"
+        "content": "<p>### Age Requirements</p>\n<ul>\n<li><strong>Family Mode:</strong> SkillQuest supports families with children aged <strong>6 years and older</strong></li>\n<li><strong>Parental Supervision:</strong> Parents/guardians must create and manage accounts for children under 16</li>\n<li><strong>GDPR Compliance:</strong> We comply with GDPR requirements for processing data of minors</li>\n</ul>\n<p>### Parental Controls</p>\n<ul>\n<li>Parents have full control over child accounts via Family Mode</li>\n<li>Parents can view, modify, and delete their children's data</li>\n<li>Child accounts have limited features and privacy protection by design</li>\n</ul>\n<p>If we discover that we have unintentionally collected data from a child under 16 without parental consent, we will immediately delete that data. Please contact us at hello@skill-quest.app if you have concerns about this.</p>"
       },
       "internationalDataTransfer": {
         "title": "International Data Transfer",

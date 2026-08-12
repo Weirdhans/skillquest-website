@@ -37,7 +37,7 @@
     "cards": {
       "familyMode": {
         "title": "Modo Familia",
-        "description": "Cuentas de padres a hijos con permisos basados en funciones. Tú controlas, ellos se centran. Perfecto para niños de 6 a 18 años.",
+        "description": "Cuentas de padres a hijos con permisos basados en funciones. Tú controlas, ellos se centran. Útil para familias con niños de 6 a 18 años.",
         "highlight": "¡Único!"
       },
       "gamification": {
@@ -329,7 +329,7 @@
       },
       "niosYPrivacidad": {
         "title": "Niños y Privacidad",
-        "content": "<p>### Requisitos de Edad</p>\n<ul>\n<li><strong>Modo Familiar:</strong> SkillQuest está específicamente diseñado para familias con niños a partir de <strong>6 años</strong></li>\n<li><strong>Supervisión parental:</strong> Los padres/tutores deben crear y gestionar cuentas para niños menores de 16 años</li>\n<li><strong>Cumplimiento RGPD:</strong> Cumplimos con los requisitos del RGPD para el tratamiento de datos de menores</li>\n</ul>\n<p>### Control Parental</p>\n<ul>\n<li>Los padres tienen control total sobre las cuentas de los niños a través del modo familiar</li>\n<li>Los padres pueden ver, modificar y eliminar los datos de sus hijos</li>\n<li>Las cuentas de niños tienen funcionalidades limitadas y protección de privacidad por diseño</li>\n</ul>\n<p>Si descubrimos que hemos recopilado involuntariamente datos de un niño menor de 16 años sin consentimiento parental, eliminaremos esos datos inmediatamente. Contáctanos en hello@skill-quest.app si tienes preocupaciones al respecto.</p>"
+        "content": "<p>### Requisitos de Edad</p>\n<ul>\n<li><strong>Modo Familiar:</strong> SkillQuest apoya a familias con niños a partir de <strong>6 años</strong></li>\n<li><strong>Supervisión parental:</strong> Los padres/tutores deben crear y gestionar cuentas para niños menores de 16 años</li>\n<li><strong>Cumplimiento RGPD:</strong> Cumplimos con los requisitos del RGPD para el tratamiento de datos de menores</li>\n</ul>\n<p>### Control Parental</p>\n<ul>\n<li>Los padres tienen control total sobre las cuentas de los niños a través del modo familiar</li>\n<li>Los padres pueden ver, modificar y eliminar los datos de sus hijos</li>\n<li>Las cuentas de niños tienen funcionalidades limitadas y protección de privacidad por diseño</li>\n</ul>\n<p>Si descubrimos que hemos recopilado involuntariamente datos de un niño menor de 16 años sin consentimiento parental, eliminaremos esos datos inmediatamente. Contáctanos en hello@skill-quest.app si tienes preocupaciones al respecto.</p>"
       },
       "transferenciaInternacionalDeDatos": {
         "title": "Transferencia Internacional de Datos",
