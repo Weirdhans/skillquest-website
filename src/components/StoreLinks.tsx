@@ -1,4 +1,3 @@
-import {Link} from '@/i18n/routing';
 import {
   ANDROID_SIGNUP_URL,
   APP_STORE_URL
@@ -32,12 +31,14 @@ export default function StoreLinks({
       >
         {appStoreLabel}
       </a>
-      <Link
+      <a
         href={ANDROID_SIGNUP_URL}
+        target="_blank"
+        rel="noreferrer"
         className={`inline-flex min-h-12 items-center justify-center rounded-lg border px-5 py-3 text-center font-semibold transition focus:outline-none focus:ring-4 focus:ring-primary-500/20 ${secondaryClass}`}
       >
         {androidLabel}
-      </Link>
+      </a>
     </div>
   );
 }

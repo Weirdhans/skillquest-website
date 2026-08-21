@@ -542,9 +542,14 @@ export function DownloadMarketingPage({
                 <p className="mt-4 leading-relaxed theme-copy">
                   {copy.download.androidBody}
                 </p>
-                <Link href={ANDROID_SIGNUP_URL} className="btn btn-primary mt-7">
+                <a
+                  href={ANDROID_SIGNUP_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-primary mt-7"
+                >
                   {copy.download.androidCta}
-                </Link>
+                </a>
                 <p className="mt-4 text-sm leading-relaxed theme-copy">
                   {copy.download.testerNote}
                 </p>

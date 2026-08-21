@@ -79,9 +79,14 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <Link href={ANDROID_SIGNUP_URL} className="hover:text-white">
+                <a
+                  href={ANDROID_SIGNUP_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-white"
+                >
                   Android alpha
-                </Link>
+                </a>
               </li>
               <li>
                 <NextLink
