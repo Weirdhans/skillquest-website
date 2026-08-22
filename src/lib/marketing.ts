@@ -235,7 +235,7 @@ export const marketingCopy = {
       subtitle:
         'A skill tracker with built-in focus timers. Earn XP, build streaks, and see exactly where your practice time goes.',
       primaryCta: 'Download on the App Store',
-      secondaryCta: 'Join Android alpha',
+      secondaryCta: 'Join the Google Group',
       tertiaryCta: 'Compare pricing',
       trust: ['Free to start', 'No ads', 'Privacy-first sync']
     },
@@ -377,9 +377,9 @@ export const marketingCopy = {
     finalCta: {
       heading: 'Start building the skills you keep meaning to practice',
       body:
-        'Download SkillQuest on the App Store or join the Android alpha through Google Play closed testing.',
+        'Download SkillQuest on the App Store or join the Android closed test through the Google Group and Google Play.',
       primary: 'Download on the App Store',
-      secondary: 'Join Android alpha'
+      secondary: 'Join the Google Group'
     },
     footer: {
       description:
@@ -412,10 +412,10 @@ export const marketingCopy = {
       androidTitle: 'Android',
       androidStatus: 'Alpha / closed testing',
       androidBody:
-        'Join the SkillQuest Android beta through our Google Group. Use the same Google account for the group and Google Play, then opt in to the closed test and install the app.',
+        'First, join the SkillQuest Google Group. On the next page, click "Join group". Then use the same Google account for the group and Google Play to opt in to the closed test and install the app.',
       androidCta: 'Join the Google Group',
       testerNote:
-        'After joining the group, open the Google Play opt-in link and stay opted in for at least 14 days. We welcome honest feedback about the app.',
+        'After joining the group, open the Google Play opt-in link and click "Become a tester". Stay opted in for at least 14 days. We welcome honest feedback about the app.',
       androidAlreadyAdded: 'Already a group member? Open the Play Store test page.',
       screenshotsHeading: 'See the app before you install',
       screenshotsBody:
@@ -544,7 +544,7 @@ export const marketingCopy = {
       subtitle:
         'Een skill tracker met ingebouwde focus timers. Verdien XP, bouw streaks op en zie precies waar je oefentijd heen gaat.',
       primaryCta: 'Download in de App Store',
-      secondaryCta: 'Doe mee met Android alpha',
+      secondaryCta: 'Ga naar de Google Group',
       tertiaryCta: 'Vergelijk prijzen',
       trust: ['Gratis starten', 'Geen advertenties', 'Privacygerichte sync']
     },
@@ -686,9 +686,9 @@ export const marketingCopy = {
     finalCta: {
       heading: 'Begin met de skills die je steeds wilt oefenen',
       body:
-        'Download SkillQuest in de App Store of doe mee met de Android alpha via Google Play closed testing.',
+        'Download SkillQuest in de App Store of doe mee aan de Android closed test via de Google Group en Google Play.',
       primary: 'Download in de App Store',
-      secondary: 'Doe mee met Android alpha'
+      secondary: 'Ga naar de Google Group'
     },
     footer: {
       description:
@@ -721,10 +721,10 @@ export const marketingCopy = {
       androidTitle: 'Android',
       androidStatus: 'Alpha / closed testing',
       androidBody:
-        'Doe mee met de SkillQuest Android-beta via onze Google Group. Gebruik voor de groep en Google Play hetzelfde Google-account, meld je daarna aan voor de gesloten test en installeer de app.',
+        'Meld je eerst aan bij de SkillQuest Google Group. Klik op de volgende pagina op "Join group". Gebruik daarna voor de groep en Google Play hetzelfde Google-account om je aan te melden voor de gesloten test en de app te installeren.',
       androidCta: 'Ga naar de Google Group',
       testerNote:
-        'Open na het deelnemen aan de groep de Google Play-opt-inlink en blijf minimaal 14 dagen aangemeld. Eerlijke feedback is welkom.',
+        'Open na het deelnemen aan de groep de Google Play-opt-inlink en klik op "Become a tester". Blijf minimaal 14 dagen aangemeld. Eerlijke feedback is welkom.',
       androidAlreadyAdded: 'Al lid van de groep? Open de Play Store-testpagina.',
       screenshotsHeading: 'Bekijk de app voordat je installeert',
       screenshotsBody:
@@ -853,7 +853,7 @@ export const marketingCopy = {
       subtitle:
         'Ein Skill-Tracker mit integrierten Focus-Timern. Sammle XP, baue Streaks auf und sieh genau, wohin deine Übungszeit fließt.',
       primaryCta: 'Im App Store laden',
-      secondaryCta: 'Android Alpha beitreten',
+      secondaryCta: 'Google-Gruppe beitreten',
       tertiaryCta: 'Preise vergleichen',
       trust: ['Kostenlos starten', 'Keine Werbung', 'Datenschutzorientierte Sync']
     },
@@ -995,9 +995,9 @@ export const marketingCopy = {
     finalCta: {
       heading: 'Starte mit den Skills, die du schon lange üben willst',
       body:
-        'Lade SkillQuest im App Store oder tritt der Android Alpha über Google Play Closed Testing bei.',
+        'Lade SkillQuest im App Store herunter oder nimm über die Google-Gruppe und Google Play am geschlossenen Android-Test teil.',
       primary: 'Im App Store laden',
-      secondary: 'Android Alpha beitreten'
+      secondary: 'Google-Gruppe beitreten'
     },
     footer: {
       description:
@@ -1030,10 +1030,10 @@ export const marketingCopy = {
       androidTitle: 'Android',
       androidStatus: 'Alpha / Closed Testing',
       androidBody:
-        'Nimm über unsere Google-Gruppe an der SkillQuest-Android-Beta teil. Verwende für die Gruppe und Google Play dasselbe Google-Konto, aktiviere danach den geschlossenen Test und installiere die App.',
+        'Tritt zuerst der SkillQuest-Google-Gruppe bei. Klicke auf der nächsten Seite auf "Join group". Verwende danach für die Gruppe und Google Play dasselbe Google-Konto, aktiviere den geschlossenen Test und installiere die App.',
       androidCta: 'Google-Gruppe beitreten',
       testerNote:
-        'Öffne nach dem Beitritt zur Gruppe den Google-Play-Opt-in-Link und bleibe mindestens 14 Tage angemeldet. Ehrliches Feedback ist willkommen.',
+        'Öffne nach dem Beitritt zur Gruppe den Google-Play-Opt-in-Link und klicke auf "Become a tester". Bleibe mindestens 14 Tage angemeldet. Ehrliches Feedback ist willkommen.',
       androidAlreadyAdded: 'Bereits Mitglied der Gruppe? Öffne die Play-Store-Testseite.',
       screenshotsHeading: 'Sieh dir die App vor der Installation an',
       screenshotsBody:
@@ -1162,7 +1162,7 @@ export const marketingCopy = {
       subtitle:
         'Un skill tracker avec focus timers intégrés. Gagne des XP, construis des streaks et suis exactement ton temps de pratique.',
       primaryCta: 'Télécharger sur l’App Store',
-      secondaryCta: 'Rejoindre l’alpha Android',
+      secondaryCta: 'Rejoindre le groupe Google',
       tertiaryCta: 'Comparer les prix',
       trust: ['Démarrage gratuit', 'Sans publicité', 'Synchronisation privée']
     },
@@ -1304,9 +1304,9 @@ export const marketingCopy = {
     finalCta: {
       heading: 'Commencez les compétences que vous voulez vraiment pratiquer',
       body:
-        'Téléchargez SkillQuest sur l’App Store ou rejoignez l’alpha Android via Google Play closed testing.',
+        'Téléchargez SkillQuest sur l’App Store ou rejoignez le test Android fermé via le groupe Google et Google Play.',
       primary: 'Télécharger sur l’App Store',
-      secondary: 'Rejoindre l’alpha Android'
+      secondary: 'Rejoindre le groupe Google'
     },
     footer: {
       description:
@@ -1339,10 +1339,10 @@ export const marketingCopy = {
       androidTitle: 'Android',
       androidStatus: 'Alpha / closed testing',
       androidBody:
-        'Rejoignez la bêta Android de SkillQuest via notre groupe Google. Utilisez le même compte Google pour le groupe et Google Play, puis acceptez le test fermé et installez l’application.',
+        'Rejoignez d’abord le groupe Google de SkillQuest. Sur la page suivante, cliquez sur « Join group ». Utilisez ensuite le même compte Google pour le groupe et Google Play, acceptez le test fermé et installez l’application.',
       androidCta: 'Rejoindre le groupe Google',
       testerNote:
-        'Après avoir rejoint le groupe, ouvrez le lien d’inscription Google Play et restez inscrit pendant au moins 14 jours. Vos retours honnêtes sont les bienvenus.',
+        'Après avoir rejoint le groupe, ouvrez le lien d’inscription Google Play et cliquez sur « Become a tester ». Restez inscrit pendant au moins 14 jours. Vos retours honnêtes sont les bienvenus.',
       androidAlreadyAdded: 'Déjà membre du groupe ? Ouvrez la page de test du Play Store.',
       screenshotsHeading: 'Voir l’app avant installation',
       screenshotsBody:
@@ -1471,7 +1471,7 @@ export const marketingCopy = {
       subtitle:
         'Un skill tracker con focus timers integrados. Gana XP, crea streaks y ve exactamente adónde va tu tiempo de práctica.',
       primaryCta: 'Descargar en App Store',
-      secondaryCta: 'Unirse a Android alpha',
+      secondaryCta: 'Unirse al grupo de Google',
       tertiaryCta: 'Comparar precios',
       trust: ['Inicio gratis', 'Sin anuncios', 'Sincronización privada']
     },
@@ -1613,9 +1613,9 @@ export const marketingCopy = {
     finalCta: {
       heading: 'Empieza con las habilidades que siempre quieres practicar',
       body:
-        'Descarga SkillQuest en App Store o únete a la alpha de Android mediante Google Play closed testing.',
+        'Descarga SkillQuest en App Store o únete a la prueba cerrada de Android mediante el grupo de Google y Google Play.',
       primary: 'Descargar en App Store',
-      secondary: 'Unirse a Android alpha'
+      secondary: 'Unirse al grupo de Google'
     },
     footer: {
       description:
@@ -1648,10 +1648,10 @@ export const marketingCopy = {
       androidTitle: 'Android',
       androidStatus: 'Alpha / closed testing',
       androidBody:
-        'Únete a la beta de SkillQuest para Android mediante nuestro grupo de Google. Usa la misma cuenta de Google para el grupo y Google Play, acepta después la prueba cerrada e instala la aplicación.',
+        'Primero, únete al grupo de Google de SkillQuest. En la página siguiente, haz clic en «Join group». Después, usa la misma cuenta de Google para el grupo y Google Play, acepta la prueba cerrada e instala la aplicación.',
       androidCta: 'Unirse al grupo de Google',
       testerNote:
-        'Después de unirte al grupo, abre el enlace de registro de Google Play y mantente registrado al menos 14 días. Agradecemos tus comentarios sinceros.',
+        'Después de unirte al grupo, abre el enlace de registro de Google Play y haz clic en «Become a tester». Mantente registrado al menos 14 días. Agradecemos tus comentarios sinceros.',
       androidAlreadyAdded: '¿Ya eres miembro del grupo? Abre la página de prueba de Play Store.',
       screenshotsHeading: 'Mira la app antes de instalar',
       screenshotsBody:
@@ -1780,7 +1780,7 @@ export const marketingCopy = {
       subtitle:
         'Skill tracker con focus timer integrati. Guadagna XP, costruisci streaks e vedi esattamente dove va il tuo tempo di pratica.',
       primaryCta: 'Scarica da App Store',
-      secondaryCta: 'Unisciti ad Android alpha',
+      secondaryCta: 'Unisciti al gruppo Google',
       tertiaryCta: 'Confronta i prezzi',
       trust: ['Inizio gratuito', 'Niente pubblicità', 'Sync attenta alla privacy']
     },
@@ -1922,9 +1922,9 @@ export const marketingCopy = {
     finalCta: {
       heading: 'Inizia dalle competenze che vuoi davvero praticare',
       body:
-        'Scarica SkillQuest su App Store o unisciti all’alpha Android tramite Google Play closed testing.',
+        'Scarica SkillQuest su App Store o partecipa al test Android chiuso tramite il gruppo Google e Google Play.',
       primary: 'Scarica da App Store',
-      secondary: 'Unisciti ad Android alpha'
+      secondary: 'Unisciti al gruppo Google'
     },
     footer: {
       description:
@@ -1957,10 +1957,10 @@ export const marketingCopy = {
       androidTitle: 'Android',
       androidStatus: 'Alpha / closed testing',
       androidBody:
-        'Partecipa alla beta Android di SkillQuest tramite il nostro gruppo Google. Usa lo stesso account Google per il gruppo e Google Play, poi accetta il test chiuso e installa l’app.',
+        'Per prima cosa, unisciti al gruppo Google di SkillQuest. Nella pagina successiva, clicca su « Join group ». Poi usa lo stesso account Google per il gruppo e Google Play, accetta il test chiuso e installa l’app.',
       androidCta: 'Unisciti al gruppo Google',
       testerNote:
-        'Dopo aver aderito al gruppo, apri il link di adesione di Google Play e resta iscritto per almeno 14 giorni. I feedback sinceri sono benvenuti.',
+        'Dopo aver aderito al gruppo, apri il link di adesione di Google Play e clicca su « Become a tester ». Resta iscritto per almeno 14 giorni. I feedback sinceri sono benvenuti.',
       androidAlreadyAdded: 'Sei già membro del gruppo? Apri la pagina di test del Play Store.',
       screenshotsHeading: 'Guarda l’app prima di installare',
       screenshotsBody:

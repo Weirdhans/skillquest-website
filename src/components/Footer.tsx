@@ -85,7 +85,7 @@ export default function Footer() {
                   rel="noreferrer"
                   className="hover:text-white"
                 >
-                  Android alpha
+                  Android beta group
                 </a>
               </li>
               <li>
