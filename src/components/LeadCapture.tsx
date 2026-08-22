@@ -108,10 +108,7 @@ export default function LeadCapture({
   ];
 
   return (
-    <section
-      id="android-alpha"
-      className="scroll-mt-20 theme-final-band py-16 text-white md:py-20"
-    >
+    <section className="scroll-mt-20 theme-final-band py-16 text-white md:py-20">
       <div className="container-custom">
         <div className="mx-auto max-w-3xl">
           <div className="mb-8">

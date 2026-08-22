@@ -7,6 +7,8 @@ import ProductScrollTour from '@/components/ProductScrollTour';
 import {Check, CheckCircle} from '@phosphor-icons/react/dist/ssr';
 import {
   ANDROID_ALPHA_JOIN_URL,
+  ANDROID_STORE_URL,
+  ANDROID_TESTERS_GROUP_URL,
   ANDROID_SIGNUP_URL,
   APP_STORE_URL,
   type Locale,
@@ -530,6 +532,7 @@ export function DownloadMarketingPage({
 
             <Reveal delay={0.08}>
               <article
+                id="android-alpha"
                 className="h-full border-t pt-6 md:border-l md:border-t-0 md:pl-14 md:pt-0"
                 style={{borderColor: 'var(--sq-border)'}}
               >
@@ -542,17 +545,67 @@ export function DownloadMarketingPage({
                 <p className="mt-4 leading-relaxed theme-copy">
                   {copy.download.androidBody}
                 </p>
-                <a
-                  href={ANDROID_SIGNUP_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn btn-primary mt-7"
-                >
+                <Link href={ANDROID_SIGNUP_URL} className="btn btn-primary mt-7">
                   {copy.download.androidCta}
-                </a>
+                </Link>
                 <p className="mt-4 text-sm leading-relaxed theme-copy">
                   {copy.download.testerNote}
                 </p>
+                <div
+                  className="mt-7 border-y py-5"
+                  style={{borderColor: 'var(--sq-border)'}}
+                >
+                  <h3 className="font-semibold theme-title">
+                    {copy.download.androidSteps.heading}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed theme-copy">
+                    {copy.download.androidSteps.sameAccount}
+                  </p>
+                  <ol className="mt-4 space-y-4">
+                    <li>
+                      <a
+                        href={ANDROID_TESTERS_GROUP_URL}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="font-semibold underline theme-copy"
+                      >
+                        {copy.download.androidSteps.group.label}
+                      </a>
+                      <p className="mt-1 text-sm leading-relaxed theme-copy">
+                        {copy.download.androidSteps.group.detail}
+                      </p>
+                    </li>
+                    <li>
+                      <a
+                        href={ANDROID_ALPHA_JOIN_URL}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="font-semibold underline theme-copy"
+                      >
+                        {copy.download.androidSteps.optIn.label}
+                      </a>
+                      <p className="mt-1 text-sm leading-relaxed theme-copy">
+                        {copy.download.androidSteps.optIn.detail}
+                      </p>
+                    </li>
+                    <li>
+                      <a
+                        href={ANDROID_STORE_URL}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="font-semibold underline theme-copy"
+                      >
+                        {copy.download.androidSteps.install.label}
+                      </a>
+                      <p className="mt-1 text-sm leading-relaxed theme-copy">
+                        {copy.download.androidSteps.install.detail}
+                      </p>
+                    </li>
+                  </ol>
+                  <p className="mt-4 text-sm leading-relaxed theme-copy">
+                    {copy.download.androidSteps.note}
+                  </p>
+                </div>
                 <a
                   href={ANDROID_ALPHA_JOIN_URL}
                   target="_blank"
