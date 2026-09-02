@@ -27,39 +27,39 @@ export async function generateMetadata({
 // Define section keys per locale - these must match the keys in messages/{locale}.json
 const SECTION_KEYS_BY_LOCALE: Record<string, string[]> = {
   nl: [
-    'introductie', 'gegevensbeheerder', 'welkeGegevensVerzamelenWe', 'hoeGebruikenWeJouwGegevens',
+    'introductie', 'gegevensbeheerder', 'welkeGegevensVerzamelenWe', 'campagneAttributie', 'hoeGebruikenWeJouwGegevens',
     'juridischeGrondslagVoorVerwerking', 'hoeBeschermenWeJouwGegevens', 'derdePartijDiensten',
     'cookiesEnTracking', 'jouwAvgRechten', 'gegevensretentie', 'kinderenEnPrivacy',
     'internationaleGegevensoverdracht', 'wijzigingenInDitPrivacybeleid', 'contactOpnemen'
   ],
   en: [
-    'introduction', 'dataController', 'whatDataDoWeCollect', 'howDoWeUseYourData',
+    'introduction', 'dataController', 'whatDataDoWeCollect', 'campaignAttribution', 'howDoWeUseYourData',
     'legalBasisForProcessing', 'howDoWeProtectYourData', 'thirdpartyServices',
     'cookiesAndTracking', 'yourGdprRights', 'dataRetention', 'childrenAndPrivacy',
     'internationalDataTransfer', 'changesToThisPrivacyPolicy', 'contactUs'
   ],
   de: [
     'einleitung', 'verantwortlicherFrDieDatenverarbeitung', 'welcheDatenSammelnWir',
-    'wieVerwendenWirIhreDaten', 'rechtsgrundlageFrDieVerarbeitung', 'wieSchtzenWirIhreDaten',
+    'kampagnenzuordnung', 'wieVerwendenWirIhreDaten', 'rechtsgrundlageFrDieVerarbeitung', 'wieSchtzenWirIhreDaten',
     'diensteDritter', 'cookiesUndTracking', 'ihreDsgvorechte', 'datenaufbewahrung',
     'kinderUndDatenschutz', 'internationaleDatenbermittlung', 'nderungenDieserDatenschutzrichtlinie',
     'kontaktAufnehmen'
   ],
   fr: [
     'introduction', 'responsableDuTraitement', 'quellesDonnesCollectonsnous',
-    'commentUtilisonsnousVosDonnes', 'baseJuridiqueDuTraitement', 'commentProtgeonsnousVosDonnes',
+    'attributionDeCampagne', 'commentUtilisonsnousVosDonnes', 'baseJuridiqueDuTraitement', 'commentProtgeonsnousVosDonnes',
     'servicesTiers', 'cookiesEtSuivi', 'vosDroitsEnVertuDuRgpd', 'conservationDesDonnes',
     'enfantsEtConfidentialit', 'transfertInternationalDeDonnes',
     'modificationsDeCettePolitiqueDeConfidentialit', 'nousContacter'
   ],
   es: [
-    'introduccin', 'responsableDelTratamiento', 'quDatosRecopilamos', 'cmoUsamosTusDatos',
+    'introduccin', 'responsableDelTratamiento', 'quDatosRecopilamos', 'atribucionDeCampana', 'cmoUsamosTusDatos',
     'baseLegalParaElTratamiento', 'cmoProtegemosTusDatos', 'serviciosDeTerceros',
     'cookiesYSeguimiento', 'tusDerechosBajoElRgpd', 'retencinDeDatos', 'niosYPrivacidad',
     'transferenciaInternacionalDeDatos', 'cambiosAEstaPolticaDePrivacidad', 'contactar'
   ],
   it: [
-    'introduzione', 'titolareDelTrattamento', 'qualiDatiRaccogliamo', 'comeUtilizziamoITuoiDati',
+    'introduzione', 'titolareDelTrattamento', 'qualiDatiRaccogliamo', 'attribuzioneCampagna', 'comeUtilizziamoITuoiDati',
     'baseGiuridicaPerIlTrattamento', 'comeProteggiamoITuoiDati', 'serviziDiTerzeParti',
     'cookieETracciamento', 'iTuoiDirittiAiSensiDelGdpr', 'conservazioneDeiDati',
     'bambiniEPrivacy', 'trasferimentoInternazionaleDiDati',
@@ -104,7 +104,7 @@ export default async function PrivacyPage({
 
         <div className="container-custom pb-20">
           <div className="grid gap-12 lg:grid-cols-[15rem_minmax(0,1fr)] lg:gap-16">
-            {/* Fourteen sections is too many to scroll blind. On desktop the
+            {/* This many sections is too much to scroll blind. On desktop the
                 index rides along; on mobile it is skipped entirely rather than
                 stacked, where it would just be a second copy of the page. */}
             <nav

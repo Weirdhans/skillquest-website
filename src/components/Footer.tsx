@@ -80,7 +80,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href={ANDROID_SIGNUP_URL} className="hover:text-white">
-                  Android alpha
+                  Android Early Access
                 </Link>
               </li>
               <li>

@@ -219,9 +219,9 @@
   "waitlist": {
     "badge": "📬 Blijf op de hoogte",
     "heading": "Ontvang SkillQuest updates",
-    "subheading": "Meld je aan voor Android alpha-nieuws, productupdates en praktische tips over skillontwikkeling.",
+    "subheading": "Meld je aan voor Android Early Access-nieuws, productupdates en praktische tips over skillontwikkeling.",
     "benefits": {
-      "earlyAccess": "Android alpha updates",
+      "earlyAccess": "Android Early Access-updates",
       "updates": "Nieuwe functie-updates",
       "tips": "Tips voor het ontwikkelen van vaardigheden"
     },
@@ -285,7 +285,7 @@
     },
     "heading": "Privacybeleid",
     "lastUpdatedLabel": "Laatst bijgewerkt",
-    "lastUpdated": "12 januari 2026",
+    "lastUpdated": "2 september 2026",
     "sections": {
       "introductie": {
         "title": "Introductie",
@@ -298,6 +298,10 @@
       "welkeGegevensVerzamelenWe": {
         "title": "Welke Gegevens Verzamelen We?",
         "content": "<p>### 3.1 Website Analytics</p>\n<p>Wij gebruiken <strong>Vercel Analytics</strong> om anonieme gebruiksgegevens te verzamelen, waaronder:</p>\n<ul>\n<li>Paginaweergaven en navigatiepatronen</li>\n<li>Browsertype en versie</li>\n<li>Apparaatinformatie (desktop/mobiel/tablet)</li>\n<li>Geografische locatie (alleen land/regio niveau)</li>\n<li>Verwijzingsbronnen</li>\n</ul>\n<p>Vercel Analytics werkt zonder cookies en trackt geen individuele gebruikers.</p>\n<p>### 3.2 Android Alpha Updates</p>\n<p>Als je je aanmeldt voor SkillQuest updates of Android alpha-informatie, verzamelen we:</p>\n<ul>\n<li>E-mailadres (verplicht)</li>\n<li>Naam (optioneel)</li>\n<li>Platformvoorkeur (Android)</li>\n</ul>\n<p>Deze gegevens worden veilig opgeslagen in <strong>Supabase</strong> (EU-servers) en gebruikt om je op de hoogte te houden over SkillQuest updates.</p>\n<p>### 3.3 Contactformulieren</p>\n<p>Als je contact met ons opneemt via een contactformulier, verzamelen we:</p>\n<ul>\n<li>Jouw naam</li>\n<li>E-mailadres</li>\n<li>Onderwerp en berichtinhoud</li>\n</ul>\n<p>Deze informatie wordt via <strong>Resend</strong> naar hello@skill-quest.app gestuurd voor klantenondersteuning.</p>\n<p>### 3.4 SkillQuest Mobiele App</p>\n<p>Wanneer je de SkillQuest app gebruikt, verzamelen we appgegevens zoals:</p>\n<ul>\n<li><strong>Accountgegevens:</strong> Gebruikersnaam, e-mail, profielfoto (optioneel)</li>\n<li><strong>Skill Tracking Data:</strong> Vaardigheden, timer logs, XP, levels, streaks</li>\n<li><strong>Family Mode Data:</strong> Ouder-kind accountrelaties, toestemmingsinstellingen</li>\n<li><strong>Apparaatgegevens:</strong> Apparaat-ID voor pushnotificaties, app versie</li>\n<li><strong>Analytics:</strong> In-app gebruikspatronen (anoniem geaggregeerd)</li>\n</ul>\n<p>Alle app-gegevens worden lokaal op jouw apparaat opgeslagen en optioneel gesynchroniseerd naar onze beveiligde servers voor backup en cross-device sync.</p>"
+      },
+      "campagneAttributie": {
+        "title": "Campagnemeting bij aanmeldingen",
+        "content": "<p>Wanneer je je via een campagnelink inschrijft voor SkillQuest-updates, kunnen we de campagnebron, het medium, de campagnenaam en de verwijzende pagina zonder queryparameters bij je aanmelding opslaan. We gebruiken dit om te meten welke promotie mensen naar SkillQuest brengt, niet voor advertentieprofilering.</p>"
       },
       "hoeGebruikenWeJouwGegevens": {
         "title": "Hoe Gebruiken We Jouw Gegevens?",

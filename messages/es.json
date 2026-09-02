@@ -219,9 +219,9 @@
   "waitlist": {
     "badge": "📬 Mantente al día",
     "heading": "Recibe novedades de SkillQuest",
-    "subheading": "Regístrate para noticias de Android alpha, actualizaciones de producto y consejos prácticos para desarrollar habilidades.",
+    "subheading": "Regístrate para recibir noticias del acceso anticipado de Android, actualizaciones de producto y consejos prácticos.",
     "benefits": {
-      "earlyAccess": "Actualizaciones de Android alpha",
+      "earlyAccess": "Actualizaciones del acceso anticipado de Android",
       "updates": "Novedades",
       "tips": "Consejos para desarrollar habilidades"
     },
@@ -285,7 +285,7 @@
     },
     "heading": "Política de Privacidad",
     "lastUpdatedLabel": "Última actualización",
-    "lastUpdated": "12 de enero de 2026",
+    "lastUpdated": "2 de septiembre de 2026",
     "sections": {
       "introduccin": {
         "title": "Introducción",
@@ -298,6 +298,10 @@
       "quDatosRecopilamos": {
         "title": "¿Qué Datos Recopilamos?",
         "content": "<p>### 3.1 Analítica del Sitio Web</p>\n<p>Utilizamos <strong>Vercel Analytics</strong> para recopilar datos de uso anónimos, incluyendo:</p>\n<ul>\n<li>Vistas de páginas y patrones de navegación</li>\n<li>Tipo y versión del navegador</li>\n<li>Información del dispositivo (escritorio/móvil/tableta)</li>\n<li>Ubicación geográfica (solo nivel de país/región)</li>\n<li>Fuentes de referencia</li>\n</ul>\n<p>Vercel Analytics funciona sin cookies y no rastrea usuarios individuales.</p>\n<p>### 3.2 Actualizaciones de Android Alpha</p>\n<p>Si te registras para recibir actualizaciones de SkillQuest o información de Android alpha, recopilamos:</p>\n<ul>\n<li>Dirección de correo electrónico (obligatorio)</li>\n<li>Nombre (opcional)</li>\n<li>Preferencia de plataforma (Android)</li>\n</ul>\n<p>Estos datos se almacenan de forma segura en <strong>Supabase</strong> (servidores de la UE) y se utilizan para mantenerte informado sobre actualizaciones de SkillQuest.</p>\n<p>### 3.3 Formularios de Contacto</p>\n<p>Si nos contactas a través de un formulario de contacto, recopilamos:</p>\n<ul>\n<li>Tu nombre</li>\n<li>Dirección de correo electrónico</li>\n<li>Asunto y contenido del mensaje</li>\n</ul>\n<p>Esta información se envía a través de <strong>Resend</strong> a hello@skill-quest.app para atención al cliente.</p>\n<p>### 3.4 Aplicación móvil SkillQuest</p>\n<p>Cuando usas la aplicación SkillQuest, recopilamos datos de la app como:</p>\n<ul>\n<li><strong>Datos de cuenta:</strong> Nombre de usuario, correo electrónico, foto de perfil (opcional)</li>\n<li><strong>Datos de seguimiento de habilidades:</strong> Habilidades, registros de temporizador, XP, niveles, rachas</li>\n<li><strong>Datos del modo familiar:</strong> Relaciones de cuenta padre-hijo, configuración de consentimiento</li>\n<li><strong>Datos del dispositivo:</strong> ID del dispositivo para notificaciones push, versión de la aplicación</li>\n<li><strong>Analítica:</strong> Patrones de uso dentro de la aplicación (agregados de forma anónima)</li>\n</ul>\n<p>Todos los datos de la aplicación se almacenan localmente en tu dispositivo y opcionalmente se sincronizan con nuestros servidores seguros para copia de seguridad y sincronización entre dispositivos.</p>"
+      },
+      "atribucionDeCampana": {
+        "title": "Medición de campañas en los registros",
+        "content": "<p>Cuando te suscribes a las novedades de SkillQuest mediante un enlace de campaña, podemos guardar con tu registro la fuente, el medio, el nombre de la campaña y la página de referencia sin parámetros de consulta. Lo usamos para medir qué promociones atraen personas a SkillQuest, no para crear perfiles publicitarios.</p>"
       },
       "cmoUsamosTusDatos": {
         "title": "¿Cómo Usamos Tus Datos?",

@@ -34,6 +34,10 @@ interface SubscribeRequest {
   name?: string;
   platform?: Platform;
   locale?: string;
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+  referrer?: string;
   // Honeypot: must stay empty. Real users never see this field (see
   // LeadCapture.tsx); bots that auto-fill every input do.
   company?: string;
@@ -42,6 +46,23 @@ interface SubscribeRequest {
 // Validate platform value
 function isValidPlatform(value: string | undefined): value is Platform {
   return value === 'ios' || value === 'android' || value === 'both';
+}
+
+function mergePlatforms(
+  existingPlatform: string | null | undefined,
+  requestedPlatform: Platform
+): Platform {
+  if (!isValidPlatform(existingPlatform ?? undefined)) {
+    return requestedPlatform;
+  }
+
+  return existingPlatform === requestedPlatform ? existingPlatform : 'both';
+}
+
+function cleanOptionalText(value: unknown, maxLength: number): string | null {
+  if (typeof value !== 'string') return null;
+  const cleaned = value.trim();
+  return cleaned ? cleaned.slice(0, maxLength) : null;
 }
 
 function getClientIp(request: NextRequest): string {
@@ -70,7 +91,11 @@ export async function POST(request: NextRequest) {
     }
 
     // Validate required fields
-    if (!body.email) {
+    const email = typeof body.email === 'string'
+      ? body.email.trim().toLowerCase()
+      : '';
+
+    if (!email) {
       return NextResponse.json(
         { error: "Email is required" },
         { status: 400 }
@@ -79,7 +104,7 @@ export async function POST(request: NextRequest) {
 
     // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(body.email)) {
+    if (!emailRegex.test(email)) {
       return NextResponse.json({ error: "Invalid email format" }, { status: 400 });
     }
 
@@ -105,23 +130,61 @@ export async function POST(request: NextRequest) {
     // Validate and default platform
     const platform: Platform = isValidPlatform(body.platform) ? body.platform : 'both';
     const locale = normalizeEmailLocale(body.locale);
-
-    const email = body.email.toLowerCase();
+    const attribution = {
+      utm_source: cleanOptionalText(body.utm_source, 100),
+      utm_medium: cleanOptionalText(body.utm_medium, 100),
+      utm_campaign: cleanOptionalText(body.utm_campaign, 150),
+      referrer: cleanOptionalText(body.referrer, 500),
+    };
+    const attributionUpdate = Object.fromEntries(
+      Object.entries(attribution).filter(([, value]) => value !== null)
+    );
 
     // Check for duplicate email
-    const { data: existingRecord } = await supabase
+    const { data: existingRecord, error: existingError } = await supabase
       .from("waitlist")
-      .select("id, email, email_verified, created_at")
+      .select("id, email, email_verified, platform_preference")
       .eq("email", email)
-      .single();
+      .maybeSingle();
+
+    if (existingError) {
+      console.error("Supabase duplicate lookup error:", existingError);
+      return NextResponse.json(
+        { error: "Er ging iets mis. Probeer het opnieuw." },
+        { status: 500 }
+      );
+    }
 
     if (existingRecord) {
+      const mergedPlatform = mergePlatforms(
+        existingRecord.platform_preference,
+        platform
+      );
+      const { error: updateError } = await supabase
+        .from("waitlist")
+        .update({
+          platform_preference: mergedPlatform,
+          locale,
+          ...attributionUpdate,
+          updated_at: new Date().toISOString(),
+        })
+        .eq("id", existingRecord.id);
+
+      if (updateError) {
+        console.error("Supabase preference update error:", updateError);
+        return NextResponse.json(
+          { error: "Er ging iets mis. Probeer het opnieuw." },
+          { status: 500 }
+        );
+      }
+
       // Email already exists - differentiate between verified and unverified
       if (existingRecord.email_verified) {
         return NextResponse.json(
           {
             error: "already_verified",
-            message: "Je staat al op de update-lijst. We sturen je bericht zodra er nieuws is.",
+            message: "Je voorkeuren zijn bijgewerkt. Je staat al op de update-lijst.",
+            platform: mergedPlatform,
           },
           { status: 409 }
         );
@@ -131,6 +194,7 @@ export async function POST(request: NextRequest) {
             error: "pending_verification",
             message: "Je hebt je al aangemeld maar nog niet bevestigd. Check je inbox of vraag een nieuwe verificatie-email aan.",
             email: email,
+            platform: mergedPlatform,
           },
           { status: 409 }
         );
@@ -151,6 +215,7 @@ export async function POST(request: NextRequest) {
           platform_preference: platform,
           locale: locale,
           source: "website",
+          ...attribution,
           status: "new",
           email_verified: false,
           confirmation_token: confirmationToken,
