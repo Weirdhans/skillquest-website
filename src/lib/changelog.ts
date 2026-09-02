@@ -10,9 +10,9 @@ const changelogEntries: Record<Locale, ChangelogEntry[]> = {
   en: [
     {
       date: '2026-07-24',
-      title: 'Android alpha signup, the easy way',
+      title: 'Android Early Access, the easy way',
       description:
-        "The Android download button now leads to a simple email signup instead of a broken direct link. Confirm your email, and you'll get an install link as soon as you're added to the closed testing group."
+        'The Android download route now explains the three steps clearly: join the Google Group, opt in to the Play test with the same account, and install SkillQuest from Google Play.'
     },
     {
       date: '2026-07-24',
@@ -42,9 +42,9 @@ const changelogEntries: Record<Locale, ChangelogEntry[]> = {
   nl: [
     {
       date: '2026-07-24',
-      title: 'Android alpha-aanmelding, zonder gedoe',
+      title: 'Android Early Access, zonder gedoe',
       description:
-        'De Android-downloadknop leidt nu naar een eenvoudige e-mailaanmelding in plaats van een kapotte directe link. Bevestig je e-mail en je krijgt een installatielink zodra je aan de closed testing-groep bent toegevoegd.'
+        'De Android-downloadroute legt de drie stappen nu duidelijk uit: word lid van de Google Group, meld je met hetzelfde account aan voor de Play-test en installeer SkillQuest via Google Play.'
     },
     {
       date: '2026-07-24',
@@ -74,9 +74,9 @@ const changelogEntries: Record<Locale, ChangelogEntry[]> = {
   de: [
     {
       date: '2026-07-24',
-      title: 'Android-Alpha-Anmeldung – ganz einfach',
+      title: 'Android Early Access – ganz einfach',
       description:
-        'Der Android-Download-Button führt jetzt zu einer einfachen E-Mail-Anmeldung statt zu einem defekten Direktlink. Bestätige deine E-Mail-Adresse, und du erhältst einen Installationslink, sobald du zur geschlossenen Testgruppe hinzugefügt wurdest.'
+        'Die Android-Downloadseite erklärt jetzt drei klare Schritte: Google-Gruppe beitreten, mit demselben Konto am Play-Test teilnehmen und SkillQuest über Google Play installieren.'
     },
     {
       date: '2026-07-24',
@@ -106,9 +106,9 @@ const changelogEntries: Record<Locale, ChangelogEntry[]> = {
   fr: [
     {
       date: '2026-07-24',
-      title: "S'inscrire à la version alpha d'Android, en toute simplicité",
+      title: 'Accès anticipé Android, en toute simplicité',
       description:
-        "Le bouton de téléchargement Android te redirige désormais vers une simple inscription par e-mail, au lieu d'un lien direct qui ne fonctionne pas. Confirme ton adresse e-mail, et tu recevras un lien d'installation dès que tu auras été ajouté au groupe de test fermé."
+        'La page de téléchargement Android explique maintenant trois étapes simples : rejoindre le groupe Google, accepter le test Play avec le même compte et installer SkillQuest depuis Google Play.'
     },
     {
       date: '2026-07-24',
@@ -138,9 +138,9 @@ const changelogEntries: Record<Locale, ChangelogEntry[]> = {
   es: [
     {
       date: '2026-07-24',
-      title: 'Cómo apuntarte a la alpha de Android de forma sencilla',
+      title: 'Acceso anticipado de Android, de forma sencilla',
       description:
-        'El botón de descarga para Android ahora te lleva a un sencillo proceso de registro por correo electrónico, en lugar de a un enlace directo que no funciona. Confirma tu correo electrónico y recibirás un enlace de instalación en cuanto te añadan al grupo de pruebas cerrado.'
+        'La página de descarga de Android explica ahora tres pasos sencillos: unirse al grupo de Google, aceptar la prueba de Play con la misma cuenta e instalar SkillQuest desde Google Play.'
     },
     {
       date: '2026-07-24',
@@ -170,9 +170,9 @@ const changelogEntries: Record<Locale, ChangelogEntry[]> = {
   it: [
     {
       date: '2026-07-24',
-      title: "Iscriviti all'alpha di Android, in modo semplicissimo",
+      title: 'Accesso anticipato Android, in modo semplicissimo',
       description:
-        "Il pulsante di download per Android ora rimanda a una semplice procedura di registrazione via email, invece che a un link diretto non funzionante. Conferma la tua email e riceverai un link per l'installazione non appena sarai aggiunto al gruppo di test a porte chiuse."
+        'La pagina di download Android ora spiega tre semplici passaggi: unirsi al gruppo Google, accettare il test Play con lo stesso account e installare SkillQuest da Google Play.'
     },
     {
       date: '2026-07-24',

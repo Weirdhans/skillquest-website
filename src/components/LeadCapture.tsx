@@ -5,6 +5,12 @@ import {useLocale} from 'next-intl';
 import type {MarketingCopy} from '@/lib/marketing';
 
 type Platform = 'ios' | 'android' | 'both';
+type CampaignAttribution = {
+  utmSource?: string;
+  utmMedium?: string;
+  utmCampaign?: string;
+  referrer?: string;
+};
 type Status =
   | 'idle'
   | 'loading'
@@ -21,6 +27,27 @@ type LeadCaptureProps = {
   // the lazy useState initializer below.
   initialPlatform?: Platform;
 };
+
+function getCampaignAttribution(): CampaignAttribution {
+  const searchParams = new URLSearchParams(window.location.search);
+  let referrer: string | undefined;
+
+  if (document.referrer) {
+    try {
+      const referrerUrl = new URL(document.referrer);
+      referrer = `${referrerUrl.origin}${referrerUrl.pathname}`;
+    } catch {
+      // Ignore malformed referrers instead of blocking a signup.
+    }
+  }
+
+  return {
+    utmSource: searchParams.get('utm_source') || undefined,
+    utmMedium: searchParams.get('utm_medium') || undefined,
+    utmCampaign: searchParams.get('utm_campaign') || undefined,
+    referrer
+  };
+}
 
 export default function LeadCapture({
   copy,
@@ -49,10 +76,20 @@ export default function LeadCapture({
     setStatus('loading');
 
     try {
+      const attribution = getCampaignAttribution();
       const response = await fetch('/api/subscribe', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({email, platform, locale, company})
+        body: JSON.stringify({
+          email,
+          platform,
+          locale,
+          company,
+          utm_source: attribution.utmSource,
+          utm_medium: attribution.utmMedium,
+          utm_campaign: attribution.utmCampaign,
+          referrer: attribution.referrer
+        })
       });
 
       const data = await response.json();
@@ -144,12 +181,17 @@ export default function LeadCapture({
               <p className="mb-3 text-sm font-medium text-primary-100">
                 {copy.platformQuestion}
               </p>
-              <div className="grid grid-cols-3 gap-2">
+              <div
+                role="group"
+                aria-label={copy.platformQuestion}
+                className="grid grid-cols-3 gap-2"
+              >
                 {platformOptions.map((option) => (
                   <button
                     type="button"
                     key={option.value}
                     onClick={() => setPlatform(option.value)}
+                    aria-pressed={platform === option.value}
                     className={`min-h-11 rounded-lg border px-3 py-2 text-sm font-semibold transition ${
                       platform === option.value
                         ? 'border-white bg-white text-primary-900'
@@ -165,6 +207,8 @@ export default function LeadCapture({
             <div className="flex flex-col gap-3 sm:flex-row">
               <input
                 type="email"
+                name="email"
+                autoComplete="email"
                 value={email}
                 onChange={(event) => {
                   setEmail(event.target.value);

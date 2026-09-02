@@ -219,9 +219,9 @@
   "waitlist": {
     "badge": "📬 Bleiben Sie auf dem Laufenden",
     "heading": "SkillQuest Updates erhalten",
-    "subheading": "Erhalte Android Alpha-News, Produktupdates und praktische Tipps zur Skillentwicklung.",
+    "subheading": "Erhalte Neuigkeiten zu Android Early Access, Produktupdates und praktische Tipps zur Skillentwicklung.",
     "benefits": {
-      "earlyAccess": "Android Alpha Updates",
+      "earlyAccess": "Android Early Access Updates",
       "updates": "Aktualisierungen neuer Funktionen",
       "tips": "Tipps zur Entwicklung von Fertigkeiten"
     },
@@ -285,7 +285,7 @@
     },
     "heading": "Datenschutzrichtlinie",
     "lastUpdatedLabel": "Zuletzt aktualisiert",
-    "lastUpdated": "12. Januar 2026",
+    "lastUpdated": "2. September 2026",
     "sections": {
       "einleitung": {
         "title": "Einleitung",
@@ -298,6 +298,10 @@
       "welcheDatenSammelnWir": {
         "title": "Welche Daten sammeln wir?",
         "content": "<p>### 3.1 Website-Analysen</p>\n<p>Wir verwenden <strong>Vercel Analytics</strong>, um anonyme Nutzungsdaten zu sammeln, darunter:</p>\n<ul>\n<li>Seitenaufrufe und Navigationsmuster</li>\n<li>Browsertyp und -version</li>\n<li>Geräteinformationen (Desktop/Mobil/Tablet)</li>\n<li>Geografischer Standort (nur Länder-/Regionsebene)</li>\n<li>Verweisquellen</li>\n</ul>\n<p>Vercel Analytics funktioniert ohne Cookies und verfolgt keine einzelnen Benutzer.</p>\n<p>### 3.2 Warteliste für Android Beta</p>\n<p>Wenn Sie sich für den frühen Zugang zu unserer Android Beta anmelden, sammeln wir:</p>\n<ul>\n<li>E-Mail-Adresse (erforderlich)</li>\n<li>Name (optional)</li>\n<li>Plattformpräferenz (Android)</li>\n</ul>\n<p>Diese Daten werden sicher in <strong>Supabase</strong> (EU-Server) gespeichert und verwendet, um Sie über den Start der App auf dem Laufenden zu halten.</p>\n<p>### 3.3 Kontaktformulare</p>\n<p>Wenn Sie uns über ein Kontaktformular kontaktieren, sammeln wir:</p>\n<ul>\n<li>Ihren Namen</li>\n<li>E-Mail-Adresse</li>\n<li>Betreff und Nachrichteninhalte</li>\n</ul>\n<p>Diese Informationen werden über <strong>Resend</strong> an hello@skill-quest.app für den Kundensupport gesendet.</p>\n<p>### 3.4 SkillQuest Mobile App (Zukünftig)</p>\n<p>Wenn die SkillQuest App startet, werden wir zusätzliche Daten sammeln:</p>\n<ul>\n<li><strong>Kontodaten:</strong> Benutzername, E-Mail, Profilbild (optional)</li>\n<li><strong>Skill Tracking Daten:</strong> Fähigkeiten, Timer-Protokolle, XP, Level, Streaks</li>\n<li><strong>Family Mode Daten:</strong> Eltern-Kind-Kontobeziehungen, Zustimmungseinstellungen</li>\n<li><strong>Gerätedaten:</strong> Geräte-ID für Push-Benachrichtigungen, App-Version</li>\n<li><strong>Analysen:</strong> In-App-Nutzungsmuster (anonym aggregiert)</li>\n</ul>\n<p>Alle App-Daten werden lokal auf Ihrem Gerät gespeichert und optional zur Sicherung und geräteübergreifenden Synchronisierung auf unsere sicheren Server synchronisiert.</p>"
+      },
+      "kampagnenzuordnung": {
+        "title": "Kampagnenmessung bei Anmeldungen",
+        "content": "<p>Wenn du dich über einen Kampagnenlink für SkillQuest-Updates anmeldest, können wir Kampagnenquelle, Medium, Kampagnenname und die verweisende Seite ohne Abfrageparameter bei deiner Anmeldung speichern. Wir verwenden dies, um zu messen, welche Werbung Menschen zu SkillQuest bringt, nicht für Werbeprofile.</p>"
       },
       "wieVerwendenWirIhreDaten": {
         "title": "Wie verwenden wir Ihre Daten?",

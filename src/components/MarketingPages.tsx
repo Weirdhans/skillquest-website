@@ -9,7 +9,6 @@ import {
   ANDROID_ALPHA_JOIN_URL,
   ANDROID_STORE_URL,
   ANDROID_TESTERS_GROUP_URL,
-  ANDROID_SIGNUP_URL,
   APP_STORE_URL,
   type Locale,
   type MarketingCopy,
@@ -532,7 +531,7 @@ export function DownloadMarketingPage({
 
             <Reveal delay={0.08}>
               <article
-                id="android-alpha"
+                id="android-early-access"
                 className="h-full border-t pt-6 md:border-l md:border-t-0 md:pl-14 md:pt-0"
                 style={{borderColor: 'var(--sq-border)'}}
               >
@@ -545,9 +544,14 @@ export function DownloadMarketingPage({
                 <p className="mt-4 leading-relaxed theme-copy">
                   {copy.download.androidBody}
                 </p>
-                <Link href={ANDROID_SIGNUP_URL} className="btn btn-primary mt-7">
+                <a
+                  href={ANDROID_TESTERS_GROUP_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-primary mt-7"
+                >
                   {copy.download.androidCta}
-                </Link>
+                </a>
                 <p className="mt-4 text-sm leading-relaxed theme-copy">
                   {copy.download.testerNote}
                 </p>
