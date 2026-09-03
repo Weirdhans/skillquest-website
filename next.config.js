@@ -5,6 +5,27 @@ const withNextIntl = require('next-intl/plugin')(
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  async redirects() {
+    // Historical URLs reported by Search Console. Keep this list explicit so
+    // unrelated missing pages and app callback routes retain their behavior.
+    return [
+      {
+        source: '/en/app',
+        destination: '/en/download',
+        permanent: true,
+      },
+      {
+        source: '/nl/handleiding',
+        destination: '/nl/guides',
+        permanent: true,
+      },
+      {
+        source: '/es/faq',
+        destination: '/es/support#faq',
+        permanent: true,
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {

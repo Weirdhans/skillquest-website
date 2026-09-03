@@ -242,7 +242,7 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
         {
           question: 'Voor welke leeftijd is SkillQuest bedoeld?',
           answer:
-            'SkillQuest gebruikt een 13+ privacykader. Marketing rond kinderen moet daarom zorgvuldig worden geformuleerd.'
+            'SkillQuest is bedoeld voor gebruikers van 13 jaar en ouder, ook binnen Family.'
         }
       ]
     },
@@ -288,7 +288,7 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
           bullets: [
             'Start direct met core skill tracking.',
             'Maak later een account voor sync, vrienden, rankings en uitgebreidere functies.',
-            'Geen advertenties in de marketingpositionering, mits release-audit dit blijft bevestigen.'
+            'Je voortgang wordt lokaal op je apparaat opgeslagen.'
           ]
         }
       ],
@@ -341,8 +341,7 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
             'Premium is bedoeld voor gebruikers die verder willen kijken dan de basisstatistieken.',
           bullets: [
             'Uitgebreidere statistieken en trends.',
-            'Meer sessiehistorie voor lange termijn inzicht.',
-            'Data export staat als Premium feature in de productmodellen en moet zichtbaar worden bevestigd voor prominente claims.'
+            'Meer sessiehistorie voor lange termijn inzicht.'
           ]
         },
         {
@@ -1020,7 +1019,7 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
         {
           question: 'What age is SkillQuest for?',
           answer:
-            'SkillQuest uses a 13+ privacy framework, so child-focused marketing should be phrased carefully.'
+            'SkillQuest is intended for users aged 13 and up, including those using Family.'
         }
       ]
     },
@@ -1066,7 +1065,7 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
           bullets: [
             'Start with core skill tracking immediately.',
             'Create an account later for sync, friends, rankings, and expanded features.',
-            'Ad-free positioning should remain tied to release audits.'
+            'Your progress is stored locally on your device.'
           ]
         }
       ],
@@ -1119,8 +1118,7 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
             'Premium is for users who want to look beyond basic statistics.',
           bullets: [
             'Expanded statistics and trends.',
-            'More session history for long-term insight.',
-            'Data export exists in product models and should be visually confirmed before prominent claims.'
+            'More session history for long-term insight.'
           ]
         },
         {
@@ -1803,7 +1801,7 @@ pages.de = {
       {
         question: 'Ist SkillQuest für junge Kinder gedacht?',
         answer:
-          'SkillQuest nutzt einen 13+-Datenschutzrahmen. Marketing rund um Kinder muss deshalb sorgfältig formuliert werden.'
+          'SkillQuest richtet sich an Nutzer ab 13 Jahren, auch innerhalb von Family.'
       }
     ]
   },
@@ -1903,8 +1901,7 @@ pages.de = {
         bullets: [
           'Erweiterte Statistiken und Trends.',
           'Mehr Verlauf für langfristige Routinen.',
-          'Bessere Sicht auf Skill-Aufschlüsselungen.',
-          'Datenexport ist im Produktmodell als Premium-Funktion vorhanden und sollte vor prominenten Claims sichtbar bestätigt werden.'
+          'Bessere Sicht auf Skill-Aufschlüsselungen.'
         ]
       },
       {
@@ -2583,7 +2580,7 @@ pages.fr = {
       {
         question: 'SkillQuest est-il destiné aux jeunes enfants ?',
         answer:
-          'SkillQuest utilise un cadre de confidentialité 13+. Le marketing autour des enfants doit donc rester formulé avec prudence.'
+          'SkillQuest est destiné aux utilisateurs de 13 ans et plus, y compris dans Family.'
       }
     ]
   },
@@ -2683,8 +2680,7 @@ pages.fr = {
         bullets: [
           'Statistiques et tendances étendues.',
           'Plus d’historique pour les routines à long terme.',
-          'Meilleure visibilité sur les répartitions par compétence.',
-          'L’export de données existe comme fonction Premium dans les modèles produit et doit être confirmé visiblement avant toute promesse forte.'
+          'Meilleure visibilité sur les répartitions par compétence.'
         ]
       },
       {
@@ -3363,7 +3359,7 @@ pages.es = {
       {
         question: '¿SkillQuest está pensado para niños pequeños?',
         answer:
-          'SkillQuest usa un marco de privacidad 13+. Por eso el marketing sobre niños debe formularse con cuidado.'
+          'SkillQuest está dirigido a usuarios de 13 años o más, también dentro de Family.'
       }
     ]
   },
@@ -3463,8 +3459,7 @@ pages.es = {
         bullets: [
           'Estadísticas y tendencias ampliadas.',
           'Más historial para rutinas a largo plazo.',
-          'Mejor visibilidad de desgloses por habilidad.',
-          'La exportación de datos aparece como función Premium en los modelos de producto y debe confirmarse visualmente antes de hacer claims destacados.'
+          'Mejor visibilidad de desgloses por habilidad.'
         ]
       },
       {
@@ -4143,7 +4138,7 @@ pages.it = {
       {
         question: 'SkillQuest è pensato per bambini piccoli?',
         answer:
-          'SkillQuest usa un quadro privacy 13+. Per questo il marketing sui bambini deve essere formulato con attenzione.'
+          'SkillQuest è destinato a utenti dai 13 anni in su, anche con Family.'
       }
     ]
   },
@@ -4243,8 +4238,7 @@ pages.it = {
         bullets: [
           'Statistiche e trend ampliati.',
           'Più storico per routine a lungo termine.',
-          'Migliore visibilità sulle suddivisioni per skill.',
-          'L’export dati è indicato come funzione Premium nei modelli prodotto e va confermato visibilmente prima di claim importanti.'
+          'Migliore visibilità sulle suddivisioni per skill.'
         ]
       },
       {
