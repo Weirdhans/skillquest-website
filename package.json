@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "test:seo": "node --test tests/seo-cleanup.test.mjs",
+    "test:seo": "node --test tests/seo-cleanup.test.mjs tests/pagespeed-ui.test.mjs",
     "test:seo:http": "node --test tests/seo-http.test.mjs"
   },
   "author": "Hans",

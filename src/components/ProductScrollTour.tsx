@@ -107,32 +107,25 @@ export default function ProductScrollTour({
                   <li
                     key={caption}
                     data-step={i}
+                    aria-current={i === active ? 'step' : undefined}
                     ref={(el) => {
                       stepRefs.current[i] = el;
                     }}
                     className="flex items-center"
                     style={{height: `${STEP_VH}vh`}}
                   >
-                    <div
-                      className="flex items-baseline gap-5 transition-opacity duration-500"
-                      style={{opacity: i === active ? 1 : 0.3}}
-                    >
+                    <div className="flex items-baseline gap-5">
                       <span
-                        className="nums text-sm"
-                        style={{color: 'var(--sq-brand)'}}
+                        className={`nums text-sm theme-muted-strong ${
+                          i === active ? 'underline decoration-2 underline-offset-8' : ''
+                        }`}
                         aria-hidden
                       >
                         {String(i + 1).padStart(2, '0')}
                       </span>
                       <span
                         className="font-display text-balance theme-title"
-                        style={{
-                          fontSize:
-                            i === active
-                              ? 'clamp(1.75rem, 2.6vw, 2.5rem)'
-                              : 'clamp(1.5rem, 2vw, 1.875rem)',
-                          transition: 'font-size 400ms cubic-bezier(0.16,1,0.3,1)'
-                        }}
+                        style={{fontSize: 'clamp(1.75rem, 2.6vw, 2.5rem)'}}
                       >
                         {caption}
                       </span>
