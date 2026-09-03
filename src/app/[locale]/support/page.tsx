@@ -1,6 +1,7 @@
+import type {Metadata} from 'next';
 import Footer from '@/components/Footer';
 import {Link, routing} from '@/i18n/routing';
-import {faqJsonLd} from '@/lib/marketing';
+import {createPageMetadata, faqJsonLd, isLocale} from '@/lib/marketing';
 
 const SUPPORT_EMAIL = 'hello@skill-quest.app';
 const WEBSITE_URL = 'https://www.skill-quest.app';
@@ -407,14 +408,17 @@ export async function generateMetadata({
   params
 }: {
   params: Promise<{locale: string}>;
-}) {
+}): Promise<Metadata> {
   const {locale} = await params;
-  const copy = copyByLocale[locale] ?? copyByLocale.nl;
+  const safeLocale = isLocale(locale) ? locale : routing.defaultLocale;
+  const copy = copyByLocale[safeLocale];
 
-  return {
+  return createPageMetadata({
+    locale: safeLocale,
+    path: '/support',
     title: copy.metaTitle,
     description: copy.metaDescription
-  };
+  });
 }
 
 export default async function SupportPage({
@@ -527,7 +531,7 @@ export default async function SupportPage({
             </section>
           </div>
 
-          <section className="mt-16 border-t pt-12" style={hairline}>
+          <section id="faq" className="mt-16 scroll-mt-24 border-t pt-12" style={hairline}>
             <h2 className="font-display text-section text-balance theme-title">
               {copy.faqHeading}
             </h2>

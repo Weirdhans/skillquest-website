@@ -345,7 +345,7 @@ export const marketingCopy = {
     trust: {
       heading: 'Built for trust before scale',
       items: [
-        'Store and release information is kept factual and current.',
+        'Read about app changes on the “What’s new” page.',
         'App Store is live. Android is clearly marked as Early Access / closed testing.',
         'Support is available at hello@skill-quest.app.',
         'Account deletion and privacy pages are linked from every locale.'
@@ -671,7 +671,7 @@ export const marketingCopy = {
     trust: {
       heading: 'Gebouwd voor vertrouwen',
       items: [
-        'Store- en release-informatie blijft feitelijk en actueel.',
+        'Lees over appwijzigingen op de pagina “Wat is er nieuw”.',
         'App Store is live. Android staat duidelijk als Early Access / closed testing.',
         'Support is bereikbaar via hello@skill-quest.app.',
         'Privacy en accountverwijdering zijn in elke taal gelinkt.'
@@ -997,7 +997,7 @@ export const marketingCopy = {
     trust: {
       heading: 'Erst Vertrauen, dann Wachstum',
       items: [
-        'Store- und Release-Informationen bleiben sachlich und aktuell.',
+        'Lies auf der Seite „Neuigkeiten“, was sich in der App geändert hat.',
         'Der App Store ist live. Android ist klar als Early Access / Closed Testing gekennzeichnet.',
         'Support gibt es über hello@skill-quest.app.',
         'Datenschutz und Kontolöschung sind in jeder Sprache verlinkt.'
@@ -1323,7 +1323,7 @@ export const marketingCopy = {
     trust: {
       heading: 'La confiance avant la croissance',
       items: [
-        'Les informations de store et de release restent factuelles et à jour.',
+        'Consultez les changements de l’app sur la page « Nouveautés ».',
         'L’App Store est disponible. Android est indiqué comme accès anticipé / test fermé.',
         'Le support est disponible via hello@skill-quest.app.',
         'La confidentialité et la suppression de compte sont liées dans chaque langue.'
@@ -1649,7 +1649,7 @@ export const marketingCopy = {
     trust: {
       heading: 'Confianza antes de crecer',
       items: [
-        'La información de tiendas y releases se mantiene factual y actualizada.',
+        'Consulta los cambios de la app en la página «Novedades».',
         'App Store está disponible. Android se marca claramente como acceso anticipado / prueba cerrada.',
         'Soporte disponible en hello@skill-quest.app.',
         'Privacidad y eliminación de cuenta están enlazadas en cada idioma.'
@@ -1975,7 +1975,7 @@ export const marketingCopy = {
     trust: {
       heading: 'Fiducia prima della crescita',
       items: [
-        'Le informazioni su store e release restano fattuali e aggiornate.',
+        'Leggi gli aggiornamenti dell’app nella pagina «Novità».',
         'App Store è live. Android è indicato chiaramente come accesso anticipato / test chiuso.',
         'Il supporto è disponibile a hello@skill-quest.app.',
         'Privacy ed eliminazione account sono linkate in ogni lingua.'
