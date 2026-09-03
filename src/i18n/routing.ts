@@ -9,6 +9,10 @@ export const routing = defineRouting({
   // Default locale
   defaultLocale: 'nl',
 
+  // Page metadata owns hreflang URLs on our canonical www domain. Generating
+  // a second set from the request host makes non-www URLs conflict with it.
+  alternateLinks: false,
+
   // Always show locale prefix in URL
   localePrefix: 'always'
 });

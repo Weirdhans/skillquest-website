@@ -85,7 +85,11 @@ Voor de HTTP-regressietests start je na de build de lokale productieserver met
 `npm run start -- --port 3100` en voer je in een tweede terminal
 `npm run test:seo:http` uit. Met `SEO_TEST_BASE_URL` kun je een andere testserver
 kiezen. De tests controleren redirects, campagneparameters, canonieke bestemmingen,
-echte 404-responses en de bereikbaarheid van bestaande callback- en resetpagina's.
+consistente hreflang-verwijzingen in HTML en HTTP-headers, echte 404-responses en
+de bereikbaarheid van bestaande callback- en resetpagina's. Lokaal worden ook
+beide publieke hostnamen gesimuleerd. Na publicatie voer je dezelfde tests uit
+tegen zowel `https://skill-quest.app` als `https://www.skill-quest.app`.
+De broncodetests bewaken de directe zichtbaarheid van de hero en geldige lijststructuur.
 Er worden geen formulieren verstuurd.
 
 Kopieer `.env.example` naar `.env.local` en vul de Supabase- en Resend-sleutels in

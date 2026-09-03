@@ -252,34 +252,28 @@ export function HomeMarketingPage({locale, copy}: PageProps) {
                 ~765px to hold two lines. The phone is capped at 300px anyway,
                 so the extra width costs it nothing. */}
             <div className="grid w-full items-center gap-12 lg:grid-cols-[9fr_3fr] lg:gap-12">
-              <Stagger>
-                <StaggerItem>
-                  <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary-200">
-                    {copy.hero.eyebrow}
-                  </p>
-                </StaggerItem>
-                <StaggerItem>
-                  {/* No ch-based max-width here. A ch cap scales with font-size,
-                      so it pins the headline to a fixed character count and the
-                      longer locales wrap to three lines no matter how the type
-                      scale is tuned. The grid column is the only limit. */}
-                  <h1 className="mt-5 font-display text-display text-balance">
-                    {copy.hero.title}
-                  </h1>
-                </StaggerItem>
-                <StaggerItem>
-                  <p className="mt-6 max-w-[46ch] text-lead text-gray-200">
-                    {copy.hero.subtitle}
-                  </p>
-                </StaggerItem>
-                <StaggerItem>
-                  <StoreLinks
-                    appStoreLabel={copy.hero.primaryCta}
-                    androidLabel={copy.hero.secondaryCta}
-                    className="mt-9"
-                  />
-                </StaggerItem>
-              </Stagger>
+              {/* Keep the headline and actions visible in the server HTML;
+                  their first paint must not wait for an entrance animation. */}
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary-200">
+                  {copy.hero.eyebrow}
+                </p>
+                {/* No ch-based max-width here. A ch cap scales with font-size,
+                    so it pins the headline to a fixed character count and the
+                    longer locales wrap to three lines no matter how the type
+                    scale is tuned. The grid column is the only limit. */}
+                <h1 className="mt-5 font-display text-display text-balance">
+                  {copy.hero.title}
+                </h1>
+                <p className="mt-6 max-w-[46ch] text-lead text-gray-200">
+                  {copy.hero.subtitle}
+                </p>
+                <StoreLinks
+                  appStoreLabel={copy.hero.primaryCta}
+                  androidLabel={copy.hero.secondaryCta}
+                  className="mt-9"
+                />
+              </div>
 
               {/* The screenshot was a 0.18-opacity background wash. Shipping the
                   full 1080x1920 PNG for a decorative blur was also the LCP cost
@@ -421,10 +415,10 @@ export function HomeMarketingPage({locale, copy}: PageProps) {
               </Reveal>
               <ul className="mt-8 divide-y" style={{borderColor: 'var(--sq-border)'}}>
                 {copy.trust.items.map((item, i) => (
-                  <Reveal key={item} delay={i * 0.05}>
-                    <li
+                  <li key={item} style={{borderColor: 'var(--sq-border)'}}>
+                    <Reveal
+                      delay={i * 0.05}
                       className="flex gap-4 py-4 theme-muted-strong"
-                      style={{borderColor: 'var(--sq-border)'}}
                     >
                       <CheckCircle
                         size={22}
@@ -433,8 +427,8 @@ export function HomeMarketingPage({locale, copy}: PageProps) {
                         aria-hidden
                       />
                       <span>{item}</span>
-                    </li>
-                  </Reveal>
+                    </Reveal>
+                  </li>
                 ))}
               </ul>
             </div>
