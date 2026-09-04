@@ -90,6 +90,8 @@ de bereikbaarheid van bestaande callback- en resetpagina's. Lokaal worden ook
 beide publieke hostnamen gesimuleerd. Na publicatie voer je dezelfde tests uit
 tegen zowel `https://skill-quest.app` als `https://www.skill-quest.app`.
 De broncodetests bewaken de directe zichtbaarheid van de hero en geldige lijststructuur.
+De HTTP-tests controleren ook de compacte screenshotvarianten (400/448/576px)
+en vergelijken de bestandsgrootte bij dezelfde beeldkwaliteit met de 640px-variant.
 Er worden geen formulieren verstuurd.
 
 Kopieer `.env.example` naar `.env.local` en vul de Supabase- en Resend-sleutels in

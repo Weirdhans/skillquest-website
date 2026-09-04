@@ -27,6 +27,9 @@ const nextConfig = {
     ];
   },
   images: {
+    // Keep the default widths and bridge the 384 -> 640 gap for compact
+    // screenshots: 224px at ~1.75x/2x and 288px at 2x display density.
+    imageSizes: [32, 48, 64, 96, 128, 256, 384, 400, 448, 576],
     remotePatterns: [
       {
         protocol: 'https',

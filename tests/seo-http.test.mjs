@@ -74,6 +74,24 @@ for (const locale of locales) {
 
     assert.equal(response.status, 200);
     assertLanguageMetadata(response, html, locale);
+
+    const familyImage = [...html.matchAll(/<img\b[^>]*>/g)]
+      .map(([tag]) => tag)
+      .find((tag) => tag.includes('06-social-family.png'));
+    assert.ok(familyImage, 'family screenshot is present');
+    assert.match(familyImage, /loading="lazy"/);
+    const srcSet = familyImage.match(/\bsrcset="([^"]+)"/i)?.[1];
+    assert.ok(srcSet, 'responsive image variants are advertised');
+    const variants = srcSet.split(',').map((candidate) => {
+      const [url, descriptor] = candidate.trim().split(/\s+/);
+      const params = new URL(url.replaceAll('&amp;', '&'), origin).searchParams;
+      assert.equal(descriptor, `${params.get('w')}w`);
+      assert.equal(params.get('q'), '75', 'image quality is unchanged');
+      return Number(params.get('w'));
+    });
+    for (const width of [384, 400, 448, 576, 640, 1080]) {
+      assert.ok(variants.includes(width), `responsive ${width}px variant is available`);
+    }
   });
 
   test(`${locale} support metadata refers to support, not the homepage`, async () => {
@@ -87,6 +105,26 @@ for (const locale of locales) {
     assertLanguageMetadata(response, html, locale, '/support');
   });
 }
+
+test('compact family image variants work and reduce bytes without lowering quality', async (t) => {
+  const sizes = new Map();
+  for (const width of [400, 448, 576, 640]) {
+    const url = new URL('/_next/image', origin);
+    url.search = new URLSearchParams({
+      url: '/screenshots/en/06-social-family.png',
+      w: String(width),
+      q: '75'
+    }).toString();
+    const response = await fetch(url, {headers: {accept: 'image/webp'}, redirect: 'manual'});
+    assert.equal(response.status, 200, `${width}px variant is served`);
+    assert.match(response.headers.get('content-type') ?? '', /^image\/webp\b/);
+    const bytes = (await response.arrayBuffer()).byteLength;
+    assert.ok(bytes > 0);
+    sizes.set(width, bytes);
+  }
+  assert.ok(sizes.get(400) < sizes.get(640), '400px variant is smaller than the old 640px choice');
+  t.diagnostic(`Family screenshot bytes at quality 75: ${JSON.stringify(Object.fromEntries(sizes))}`);
+});
 
 // Reproduce the original www/non-www mismatch without changing DNS or routing.
 if (['localhost', '127.0.0.1'].includes(new URL(origin).hostname)) {
