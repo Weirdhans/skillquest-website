@@ -2,8 +2,8 @@
 
 import {useEffect, useRef, useState} from 'react';
 import Image from 'next/image';
-import {useReducedMotion} from 'framer-motion';
 import {screenshotNames, screenshotPath, type Locale} from '@/lib/marketing';
+import {usePrefersReducedMotion} from '@/lib/use-prefers-reduced-motion';
 
 // The phone stays pinned while the captions scroll past it, and the screen
 // changes to match the caption you are reading. The seven captions are the
@@ -31,7 +31,7 @@ export default function ProductScrollTour({
 }) {
   const stepRefs = useRef<Array<HTMLLIElement | null>>([]);
   const [active, setActive] = useState(0);
-  const reduce = useReducedMotion();
+  const reduce = usePrefersReducedMotion();
 
   useEffect(() => {
     if (reduce) return;

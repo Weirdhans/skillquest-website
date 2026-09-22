@@ -1,7 +1,8 @@
 'use client';
 
-import {motion, useReducedMotion} from 'framer-motion';
+import {motion} from 'framer-motion';
 import type {ReactNode} from 'react';
+import {usePrefersReducedMotion} from '@/lib/use-prefers-reduced-motion';
 
 // Motion primitives, isolated as client leaves so the marketing pages themselves
 // stay server components.
@@ -11,6 +12,11 @@ import type {ReactNode} from 'react';
 //   Stagger - communicates reading order in the hero (headline, then sub, then CTAs)
 //
 // Both collapse to static under prefers-reduced-motion.
+//
+// The hidden start state is always rendered, because it is what the server
+// sent: switching `initial` on the reduced-motion preference made the client's
+// first render disagree with the SSR markup. Reduced motion instead makes the
+// transition instant, so nothing moves.
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -23,15 +29,15 @@ export function Reveal({
   delay?: number;
   className?: string;
 }) {
-  const reduce = useReducedMotion();
+  const reduce = usePrefersReducedMotion();
 
   return (
     <motion.div
       className={className}
-      initial={reduce ? false : {opacity: 0, y: 24}}
+      initial={{opacity: 0, y: 24}}
       whileInView={{opacity: 1, y: 0}}
       viewport={{once: true, amount: 0.25}}
-      transition={{duration: 0.6, delay, ease: EASE}}
+      transition={reduce ? {duration: 0} : {duration: 0.6, delay, ease: EASE}}
     >
       {children}
     </motion.div>
@@ -47,16 +53,16 @@ export function Stagger({
   className?: string;
   gap?: number;
 }) {
-  const reduce = useReducedMotion();
+  const reduce = usePrefersReducedMotion();
 
   return (
     <motion.div
       className={className}
-      initial={reduce ? false : 'hidden'}
+      initial="hidden"
       animate="visible"
       variants={{
         hidden: {},
-        visible: {transition: {staggerChildren: gap}}
+        visible: {transition: {staggerChildren: reduce ? 0 : gap}}
       }}
     >
       {children}
@@ -71,14 +77,18 @@ export function StaggerItem({
   children: ReactNode;
   className?: string;
 }) {
-  const reduce = useReducedMotion();
+  const reduce = usePrefersReducedMotion();
 
   return (
     <motion.div
       className={className}
       variants={{
-        hidden: reduce ? {} : {opacity: 0, y: 20},
-        visible: {opacity: 1, y: 0, transition: {duration: 0.65, ease: EASE}}
+        hidden: {opacity: 0, y: 20},
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: reduce ? {duration: 0} : {duration: 0.65, ease: EASE}
+        }
       }}
     >
       {children}
