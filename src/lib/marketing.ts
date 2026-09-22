@@ -5,8 +5,13 @@ export type Locale = (typeof routing.locales)[number];
 
 export const SITE_URL = 'https://www.skill-quest.app';
 export const SUPPORT_EMAIL = 'hello@skill-quest.app';
+// Canonical listing for structured data and search engines.
+export const APP_STORE_LISTING_URL =
+  'https://apps.apple.com/app/skillquest-skill-tracker/id6755604671';
+// Store buttons carry an App Store Connect campaign token (ct), so installs
+// from the website show up under Analytics -> Campaigns. pt is the provider ID.
 export const APP_STORE_URL =
-  'https://apps.apple.com/us/app/skillquest-skill-tracker/id6755604671?uo=4';
+  'https://apps.apple.com/app/apple-store/id6755604671?pt=128291575&ct=website&mt=8';
 export const ANDROID_ALPHA_JOIN_URL =
   'https://play.google.com/apps/testing/com.skillquest.app';
 export const ANDROID_TESTERS_GROUP_URL =
@@ -195,8 +200,8 @@ export function softwareApplicationJsonLd(locale: Locale) {
         priceCurrency: 'EUR'
       }
     ],
-    downloadUrl: APP_STORE_URL,
-    sameAs: [APP_STORE_URL, ANDROID_ALPHA_JOIN_URL]
+    downloadUrl: APP_STORE_LISTING_URL,
+    sameAs: [APP_STORE_LISTING_URL, ANDROID_ALPHA_JOIN_URL]
   };
 }
 
