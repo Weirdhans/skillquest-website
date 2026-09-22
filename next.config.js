@@ -36,6 +36,13 @@ const nextConfig = {
         destination: '/?utm_source=facebook&utm_medium=social&utm_campaign=bio',
         permanent: false,
       },
+      // LinkedIn tester recruitment: straight to the Android early-access steps.
+      {
+        source: '/li',
+        destination:
+          '/download?platform=android&utm_source=linkedin&utm_medium=social&utm_campaign=testers#android-early-access',
+        permanent: false,
+      },
     ];
   },
   images: {
