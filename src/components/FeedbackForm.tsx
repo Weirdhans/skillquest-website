@@ -153,6 +153,14 @@ export default function FeedbackForm({copy}: {copy: FeedbackCopy}) {
         <span>{copy.consentLabel}</span>
       </label>
 
+      <p className="text-sm theme-copy">
+        {copy.screenshotNote.split('hello@skill-quest.app')[0]}
+        <a href="mailto:hello@skill-quest.app?subject=SkillQuest%20feedback" className="font-semibold underline theme-title">
+          hello@skill-quest.app
+        </a>
+        {copy.screenshotNote.split('hello@skill-quest.app')[1] ?? ''}
+      </p>
+
       {status === 'missing' && (
         <p role="alert" className="rounded-lg bg-amber-500 px-4 py-3 text-sm font-medium text-white">
           {copy.missingAnswers}

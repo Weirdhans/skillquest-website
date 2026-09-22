@@ -27,6 +27,7 @@ export type FeedbackCopy = {
   rateLimited: string;
   missingAnswers: string;
   downloadCta: string;
+  screenshotNote: string;
 };
 
 export const feedbackCopy: Record<(typeof routing.locales)[number], FeedbackCopy> = {
@@ -54,7 +55,8 @@ export const feedbackCopy: Record<(typeof routing.locales)[number], FeedbackCopy
     "error": "Er ging iets mis. Probeer het zo nog eens.",
     "rateLimited": "Je hebt in korte tijd meerdere antwoorden gestuurd. Probeer het later nog eens.",
     "missingAnswers": "Beantwoord de drie vragen en kies je toestel.",
-    "downloadCta": "Geef je feedback"
+    "downloadCta": "Geef je feedback",
+    "screenshotNote": "Heb je een screenshot? Mail hem naar hello@skill-quest.app."
   },
   "en": {
     "metaTitle": "Share your feedback - SkillQuest",
@@ -80,7 +82,8 @@ export const feedbackCopy: Record<(typeof routing.locales)[number], FeedbackCopy
     "error": "Something went wrong. Please try again in a moment.",
     "rateLimited": "You've sent several answers in a short time. Please try again later.",
     "missingAnswers": "Please answer the three questions and choose your device.",
-    "downloadCta": "Share your feedback"
+    "downloadCta": "Share your feedback",
+    "screenshotNote": "Have a screenshot? Email it to hello@skill-quest.app."
   },
   "de": {
     "metaTitle": "Teile uns dein Feedback mit – SkillQuest",
@@ -106,7 +109,8 @@ export const feedbackCopy: Record<(typeof routing.locales)[number], FeedbackCopy
     "error": "Es ist ein Fehler aufgetreten. Bitte versuch es in einem Moment noch einmal.",
     "rateLimited": "Du hast innerhalb kurzer Zeit mehrere Antworten abgeschickt. Bitte versuch es später noch einmal.",
     "missingAnswers": "Bitte beantworte die drei Fragen und wähle dein Gerät aus.",
-    "downloadCta": "Teile uns dein Feedback mit"
+    "downloadCta": "Teile uns dein Feedback mit",
+    "screenshotNote": "Hast du einen Screenshot? Schick ihn per E-Mail an hello@skill-quest.app."
   },
   "fr": {
     "metaTitle": "Donne-nous ton avis - SkillQuest",
@@ -132,7 +136,8 @@ export const feedbackCopy: Record<(typeof routing.locales)[number], FeedbackCopy
     "error": "Une erreur s'est produite. Essaie à nouveau dans quelques instants.",
     "rateLimited": "Tu as envoyé plusieurs réponses en peu de temps. Essaie à nouveau plus tard.",
     "missingAnswers": "Réponds aux trois questions et choisis ton appareil.",
-    "downloadCta": "Donne-nous ton avis"
+    "downloadCta": "Donne-nous ton avis",
+    "screenshotNote": "Tu as une capture d'écran ? Envoie-la par e-mail à hello@skill-quest.app."
   },
   "es": {
     "metaTitle": "Comparte tu opinión - SkillQuest",
@@ -158,7 +163,8 @@ export const feedbackCopy: Record<(typeof routing.locales)[number], FeedbackCopy
     "error": "Ha habido un error. Inténtalo de nuevo dentro de un momento.",
     "rateLimited": "Has enviado varias respuestas en poco tiempo. Inténtalo de nuevo más tarde.",
     "missingAnswers": "Por favor, responde a las tres preguntas y elige tu dispositivo.",
-    "downloadCta": "Comparte tu opinión"
+    "downloadCta": "Comparte tu opinión",
+    "screenshotNote": "¿Tienes una captura de pantalla? Envíala por correo electrónico a hello@skill-quest.app."
   },
   "it": {
     "metaTitle": "Condividi il tuo feedback - SkillQuest",
@@ -184,7 +190,8 @@ export const feedbackCopy: Record<(typeof routing.locales)[number], FeedbackCopy
     "error": "Si è verificato un errore. Riprova tra un attimo.",
     "rateLimited": "Hai inviato diverse risposte in poco tempo. Prova di nuovo più tardi.",
     "missingAnswers": "Rispondi alle tre domande e scegli il tuo dispositivo.",
-    "downloadCta": "Condividi il tuo parere"
+    "downloadCta": "Condividi il tuo parere",
+    "screenshotNote": "Hai uno screenshot? Mandalo via email a hello@skill-quest.app."
   }
 };
 

@@ -23,7 +23,8 @@
     "error": "Something went wrong. Please try again in a moment.",
     "rateLimited": "You've sent several answers in a short time. Please try again later.",
     "missingAnswers": "Please answer the three questions and choose your device.",
-    "downloadCta": "Share your feedback"
+    "downloadCta": "Share your feedback",
+    "screenshotNote": "Have a screenshot? Email it to hello@skill-quest.app."
   },
   "nl": {
     "metaTitle": "Geef je feedback - SkillQuest",
@@ -49,6 +50,7 @@
     "error": "Er ging iets mis. Probeer het zo nog eens.",
     "rateLimited": "Je hebt in korte tijd meerdere antwoorden gestuurd. Probeer het later nog eens.",
     "missingAnswers": "Beantwoord de drie vragen en kies je toestel.",
-    "downloadCta": "Geef je feedback"
+    "downloadCta": "Geef je feedback",
+    "screenshotNote": "Heb je een screenshot? Mail hem naar hello@skill-quest.app."
   }
 }
