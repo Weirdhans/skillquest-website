@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import {Link} from '@/i18n/routing';
 import LeadCapture from '@/components/LeadCapture';
+import {getFeedbackCopy} from '@/lib/feedback-copy';
 import StoreLinks from '@/components/StoreLinks';
 import {Reveal, Stagger, StaggerItem} from '@/components/Reveal';
 import ProductScrollTour from '@/components/ProductScrollTour';
@@ -601,7 +602,10 @@ export function DownloadMarketingPage({
                     </li>
                   </ol>
                   <p className="mt-4 text-sm leading-relaxed theme-copy">
-                    {copy.download.androidSteps.note}
+                    {copy.download.androidSteps.note}{' '}
+                    <Link href="/feedback" className="font-semibold underline theme-title">
+                      {getFeedbackCopy(locale).downloadCta}
+                    </Link>
                   </p>
                 </div>
                 <a
