@@ -1,7 +1,7 @@
 'use client';
 
 import type {CSSProperties} from 'react';
-import {useEffect, useState} from 'react';
+import {useEffect, useState, useSyncExternalStore} from 'react';
 import Image from 'next/image';
 import {AnimatePresence, motion, useMotionValueEvent, useScroll} from 'framer-motion';
 import {CaretDown, Monitor, Moon, Sun} from '@phosphor-icons/react';
@@ -20,8 +20,54 @@ type Theme = 'light' | 'dark';
 const THEME_STORAGE_KEY = 'skillquest-theme';
 const THEME_CYCLE: ThemePref[] = ['light', 'dark', 'system'];
 
+// The preference lives in localStorage, which the server cannot see. Reading
+// it during render (a lazy useState initializer did that before) made the
+// client's first render differ from the SSR markup whenever a visitor had
+// picked light or dark: the button's sr-only label and icon changed, and
+// suppressHydrationWarning only covers the element's own text, not children.
+// That was React error #418 on every page load. useSyncExternalStore renders
+// the server snapshot ('system') during hydration and the stored value right
+// after, without a mismatch.
+//
+// memoryPref keeps a pick made while storage is unavailable (private mode,
+// blocked site data), so the button still cycles.
+let memoryPref: ThemePref | null = null;
+const prefListeners = new Set<() => void>();
+
+function subscribeToPref(onChange: () => void) {
+  const handleStorage = (event: StorageEvent) => {
+    if (event.key !== THEME_STORAGE_KEY) return;
+    memoryPref = null;
+    onChange();
+  };
+
+  prefListeners.add(onChange);
+  window.addEventListener('storage', handleStorage);
+  return () => {
+    prefListeners.delete(onChange);
+    window.removeEventListener('storage', handleStorage);
+  };
+}
+
+function getServerPref(): ThemePref {
+  return 'system';
+}
+
+function getClientPref(): ThemePref {
+  return memoryPref ?? readStoredPref();
+}
+
+function storePref(next: ThemePref) {
+  memoryPref = next;
+  try {
+    window.localStorage.setItem(THEME_STORAGE_KEY, next);
+  } catch {
+    // The visible theme should still change if storage is unavailable.
+  }
+  prefListeners.forEach((listener) => listener());
+}
+
 function readStoredPref(): ThemePref {
-  if (typeof window === 'undefined') return 'system';
   try {
     const stored = window.localStorage.getItem(THEME_STORAGE_KEY);
     if (stored === 'light' || stored === 'dark' || stored === 'system') {
@@ -73,12 +119,11 @@ export default function Navbar() {
   const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
   const [showLangMenu, setShowLangMenu] = useState(false);
-  // Lazy initializer, not an effect: readStoredPref() returns 'system' on the
-  // server (no window), matching the SSR markup, then reads the real
-  // preference during the client's first render. The button below carries
-  // suppressHydrationWarning for exactly this swap, so there is no mismatch
-  // to correct after mount - only a value to adopt before paint.
-  const [themePref, setThemePref] = useState<ThemePref>(() => readStoredPref());
+  const themePref = useSyncExternalStore(
+    subscribeToPref,
+    getClientPref,
+    getServerPref
+  );
   const themeLabels = THEME_LABELS[locale] ?? THEME_LABELS.en;
 
   // useScroll instead of a raw scroll listener: that ran on every scroll frame
@@ -98,7 +143,10 @@ export default function Navbar() {
     const query = window.matchMedia('(prefers-color-scheme: dark)');
     const handleChange = () => applyTheme(systemTheme());
 
-    handleChange();
+    // No immediate handleChange() here: the init script applied the theme
+    // before paint and cycleTheme() applies it on a click. Calling it on mount
+    // would run during the hydration pass, where themePref is still the
+    // 'system' server snapshot, and overwrite a stored light/dark choice.
     query.addEventListener('change', handleChange);
     return () => query.removeEventListener('change', handleChange);
   }, [themePref]);
@@ -133,13 +181,7 @@ export default function Navbar() {
       THEME_CYCLE[(THEME_CYCLE.indexOf(themePref) + 1) % THEME_CYCLE.length]!;
 
     applyTheme(resolveTheme(next));
-    setThemePref(next);
-
-    try {
-      window.localStorage.setItem(THEME_STORAGE_KEY, next);
-    } catch {
-      // The visible theme should still change if storage is unavailable.
-    }
+    storePref(next);
   }
 
   const navLinks = [
@@ -261,7 +303,6 @@ export default function Navbar() {
               } as CSSProperties}
               aria-label={`${themeLabels.light} / ${themeLabels.dark} / ${themeLabels.system}`}
               title={themeLabels[themePref]}
-              suppressHydrationWarning
             >
               <span className="sr-only">{themeLabels[themePref]}</span>
               {themePref === 'light' ? (
