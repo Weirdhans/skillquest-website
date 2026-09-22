@@ -1,4 +1,5 @@
 import {fontVariables} from '@/lib/fonts'
+import {Analytics} from '@vercel/analytics/next'
 import '../../styles/globals.css'
 import Navbar from '@/components/Navbar'
 import {NextIntlClientProvider} from 'next-intl';
@@ -65,6 +66,7 @@ export default async function LocaleLayout({
           <Navbar />
           {children}
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   )
