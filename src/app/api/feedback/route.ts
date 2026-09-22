@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import { Resend } from "resend";
 import { createHash } from "crypto";
 import { routing } from "@/i18n/routing";
 
@@ -29,6 +30,59 @@ interface FeedbackRequest {
   locale?: unknown;
   // Honeypot: must stay empty. Real users never see this field.
   company?: unknown;
+}
+
+const FEEDBACK_INBOX = "hello@skill-quest.app";
+
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+// Tell the owner about new feedback. A failed email never fails the request:
+// the answer is already stored and can be read in the admin dashboard.
+async function notifyOwner(feedback: {
+  clear: string;
+  confusing: string;
+  firstFix: string;
+  platform: Platform;
+  locale: string;
+  quoteConsent: boolean;
+}) {
+  const key = process.env.RESEND_API_KEY;
+  if (!key) {
+    console.error("RESEND_API_KEY is not configured; feedback email skipped");
+    return;
+  }
+
+  const rows: Array<[string, string]> = [
+    ["Wat was meteen duidelijk?", feedback.clear],
+    ["Wat was verwarrend?", feedback.confusing],
+    ["Wat moet als eerste beter?", feedback.firstFix],
+  ];
+  const html = [
+    `<p><strong>Taal:</strong> ${feedback.locale.toUpperCase()} &middot; <strong>Toestel:</strong> ${feedback.platform} &middot; <strong>Citeren mag:</strong> ${feedback.quoteConsent ? "ja" : "nee"}</p>`,
+    ...rows.map(
+      ([question, answer]) =>
+        `<h3 style="margin:16px 0 4px">${question}</h3><p style="margin:0;white-space:pre-wrap">${escapeHtml(answer)}</p>`
+    ),
+    `<p style="margin-top:24px;color:#666">Anonieme testfeedback van skill-quest.app/feedback. Alle antwoorden staan ook in het admin-dashboard van de app.</p>`,
+  ].join("");
+
+  try {
+    await new Resend(key).emails.send({
+      from: "SkillQuest <hello@skill-quest.app>",
+      to: FEEDBACK_INBOX,
+      subject: `Nieuwe testfeedback (${feedback.locale.toUpperCase()}, ${feedback.platform})`,
+      html,
+    });
+  } catch (error) {
+    console.error("Feedback email failed", error);
+  }
 }
 
 const MAX_ANSWER_LENGTH = 2000;
@@ -117,6 +171,15 @@ export async function POST(request: NextRequest) {
       console.error("Feedback insert failed", insertError);
       return NextResponse.json({ error: "server_error" }, { status: 500 });
     }
+
+    await notifyOwner({
+      clear,
+      confusing,
+      firstFix,
+      platform: body.platform,
+      locale,
+      quoteConsent: body.quoteConsent === true,
+    });
 
     return NextResponse.json({ success: true }, { status: 201 });
   } catch (error) {

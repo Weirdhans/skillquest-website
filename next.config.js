@@ -24,6 +24,18 @@ const nextConfig = {
         destination: '/es/support#faq',
         permanent: true,
       },
+      // Short links for social bios. Temporary redirects, so the UTM values
+      // can change later without browsers caching the old target.
+      {
+        source: '/ig',
+        destination: '/?utm_source=instagram&utm_medium=social&utm_campaign=bio',
+        permanent: false,
+      },
+      {
+        source: '/fb',
+        destination: '/?utm_source=facebook&utm_medium=social&utm_campaign=bio',
+        permanent: false,
+      },
     ];
   },
   images: {
