@@ -43,6 +43,20 @@ const nextConfig = {
           '/download?platform=android&utm_source=linkedin&utm_medium=social&utm_campaign=testers#android-early-access',
         permanent: false,
       },
+      // Reddit tester recruitment (r/androidapps, r/AlphaAndBetaUsers, ...).
+      {
+        source: '/rd',
+        destination:
+          '/download?platform=android&utm_source=reddit&utm_medium=social&utm_campaign=testers#android-early-access',
+        permanent: false,
+      },
+      // Dutch parent groups on Facebook (family mode, reading practice).
+      {
+        source: '/ouders',
+        destination:
+          '/nl/download?platform=android&utm_source=facebook&utm_medium=social&utm_campaign=ouders#android-early-access',
+        permanent: false,
+      },
     ];
   },
   images: {
