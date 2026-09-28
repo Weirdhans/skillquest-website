@@ -57,6 +57,14 @@ const nextConfig = {
           '/nl/download?platform=android&utm_source=facebook&utm_medium=social&utm_campaign=ouders#android-early-access',
         permanent: false,
       },
+      // iPhone/iPad link for the same parent-group posts: straight to the App
+      // Store with its own campaign token (App Store Connect > Campaigns).
+      {
+        source: '/ouders-iphone',
+        destination:
+          'https://apps.apple.com/app/apple-store/id6755604671?pt=128291575&ct=oudergroepen&mt=8',
+        permanent: false,
+      },
       // Paid Meta ads (Facebook + Instagram) for parents, October 2026.
       {
         source: '/gezin',
