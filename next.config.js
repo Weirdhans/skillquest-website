@@ -73,6 +73,13 @@ const nextConfig = {
           '/nl/download?utm_source=facebook&utm_medium=social&utm_campaign=groepen-ontwikkeling',
         permanent: false,
       },
+      // Facebook groups about reading (parents and teachers).
+      {
+        source: '/lezen',
+        destination:
+          '/nl/download?utm_source=facebook&utm_medium=social&utm_campaign=groepen-lezen',
+        permanent: false,
+      },
       // Paid Meta ads (Facebook + Instagram) for parents, October 2026.
       {
         source: '/gezin',
