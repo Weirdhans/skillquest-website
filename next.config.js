@@ -57,6 +57,13 @@ const nextConfig = {
           '/nl/download?platform=android&utm_source=facebook&utm_medium=social&utm_campaign=ouders#android-early-access',
         permanent: false,
       },
+      // Paid Meta ads (Facebook + Instagram) for parents, October 2026.
+      {
+        source: '/gezin',
+        destination:
+          '/nl/download?platform=android&utm_source=meta&utm_medium=paid&utm_campaign=ouders-testers#android-early-access',
+        permanent: false,
+      },
     ];
   },
   images: {
