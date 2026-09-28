@@ -65,6 +65,14 @@ const nextConfig = {
           'https://apps.apple.com/app/apple-store/id6755604671?pt=128291575&ct=oudergroepen&mt=8',
         permanent: false,
       },
+      // Facebook groups about personal development (adult learners): download
+      // page with both the App Store button and the Android test steps.
+      {
+        source: '/groei',
+        destination:
+          '/nl/download?utm_source=facebook&utm_medium=social&utm_campaign=groepen-ontwikkeling',
+        permanent: false,
+      },
       // Paid Meta ads (Facebook + Instagram) for parents, October 2026.
       {
         source: '/gezin',
