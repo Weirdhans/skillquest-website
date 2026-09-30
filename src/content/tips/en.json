@@ -99,6 +99,90 @@
           "answer": "SkillQuest is designed for children and adults. Children use the timer, track their skills, and monitor their own progress; features like friends, leaderboards, and in-app purchases are not available to them. If your child is still young, you can use family mode to start the timer on your own phone, and the practice time will count toward your child’s total."
         }
       ]
+    },
+    {
+      "id": "child-wont-practice-instrument",
+      "slug": "child-does-not-want-to-practice-instrument",
+      "eyebrow": "Music",
+      "title": "Is your child reluctant to practice their instrument? Here’s how to make it fun again",
+      "metaTitle": "Child doesn’t want to practice an instrument: 6 tips | SkillQuest",
+      "metaDescription": "Does your child refuse to practice the piano or guitar? Six practical tips: short sessions, a set time, and visible progress.",
+      "intro": "Your child really wanted to learn an instrument, and now every practice night turns into an argument. That’s very common. Here are six things you can try, with or without an app.",
+      "cardSummary": "Six practical tips for parents of a child who doesn’t want to practice the piano, guitar, or another instrument.",
+      "publishedAt": "2026-09-30",
+      "readingMinutes": 4,
+      "app": {
+        "title": "How SkillQuest helps with this",
+        "body": "In SkillQuest, you choose a skill—such as guitar or piano—start a timer, and see your progress after each session. You earn 1 XP for every minute you practice, so the app rewards effort rather than results. You can view your levels and weekly progress. With the family feature, a parent can track a child’s progress and even start the timer on their own phone for their child. You don’t need the app to practice, but it makes tracking your progress much easier."
+      },
+      "sections": [
+        {
+          "title": "1. Start with five minutes",
+          "paragraphs": [
+            "Half an hour of practice feels like a mountain to a child. Five or ten minutes feels manageable, and usually, play just starts to happen on its own.",
+            "Short sessions done every day work better than one long session on the weekend. Your hands and your brain retain more when you play for short periods often.",
+            "Agree that they can play for up to five minutes. If your child keeps playing on their own after that, great. If not, you’ve still stuck to your agreement, and the barrier will be lower again tomorrow."
+          ]
+        },
+        {
+          "title": "2. Choose a set time",
+          "paragraphs": [
+            "Link practice to something that happens every day anyway: right after school, after dinner, or before brushing teeth. That way, you won’t have to negotiate all over again every day.",
+            "Set up the instrument in a spot where your child walks by it. A guitar in the closet stays in the closet.",
+            "Choose a time when your child still has energy. Right before bedtime, when everyone is tired, is usually not a good time."
+          ]
+        },
+        {
+          "title": "3. Let your child have a say",
+          "paragraphs": [
+            "Give them a choice between two options: start with the song from the lesson or start with the song they like best. Or: practice now or in fifteen minutes. This gives your child the feeling that they have a say in the matter.",
+            "Try playing something that isn’t part of the lesson, like a song from a movie or a little game. That counts as practice, too.",
+            "It also helps to sit down together and figure out what your child wants to be able to play. A child who wants to learn a song they personally like will usually practice more for it."
+          ]
+        },
+        {
+          "title": "4. Make progress visible",
+          "paragraphs": [
+            "Children often don’t realize on their own that they’re improving. That’s why it helps to show them how much they’ve already practiced: a calendar with a check mark for each day, stickers, or a timer that keeps track.",
+            "That worked for us with reading, too: when your child sees that all those short moments add up, it becomes easier to do the next one as well.",
+            "It doesn’t matter how you do it. What matters is that after a week, your child can see: “This is what I’ve done.” For many children, that’s a better reason to keep going than “because I have to.”"
+          ]
+        },
+        {
+          "title": "5. Praise the effort, not just the result",
+          "paragraphs": [
+            "Say “It’s great that you played again today” instead of “That still sounded off.” The results will naturally improve, but your child must continue to put in the effort themselves.",
+            "Try asking your child if they’d like to play something for you, and really listen. Don’t make your child play in front of family or friends if they don’t want to.",
+            "Rewards can be small. A sticker or a checkmark is enough; it’s about the feeling of being recognized."
+          ]
+        },
+        {
+          "title": "6. Know when to stop",
+          "paragraphs": [
+            "If your child is really having a bad day, just stop without making a big deal out of it. Forcing them to practice makes it a chore, and you don’t want that.",
+            "If it continues for weeks, talk to the teacher. Maybe the piece is too difficult, the lesson too long, or the instrument no longer fits. Sometimes taking a break or switching to a different instrument is the best solution.",
+            "It’s okay for a child to lose interest temporarily. Just focus on the long term: if things are back on track a few weeks later, it was just a temporary slump."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "How long should my child practice each day?",
+          "answer": "That depends on the child’s age and skill level. Ask the teacher. For beginners, five to ten minutes a day is usually enough; a little bit every day is better than long sessions every now and then. Also ask what the teacher prefers: shorter, more frequent sessions or slightly longer ones on set days."
+        },
+        {
+          "question": "Should I punish or reward my child for practicing?",
+          "answer": "Punishment usually backfires. Small rewards, such as a sticker or a checkmark, can help. Above all, praise the effort your child puts in, even if their playing doesn’t sound great yet."
+        },
+        {
+          "question": "Isn’t an app just more screen time?",
+          "answer": "In SkillQuest, the timer runs while your child plays; no one needs to look at the screen. The screen is only used to start the timer and view the summary afterward."
+        },
+        {
+          "question": "How much does SkillQuest cost?",
+          "answer": "Installation is free, and there are no ads. There’s also a paid version with extras; you can see what’s included in the app."
+        }
+      ]
     }
   ]
 }

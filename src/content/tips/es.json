@@ -99,6 +99,90 @@
           "answer": "SkillQuest está pensada para niños y adultos. Los niños usan el temporizador, sus habilidades y su propio progreso; los amigos, las clasificaciones y las compras están desactivadas para ellos. Si tu hijo aún es pequeño, con el modo familiar también puedes poner en marcha el temporizador en tu propio móvil, y el tiempo de práctica se suma al de tu hijo."
         }
       ]
+    },
+    {
+      "id": "child-wont-practice-instrument",
+      "slug": "nino-no-quiere-practicar-instrumento",
+      "eyebrow": "Música",
+      "title": "¿Tu hijo no quiere practicar con su instrumento? Cómo hacer que vuelva a ser divertido",
+      "metaTitle": "Tu hijo no quiere practicar con el instrumento: 6 consejos | SkillQuest",
+      "metaDescription": "¿Tu hijo no quiere practicar el piano o la guitarra? Seis consejos prácticos: sesiones cortas, un momento fijo y progresos visibles.",
+      "intro": "A tu hijo le apetecía aprender a tocar un instrumento, y ahora cada noche de práctica se convierte en una discusión. Es algo muy habitual. Aquí tienes seis cosas que puedes probar, con o sin app.",
+      "cardSummary": "Seis consejos prácticos para padres de niños que no quieren practicar el piano, la guitarra u otro instrumento.",
+      "publishedAt": "2026-09-30",
+      "readingMinutes": 4,
+      "app": {
+        "title": "Cómo te ayuda SkillQuest con esto",
+        "body": "En SkillQuest eliges una habilidad, como la guitarra o el piano, pones en marcha un temporizador y, tras cada sesión, ves cómo va mejorando. Ganas 1 XP por cada minuto que practicas, así que la app premia el esfuerzo y no el resultado. Puedes ver los niveles y el progreso semanal. Con la función familiar, un padre o una madre puede ver el progreso de su hijo o hija y también puedes poner en marcha el temporizador desde tu propio móvil para que practique. No necesitas la app para practicar, pero te facilita mucho llevar un registro."
+      },
+      "sections": [
+        {
+          "title": "1. Empieza con cinco minutos",
+          "paragraphs": [
+            "Media hora de práctica es una montaña para un niño. Cinco o diez minutos parecen factibles, y normalmente el juego acaba surgiendo por sí solo.",
+            "Las sesiones cortas que haces cada día funcionan mejor que una sola sesión larga el fin de semana. Tus manos y tu cabeza retienen más si juegas un rato de vez en cuando.",
+            "Acuerda que solo sean cinco minutos. Si tu hijo sigue jugando por su cuenta después de eso, genial. Si no, al menos habrás cumplido lo acordado y mañana será más fácil volver a intentarlo."
+          ]
+        },
+        {
+          "title": "2. Elige un momento fijo",
+          "paragraphs": [
+            "Relaciona la práctica con algo que ya se hace todos los días: justo después del colegio, después de cenar o antes de lavarse los dientes. Así no tendrás que volver a negociar cada día.",
+            "Deja el instrumento a la vista, en un sitio por donde pase tu hijo. Una guitarra que está en el armario se queda en el armario.",
+            "Elige un momento en el que tu hijo aún tenga energía. Justo antes de acostarse, cuando todo el mundo está cansado, no suele ser un buen momento."
+          ]
+        },
+        {
+          "title": "3. Deja que tu hijo participe en las decisiones",
+          "paragraphs": [
+            "Dale a elegir entre dos opciones: primero la canción de la clase o primero la que más le guste a tu hijo. O bien: practicar ahora o dentro de un cuarto de hora. Así, tu hijo tendrá la sensación de que tiene voz y voto.",
+            "Prueba también a tocar algo que no forme parte de la clase, como una canción de una película o un juego. Eso también es practicar.",
+            "También ayuda ver juntos qué es lo que tu hijo quiere tocar. Un niño que quiere aprender una canción que le gusta de verdad suele practicar más para conseguirlo."
+          ]
+        },
+        {
+          "title": "4. Haz que el progreso sea visible",
+          "paragraphs": [
+            "Los niños a menudo no se dan cuenta de que están mejorando. Por eso, ayuda mostrarles cuánto han practicado ya: un calendario con una marca cada día, pegatinas o un temporizador que lleve la cuenta.",
+            "A nosotros también nos funcionó con la lectura: cuando tu hijo ve que todos esos pequeños momentos se van sumando, le resulta más fácil seguir adelante con el siguiente.",
+            "No importa cómo lo hagas. Lo importante es que, al cabo de una semana, tu hijo pueda ver: «esto es lo que he hecho». Para muchos niños, eso es una razón mejor para seguir adelante que «porque hay que hacerlo»."
+          ]
+        },
+        {
+          "title": "5. Valora el esfuerzo, no solo el resultado",
+          "paragraphs": [
+            "Dile «me alegro de que hayas vuelto a tocar hoy» en lugar de «eso sonaba un poco desafinado». Los resultados mejorarán por sí solos, pero tu hijo tiene que seguir esforzándose por su cuenta.",
+            "Pregúntale también a tu hijo si quiere tocar algo para ti y escúchale de verdad. No dejes que tu hijo toque delante de familiares o amigos si no quiere.",
+            "Las recompensas pueden ser pequeñas. Una pegatina o una marca es suficiente; lo importante es la sensación de que se nota."
+          ]
+        },
+        {
+          "title": "6. Saber cuándo hay que parar",
+          "paragraphs": [
+            "Si tu hijo tiene un día realmente malo, deja de practicar sin darle más vueltas. La presión convierte el practicar en algo aburrido, y eso es lo último que quieres.",
+            "Si sigue costándole semanas, habla con el profesorsor. Quizás la pieza sea demasiado difícil, la clase demasiado larga o el instrumento ya no le vaya bien. A veces, lo mejor es tomarse un descanso o cambiar de instrumento.",
+            "Es normal que a un niño le apetezca menos hacer cosas de vez en cuando. En esos casos, fíjate sobre todo en la evolución a largo plazo: si unas semanas más tarde vuelve a estar mejor, solo habrá sido un bajón."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "¿Cuánto tiempo debe practicar mi hijo al día?",
+          "answer": "Eso depende de la edad y del nivel. Pregúntaselo al profesor. Para los principiantes, suelen bastar entre cinco y diez minutos al día; un poco cada día es mejor que mucho de vez en cuando. Pregúntale también qué prefiere el profesor: sesiones más cortas y frecuentes o algo más largas en días fijos."
+        },
+        {
+          "question": "¿Debo castigar o recompensar a mi hijo por practicar?",
+          "answer": "Castigar suele ser contraproducente. Las pequeñas recompensas, como una pegatina o una marca, pueden ayudar. Valora sobre todo el esfuerzo que hace tu hijo, aunque su forma de tocar aún no suene muy bien."
+        },
+        {
+          "question": "¿No es una app simplemente más tiempo frente a la pantalla?",
+          "answer": "En SkillQuest, el temporizador sigue corriendo mientras tu hijo juega; nadie tiene que mirar la pantalla. La pantalla solo sirve para poner en marcha el temporizador y ver el resumen después."
+        },
+        {
+          "question": "¿Cuánto cuesta SkillQuest?",
+          "answer": "La instalación es gratis y no tiene anuncios. También hay una versión de pago con extras; puedes ver qué incluye dentro de la propia app."
+        }
+      ]
     }
   ]
 }

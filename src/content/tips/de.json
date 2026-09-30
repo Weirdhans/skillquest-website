@@ -99,6 +99,90 @@
           "answer": "SkillQuest wurde für Kinder und Erwachsene entwickelt. Kinder nutzen den Timer, ihre Fähigkeiten und ihren eigenen Fortschritt; Freunde, Ranglisten und In-App-Käufe sind für sie ausgeschaltet. Ist dein Kind noch klein, kannst du im Familienmodus den Timer auch auf deinem eigenen Handy starten, und die Übungszeit wird deinem Kind angerechnet."
         }
       ]
+    },
+    {
+      "id": "child-wont-practice-instrument",
+      "slug": "kind-will-nicht-ueben-instrument",
+      "eyebrow": "Musik",
+      "title": "Dein Kind will nicht auf seinem Instrument üben? So macht es wieder mehr Spaß",
+      "metaTitle": "Kind will nicht auf dem Instrument üben: 6 Tipps | SkillQuest",
+      "metaDescription": "Will dein Kind nicht Klavier oder Gitarre üben? Sechs praktische Tipps: kurze Einheiten, eine feste Zeit und sichtbare Fortschritte.",
+      "intro": "Dein Kind wollte unbedingt ein Instrument lernen, und jetzt gibt es an jedem Übungsabend eine Diskussion. Das ist ganz normal. Hier sind sechs Dinge, die du ausprobieren kannst – mit oder ohne App.",
+      "cardSummary": "Sechs praktische Tipps für Eltern, deren Kind nicht Klavier, Gitarre oder ein anderes Instrument üben will.",
+      "publishedAt": "2026-09-30",
+      "readingMinutes": 4,
+      "app": {
+        "title": "Wie SkillQuest dabei hilft",
+        "body": "Bei SkillQuest wählst du eine Fähigkeit aus, zum Beispiel Gitarre oder Klavier, startest einen Timer und siehst nach jeder Übungseinheit, wie sich deine Fortschritte entwickeln. Du bekommst 1 XP pro geübter Minute – die App belohnt also den Einsatz und nicht das Ergebnis. Du siehst die Stufen und den Fortschritt pro Woche. Mit der Familienfunktion kann ein Elternteil den Fortschritt eines Kindes verfolgen und den Timer auch auf dem eigenen Handy für das Kind starten. Du brauchst keine App zum Üben, aber das Nachverfolgen geht damit einfacher."
+      },
+      "sections": [
+        {
+          "title": "1. Fang mit fünf Minuten an",
+          "paragraphs": [
+            "Eine halbe Stunde üben ist für ein Kind eine riesige Hürde. Fünf oder zehn Minuten fühlen sich machbar an, und meistens kommt das Spielen dann ganz von selbst in Gang.",
+            "Kurze Einheiten, die du jeden Tag machst, bringen mehr als eine lange Einheit am Wochenende. Deine Hand und dein Kopf merken sich mehr, wenn du oft kurz spielst.",
+            "Vereinbart, dass es bei fünf Minuten bleiben darf. Spielt dein Kind danach von selbst weiter, umso besser. Wenn nicht, hast du die Abmachung trotzdem eingehalten und die Hemmschwelle ist morgen wieder niedriger."
+          ]
+        },
+        {
+          "title": "2. Wähle einen festen Zeitpunkt",
+          "paragraphs": [
+            "Verbinde das Üben mit etwas, das ohnehin jeden Tag stattfindet: direkt nach der Schule, nach dem Essen oder vor dem Zähneputzen. Dann musst du nicht jeden Tag aufs Neue verhandeln.",
+            "Stell das Instrument an einem Ort bereit, an dem dein Kind daran vorbeikommt. Eine Gitarre im Schrank bleibt im Schrank.",
+            "Such dir eine Zeit aus, zu der dein Kind noch Energie hat. Direkt vor dem Schlafengehen, wenn alle müde sind, ist meistens kein guter Zeitpunkt."
+          ]
+        },
+        {
+          "title": "3. Lass dein Kind mitentscheiden",
+          "paragraphs": [
+            "Biete eine Wahl zwischen zwei Möglichkeiten an: erst das Lied aus dem Unterricht oder erst das Lied, das dein Kind am liebsten mag. Oder: jetzt üben oder in einer Viertelstunde. So hat dein Kind das Gefühl, selbst mitreden zu können.",
+            "Spiel doch mal etwas, das nichts mit dem Unterricht zu tun hat, zum Beispiel ein Lied aus einem Film oder ein Spiel. Auch das ist Üben.",
+            "Es hilft auch, gemeinsam zu schauen, was dein Kind spielen möchte. Ein Kind, das ein Lied lernen will, das es selbst schön findet, übt dafür meistens mehr."
+          ]
+        },
+        {
+          "title": "4. Mach den Fortschritt sichtbar",
+          "paragraphs": [
+            "Kinder merken oft gar nicht selbst, dass sie besser werden. Deshalb hilft es, ihnen zu zeigen, wie viel sie schon geübt haben: ein Kalender mit einem Häkchen pro Tag, Aufkleber oder ein Timer, der die Zeit misst.",
+            "Das hat bei uns auch beim Lesen funktioniert: Wenn dein Kind sieht, dass sich all diese kurzen Momente summieren, fällt es ihm leichter, auch den nächsten zu machen.",
+            "Es ist egal, wie du das machst. Wichtig ist, dass dein Kind nach einer Woche sehen kann: Das habe ich geschafft. Für viele Kinder ist das ein besserer Grund, weiterzumachen, als „weil man es muss“."
+          ]
+        },
+        {
+          "title": "5. Lobe den Einsatz, nicht nur das Ergebnis",
+          "paragraphs": [
+            "Sag „Schön, dass du heute wieder gespielt hast“ statt „Das klang noch falsch“. Das Ergebnis wird sich von selbst verbessern, aber das Engagement muss dein Kind weiterhin selbst aufbringen.",
+            "Frag doch mal, ob dein Kind dir etwas vorspielen möchte, und hör wirklich zu. Lass dein Kind nicht vor Familie oder Freunden spielen, wenn es das nicht möchte.",
+            "Belohnungen dürfen klein bleiben. Ein Aufkleber oder ein Häkchen reicht aus; es geht um das Gefühl, dass es bemerkt wird."
+          ]
+        },
+        {
+          "title": "6. Wisse, wann du aufhören solltest",
+          "paragraphs": [
+            "Wenn dein Kind wirklich einen schlechten Tag hat, hör einfach ohne viel Aufhebens auf. Zwang macht das Üben zu einer lästigen Angelegenheit, und das willst du ja nicht.",
+            "Wenn es wochenlang so weitergeht, sprich mit dem Lehrer. Vielleicht ist das Stück zu schwer, der Unterricht zu lang oder das Instrument passt nicht mehr. Manchmal ist eine Pause oder ein anderes Instrument die beste Lösung.",
+            "Ein Kind darf auch mal vorübergehend weniger Lust haben. Schau dir dann vor allem den langfristigen Verlauf an: Wenn es ein paar Wochen später wieder besser läuft, war es nur ein kleiner Durchhänger."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Wie lange sollte mein Kind täglich üben?",
+          "answer": "Das hängt vom Alter und dem Niveau ab. Frag einfach den Lehrer. Für Anfänger reichen meist fünf bis zehn Minuten pro Tag; jeden Tag ein bisschen ist besser als ab und zu mal lange. Frag auch, was der Lehrer lieber mag: kürzer und öfter oder etwas länger an festen Tagen."
+        },
+        {
+          "question": "Soll ich mein Kind fürs Üben bestrafen oder belohnen?",
+          "answer": "Bestrafungen wirken meist kontraproduktiv. Kleine Belohnungen, wie ein Aufkleber oder ein Häkchen, können helfen. Lobe vor allem die Mühe, die dein Kind sich gibt, auch wenn das Spiel noch nicht besonders gut klingt."
+        },
+        {
+          "question": "Ist eine App nicht einfach nur zusätzliche Bildschirmzeit?",
+          "answer": "Bei SkillQuest läuft der Timer weiter, während dein Kind spielt; niemand muss auf den Bildschirm schauen. Der Bildschirm dient nur zum Starten des Timers und zur anschließenden Übersicht."
+        },
+        {
+          "question": "Was kostet SkillQuest?",
+          "answer": "Die Installation ist kostenlos und es gibt keine Werbung. Es gibt auch eine kostenpflichtige Version mit Extras; was darin enthalten ist, siehst du in der App."
+        }
+      ]
     }
   ]
 }

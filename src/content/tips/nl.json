@@ -106,6 +106,97 @@
           "answer": "SkillQuest is gemaakt voor kinderen en volwassenen. Kinderen gebruiken de timer, hun vaardigheden en hun eigen voortgang; vrienden, ranglijsten en aankopen staan voor hen uit. Is je kind nog jong, dan kun je met de familiefunctie de timer ook op je eigen telefoon starten, en telt de oefentijd mee bij je kind."
         }
       ]
+    },
+    {
+      "id": "child-wont-practice-instrument",
+      "slug": "kind-wil-niet-oefenen-instrument",
+      "slugs": {
+        "en": "child-does-not-want-to-practice-instrument",
+        "de": "kind-will-nicht-ueben-instrument",
+        "fr": "enfant-ne-veut-pas-jouer-instrument",
+        "es": "nino-no-quiere-practicar-instrumento",
+        "it": "bambino-non-vuole-esercitarsi-strumento"
+      },
+      "eyebrow": "Muziek",
+      "title": "Kind wil niet oefenen op zijn instrument? Zo wordt het weer leuker",
+      "metaTitle": "Kind wil niet oefenen op instrument: 6 tips | SkillQuest",
+      "metaDescription": "Wil je kind niet oefenen op piano of gitaar? Zes praktische tips: korte sessies, een vast moment en zichtbare voortgang.",
+      "intro": "Je kind wilde graag een instrument leren, en nu is elke oefenavond een discussie. Dat is heel gewoon. Dit zijn zes dingen die je kunt proberen, met of zonder app.",
+      "cardSummary": "Zes praktische tips voor ouders van een kind dat niet wil oefenen op piano, gitaar of een ander instrument.",
+      "publishedAt": "2026-09-30",
+      "readingMinutes": 4,
+      "sections": [
+        {
+          "title": "1. Begin met vijf minuten",
+          "paragraphs": [
+            "Een half uur oefenen is voor een kind een berg. Vijf of tien minuten voelt te doen, en meestal komt het spelen dan vanzelf op gang.",
+            "Korte sessies die je elke dag doet, werken beter dan één lange sessie in het weekend. Je hand en je hoofd onthouden meer als je vaak even speelt.",
+            "Spreek af dat het bij vijf minuten mag blijven. Speelt je kind daarna uit zichzelf door, mooi. Zo niet, dan heb je toch je afspraak gehaald en is de drempel morgen weer lager."
+          ]
+        },
+        {
+          "title": "2. Kies een vast moment",
+          "paragraphs": [
+            "Koppel het oefenen aan iets wat toch al elke dag gebeurt: meteen na school, na het eten of voor het tandenpoetsen. Dan hoef je niet elke dag opnieuw te onderhandelen.",
+            "Zet het instrument klaar op een plek waar je kind er langs loopt. Een gitaar in de kast blijft in de kast.",
+            "Kies een tijd waarop je kind nog energie heeft. Direct voor het slapengaan, als iedereen moe is, is meestal geen goed moment."
+          ]
+        },
+        {
+          "title": "3. Laat je kind meebeslissen",
+          "paragraphs": [
+            "Geef een keuze tussen twee dingen: eerst het lied van de les of eerst het lied dat je kind zelf leuk vindt. Of: nu oefenen of over een kwartier. Zo heeft je kind het gevoel dat het zelf iets te zeggen heeft.",
+            "Speel ook eens iets wat niet bij de les hoort, zoals een liedje uit een film of een spelletje. Dat is ook oefenen.",
+            "Het helpt ook om samen te kijken naar wat je kind wil kunnen spelen. Een kind dat een lied wil leren dat het zelf mooi vindt, oefent daar meestal meer voor."
+          ]
+        },
+        {
+          "title": "4. Maak de voortgang zichtbaar",
+          "paragraphs": [
+            "Kinderen merken zelf vaak niet dat ze beter worden. Daarom helpt het om te laten zien hoeveel ze al geoefend hebben: een kalender met een vinkje per dag, stickers of een timer die het bijhoudt.",
+            "Dat werkte bij ons ook bij lezen: als je kind ziet dat al die korte momenten optellen, wordt het makkelijker om de volgende ook te doen.",
+            "Het maakt niet uit hoe je dat doet. Het gaat erom dat je kind na een week kan zien: dit heb ik gedaan. Dat is voor veel kinderen een betere reden om door te gaan dan \"want het moet\"."
+          ]
+        },
+        {
+          "title": "5. Prijs de inzet, niet alleen het resultaat",
+          "paragraphs": [
+            "Zeg \"leuk dat je vandaag weer gespeeld hebt\" in plaats van \"dat klonk nog vals\". Het resultaat wordt vanzelf beter, maar de inzet moet je kind zelf blijven opbrengen.",
+            "Vraag ook eens of je kind iets voor je wil spelen, en luister echt. Laat je kind niet voor familie of vrienden spelen als het dat niet wil.",
+            "Beloningen mogen klein blijven. Een sticker of een vinkje is genoeg; het gaat om het gevoel dat het opgemerkt wordt."
+          ]
+        },
+        {
+          "title": "6. Weet wanneer je moet stoppen",
+          "paragraphs": [
+            "Heeft je kind echt een slechte dag, stop dan zonder gedoe. Dwang maakt van oefenen iets vervelends, en dat wil je niet.",
+            "Blijft het weken duren, praat dan met de leraar. Misschien is het stuk te moeilijk, de les te lang of past het instrument niet meer. Soms is een pauze of een ander instrument de beste oplossing.",
+            "Een kind mag ook tijdelijk minder zin hebben. Kijk dan vooral naar de lange lijn: gaat het een paar weken later weer beter, dan was het een dip."
+          ]
+        }
+      ],
+      "app": {
+        "title": "Hoe SkillQuest hierbij helpt",
+        "body": "In SkillQuest kies je een vaardigheid, zoals gitaar of piano, start je een timer en zie je na elke sessie hoe die groeit. Je krijgt 1 XP per geoefende minuut, dus de app beloont inzet en niet resultaat. Je ziet niveaus en voortgang per week. Met de familiefunctie ziet een ouder de voortgang van een kind en kun je de timer ook op je eigen telefoon voor je kind starten. Je hebt geen app nodig om te oefenen, maar het bijhouden gaat er wel makkelijker mee."
+      },
+      "faq": [
+        {
+          "question": "Hoe lang moet mijn kind per dag oefenen?",
+          "answer": "Dat hangt af van de leeftijd en het niveau. Vraag het aan de leraar. Voor beginners zijn vijf tot tien minuten per dag meestal genoeg; elke dag een beetje is beter dan af en toe lang. Vraag ook wat de leraar liever wil: korter en vaker of iets langer op vaste dagen."
+        },
+        {
+          "question": "Moet ik mijn kind straffen of belonen voor oefenen?",
+          "answer": "Straffen werkt meestal averechts. Kleine beloningen, zoals een sticker of een vinkje, kunnen helpen. Prijs vooral de moeite die je kind doet, ook als het spelen nog niet mooi klinkt."
+        },
+        {
+          "question": "Is een app niet gewoon extra schermtijd?",
+          "answer": "In SkillQuest loopt de timer door terwijl je kind speelt; niemand hoeft naar het scherm te kijken. Het scherm is alleen voor het starten van de timer en het overzicht achteraf."
+        },
+        {
+          "question": "Wat kost SkillQuest?",
+          "answer": "Installeren is gratis en er is geen reclame. Er is ook een betaalde versie met extra's; wat daarin zit, zie je in de app."
+        }
+      ]
     }
   ]
 }
