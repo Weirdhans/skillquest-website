@@ -7,6 +7,8 @@ import {languageTags, localizedPath, type Locale} from '@/lib/marketing';
 // slug can differ per locale. Translations come from DeepL, never from an AI
 // writing tool.
 
+export const TIPS_AUTHOR = 'Hans Vlasblom';
+
 export type TipSection = {
   title: string;
   paragraphs: string[];
@@ -60,8 +62,8 @@ const uiCopy: Partial<Record<Locale, TipsUiCopy>> = {
     eyebrow: 'Tips',
     heading: 'Tips om elke dag te oefenen',
     subtitle:
-      'Praktische tips voor lezen, een instrument of iets anders wat je wilt leren. Geschreven door Hans, vader en maker van SkillQuest.',
-    byline: 'Door Hans, vader en maker van SkillQuest',
+      'Praktische tips voor lezen, een instrument of iets anders wat je wilt leren. Geschreven door Hans Vlasblom, vader en maker van SkillQuest.',
+    byline: 'Door Hans Vlasblom, vader en maker van SkillQuest',
     readingTime: (minutes) => `${minutes} minuten lezen`,
     iphoneCta: 'Download voor iPhone en iPad',
     androidCta: 'Android-testversie',

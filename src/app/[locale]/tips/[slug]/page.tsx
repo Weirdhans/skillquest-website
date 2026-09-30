@@ -15,6 +15,7 @@ import {
   type Locale
 } from '@/lib/marketing';
 import {
+  TIPS_AUTHOR,
   getAllTips,
   getTip,
   getTips,
@@ -49,7 +50,7 @@ function articleJsonLd(tip: TipArticle) {
     image: `${SITE_URL}/og/skillquest-og.png`,
     author: {
       '@type': 'Person',
-      name: 'Hans'
+      name: TIPS_AUTHOR
     },
     publisher: {
       '@type': 'Organization',
