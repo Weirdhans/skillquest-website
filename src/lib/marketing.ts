@@ -48,7 +48,7 @@ const localeToOg: Record<Locale, string> = {
   it: 'it_IT'
 };
 
-const languageTags: Record<Locale, string> = {
+export const languageTags: Record<Locale, string> = {
   nl: 'nl-NL',
   en: 'en-US',
   de: 'de-DE',
