@@ -1,0 +1,104 @@
+{
+  "ui": {
+    "metaTitle": "Tips for practicing and reading | SkillQuest",
+    "metaDescription": "Practical tips for practicing every day, for children and adults: from reading to playing a musical instrument. Written by the creator of SkillQuest.",
+    "eyebrow": "Tips",
+    "heading": "Tips for practicing every day",
+    "subtitle": "Practical tips for reading, playing an instrument, or anything else you want to learn. Written by Hans Vlasblom, father and creator of SkillQuest.",
+    "byline": "By Hans Vlasblom, father and creator of SkillQuest",
+    "iphoneCta": "Download for iPhone and iPad",
+    "androidCta": "Android beta version",
+    "androidNote": "Android is still in the Google Play beta phase. By using the beta version, you can participate and help improve the app.",
+    "faqHeading": "Frequently asked questions",
+    "moreTips": "More tips",
+    "readingTime": "{minutes}-minute read"
+  },
+  "articles": [
+    {
+      "id": "child-reluctant-reader",
+      "slug": "child-does-not-want-to-read",
+      "eyebrow": "Reading",
+      "title": "Is your child reluctant to read? Here’s how to make 10 minutes a day easier",
+      "metaTitle": "Child doesn’t want to read? 7 tips for 10 minutes a day | SkillQuest",
+      "metaDescription": "Is your child reluctant to read? Seven practical tips for sticking to 10 minutes of reading every day—from setting a specific time to using a timer.",
+      "intro": "Reading for a little while every day sounds simple—until your child doesn’t feel like it. Here are some tips that worked for us at home, and what you can do if it doesn’t work out sometimes.",
+      "cardSummary": "Seven practical tips for sticking to 10 minutes of daily reading, even when your child doesn’t feel like it.",
+      "publishedAt": "2026-09-30",
+      "readingMinutes": 4,
+      "app": {
+        "title": "How SkillQuest helps with this",
+        "body": "SkillQuest was born out of that tracking. You choose a skill, such as reading or playing an instrument, start a timer, and see how that skill grows after each session. You earn points for every minute of practice, not for the result. With family mode, you as a parent can see your child’s progress."
+      },
+      "sections": [
+        {
+          "title": "1. Keep it small and consistent",
+          "paragraphs": [
+            "Ten minutes is short enough to get started without any grumbling, and long enough to actually read something. Pick a set time for it: after dinner, before bedtime, or right after school.",
+            "Having a set time each day eliminates the daily debate about whether or not it should be done. It’s just part of the routine, just like brushing your teeth."
+          ]
+        },
+        {
+          "title": "2. Let your child choose what to read",
+          "paragraphs": [
+            "A comic, a soccer magazine, or a book about dinosaurs: everything counts. A book your child has chosen on their own is easier to read than one they’re required to read.",
+            "Take your child to the library and let them browse the shelves on their own. If a book turns out to be a letdown after three pages, they can return it."
+          ]
+        },
+        {
+          "title": "3. Set a timer",
+          "paragraphs": [
+            "A timer makes it clear when it's time to stop. Your child knows they can stop after ten minutes, and that makes it easier to get started.",
+            "Sometimes, when the timer goes off, your child realizes they actually want to keep reading. That’s a nice bonus, but it’s not necessary."
+          ]
+        },
+        {
+          "title": "4. Make progress visible",
+          "paragraphs": [
+            "At our house, my son had to read for 10 minutes every day for school. We were already setting a timer for that, so I decided to keep track of how much he’d read as well.",
+            "That worked better than I expected. Now he picks up his iPad himself and starts the timer. Sometimes he stops early, sometimes he keeps reading. He gets happy when he’s read for another day, and recently he proudly showed his progress to his teacher.",
+            "You don’t need an app for that. A list on the fridge or a calendar with a checkmark for each day works just as well. The point is for your child to see that all those little moments add up."
+          ]
+        },
+        {
+          "title": "5. Praise the effort, not the skill level",
+          "paragraphs": [
+            "It’s better to say, “Good job reading for another ten minutes,” rather than “You’re reading so well.” Your child can control their own effort, but not always the reading level.",
+            "This is how your child learns that practice counts, even on days when reading is still a challenge."
+          ]
+        },
+        {
+          "title": "6. Read together every now and then",
+          "paragraphs": [
+            "Take turns reading a page, or read aloud yourself and let your child read the last bit. Reading together feels less like homework and more like quality time together.",
+            "It’s also a great way to discuss difficult words without it feeling like a lesson."
+          ]
+        },
+        {
+          "title": "7. Stop at the right time",
+          "paragraphs": [
+            "If your child really isn’t in the mood, it’s better to stop after five enjoyable minutes than after ten minutes of arguing. Tomorrow is another day.",
+            "It’s about making it a habit, not just one evening. A week with five short reading sessions is worth more than one long evening filled with tears."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "How long should a child read each day?",
+          "answer": "There’s no set rule for this. Feel free to ask what the school recommends; in our case, the school suggested 10 minutes a day. A little bit every day is usually easier to stick with than spending a long time on it every once in a while."
+        },
+        {
+          "question": "Do comic books and magazines count as reading, too?",
+          "answer": "Yes. Anything your child enjoys reading counts: comics, magazines, informational books, or a book they’ve already read three times."
+        },
+        {
+          "question": "Isn’t an app just more screen time?",
+          "answer": "In SkillQuest, the timer runs while your child reads; no one needs to look at the screen. The screen is only used to start the timer and view the summary afterward."
+        },
+        {
+          "question": "At what age can a child start using SkillQuest?",
+          "answer": "SkillQuest is designed for children and adults. Children use the timer, track their skills, and monitor their own progress; features like friends, leaderboards, and in-app purchases are not available to them. If your child is still young, you can use family mode to start the timer on your own phone, and the practice time will count toward your child’s total."
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 import type {Metadata} from 'next';
-import {notFound} from 'next/navigation';
+import {notFound, permanentRedirect} from 'next/navigation';
 import Footer from '@/components/Footer';
 import {Link} from '@/i18n/routing';
 import {routing} from '@/i18n/routing';
@@ -16,6 +16,8 @@ import {
 } from '@/lib/marketing';
 import {
   TIPS_AUTHOR,
+  formatReadingTime,
+  findTranslation,
   getAllTips,
   getTip,
   getTips,
@@ -25,8 +27,9 @@ import {
   type TipArticle
 } from '@/lib/tips';
 
-// Only the language versions that exist are built; everything else is a 404.
-export const dynamicParams = false;
+// A slug from another language (for example after switching language on an
+// article) redirects to this language's version, if there is one.
+export const dynamicParams = true;
 
 function JsonLd({data}: {data: unknown}) {
   return (
@@ -108,6 +111,13 @@ export default async function TipPage({
   const copy = getTipsUiCopy(safeLocale);
   const tip = getTip(safeLocale, slug);
 
+  if (!tip) {
+    const translation = findTranslation(safeLocale, slug);
+    if (translation) {
+      permanentRedirect(`/${safeLocale}${tipPath(translation)}`);
+    }
+  }
+
   if (!copy || !tip) {
     notFound();
   }
@@ -135,7 +145,7 @@ export default async function TipPage({
               </h1>
               <p className="mt-5 text-lead text-gray-200">{tip.intro}</p>
               <p className="mt-6 text-sm text-gray-300">
-                {copy.byline} · {copy.readingTime(tip.readingMinutes)}
+                {copy.byline} · {formatReadingTime(copy, tip.readingMinutes)}
               </p>
             </div>
           </div>

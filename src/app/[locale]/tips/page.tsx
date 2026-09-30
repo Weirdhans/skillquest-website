@@ -5,6 +5,7 @@ import {Link} from '@/i18n/routing';
 import {routing} from '@/i18n/routing';
 import {createPageMetadata, isLocale, type Locale} from '@/lib/marketing';
 import {
+  formatReadingTime,
   getTips,
   getTipsUiCopy,
   tipPath,
@@ -91,7 +92,7 @@ export default async function TipsPage({
                     className="group flex flex-col gap-1 py-6 transition hover:opacity-80"
                   >
                     <span className="text-xs font-semibold uppercase tracking-wide theme-eyebrow">
-                      {tip.eyebrow} · {copy.readingTime(tip.readingMinutes)}
+                      {tip.eyebrow} · {formatReadingTime(copy, tip.readingMinutes)}
                     </span>
                     <span className="font-display text-xl font-bold theme-title group-hover:underline">
                       {tip.title}

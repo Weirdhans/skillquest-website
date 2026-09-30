@@ -1,0 +1,104 @@
+{
+  "ui": {
+    "metaTitle": "Tipps zum Üben und Lesen | SkillQuest",
+    "metaDescription": "Praktische Tipps für das tägliche Üben, für Kinder und Erwachsene: vom Lesen bis zum Musizieren. Geschrieben vom Entwickler von SkillQuest.",
+    "eyebrow": "Tipps",
+    "heading": "Tipps für das tägliche Üben",
+    "subtitle": "Praktische Tipps zum Lesen, zum Erlernen eines Instruments oder zu allem, was du sonst noch lernen möchtest. Geschrieben von Hans Vlasblom, Vater und Entwickler von SkillQuest.",
+    "byline": "Von Hans Vlasblom, Vater und Entwickler von SkillQuest",
+    "iphoneCta": "Download für iPhone und iPad",
+    "androidCta": "Android-Testversion",
+    "androidNote": "Android befindet sich noch in einer Testphase bei Google Play. Über die Testversion kannst du mitmachen und dabei helfen, die App zu verbessern.",
+    "faqHeading": "Häufig gestellte Fragen",
+    "moreTips": "Weitere Tipps",
+    "readingTime": "{minutes} Minuten Lesezeit"
+  },
+  "articles": [
+    {
+      "id": "child-reluctant-reader",
+      "slug": "kind-will-nicht-lesen",
+      "eyebrow": "Lesen",
+      "title": "Dein Kind hat keine Lust zum Lesen? So werden 10 Minuten pro Tag einfacher",
+      "metaTitle": "Kind will nicht lesen? 7 Tipps für 10 Minuten pro Tag | SkillQuest",
+      "metaDescription": "Hat dein Kind keine Lust zum Lesen? Sieben praktische Tipps, um jeden Tag 10 Minuten zu lesen – von einer festen Zeit bis hin zu einem Timer.",
+      "intro": "Jeden Tag ein bisschen lesen klingt einfach, bis dein Kind keine Lust mehr hat. Hier sind Tipps, die bei uns zu Hause geholfen haben, und was du tun kannst, wenn es mal nicht klappt.",
+      "cardSummary": "Sieben praktische Tipps, wie du es schaffst, täglich 10 Minuten lang zu lesen – auch wenn dein Kind keine Lust dazu hat.",
+      "publishedAt": "2026-09-30",
+      "readingMinutes": 4,
+      "app": {
+        "title": "Wie SkillQuest dabei hilft",
+        "body": "Aus dieser Nachverfolgung ist SkillQuest entstanden. Du wählst eine Fähigkeit aus, zum Beispiel Lesen oder ein Instrument, startest einen Timer und siehst nach jeder Sitzung, wie sich die Fähigkeit verbessert. Du bekommst Punkte für jede Minute Übung, nicht für das Ergebnis. Mit dem Familienmodus kannst du als Elternteil den Fortschritt deines Kindes verfolgen."
+      },
+      "sections": [
+        {
+          "title": "1. Halte es kurz und regelmäßig",
+          "paragraphs": [
+            "Zehn Minuten sind kurz genug, um ohne Gemurre anzufangen, und lang genug, um wirklich etwas zu lesen. Such dir dafür eine feste Zeit aus: nach dem Essen, vor dem Schlafengehen oder direkt nach der Schule.",
+            "Ein fester Zeitpunkt erspart jeden Tag die Diskussion darüber, ob es nun sein muss oder nicht. Es gehört einfach dazu, genau wie Zähneputzen."
+          ]
+        },
+        {
+          "title": "2. Lass dein Kind selbst entscheiden, was es liest",
+          "paragraphs": [
+            "Ein Comic, eine Fußballzeitschrift oder ein Buch über Dinosaurier: Alles zählt. Ein Buch, das sich dein Kind selbst ausgesucht hat, liest sich leichter als eines, das es lesen muss.",
+            "Nimm dein Kind mit in die Bibliothek und lass es selbst im Regal stöbern. Ein Buch, das nach drei Seiten nicht gefällt, darf zurückgegeben werden."
+          ]
+        },
+        {
+          "title": "3. Stell einen Timer ein",
+          "paragraphs": [
+            "Ein Timer zeigt deutlich an, wann es vorbei ist. Dein Kind weiß, dass es nach zehn Minuten aufhören darf, und das macht den Einstieg leichter.",
+            "Manchmal merkt dein Kind, wenn der Timer abläuft, dass es eigentlich noch weiterlesen möchte. Das ist dann ein schöner Nebeneffekt, muss aber nicht sein."
+          ]
+        },
+        {
+          "title": "4. Mach den Fortschritt sichtbar",
+          "paragraphs": [
+            "Bei uns zu Hause musste mein Sohn für die Schule jeden Tag 10 Minuten lesen. Da wir dafür ohnehin schon einen Timer stellten, habe ich auch mitgezählt, wie viel er schon gelesen hatte.",
+            "Das hat besser geklappt, als ich erwartet hatte. Er schnappt sich jetzt selbst sein iPad und startet den Timer. Manchmal hört er früher auf, manchmal liest er weiter. Er freut sich, wenn er wieder einen Tag gelesen hat, und hat seinem Lehrer neulich stolz seine Fortschritte gezeigt.",
+            "Dafür brauchst du keine App. Eine Liste am Kühlschrank oder ein Kalender mit einem Häkchen pro Tag funktioniert auch. Es geht darum, dass dein Kind sieht, dass sich all diese kleinen Momente summieren."
+          ]
+        },
+        {
+          "title": "5. Lob die Anstrengung, nicht das Niveau",
+          "paragraphs": [
+            "Sag lieber „Toll, dass du schon wieder zehn Minuten gelesen hast“ statt „Du liest ja richtig gut“. Die Anstrengung hat dein Kind selbst im Griff, das Niveau nicht immer.",
+            "So lernt dein Kind, dass Üben sich lohnt, auch an Tagen, an denen das Lesen noch schwerfällt."
+          ]
+        },
+        {
+          "title": "6. Lest ab und zu gemeinsam",
+          "paragraphs": [
+            "Lest abwechselnd eine Seite, oder du liest vor und dein Kind liest den letzten Abschnitt. Gemeinsames Lesen fühlt sich weniger wie Hausaufgaben an, sondern eher wie Zeit, die man zusammen verbringt.",
+            "Es ist auch eine schöne Möglichkeit, schwierige Wörter zu besprechen, ohne dass es wie Unterricht wirkt."
+          ]
+        },
+        {
+          "title": "7. Hör zum richtigen Zeitpunkt auf",
+          "paragraphs": [
+            "Wenn dein Kind wirklich keine Lust hat, hör lieber nach fünf schönen Minuten auf, als nach zehn Minuten Streit. Morgen ist auch noch ein Tag.",
+            "Es geht um die Gewohnheit, nicht um einen einzigen Abend. Eine Woche mit fünf kurzen Lesemomenten ist mehr wert als ein langer Abend voller Tränen."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Wie lange sollte ein Kind täglich lesen?",
+          "answer": "Dafür gibt es keine feste Regel. Frag ruhig nach, was die Schule empfiehlt; bei uns hat die Schule 10 Minuten pro Tag empfohlen. Jeden Tag ein bisschen ist meistens leichter durchzuhalten als ab und zu sehr lange."
+        },
+        {
+          "question": "Zählen Comics und Zeitschriften auch als Lesen?",
+          "answer": "Ja. Alles, was dein Kind gerne liest, zählt: Comics, Zeitschriften, Sachbücher oder ein Buch, das es schon dreimal gelesen hat."
+        },
+        {
+          "question": "Ist eine App nicht einfach nur zusätzliche Bildschirmzeit?",
+          "answer": "Bei SkillQuest läuft der Timer weiter, während dein Kind liest; niemand muss auf den Bildschirm schauen. Der Bildschirm dient nur zum Starten des Timers und zur anschließenden Übersicht."
+        },
+        {
+          "question": "Ab welchem Alter kann ein Kind SkillQuest nutzen?",
+          "answer": "SkillQuest wurde für Kinder und Erwachsene entwickelt. Kinder nutzen den Timer, ihre Fähigkeiten und ihren eigenen Fortschritt; Freunde, Ranglisten und In-App-Käufe sind für sie ausgeschaltet. Ist dein Kind noch klein, kannst du im Familienmodus den Timer auch auf deinem eigenen Handy starten, und die Übungszeit wird deinem Kind angerechnet."
+        }
+      ]
+    }
+  ]
+}

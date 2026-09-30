@@ -1,0 +1,104 @@
+{
+  "ui": {
+    "metaTitle": "Conseils pour s'entraîner et lire | SkillQuest",
+    "metaDescription": "Des conseils pratiques pour s'entraîner tous les jours, que ce soit pour les enfants ou les adultes : de la lecture à la pratique d'un instrument. Écrit par le créateur de SkillQuest.",
+    "eyebrow": "Conseils",
+    "heading": "Des conseils pour s'entraîner tous les jours",
+    "subtitle": "Des conseils pratiques pour la lecture, un instrument ou toute autre chose que tu souhaites apprendre. Écrit par Hans Vlasblom, papa et créateur de SkillQuest.",
+    "byline": "Par Hans Vlasblom, papa et créateur de SkillQuest",
+    "iphoneCta": "Télécharger pour iPhone et iPad",
+    "androidCta": "Version d'essai pour Android",
+    "androidNote": "Android est encore en phase de test sur Google Play. En téléchargeant la version bêta, tu participes au test et tu aides à améliorer l'appli.",
+    "faqHeading": "Foire aux questions",
+    "moreTips": "Plus de conseils",
+    "readingTime": "{minutes} minutes de lecture"
+  },
+  "articles": [
+    {
+      "id": "child-reluctant-reader",
+      "slug": "enfant-ne-veut-pas-lire",
+      "eyebrow": "Lire",
+      "title": "Ton enfant n'a pas envie de lire ? Voici comment lui faire passer plus facilement 10 minutes par jour à lire",
+      "metaTitle": "Ton enfant ne veut pas lire : 7 conseils pour 10 minutes par jour | SkillQuest",
+      "metaDescription": "Ton enfant n'a pas envie de lire ? Sept conseils pratiques pour réussir à lire 10 minutes par jour, qu'il s'agisse d'un moment fixe ou d'un minuteur.",
+      "intro": "Lire un peu chaque jour, ça a l’air simple, jusqu’à ce que ton enfant n’en ait plus envie. Voici des conseils qui ont marché chez nous, et ce que tu peux faire si ça ne marche pas pour une fois.",
+      "cardSummary": "Sept conseils pratiques pour réussir à lire 10 minutes par jour, même si ton enfant n'en a pas envie.",
+      "publishedAt": "2026-09-30",
+      "readingMinutes": 4,
+      "app": {
+        "title": "Comment SkillQuest peut t'aider",
+        "body": "C'est de ce suivi qu'est née SkillQuest. Tu choisis une compétence, comme la lecture ou un instrument de musique, tu lances un minuteur et tu vois tes progrès après chaque séance. Tu gagnes des points pour chaque minute d'entraînement, pas pour le résultat. Grâce au mode famille, tu peux, en tant que parent, suivre les progrès de ton enfant."
+      },
+      "sections": [
+        {
+          "title": "1. Fais court et régulier",
+          "paragraphs": [
+            "Dix minutes, c'est assez court pour se lancer sans râler, et assez long pour vraiment lire quelque chose. Choisis un moment fixe : après le dîner, avant d'aller se coucher ou juste après l'école.",
+            "Un moment fixe évite chaque jour la discussion pour savoir s'il faut le faire ou pas. Ça fait tout simplement partie de la routine, comme se brosser les dents."
+          ]
+        },
+        {
+          "title": "2. Laisse ton enfant choisir lui-même ce qu'il lit",
+          "paragraphs": [
+            "Une BD, un magazine de foot ou un livre sur les dinosaures : tout compte. Un livre que ton enfant a choisi lui-même se lit plus facilement qu'un livre qu'il est obligé de lire.",
+            "Emmène ton enfant à la bibliothèque et laisse-le fouiller lui-même dans les rayons. S'il trouve un livre qui ne lui plaît pas après trois pages, il peut le rendre."
+          ]
+        },
+        {
+          "title": "3. Règle un minuteur",
+          "paragraphs": [
+            "Un minuteur indique clairement quand c'est fini. Ton enfant sait qu'il peut s'arrêter au bout de dix minutes, et ça l'aide à se lancer plus facilement.",
+            "Parfois, quand le minuteur sonne, ton enfant se rend compte qu'il a encore envie de continuer à lire. C'est bien sûr un plus, mais ce n'est pas obligatoire."
+          ]
+        },
+        {
+          "title": "4. Rends les progrès visibles",
+          "paragraphs": [
+            "Chez nous, mon fils devait lire 10 minutes par jour pour l'école. Comme on utilisait déjà un minuteur pour ça, j'ai décidé de noter aussi tout ce qu'il avait lu.",
+            "Ça a mieux marché que je ne l'aurais cru. Maintenant, il prend tout seul son iPad et lance le minuteur. Parfois, il s'arrête avant la fin, parfois il continue à lire. Il est content d'avoir lu un jour de plus, et l'autre jour, il a fièrement montré ses progrès à son maître.",
+            "Tu n'as pas besoin d'une appli pour ça. Une petite liste sur le frigo ou un calendrier avec une case à cocher chaque jour, ça marche aussi. L'important, c'est que ton enfant voie que tous ces petits moments s'additionnent."
+          ]
+        },
+        {
+          "title": "5. Récompense l'effort, pas le niveau",
+          "paragraphs": [
+            "Dis « c'est super que tu aies encore lu dix minutes » plutôt que « tu lis vraiment bien ». C'est ton enfant qui contrôle ses efforts, mais pas toujours son niveau.",
+            "C'est comme ça que ton enfant apprend que c'est l'entraînement qui compte, même les jours où la lecture est encore difficile."
+          ]
+        },
+        {
+          "title": "6. Lisez ensemble de temps en temps",
+          "paragraphs": [
+            "Lisez une page chacun à tour de rôle, ou bien lis-en une partie et laisse ton enfant lire la dernière. Lire ensemble, ça ressemble moins à des devoirs et plus à un moment passé ensemble.",
+            "C'est aussi un bon moyen d'aborder les mots difficiles sans que ça devienne une leçon."
+          ]
+        },
+        {
+          "title": "7. Arrête-toi au bon moment",
+          "paragraphs": [
+            "Si ton enfant n'a vraiment pas envie, mieux vaut s'arrêter après cinq minutes agréables plutôt que de se disputer pendant dix minutes. Demain est un autre jour.",
+            "C'est une question d'habitude, pas d'une seule soirée. Une semaine avec cinq petits moments de lecture vaut mieux qu'une longue soirée pleine de larmes."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Combien de temps un enfant doit-il lire chaque jour ?",
+          "answer": "Il n'y a pas de règle fixe à ce sujet. N'hésite pas à demander ce que l'école conseille ; chez nous, l'école recommandait 10 minutes par jour. Un peu chaque jour, c'est souvent plus facile à tenir que de longues séances de temps en temps."
+        },
+        {
+          "question": "Est-ce que les bandes dessinées et les magazines comptent aussi comme de la lecture ?",
+          "answer": "Oui. Tout ce que ton enfant lit avec plaisir compte : bandes dessinées, magazines, livres documentaires ou même un livre qu’il a déjà lu trois fois."
+        },
+        {
+          "question": "Une appli, ça ne revient pas simplement à passer plus de temps devant un écran ?",
+          "answer": "Dans SkillQuest, le minuteur tourne pendant que ton enfant lit ; personne n’a besoin de regarder l’écran. L’écran sert uniquement à lancer le minuteur et à consulter le récapitulatif après coup."
+        },
+        {
+          "question": "À partir de quel âge un enfant peut-il utiliser SkillQuest ?",
+          "answer": "SkillQuest est conçu pour les enfants et les adultes. Les enfants utilisent le minuteur, leurs compétences et suivent leurs propres progrès ; les amis, les classements et les achats sont désactivés pour eux. Si ton enfant est encore petit, tu peux, grâce au mode famille, lancer le minuteur sur ton propre téléphone, et le temps d'entraînement sera comptabilisé pour ton enfant."
+        }
+      ]
+    }
+  ]
+}

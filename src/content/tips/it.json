@@ -1,0 +1,104 @@
+{
+  "ui": {
+    "metaTitle": "Consigli per esercitarsi e leggere | SkillQuest",
+    "metaDescription": "Consigli pratici per esercitarsi ogni giorno, sia per i bambini che per gli adulti: dalla lettura allo strumento musicale. Scritto dal creatore di SkillQuest.",
+    "eyebrow": "Consigli",
+    "heading": "Consigli per esercitarsi ogni giorno",
+    "subtitle": "Consigli pratici per imparare a leggere, suonare uno strumento o qualsiasi altra cosa tu voglia imparare. Scritto da Hans Vlasblom, papà e creatore di SkillQuest.",
+    "byline": "Di Hans Vlasblom, papà e creatore di SkillQuest",
+    "iphoneCta": "Scarica per iPhone e iPad",
+    "androidCta": "Versione di prova per Android",
+    "androidNote": "Android è ancora in fase di test su Google Play. Con la versione di prova puoi partecipare e dare una mano a migliorare l’app.",
+    "faqHeading": "Domande frequenti",
+    "moreTips": "Altri consigli",
+    "readingTime": "{minutes} minuti di lettura"
+  },
+  "articles": [
+    {
+      "id": "child-reluctant-reader",
+      "slug": "bambino-non-vuole-leggere",
+      "eyebrow": "Lettura",
+      "title": "Tuo figlio non ha voglia di leggere? Ecco come rendere più facile dedicarci 10 minuti al giorno",
+      "metaTitle": "Il bambino non vuole leggere: 7 consigli per 10 minuti al giorno | SkillQuest",
+      "metaDescription": "Tuo figlio non ha voglia di leggere? Sette consigli pratici per riuscire a leggere 10 minuti al giorno, da un orario fisso a un timer.",
+      "intro": "Leggere un po’ ogni giorno sembra facile, finché tuo figlio non ne ha voglia. Ecco alcuni consigli che hanno funzionato a casa nostra e cosa puoi fare se ogni tanto le cose non vanno come vorresti.",
+      "cardSummary": "Sette consigli pratici per riuscire a leggere 10 minuti al giorno, anche quando tuo figlio non ne ha voglia.",
+      "publishedAt": "2026-09-30",
+      "readingMinutes": 4,
+      "app": {
+        "title": "Come SkillQuest può aiutarti in questo",
+        "body": "È proprio da questo monitoraggio che è nata SkillQuest. Scegli un’abilità, come la lettura o uno strumento musicale, avvii un timer e dopo ogni sessione vedi come progredisci. Ottieni punti per ogni minuto di pratica, non per il risultato. Con la modalità famiglia, come genitore puoi seguire i progressi di tuo figlio."
+      },
+      "sections": [
+        {
+          "title": "1. Tempi brevi e un momento fisso",
+          "paragraphs": [
+            "Dieci minuti sono abbastanza brevi per iniziare senza che si lamentino, e abbastanza lunghi per leggere davvero qualcosa. Scegli un momento fisso: dopo cena, prima di andare a dormire o subito dopo la scuola.",
+            "Avere un momento fisso ogni giorno evita la discussione se farlo o meno. Fa semplicemente parte della routine, proprio come lavarsi i denti."
+          ]
+        },
+        {
+          "title": "2. Lascia che sia tuo figlio a scegliere cosa leggere",
+          "paragraphs": [
+            "Un fumetto, una rivista di calcio o un libro sui dinosauri: va bene tutto. Un libro che tuo figlio ha scelto da solo si legge più facilmente di uno che deve leggere per forza.",
+            "Porta tuo figlio in biblioteca e lascia che sia lui a curiosare tra gli scaffali. Se un libro dopo tre pagine non ti convince, puoi restituirlo."
+          ]
+        },
+        {
+          "title": "3. Imposta un timer",
+          "paragraphs": [
+            "Un timer fa capire chiaramente quando è finito. Tuo figlio sa che dopo dieci minuti può smettere, e questo rende più facile iniziare.",
+            "A volte, quando suona il timer, tuo figlio si accorge che in realtà vorrebbe continuare a leggere. Se succede, tanto meglio, ma non è obbligatorio."
+          ]
+        },
+        {
+          "title": "4. Rendi visibili i progressi",
+          "paragraphs": [
+            "A casa nostra, mio figlio doveva leggere 10 minuti al giorno per la scuola. Visto che usavamo già un timer per questo, ho deciso di tenere traccia anche di quanto avesse già letto.",
+            "Ha funzionato meglio di quanto mi aspettassi. Adesso prende da solo il suo iPad e avvia il timer. A volte si ferma prima, altre volte continua a leggere. È felice quando riesce a leggere per un’altra giornata e, di recente, ha mostrato con orgoglio i suoi progressi al suo maestro.",
+            "Non serve un’app per questo. Va bene anche una listina sul frigo o un calendario con una spuntina ogni giorno. L’importante è che tuo figlio capisca che tutti quei piccoli momenti contano."
+          ]
+        },
+        {
+          "title": "5. Premia l’impegno, non il livello",
+          "paragraphs": [
+            "Meglio dire “bravo, hai letto di nuovo per dieci minuti” piuttosto che “leggi proprio bene”. La fatica la può gestire tuo figlio da solo, ma il livello non sempre.",
+            "Così tuo figlio imparerà che fare pratica è importante, anche nei giorni in cui leggere è ancora un po’ difficile."
+          ]
+        },
+        {
+          "title": "6. Leggete insieme ogni tanto",
+          "paragraphs": [
+            "Leggete una pagina a turno, oppure leggi tu e poi lascia che sia tuo figlio a leggere l’ultima parte. Leggere insieme sembra meno un compito e più un momento da passare insieme.",
+            "È anche un bel modo per parlare di parole difficili senza che sembri una lezione."
+          ]
+        },
+        {
+          "title": "7. Fermati al momento giusto",
+          "paragraphs": [
+            "Se tuo figlio proprio non ne ha voglia, è meglio smettere dopo cinque minuti di divertimento piuttosto che dopo dieci minuti di litigi. Domani è un altro giorno.",
+            "L’importante è l’abitudine, non una singola serata. Una settimana con cinque brevi momenti dedicati alla lettura vale più di una lunga serata piena di lacrime."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Per quanto tempo al giorno dovrebbe leggere un bambino?",
+          "answer": "Non c’è una regola fissa. Chiedi pure cosa consiglia la scuola; da noi la scuola raccomandava 10 minuti al giorno. Un po’ ogni giorno di solito è più facile da mantenere rispetto a sessioni molto lunghe ogni tanto."
+        },
+        {
+          "question": "Anche i fumetti e le riviste contano come lettura?",
+          "answer": "Sì. Tutto quello che tuo figlio legge con piacere conta: fumetti, riviste, libri informativi o un libro che ha già letto tre volte."
+        },
+        {
+          "question": "Ma un’app non è semplicemente altro tempo davanti allo schermo?",
+          "answer": "In SkillQuest il timer continua a funzionare mentre tuo figlio legge; nessuno deve guardare lo schermo. Lo schermo serve solo per avviare il timer e per vedere il riepilogo dopo la sessione."
+        },
+        {
+          "question": "A partire da che età un bambino può usare SkillQuest?",
+          "answer": "SkillQuest è pensata per bambini e adulti. I bambini usano il timer, le loro abilità e i propri progressi; per loro amici, classifiche e acquisti sono disattivati. Se tuo figlio è ancora piccolo, con la modalità famiglia puoi avviare il timer anche sul tuo telefono, e il tempo di esercitazione verrà conteggiato per lui."
+        }
+      ]
+    }
+  ]
+}
