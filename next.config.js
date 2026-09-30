@@ -80,6 +80,13 @@ const nextConfig = {
           '/nl/download?utm_source=facebook&utm_medium=social&utm_campaign=groepen-lezen',
         permanent: false,
       },
+      // X (@UseSkillQuest and Hans's personal account): English home page,
+      // since the X audience is international.
+      {
+        source: '/x',
+        destination: '/en?utm_source=x&utm_medium=social&utm_campaign=bio',
+        permanent: false,
+      },
       // Paid Meta ads (Facebook + Instagram) for parents, October 2026.
       {
         source: '/gezin',
