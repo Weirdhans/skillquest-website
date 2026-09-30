@@ -11,10 +11,19 @@ const legacyRoutes = [
 ];
 
 test('legacy redirects are permanent and limited to the three reviewed paths', async () => {
+  const redirects = await nextConfig.redirects();
   assert.deepEqual(
-    await nextConfig.redirects(),
+    redirects.filter((redirect) => redirect.permanent),
     legacyRoutes.map(([source, destination]) => ({source, destination, permanent: true}))
   );
+});
+
+test('campaign short links stay temporary so their UTM targets can change', async () => {
+  const shortLinks = (await nextConfig.redirects()).filter((redirect) => !redirect.permanent);
+  assert.ok(shortLinks.length > 0);
+  for (const redirect of shortLinks) {
+    assert.match(redirect.source, /^\/[a-z-]+$/, `${redirect.source} is not a short link`);
+  }
 });
 
 test('support page keeps a stable, visible FAQ anchor for legacy links', async () => {
