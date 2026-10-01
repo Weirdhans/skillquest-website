@@ -59,6 +59,8 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
+        {/* Pinterest domain claim for the SkillQuest business account. */}
+        <meta name="p:domain_verify" content="c5a3b4c27e8452d6aeb09f097ad690fd" />
         <script dangerouslySetInnerHTML={{__html: themeInitScript}} />
       </head>
       <body className={`${fontVariables} font-sans`}>
