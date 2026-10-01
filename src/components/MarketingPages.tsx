@@ -443,6 +443,25 @@ export function HomeMarketingPage({locale, copy}: PageProps) {
   );
 }
 
+// Desktop visitors cannot install from their computer, so each platform gets
+// a QR code that opens the same route on the phone (scripts/generate-qr-codes.py).
+function QrHint({src, text}: {src: string; text: string}) {
+  return (
+    <div className="mt-6 hidden items-center gap-4 lg:flex">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={src}
+        alt={text}
+        width={112}
+        height={112}
+        className="shrink-0 rounded-lg border bg-white"
+        style={{borderColor: 'var(--sq-border)'}}
+      />
+      <p className="max-w-[30ch] text-sm leading-relaxed theme-copy">{text}</p>
+    </div>
+  );
+}
+
 type DownloadMarketingPageProps = PageProps & {
   // From the ?platform= query string, e.g. set by the Android CTAs so the
   // lead capture form below opens with Android pre-selected.
@@ -521,6 +540,7 @@ export function DownloadMarketingPage({
                 >
                   {copy.download.iosCta}
                 </a>
+                <QrHint src="/qr/ios.svg" text={copy.download.qrIos} />
               </article>
             </Reveal>
 
@@ -547,6 +567,7 @@ export function DownloadMarketingPage({
                 >
                   {copy.download.androidCta}
                 </a>
+                <QrHint src={`/qr/android-${locale}.svg`} text={copy.download.qrAndroid} />
                 <p className="mt-4 text-sm leading-relaxed theme-copy">
                   {copy.download.testerNote}
                 </p>

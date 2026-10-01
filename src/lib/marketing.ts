@@ -423,6 +423,8 @@ export const marketingCopy = {
       testerNote:
         'Use the same Google account for every step. Stay opted in for at least 14 days and share honest feedback.',
       androidAlreadyAdded: 'Already a group member? Open the Play Store test page.',
+      qrIos: 'On a computer? Scan with your iPhone or iPad to open the App Store.',
+      qrAndroid: 'On a computer? Scan with your Android phone to follow these steps there.',
       androidSteps: {
         heading: 'How to join Android Early Access',
         sameAccount: 'Use the same Google account for all three steps.',
@@ -749,6 +751,8 @@ export const marketingCopy = {
       testerNote:
         'Gebruik voor elke stap hetzelfde Google-account. Blijf minimaal 14 dagen aangemeld en geef eerlijke feedback.',
       androidAlreadyAdded: 'Al lid van de groep? Open de Play Store-testpagina.',
+      qrIos: 'Zit je achter de computer? Scan dan met je iPhone of iPad om de App Store te openen.',
+      qrAndroid: 'Zit je achter de computer? Scan dan met je Android-telefoon om deze stappen daar te volgen.',
       androidSteps: {
         heading: 'Zo doe je mee met Android Early Access',
         sameAccount: 'Gebruik voor alle drie stappen hetzelfde Google-account.',
@@ -1075,6 +1079,8 @@ export const marketingCopy = {
       testerNote:
         'Verwende für jeden Schritt dasselbe Google-Konto. Bleibe mindestens 14 Tage angemeldet und gib ehrliches Feedback.',
       androidAlreadyAdded: 'Bereits Mitglied der Gruppe? Öffne die Play-Store-Testseite.',
+      qrIos: 'Bist du am Computer? Scanne den Code mit deinem iPhone oder iPad, um den App Store zu öffnen.',
+      qrAndroid: 'Bist du am Computer? Scanne den Code mit deinem Android-Handy, um die Schritte dort zu befolgen.',
       androidSteps: {
         heading: 'So nimmst du an Android Early Access teil',
         sameAccount: 'Verwende für alle drei Schritte dasselbe Google-Konto.',
@@ -1401,6 +1407,8 @@ export const marketingCopy = {
       testerNote:
         'Utilisez le même compte Google pour chaque étape. Restez inscrit pendant au moins 14 jours et partagez vos retours honnêtes.',
       androidAlreadyAdded: 'Déjà membre du groupe ? Ouvrez la page de test du Play Store.',
+      qrIos: 'Tu es sur un ordinateur ? Scanne le code avec ton iPhone ou ton iPad pour ouvrir l’App Store.',
+      qrAndroid: 'Tu es sur un ordinateur ? Scanne le code avec ton téléphone Android pour y suivre ces étapes.',
       androidSteps: {
         heading: 'Comment rejoindre l’accès anticipé Android',
         sameAccount: 'Utilisez le même compte Google pour les trois étapes.',
@@ -1727,6 +1735,8 @@ export const marketingCopy = {
       testerNote:
         'Usa la misma cuenta de Google en cada paso. Mantente registrado al menos 14 días y comparte comentarios sinceros.',
       androidAlreadyAdded: '¿Ya eres miembro del grupo? Abre la página de prueba de Play Store.',
+      qrIos: '¿Estás en el ordenador? Escanea el código con tu iPhone o iPad para abrir la App Store.',
+      qrAndroid: '¿Estás en el ordenador? Escanea el código con tu móvil Android para seguir estos pasos desde allí.',
       androidSteps: {
         heading: 'Cómo unirse al acceso anticipado de Android',
         sameAccount: 'Usa la misma cuenta de Google en los tres pasos.',
@@ -2053,6 +2063,8 @@ export const marketingCopy = {
       testerNote:
         'Usa lo stesso account Google per ogni passaggio. Resta iscritto per almeno 14 giorni e condividi feedback sinceri.',
       androidAlreadyAdded: 'Sei già membro del gruppo? Apri la pagina di test del Play Store.',
+      qrIos: 'Sei al computer? Scansiona il codice con il tuo iPhone o iPad per aprire l’App Store.',
+      qrAndroid: 'Sei al computer? Scansiona il codice con il tuo telefono Android per seguire questi passaggi sul telefono.',
       androidSteps: {
         heading: 'Come partecipare all’accesso anticipato Android',
         sameAccount: 'Usa lo stesso account Google per tutti e tre i passaggi.',
