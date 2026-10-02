@@ -6,13 +6,16 @@ type StoreLinksProps = {
   androidLabel: string;
   tone?: 'dark' | 'light';
   className?: string;
+  // Landing pages pass their own App Store link with a separate campaign token.
+  appStoreUrl?: string;
 };
 
 export default function StoreLinks({
   appStoreLabel,
   androidLabel,
   tone = 'dark',
-  className = ''
+  className = '',
+  appStoreUrl = APP_STORE_URL
 }: StoreLinksProps) {
   const secondaryClass =
     tone === 'dark'
@@ -22,7 +25,7 @@ export default function StoreLinks({
   return (
     <div className={`flex flex-col gap-3 sm:flex-row ${className}`}>
       <a
-        href={APP_STORE_URL}
+        href={appStoreUrl}
         target="_blank"
         rel="noreferrer"
         className="inline-flex btn-cta-solid min-h-12 items-center justify-center rounded-full px-5 py-3 text-center font-semibold shadow-sm transition focus:outline-none focus:ring-4 focus:ring-phoenix-flame/30"

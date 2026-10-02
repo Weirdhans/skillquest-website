@@ -13,6 +13,7 @@ import {
 const baseRoutes = [
   '',
   '/download',
+  '/parents',
   '/pricing',
   '/features',
   '/privacy',
