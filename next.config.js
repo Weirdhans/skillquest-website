@@ -50,11 +50,12 @@ const nextConfig = {
           '/download?platform=android&utm_source=reddit&utm_medium=social&utm_campaign=testers#android-early-access',
         permanent: false,
       },
-      // Dutch parent groups on Facebook (family mode, reading practice).
+      // Dutch parent groups on Facebook: the parents landing page, which has
+      // both the App Store button and the Android test steps.
       {
         source: '/ouders',
         destination:
-          '/nl/download?platform=android&utm_source=facebook&utm_medium=social&utm_campaign=ouders#android-early-access',
+          '/nl/parents?utm_source=facebook&utm_medium=social&utm_campaign=ouders',
         permanent: false,
       },
       // iPhone/iPad link for the same parent-group posts: straight to the App
@@ -77,7 +78,7 @@ const nextConfig = {
       {
         source: '/lezen',
         destination:
-          '/nl/download?utm_source=facebook&utm_medium=social&utm_campaign=groepen-lezen',
+          '/nl/parents?utm_source=facebook&utm_medium=social&utm_campaign=groepen-lezen',
         permanent: false,
       },
       // X (@UseSkillQuest and Hans's personal account): English home page,
@@ -91,7 +92,7 @@ const nextConfig = {
       {
         source: '/gezin',
         destination:
-          '/nl/download?platform=android&utm_source=meta&utm_medium=paid&utm_campaign=ouders-testers#android-early-access',
+          '/nl/parents?utm_source=meta&utm_medium=paid&utm_campaign=ouders-testers',
         permanent: false,
       },
     ];
