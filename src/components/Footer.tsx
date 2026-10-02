@@ -12,6 +12,7 @@ import {
   type Locale
 } from '@/lib/marketing';
 import {tipsNavLabel} from '@/lib/tips-nav';
+import {communityGuidelines} from '@/lib/community-guidelines';
 
 export default function Footer() {
   const currentLocale = useLocale();
@@ -118,6 +119,11 @@ export default function Footer() {
               <li>
                 <Link href="/privacy" className="hover:text-white">
                   {copy.footer.privacy}
+                </Link>
+              </li>
+              <li>
+                <Link href="/community-guidelines" className="hover:text-white">
+                  {communityGuidelines[locale].footerLabel}
                 </Link>
               </li>
               <li>

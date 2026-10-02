@@ -16,6 +16,7 @@ const baseRoutes = [
   '/pricing',
   '/features',
   '/privacy',
+  '/community-guidelines',
   '/delete-account',
   '/support',
   '/changelog',
