@@ -97,6 +97,20 @@ Er worden geen formulieren verstuurd.
 Kopieer `.env.example` naar `.env.local` en vul de Supabase- en Resend-sleutels in
 voordat je de tester-inschrijving of e-mailflows lokaal test.
 
+## Tips, Pinterest en QR-codes
+
+- **Tips-artikelen** in zes talen, met pin-afbeeldingen en RSS-feeds: zie
+  [docs/TIPS.md](docs/TIPS.md).
+- **QR-codes op de downloadpagina** (alleen op grote schermen): de SVG's in
+  `public/qr/` komen uit `scripts/generate-qr-codes.py` (`pip install segno`).
+  De iOS-code gebruikt het App Store-campagnetoken `ct=website-qr`.
+- **Pinterest-verificatie:** de meta-tag `p:domain_verify` in
+  `src/app/[locale]/layout.tsx` hoort bij het zakelijke Pinterest-account; niet
+  verwijderen.
+- **Korte links** (`/ig`, `/fb`, `/x`, `/ouders`, …) staan als tijdelijke
+  redirects in `next.config.js`; de lijst met bestemmingen staat in
+  `docs/marketing/CAMPAIGN_LINKS.md` in de app-repo.
+
 ## Licentie
 
 Copyright © 2026 SkillQuest. All rights reserved.
