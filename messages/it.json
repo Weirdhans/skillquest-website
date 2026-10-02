@@ -158,64 +158,6 @@
       }
     }
   },
-  "pricing": {
-    "heading": "Prezzi semplici e onesti",
-    "subheading": "Iniziare gratuitamente e passare a Premium per le funzioni avanzate",
-    "tiers": {
-      "guest": {
-        "label": "👋 OSPITE",
-        "price": "€0",
-        "priceNote": "Prova gratis",
-        "features": {
-          "timer": "Timer di base",
-          "skills": "78 competenze",
-          "xp": "XP e livelli",
-          "cloudSync": "Sincronizzazione con il cloud"
-        },
-        "cta": "Iniziare come ospite"
-      },
-      "free": {
-        "label": "🆓 LIBERO",
-        "price": "€0",
-        "priceNote": "Sempre libero",
-        "features": {
-          "cloudSync": "Sincronizzazione con il cloud",
-          "social": "Caratteristiche sociali",
-          "rankings": "Classifiche",
-          "streaks": "Strisce"
-        },
-        "cta": "Creare un account"
-      },
-      "premium": {
-        "label": "💎 PREMIUM",
-        "badge": "🔥 POPOLARE",
-        "price": "€3.99",
-        "pricePer": "/mese",
-        "priceYearly": "€39.99/anno (17% off)",
-        "features": {
-          "deepWork": "Timer di lavoro profondo",
-          "techniques": "52-17 e tempo di flusso",
-          "history": "Storia illimitata",
-          "themes": "19 temi premium"
-        },
-        "cta": "Visualizza il premio"
-      },
-      "family": {
-        "label": "👨‍👩‍👧‍👦 FAMIGLIA",
-        "price": "€6.99",
-        "pricePer": "/mese",
-        "priceYearly": "€69.99/anno (17% off)",
-        "features": {
-          "members": "6 membri della famiglia",
-          "allPremium": "Tutte le funzioni Premium",
-          "parentChild": "Timer genitore-figlio",
-          "challenges": "Sfide per la famiglia"
-        },
-        "cta": "Visualizza la famiglia"
-      }
-    },
-    "cta": "Visualizza i prezzi completi e il confronto →"
-  },
   "waitlist": {
     "badge": "📬 Rimanete aggiornati",
     "heading": "Ricevi aggiornamenti SkillQuest",

@@ -158,64 +158,6 @@
       }
     }
   },
-  "pricing": {
-    "heading": "Einfache, ehrliche Preisgestaltung",
-    "subheading": "Kostenlos starten und auf Premium upgraden für erweiterte Funktionen",
-    "tiers": {
-      "guest": {
-        "label": "👋 GAST",
-        "price": "€0",
-        "priceNote": "Kostenlos ausprobieren",
-        "features": {
-          "timer": "Basis-Timer",
-          "skills": "78 Fähigkeiten",
-          "xp": "XP &amp; Levels",
-          "cloudSync": "Cloud-Synchronisation"
-        },
-        "cta": "Start als Gast"
-      },
-      "free": {
-        "label": "🆓 KOSTENLOS",
-        "price": "€0",
-        "priceNote": "Immer kostenlos",
-        "features": {
-          "cloudSync": "Cloud-Synchronisation",
-          "social": "Soziale Merkmale",
-          "rankings": "Ranglisten",
-          "streaks": "Schlieren"
-        },
-        "cta": "Konto erstellen"
-      },
-      "premium": {
-        "label": "💎 PREMIUM",
-        "badge": "🔥 POPULÄRE",
-        "price": "€3.99",
-        "pricePer": "/Monat",
-        "priceYearly": "€39.99/Jahr (17% off)",
-        "features": {
-          "deepWork": "Deep Work Timer",
-          "techniques": "52-17 &amp; Durchlaufzeit",
-          "history": "Unbegrenzte Geschichte",
-          "themes": "19 Premium-Themen"
-        },
-        "cta": "Ansicht Prämie"
-      },
-      "family": {
-        "label": "👨‍👩‍👧‍👦 FAMILIE",
-        "price": "€6.99",
-        "pricePer": "/Monat",
-        "priceYearly": "€69.99/Jahr (17% off)",
-        "features": {
-          "members": "6 Familienmitglieder",
-          "allPremium": "Alle Premium-Funktionen",
-          "parentChild": "Eltern-Kind-Timer",
-          "challenges": "Familiäre Herausforderungen"
-        },
-        "cta": "Ansicht Familie"
-      }
-    },
-    "cta": "Vollständige Preise und Vergleich anzeigen →"
-  },
   "waitlist": {
     "badge": "📬 Bleiben Sie auf dem Laufenden",
     "heading": "SkillQuest Updates erhalten",

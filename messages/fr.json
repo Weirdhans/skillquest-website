@@ -158,64 +158,6 @@
       }
     }
   },
-  "pricing": {
-    "heading": "Une tarification simple et honnête",
-    "subheading": "Commencez gratuitement et passez à la version Premium pour les fonctions avancées",
-    "tiers": {
-      "guest": {
-        "label": "👋 INVITÉ",
-        "price": "€0",
-        "priceNote": "Essai gratuit",
-        "features": {
-          "timer": "Minuterie de base",
-          "skills": "78 compétences",
-          "xp": "XP et niveaux",
-          "cloudSync": "Synchronisation dans le nuage"
-        },
-        "cta": "Commencer en tant qu'invité"
-      },
-      "free": {
-        "label": "🆓 GRATUIT",
-        "price": "€0",
-        "priceNote": "Toujours libre",
-        "features": {
-          "cloudSync": "Synchronisation dans le nuage",
-          "social": "Caractéristiques sociales",
-          "rankings": "Classement",
-          "streaks": "Les stries"
-        },
-        "cta": "Créer un compte"
-      },
-      "premium": {
-        "label": "💎 PREMIUM",
-        "badge": "🔥 POPULAIRE",
-        "price": "€3.99",
-        "pricePer": "/mois",
-        "priceYearly": "€39.99/an (17% off)",
-        "features": {
-          "deepWork": "Minuteur de travail en profondeur",
-          "techniques": "52-17 &amp; Flowtime",
-          "history": "Historique illimité",
-          "themes": "19 thèmes premium"
-        },
-        "cta": "Voir la prime"
-      },
-      "family": {
-        "label": "👨‍👩‍👧‍👦 FAMILLE",
-        "price": "€6.99",
-        "pricePer": "/mois",
-        "priceYearly": "€69.99/an (17% off)",
-        "features": {
-          "members": "6 membres de la famille",
-          "allPremium": "Toutes les fonctionnalités Premium",
-          "parentChild": "Minuteries parent-enfant",
-          "challenges": "Défis familiaux"
-        },
-        "cta": "Voir la famille"
-      }
-    },
-    "cta": "Voir l'ensemble des prix et des comparaisons →"
-  },
   "waitlist": {
     "badge": "📬 Restez informé",
     "heading": "Recevoir les actualités SkillQuest",

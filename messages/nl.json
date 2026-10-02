@@ -158,64 +158,6 @@
       }
     }
   },
-  "pricing": {
-    "heading": "Eenvoudige, eerlijke prijzen",
-    "subheading": "Begin gratis en upgrade naar Premium voor geavanceerde functies",
-    "tiers": {
-      "guest": {
-        "label": "👋 GAST",
-        "price": "€0",
-        "priceNote": "Probeer gratis",
-        "features": {
-          "timer": "Basistimer",
-          "skills": "78 vaardigheden",
-          "xp": "XP en levels",
-          "cloudSync": "Cloud-synchronisatie"
-        },
-        "cta": "Beginnen als gast"
-      },
-      "free": {
-        "label": "🆓 GRATIS",
-        "price": "€0",
-        "priceNote": "Altijd gratis",
-        "features": {
-          "cloudSync": "Cloud-synchronisatie",
-          "social": "Sociale functies",
-          "rankings": "Klasseringen",
-          "streaks": "Strepen"
-        },
-        "cta": "Account aanmaken"
-      },
-      "premium": {
-        "label": "💎 PREMIUM",
-        "badge": "🔥 POPULAIRE",
-        "price": "€3.99",
-        "pricePer": "/maand",
-        "priceYearly": "€39.99/jaar (17% off)",
-        "features": {
-          "deepWork": "Diepe werktimer",
-          "techniques": "52-17 &amp; Stroomtijd",
-          "history": "Onbeperkte geschiedenis",
-          "themes": "19 eersteklas thema's"
-        },
-        "cta": "Bekijk Premium"
-      },
-      "family": {
-        "label": "👨‍👩‍👧‍👦 FAMILIE",
-        "price": "€6.99",
-        "pricePer": "/maand",
-        "priceYearly": "€69.99/jaar (17% off)",
-        "features": {
-          "members": "6 gezinsleden",
-          "allPremium": "Alle Premium-functies",
-          "parentChild": "Ouder-kind timers",
-          "challenges": "Uitdagingen voor het gezin"
-        },
-        "cta": "Bekijk familie"
-      }
-    },
-    "cta": "Bekijk alle prijzen en vergelijkingen →"
-  },
   "waitlist": {
     "badge": "📬 Blijf op de hoogte",
     "heading": "Ontvang SkillQuest updates",

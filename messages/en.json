@@ -158,64 +158,6 @@
       }
     }
   },
-  "pricing": {
-    "heading": "Simple, Honest Pricing",
-    "subheading": "Start free and upgrade to Premium for advanced features",
-    "tiers": {
-      "guest": {
-        "label": "👋 GUEST",
-        "price": "€0",
-        "priceNote": "Try for free",
-        "features": {
-          "timer": "Basic timer",
-          "skills": "78 skills",
-          "xp": "XP & Levels",
-          "cloudSync": "Cloud sync"
-        },
-        "cta": "Start as Guest"
-      },
-      "free": {
-        "label": "🆓 FREE",
-        "price": "€0",
-        "priceNote": "Always free",
-        "features": {
-          "cloudSync": "Cloud sync",
-          "social": "Social features",
-          "rankings": "Rankings",
-          "streaks": "Streaks"
-        },
-        "cta": "Create Account"
-      },
-      "premium": {
-        "label": "💎 PREMIUM",
-        "badge": "🔥 POPULAR",
-        "price": "€3.99",
-        "pricePer": "/month",
-        "priceYearly": "€39.99/year (17% off)",
-        "features": {
-          "deepWork": "Deep Work timer",
-          "techniques": "52-17 & Flowtime",
-          "history": "Unlimited history",
-          "themes": "19 premium themes"
-        },
-        "cta": "View Premium"
-      },
-      "family": {
-        "label": "👨‍👩‍👧‍👦 FAMILY",
-        "price": "€6.99",
-        "pricePer": "/month",
-        "priceYearly": "€69.99/year (17% off)",
-        "features": {
-          "members": "6 family members",
-          "allPremium": "All Premium features",
-          "parentChild": "Parent-child timers",
-          "challenges": "Family challenges"
-        },
-        "cta": "View Family"
-      }
-    },
-    "cta": "View full pricing & comparison →"
-  },
   "waitlist": {
     "badge": "📬 Stay Updated",
     "heading": "Get SkillQuest updates",
