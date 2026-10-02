@@ -7,6 +7,7 @@ import {getMessages} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
 import {themeInitScript} from '@/lib/theme-script';
+import {SpeedInsights} from '@vercel/speed-insights/next';
 import {
   createPageMetadata,
   getMarketingCopy,
@@ -69,6 +70,7 @@ export default async function LocaleLayout({
           {children}
         </NextIntlClientProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
