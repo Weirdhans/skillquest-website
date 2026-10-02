@@ -18,17 +18,14 @@ const BACKGROUND = 'linear-gradient(160deg, #043d47 0%, #032a33 55%, #021b22 100
 const ACCENT = '#26cda0';
 const MUTED = '#bed6d6';
 
-// Satori needs TTF/OTF, so ask Google Fonts for just the characters we draw.
-async function loadGoogleFont(family: string, weight: number, text: string) {
-  const css = await (
-    await fetch(
-      `https://fonts.googleapis.com/css2?family=${family}:wght@${weight}&text=${encodeURIComponent(text)}`
-    )
-  ).text();
-  const url = css.match(/src: url\((.+?)\) format\('(opentype|truetype)'\)/)?.[1];
-  if (!url) throw new Error(`No TTF for ${family} ${weight}`);
-  return (await fetch(url)).arrayBuffer();
-}
+// Satori needs TTF/OTF. The fonts live in the repo (both SIL Open Font
+// License) so the build does not depend on Google Fonts: one timed-out font
+// request used to fail the whole deployment.
+const FONT_DIR = join(process.cwd(), 'assets', 'fonts');
+const fontsPromise = Promise.all([
+  readFile(join(FONT_DIR, 'BricolageGrotesque-Bold.ttf')),
+  readFile(join(FONT_DIR, 'Geist-Medium.ttf'))
+]);
 
 export async function GET(
   _request: Request,
@@ -48,10 +45,7 @@ export async function GET(
   const logo = await readFile(join(process.cwd(), 'public', 'skillquest-logo.png'));
   const logoSrc = `data:image/png;base64,${logo.toString('base64')}`;
 
-  const [display, body] = await Promise.all([
-    loadGoogleFont('Bricolage+Grotesque', 700, `SkillQuest${tip.title}`),
-    loadGoogleFont('Geist', 500, `${eyebrow}${tip.cardSummary}${footer}`)
-  ]);
+  const [display, body] = await fontsPromise;
 
   return new ImageResponse(
     (
