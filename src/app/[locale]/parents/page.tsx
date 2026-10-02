@@ -6,7 +6,7 @@ import StoreLinks from '@/components/StoreLinks';
 import {Check} from '@phosphor-icons/react/dist/ssr';
 import {Link, routing} from '@/i18n/routing';
 import {
-  PRICING,
+  PRICES,
   createPageMetadata,
   faqJsonLd,
   isLocale,
@@ -20,10 +20,10 @@ import {parentsPage} from '@/lib/parents-page';
 const APP_STORE_PARENTS_URL =
   'https://apps.apple.com/app/apple-store/id6755604671?pt=128291575&ct=ouders-pagina&mt=8';
 
-function withPrices(text: string): string {
+function withPrices(locale: Locale, text: string): string {
   return text
-    .replace('{familyMonthly}', PRICING.familyMonthly)
-    .replace('{familyYearly}', PRICING.familyYearly);
+    .replace('{familyMonthly}', PRICES[locale].familyMonthly)
+    .replace('{familyYearly}', PRICES[locale].familyYearly);
 }
 
 function JsonLd({data}: {data: unknown}) {
@@ -64,7 +64,7 @@ export default async function ParentsPage({
   const {locale} = await params;
   const safeLocale: Locale = isLocale(locale) ? locale : routing.defaultLocale;
   const copy = parentsPage[safeLocale];
-  const faq = copy.faq.map((item) => ({question: item.q, answer: withPrices(item.a)}));
+  const faq = copy.faq.map((item) => ({question: item.q, answer: withPrices(safeLocale, item.a)}));
 
   return (
     <>
@@ -157,7 +157,7 @@ export default async function ParentsPage({
                 <h2 className="font-display text-section text-balance theme-title">
                   {copy.familyHeading}
                 </h2>
-                {copy.family.map(withPrices).map((line) => (
+                {copy.family.map((line) => withPrices(safeLocale, line)).map((line) => (
                   <p key={line} className="mt-5 leading-relaxed theme-copy">
                     {line}
                   </p>

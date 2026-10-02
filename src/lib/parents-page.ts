@@ -1,6 +1,6 @@
 // Landing page for parents (/{locale}/parents). Dutch is the source; the other
 // languages come from DeepL plus a review. {familyMonthly} and {familyYearly}
-// are filled from PRICING at render time. Only true facts about Hans and his son.
+// are filled from PRICES at render time. Only true facts about Hans and his son.
 import type {Locale} from '@/lib/marketing';
 
 type Step = {title: string; body: string};

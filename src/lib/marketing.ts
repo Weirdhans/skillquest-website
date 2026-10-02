@@ -23,11 +23,15 @@ export const ANDROID_STORE_URL =
 export const ANDROID_SIGNUP_URL =
   '/download?platform=android#android-early-access';
 
-export const PRICING = {
-  premiumMonthly: '€3.99',
-  premiumYearly: '€39.99',
-  familyMonthly: '€6.99',
-  familyYearly: '€69.99'
+// Subscription prices in euros. Copy gets them through PRICES[locale], which
+// follows each language's notation (€ 3,99 in Dutch, 3,99 € in German, €3.99
+// in English); structured data uses the plain numbers.
+export const PRICE_AMOUNTS = {
+  free: 0,
+  premiumMonthly: 3.99,
+  premiumYearly: 39.99,
+  familyMonthly: 6.99,
+  familyYearly: 69.99
 } as const;
 
 const localeNames: Record<Locale, string> = {
@@ -56,6 +60,23 @@ export const languageTags: Record<Locale, string> = {
   es: 'es-ES',
   it: 'it-IT'
 };
+
+export function formatEuro(locale: Locale, amount: number) {
+  return new Intl.NumberFormat(languageTags[locale], {
+    style: 'currency',
+    currency: 'EUR',
+    minimumFractionDigits: Number.isInteger(amount) ? 0 : 2
+  }).format(amount);
+}
+
+export const PRICES = Object.fromEntries(
+  routing.locales.map((locale) => [
+    locale,
+    Object.fromEntries(
+      Object.entries(PRICE_AMOUNTS).map(([key, amount]) => [key, formatEuro(locale, amount)])
+    )
+  ])
+) as Record<Locale, Record<keyof typeof PRICE_AMOUNTS, string>>;
 
 export const screenshotNames = [
   '01-home-progress.png',
@@ -172,31 +193,31 @@ export function softwareApplicationJsonLd(locale: Locale) {
       {
         '@type': 'Offer',
         name: 'Free download',
-        price: '0',
+        price: String(PRICE_AMOUNTS.free),
         priceCurrency: 'EUR'
       },
       {
         '@type': 'Offer',
         name: 'Premium monthly',
-        price: '3.99',
+        price: String(PRICE_AMOUNTS.premiumMonthly),
         priceCurrency: 'EUR'
       },
       {
         '@type': 'Offer',
         name: 'Premium yearly',
-        price: '39.99',
+        price: String(PRICE_AMOUNTS.premiumYearly),
         priceCurrency: 'EUR'
       },
       {
         '@type': 'Offer',
         name: 'Family monthly',
-        price: '6.99',
+        price: String(PRICE_AMOUNTS.familyMonthly),
         priceCurrency: 'EUR'
       },
       {
         '@type': 'Offer',
         name: 'Family yearly',
-        price: '69.99',
+        price: String(PRICE_AMOUNTS.familyYearly),
         priceCurrency: 'EUR'
       }
     ],
@@ -284,7 +305,7 @@ export const marketingCopy = {
         {
           title: 'Included in Family',
           body:
-            `These parent-child tools are part of the Family subscription at ${PRICING.familyMonthly}/month or ${PRICING.familyYearly}/year.`
+            `These parent-child tools are part of the Family subscription at ${PRICES.en.familyMonthly}/month or ${PRICES.en.familyYearly}/year.`
         }
       ],
       note:
@@ -344,7 +365,7 @@ export const marketingCopy = {
     pricingPreview: {
       heading: 'Simple subscription choices',
       body:
-        `Premium is ${PRICING.premiumMonthly}/month or ${PRICING.premiumYearly}/year. Family is ${PRICING.familyMonthly}/month or ${PRICING.familyYearly}/year.`,
+        `Premium is ${PRICES.en.premiumMonthly}/month or ${PRICES.en.premiumYearly}/year. Family is ${PRICES.en.familyMonthly}/month or ${PRICES.en.familyYearly}/year.`,
       cta: 'See plans'
     },
     trust: {
@@ -452,7 +473,7 @@ export const marketingCopy = {
     pricing: {
       metaTitle: 'SkillQuest Pricing | Premium and Family Plans',
       metaDescription:
-        'Compare Free, Premium, and Family pricing for SkillQuest. Premium is €3.99/month or €39.99/year. Family is €6.99/month or €69.99/year.',
+        `Compare Free, Premium, and Family pricing for SkillQuest. Premium is ${PRICES.en.premiumMonthly}/month or ${PRICES.en.premiumYearly}/year. Family is ${PRICES.en.familyMonthly}/month or ${PRICES.en.familyYearly}/year.`,
       title: 'SkillQuest pricing',
       subtitle:
         'Start free. Upgrade when deeper statistics, more freedom, or family tools become worth paying for.',
@@ -460,7 +481,7 @@ export const marketingCopy = {
       plans: [
         {
           name: 'Free',
-          price: '€0',
+          price: PRICES.en.free,
           cadence: 'Start immediately',
           description:
             'Try SkillQuest with Guest Mode and core skill tracking before you subscribe.',
@@ -468,8 +489,8 @@ export const marketingCopy = {
         },
         {
           name: 'Premium',
-          price: `${PRICING.premiumMonthly}/month`,
-          cadence: `${PRICING.premiumYearly}/year`,
+          price: `${PRICES.en.premiumMonthly}/month`,
+          cadence: `${PRICES.en.premiumYearly}/year`,
           description:
             'For users who want more freedom, expanded statistics, extra themes, and advanced features.',
           features: [
@@ -482,8 +503,8 @@ export const marketingCopy = {
         },
         {
           name: 'Family',
-          price: `${PRICING.familyMonthly}/month`,
-          cadence: `${PRICING.familyYearly}/year`,
+          price: `${PRICES.en.familyMonthly}/month`,
+          cadence: `${PRICES.en.familyYearly}/year`,
           description:
             'For parents who want Premium plus family structure, child statistics, timer support, goals, and compliments.',
           features: [
@@ -504,7 +525,7 @@ export const marketingCopy = {
         {
           question: 'What are the final subscription prices?',
           answer:
-            'Premium is €3.99 per month or €39.99 per year. Family is €6.99 per month or €69.99 per year.'
+            `Premium is ${PRICES.en.premiumMonthly} per month or ${PRICES.en.premiumYearly} per year. Family is ${PRICES.en.familyMonthly} per month or ${PRICES.en.familyYearly} per year.`
         },
         {
           question: 'How do I cancel?',
@@ -612,7 +633,7 @@ export const marketingCopy = {
         {
           title: 'Onderdeel van Family',
           body:
-            `Deze ouder-kind functies horen bij het Family abonnement van ${PRICING.familyMonthly}/maand of ${PRICING.familyYearly}/jaar.`
+            `Deze ouder-kind functies horen bij het Family abonnement van ${PRICES.nl.familyMonthly}/maand of ${PRICES.nl.familyYearly}/jaar.`
         }
       ],
       note:
@@ -672,7 +693,7 @@ export const marketingCopy = {
     pricingPreview: {
       heading: 'Eenvoudige abonnementen',
       body:
-        `Premium is ${PRICING.premiumMonthly}/maand of ${PRICING.premiumYearly}/jaar. Family is ${PRICING.familyMonthly}/maand of ${PRICING.familyYearly}/jaar.`,
+        `Premium is ${PRICES.nl.premiumMonthly}/maand of ${PRICES.nl.premiumYearly}/jaar. Family is ${PRICES.nl.familyMonthly}/maand of ${PRICES.nl.familyYearly}/jaar.`,
       cta: 'Bekijk plannen'
     },
     trust: {
@@ -780,7 +801,7 @@ export const marketingCopy = {
     pricing: {
       metaTitle: 'SkillQuest Prijzen | Premium en Family',
       metaDescription:
-        'Vergelijk Free, Premium en Family voor SkillQuest. Premium is €3.99/maand of €39.99/jaar. Family is €6.99/maand of €69.99/jaar.',
+        `Vergelijk Free, Premium en Family voor SkillQuest. Premium is ${PRICES.nl.premiumMonthly}/maand of ${PRICES.nl.premiumYearly}/jaar. Family is ${PRICES.nl.familyMonthly}/maand of ${PRICES.nl.familyYearly}/jaar.`,
       title: 'SkillQuest prijzen',
       subtitle:
         'Start gratis. Upgrade wanneer diepere statistieken, meer vrijheid of familie-tools de moeite waard zijn.',
@@ -788,7 +809,7 @@ export const marketingCopy = {
       plans: [
         {
           name: 'Free',
-          price: '€0',
+          price: PRICES.nl.free,
           cadence: 'Direct starten',
           description:
             'Probeer SkillQuest met Guest Mode en basis skill tracking voordat je betaalt.',
@@ -796,8 +817,8 @@ export const marketingCopy = {
         },
         {
           name: 'Premium',
-          price: `${PRICING.premiumMonthly}/maand`,
-          cadence: `${PRICING.premiumYearly}/jaar`,
+          price: `${PRICES.nl.premiumMonthly}/maand`,
+          cadence: `${PRICES.nl.premiumYearly}/jaar`,
           description:
             'Voor gebruikers die meer vrijheid, uitgebreidere statistieken, extra thema’s en geavanceerde functies willen.',
           features: [
@@ -810,8 +831,8 @@ export const marketingCopy = {
         },
         {
           name: 'Family',
-          price: `${PRICING.familyMonthly}/maand`,
-          cadence: `${PRICING.familyYearly}/jaar`,
+          price: `${PRICES.nl.familyMonthly}/maand`,
+          cadence: `${PRICES.nl.familyYearly}/jaar`,
           description:
             'Voor ouders die Premium willen combineren met gezinsstructuur, kindstatistieken, timerondersteuning, doelen en complimenten.',
           features: [
@@ -832,7 +853,7 @@ export const marketingCopy = {
         {
           question: 'Wat zijn de definitieve abonnementstarieven?',
           answer:
-            'Premium is €3.99 per maand of €39.99 per jaar. Family is €6.99 per maand of €69.99 per jaar.'
+            `Premium is ${PRICES.nl.premiumMonthly} per maand of ${PRICES.nl.premiumYearly} per jaar. Family is ${PRICES.nl.familyMonthly} per maand of ${PRICES.nl.familyYearly} per jaar.`
         },
         {
           question: 'Hoe annuleer ik?',
@@ -940,7 +961,7 @@ export const marketingCopy = {
         {
           title: 'In Family enthalten',
           body:
-            `Diese Eltern-Kind-Funktionen gehören zum Family Abo für ${PRICING.familyMonthly}/Monat oder ${PRICING.familyYearly}/Jahr.`
+            `Diese Eltern-Kind-Funktionen gehören zum Family Abo für ${PRICES.de.familyMonthly}/Monat oder ${PRICES.de.familyYearly}/Jahr.`
         }
       ],
       note:
@@ -1000,7 +1021,7 @@ export const marketingCopy = {
     pricingPreview: {
       heading: 'Einfache Abos',
       body:
-        `Premium kostet ${PRICING.premiumMonthly}/Monat oder ${PRICING.premiumYearly}/Jahr. Family kostet ${PRICING.familyMonthly}/Monat oder ${PRICING.familyYearly}/Jahr.`,
+        `Premium kostet ${PRICES.de.premiumMonthly}/Monat oder ${PRICES.de.premiumYearly}/Jahr. Family kostet ${PRICES.de.familyMonthly}/Monat oder ${PRICES.de.familyYearly}/Jahr.`,
       cta: 'Pläne ansehen'
     },
     trust: {
@@ -1108,7 +1129,7 @@ export const marketingCopy = {
     pricing: {
       metaTitle: 'SkillQuest Preise | Premium und Family',
       metaDescription:
-        'Vergleiche Free, Premium und Family für SkillQuest. Premium kostet €3.99/Monat oder €39.99/Jahr. Family kostet €6.99/Monat oder €69.99/Jahr.',
+        `Vergleiche Free, Premium und Family für SkillQuest. Premium kostet ${PRICES.de.premiumMonthly}/Monat oder ${PRICES.de.premiumYearly}/Jahr. Family kostet ${PRICES.de.familyMonthly}/Monat oder ${PRICES.de.familyYearly}/Jahr.`,
       title: 'SkillQuest Preise',
       subtitle:
         'Starte kostenlos. Upgrade, wenn tiefere Statistiken, mehr Freiheit oder Familienfunktionen den Preis wert sind.',
@@ -1116,7 +1137,7 @@ export const marketingCopy = {
       plans: [
         {
           name: 'Free',
-          price: '€0',
+          price: PRICES.de.free,
           cadence: 'Sofort starten',
           description:
             'Teste SkillQuest mit Guest Mode und zentralem Skill Tracking, bevor du abonnierst.',
@@ -1124,8 +1145,8 @@ export const marketingCopy = {
         },
         {
           name: 'Premium',
-          price: `${PRICING.premiumMonthly}/Monat`,
-          cadence: `${PRICING.premiumYearly}/Jahr`,
+          price: `${PRICES.de.premiumMonthly}/Monat`,
+          cadence: `${PRICES.de.premiumYearly}/Jahr`,
           description:
             'Für Nutzer, die mehr Freiheit, erweiterte Statistiken, zusätzliche Themes und fortgeschrittene Funktionen wollen.',
           features: [
@@ -1138,8 +1159,8 @@ export const marketingCopy = {
         },
         {
           name: 'Family',
-          price: `${PRICING.familyMonthly}/Monat`,
-          cadence: `${PRICING.familyYearly}/Jahr`,
+          price: `${PRICES.de.familyMonthly}/Monat`,
+          cadence: `${PRICES.de.familyYearly}/Jahr`,
           description:
             'Für Eltern, die Premium mit Familienstruktur, Kinderstatistiken, Timerunterstützung, Zielen und Komplimenten wollen.',
           features: [
@@ -1160,7 +1181,7 @@ export const marketingCopy = {
         {
           question: 'Was sind die endgültigen Abo-Preise?',
           answer:
-            'Premium kostet €3.99 pro Monat oder €39.99 pro Jahr. Family kostet €6.99 pro Monat oder €69.99 pro Jahr.'
+            `Premium kostet ${PRICES.de.premiumMonthly} pro Monat oder ${PRICES.de.premiumYearly} pro Jahr. Family kostet ${PRICES.de.familyMonthly} pro Monat oder ${PRICES.de.familyYearly} pro Jahr.`
         },
         {
           question: 'Wie kündige ich?',
@@ -1268,7 +1289,7 @@ export const marketingCopy = {
         {
           title: 'Inclus dans Family',
           body:
-            `Ces fonctions parent-enfant font partie de l’abonnement Family à ${PRICING.familyMonthly}/mois ou ${PRICING.familyYearly}/an.`
+            `Ces fonctions parent-enfant font partie de l’abonnement Family à ${PRICES.fr.familyMonthly}/mois ou ${PRICES.fr.familyYearly}/an.`
         }
       ],
       note:
@@ -1328,7 +1349,7 @@ export const marketingCopy = {
     pricingPreview: {
       heading: 'Des abonnements simples',
       body:
-        `Premium coûte ${PRICING.premiumMonthly}/mois ou ${PRICING.premiumYearly}/an. Family coûte ${PRICING.familyMonthly}/mois ou ${PRICING.familyYearly}/an.`,
+        `Premium coûte ${PRICES.fr.premiumMonthly}/mois ou ${PRICES.fr.premiumYearly}/an. Family coûte ${PRICES.fr.familyMonthly}/mois ou ${PRICES.fr.familyYearly}/an.`,
       cta: 'Voir les plans'
     },
     trust: {
@@ -1436,7 +1457,7 @@ export const marketingCopy = {
     pricing: {
       metaTitle: 'Prix SkillQuest | Premium et Family',
       metaDescription:
-        'Comparez Free, Premium et Family pour SkillQuest. Premium coûte €3.99/mois ou €39.99/an. Family coûte €6.99/mois ou €69.99/an.',
+        `Comparez Free, Premium et Family pour SkillQuest. Premium coûte ${PRICES.fr.premiumMonthly}/mois ou ${PRICES.fr.premiumYearly}/an. Family coûte ${PRICES.fr.familyMonthly}/mois ou ${PRICES.fr.familyYearly}/an.`,
       title: 'Prix SkillQuest',
       subtitle:
         'Commencez gratuitement. Passez à Premium quand des statistiques plus poussées, plus de liberté ou des fonctions famille valent le coût.',
@@ -1444,7 +1465,7 @@ export const marketingCopy = {
       plans: [
         {
           name: 'Free',
-          price: '€0',
+          price: PRICES.fr.free,
           cadence: 'Commencer maintenant',
           description:
             'Essayez SkillQuest avec Guest Mode et le suivi de compétences essentiel avant de vous abonner.',
@@ -1452,8 +1473,8 @@ export const marketingCopy = {
         },
         {
           name: 'Premium',
-          price: `${PRICING.premiumMonthly}/mois`,
-          cadence: `${PRICING.premiumYearly}/an`,
+          price: `${PRICES.fr.premiumMonthly}/mois`,
+          cadence: `${PRICES.fr.premiumYearly}/an`,
           description:
             'Pour les utilisateurs qui veulent plus de liberté, statistiques étendues, thèmes supplémentaires et fonctions avancées.',
           features: [
@@ -1466,8 +1487,8 @@ export const marketingCopy = {
         },
         {
           name: 'Family',
-          price: `${PRICING.familyMonthly}/mois`,
-          cadence: `${PRICING.familyYearly}/an`,
+          price: `${PRICES.fr.familyMonthly}/mois`,
+          cadence: `${PRICES.fr.familyYearly}/an`,
           description:
             'Pour les parents qui veulent Premium avec structure familiale, statistiques enfant, timers, objectifs et compliments.',
           features: [
@@ -1488,7 +1509,7 @@ export const marketingCopy = {
         {
           question: 'Quels sont les prix finaux des abonnements ?',
           answer:
-            'Premium coûte €3.99 par mois ou €39.99 par an. Family coûte €6.99 par mois ou €69.99 par an.'
+            `Premium coûte ${PRICES.fr.premiumMonthly} par mois ou ${PRICES.fr.premiumYearly} par an. Family coûte ${PRICES.fr.familyMonthly} par mois ou ${PRICES.fr.familyYearly} par an.`
         },
         {
           question: 'Comment annuler ?',
@@ -1596,7 +1617,7 @@ export const marketingCopy = {
         {
           title: 'Incluido en Family',
           body:
-            `Estas funciones padre-hijo forman parte de la suscripción Family por ${PRICING.familyMonthly}/mes o ${PRICING.familyYearly}/año.`
+            `Estas funciones padre-hijo forman parte de la suscripción Family por ${PRICES.es.familyMonthly}/mes o ${PRICES.es.familyYearly}/año.`
         }
       ],
       note:
@@ -1656,7 +1677,7 @@ export const marketingCopy = {
     pricingPreview: {
       heading: 'Suscripciones simples',
       body:
-        `Premium cuesta ${PRICING.premiumMonthly}/mes o ${PRICING.premiumYearly}/año. Family cuesta ${PRICING.familyMonthly}/mes o ${PRICING.familyYearly}/año.`,
+        `Premium cuesta ${PRICES.es.premiumMonthly}/mes o ${PRICES.es.premiumYearly}/año. Family cuesta ${PRICES.es.familyMonthly}/mes o ${PRICES.es.familyYearly}/año.`,
       cta: 'Ver planes'
     },
     trust: {
@@ -1764,7 +1785,7 @@ export const marketingCopy = {
     pricing: {
       metaTitle: 'Precios de SkillQuest | Premium y Family',
       metaDescription:
-        'Compara Free, Premium y Family para SkillQuest. Premium cuesta €3.99/mes o €39.99/año. Family cuesta €6.99/mes o €69.99/año.',
+        `Compara Free, Premium y Family para SkillQuest. Premium cuesta ${PRICES.es.premiumMonthly}/mes o ${PRICES.es.premiumYearly}/año. Family cuesta ${PRICES.es.familyMonthly}/mes o ${PRICES.es.familyYearly}/año.`,
       title: 'Precios de SkillQuest',
       subtitle:
         'Empieza gratis. Mejora cuando estadísticas más profundas, más libertad o funciones familiares merezcan la pena.',
@@ -1772,7 +1793,7 @@ export const marketingCopy = {
       plans: [
         {
           name: 'Free',
-          price: '€0',
+          price: PRICES.es.free,
           cadence: 'Empieza al instante',
           description:
             'Prueba SkillQuest con Guest Mode y seguimiento básico antes de suscribirte.',
@@ -1780,8 +1801,8 @@ export const marketingCopy = {
         },
         {
           name: 'Premium',
-          price: `${PRICING.premiumMonthly}/mes`,
-          cadence: `${PRICING.premiumYearly}/año`,
+          price: `${PRICES.es.premiumMonthly}/mes`,
+          cadence: `${PRICES.es.premiumYearly}/año`,
           description:
             'Para usuarios que quieren más libertad, estadísticas ampliadas, temas extra y funciones avanzadas.',
           features: [
@@ -1794,8 +1815,8 @@ export const marketingCopy = {
         },
         {
           name: 'Family',
-          price: `${PRICING.familyMonthly}/mes`,
-          cadence: `${PRICING.familyYearly}/año`,
+          price: `${PRICES.es.familyMonthly}/mes`,
+          cadence: `${PRICES.es.familyYearly}/año`,
           description:
             'Para padres que quieren Premium con estructura familiar, estadísticas infantiles, timers, metas y cumplidos.',
           features: [
@@ -1816,7 +1837,7 @@ export const marketingCopy = {
         {
           question: '¿Cuáles son los precios finales?',
           answer:
-            'Premium cuesta €3.99 al mes o €39.99 al año. Family cuesta €6.99 al mes o €69.99 al año.'
+            `Premium cuesta ${PRICES.es.premiumMonthly} al mes o ${PRICES.es.premiumYearly} al año. Family cuesta ${PRICES.es.familyMonthly} al mes o ${PRICES.es.familyYearly} al año.`
         },
         {
           question: '¿Cómo cancelo?',
@@ -1924,7 +1945,7 @@ export const marketingCopy = {
         {
           title: 'Incluso in Family',
           body:
-            `Queste funzioni genitore-figlio fanno parte dell’abbonamento Family a ${PRICING.familyMonthly}/mese o ${PRICING.familyYearly}/anno.`
+            `Queste funzioni genitore-figlio fanno parte dell’abbonamento Family a ${PRICES.it.familyMonthly}/mese o ${PRICES.it.familyYearly}/anno.`
         }
       ],
       note:
@@ -1984,7 +2005,7 @@ export const marketingCopy = {
     pricingPreview: {
       heading: 'Abbonamenti semplici',
       body:
-        `Premium costa ${PRICING.premiumMonthly}/mese o ${PRICING.premiumYearly}/anno. Family costa ${PRICING.familyMonthly}/mese o ${PRICING.familyYearly}/anno.`,
+        `Premium costa ${PRICES.it.premiumMonthly}/mese o ${PRICES.it.premiumYearly}/anno. Family costa ${PRICES.it.familyMonthly}/mese o ${PRICES.it.familyYearly}/anno.`,
       cta: 'Vedi i piani'
     },
     trust: {
@@ -2092,7 +2113,7 @@ export const marketingCopy = {
     pricing: {
       metaTitle: 'Prezzi SkillQuest | Premium e Family',
       metaDescription:
-        'Confronta Free, Premium e Family per SkillQuest. Premium costa €3.99/mese o €39.99/anno. Family costa €6.99/mese o €69.99/anno.',
+        `Confronta Free, Premium e Family per SkillQuest. Premium costa ${PRICES.it.premiumMonthly}/mese o ${PRICES.it.premiumYearly}/anno. Family costa ${PRICES.it.familyMonthly}/mese o ${PRICES.it.familyYearly}/anno.`,
       title: 'Prezzi SkillQuest',
       subtitle:
         'Inizia gratis. Passa a Premium quando statistiche più profonde, più libertà o funzioni famiglia valgono il prezzo.',
@@ -2100,7 +2121,7 @@ export const marketingCopy = {
       plans: [
         {
           name: 'Free',
-          price: '€0',
+          price: PRICES.it.free,
           cadence: 'Inizia subito',
           description:
             'Prova SkillQuest con Guest Mode e tracking essenziale prima di abbonarti.',
@@ -2108,8 +2129,8 @@ export const marketingCopy = {
         },
         {
           name: 'Premium',
-          price: `${PRICING.premiumMonthly}/mese`,
-          cadence: `${PRICING.premiumYearly}/anno`,
+          price: `${PRICES.it.premiumMonthly}/mese`,
+          cadence: `${PRICES.it.premiumYearly}/anno`,
           description:
             'Per utenti che vogliono più libertà, statistiche ampliate, temi extra e funzioni avanzate.',
           features: [
@@ -2122,8 +2143,8 @@ export const marketingCopy = {
         },
         {
           name: 'Family',
-          price: `${PRICING.familyMonthly}/mese`,
-          cadence: `${PRICING.familyYearly}/anno`,
+          price: `${PRICES.it.familyMonthly}/mese`,
+          cadence: `${PRICES.it.familyYearly}/anno`,
           description:
             'Per genitori che vogliono Premium con struttura familiare, statistiche dei figli, timer, obiettivi e complimenti.',
           features: [
@@ -2144,7 +2165,7 @@ export const marketingCopy = {
         {
           question: 'Quali sono i prezzi finali?',
           answer:
-            'Premium costa €3.99 al mese o €39.99 all’anno. Family costa €6.99 al mese o €69.99 all’anno.'
+            `Premium costa ${PRICES.it.premiumMonthly} al mese o ${PRICES.it.premiumYearly} all’anno. Family costa ${PRICES.it.familyMonthly} al mese o ${PRICES.it.familyYearly} all’anno.`
         },
         {
           question: 'Come annullo?',
