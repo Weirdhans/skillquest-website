@@ -183,6 +183,90 @@
           "answer": "L'installazione è gratuita e non ci sono pubblicità. C'è anche una versione a pagamento con funzionalità extra; puoi vedere cosa include direttamente nell'app."
         }
       ]
+    },
+    {
+      "id": "child-wont-do-homework",
+      "slug": "bambino-non-vuole-fare-i-compiti",
+      "eyebrow": "Compiti a casa",
+      "title": "Tuo figlio non vuole fare i compiti? 6 consigli per una routine fissa",
+      "metaTitle": "Il bambino non vuole fare i compiti: 6 consigli | SkillQuest",
+      "metaDescription": "Tuo figlio non vuole fare i compiti? Sei consigli: prima rilassarsi, un posto fisso, sessioni brevi e un limite di tempo.",
+      "intro": "Tuo figlio torna a casa, butta lo zaino in un angolo e, appena si parla di compiti, parte la discussione. È una situazione che quasi tutti i genitori conoscono bene. Ecco sei cose che puoi provare a fare, con o senza app.",
+      "cardSummary": "Sei consigli pratici per i genitori di un bambino che non ha voglia di fare i compiti: da stabilire un orario fisso a capire quando è il momento di smettere.",
+      "publishedAt": "2026-10-07",
+      "readingMinutes": 4,
+      "app": {
+        "title": "Come SkillQuest può aiutarti in questo",
+        "body": "In SkillQuest scegli un’abilità, avvii un timer e dopo ogni sessione vedi come progredisci. Ricevi 1 XP per ogni minuto di pratica, quindi l’app premia l’impegno e non il risultato. Puoi vedere i livelli e i progressi settimanali. Con la funzione famiglia, un genitore può seguire i progressi del proprio figlio e puoi anche avviare il timer sul tuo telefono per tuo figlio. Il timer continua a funzionare mentre tuo figlio si esercita; nessuno deve guardare lo schermo. SkillQuest è pensata per esercitarsi, ad esempio nella lettura o con uno strumento musicale. Per i compiti scolastici la usi soprattutto come timer. Non ti serve un’app per creare una routine: basta anche un normale timer da cucina."
+      },
+      "sections": [
+        {
+          "title": "1. Per prima cosa, cerca di capire cosa sta succedendo",
+          "paragraphs": [
+            "\"Non ne ho voglia\" può significare tante cose. Forse il compito è troppo difficile, tuo figlio è stanco o non capisce la spiegazione della lezione. A volte, però, dietro c’è anche lo stress o la paura di fallire.",
+            "Chiedi pure con calma, in un momento in cui non si crea tensione. Ad esempio: «Qual è la materia che ti piace di meno?» La risposta ti aiuterà più di una predica sulla perseveranza.",
+            "Se il carico di lavoro è sistematicamente eccessivo o troppo difficile, parlane con l’insegnante. È un problema da risolvere insieme, non qualcosa che tuo figlio deve affrontare da solo."
+          ]
+        },
+        {
+          "title": "2. Fai in modo che tuo figlio si rilassi prima di tutto",
+          "paragraphs": [
+            "Dopo una giornata piena a scuola, tuo figlio è esausto. Metterlo subito a tavola funziona raramente. Concedigli un quarto d’ora o mezz’ora per uno spuntino, per giocare fuori o semplicemente per rilassarsi.",
+            "Mettiti d’accordo su quanto durerà quella pausa e su quando inizieranno i compiti. Così tuo figlio saprà che non può rimandare all’infinito e tu non dovrai stare lì a rimproverarlo continuamente.",
+            "Alcuni bambini, invece, sono più concentrati proprio dopo la scuola. Prova entrambe le opzioni e vedi quale si adatta meglio a tuo figlio."
+          ]
+        },
+        {
+          "title": "3. Trova un posto fisso senza distrazioni",
+          "paragraphs": [
+            "Scegli un posto dove a tuo figlio piace stare e che non sia troppo disordinato. Può essere il tavolo della cucina, una scrivania o un angolino tranquillo in salotto. L’importante è che sia sempre lo stesso posto.",
+            "Metti il telefono e il tablet in un’altra stanza e disattiva l’audio. È difficile concentrarsi se ogni minuto arriva una notifica.",
+            "Prepara il materiale scolastico prima che tuo figlio inizi. Passare un quarto d’ora a cercare un compasso o una penna spesso richiede più energia del compito stesso."
+          ]
+        },
+        {
+          "title": "4. Lavora in brevi sessioni",
+          "paragraphs": [
+            "Un lungo pomeriggio dedicato ai compiti è un'impresa ardua per un bambino. Suddividi il lavoro in blocchi da 15 a 25 minuti, con cinque minuti di pausa tra uno e l'altro.",
+            "Un timer rende tutto più concreto: sai quanto tempo ti resta e quando avrai finito. Tuo figlio non deve guardare a una montagna da scalare, ma solo resistere finché il timer non suona.",
+            "Lascia che sia tuo figlio a scegliere da dove iniziare. Alcuni bambini vogliono sbrigare prima le cose più noiose, altri preferiscono partire con qualcosa di facile. Entrambe le opzioni vanno bene."
+          ]
+        },
+        {
+          "title": "5. Aiuta, ma non sostituirti a tuo figlio",
+          "paragraphs": [
+            "Resta nei paraggi, così tuo figlio sa che può chiederti qualcosa. Ma non fare i compiti al suo posto. Altrimenti tuo figlio non impara nulla, e al prossimo compito in classe se ne accorgeranno tutti.",
+            "Poni domande invece di dare risposte. «Cosa devi fare qui?» o «Da dove inizieresti?» spesso aiutano più che spiegare come si fa.",
+            "Di’ ciò che va bene. «Questo l’hai risolto proprio bene» ha più effetto di «ora metti un po’ in ordine il quaderno»."
+          ]
+        },
+        {
+          "title": "6. Stabilisci un limite e sappi quando fermarti",
+          "paragraphs": [
+            "Mettiti d’accordo su quanto tempo tuo figlio deve dedicare ogni giorno ai compiti. Quando il tempo è scaduto, è finito, anche se non è stato completato tutto. Un’ora in più dopo una lunga giornata di scuola raramente porta a qualcosa.",
+            "Se giorno dopo giorno non riesci a finire i compiti in quel lasso di tempo, segnalalo alla scuola. Non è un fallimento. È un’informazione per l’insegnante su quanto lavoro ci sia davvero da fare.",
+            "Un bambino che salta un giorno ogni tanto non è pigro. Guarda l’intera settimana e non solo una serata."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Per quanto tempo al giorno dovrebbe fare i compiti mio figlio?",
+          "answer": "Dipende dall’età, dalla scuola e dalla classe. Chiedi alla scuola, spesso ti daranno delle linee guida. Se noti che tuo figlio impiega sistematicamente molto più tempo, parlane con l’insegnante."
+        },
+        {
+          "question": "Devo punire o premiare mio figlio per i compiti?",
+          "answer": "Le punizioni di solito hanno l’effetto contrario. Una piccola ricompensa o un complimento per l’impegno possono essere d’aiuto. Premiare per un buon voto funziona meno bene, perché tuo figlio può determinare il risultato solo in parte da solo."
+        },
+        {
+          "question": "Ma un’app non è semplicemente altro tempo davanti allo schermo?",
+          "answer": "In SkillQuest il timer continua a funzionare mentre tuo figlio lavora; nessuno deve guardare lo schermo. Lo schermo serve solo per avviare il timer e per la panoramica a posteriori. Se non vuoi proprio lo schermo, usa un normale timer."
+        },
+        {
+          "question": "Quanto costa SkillQuest?",
+          "answer": "L'installazione è gratuita e non ci sono pubblicità. C'è anche una versione a pagamento con funzionalità extra; puoi vedere cosa include direttamente nell'app."
+        }
+      ]
     }
   ]
 }

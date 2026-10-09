@@ -197,6 +197,97 @@
           "answer": "Installeren is gratis en er is geen reclame. Er is ook een betaalde versie met extra's; wat daarin zit, zie je in de app."
         }
       ]
+    },
+    {
+      "id": "child-wont-do-homework",
+      "slug": "kind-wil-geen-huiswerk-maken",
+      "slugs": {
+        "en": "child-does-not-want-to-do-homework",
+        "de": "kind-will-keine-hausaufgaben-machen",
+        "fr": "enfant-ne-veut-pas-faire-devoirs",
+        "es": "nino-no-quiere-hacer-deberes",
+        "it": "bambino-non-vuole-fare-i-compiti"
+      },
+      "eyebrow": "Huiswerk",
+      "title": "Kind wil geen huiswerk maken? 6 tips voor een vaste routine",
+      "metaTitle": "Kind wil geen huiswerk maken: 6 tips | SkillQuest",
+      "metaDescription": "Wil je kind geen huiswerk maken? Zes tips voor ouders: eerst even ontspannen, een vaste plek, korte blokken en een tijdslimiet.",
+      "intro": "Je kind komt thuis, de tas gaat in de hoek en bij het woord huiswerk begint de discussie. Dat is herkenbaar voor bijna elke ouder. Dit zijn zes dingen die je kunt proberen, met of zonder app.",
+      "cardSummary": "Zes praktische tips voor ouders van een kind dat geen zin heeft in huiswerk: van een vast moment tot weten wanneer je moet stoppen.",
+      "publishedAt": "2026-10-09",
+      "readingMinutes": 4,
+      "sections": [
+        {
+          "title": "1. Zoek eerst uit wat er speelt",
+          "paragraphs": [
+            "\"Ik heb geen zin\" kan van alles betekenen. Misschien is de opdracht te moeilijk, is je kind moe of begrijpt het de uitleg van de les niet. Soms zit er ook stress of faalangst achter.",
+            "Vraag rustig door, op een moment dat het geen strijd is. Bijvoorbeeld: \"Welk vak vind je het vervelendst?\" Het antwoord helpt je meer dan een preek over doorzetten.",
+            "Is het structureel te veel of te moeilijk, praat dan met de leraar. Dat is een probleem om samen op te lossen, niet iets wat je kind alleen hoeft te dragen."
+          ]
+        },
+        {
+          "title": "2. Laat je kind eerst ontspannen",
+          "paragraphs": [
+            "Na een volle schooldag is het hoofd van je kind op. Direct aan tafel zitten werkt zelden. Geef een kwartier of een half uur voor een tussendoortje, buiten spelen of gewoon niets doen.",
+            "Spreek wel af hoe lang die pauze duurt, en wanneer het huiswerk begint. Dan weet je kind dat het niet eindeloos kan uitstellen en hoef jij niet steeds te zeuren.",
+            "Sommige kinderen zijn juist het scherpst vlak na school. Probeer beide en kijk wat bij jouw kind past."
+          ]
+        },
+        {
+          "title": "3. Zorg voor een vaste plek zonder afleiding",
+          "paragraphs": [
+            "Kies een plek waar je kind graag zit en die niet te rommelig is. Dat kan de keukentafel zijn, een bureau of een rustig hoekje in de woonkamer. Het gaat erom dat het steeds dezelfde plek is.",
+            "Leg telefoon en tablet in een andere kamer, en zet het geluid uit. Het is lastig om je te concentreren als er elke minuut een melding binnenkomt.",
+            "Leg het schoolspul klaar voordat je kind begint. Een kwartier zoeken naar een passer of een pen kost vaak meer energie dan de opdracht zelf."
+          ]
+        },
+        {
+          "title": "4. Werk in korte blokken",
+          "paragraphs": [
+            "Een lange middag huiswerk is voor een kind niet te overzien. Verdeel het in blokken van 15 tot 25 minuten, met daartussen vijf minuten pauze.",
+            "Een timer maakt het concreet: je weet hoe lang je nog moet en wanneer je klaar bent. Je kind hoeft niet tegen een berg op te kijken, maar alleen tot de bel gaat.",
+            "Laat je kind zelf kiezen waarmee het begint. Sommige kinderen willen het vervelendste eerst afhandelen, anderen starten liever met iets makkelijks. Beide mag."
+          ]
+        },
+        {
+          "title": "5. Help, maar neem het niet over",
+          "paragraphs": [
+            "Blijf in de buurt, zodat je kind weet dat het iets kan vragen. Maar maak het huiswerk niet zelf. Dan leert je kind er niets van, en bij de volgende toets merkt iedereen dat.",
+            "Stel vragen in plaats van antwoorden te geven. \"Wat moet je hier doen?\" of \"Hoe zou je beginnen?\" helpt vaker dan zeggen hoe het moet.",
+            "Zeg wat goed gaat. \"Dit heb je netjes opgelost\" doet meer dan \"maak je schrift nu nog even netjes\"."
+          ]
+        },
+        {
+          "title": "6. Stel een grens en weet wanneer je stopt",
+          "paragraphs": [
+            "Spreek af hoe lang je kind per dag aan huiswerk besteedt. Is de tijd om, dan is het klaar, ook als niet alles af is. Een extra uur bovenop een lange schooldag levert zelden iets op.",
+            "Lukt het huiswerk dag na dag niet in die tijd, meld dat dan bij school. Dat is geen falen. Het is informatie voor de leraar over hoeveel werk er echt in zit.",
+            "Een kind dat een keer een dag overslaat, is niet lui. Kijk naar de week en niet naar één avond."
+          ]
+        }
+      ],
+      "app": {
+        "title": "Hoe SkillQuest hierbij helpt",
+        "body": "In SkillQuest kies je een vaardigheid, start je een timer en zie je na elke sessie hoe die groeit. Je krijgt 1 XP per geoefende minuut, dus de app beloont inzet en niet resultaat. Je ziet niveaus en voortgang per week. Met de familiefunctie ziet een ouder de voortgang van een kind en kun je de timer ook op je eigen telefoon voor je kind starten. De timer loopt door terwijl je kind werkt; niemand hoeft naar het scherm te kijken. SkillQuest is gemaakt voor oefenen, zoals lezen of een instrument. Voor schoolopdrachten gebruik je het vooral als timer. Je hebt geen app nodig om een routine op te bouwen: een gewone keukentimer doet het ook."
+      },
+      "faq": [
+        {
+          "question": "Hoe lang moet mijn kind per dag huiswerk maken?",
+          "answer": "Dat verschilt per leeftijd, school en klas. Vraag het de school, die geeft vaak een richtlijn. Merk je dat je kind structureel veel langer bezig is, bespreek dat dan met de leraar."
+        },
+        {
+          "question": "Moet ik mijn kind straffen of belonen voor huiswerk?",
+          "answer": "Straffen werkt meestal averechts. Een kleine beloning of een compliment voor de inzet kan helpen. Belonen voor een goed cijfer werkt minder goed, omdat je kind het resultaat maar deels zelf kan bepalen."
+        },
+        {
+          "question": "Is een app niet gewoon extra schermtijd?",
+          "answer": "In SkillQuest loopt de timer door terwijl je kind werkt; niemand hoeft naar het scherm te kijken. Het scherm is alleen voor het starten van de timer en het overzicht achteraf. Wil je helemaal geen scherm, gebruik dan een gewone timer."
+        },
+        {
+          "question": "Wat kost SkillQuest?",
+          "answer": "Installeren is gratis en er is geen reclame. Er is ook een betaalde versie met extra's; wat daarin zit, zie je in de app."
+        }
+      ]
     }
   ]
 }

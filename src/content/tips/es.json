@@ -183,6 +183,90 @@
           "answer": "La instalación es gratis y no tiene anuncios. También hay una versión de pago con extras; puedes ver qué incluye dentro de la propia app."
         }
       ]
+    },
+    {
+      "id": "child-wont-do-homework",
+      "slug": "nino-no-quiere-hacer-deberes",
+      "eyebrow": "Deberes",
+      "title": "¿Tu hijo no quiere hacer los deberes? 6 consejos para crear una rutina",
+      "metaTitle": "Tu hijo no quiere hacer los deberes: 6 consejos | SkillQuest",
+      "metaDescription": "¿Tu hijo no quiere hacer los deberes? Seis consejos para padres: primero relajarse, un sitio fijo, bloques cortos y un límite de tiempo.",
+      "intro": "Tu hijo llega a casa, deja la mochila en un rincón y, en cuanto se menciona la palabra «deberes», empieza la discusión. Es algo que casi todos los padres conocen bien. Aquí tienes seis cosas que puedes probar, con o sin app.",
+      "cardSummary": "Seis consejos prácticos para padres de niños a los que no les apetece hacer los deberes: desde una hora fija hasta saber cuándo hay que parar.",
+      "publishedAt": "2026-10-07",
+      "readingMinutes": 4,
+      "app": {
+        "title": "Cómo te ayuda SkillQuest con esto",
+        "body": "En SkillQuest eliges una habilidad, pones en marcha un temporizador y, tras cada sesión, ves cómo va mejorando. Ganas 1 XP por cada minuto que practicas, así que la app premia el esfuerzo y no el resultado. Puedes ver los niveles y el progreso semanal. Con la función Familia, un padre o una madre puede ver el progreso de su hijo o hija, y también puedes poner en marcha el temporizador desde tu propio móvil para tu hijo o hija. El temporizador sigue corriendo mientras tu hijo o hija practica; nadie tiene que estar mirando la pantalla. SkillQuest está pensada para practicar, como leer o tocar un instrumento. Para los deberes del colegio, la usas sobre todo como temporizador. No necesitas una app para crear una rutina: un temporizador de cocina normal también sirve."
+      },
+      "sections": [
+        {
+          "title": "1. Primero, averigua qué está pasando",
+          "paragraphs": [
+            "«No me apetece» puede significar muchas cosas. Quizá la tarea sea demasiado difícil, tu hijo esté cansado o no entienda la explicación de la clase. A veces también hay estrés o miedo al fracaso detrás.",
+            "Pregúntale con calma, en un momento en el que no sea una lucha. Por ejemplo: «¿Qué asignatura te parece más aburrida?». La respuesta te ayudará más que un sermón sobre la perseverancia.",
+            "Si la carga de trabajo es demasiado grande o demasiado difícil de forma habitual, habla con el profe. Es un problema que hay que resolver juntos, no algo que tu hijo tenga que afrontar solo."
+          ]
+        },
+        {
+          "title": "2. Deja que tu hijo se relaje primero",
+          "paragraphs": [
+            "Después de un día entero de colegio, tu hijo está agotado. Sentarse directamente a la mesa casi nunca funciona. Dale un cuarto de hora o media hora para tomar un tentempié, jugar fuera o simplemente no hacer nada.",
+            "Acuerda bien cuánto dura ese descanso y cuándo empieza a hacer los deberes. Así tu hijo sabrá que no puede posponerlo indefinidamente y tú no tendrás que estar insistiendo todo el rato.",
+            "Hay niños que, por el contrario, están más despiertos justo después del colegio. Prueba ambas opciones y mira cuál le va mejor a tu hijo."
+          ]
+        },
+        {
+          "title": "3. Busca un sitio fijo sin distracciones",
+          "paragraphs": [
+            "Elige un sitio donde a tu hijo le guste sentarse y que no esté demasiado desordenado. Puede ser la mesa de la cocina, un escritorio o un rinconcito tranquilo del salón. Lo importante es que sea siempre el mismo sitio.",
+            "Deja el móvil y la tableta en otra habitación y silencia el sonido. Es difícil concentrarse si te llega una notificación cada minuto.",
+            "Prepara el material escolar antes de que tu hijo empiece. Pasar un cuarto de hora buscando un compás o un bolígrafo suele costar más energía que la propia tarea."
+          ]
+        },
+        {
+          "title": "4. Trabaja en bloques cortos",
+          "paragraphs": [
+            "Una tarde entera de deberes puede resultar abrumadora para un niño. Divídelos en bloques de entre 15 y 25 minutos, con un descanso de cinco minutos entre cada uno.",
+            "Un temporizador lo hace concreto: sabes cuánto te queda y cuándo habrás terminado. Tu hijo no tiene que enfrentarse a una montaña, sino solo aguantar hasta que suene el temporizador.",
+            "Deja que tu hijo elija por sí mismo por dónde empezar. Algunos niños quieren acabar primero con lo más aburrido, otros prefieren empezar con algo fácil. Ambas opciones valen."
+          ]
+        },
+        {
+          "title": "5. Ayuda, pero no te hagas cargo",
+          "paragraphs": [
+            "Quédate cerca, para que tu hijo sepa que puede preguntarte cualquier cosa. Pero no se los hagas tú. Si no, tu hijo no aprenderá nada, y en el próximo examen todo el mundo se dará cuenta.",
+            "Plantea preguntas en lugar de dar respuestas. «¿Qué tienes que hacer aquí?» o «¿Por dónde empezarías?» suele ser más útil que decir cómo se hace.",
+            "Dile lo que está haciendo bien. «Esto lo has resuelto muy bien» tiene más efecto que «ahora ordena un poco tu cuaderno»."
+          ]
+        },
+        {
+          "title": "6. Establece un límite y sabe cuándo parar",
+          "paragraphs": [
+            "Acuerda cuánto tiempo va a dedicar tu hijo cada día a los deberes. Cuando se acabe el tiempo, se acabó, aunque no haya terminado todo. Una hora extra después de un largo día de colegio casi nunca sirve de nada.",
+            "Si día tras día no consigue terminar los deberes en ese tiempo, avisa al colegio. Eso no es un fracaso. Es información para el profe sobre cuánto trabajo supone realmente.",
+            "Un niño que se salta un día de vez en cuando no es vago. Fíjate en la semana y no en una sola noche."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "¿Cuánto tiempo al día debe dedicar mi hijo a los deberes?",
+          "answer": "Eso varía según la edad, el colegio y la clase. Pregúntale al colegio, que suele dar unas pautas. Si notas que a tu hijo le lleva mucho más tiempo de lo habitual, coméntaselo al profesor."
+        },
+        {
+          "question": "¿Debo castigar o recompensar a mi hijo por los deberes?",
+          "answer": "Castigar suele ser contraproducente. Una pequeña recompensa o un cumplido por el esfuerzo pueden ayudar. Recompensar por una buena nota no funciona tan bien, porque tu hijo solo puede influir en parte en el resultado."
+        },
+        {
+          "question": "¿No es una app simplemente más tiempo frente a la pantalla?",
+          "answer": "En SkillQuest, el temporizador sigue corriendo mientras tu hijo trabaja; nadie tiene que mirar la pantalla. La pantalla solo sirve para poner en marcha el temporizador y ver el resumen después. Si prefieres no usar ninguna pantalla, usa un temporizador normal."
+        },
+        {
+          "question": "¿Cuánto cuesta SkillQuest?",
+          "answer": "La instalación es gratis y no tiene anuncios. También hay una versión de pago con extras; puedes ver qué incluye en la propia app."
+        }
+      ]
     }
   ]
 }
