@@ -186,85 +186,85 @@
     },
     {
       "id": "child-wont-do-homework",
-      "slug": "enfant-ne-veut-pas-faire-devoirs",
+      "slug": "enfant-refuse-de-faire-ses-devoirs",
       "eyebrow": "Devoirs",
-      "title": "Ton enfant ne veut pas faire ses devoirs ? 6 conseils pour mettre en place une routine régulière",
-      "metaTitle": "Ton enfant ne veut pas faire ses devoirs : 6 conseils | SkillQuest",
-      "metaDescription": "Ton enfant refuse de faire ses devoirs ? Six conseils : d'abord se détendre, un endroit fixe, de courtes sessions et une limite de temps.",
-      "intro": "Ton enfant rentre à la maison, il pose son cartable dans un coin et dès qu’on parle de devoirs, la discussion s’enclenche. Presque tous les parents connaissent ça. Voici six choses que tu peux essayer, avec ou sans appli.",
-      "cardSummary": "Six conseils pratiques pour les parents d'un enfant qui n'a pas envie de faire ses devoirs : d'un horaire fixe à savoir quand s'arrêter.",
+      "title": "Ton enfant refuse de faire ses devoirs ? 6 conseils pour les parents",
+      "metaTitle": "Ton enfant refuse de faire ses devoirs : 6 conseils | SkillQuest",
+      "metaDescription": "Ton enfant refuse de faire ses devoirs ? Cherche la cause, installe une routine, travaille par petites sessions avec un minuteur et sache quand t’arrêter.",
+      "intro": "Ton enfant rentre à la maison, le sac à dos tombe par terre, et le mot « devoirs » déclenche une dispute. Presque tous les parents connaissent ce genre de soirée. Voici six choses à essayer, avec ou sans appli.",
+      "cardSummary": "Six conseils pratiques pour les parents d'un enfant qui refuse de faire ses devoirs : comment en trouver la cause et savoir quand s'arrêter.",
       "publishedAt": "2026-10-07",
       "readingMinutes": 4,
       "app": {
         "title": "Comment SkillQuest t'aide dans ce domaine",
-        "body": "Dans SkillQuest, tu choisis une compétence, tu lances un minuteur et tu vois à chaque session comment tu progresses. Tu gagnes 1 XP par minute d'entraînement, donc l'appli récompense l'effort et non le résultat. Tu peux suivre les niveaux et les progrès hebdomadaires. Grâce à la fonction Famille, un parent peut suivre les progrès de son enfant et tu peux aussi lancer le minuteur depuis ton propre téléphone pour ton enfant. Le minuteur continue de tourner pendant que ton enfant travaille ; personne n’a besoin de regarder l’écran. SkillQuest est conçue pour s’entraîner, par exemple à la lecture ou à un instrument. Pour les devoirs scolaires, tu l’utilises surtout comme minuteur. Tu n’as pas besoin d’une appli pour mettre en place une routine : un simple minuteur de cuisine fait très bien l’affaire."
+        "body": "Dans SkillQuest, tu choisis une compétence, tu lances le minuteur et tu vois tes progrès s’accumuler après chaque session. Tu gagnes 1 XP pour chaque minute d’entraînement : l’appli récompense donc l’effort plutôt que les résultats. Tu peux consulter tes niveaux et tes progrès hebdomadaires. Grâce à la fonction Famille, un parent peut suivre les progrès de son enfant et lancer le minuteur depuis son propre téléphone pour lui. Le minuteur continue de tourner pendant que ton enfant travaille, et personne n’a besoin de regarder l’écran. SkillQuest est conçue pour l’entraînement, comme la lecture ou la pratique d’un instrument. Pour les devoirs scolaires, tu l’utiliseras surtout comme minuteur. Tu n’as pas besoin d’une appli pour mettre en place une routine : un minuteur de cuisine fait très bien l’affaire."
       },
       "sections": [
         {
-          "title": "1. Commence par comprendre ce qui se passe",
+          "title": "1. Découvre ce qui se passe",
           "paragraphs": [
-            "« J'ai pas envie » peut vouloir dire plein de choses. Peut-être que l'exercice est trop difficile, que ton enfant est fatigué ou qu'il ne comprend pas les explications de la leçon. Parfois, ça cache aussi du stress ou la peur de l'échec.",
-            "N'hésite pas à poser des questions, à un moment où ça ne se transforme pas en dispute. Par exemple : « Quelle matière tu trouves la plus ennuyeuse ? » La réponse t'aidera bien plus qu'un sermon sur la persévérance.",
-            "Si c'est systématiquement trop long ou trop difficile, parle-en à l'enseignant. C'est un problème à résoudre ensemble, pas quelque chose que ton enfant doit supporter tout seul."
+            "« Je ne veux pas » peut vouloir dire plein de choses. Le travail est peut-être trop difficile, ton enfant est peut-être fatigué, ou quelque chose en classe ne lui a pas semblé clair. Parfois, c’est la peur de se tromper qui se cache derrière.",
+            "Pose la question quand personne n’est énervé. Essaie : « Quelle matière te pose le plus de problèmes ? » ou « Où est-ce que tu bloques ? ». La réponse t’aidera bien plus qu’un discours sur le fait de faire plus d’efforts.",
+            "Si le travail est souvent trop difficile ou trop chargé, parle-en à l'enseignant. C'est un problème à résoudre ensemble, pas quelque chose que ton enfant devrait porter tout seul."
           ]
         },
         {
           "title": "2. Laisse d'abord ton enfant se détendre",
           "paragraphs": [
-            "Après une journée d'école bien remplie, ton enfant est épuisé. Le faire s'asseoir directement à table marche rarement. Laisse-lui un quart d'heure ou une demi-heure pour grignoter un petit quelque chose, jouer dehors ou simplement ne rien faire.",
-            "N'oublie pas de convenir de la durée de cette pause et de l'heure à laquelle les devoirs commencent. Comme ça, ton enfant saura qu'il ne peut pas repousser indéfiniment et tu n'auras pas à le relancer sans arrêt.",
-            "Certains enfants sont justement plus concentrés juste après l'école. Essaie les deux et vois ce qui convient le mieux à ton enfant."
+            "Après une journée d'école bien remplie, un enfant a la tête pleine. Le faire s'asseoir tout de suite à table, ça marche rarement. Laisse-lui 15 à 30 minutes pour prendre un goûter, jouer dehors ou ne rien faire du tout.",
+            "Mets-toi d'accord sur la durée de la pause et sur l'heure à laquelle les devoirs commencent. Comme ça, ton enfant sait qu'il ne peut pas repousser indéfiniment cette tâche, et tu n'as pas besoin de le lui rappeler sans arrêt.",
+            "Certains enfants sont plus efficaces juste après l'école. Essaie les deux et vois ce qui convient le mieux au tien."
           ]
         },
         {
-          "title": "3. Prévois un endroit fixe, sans distractions",
+          "title": "3. Choisis un endroit et un horaire réguliers",
           "paragraphs": [
-            "Choisis un endroit où ton enfant aime s'installer et qui n'est pas trop encombré. Ça peut être la table de la cuisine, un bureau ou un petit coin tranquille dans le salon. L'important, c'est que ce soit toujours le même endroit.",
-            "Laisse ton téléphone et ta tablette dans une autre pièce, et coupe le son. C'est difficile de se concentrer quand on reçoit une notification toutes les minutes.",
-            "Prépare le matériel scolaire avant que ton enfant ne commence. Passer un quart d'heure à chercher un compas ou un stylo demande souvent plus d'énergie que le devoir lui-même."
+            "Choisis un endroit où ton enfant aime s'asseoir et qui n'est pas trop en désordre : la table de la cuisine, un bureau, un coin tranquille. L'important, c'est que ce soit le même endroit tous les jours, à peu près à la même heure.",
+            "Évite d'avoir des écrans dans la pièce pendant que ton enfant travaille, et mets les téléphones en mode silencieux. C'est difficile de se concentrer quand quelque chose vibre toutes les minutes.",
+            "Prépare tout ce dont ton enfant a besoin avant qu'il ne commence. Passer dix minutes à chercher un crayon peut demander plus d'énergie que le devoir lui-même."
           ]
         },
         {
-          "title": "4. Travaille par petites sessions",
+          "title": "4. Travaille par petites sessions avec un minuteur",
           "paragraphs": [
-            "Pour un enfant, un long après-midi de devoirs, c'est insurmontable. Divise-les en sessions de 15 à 25 minutes, entrecoupées de pauses de cinq minutes.",
-            "Un minuteur rend les choses concrètes : tu sais combien de temps il te reste et quand tu auras fini. Ton enfant n'a pas à se sentir face à une montagne, mais juste à tenir jusqu'à ce que la sonnerie retentisse.",
-            "Laisse ton enfant choisir lui-même par quoi il veut commencer. Certains enfants préfèrent s'attaquer d'abord à ce qu'ils trouvent le plus pénible, d'autres préfèrent commencer par quelque chose de facile. Les deux sont possibles."
+            "Une soirée entière consacrée aux devoirs, c'est difficile à imaginer pour un enfant. Divise-la en plusieurs sessions, par exemple de 15 à 25 minutes, avec une petite pause entre chacune. Si le plus dur, c'est de se lancer, commence par seulement 10 minutes et vois comment ça se passe.",
+            "Un minuteur rend les choses concrètes. Ton enfant peut voir combien de temps il reste et quand il aura fini. Il n'a pas à affronter une montagne, juste le temps qui reste jusqu'à ce que le minuteur sonne.",
+            "Laisse ton enfant choisir par quoi commencer. Certains veulent commencer par la tâche la plus difficile, d'autres préfèrent quelque chose de facile. Les deux, ça marche."
           ]
         },
         {
-          "title": "5. Aide-le, mais ne fais pas tout à sa place",
+          "title": "5. Sois un allié, pas un patron",
           "paragraphs": [
-            "Reste à proximité pour que ton enfant sache qu’il peut te poser des questions. Mais ne fais pas ses devoirs à sa place. Sinon, ton enfant n’apprendra rien, et tout le monde s’en rendra compte lors du prochain contrôle.",
-            "Pose des questions plutôt que de donner des réponses. « Qu'est-ce que tu dois faire ici ? » ou « Par où commencerais-tu ? » aide souvent plus que de dire comment il faut s'y prendre.",
-            "Dis ce qui va bien. « Celui-là, tu l'as très bien résolu » a plus d'effet que « range encore un peu ton cahier »."
+            "Reste à proximité pour que ton enfant puisse te poser des questions, mais ne fais pas le travail à sa place. Sinon, il n'apprendra rien, et ça se verra au prochain contrôle.",
+            "Pose des questions plutôt que de donner des réponses : « Qu’est-ce que tu dois faire ici ? » ou « Par où commencerais-tu ? » fonctionne mieux que de montrer comment faire. Si l’heure des devoirs se transforme en bras de fer, ça peut aider de laisser quelqu’un d’autre, comme un élève plus âgé ou un tuteur, s’asseoir un moment avec ton enfant.",
+            "Remarque ce qui marche bien. « Tu as trouvé la solution tout seul » a plus d’impact que « Ton écriture est brouillonne ». De petites récompenses convenues à l’avance peuvent aussi aider, par exemple un moment dehors une fois le travail terminé."
           ]
         },
         {
-          "title": "6. Fixe une limite et sache quand arrêter",
+          "title": "6. Fixe une limite et sache quand t'arrêter",
           "paragraphs": [
-            "Mets-toi d'accord avec ton enfant sur le temps qu'il consacrera chaque jour à ses devoirs. Une fois le temps écoulé, c'est fini, même si tout n'est pas terminé. Une heure supplémentaire après une longue journée d'école n'apporte presque jamais rien.",
-            "Si, jour après jour, les devoirs ne sont pas terminés dans le temps imparti, signale-le à l'école. Ce n'est pas un échec. Ça permet juste à l'enseignant de savoir quelle est la charge de travail réelle.",
-            "Un enfant qui saute une journée de temps en temps n'est pas paresseux. Regarde la semaine dans son ensemble, pas juste une soirée."
+            "Mets-toi d’accord sur le temps que les devoirs peuvent prendre chaque jour. Quand le temps est écoulé, c’est fini, même si tout n’est pas terminé. Une heure supplémentaire après une longue journée d’école n’aide que rarement.",
+            "Si ton enfant n'arrive pas à finir dans ce délai jour après jour, dis-le à l'école. Ce n'est pas un échec. C'est une information utile pour l'enseignant, qui lui permet de se rendre compte de la charge de travail réelle.",
+            "Un enfant qui passe une mauvaise soirée n’est pas paresseux. Regarde la semaine dans son ensemble, pas juste une soirée. S’il y a des larmes, des maux de ventre ou des crises, parle-en à l’enseignant ou à un conseiller d’éducation."
           ]
         }
       ],
       "faq": [
         {
-          "question": "Combien de temps mon enfant doit-il passer chaque jour à faire ses devoirs ?",
-          "answer": "Ça dépend de l'âge, de l'école et de la classe. Renseigne-toi auprès de l'école, qui donne souvent des recommandations. Si tu remarques que ton enfant met systématiquement beaucoup plus de temps, parle-en avec son prof."
+          "question": "Combien de temps mon enfant devrait-il passer chaque jour à faire ses devoirs ?",
+          "answer": "Ça dépend de l'âge, de l'école et du niveau scolaire. Renseigne-toi auprès de l'école, car beaucoup ont leurs propres consignes. Si ton enfant met souvent beaucoup plus de temps que prévu, parle-en à son enseignant."
         },
         {
-          "question": "Est-ce que je dois punir ou récompenser mon enfant pour ses devoirs ?",
-          "answer": "Les punitions ont souvent l'effet inverse de celui escompté. Une petite récompense ou un compliment pour ses efforts peut aider. Récompenser une bonne note est moins efficace, car ton enfant ne peut déterminer que partiellement ce résultat lui-même."
+          "question": "Est-ce que je dois punir mon enfant s'il ne fait pas ses devoirs ?",
+          "answer": "Les menaces et les punitions ne font souvent qu'empirer les choses. Des accords clairs, une routine sereine et une petite récompense convenue à l'avance ont tendance à mieux fonctionner. Féliciter l'effort est plus efficace que de ne récompenser que les bonnes notes, car ton enfant maîtrise davantage l'effort que les résultats."
         },
         {
-          "question": "Une appli, c'est pas juste du temps d'écran en plus ?",
-          "answer": "Dans SkillQuest, le minuteur continue de tourner pendant que ton enfant travaille ; personne n'a besoin de regarder l'écran. L'écran sert uniquement à lancer le minuteur et à consulter le récapitulatif après coup. Si tu ne veux pas du tout d'écran, utilise simplement un minuteur classique."
+          "question": "Une appli, ça ne fait pas juste passer plus de temps devant un écran ?",
+          "answer": "Dans SkillQuest, le minuteur tourne pendant que ton enfant travaille, et personne n’a besoin de regarder l’écran. L’écran sert uniquement à lancer le minuteur et à consulter le récapitulatif après coup. Si tu ne veux pas du tout d’écran, un minuteur de cuisine fait très bien l’affaire."
         },
         {
           "question": "Combien coûte SkillQuest ?",
-          "answer": "L'installation est gratuite et il n'y a pas de pub. Il existe aussi une version payante avec des bonus ; tu peux voir ce qu'elle contient dans l'appli."
+          "answer": "L'installation est gratuite et il n'y a pas de pubs. Il existe aussi une version payante avec des fonctionnalités supplémentaires ; tu peux voir ce que l'appli propose."
         }
       ]
     }
