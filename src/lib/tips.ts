@@ -66,7 +66,7 @@ type TipsContent = {
   articles: Array<Omit<TipArticle, 'locale'>>;
 };
 
-// One file per locale in src/content/tips. nl.json is the source; the others
+// One file per locale in src/content/tips. en.json is the source; the others
 // come from scripts/translate-tips.py (DeepL) plus a review.
 const content: Record<Locale, TipsContent> = {nl, en, de, fr, es, it};
 

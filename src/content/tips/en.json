@@ -17,6 +17,13 @@
     {
       "id": "child-reluctant-reader",
       "slug": "child-does-not-want-to-read",
+      "slugs": {
+        "de": "kind-will-nicht-lesen",
+        "fr": "enfant-ne-veut-pas-lire",
+        "es": "nino-no-quiere-leer",
+        "it": "bambino-non-vuole-leggere",
+        "nl": "kind-wil-niet-lezen"
+      },
       "eyebrow": "Reading",
       "title": "Is your child reluctant to read? Here’s how to make 10 minutes a day easier",
       "metaTitle": "Child doesn’t want to read? 7 tips for 10 minutes a day | SkillQuest",
@@ -103,6 +110,13 @@
     {
       "id": "child-wont-practice-instrument",
       "slug": "child-does-not-want-to-practice-instrument",
+      "slugs": {
+        "de": "kind-will-nicht-ueben-instrument",
+        "fr": "enfant-ne-veut-pas-jouer-instrument",
+        "es": "nino-no-quiere-practicar-instrumento",
+        "it": "bambino-non-vuole-esercitarsi-strumento",
+        "nl": "kind-wil-niet-oefenen-instrument"
+      },
       "eyebrow": "Music",
       "title": "Is your child reluctant to practice the piano or guitar? Here’s how to handle it",
       "metaTitle": "Child doesn’t want to practice an instrument: 6 tips | SkillQuest",
@@ -187,6 +201,13 @@
     {
       "id": "child-wont-do-homework",
       "slug": "child-does-not-want-to-do-homework",
+      "slugs": {
+        "de": "kind-will-keine-hausaufgaben-machen",
+        "fr": "enfant-ne-veut-pas-faire-devoirs",
+        "es": "nino-no-quiere-hacer-deberes",
+        "it": "bambino-non-vuole-fare-i-compiti",
+        "nl": "kind-wil-geen-huiswerk-maken"
+      },
       "eyebrow": "Homework",
       "title": "Your child won't do homework? 6 tips for a steady routine",
       "metaTitle": "Child doesn’t want to do homework: 6 tips | SkillQuest",

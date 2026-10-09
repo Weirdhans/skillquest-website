@@ -16,18 +16,20 @@ leveren per artikel ook een Pinterest-afbeelding.
 | Pin-afbeelding 1000×1500 | `src/app/tips-pins/[locale]/[file]/route.tsx` → `/tips-pins/{taal}/{slug}.png` |
 | RSS-feed per taal | `src/app/feeds/[file]/route.ts` → `/feeds/tips-{taal}.xml` |
 | Sitemap | `src/app/sitemap.ts` (alleen talen die artikelen hebben) |
-| Vertaalscript | `scripts/translate-tips.py` (DeepL) |
+| Vertaalscript | `scripts/translate-tips.py` (DeepL, bron `en.json`) |
 | Tests | `tests/tips.test.mjs` (draait mee in `npm run test:seo`) |
 
 ## Een artikel toevoegen
 
-1. Schrijf het in het Nederlands in `src/content/tips/nl.json`: dezelfde velden
-   als de bestaande artikelen, plus `slugs` per taal (zoekwoorden in die taal,
-   zonder accenten). `metaDescription` maximaal 135 tekens, zodat vertalingen
+1. Schrijf het in het Engels in `src/content/tips/en.json`: dezelfde velden
+   als de bestaande artikelen, plus `slugs` voor nl, de, fr, es en it
+   (zoekwoorden in die taal, zonder accenten). Kies de zoekvraag in het Engels,
+   niet als vertaling van een Nederlandse vraag. `metaDescription` maximaal 135 tekens, zodat vertalingen
    onder 160 blijven. Auteur: Hans Vlasblom.
 2. Vertaal met DeepL:
    `python scripts/translate-tips.py --env-file ../skillquest/.env.tools.local`
-   Bestaande vertalingen blijven staan; `--force` vertaalt alles opnieuw.
+   Engels is de bron; DeepL maakt nl, de, fr, es en it. Bestaande vertalingen
+   blijven staan; `--force` vertaalt alles opnieuw.
 3. Lees elke vertaling na tegen `docs/TRANSLATION_DECISIONS_GLOSSARY.md` in de
    app-repo. Bekende DeepL-fouten: fr "chronomètre" (moet "minuteur"), es
    "cronómetro" (moet "temporizador"), de "Fertigkeit" (moet "Fähigkeit"),
