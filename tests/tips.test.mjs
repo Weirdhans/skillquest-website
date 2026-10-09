@@ -35,7 +35,7 @@ test('the footer shows tips exactly in the locales that have articles', async ()
 
 test('every language version of an article exists with its own slug', async () => {
   const content = await loadContent();
-  for (const source of content.nl.articles) {
+  for (const source of content.en.articles) {
     for (const [locale, slug] of Object.entries(source.slugs)) {
       const version = content[locale]?.articles.find((item) => item.id === source.id);
       assert.ok(version, `${source.id} is missing in ${locale}`);

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Translate the Dutch tips (src/content/tips/nl.json) with DeepL.
+"""Translate the English tips (src/content/tips/en.json) with DeepL.
 
-Writing is done by a person or an AI writing tool, in Dutch; translating is
+Writing is done by a person or an AI writing tool, in English; translating is
 done by DeepL only. Articles that already exist in a target file (same id) are
 kept, so a human fix in a translation is never overwritten. Use --force to
 retranslate everything.
@@ -28,15 +28,15 @@ ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "src" / "content" / "tips"
 
 TARGETS = {
-    "en": "EN-US",
+    "nl": "NL",
     "de": "DE",
     "fr": "FR",
     "es": "ES",
     "it": "IT",
 }
 
-# DeepL has no formality setting for English.
-INFORMAL = {"de", "fr", "es", "it"}
+# English is the source. All targets are addressed informally.
+INFORMAL = {"nl", "de", "fr", "es", "it"}
 
 CONTEXT = (
     "An article on the website of SkillQuest, a skill-tracking app with a "
@@ -50,7 +50,7 @@ FORBIDDEN = {
     "fr": r"\b(habilet\w*|aptitude\w*|vous|votre|vos|minuterie)\b",
     "es": r"\b(competencias?|usted\w*|desafíos?)\b",
     "it": r"\b(competenz\w*|capacità|Lei|Suo|Sua)\b",
-    "en": r"$^",
+    "nl": r"\b(u|uw)\b",
 }
 
 SUFFIX = " | SkillQuest"
@@ -71,7 +71,7 @@ def translate(key, texts, target):
     host = "api-free.deepl.com" if key.endswith(":fx") else "api.deepl.com"
     body = {
         "text": texts,
-        "source_lang": "NL",
+        "source_lang": "EN",
         "target_lang": TARGETS[target],
         "context": CONTEXT,
         "preserve_formatting": True,
@@ -181,7 +181,7 @@ def main():
     args = parser.parse_args()
 
     key = load_key(args.env_file)
-    source = json.loads((CONTENT / "nl.json").read_text(encoding="utf-8"))
+    source = json.loads((CONTENT / "en.json").read_text(encoding="utf-8"))
     problems = []
 
     for target in args.targets:
