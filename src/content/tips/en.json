@@ -200,92 +200,92 @@
     },
     {
       "id": "child-wont-do-homework",
-      "slug": "child-does-not-want-to-do-homework",
+      "slug": "child-refuses-to-do-homework",
       "slugs": {
-        "de": "kind-will-keine-hausaufgaben-machen",
-        "fr": "enfant-ne-veut-pas-faire-devoirs",
-        "es": "nino-no-quiere-hacer-deberes",
-        "it": "bambino-non-vuole-fare-i-compiti",
-        "nl": "kind-wil-geen-huiswerk-maken"
+        "nl": "kind-wil-geen-huiswerk-maken",
+        "de": "kind-verweigert-hausaufgaben",
+        "fr": "enfant-refuse-de-faire-ses-devoirs",
+        "es": "hijo-no-quiere-hacer-deberes",
+        "it": "figlio-non-vuole-fare-i-compiti"
       },
       "eyebrow": "Homework",
-      "title": "Your child won't do homework? 6 tips for a steady routine",
-      "metaTitle": "Child doesn’t want to do homework: 6 tips | SkillQuest",
-      "metaDescription": "Does your child refuse to do homework? Six tips for parents: relax first, a fixed spot, short blocks and a time limit.",
-      "intro": "Your child comes home, drops their bag in the corner, and the moment the word “homework” is mentioned, the argument begins. This is a familiar scenario for almost every parent. Here are six things you can try, with or without an app.",
-      "cardSummary": "Six practical tips for parents of a child who doesn’t feel like doing homework: from setting a fixed time to knowing when to stop.",
+      "title": "Child refuses to do homework? 6 tips for parents",
+      "metaTitle": "Child refuses to do homework: 6 tips | SkillQuest",
+      "metaDescription": "Your child refuses to do homework? Find the cause, set a routine, use short blocks and a timer, and know when to stop.",
+      "intro": "Your child gets home, the backpack hits the floor, and the word “homework” starts a fight. Almost every parent knows this evening. Here are six things to try, with or without an app.",
+      "cardSummary": "Six practical tips for parents of a child who refuses to do homework: from finding the cause to knowing when to stop.",
       "publishedAt": "2026-10-07",
       "readingMinutes": 4,
       "app": {
         "title": "How SkillQuest helps with this",
-        "body": "In SkillQuest, you choose a skill, start a timer, and see how your progress grows after each session. You earn 1 XP for every minute you practice, so the app rewards effort rather than results. You can view levels and weekly progress. With the family feature, a parent can track a child’s progress and start the timer on their own phone for their child. The timer keeps running while your child works; no one needs to look at the screen. SkillQuest is designed for practice, such as reading or playing an instrument. For school assignments, you’ll mainly use it as a timer. You don’t need an app to build a routine—a regular kitchen timer works just as well."
+        "body": "In SkillQuest, you pick a skill, start a timer, and see your progress grow after each session. You earn 1 XP for every minute you practice, so the app rewards effort rather than results. You can see levels and weekly progress. With the family feature, a parent can follow a child’s progress and start the timer on their own phone for their child. The timer keeps running while your child works, and nobody has to look at the screen. SkillQuest is made for practice, like reading or playing an instrument. For school assignments you will mostly use it as a timer. You don’t need an app to build a routine: a kitchen timer works just as well."
       },
       "sections": [
         {
-          "title": "1. First, figure out what’s going on",
+          "title": "1. Find out what is going on",
           "paragraphs": [
-            "“I don’t feel like it” can mean all sorts of things. Maybe the assignment is too hard, your child is tired, or they don’t understand the lesson. Sometimes, stress or fear of failure is also behind it.",
-            "Feel free to ask questions when it’s not a struggle. For example: “Which subject do you find the most boring?” The answer will help you more than a lecture about perseverance.",
-            "If the workload is consistently too heavy or the material too difficult, talk to the teacher. This is a problem to solve together—not something your child has to deal with alone."
+            "“I don’t want to” can mean many things. The work may be too hard, your child may be tired, or something in class didn’t make sense. Sometimes worry about getting it wrong is behind it.",
+            "Ask when nobody is upset. Try “Which subject is the worst one?” or “Where do you get stuck?” The answer will help more than a talk about trying harder.",
+            "If the work is often too hard or too much, talk to the teacher. That is a problem to solve together, not something your child should carry alone."
           ]
         },
         {
-          "title": "2. Let your child relax first",
+          "title": "2. Let your child unwind first",
           "paragraphs": [
-            "After a full day of school, your child is exhausted. Sitting down at the table right away rarely works. Give them 15 or 30 minutes for a snack, to play outside, or just to relax.",
-            "Be sure to agree on how long the break will last and when homework starts. That way, your child will know they can’t put it off indefinitely, and you won’t have to keep nagging them.",
-            "Some children are actually at their sharpest right after school. Try both approaches and see what works best for your child."
+            "After a full school day, a child’s head is full. Sitting down at the table right away rarely works. Give them 15 to 30 minutes for a snack, some play outside, or doing nothing.",
+            "Agree on how long the break lasts and when homework starts. Then your child knows it can’t be put off forever, and you don’t have to keep reminding them.",
+            "Some children do better right after school. Try both and see what suits yours."
           ]
         },
         {
-          "title": "3. Set up a dedicated space free of distractions",
+          "title": "3. Pick a regular spot and time",
           "paragraphs": [
-            "Choose a spot where your child likes to sit and that isn’t too cluttered. It could be the kitchen table, a desk, or a quiet corner in the living room. The key is to always use the same spot.",
-            "Put your phone and tablet in another room, and turn off the sound. It’s hard to concentrate when you get a notification every minute.",
-            "Get your child’s school supplies ready before they start. Spending 15 minutes looking for a compass or a pen often takes more energy than the assignment itself."
+            "Choose a place where your child is happy to sit and that isn’t too messy: the kitchen table, a desk, a quiet corner. What matters is that it is the same place every day, at about the same time.",
+            "Keep screens out of the room while your child works, and put phones on silent. It is hard to focus when something buzzes every minute.",
+            "Set out what your child needs before they start. Ten minutes spent looking for a pencil can cost more energy than the assignment."
           ]
         },
         {
-          "title": "4. Work in short blocks",
+          "title": "4. Work in short blocks with a timer",
           "paragraphs": [
-            "A long afternoon of homework can seem overwhelming to a child. Break it up into 15- to 25-minute blocks, with a five-minute break in between.",
-            "A timer makes it concrete: you know how much time you have left and when you’ll be done. Your child doesn’t have to feel like they’re facing a mountain—they just have to hold out until the timer goes off.",
-            "Let your child choose what to start with. Some children want to tackle the most tedious tasks first, while others prefer to start with something easy. Both are fine."
+            "A whole evening of homework is hard for a child to picture. Split it into blocks, for example 15 to 25 minutes, with a short break in between. If starting is the hard part, begin with just 10 minutes and see how it goes.",
+            "A timer makes it concrete. Your child can see how long is left and when they are done. They don’t have to face a mountain, only the time until the timer rings.",
+            "Let your child choose what to start with. Some want the hardest task first, others prefer something easy. Both are fine."
           ]
         },
         {
-          "title": "5. Help, but don’t take over",
+          "title": "5. Be an ally, not the boss",
           "paragraphs": [
-            "Stay nearby so your child knows they can ask a question. But don’t do the homework for them. Otherwise, your child won’t learn anything from it, and everyone will notice that on the next test.",
-            "Ask questions instead of giving answers. “What do you need to do here?” or “How would you get started?” is more helpful than telling them exactly what to do.",
-            "Point out what’s going well. “You solved that one really well” goes a long way—much more so than “Now tidy up your notebook.”"
+            "Stay close so your child can ask a question, but don’t do the work for them. Then they learn nothing from it, and it shows at the next test.",
+            "Ask instead of tell: “What do you need to do here?” or “How would you start?” works better than showing them how. If homework time turns into a power struggle, it can help to let someone else, such as an older student or a tutor, sit with your child for a while.",
+            "Notice what goes well. “You worked that one out yourself” does more than “Your handwriting is messy.” Small rewards you agree on beforehand can help too, for example some time outside once the work is done."
           ]
         },
         {
           "title": "6. Set a limit and know when to stop",
           "paragraphs": [
-            "Agree on how much time your child will spend on homework each day. When the time is up, they’re done—even if not everything is finished. An extra hour on top of a long school day rarely pays off.",
-            "If your child can’t finish their homework within that time frame day after day, let the school know. That’s not a failure. It’s information for the teacher about how much work is actually involved.",
-            "A child who skips a day once in a while isn’t lazy. Look at the week as a whole, not just one evening."
+            "Agree on how long homework may take each day. When the time is up, it is done, even if not everything is finished. An extra hour on top of a long school day rarely helps.",
+            "If your child can’t finish in that time day after day, tell the school. That is not failing. It is useful information for the teacher about how much work it really is.",
+            "A child who has a bad evening isn’t lazy. Look at the whole week, not one night. If there are tears, stomach aches or meltdowns, talk to the teacher or a school counselor."
           ]
         }
       ],
       "faq": [
         {
           "question": "How long should my child spend on homework each day?",
-          "answer": "That varies by age, school, and class. Ask the school; they often provide guidelines. If you notice that your child is consistently taking much longer to complete assignments, discuss this with the teacher."
+          "answer": "That depends on age, school and grade. Ask the school, because many have their own guidelines. If your child often takes much longer than expected, talk to the teacher."
         },
         {
-          "question": "Should I punish or reward my child for doing homework?",
-          "answer": "Punishment usually backfires. A small reward or a compliment for their effort can help. Rewarding a good grade isn’t as effective, because your child can only partially control the outcome."
+          "question": "Should I punish my child for not doing homework?",
+          "answer": "Threats and punishment often make the fight worse. Clear agreements, a calm routine and a small reward you agreed on beforehand tend to work better. Praising effort works better than rewarding only good grades, because your child controls effort more than results."
         },
         {
           "question": "Isn’t an app just more screen time?",
-          "answer": "In SkillQuest, the timer runs while your child works; no one needs to look at the screen. The screen is only used to start the timer and view the summary afterward. If you don’t want a screen at all, just use a regular timer."
+          "answer": "In SkillQuest the timer runs while your child works, and nobody needs to look at the screen. The screen is only used to start the timer and to see the summary afterward. If you don’t want a screen at all, a kitchen timer does the same job."
         },
         {
           "question": "How much does SkillQuest cost?",
-          "answer": "Installation is free, and there are no ads. There’s also a paid version with extras; you can see what’s included in the app."
+          "answer": "Installing is free and there are no ads. There is also a paid version with extras; you can see what is included in the app."
         }
       ]
     }
