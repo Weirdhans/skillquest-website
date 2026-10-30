@@ -36,14 +36,14 @@ const nextConfig = {
         destination: '/?utm_source=facebook&utm_medium=social&utm_campaign=bio',
         permanent: false,
       },
-      // LinkedIn tester recruitment: straight to the Android early-access steps.
+      // LinkedIn: the download page, scrolled to the Android card.
       {
         source: '/li',
         destination:
           '/download?platform=android&utm_source=linkedin&utm_medium=social&utm_campaign=testers#android-early-access',
         permanent: false,
       },
-      // Reddit tester recruitment (r/androidapps, r/AlphaAndBetaUsers, ...).
+      // Reddit: the download page, scrolled to the Android card.
       {
         source: '/rd',
         destination:
@@ -51,7 +51,7 @@ const nextConfig = {
         permanent: false,
       },
       // Dutch parent groups on Facebook: the parents landing page, which has
-      // both the App Store button and the Android test steps.
+      // both the App Store and the Google Play button.
       {
         source: '/ouders',
         destination:
@@ -67,7 +67,7 @@ const nextConfig = {
         permanent: false,
       },
       // Facebook groups about personal development (adult learners): download
-      // page with both the App Store button and the Android test steps.
+      // page with both the App Store and the Google Play button.
       {
         source: '/groei',
         destination:

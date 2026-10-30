@@ -38,7 +38,7 @@ export const parentsPage: Record<Locale, ParentsPageCopy> = {
     "title": "Elke dag even oefenen, en zien dat het optelt",
     "subtitle": "SkillQuest is een timer met voortgang voor lezen, een instrument of iets anders wat je kind oefent. Na elke sessie zie je hoe die vaardigheid groeit.",
     "iosCta": "Download voor iPhone en iPad",
-    "androidCta": "Android-testversie",
+    "androidCta": "Download voor Android",
     "freeNote": "Gratis te installeren, zonder reclame.",
     "storyHeading": "Waarom ik SkillQuest bouwde",
     "story": [
@@ -90,7 +90,7 @@ export const parentsPage: Record<Locale, ParentsPageCopy> = {
       },
       {
         "q": "Werkt het op Android?",
-        "a": "Ja, via een testversie van Google Play. Op de downloadpagina staan de drie stappen om mee te doen."
+        "a": "Ja, SkillQuest staat op Google Play."
       }
     ],
     "tipsCta": "Tips om elke dag te oefenen",
@@ -103,7 +103,7 @@ export const parentsPage: Record<Locale, ParentsPageCopy> = {
     "title": "Practice a little every day, and see how it all adds up",
     "subtitle": "SkillQuest is a timer that tracks progress in reading, a musical instrument, or anything else your child is practicing. After each session, you can see how that skill is improving.",
     "iosCta": "Download for iPhone and iPad",
-    "androidCta": "Android beta version",
+    "androidCta": "Download for Android",
     "freeNote": "Free to install, with no ads.",
     "storyHeading": "Why I built SkillQuest",
     "story": [
@@ -155,7 +155,7 @@ export const parentsPage: Record<Locale, ParentsPageCopy> = {
       },
       {
         "q": "Does it work on Android?",
-        "a": "Yes, through a test version on Google Play. The download page lists the three steps to get started."
+        "a": "Yes, SkillQuest is available on Google Play."
       }
     ],
     "tipsCta": "Tips for practicing every day",
@@ -168,7 +168,7 @@ export const parentsPage: Record<Locale, ParentsPageCopy> = {
     "title": "Jeden Tag ein bisschen üben und sehen, wie sich das auszahlt",
     "subtitle": "SkillQuest ist ein Timer mit Fortschrittsanzeige fürs Lesen, ein Instrument oder was auch immer dein Kind gerade übt. Nach jeder Sitzung siehst du, wie sich diese Fähigkeit verbessert.",
     "iosCta": "Download für iPhone und iPad",
-    "androidCta": "Android-Testversion",
+    "androidCta": "Für Android herunterladen",
     "freeNote": "Kostenlos zum Installieren, ohne Werbung.",
     "storyHeading": "Warum ich SkillQuest entwickelt habe",
     "story": [
@@ -220,7 +220,7 @@ export const parentsPage: Record<Locale, ParentsPageCopy> = {
       },
       {
         "q": "Funktioniert das auf Android?",
-        "a": "Ja, über eine Testversion bei Google Play. Auf der Download-Seite findest du die drei Schritte, um mitzumachen."
+        "a": "Ja, SkillQuest ist bei Google Play verfügbar."
       }
     ],
     "tipsCta": "Tipps für das tägliche Üben",
@@ -233,7 +233,7 @@ export const parentsPage: Record<Locale, ParentsPageCopy> = {
     "title": "Un peu d'entraînement chaque jour, et voir que ça s'additionne",
     "subtitle": "SkillQuest, c'est un minuteur qui suit les progrès en lecture, en musique ou dans toute autre activité que ton enfant pratique. Après chaque séance, tu peux voir comment cette compétence s'améliore.",
     "iosCta": "Télécharge-la sur iPhone et iPad",
-    "androidCta": "Version d'essai Android",
+    "androidCta": "Télécharger pour Android",
     "freeNote": "À installer gratuitement, sans pub.",
     "storyHeading": "Pourquoi j'ai créé SkillQuest",
     "story": [
@@ -285,7 +285,7 @@ export const parentsPage: Record<Locale, ParentsPageCopy> = {
       },
       {
         "q": "Ça marche sur Android ?",
-        "a": "Oui, via une version d'essai sur Google Play. Sur la page de téléchargement, tu trouveras les trois étapes à suivre pour participer."
+        "a": "Oui, SkillQuest est disponible sur Google Play."
       }
     ],
     "tipsCta": "Des conseils pour s'entraîner tous les jours",
@@ -298,7 +298,7 @@ export const parentsPage: Record<Locale, ParentsPageCopy> = {
     "title": "Un rato de práctica cada día, y ver cómo se va sumando",
     "subtitle": "SkillQuest es un temporizador con seguimiento del progreso para la lectura, un instrumento o cualquier otra cosa que practique tu hijo. Después de cada sesión, verás cómo mejora esa habilidad.",
     "iosCta": "Descárgala para iPhone y iPad",
-    "androidCta": "Versión de prueba para Android",
+    "androidCta": "Descárgala para Android",
     "freeNote": "Se puede instalar gratis y no tiene anuncios.",
     "storyHeading": "Por qué creé SkillQuest",
     "story": [
@@ -350,7 +350,7 @@ export const parentsPage: Record<Locale, ParentsPageCopy> = {
       },
       {
         "q": "¿Funciona en Android?",
-        "a": "Sí, a través de una versión de prueba de Google Play. En la página de descargas encontrarás los tres pasos para participar."
+        "a": "Sí, SkillQuest está disponible en Google Play."
       }
     ],
     "tipsCta": "Consejos para practicar cada día",
@@ -363,7 +363,7 @@ export const parentsPage: Record<Locale, ParentsPageCopy> = {
     "title": "Un po' di pratica ogni giorno, e vedere che si somma",
     "subtitle": "SkillQuest è un timer che tiene traccia dei progressi nella lettura, in uno strumento musicale o in qualsiasi altra cosa che tuo figlio sta esercitando. Dopo ogni sessione, puoi vedere come quella abilità migliora.",
     "iosCta": "Scarica per iPhone e iPad",
-    "androidCta": "Versione di prova per Android",
+    "androidCta": "Scarica per Android",
     "freeNote": "Da installare gratis, senza pubblicità.",
     "storyHeading": "Perché ho creato SkillQuest",
     "story": [
@@ -415,7 +415,7 @@ export const parentsPage: Record<Locale, ParentsPageCopy> = {
       },
       {
         "q": "Funziona su Android?",
-        "a": "Sì, tramite una versione di prova su Google Play. Nella pagina di download trovi i tre passaggi per partecipare."
+        "a": "Sì, SkillQuest è disponibile su Google Play."
       }
     ],
     "tipsCta": "Consigli per esercitarsi ogni giorno",

@@ -12,16 +12,11 @@ export const APP_STORE_LISTING_URL =
 // from the website show up under Analytics -> Campaigns. pt is the provider ID.
 export const APP_STORE_URL =
   'https://apps.apple.com/app/apple-store/id6755604671?pt=128291575&ct=website&mt=8';
-export const ANDROID_ALPHA_JOIN_URL =
-  'https://play.google.com/apps/testing/com.skillquest.app';
-export const ANDROID_TESTERS_GROUP_URL =
-  'https://groups.google.com/g/skillquest-beta-testers';
 export const ANDROID_STORE_URL =
   'https://play.google.com/store/apps/details?id=com.skillquest.app';
-// New testers need the explanation page before joining the Google Group.
-// The direct Play opt-in link remains separate for existing group members.
-export const ANDROID_SIGNUP_URL =
-  '/download?platform=android#android-early-access';
+// Android has been in production on Google Play since 29 October 2026. Kept
+// as an alias for the tips article page until it imports ANDROID_STORE_URL.
+export const ANDROID_SIGNUP_URL = ANDROID_STORE_URL;
 
 // Subscription prices in euros. Copy gets them through PRICES[locale], which
 // follows each language's notation (€ 3,99 in Dutch, 3,99 € in German, €3.99
@@ -222,7 +217,7 @@ export function softwareApplicationJsonLd(locale: Locale) {
       }
     ],
     downloadUrl: APP_STORE_LISTING_URL,
-    sameAs: [APP_STORE_LISTING_URL, ANDROID_ALPHA_JOIN_URL]
+    sameAs: [APP_STORE_LISTING_URL, ANDROID_STORE_URL]
   };
 }
 
@@ -257,12 +252,12 @@ export const marketingCopy = {
       cta: 'Get the app'
     },
     hero: {
-      eyebrow: 'Live on the App Store. Android Early Access on Google Play.',
+      eyebrow: 'Live on the App Store and Google Play.',
       title: 'Every focused minute counts toward a skill',
       subtitle:
         'A skill tracker with built-in focus timers. Earn XP, build streaks, and see exactly where your practice time goes.',
       primaryCta: 'Download on the App Store',
-      secondaryCta: 'Join Android Early Access',
+      secondaryCta: 'Download for Android',
       tertiaryCta: 'Compare pricing',
       trust: ['Free to start', 'No ads', 'Privacy-first sync']
     },
@@ -372,7 +367,7 @@ export const marketingCopy = {
       heading: 'Built for trust before scale',
       items: [
         'Read about app changes on the “What’s new” page.',
-        'App Store is live. Android is clearly marked as Early Access / closed testing.',
+        'Available on the App Store and Google Play.',
         'Support is available at hello@skill-quest.app.',
         'Account deletion and privacy pages are linked from every locale.'
       ]
@@ -381,7 +376,7 @@ export const marketingCopy = {
       badge: 'Product updates',
       heading: 'Get product updates',
       subheading:
-        'Leave your email for SkillQuest product updates. Use the Google Group link above to join the Android closed test.',
+        'Leave your email for SkillQuest product updates.',
       platformQuestion: 'Which updates do you want?',
       platforms: {
         ios: 'iOS',
@@ -397,16 +392,14 @@ export const marketingCopy = {
       pendingVerification: 'You signed up earlier but have not confirmed yet.',
       resendLink: 'Resend verification email',
       error: 'Something went wrong. Please try again.',
-      gmailHint:
-        'Android test access is managed through the Google Group link above. Use the same Google account for the group and Google Play.',
       privacy: 'No spam. Unsubscribe anytime.'
     },
     finalCta: {
       heading: 'Start building the skills you keep meaning to practice',
       body:
-        'Download SkillQuest on the App Store or join the Android closed test through the guided Google Group and Google Play signup.',
+        'Download SkillQuest on the App Store or Google Play.',
       primary: 'Download on the App Store',
-      secondary: 'Join Android Early Access'
+      secondary: 'Download for Android'
     },
     footer: {
       description:
@@ -425,50 +418,30 @@ export const marketingCopy = {
       guides: 'Guides'
     },
     download: {
-      metaTitle: 'Download SkillQuest | App Store and Android Early Access',
+      metaTitle: 'Download SkillQuest | App Store and Google Play',
       metaDescription:
-        'Download SkillQuest on the App Store or join the Android closed test on Google Play.',
+        'Download SkillQuest on the App Store or Google Play.',
       title: 'Download SkillQuest',
       subtitle:
-        'SkillQuest is live on the App Store. Android is currently available through Google Play closed testing.',
+        'SkillQuest is available on the App Store and Google Play.',
       iosTitle: 'iPhone and iPad',
       iosStatus: 'Available now on the App Store',
       iosBody:
         'Download the live iOS release and start tracking skills, timers, XP, stats, friends, and family tools.',
       iosCta: 'Open App Store',
       androidTitle: 'Android',
-      androidStatus: 'Early Access / closed testing',
+      androidStatus: 'Available now on Google Play',
       androidBody:
-        'Android Early Access starts here. Join the Google Group, opt in to the Play test, and install SkillQuest.',
-      androidCta: 'Join Android Early Access',
-      testerNote:
-        'Use the same Google account for every step. Stay opted in for at least 14 days and share honest feedback.',
-      androidAlreadyAdded: 'Already a group member? Open the Play Store test page.',
+        'Download the Android app and start tracking skills, timers, XP, stats, friends, and family tools.',
+      androidCta: 'Download for Android',
       qrIos: 'On a computer? Scan with your iPhone or iPad to open the App Store.',
-      qrAndroid: 'On a computer? Scan with your Android phone to follow these steps there.',
-      androidSteps: {
-        heading: 'How to join Android Early Access',
-        sameAccount: 'Use the same Google account for all three steps.',
-        group: {
-          label: '1. Join the Google Group',
-          detail: 'Open the group and click "Join group".'
-        },
-        optIn: {
-          label: '2. Join the Play test',
-          detail: 'Open the opt-in page and click "Become a tester".'
-        },
-        install: {
-          label: '3. Install SkillQuest',
-          detail: 'Open Google Play and install SkillQuest.'
-        },
-        note: 'Keep testing for at least 14 days and share honest feedback.'
-      },
+      qrAndroid: 'On a computer? Scan with your Android phone to open this page there.',
       screenshotsHeading: 'See the app before you install',
       screenshotsBody:
         'These screenshots are generated from the real SkillQuest app using clean demo data.',
       finalHeading: 'Choose your platform',
       finalBody:
-        'iOS users can install now. Android users can join Early Access and install through Google Play.'
+        'iOS and Android users can install now.'
     },
     pricing: {
       metaTitle: 'SkillQuest Pricing | Premium and Family Plans',
@@ -585,12 +558,12 @@ export const marketingCopy = {
       cta: 'Download de app'
     },
     hero: {
-      eyebrow: 'Live in de App Store. Android Early Access via Google Play.',
+      eyebrow: 'Live in de App Store en op Google Play.',
       title: 'Elke minuut focus telt mee voor een vaardigheid',
       subtitle:
         'Een skill tracker met ingebouwde focus timers. Verdien XP, bouw streaks op en zie precies waar je oefentijd heen gaat.',
       primaryCta: 'Download in de App Store',
-      secondaryCta: 'Doe mee met Android Early Access',
+      secondaryCta: 'Download voor Android',
       tertiaryCta: 'Vergelijk prijzen',
       trust: ['Gratis starten', 'Geen advertenties', 'Privacygerichte sync']
     },
@@ -700,7 +673,7 @@ export const marketingCopy = {
       heading: 'Gebouwd voor vertrouwen',
       items: [
         'Lees over appwijzigingen op de pagina “Wat is er nieuw”.',
-        'App Store is live. Android staat duidelijk als Early Access / closed testing.',
+        'Beschikbaar in de App Store en op Google Play.',
         'Support is bereikbaar via hello@skill-quest.app.',
         'Privacy en accountverwijdering zijn in elke taal gelinkt.'
       ]
@@ -709,7 +682,7 @@ export const marketingCopy = {
       badge: 'Productupdates',
       heading: 'Ontvang productupdates',
       subheading:
-        'Laat je e-mail achter voor SkillQuest-productupdates. Gebruik de Google Group-link hierboven om mee te doen aan de Android closed test.',
+        'Laat je e-mail achter voor SkillQuest-productupdates.',
       platformQuestion: 'Welke updates wil je ontvangen?',
       platforms: {
         ios: 'iOS',
@@ -725,16 +698,14 @@ export const marketingCopy = {
       pendingVerification: 'Je hebt je eerder aangemeld maar nog niet bevestigd.',
       resendLink: 'Verificatiemail opnieuw sturen',
       error: 'Er ging iets mis. Probeer het opnieuw.',
-      gmailHint:
-        'Toegang tot de Android-test regel je via de Google Group-link hierboven. Gebruik voor de groep en Google Play hetzelfde Google-account.',
       privacy: 'Geen spam. Uitschrijven kan altijd.'
     },
     finalCta: {
       heading: 'Begin met de skills die je steeds wilt oefenen',
       body:
-        'Download SkillQuest in de App Store of doe mee aan de Android closed test via de stappen voor Google Group en Google Play.',
+        'Download SkillQuest in de App Store of op Google Play.',
       primary: 'Download in de App Store',
-      secondary: 'Doe mee met Android Early Access'
+      secondary: 'Download voor Android'
     },
     footer: {
       description:
@@ -753,50 +724,30 @@ export const marketingCopy = {
       guides: 'Guides'
     },
     download: {
-      metaTitle: 'Download SkillQuest | App Store en Android Early Access',
+      metaTitle: 'Download SkillQuest | App Store en Google Play',
       metaDescription:
-        'Download SkillQuest in de App Store of doe mee met de Android closed test via Google Play.',
+        'Download SkillQuest in de App Store of op Google Play.',
       title: 'Download SkillQuest',
       subtitle:
-        'SkillQuest is live in de App Store. Android is nu beschikbaar via Google Play closed testing.',
+        'SkillQuest is beschikbaar in de App Store en op Google Play.',
       iosTitle: 'iPhone en iPad',
       iosStatus: 'Nu beschikbaar in de App Store',
       iosBody:
         'Download de live iOS-release en start met skills, timers, XP, statistieken, vrienden en familie-tools.',
       iosCta: 'Open App Store',
       androidTitle: 'Android',
-      androidStatus: 'Early Access / closed testing',
+      androidStatus: 'Nu beschikbaar op Google Play',
       androidBody:
-        'Android Early Access begint hier. Word lid van de Google Group, meld je aan voor de Play-test en installeer SkillQuest.',
-      androidCta: 'Doe mee met Android Early Access',
-      testerNote:
-        'Gebruik voor elke stap hetzelfde Google-account. Blijf minimaal 14 dagen aangemeld en geef eerlijke feedback.',
-      androidAlreadyAdded: 'Al lid van de groep? Open de Play Store-testpagina.',
+        'Download de Android-app en start met skills, timers, XP, statistieken, vrienden en familie-tools.',
+      androidCta: 'Download voor Android',
       qrIos: 'Zit je achter de computer? Scan dan met je iPhone of iPad om de App Store te openen.',
-      qrAndroid: 'Zit je achter de computer? Scan dan met je Android-telefoon om deze stappen daar te volgen.',
-      androidSteps: {
-        heading: 'Zo doe je mee met Android Early Access',
-        sameAccount: 'Gebruik voor alle drie stappen hetzelfde Google-account.',
-        group: {
-          label: '1. Word lid van de Google Group',
-          detail: 'Open de groep en klik op "Join group".'
-        },
-        optIn: {
-          label: '2. Meld je aan voor de Play-test',
-          detail: 'Open de opt-inpagina en klik op "Become a tester".'
-        },
-        install: {
-          label: '3. Installeer SkillQuest',
-          detail: 'Open Google Play en installeer SkillQuest.'
-        },
-        note: 'Test de app minimaal 14 dagen en geef eerlijke feedback.'
-      },
+      qrAndroid: 'Zit je achter de computer? Scan dan met je Android-telefoon om deze pagina daar te openen.',
       screenshotsHeading: 'Bekijk de app voordat je installeert',
       screenshotsBody:
         'Deze screenshots komen uit de echte SkillQuest app met schone demodata.',
       finalHeading: 'Kies je platform',
       finalBody:
-        'iOS-gebruikers kunnen nu installeren. Android-gebruikers kunnen meedoen met Early Access en installeren via Google Play.'
+        'iOS- en Android-gebruikers kunnen nu installeren.'
     },
     pricing: {
       metaTitle: 'SkillQuest Prijzen | Premium en Family',
@@ -913,12 +864,12 @@ export const marketingCopy = {
       cta: 'App laden'
     },
     hero: {
-      eyebrow: 'Live im App Store. Android Early Access über Google Play.',
+      eyebrow: 'Live im App Store und bei Google Play.',
       title: 'Jede fokussierte Minute zählt für einen Skill',
       subtitle:
         'Ein Skill-Tracker mit integrierten Focus-Timern. Sammle XP, baue Streaks auf und sieh genau, wohin deine Übungszeit fließt.',
       primaryCta: 'Im App Store laden',
-      secondaryCta: 'Android Early Access beitreten',
+      secondaryCta: 'Für Android herunterladen',
       tertiaryCta: 'Preise vergleichen',
       trust: ['Kostenlos starten', 'Keine Werbung', 'Datenschutzorientierte Sync']
     },
@@ -1028,7 +979,7 @@ export const marketingCopy = {
       heading: 'Erst Vertrauen, dann Wachstum',
       items: [
         'Lies auf der Seite „Neuigkeiten“, was sich in der App geändert hat.',
-        'Der App Store ist live. Android ist klar als Early Access / Closed Testing gekennzeichnet.',
+        'Verfügbar im App Store und bei Google Play.',
         'Support gibt es über hello@skill-quest.app.',
         'Datenschutz und Kontolöschung sind in jeder Sprache verlinkt.'
       ]
@@ -1037,7 +988,7 @@ export const marketingCopy = {
       badge: 'Produktupdates',
       heading: 'Produktupdates erhalten',
       subheading:
-        'Hinterlasse deine E-Mail für SkillQuest-Produktupdates. Nutze den Google-Gruppenlink oben, um am geschlossenen Android-Test teilzunehmen.',
+        'Hinterlasse deine E-Mail für SkillQuest-Produktupdates.',
       platformQuestion: 'Welche Updates möchtest du?',
       platforms: {
         ios: 'iOS',
@@ -1053,16 +1004,14 @@ export const marketingCopy = {
       pendingVerification: 'Du hast dich früher angemeldet, aber noch nicht bestätigt.',
       resendLink: 'Bestätigung erneut senden',
       error: 'Etwas ist schiefgelaufen. Bitte versuche es erneut.',
-      gmailHint:
-        'Der Zugang zum Android-Test wird über den Google-Gruppenlink oben geregelt. Verwende für die Gruppe und Google Play dasselbe Google-Konto.',
       privacy: 'Kein Spam. Abmeldung jederzeit möglich.'
     },
     finalCta: {
       heading: 'Starte mit den Skills, die du schon lange üben willst',
       body:
-        'Lade SkillQuest im App Store herunter oder nimm über die geführten Schritte für Google-Gruppe und Google Play am geschlossenen Android-Test teil.',
+        'Lade SkillQuest im App Store oder bei Google Play herunter.',
       primary: 'Im App Store laden',
-      secondary: 'Android Early Access beitreten'
+      secondary: 'Für Android herunterladen'
     },
     footer: {
       description:
@@ -1081,50 +1030,30 @@ export const marketingCopy = {
       guides: 'Guides'
     },
     download: {
-      metaTitle: 'SkillQuest herunterladen | App Store und Android Early Access',
+      metaTitle: 'SkillQuest herunterladen | App Store und Google Play',
       metaDescription:
-        'Lade SkillQuest im App Store oder tritt dem Android Closed Test über Google Play bei.',
+        'Lade SkillQuest im App Store oder bei Google Play herunter.',
       title: 'SkillQuest herunterladen',
       subtitle:
-        'SkillQuest ist live im App Store. Android ist derzeit über Google Play Closed Testing verfügbar.',
+        'SkillQuest ist im App Store und bei Google Play verfügbar.',
       iosTitle: 'iPhone und iPad',
       iosStatus: 'Jetzt im App Store verfügbar',
       iosBody:
         'Lade die Live-Version für iOS und starte mit Skills, Timern, XP, Statistiken, Freunden und Familienfunktionen.',
       iosCta: 'App Store öffnen',
       androidTitle: 'Android',
-      androidStatus: 'Early Access / Closed Testing',
+      androidStatus: 'Jetzt bei Google Play verfügbar',
       androidBody:
-        'Android Early Access beginnt hier. Tritt der Google-Gruppe bei, nimm am Play-Test teil und installiere SkillQuest.',
-      androidCta: 'Android Early Access beitreten',
-      testerNote:
-        'Verwende für jeden Schritt dasselbe Google-Konto. Bleibe mindestens 14 Tage angemeldet und gib ehrliches Feedback.',
-      androidAlreadyAdded: 'Bereits Mitglied der Gruppe? Öffne die Play-Store-Testseite.',
+        'Lade die Android-App und starte mit Skills, Timern, XP, Statistiken, Freunden und Familienfunktionen.',
+      androidCta: 'Für Android herunterladen',
       qrIos: 'Bist du am Computer? Scanne den Code mit deinem iPhone oder iPad, um den App Store zu öffnen.',
-      qrAndroid: 'Bist du am Computer? Scanne den Code mit deinem Android-Handy, um die Schritte dort zu befolgen.',
-      androidSteps: {
-        heading: 'So nimmst du an Android Early Access teil',
-        sameAccount: 'Verwende für alle drei Schritte dasselbe Google-Konto.',
-        group: {
-          label: '1. Google-Gruppe beitreten',
-          detail: 'Öffne die Gruppe und klicke auf "Join group".'
-        },
-        optIn: {
-          label: '2. Play-Test beitreten',
-          detail: 'Öffne die Opt-in-Seite und klicke auf "Become a tester".'
-        },
-        install: {
-          label: '3. SkillQuest installieren',
-          detail: 'Öffne Google Play und installiere SkillQuest.'
-        },
-        note: 'Teste die App mindestens 14 Tage und gib ehrliches Feedback.'
-      },
+      qrAndroid: 'Bist du am Computer? Scanne den Code mit deinem Android-Handy, um diese Seite dort zu öffnen.',
       screenshotsHeading: 'Sieh dir die App vor der Installation an',
       screenshotsBody:
         'Diese Screenshots stammen aus der echten SkillQuest App mit sauberen Demodaten.',
       finalHeading: 'Wähle deine Plattform',
       finalBody:
-        'iOS-Nutzer können jetzt installieren. Android-Nutzer können am Early Access teilnehmen und über Google Play installieren.'
+        'iOS- und Android-Nutzer können jetzt installieren.'
     },
     pricing: {
       metaTitle: 'SkillQuest Preise | Premium und Family',
@@ -1241,12 +1170,12 @@ export const marketingCopy = {
       cta: 'Obtenir l’app'
     },
     hero: {
-      eyebrow: 'Disponible sur l’App Store. Accès anticipé Android via Google Play.',
+      eyebrow: 'Disponible sur l’App Store et sur Google Play.',
       title: 'Chaque minute de focus compte pour une compétence',
       subtitle:
         'Un skill tracker avec focus timers intégrés. Gagne des XP, construis des streaks et suis exactement ton temps de pratique.',
       primaryCta: 'Télécharger sur l’App Store',
-      secondaryCta: 'Rejoindre l’accès anticipé Android',
+      secondaryCta: 'Télécharger pour Android',
       tertiaryCta: 'Comparer les prix',
       trust: ['Démarrage gratuit', 'Sans publicité', 'Synchronisation privée']
     },
@@ -1356,7 +1285,7 @@ export const marketingCopy = {
       heading: 'La confiance avant la croissance',
       items: [
         'Consultez les changements de l’app sur la page « Nouveautés ».',
-        'L’App Store est disponible. Android est indiqué comme accès anticipé / test fermé.',
+        'Disponible sur l’App Store et sur Google Play.',
         'Le support est disponible via hello@skill-quest.app.',
         'La confidentialité et la suppression de compte sont liées dans chaque langue.'
       ]
@@ -1365,7 +1294,7 @@ export const marketingCopy = {
       badge: 'Actualités produit',
       heading: 'Recevoir les mises à jour du produit',
       subheading:
-        'Laissez votre e-mail pour recevoir les mises à jour de SkillQuest. Utilisez le lien du groupe Google ci-dessus pour rejoindre le test Android fermé.',
+        'Laissez votre e-mail pour recevoir les mises à jour de SkillQuest.',
       platformQuestion: 'Quelles actualités voulez-vous recevoir ?',
       platforms: {
         ios: 'iOS',
@@ -1381,16 +1310,14 @@ export const marketingCopy = {
       pendingVerification: 'Vous vous êtes déjà inscrit mais pas encore confirmé.',
       resendLink: 'Renvoyer l’e-mail de vérification',
       error: 'Une erreur est survenue. Réessayez.',
-      gmailHint:
-        'L’accès au test Android se fait via le lien du groupe Google ci-dessus. Utilisez le même compte Google pour le groupe et Google Play.',
       privacy: 'Pas de spam. Désinscription possible à tout moment.'
     },
     finalCta: {
       heading: 'Commencez les compétences que vous voulez vraiment pratiquer',
       body:
-        'Téléchargez SkillQuest sur l’App Store ou rejoignez le test Android fermé en suivant les étapes guidées pour le groupe Google et Google Play.',
+        'Téléchargez SkillQuest sur l’App Store ou sur Google Play.',
       primary: 'Télécharger sur l’App Store',
-      secondary: 'Rejoindre l’accès anticipé Android'
+      secondary: 'Télécharger pour Android'
     },
     footer: {
       description:
@@ -1409,50 +1336,30 @@ export const marketingCopy = {
       guides: 'Guides'
     },
     download: {
-      metaTitle: 'Télécharger SkillQuest | App Store et accès anticipé Android',
+      metaTitle: 'Télécharger SkillQuest | App Store et Google Play',
       metaDescription:
-        'Téléchargez SkillQuest sur l’App Store ou rejoignez le test fermé Android sur Google Play.',
+        'Téléchargez SkillQuest sur l’App Store ou sur Google Play.',
       title: 'Télécharger SkillQuest',
       subtitle:
-        'SkillQuest est disponible sur l’App Store. Android est actuellement disponible via Google Play closed testing.',
+        'SkillQuest est disponible sur l’App Store et sur Google Play.',
       iosTitle: 'iPhone et iPad',
       iosStatus: 'Disponible maintenant sur l’App Store',
       iosBody:
         'Téléchargez la version iOS en ligne et commencez avec compétences, timers, XP, statistiques, amis et fonctions famille.',
       iosCta: 'Ouvrir l’App Store',
       androidTitle: 'Android',
-      androidStatus: 'Accès anticipé / test fermé',
+      androidStatus: 'Disponible maintenant sur Google Play',
       androidBody:
-        'L’accès anticipé Android commence ici. Rejoignez le groupe Google, acceptez le test Play et installez SkillQuest.',
-      androidCta: 'Rejoindre l’accès anticipé Android',
-      testerNote:
-        'Utilisez le même compte Google pour chaque étape. Restez inscrit pendant au moins 14 jours et partagez vos retours honnêtes.',
-      androidAlreadyAdded: 'Déjà membre du groupe ? Ouvrez la page de test du Play Store.',
+        'Téléchargez l’app Android et commencez avec compétences, timers, XP, statistiques, amis et fonctions famille.',
+      androidCta: 'Télécharger pour Android',
       qrIos: 'Tu es sur un ordinateur ? Scanne le code avec ton iPhone ou ton iPad pour ouvrir l’App Store.',
-      qrAndroid: 'Tu es sur un ordinateur ? Scanne le code avec ton téléphone Android pour y suivre ces étapes.',
-      androidSteps: {
-        heading: 'Comment rejoindre l’accès anticipé Android',
-        sameAccount: 'Utilisez le même compte Google pour les trois étapes.',
-        group: {
-          label: '1. Rejoindre le groupe Google',
-          detail: 'Ouvrez le groupe et cliquez sur « Join group ». '
-        },
-        optIn: {
-          label: '2. Rejoindre le test Play',
-          detail: 'Ouvrez la page d’inscription et cliquez sur « Become a tester ». '
-        },
-        install: {
-          label: '3. Installer SkillQuest',
-          detail: 'Ouvrez Google Play et installez SkillQuest.'
-        },
-        note: 'Testez l’application pendant au moins 14 jours et partagez vos retours honnêtes.'
-      },
+      qrAndroid: 'Tu es sur un ordinateur ? Scanne le code avec ton téléphone Android pour y ouvrir cette page.',
       screenshotsHeading: 'Voir l’app avant installation',
       screenshotsBody:
         'Ces captures proviennent de la vraie app SkillQuest avec des données de démonstration propres.',
       finalHeading: 'Choisissez votre plateforme',
       finalBody:
-        'Les utilisateurs iOS peuvent installer maintenant. Les utilisateurs Android peuvent rejoindre l’accès anticipé et installer via Google Play.'
+        'Les utilisateurs iOS et Android peuvent installer maintenant.'
     },
     pricing: {
       metaTitle: 'Prix SkillQuest | Premium et Family',
@@ -1569,12 +1476,12 @@ export const marketingCopy = {
       cta: 'Obtener la app'
     },
     hero: {
-      eyebrow: 'Disponible en App Store. Acceso anticipado de Android en Google Play.',
+      eyebrow: 'Disponible en App Store y en Google Play.',
       title: 'Cada minuto de concentración cuenta para una habilidad',
       subtitle:
         'Un skill tracker con focus timers integrados. Gana XP, crea streaks y ve exactamente adónde va tu tiempo de práctica.',
       primaryCta: 'Descargar en App Store',
-      secondaryCta: 'Unirse al acceso anticipado de Android',
+      secondaryCta: 'Descárgala para Android',
       tertiaryCta: 'Comparar precios',
       trust: ['Inicio gratis', 'Sin anuncios', 'Sincronización privada']
     },
@@ -1684,7 +1591,7 @@ export const marketingCopy = {
       heading: 'Confianza antes de crecer',
       items: [
         'Consulta los cambios de la app en la página «Novedades».',
-        'App Store está disponible. Android se marca claramente como acceso anticipado / prueba cerrada.',
+        'Disponible en App Store y en Google Play.',
         'Soporte disponible en hello@skill-quest.app.',
         'Privacidad y eliminación de cuenta están enlazadas en cada idioma.'
       ]
@@ -1693,7 +1600,7 @@ export const marketingCopy = {
       badge: 'Actualizaciones',
       heading: 'Recibe novedades del producto',
       subheading:
-        'Deja tu email para recibir novedades de SkillQuest. Usa el enlace del grupo de Google de arriba para unirte a la prueba cerrada de Android.',
+        'Deja tu email para recibir novedades de SkillQuest.',
       platformQuestion: '¿Qué novedades quieres recibir?',
       platforms: {
         ios: 'iOS',
@@ -1709,16 +1616,14 @@ export const marketingCopy = {
       pendingVerification: 'Ya te registraste, pero aún no confirmaste.',
       resendLink: 'Reenviar email de verificación',
       error: 'Algo salió mal. Inténtalo de nuevo.',
-      gmailHint:
-        'El acceso a la prueba de Android se gestiona mediante el enlace del grupo de Google de arriba. Usa la misma cuenta de Google para el grupo y Google Play.',
       privacy: 'Sin spam. Puedes darte de baja cuando quieras.'
     },
     finalCta: {
       heading: 'Empieza con las habilidades que siempre quieres practicar',
       body:
-        'Descarga SkillQuest en App Store o únete a la prueba cerrada de Android siguiendo los pasos guiados para el grupo de Google y Google Play.',
+        'Descarga SkillQuest en App Store o en Google Play.',
       primary: 'Descargar en App Store',
-      secondary: 'Unirse al acceso anticipado de Android'
+      secondary: 'Descárgala para Android'
     },
     footer: {
       description:
@@ -1737,50 +1642,30 @@ export const marketingCopy = {
       guides: 'Guías'
     },
     download: {
-      metaTitle: 'Descargar SkillQuest | App Store y acceso anticipado de Android',
+      metaTitle: 'Descargar SkillQuest | App Store y Google Play',
       metaDescription:
-        'Descarga SkillQuest en App Store o únete al test cerrado de Android en Google Play.',
+        'Descarga SkillQuest en App Store o en Google Play.',
       title: 'Descargar SkillQuest',
       subtitle:
-        'SkillQuest está disponible en App Store. Android está disponible actualmente mediante Google Play closed testing.',
+        'SkillQuest está disponible en App Store y en Google Play.',
       iosTitle: 'iPhone y iPad',
       iosStatus: 'Disponible ahora en App Store',
       iosBody:
         'Descarga la versión iOS en vivo y empieza con habilidades, temporizadores, XP, estadísticas, amigos y funciones familiares.',
       iosCta: 'Abrir App Store',
       androidTitle: 'Android',
-      androidStatus: 'Acceso anticipado / prueba cerrada',
+      androidStatus: 'Disponible ahora en Google Play',
       androidBody:
-        'El acceso anticipado de Android empieza aquí. Únete al grupo de Google, acepta la prueba de Play e instala SkillQuest.',
-      androidCta: 'Unirse al acceso anticipado de Android',
-      testerNote:
-        'Usa la misma cuenta de Google en cada paso. Mantente registrado al menos 14 días y comparte comentarios sinceros.',
-      androidAlreadyAdded: '¿Ya eres miembro del grupo? Abre la página de prueba de Play Store.',
+        'Descarga la app para Android y empieza con habilidades, temporizadores, XP, estadísticas, amigos y funciones familiares.',
+      androidCta: 'Descárgala para Android',
       qrIos: '¿Estás en el ordenador? Escanea el código con tu iPhone o iPad para abrir la App Store.',
-      qrAndroid: '¿Estás en el ordenador? Escanea el código con tu móvil Android para seguir estos pasos desde allí.',
-      androidSteps: {
-        heading: 'Cómo unirse al acceso anticipado de Android',
-        sameAccount: 'Usa la misma cuenta de Google en los tres pasos.',
-        group: {
-          label: '1. Únete al grupo de Google',
-          detail: 'Abre el grupo y haz clic en «Join group».'
-        },
-        optIn: {
-          label: '2. Únete a la prueba de Play',
-          detail: 'Abre la página de registro y haz clic en «Become a tester».'
-        },
-        install: {
-          label: '3. Instala SkillQuest',
-          detail: 'Abre Google Play e instala SkillQuest.'
-        },
-        note: 'Prueba la app durante al menos 14 días y comparte comentarios sinceros.'
-      },
+      qrAndroid: '¿Estás en el ordenador? Escanea el código con tu móvil Android para abrir esta página allí.',
       screenshotsHeading: 'Mira la app antes de instalar',
       screenshotsBody:
         'Estas capturas provienen de la app real SkillQuest con datos demo limpios.',
       finalHeading: 'Elige tu plataforma',
       finalBody:
-        'Los usuarios de iOS pueden instalar ahora. Los usuarios de Android pueden unirse al acceso anticipado e instalar desde Google Play.'
+        'Los usuarios de iOS y Android pueden instalar ahora.'
     },
     pricing: {
       metaTitle: 'Precios de SkillQuest | Premium y Family',
@@ -1897,12 +1782,12 @@ export const marketingCopy = {
       cta: 'Ottieni l’app'
     },
     hero: {
-      eyebrow: 'Disponibile su App Store. Accesso anticipato Android su Google Play.',
+      eyebrow: 'Disponibile su App Store e su Google Play.',
       title: 'Ogni minuto di concentrazione conta per un’abilità',
       subtitle:
         'Skill tracker con focus timer integrati. Guadagna XP, costruisci streaks e vedi esattamente dove va il tuo tempo di pratica.',
       primaryCta: 'Scarica da App Store',
-      secondaryCta: 'Unisciti all’accesso anticipato Android',
+      secondaryCta: 'Scarica per Android',
       tertiaryCta: 'Confronta i prezzi',
       trust: ['Inizio gratuito', 'Niente pubblicità', 'Sync attenta alla privacy']
     },
@@ -2012,7 +1897,7 @@ export const marketingCopy = {
       heading: 'Fiducia prima della crescita',
       items: [
         'Leggi gli aggiornamenti dell’app nella pagina «Novità».',
-        'App Store è live. Android è indicato chiaramente come accesso anticipato / test chiuso.',
+        'Disponibile su App Store e su Google Play.',
         'Il supporto è disponibile a hello@skill-quest.app.',
         'Privacy ed eliminazione account sono linkate in ogni lingua.'
       ]
@@ -2021,7 +1906,7 @@ export const marketingCopy = {
       badge: 'Aggiornamenti prodotto',
       heading: 'Ricevi aggiornamenti sul prodotto',
       subheading:
-        'Lascia la tua email per ricevere aggiornamenti su SkillQuest. Usa il link al gruppo Google qui sopra per partecipare al test Android chiuso.',
+        'Lascia la tua email per ricevere aggiornamenti su SkillQuest.',
       platformQuestion: 'Quali aggiornamenti vuoi?',
       platforms: {
         ios: 'iOS',
@@ -2037,16 +1922,14 @@ export const marketingCopy = {
       pendingVerification: 'Ti sei già iscritto ma non hai ancora confermato.',
       resendLink: 'Rinvia email di verifica',
       error: 'Qualcosa è andato storto. Riprova.',
-      gmailHint:
-        'L’accesso al test Android è gestito tramite il link al gruppo Google qui sopra. Usa lo stesso account Google per il gruppo e Google Play.',
       privacy: 'Niente spam. Puoi annullare l’iscrizione quando vuoi.'
     },
     finalCta: {
       heading: 'Inizia dalle competenze che vuoi davvero praticare',
       body:
-        'Scarica SkillQuest su App Store o partecipa al test Android chiuso seguendo i passaggi guidati per il gruppo Google e Google Play.',
+        'Scarica SkillQuest su App Store o su Google Play.',
       primary: 'Scarica da App Store',
-      secondary: 'Unisciti all’accesso anticipato Android'
+      secondary: 'Scarica per Android'
     },
     footer: {
       description:
@@ -2065,50 +1948,30 @@ export const marketingCopy = {
       guides: 'Guide'
     },
     download: {
-      metaTitle: 'Scarica SkillQuest | App Store e accesso anticipato Android',
+      metaTitle: 'Scarica SkillQuest | App Store e Google Play',
       metaDescription:
-        'Scarica SkillQuest da App Store o unisciti al closed test Android su Google Play.',
+        'Scarica SkillQuest su App Store o su Google Play.',
       title: 'Scarica SkillQuest',
       subtitle:
-        'SkillQuest è disponibile su App Store. Android è attualmente disponibile tramite Google Play closed testing.',
+        'SkillQuest è disponibile su App Store e su Google Play.',
       iosTitle: 'iPhone e iPad',
       iosStatus: 'Disponibile ora su App Store',
       iosBody:
         'Scarica la release iOS live e inizia con competenze, timer, XP, statistiche, amici e funzioni famiglia.',
       iosCta: 'Apri App Store',
       androidTitle: 'Android',
-      androidStatus: 'Accesso anticipato / test chiuso',
+      androidStatus: 'Disponibile ora su Google Play',
       androidBody:
-        'L’accesso anticipato Android inizia qui. Unisciti al gruppo Google, accetta il test Play e installa SkillQuest.',
-      androidCta: 'Unisciti all’accesso anticipato Android',
-      testerNote:
-        'Usa lo stesso account Google per ogni passaggio. Resta iscritto per almeno 14 giorni e condividi feedback sinceri.',
-      androidAlreadyAdded: 'Sei già membro del gruppo? Apri la pagina di test del Play Store.',
+        'Scarica l’app Android e inizia con competenze, timer, XP, statistiche, amici e funzioni famiglia.',
+      androidCta: 'Scarica per Android',
       qrIos: 'Sei al computer? Scansiona il codice con il tuo iPhone o iPad per aprire l’App Store.',
-      qrAndroid: 'Sei al computer? Scansiona il codice con il tuo telefono Android per seguire questi passaggi sul telefono.',
-      androidSteps: {
-        heading: 'Come partecipare all’accesso anticipato Android',
-        sameAccount: 'Usa lo stesso account Google per tutti e tre i passaggi.',
-        group: {
-          label: '1. Unisciti al gruppo Google',
-          detail: 'Apri il gruppo e clicca su « Join group ». '
-        },
-        optIn: {
-          label: '2. Partecipa al test Play',
-          detail: 'Apri la pagina di adesione e clicca su « Become a tester ». '
-        },
-        install: {
-          label: '3. Installa SkillQuest',
-          detail: 'Apri Google Play e installa SkillQuest.'
-        },
-        note: 'Prova l’app per almeno 14 giorni e condividi feedback sinceri.'
-      },
+      qrAndroid: 'Sei al computer? Scansiona il codice con il tuo telefono Android per aprire questa pagina sul telefono.',
       screenshotsHeading: 'Guarda l’app prima di installare',
       screenshotsBody:
         'Questi screenshot provengono dalla vera app SkillQuest con dati demo puliti.',
       finalHeading: 'Scegli la piattaforma',
       finalBody:
-        'Gli utenti iOS possono installare ora. Gli utenti Android possono unirsi all’accesso anticipato e installare da Google Play.'
+        'Gli utenti iOS e Android possono installare ora.'
     },
     pricing: {
       metaTitle: 'Prezzi SkillQuest | Premium e Family',

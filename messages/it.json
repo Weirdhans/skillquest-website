@@ -161,9 +161,9 @@
   "waitlist": {
     "badge": "📬 Rimanete aggiornati",
     "heading": "Ricevi aggiornamenti SkillQuest",
-    "subheading": "Iscriviti per notizie sull’accesso anticipato Android, aggiornamenti prodotto e consigli pratici.",
+    "subheading": "Iscriviti per aggiornamenti prodotto e consigli pratici.",
     "benefits": {
-      "earlyAccess": "Aggiornamenti sull’accesso anticipato Android",
+      "earlyAccess": "Aggiornamenti Android",
       "updates": "Aggiornamenti delle nuove funzionalità",
       "tips": "Suggerimenti per lo sviluppo delle competenze"
     },
