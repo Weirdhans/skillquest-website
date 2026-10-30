@@ -432,7 +432,7 @@ export const marketingCopy = {
       androidTitle: 'Android',
       androidStatus: 'Available now on Google Play',
       androidBody:
-        'Download the Android app and start tracking skills, timers, XP, stats, friends, and family tools.',
+        'Download the Android app and start practicing with timers, XP, and stats.',
       androidCta: 'Download for Android',
       qrIos: 'On a computer? Scan with your iPhone or iPad to open the App Store.',
       qrAndroid: 'On a computer? Scan with your Android phone to open this page there.',
@@ -738,7 +738,7 @@ export const marketingCopy = {
       androidTitle: 'Android',
       androidStatus: 'Nu beschikbaar op Google Play',
       androidBody:
-        'Download de Android-app en start met skills, timers, XP, statistieken, vrienden en familie-tools.',
+        'Download de Android-app en oefen met timers, XP en statistieken.',
       androidCta: 'Download voor Android',
       qrIos: 'Zit je achter de computer? Scan dan met je iPhone of iPad om de App Store te openen.',
       qrAndroid: 'Zit je achter de computer? Scan dan met je Android-telefoon om deze pagina daar te openen.',
@@ -1044,7 +1044,7 @@ export const marketingCopy = {
       androidTitle: 'Android',
       androidStatus: 'Jetzt bei Google Play verfügbar',
       androidBody:
-        'Lade die Android-App und starte mit Skills, Timern, XP, Statistiken, Freunden und Familienfunktionen.',
+        'Lade die Android-App herunter und übe mit Timern, XP und Statistiken.',
       androidCta: 'Für Android herunterladen',
       qrIos: 'Bist du am Computer? Scanne den Code mit deinem iPhone oder iPad, um den App Store zu öffnen.',
       qrAndroid: 'Bist du am Computer? Scanne den Code mit deinem Android-Handy, um diese Seite dort zu öffnen.',
@@ -1350,7 +1350,7 @@ export const marketingCopy = {
       androidTitle: 'Android',
       androidStatus: 'Disponible maintenant sur Google Play',
       androidBody:
-        'Téléchargez l’app Android et commencez avec compétences, timers, XP, statistiques, amis et fonctions famille.',
+        'Téléchargez l’app Android et entraînez-vous avec des minuteurs, de l’XP et des statistiques.',
       androidCta: 'Télécharger pour Android',
       qrIos: 'Tu es sur un ordinateur ? Scanne le code avec ton iPhone ou ton iPad pour ouvrir l’App Store.',
       qrAndroid: 'Tu es sur un ordinateur ? Scanne le code avec ton téléphone Android pour y ouvrir cette page.',
@@ -1656,7 +1656,7 @@ export const marketingCopy = {
       androidTitle: 'Android',
       androidStatus: 'Disponible ahora en Google Play',
       androidBody:
-        'Descarga la app para Android y empieza con habilidades, temporizadores, XP, estadísticas, amigos y funciones familiares.',
+        'Descarga la app para Android y practica con temporizadores, XP y estadísticas.',
       androidCta: 'Descárgala para Android',
       qrIos: '¿Estás en el ordenador? Escanea el código con tu iPhone o iPad para abrir la App Store.',
       qrAndroid: '¿Estás en el ordenador? Escanea el código con tu móvil Android para abrir esta página allí.',
@@ -1962,7 +1962,7 @@ export const marketingCopy = {
       androidTitle: 'Android',
       androidStatus: 'Disponibile ora su Google Play',
       androidBody:
-        'Scarica l’app Android e inizia con competenze, timer, XP, statistiche, amici e funzioni famiglia.',
+        'Scarica l’app Android ed esercitati con timer, XP e statistiche.',
       androidCta: 'Scarica per Android',
       qrIos: 'Sei al computer? Scansiona il codice con il tuo iPhone o iPad per aprire l’App Store.',
       qrAndroid: 'Sei al computer? Scansiona il codice con il tuo telefono Android per aprire questa pagina sul telefono.',
