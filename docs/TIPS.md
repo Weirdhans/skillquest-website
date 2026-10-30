@@ -56,11 +56,12 @@ goed met "publiceer tip JJJJ-WW".
 ## Voorraad december 2026 en januari 2027
 
 De branch `tips/stock-2026-12` bevat acht extra artikelen in alle zes talen (nog
-niet gemerged; Hans keurt goed). `publishedAt` is de geplande woensdag; de
-site filtert niet op datum, dus een merge zet alles direct online. Wil je
-druppelen, haal dan de artikelen van latere weken uit de zes JSON-bestanden
-(op `id`) en zet ze in een volgende commit terug. De Pinterest-CSV in de app-repo
-(`docs/marketing/pinterest/`) plant pins niet vóór `publishedAt`.
+niet gemerged; Hans keurt goed). `publishedAt` is de geplande woensdag. De site
+filtert niet op datum en dat blijft zo (besluit 30 oktober 2026), dus een merge
+van de hele branch zet alles direct online. Daarom gaat de voorraad **wekelijks
+in delen** naar `master`, zie "Wekelijks live zetten" hieronder. De Pinterest-CSV
+in de app-repo (`docs/marketing/pinterest/`) plant een pin niet vóór `publishedAt`
+plus een dag en heeft hetzelfde weekschema.
 
 | publishedAt | id | Engelse zoekvraag |
 |---|---|---|
@@ -72,6 +73,72 @@ druppelen, haal dan de artikelen van latere weken uit de zes JSON-bestanden
 | 2027-01-06 | `back-into-routine-after-holidays` | how to get kids back into a routine after the holidays |
 | 2027-01-13 | `when-to-let-child-quit-activity` | when should I let my child quit an activity |
 | 2027-01-20 | `practice-without-constant-reminders` | how to get my child to practice without being reminded all the time |
+
+## Wekelijks live zetten
+
+De commits van de branch zijn **niet per artikel gesplitst**: alle acht artikelen
+staan in dezelfde commits en in dezelfde zes JSON-bestanden. Een gewone cherry-pick
+per week kan dus niet. Het script `scripts/tips-release.mjs` doet het splitsen:
+het neemt alleen de gekozen artikelen (op `id`) uit de branch over in de zes
+JSON-bestanden van je werkmap. Eén commit van de branch is wel los te
+cherry-picken: `3de7b4f` (de Android-knop naar de Play Store; code en het
+`ui`-blok in de zes talen) past schoon op `origin/master`.
+
+| Week | Uiterlijk live | Artikel (`id`) | Eerste pin (app-repo) |
+|---|---|---|---|
+| 1 | wo 2 dec 2026 | `child-practice-during-holidays` | vr 4 dec |
+| 2 | wo 9 dec 2026 | `help-child-stick-with-new-hobby` | do 10 dec |
+| 3 | wo 16 dec 2026 | `should-you-reward-kids-for-practicing` | do 17 dec |
+| 4 | wo 23 dec 2026 | `child-gets-frustrated-learning` | do 24 dec |
+| 5 | wo 30 dec 2026 | `child-rushes-through-practice` | do 31 dec |
+| 6 | wo 6 jan 2027 | `back-into-routine-after-holidays` | do 7 jan |
+| 7 | wo 13 jan 2027 | `when-to-let-child-quit-activity` | do 14 jan |
+| 8 | wo 20 jan 2027 | `practice-without-constant-reminders` | do 21 jan |
+
+**Vooraf (eenmalig):** laat een moedertaallezer de Spaanse en Italiaanse artikelen
+lezen, en bij voorkeur ook een Franse en een Duitse lezer; mergen is publiceren in
+alle zes talen. Past iemand een tekst aan, doe dat dan op de branch
+`tips/stock-2026-12` (het script leest altijd de nieuwste versie daarvan).
+
+**Elke week** (voorbeeld voor week 1; vervang de datum en het `id`):
+
+```bash
+git fetch origin
+git switch -c tips/live-2026-12-02 origin/master
+
+# alleen in week 1: de Android-knop, het script en deze handleiding meenemen
+git cherry-pick 3de7b4f
+git checkout tips/stock-2026-12 -- scripts/tips-release.mjs docs/TIPS.md
+
+# het artikel van deze week overzetten (zes talen)
+node scripts/tips-release.mjs --ids child-practice-during-holidays
+
+npm run test:seo
+npx tsc --noEmit -p .
+npm run build
+git add -A
+git commit -m "feat: publish the tips article of 2 December 2026"
+git push -u origin tips/live-2026-12-02
+```
+
+Maak daarna een pull request naar `master`. Merge op of vóór de woensdag van
+`publishedAt`; Vercel deployt `master`. Draai daarna in de app-repo
+`python tools/pinterest_bulk_csv.py --verify-urls docs/marketing/pinterest/out/weekly/pins-<week>.csv`
+en upload dat weekbestand pas als alles 200 geeft.
+
+Handige opdrachten van het script:
+
+- `node scripts/tips-release.mjs --list` toont welke artikelen van de branch al in je werkmap staan;
+- `node scripts/tips-release.mjs --check` vergelijkt de artikelen met de branch
+  (na week 8 hoort dit "All articles match" te geven; verwijder dan de branch);
+- `--from origin/tips/stock-2026-12` als de branch niet lokaal staat;
+- een artikel dat al live staat opnieuw overzetten (bijvoorbeeld na een taalcorrectie)
+  vervangt het op `id`.
+
+Getest op 30 oktober 2026 in een aparte werkmap: cherry-pick van `3de7b4f` op
+`origin/master` gaf geen conflict; week 1 alleen gaf `npm run test:seo` (10 geslaagd),
+`tsc` en `npm run build` zonder fouten (de sitemap bevat dan vier Engelse tips);
+alle acht weken na elkaar gaf exact dezelfde `src/` als de branch (geen enkel verschil).
 
 Per taal is de slug gebouwd op de zoekterm van ouders in dat land (zie `slugs`
 in `en.json`), niet op een vertaling van de Engelse zin.
