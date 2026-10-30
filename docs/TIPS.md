@@ -76,6 +76,18 @@ druppelen, haal dan de artikelen van latere weken uit de zes JSON-bestanden
 Per taal is de slug gebouwd op de zoekterm van ouders in dat land (zie `slugs`
 in `en.json`), niet op een vertaling van de Engelse zin.
 
+Gecontroleerd op 30 oktober 2026 (ronde 2): de uitleg over actieve dagen volgt de
+app (geen streak freeze meer; "actieve dagen tellen op, een gemiste dag zet je
+totaal niet terug"), de familiefunctie heet in de teksten "Family plan" (nl
+"familieabonnement", de "Familienplan", fr "abonnement familial", es "plan
+familiar", it "piano famiglia"), en de Android-knop op elk artikel gaat naar de
+Play Store (`ANDROID_STORE_URL`), zonder testverwijzing. De vertalingen zijn
+daarna gericht verbeterd: DeepL (via de DeepL-koppeling, gratis plan) voor de
+zinnen, met de hand ingepast in de bestaande informele tekst, daarna door
+Antigravity gecontroleerd aan het vertaalglossarium. Titels en slugs die in de
+vertaling een woord kwijt waren, zijn aangepast; er staat nog niets live, dus
+er hoeven geen doorverwijzingen bij.
+
 ## Taalwissel
 
 Een slug uit een andere taal (`/en/tips/kind-wil-niet-lezen`, na de taalkeuze in
