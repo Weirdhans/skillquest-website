@@ -95,10 +95,17 @@ cherry-picken: `3de7b4f` (de Android-knop naar de Play Store; code en het
 | 7 | wo 13 jan 2027 | `when-to-let-child-quit-activity` | do 14 jan |
 | 8 | wo 20 jan 2027 | `practice-without-constant-reminders` | do 21 jan |
 
-**Vooraf (eenmalig):** laat een moedertaallezer de Spaanse en Italiaanse artikelen
-lezen, en bij voorkeur ook een Franse en een Duitse lezer; mergen is publiceren in
-alle zes talen. Past iemand een tekst aan, doe dat dan op de branch
-`tips/stock-2026-12` (het script leest altijd de nieuwste versie daarvan).
+**Alle zes talen tegelijk, ook es en it, zonder nalezen (besluit Hans, 30 oktober 2026).**
+Elk wekelijks deel zet het artikel in nl, en, de, fr, es en it tegelijk live; het
+script kent geen deelverzameling van talen. De Spaanse en Italiaanse artikelen
+(en de Franse en Duitse) zijn gemaakt met DeepL en gecontroleerd door Antigravity
+aan `docs/TRANSLATION_DECISIONS_GLOSSARY.md` in de app-repo, maar **zijn niet
+nagelezen door iemand die de taal als moedertaal spreekt**. Er is geen
+moedertaallezer meer als voorwaarde voor week 1. Komt er later een fout aan het licht,
+verbeter die dan op de branch `tips/stock-2026-12` (het script leest altijd de nieuwste
+versie) en zet het artikel opnieuw over met `--ids <id>`; dat vervangt het al-live
+artikel op `id`. De slugs veranderen daarbij niet, dus er is geen doorverwijzing nodig,
+tenzij je bewust een slug aanpast (dan een redirect toevoegen).
 
 **Elke week** (voorbeeld voor week 1; vervang de datum en het `id`):
 
