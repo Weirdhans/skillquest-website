@@ -161,9 +161,9 @@
   "waitlist": {
     "badge": "📬 Blijf op de hoogte",
     "heading": "Ontvang SkillQuest updates",
-    "subheading": "Meld je aan voor Android Early Access-nieuws, productupdates en praktische tips over skillontwikkeling.",
+    "subheading": "Meld je aan voor productupdates en praktische tips om vaardigheden te ontwikkelen.",
     "benefits": {
-      "earlyAccess": "Android Early Access-updates",
+      "earlyAccess": "Android-updates",
       "updates": "Nieuwe functie-updates",
       "tips": "Tips voor het ontwikkelen van vaardigheden"
     },

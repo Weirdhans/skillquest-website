@@ -5,7 +5,7 @@ import {useLocale} from 'next-intl';
 import {Link} from '@/i18n/routing';
 import {
   APP_STORE_URL,
-  ANDROID_SIGNUP_URL,
+  ANDROID_STORE_URL,
   SUPPORT_EMAIL,
   getMarketingCopy,
   isLocale,
@@ -88,9 +88,14 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <Link href={ANDROID_SIGNUP_URL} className="hover:text-white">
-                  Android Early Access
-                </Link>
+                <a
+                  href={ANDROID_STORE_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-white"
+                >
+                  Google Play
+                </a>
               </li>
               <li>
                 <NextLink
