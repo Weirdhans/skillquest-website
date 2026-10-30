@@ -280,7 +280,7 @@
       "readingMinutes": 4,
       "app": {
         "title": "Cómo te ayuda SkillQuest con esto",
-        "body": "Si acuerdas con tu hijo o hija practicar un poco durante las vacaciones, SkillQuest te permite elegir una habilidad, programar un temporizador con una duración fija y ver el progreso después de cada sesión. El temporizador sigue funcionando mientras tu hijo practica, así que puedes dejar el móvil a un lado. Una congelación de racha puede cubrir un día que te hayas saltado. SkillQuest sirve para practicar habilidades, no para gestionar los deberes del colegio. No necesitas una app para tu rutina de vacaciones; basta con un temporizador de cocina y un acuerdo con tu hijo."
+        "body": "Si acuerdas con tu hijo o hija practicar un poco durante las vacaciones, SkillQuest te permite elegir una habilidad, programar un temporizador con una duración fija y ver el progreso después de cada sesión. El temporizador sigue funcionando mientras tu hijo practica, así que puedes dejar el móvil a un lado. Los días activos se acumulan, aunque no sean consecutivos; un día que no se complete no reinicia el recuento total. SkillQuest sirve para practicar habilidades, no para gestionar los deberes del colegio. No necesitas una app para tu rutina de vacaciones; basta con un temporizador de cocina y un acuerdo con tu hijo."
       },
       "sections": [
         {
@@ -301,7 +301,7 @@
         {
           "title": "3. Un hueco en el día de vacaciones",
           "paragraphs": [
-            "Las mañanas de vacaciones pueden empezar más tarde, así que no hace falta que la práctica sea a la hora habitual de los días de colegio. La lectura podría encajar después del desayuno, o se podría jugar un rato antes del momento previsto para las pantallas. Elige un momento con el que tu hijo esté de acuerdo, sin convertir la mañana en un horario escolar.",
+            "Las mañanas de vacaciones pueden empezar más tarde, así que no hace falta que la práctica sea a la hora habitual de los días de colegio. La lectura podría encajar después del desayuno, o se podría dedicar un rato a practicar con el instrumento antes del momento previsto para las pantallas. Elige un momento con el que tu hijo esté de acuerdo, sin convertir la mañana en un horario escolar.",
             "Haz que la rutina sea lo suficientemente sencilla como para explicarla: desayuno, un rato de lectura y luego lo que tengas planeado. Si ese día tienes que salir temprano, cambia la sesión de hora o sáltatela. No hace falta meterla a toda prisa mientras todo el mundo se está poniendo los zapatos."
           ]
         },
@@ -360,7 +360,7 @@
       "readingMinutes": 4,
       "app": {
         "title": "Cómo te ayuda SkillQuest con esto",
-        "body": "Para una nueva afición, como tocar un instrumento, SkillQuest te permite elegir la habilidad y poner en marcha un temporizador con una duración fija. Cada minuto de práctica da 1 XP, así que el tiempo dedicado a intentarlo cuenta incluso mientras la primera melodía aún está tomando forma. Tu hijo puede ver su progreso después de cada sesión, y el temporizador funciona mientras practica sin que nadie tenga que estar mirando la pantalla. Con la función familiar, puedes seguir su progreso y poner en marcha su temporizador desde tu propio móvil. Es una forma de llevar un registro de la práctica; aunque un calendario de papel y un temporizador de cocina también bastan para crear una rutina."
+        "body": "Para una nueva afición, como tocar un instrumento, SkillQuest te permite elegir la habilidad y poner en marcha un temporizador con una duración fija. Cada minuto de práctica da 1 XP, así que el tiempo dedicado a intentarlo cuenta incluso mientras la primera melodía aún está tomando forma. Tu hijo puede ver su progreso después de cada sesión, y el temporizador funciona mientras practica sin que nadie tenga que estar mirando la pantalla. Con un plan familiar, puedes seguir su progreso y poner en marcha su temporizador desde tu propio móvil. Es una forma de llevar un registro de la práctica; aunque un calendario de papel y un temporizador de cocina también bastan para crear una rutina."
       },
       "sections": [
         {
@@ -380,7 +380,7 @@
         {
           "title": "3. Un primer objetivo que tu hijo pueda ver",
           "paragraphs": [
-            "Elige algo lo bastante sencillo como para que se dé cuenta cuando lo consiga: tocar el principio de su canción favorita, dibujar una cara con los lápices nuevos o frenar el monopatín sin caerse. Pregúntale a tu hijo qué le gustaría intentar primero. El objetivo debe ser suyo, aunque tú le ayudes a hacerlo más sencillo.",
+            "Elige algo lo bastante sencillo como para que se dé cuenta cuando lo consiga: tocar el principio de su canción favorita, dibujar la cara de alguien con los lápices nuevos o frenar el monopatín sin caerse. Pregúntale a tu hijo qué le gustaría intentar primero. El objetivo debe ser suyo, aunque tú le ayudes a hacerlo más sencillo.",
             "Guarda el primer dibujo o anota el fragmento musical en el que está trabajando. Vuelve a mirarlo con tu hijo o hija más tarde para que pueda darse cuenta de lo que ha cambiado. Alcanzar ese primer objetivo es una oportunidad para elegir otro pequeño paso, sin convertir cada sesión en un examen."
           ]
         },
@@ -427,10 +427,10 @@
     },
     {
       "id": "should-you-reward-kids-for-practicing",
-      "slug": "premiar-ninos-por-estudiar",
+      "slug": "premiar-ninos-por-practicar",
       "eyebrow": "Motivación",
-      "title": "¿Deberías premiar a los niños por estudiar? 6 cosas que debes tener en cuenta",
-      "metaTitle": "¿Deberías premiar a los niños por estudiar? | SkillQuest",
+      "title": "¿Deberías premiar a los niños por practicar? 6 cosas que debes tener en cuenta",
+      "metaTitle": "¿Deberías premiar a los niños por practicar? | SkillQuest",
       "metaDescription": "¿Pegatinas, dinero o tiempo juntos? Formas prácticas de valorar el esfuerzo sin convertir cada sesión en un regateo.",
       "intro": "El instrumento ya está listo, pero tu hijo quiere saber qué gana por practicar. Estabas pensando en una pegatina; ahora te preguntas si realmente quieres darle alguna recompensa. Aquí tienes algunas ideas para pensártelo bien, con o sin app.",
       "cardSummary": "Una visión práctica sobre las pequeñas recompensas, el tiempo compartido y el progreso visible, incluyendo qué hacer cuando tu hijo empiece a pedir más.",
@@ -468,7 +468,7 @@
         {
           "title": "4. Practicar tiene un propósito que va más allá de la recompensa",
           "paragraphs": [
-            "La paga, las recompensas y el tiempo frente a la pantalla merecen una reflexión. Cambiar dos canciones por una hora con la tableta puede hacer que las canciones parezcan el precio desagradable que hay que pagar para llegar a la parte divertida. Antes de proponer un trato, habla con tu hijo sobre lo que quiere aprender.",
+            "La paga, los dulces y el tiempo frente a la pantalla merecen una reflexión. Cambiar dos canciones por una hora con la tableta puede hacer que las canciones parezcan el precio desagradable que hay que pagar para llegar a la parte divertida. Antes de proponer un trato, habla con tu hijo sobre lo que quiere aprender.",
             "Ten siempre presente ese objetivo: poder tocar su canción favorita, por ejemplo. Si usas una recompensa extra, que sea modesta y acordada de antemano. Evita aumentar la recompensa a mitad de una sesión difícil.",
             "Nunca le quites la práctica como castigo, ni le pongas más práctica porque tu hijo haya hecho algo mal. Aborda eso por separado, para que aprender no se convierta en un castigo."
           ]
@@ -496,7 +496,7 @@
         },
         {
           "question": "¿Y si mi hijo se niega a practicar sin una recompensa?",
-          "answer": "Deja la negociación para un momento más tranquilo y pregúntale qué es lo que le resulta difícil de la práctica. Valora todo lo que ya haya conseguido y, después, acuerda con tu hijo o hija en qué consistirán las próximas sesiones. Si el trabajo le parece demasiado difícil, pregúntale al profesor si se puede cambiar."
+          "answer": "Deja la negociación para un momento más tranquilo y pregúntale qué es lo que le resulta difícil de la práctica. Deja que tu hijo o hija conserve lo que ya haya ganado y, después, acuerda con tu hijo o hija en qué consistirán las próximas sesiones. Si el trabajo le parece demasiado difícil, pregúntale al profesor si se puede cambiar."
         },
         {
           "question": "¿Cuándo deberíamos dejar de usar una tabla de recompensas?",
@@ -590,10 +590,10 @@
     },
     {
       "id": "child-rushes-through-practice",
-      "slug": "hijo-hace-deberes-rapido-y-mal",
+      "slug": "hijo-hace-deberes-y-practica-a-toda-prisa",
       "eyebrow": "Enfoque",
-      "title": "¿Tu hijo o hija hace los deberes rápido y mal? 6 consejos para familias",
-      "metaTitle": "¿Tu hijo o hija hace los deberes rápido y mal? | SkillQuest",
+      "title": "¿Tu hijo o hija hace los deberes y practica a toda prisa? 6 consejos para familias",
+      "metaTitle": "¿Tu hijo o hija hace los deberes y practica a toda prisa? | SkillQuest",
       "metaDescription": "Consejos prácticos para cuando tu hijo se apresura a hacer los deberes o los ejercicios: un final claro, menos tareas y tiempo para revisarlos juntos.",
       "intro": "Tu hijo se sienta y, dos minutos después, dice «ya está». La página tiene errores, o ya ha guardado el instrumento tras repasar la pieza a toda prisa. Aquí tienes seis cosas que puedes probar, con o sin app.",
       "cardSummary": "Seis consejos prácticos para ayudar a tu hijo a poner más cuidado en los deberes y la práctica cuando lo único que quiere es acabar cuanto antes.",
@@ -621,7 +621,7 @@
         {
           "title": "3. Menos trabajo y más atención",
           "paragraphs": [
-            "Para las sesiones de práctica que organices en casa, elige una cantidad más pequeña que le deje tiempo para pensar y revisar. Como regla general, empieza con cinco minutos en un fragmento corto o unos cuantos ejemplos. A partir de ahí, ve ajustándolo. Es mejor hacer menos ejercicios con cuidado que una página entera hecha a toda prisa.",
+            "Para las sesiones de práctica que organices en casa, elige una tarea más pequeña que le deje tiempo para pensar y revisar. Como regla general, empieza con cinco minutos en un fragmento corto o unos cuantos ejemplos. A partir de ahí, ve ajustándolo. Es mejor hacer menos ejercicios con cuidado que una página entera hecha a toda prisa.",
             "Para los deberes, sigue las instrucciones del profe en lugar de dejar de lado por tu cuenta la mitad de la tarea. Aún así puedes ir trabajando en pequeñas partes cada vez. Destaca un esfuerzo concreto: «Volviste atrás y revisaste esa respuesta». No hace falta convertir cada error en un reinicio total."
           ]
         },
@@ -680,7 +680,7 @@
       "readingMinutes": 4,
       "app": {
         "title": "Cómo te ayuda SkillQuest con esto",
-        "body": "Para una primera semana más corta, puedes elegir una habilidad en SkillQuest, poner un temporizador con una duración fija y ver el progreso después de cada sesión. El progreso semanal te da algo que repasar con tu hijo cuando acaba la semana. Una congelación de racha puede cubrir un día que se haya saltado. SkillQuest sirve para practicar, como leer o tocar un instrumento, más que para gestionar los deberes del colegio. No necesitas una app para recuperar la rutina; basta con un plan en papel y un temporizador de cocina para empezar."
+        "body": "Para una primera semana más corta, puedes elegir una habilidad en SkillQuest, poner un temporizador con una duración fija y ver el progreso después de cada sesión. El progreso semanal te da algo que repasar con tu hijo cuando acaba la semana. Los días activos se acumulan, aunque no sean consecutivos; un día que no se complete no reinicia el recuento total. SkillQuest sirve para practicar, como leer o tocar un instrumento, más que para gestionar los deberes del colegio. No necesitas una app para recuperar la rutina; basta con un plan en papel y un temporizador de cocina para empezar."
       },
       "sections": [
         {
@@ -693,7 +693,7 @@
         {
           "title": "2. Un plan más reducido en papel",
           "paragraphs": [
-            "Como regla general, intenta que la primera semana dure más o menos la mitad de lo que suele durar la práctica habitual. Si antes la lectura te llevaba diez minutos, eso podría significar cinco. Es solo una sugerencia inicial, así que ajústala con tu hijo en lugar de tomarla como un objetivo que tenga que cumplir.",
+            "Como regla general, intenta que la primera semana dure más o menos la mitad de lo que suele durar la práctica habitual. Si antes la lectura llevaba diez minutos, eso podría significar cinco. Es solo una sugerencia inicial, así que ajústala con tu hijo en lugar de tomarla como un objetivo que tenga que cumplir.",
             "Escribe con tu hijo un pequeño plan en un papel: qué va a practicar, cuándo va a empezar y cuándo puede parar. Un niño pequeño puede dibujar el libro al lado de la hora; uno mayor puede escribir su propio plan. Déjalo en un sitio donde esté a la vista de los dos.",
             "No añadas sesiones extra para recuperar el tiempo perdido durante las vacaciones. En el caso de los deberes con fecha límite, comprueba qué hay que entregar realmente antes de acortar el trabajo. El plan de práctica debe adaptarse a los requisitos del colegio."
           ]
@@ -767,8 +767,8 @@
           "title": "1. Un patrón a lo largo de varias semanas",
           "paragraphs": [
             "No hay una única respuesta correcta sobre cuándo dejarlo. Una clase difícil puede hacer que la tarde sea horrible sin que por ello cambie lo que tu hijo piensa de la actividad en general. Fíjate si se lo pasa bien una vez que llega, o si vuelve a casa deseando no haber ido.",
-            "Como regla general, echa la vista atrás varias semanas en lugar de decidirte tras una sola tarde mala. Haz con tu hijo o hija una breve nota después de cada sesión sobre lo que ha ido bien y lo que no. Lo que buscas es un patrón, no acumular razones para que se quede.",
-            "No tienes que esperar si a tu hijo le están haciendo daño o le tratan mal. Tómate eso en serio de inmediato."
+            "Como regla general, echa la vista atrás varias semanas en lugar de decidirte tras un solo mal día. Haz con tu hijo o hija una breve nota después de cada sesión sobre lo que ha ido bien y lo que no. Lo que buscas es un patrón, no acumular razones para que se quede.",
+            "No tienes que esperar si a tu hijo le hacen daño, le acosan o le tratan injustamente en la actividad. Tómate eso en serio de inmediato."
           ]
         },
         {
@@ -791,13 +791,13 @@
           "paragraphs": [
             "A veces, a un niño le sigue gustando la actividad, pero quiere dejarla porque se siente estancado. Pídele que elija algo sencillo en lo que le gustaría mejorar, como tocar un pasaje difícil con más soltura o hacer un pase a un compañero de equipo.",
             "Toma nota de forma sencilla de lo que practica y repasa algo que antes le resultaba difícil. Deja que tu hijo diga qué nota diferente antes de añadir tus observaciones. Un calendario puede mostrar el tiempo dedicado; no tiene por qué demostrar una mejora cada día.",
-            "El progreso visible es algo de lo que hay que hablar, no una razón por la que te deba más clases. Puede reconocer lo que ha aprendido y, aun así, querer seguir avanzando."
+            "El progreso visible es algo de lo que hay que hablar, no una razón por la que tu hijo te deba más clases. Puede reconocer lo que ha aprendido y, aun así, decidir que quiere dejarlo."
           ]
         },
         {
           "title": "5. Un momento acordado para decidir",
           "paragraphs": [
-            "Si continuar parece factible, acuerda con tu hijo o hija terminar el trimestre o la temporada y apunta la fecha de la decisión en el calendario. Explícale que te tomarás en serio su deseo de dejarlo cuando llegue esa fecha. Así, la decisión no estará tan ligada a una mala noche.",
+            "Si continuar parece factible, acuerda con tu hijo o hija terminar el trimestre o la temporada y apunta la fecha de la decisión en el calendario. Explícale que te tomarás en serio su deseo de dejarlo cuando llegue esa fecha. Así, la decisión no estará tan ligada a un mal día.",
             "Formar parte de un equipo o grupo es una razón para cumplir lo prometido. Pregunta al entrenador o al profesor qué supondría para los demás que tu hijo o hija lo dejara y cómo organizarlo con tacto. Ese compromiso es importante, pero no significa quedarse a toda costa.",
             "Sigue prestando atención durante las sesiones que quedan. Si la situación empeora, vuelve a revisar el acuerdo. Terminar la temporada no debería convertirse en una promesa que tu hijo no pueda pedirte que te replantees."
           ]
@@ -817,7 +817,7 @@
         },
         {
           "question": "¿Y si mi hijo quiere dejar todas las actividades que prueba?",
-          "answer": "Analiza con tu hijo o hija qué es lo que ha hecho que cada actividad resulte difícil. Puede que haya que cambiar el horario, el grupo o las expectativas para que la próxima actividad se viva de otra manera. Antes de apuntarle de nuevo, pregunta si hay alguna sesión de prueba y acuerda con tu hijo o hija sobre qué nivel de compromiso le parece asumible."
+          "answer": "Analiza con tu hijo o hija qué es lo que ha hecho que cada actividad resulte difícil. Puede que haya que cambiar el horario, el grupo o las expectativas para que la próxima actividad se viva de otra manera. Antes de apuntarle de nuevo, pregunta si hay alguna sesión de prueba y acuerda con tu hijo o hija qué nivel de compromiso le parece asumible."
         },
         {
           "question": "¿Y si ya he pagado las clases?",
@@ -836,19 +836,19 @@
       "title": "Cómo enseñar a tu hijo o hija a practicar solo: 6 consejos para ir cediendo poco a poco el control",
       "metaTitle": "Cómo enseñar a tu hijo o hija a practicar solo | SkillQuest",
       "metaDescription": "Consejos prácticos para ayudar a tu hijo o hija a practicar: una señal diaria, un plan visible y un traspaso gradual de la responsabilidad.",
-      "intro": "Ya has cenado, el instrumento está ahí esperando y estás a punto de volver a sacar el tema de los ensayos. Estás harto de hacer de «policía de los ensayos» y tu hijo está harto de oírlo. Aquí tienes algunas formas de ir delegando un poco de responsabilidad poco a poco, con o sin app.",
+      "intro": "Ya has cenado, el instrumento está ahí esperando y estás a punto de volver a sacar el tema de la práctica. Estás harto de hacer de «policía de la práctica» y tu hijo está harto de oírlo. Aquí tienes algunas formas de ir delegando un poco de responsabilidad poco a poco, con o sin app.",
       "cardSummary": "Seis consejos prácticos para ayudar a tu hijo a hacerse cargo de la práctica, sin tener que recordárselo tanto pero sin que deje de contar con tu apoyo.",
       "publishedAt": "2027-01-20",
       "readingMinutes": 4,
       "app": {
         "title": "Cómo te ayuda SkillQuest con esto",
-        "body": "SkillQuest puede ofrecer a tu hijo una forma de empezar a practicar por su cuenta: elegir una habilidad, poner un temporizador con una duración fija y ver el progreso al terminar la sesión. Con la función familiar, cada niño tiene su propio progreso para que los padres lo sigan. Para los más pequeños, puedes poner en marcha el temporizador desde tu propio móvil mientras se preparan para practicar. Es una herramienta para practicar, no un gestor de deberes, y también se puede crear una rutina con una lista de tareas en papel y un temporizador de cocina."
+        "body": "SkillQuest puede ofrecer a tu hijo una forma de empezar a practicar por su cuenta: elegir una habilidad, poner un temporizador con una duración fija y ver el progreso al terminar la sesión. Con un plan familiar, cada niño tiene su propio progreso para que los padres lo sigan. Para los más pequeños, puedes poner en marcha el temporizador desde tu propio móvil mientras se preparan para practicar. Es una herramienta para practicar, no un gestor de deberes, y también se puede crear una rutina con una lista de tareas en papel y un temporizador de cocina."
       },
       "sections": [
         {
           "title": "1. Una señal diaria se encarga de parte de los recordatorios",
           "paragraphs": [
-            "Elige un momento que tu hijo pueda reconocer sin tener que mirar el reloj. Después de cenar podría significar terminar de comer y luego abrir el libro. Antes de la tableta podría significar acabar de practicar antes de que empiece el rato de la tableta. Acuerda el orden con tu hijo o hija, lejos del ajetreo de la tarde.",
+            "Elige un momento que tu hijo pueda reconocer sin tener que mirar el reloj. Después de cenar podría significar recoger la mesa y luego abrir el libro. Antes de las pantallas podría significar acabar de practicar antes de sacar la tableta. Acuerda el orden con tu hijo o hija, lejos del ajetreo de la tarde.",
             "Haz que la primera sesión sea manejable. Como regla general, prueba con cinco minutos mientras trabajas en que empiece a hacerlo por su cuenta; pregúntale al profesor qué tiempo de práctica se adapta mejor a la tarea. La señal le da a tu hijo algo en lo que fijarse sin tener que esperar a que tú se lo digas."
           ]
         },
@@ -885,7 +885,7 @@
           "title": "6. El progreso también merece una conversación",
           "paragraphs": [
             "Después de practicar, fíjate en algo concreto: que tu hijo haya preparado el libro sin ayuda o que haya vuelto a un pasaje difícil. Pregúntale qué le resulta más fácil ahora o en qué quiere seguir trabajando. Déjale espacio para que responda sin que se convierta en otra lección.",
-            "Es normal que haya algunos comienzos en los que se le olvide empezar. En un momento tranquilo, revisa con tu hijo o hija a lo que ha ayudado y a lo que ha sido un obstáculo. Ajusta la señal o acompáñale más si hace falta. Empezar con menos ayuda también requiere práctica; una semana con altibajos no significa que tengas que volver a asumir todo el control."
+            "Es normal que haya algunos comienzos en los que se le olvide empezar. En un momento tranquilo, revisa con tu hijo o hija lo que ha ayudado y lo que ha sido un obstáculo. Ajusta la señal o acompáñale más si hace falta. Empezar con menos ayuda también requiere práctica; una semana con altibajos no significa que tengas que empezar de nuevo ni volver a encargarte de la tarea."
           ]
         }
       ],

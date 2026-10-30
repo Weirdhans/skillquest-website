@@ -269,9 +269,9 @@
     },
     {
       "id": "child-practice-during-holidays",
-      "slug": "esercitarsi-durante-le-vacanze",
+      "slug": "bambino-esercitarsi-durante-vacanze",
       "eyebrow": "Vacanze",
-      "title": "Esercitarsi durante le vacanze scolastiche? 6 consigli per decidere insieme",
+      "title": "Il bambino deve esercitarsi durante le vacanze scolastiche? 6 consigli per decidere insieme",
       "metaTitle": "Esercitarsi durante le vacanze scolastiche: pausa o routine? | SkillQuest",
       "metaDescription": "Esercitarsi durante le vacanze scolastiche? Consigli pratici per scegliere insieme tra una pausa completa e una piccola routine.",
       "intro": "Le vacanze scolastiche sono alle porte e stai decidendo se lasciare a portata di mano il libro da leggere o lo strumento musicale per le prossime due settimane. Anche il riposo fa parte delle vacanze, quindi la scelta può essere tra una pausa completa o un po’ di pratica che si adatti ai tuoi programmi. Ecco un modo per decidere insieme, con o senza app.",
@@ -280,13 +280,13 @@
       "readingMinutes": 4,
       "app": {
         "title": "In che modo SkillQuest può aiutarti in questo",
-        "body": "Se decidi con tuo figlio di dedicare un po’ di tempo all’esercizio durante le vacanze, SkillQuest ti permette di scegliere un’abilità, impostare un timer con una durata fissa e vedere i progressi dopo ogni sessione. Il timer continua a funzionare mentre tuo figlio si esercita, così puoi mettere da parte il telefono. Un congelamento della serie può coprire un giorno saltato. SkillQuest serve per esercitarsi nelle abilità, non per gestire i compiti scolastici. Non ti serve un’app per la tua routine delle vacanze; bastano un timer da cucina e un accordo con tuo figlio."
+        "body": "Se decidi con tuo figlio di dedicare un po’ di tempo all’esercizio durante le vacanze, SkillQuest ti permette di scegliere un’abilità, impostare un timer con una durata fissa e vedere i progressi dopo ogni sessione. Il timer continua a funzionare mentre tuo figlio si esercita, così puoi mettere da parte il telefono. I giorni di attività si sommano, anche se non sono consecutivi; un giorno saltato non azzera il totale. SkillQuest serve per esercitarsi nelle abilità, non per gestire i compiti scolastici. Non ti serve un’app per la tua routine delle vacanze; bastano un timer da cucina e un accordo con tuo figlio."
       },
       "sections": [
         {
           "title": "1. Un programma da concordare prima delle vacanze",
           "paragraphs": [
-            "Prima che inizino le vacanze, siediti con tuo figlio e dai un’occhiata a cosa c’è in programma. Chiedigli se preferisce prendersi una pausa completa dagli esercizi o dedicare un po’ di tempo a qualcosa che sta imparando. Tieni conto dei giorni in cui sarete via e delle mattine in cui nessuno dovrà alzarsi presto per vestirsi.",
+            "Prima che inizino le vacanze, siediti con tuo figlio e dai un’occhiata a cosa c’è in programma. Chiedigli se preferisce prendersi una pausa completa dagli esercizi o dedicare un po’ di tempo a qualcosa che sta imparando. Tieni conto dei giorni in cui sarete fuori casa e delle mattine in cui nessuno dovrà alzarsi presto.",
             "Lascia spazio alla sua risposta. Se vuole prendersi una pausa, chiedigli da cosa vorrebbe prendersi una pausa: dallo strumento stesso, dal brano difficile o dall’avere un compito fisso ogni pomeriggio. Puoi decidere insieme a tuo figlio se fare una pausa completa o cambiare il modo in cui si svolge la pratica."
           ]
         },
@@ -301,7 +301,7 @@
         {
           "title": "3. Un posto nella giornata di vacanza",
           "paragraphs": [
-            "Le mattine delle vacanze possono iniziare più tardi, quindi non è necessario che l’esercizio avvenga alla solita ora dei giorni di scuola. La lettura potrebbe inserirsi dopo colazione, oppure suonare un po’ potrebbe precedere il momento dedicato allo schermo. Scegli un momento che vada bene a tuo figlio, senza trasformare la mattinata in un orario scolastico.",
+            "Le mattine delle vacanze possono iniziare più tardi, quindi non è necessario che l’esercizio avvenga alla solita ora dei giorni di scuola. La lettura potrebbe inserirsi dopo colazione, oppure un po’ di tempo con lo strumento potrebbe precedere il momento dedicato allo schermo. Scegli un momento che vada bene a tuo figlio, senza trasformare la mattinata in un orario scolastico.",
             "Mantieni la routine abbastanza semplice da poterla spiegare: colazione, un po’ di lettura, poi quello che hai in programma. Se quel giorno devi uscire presto, sposta la sessione o saltala. Non c’è bisogno di infilarla mentre tutti si stanno mettendo le scarpe."
           ]
         },
@@ -360,7 +360,7 @@
       "readingMinutes": 4,
       "app": {
         "title": "In che modo SkillQuest può aiutarti in questo",
-        "body": "Per un nuovo hobby come suonare uno strumento, SkillQuest ti permette di scegliere l’abilità e avviare un timer con una durata prestabilita. Ogni minuto di pratica fa guadagnare 1 XP, quindi il tempo dedicato a provare conta anche mentre il primo brano sta ancora prendendo forma. Tuo figlio può vedere i progressi dopo ogni sessione, e il timer scorre mentre si esercita senza che nessuno debba guardare lo schermo. Con la funzione famiglia, puoi seguire i suoi progressi e avviare il suo timer dal tuo telefono. È un modo per registrare le sessioni di pratica; anche un calendario cartaceo e un timer da cucina bastano per creare una routine."
+        "body": "Per un nuovo hobby come suonare uno strumento, SkillQuest ti permette di scegliere l’abilità e avviare un timer con una durata prestabilita. Ogni minuto di pratica fa guadagnare 1 XP, quindi il tempo dedicato a provare conta anche mentre il primo brano sta ancora prendendo forma. Tuo figlio può vedere i progressi dopo ogni sessione, e il timer scorre mentre si esercita senza che nessuno debba guardare lo schermo. Con un piano famiglia, puoi seguire i progressi di tuo figlio e avviare il suo timer dal tuo telefono. È un modo per registrare le sessioni di pratica; anche un calendario cartaceo e un timer da cucina bastano per creare una routine."
       },
       "sections": [
         {
@@ -380,8 +380,8 @@
         {
           "title": "3. Un primo obiettivo che tuo figlio possa vedere",
           "paragraphs": [
-            "Scegli qualcosa di abbastanza semplice da poterlo notare quando succede: suonare l’inizio di una canzone preferita, disegnare una faccina con le matite nuove o fermare lo skateboard in sicurezza. Chiedi a tuo figlio cosa vorrebbe provare per primo. L’obiettivo deve essere suo, anche se lo aiuti a renderlo più semplice.",
-            "Conserva il primo disegno o scrivi il brano musicale su cui sta lavorando. Rivedilo insieme a tuo figlio più tardi, così tuo figlio potrà notare cosa è cambiato. Raggiungere quel primo obiettivo è un’occasione per scegliere un altro piccolo passo avanti, senza trasformare ogni sessione in un esame."
+            "Scegli qualcosa di abbastanza semplice da poterlo notare quando succede: suonare l’inizio di una canzone preferita, disegnare il volto di una persona con le matite nuove o fermare lo skateboard in sicurezza. Chiedi a tuo figlio cosa vorrebbe provare per primo. L’obiettivo deve essere suo, anche se lo aiuti a renderlo più semplice.",
+            "Conserva il primo disegno o annota il brano musicale su cui sta lavorando. Rivedilo insieme a tuo figlio più tardi, così tuo figlio potrà notare cosa è cambiato. Raggiungere quel primo obiettivo è un’occasione per scegliere un altro piccolo passo avanti, senza trasformare ogni sessione in un esame."
           ]
         },
         {
@@ -427,10 +427,10 @@
     },
     {
       "id": "should-you-reward-kids-for-practicing",
-      "slug": "premiare-bambini-per-lo-studio",
+      "slug": "premiare-bambini-che-si-esercitano",
       "eyebrow": "Motivazione",
-      "title": "Premiare i bambini per lo studio? 6 cose da considerare",
-      "metaTitle": "Premiare i bambini per lo studio? | SkillQuest",
+      "title": "Premiare i bambini quando si esercitano? 6 cose da considerare",
+      "metaTitle": "Premiare i bambini quando si esercitano? | SkillQuest",
       "metaDescription": "Adesivi, soldi o tempo insieme? Modi pratici per riconoscere l’impegno senza trasformare ogni sessione in una trattativa.",
       "intro": "Lo strumento è pronto, ma tuo figlio vuole sapere cosa otterrà in cambio delle esercitazioni. Stavi pensando a un adesivo; ora ti stai chiedendo se sia il caso di prevedere una ricompensa. Ecco alcuni spunti per riflettere sulla questione, con o senza app.",
       "cardSummary": "Uno sguardo pratico alle piccole ricompense, al tempo trascorso insieme e ai progressi visibili, compreso cosa fare quando tuo figlio inizia a chiederne di più.",
@@ -468,7 +468,7 @@
         {
           "title": "4. L’allenamento ha uno scopo che va oltre la ricompensa",
           "paragraphs": [
-            "La paghetta, i regali e il tempo davanti allo schermo meritano un po’ di riflessione. Scambiare due canzoni per un’ora sul tablet può far sembrare le canzoni il prezzo sgradevole da pagare per arrivare alla parte divertente. Prima di proporre uno scambio, parla con tuo figlio di ciò che vuole imparare.",
+            "La paghetta, i dolci e il tempo davanti allo schermo meritano un po’ di riflessione. Scambiare due canzoni per un’ora sul tablet può far sembrare le canzoni il prezzo sgradevole da pagare per arrivare alla parte divertente. Prima di proporre uno scambio, parla con tuo figlio di ciò che vuole imparare.",
             "Tieni sempre a mente quell’obiettivo: riuscire a suonare il suo brano preferito, per esempio. Se decidi di offrire una ricompensa extra, che sia modesta e concordata in anticipo. Evita di alzare la posta in gioco a metà di una sessione difficile.",
             "Non togliere mai la possibilità di esercitarsi come punizione, né aggiungere esercitazioni extra solo perché tuo figlio ha fatto qualcosa di sbagliato. Affronta la questione a parte, in modo che l’apprendimento non diventi una punizione."
           ]
@@ -590,10 +590,10 @@
     },
     {
       "id": "child-rushes-through-practice",
-      "slug": "bambino-fa-i-compiti-in-fretta",
+      "slug": "bambino-compiti-ed-esercizi-in-fretta",
       "eyebrow": "Focus",
-      "title": "Il bambino fa i compiti in fretta? 6 consigli per i genitori",
-      "metaTitle": "Il bambino fa i compiti in fretta | SkillQuest",
+      "title": "Il bambino fa i compiti e si esercita in fretta? 6 consigli per i genitori",
+      "metaTitle": "Il bambino fa i compiti e si esercita in fretta | SkillQuest",
       "metaDescription": "Consigli pratici per quando tuo figlio fa i compiti o gli esercizi in fretta: una conclusione chiara, meno attività e del tempo per controllare insieme.",
       "intro": "Tuo figlio si siede e due minuti dopo annuncia “fatto”. La pagina presenta degli errori, oppure lo strumento è già stato riposto dopo una rapida esecuzione del brano. Ecco sei cose da provare, con o senza app.",
       "cardSummary": "Sei consigli pratici per aiutare tuo figlio a dedicare più attenzione ai compiti e alla pratica quando vorrebbe solo finirli in fretta.",
@@ -614,14 +614,14 @@
         {
           "title": "2. Il motivo di tanta fretta",
           "paragraphs": [
-            "In un momento tranquillo, chiedi a tuo figlio cosa vorrebbero superare. Potrebbe non vedere l’ora di giocare, annoiarsi per un compito troppo facile o saltare le parti che trova troppo difficili. Chiedi anche se si sente stanco. Lascia spazio alla sua risposta prima di suggerire una soluzione.",
+            "In un momento tranquillo, chiedi a tuo figlio cosa vorrebbe superare. Potrebbe non vedere l’ora di giocare, annoiarsi per un compito troppo facile o saltare le parti che trova troppo difficili. Chiedi anche se si sente stanco. Lascia spazio alla sua risposta prima di suggerire una soluzione.",
             "Adatta il passo successivo a quello che dice tuo figlio. Un esercizio già conosciuto potrebbe richiedere una sfida diversa; un passaggio difficile potrebbe dover essere suddiviso in parti più piccole. Se il lavoro continua a sembrare troppo facile o troppo difficile, parla con l’insegnante per trovare una soluzione più adatta."
           ]
         },
         {
           "title": "3. Meno lavoro con più attenzione",
           "paragraphs": [
-            "Per gli esercizi che proponi a casa, scegli una quantità ridotta che lasci spazio per pensare e controllare. Come regola generale, inizia con cinque minuti su un breve brano o qualche esempio. Da lì, regola di conseguenza. È meglio fare pochi esercizi con attenzione piuttosto che sbrigare una pagina intera di corsa.",
+            "Per gli esercizi che proponi a casa, scegli un compito più piccolo che lasci spazio per pensare e controllare. Come regola generale, inizia con cinque minuti su un breve brano o qualche esempio. Da lì, regola di conseguenza. È meglio fare pochi esercizi con attenzione piuttosto che sbrigare una pagina intera di corsa.",
             "Per i compiti, segui le istruzioni dell’insegnante invece di tralasciare in silenzio metà del lavoro. Puoi comunque lavorare su una piccola parte alla volta. Fai notare uno sforzo specifico: “Sei tornato indietro e hai controllato quella risposta”. Non c’è bisogno di trasformare ogni errore in un ricominciare da capo."
           ]
         },
@@ -680,7 +680,7 @@
       "readingMinutes": 4,
       "app": {
         "title": "In che modo SkillQuest può aiutarti in questo",
-        "body": "Per una prima settimana più breve, puoi scegliere un’abilità su SkillQuest, impostare un timer con una durata fissa e vedere i progressi dopo ogni sessione. I progressi settimanali ti danno qualcosa da rivedere insieme alla fine della settimana. Un congelamento della serie può coprire un giorno saltato. SkillQuest è pensata per la pratica, come la lettura o uno strumento musicale, piuttosto che per gestire i compiti scolastici. Non ti serve un’app per ricostruire la routine; bastano un programma scritto su carta e un timer da cucina per iniziare."
+        "body": "Per una prima settimana più breve, puoi scegliere un’abilità su SkillQuest, impostare un timer con una durata fissa e vedere i progressi dopo ogni sessione. I progressi settimanali ti danno qualcosa da rivedere insieme alla fine della settimana. I giorni di attività si sommano, anche se non sono consecutivi; un giorno saltato non azzera il totale. SkillQuest è pensata per la pratica, come la lettura o uno strumento musicale, piuttosto che per gestire i compiti scolastici. Non ti serve un’app per ricostruire la routine; bastano un programma scritto su carta e un timer da cucina per iniziare."
       },
       "sections": [
         {
@@ -722,7 +722,7 @@
         {
           "title": "6. Spazio per qualche intoppo",
           "paragraphs": [
-            "Aspettati qualche intoppo lungo il percorso. Se salti un giorno di pratica nella prima settimana, non è un problema. Riprendi al prossimo orario concordato, senza raddoppiare la sessione o ricominciare da capo l’intero programma.",
+            "Aspettati qualche intoppo lungo il percorso. Se tuo figlio salta un giorno di pratica nella prima settimana, non è un problema. Riprendi al prossimo orario concordato, senza raddoppiare la sessione o ricominciare da capo l’intero programma.",
             "Festeggia la prima settimana completa di ritorno a scuola, anche se include quel giorno perso. Potresti lasciare che tuo figlio scelga un gioco da fare insieme e riconoscere lo sforzo che ha fatto per ricominciare. Non serve una fila perfetta di spunte.",
             "Esamina insieme a tuo figlio il programma cartaceo prima che inizi la settimana successiva. Chiedi cosa ha funzionato e cosa è sembrato troppo affrettato. Se le sessioni più brevi vanno ancora bene, mantienile per ora; aumenta gradualmente la durata quando tuo figlio sarà pronto."
           ]
@@ -749,10 +749,10 @@
     },
     {
       "id": "when-to-let-child-quit-activity",
-      "slug": "bambino-vuole-smettere-sport-musica",
+      "slug": "quando-lasciare-smettere-attivita-figlio",
       "eyebrow": "Attività",
-      "title": "Quando il bambino vuole smettere sport o musica: 6 cose da considerare",
-      "metaTitle": "Quando il bambino vuole smettere sport o musica? | SkillQuest",
+      "title": "Quando lasciare che tuo figlio smetta un’attività: 6 cose da considerare",
+      "metaTitle": "Quando lasciare che tuo figlio smetta un’attività? | SkillQuest",
       "metaDescription": "Tuo figlio vuole smettere uno sport, musica o un'attività? Consigli pratici per valutare insieme una pausa, un cambio o se lasciare.",
       "intro": "La borsa per la lezione è vicino alla porta, ma tuo figlio dice che non vuole più andarci. Vuoi prenderlo sul serio, ma vuoi anche che dia una possibilità alle cose difficili. Ecco alcuni modi per riflettere insieme sulla questione, con o senza un’app.",
       "cardSummary": "Sei cose da considerare quando tuo figlio vuole smettere di praticare uno sport, seguire le lezioni di musica o frequentare un club, che si tratti di un calo di motivazione temporaneo o di una decisione presa insieme.",
@@ -767,8 +767,8 @@
           "title": "1. Uno schema su diverse settimane",
           "paragraphs": [
             "Non c’è una risposta giusta su quando smettere. Una lezione difficile può rovinarti la serata senza però cambiare il modo in cui tuo figlio vede l’attività nel suo complesso. Fai caso se si diverte una volta arrivato lì, o se torna a casa rimpiangendo di esserci andato.",
-            "Come regola generale, valuta un periodo di diverse settimane piuttosto che decidere dopo una sola serata andata male. Dopo ogni sessione, prendi insieme a tuo figlio un breve appunto su cosa è andato bene e cosa no. Stai cercando uno schema ricorrente, non raccogliendo motivi per farlo restare.",
-            "Non devi aspettare se tuo figlio subisce violenze o viene trattato male. Prendilo sul serio subito."
+            "Come regola generale, valuta un periodo di diverse settimane piuttosto che decidere dopo una sola giornata andata male. Dopo ogni sessione, prendi insieme a tuo figlio un breve appunto su cosa è andato bene e cosa no. Stai cercando uno schema ricorrente, non raccogliendo motivi per far restare tuo figlio.",
+            "Non devi aspettare se tuo figlio viene maltrattato, preso di mira o trattato ingiustamente durante l’attività. Prendilo sul serio subito."
           ]
         },
         {
@@ -791,13 +791,13 @@
           "paragraphs": [
             "A volte a un bambino piace ancora l’attività, ma vuole smettere perché si sente bloccato. Chiedigli di scegliere una piccola cosa in cui vorrebbe migliorare, come suonare un passaggio difficile con più disinvoltura o fare un passaggio a un compagno di squadra.",
             "Prendi semplicemente nota di ciò su cui si esercita e ripassa qualcosa che prima risultava difficile. Lascia che sia tuo figlio a dire cosa gli sembra diverso prima di aggiungere le tue osservazioni. Un calendario può mostrare il tempo dedicato all’esercizio; non deve per forza dimostrare un miglioramento ogni giorno.",
-            "I progressi visibili sono qualcosa di cui parlare, non un motivo per cui ti deve altre lezioni. Può riconoscere ciò che ha imparato e voler comunque passare ad altro."
+            "I progressi visibili sono qualcosa di cui parlare, non un motivo per cui tuo figlio ti debba altre lezioni. Può riconoscere ciò che ha imparato e decidere comunque di voler smettere."
           ]
         },
         {
           "title": "5. Un momento concordato per decidere",
           "paragraphs": [
-            "Se continuare ti sembra fattibile, mettiti d’accordo con tuo figlio per portare a termine il trimestre o la stagione e segna la data della decisione sul calendario. Spiega che prenderai sul serio il suo desiderio di smettere quando arriverà quel momento. Questo permette di prendere la decisione con un po’ di distacco da una serata storta.",
+            "Se continuare ti sembra fattibile, mettiti d’accordo con tuo figlio per portare a termine il trimestre o la stagione e segna la data della decisione sul calendario. Spiega che prenderai sul serio il suo desiderio di smettere quando arriverà quel momento. Questo permette di prendere la decisione con un po’ di distacco da una giornata storta.",
             "Far parte di una squadra o di un gruppo è un motivo per onorare ciò che è stato promesso. Chiedi all’allenatore o all’insegnante cosa significherebbe per gli altri se tuo figlio lasciasse e come gestirlo con rispetto. Quell’impegno è importante, ma non significa restare a tutti i costi.",
             "Continua ad ascoltare durante le sessioni rimanenti. Se le cose peggiorano, rivedi l’accordo. Portare a termine la stagione non dovrebbe diventare una promessa che tuo figlio non possa chiederti di riconsiderare."
           ]
@@ -817,7 +817,7 @@
         },
         {
           "question": "E se mio figlio volesse smettere ogni attività che prova?",
-          "answer": "Cerca di capire insieme a tuo figlio cosa ha reso difficile ogni attività. Potrebbe essere necessario modificare l’orario, il gruppo o le aspettative prima che un’altra attività risulti diversa. Prima di iscriverti di nuovo, chiedi se è prevista una sessione di prova e concorda con tuo figlio quale impegno gli sembra gestibile."
+          "answer": "Cerca di capire insieme a tuo figlio cosa ha reso difficile ogni attività. Potrebbe essere necessario modificare l’orario, il gruppo o le aspettative prima che un’altra attività risulti diversa. Prima di iscriverlo di nuovo, chiedi se è prevista una sessione di prova e concorda con tuo figlio quale impegno gli sembra gestibile."
         },
         {
           "question": "E se avessi già pagato le lezioni?",
@@ -842,13 +842,13 @@
       "readingMinutes": 4,
       "app": {
         "title": "In che modo SkillQuest può aiutarti in questo",
-        "body": "SkillQuest può aiutare tuo figlio a iniziare a esercitarsi da solo: basta scegliere un'abilità, impostare un timer con una durata fissa e vedere i progressi dopo la sessione. Con la funzione famiglia, ogni bambino ha i propri progressi che un genitore può seguire. Per i bambini più piccoli, puoi avviare il timer dal tuo telefono mentre si prepara a fare pratica. È uno strumento per fare pratica, non un gestore dei compiti scolastici, e una routine può prendere forma anche con una lista di controllo cartacea e un timer da cucina."
+        "body": "SkillQuest può aiutare tuo figlio a iniziare a esercitarsi da solo: basta scegliere un'abilità, impostare un timer con una durata fissa e vedere i progressi dopo la sessione. Con un piano famiglia, ogni bambino ha i propri progressi che un genitore può seguire. Per i bambini più piccoli, puoi avviare il timer dal tuo telefono mentre si preparano a fare pratica. È uno strumento per fare pratica, non un gestore dei compiti scolastici, e una routine può prendere forma anche con una lista di controllo cartacea e un timer da cucina."
       },
       "sections": [
         {
           "title": "1. Un segnale quotidiano sostituisce parte dei promemoria",
           "paragraphs": [
-            "Scegli un momento che tuo figlio possa riconoscere senza dover guardare l’orologio. Dopo cena potrebbe significare finire di mangiare e poi aprire il libro. Prima del tablet potrebbe significare finire gli esercizi prima che inizi il tempo dedicato al tablet. Mettiti d’accordo con tuo figlio sull’ordine, lontano dalla frenesia della sera.",
+            "Scegli un momento che tuo figlio possa riconoscere senza dover guardare l’orologio. Dopo cena potrebbe significare sparecchiare la tavola e poi aprire il libro. Prima del tempo davanti allo schermo potrebbe significare finire gli esercizi prima di tirare fuori il tablet. Mettiti d’accordo con tuo figlio sull’ordine, lontano dalla frenesia della sera.",
             "Fai in modo che la prima sessione sia gestibile. Come regola generale, prova con cinque minuti mentre ti concentri sull’autonomia; chiedi all’insegnante quale sia il tempo di esercitazione più adatto al compito. Il segnale offre a tuo figlio qualcosa da notare senza aspettare che sia tu ad annunciarlo."
           ]
         },
@@ -885,7 +885,7 @@
           "title": "6. Anche i progressi meritano una conversazione",
           "paragraphs": [
             "Dopo la pratica, nota qualcosa di concreto: tuo figlio ha preparato il libro da solo, senza aiuto, oppure è tornato su un passaggio difficile. Chiedigli cosa gli sembra più facile adesso o su cosa vuole lavorare in seguito. Lascia spazio alla sua risposta senza trasformarla in un’altra lezione.",
-            "Aspettati qualche inizio dimenticato. In un momento di calma, rifletti insieme a tuo figlio su cosa ha funzionato e cosa ha creato difficoltà. Modifica il segnale o offri più compagnia se serve. Anche iniziare con meno aiuto richiede pratica; una settimana un po’ altalenante non significa che devi ricominciare tutto da capo."
+            "Aspettati qualche inizio dimenticato. In un momento di calma, rifletti insieme a tuo figlio su cosa ha funzionato e cosa ha creato difficoltà. Modifica il segnale o offri più compagnia se serve. Anche iniziare con meno aiuto richiede pratica; una settimana un po’ altalenante non significa che devi ricominciare da zero o riprendere in mano il compito."
           ]
         }
       ],

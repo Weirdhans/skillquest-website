@@ -294,9 +294,9 @@
       "slugs": {
         "nl": "blijven-oefenen-in-de-schoolvakantie",
         "de": "sollen-kinder-in-den-ferien-ueben",
-        "fr": "faut-il-faire-travailler-enfant-vacances",
+        "fr": "enfant-sentrainer-pendant-vacances",
         "es": "ninos-practicar-en-vacaciones",
-        "it": "esercitarsi-durante-le-vacanze"
+        "it": "bambino-esercitarsi-durante-vacanze"
       },
       "eyebrow": "Holidays",
       "title": "Should your child practice during the school holidays? 6 tips for deciding together",
@@ -308,13 +308,13 @@
       "readingMinutes": 4,
       "app": {
         "title": "How SkillQuest helps with this",
-        "body": "If you agree on a little holiday practice, SkillQuest lets you choose a skill, set a timer with a fixed length, and see progress after each session. The timer keeps running while your child practices, so you can put the phone aside. A streak freeze can cover a missed day. SkillQuest is for practicing skills, not managing school assignments. You don’t need an app for your holiday routine; a kitchen timer and an agreement with your child are enough."
+        "body": "If you agree on a little holiday practice, SkillQuest lets you choose a skill, set a timer with a fixed length, and see progress after each session. The timer keeps running while your child practices, so you can put the phone aside. Active days add up, even when they are not consecutive; a missed day does not reset your total. SkillQuest is for practicing skills, not managing school assignments. You don’t need an app for your holiday routine; a kitchen timer and an agreement with your child are enough."
       },
       "sections": [
         {
           "title": "1. A shared plan before the break",
           "paragraphs": [
-            "Before the holidays start, sit down with your child and look at what’s coming up. Ask whether they’d like a complete pause from practice or a little time for something they’re learning. Include the days you’ll be away and the mornings when nobody needs to get dressed early.",
+            "Before the holidays start, sit down with your child and look at what’s coming up. Ask whether they’d like a complete pause from practice or a little time for something they’re learning. Include the days you will be away from home and the mornings when nobody has to get up early.",
             "Make room for their answer. If they want a rest, ask what they’d like a rest from: the instrument itself, the difficult piece, or having a set task every afternoon. You can decide together whether to pause completely or change what practice looks like."
           ]
         },
@@ -329,7 +329,7 @@
         {
           "title": "3. A place in the holiday day",
           "paragraphs": [
-            "Holiday mornings may start later, so practice doesn’t have to happen at the usual school-day time. Reading could fit after breakfast, or a little playing could come before a planned screen moment. Choose a moment your child agrees to, without turning the morning into a school timetable.",
+            "Holiday mornings may start later, so practice doesn’t have to happen at the usual school-day time. Reading could fit after breakfast, or a little time with their instrument could come before a planned screen moment. Choose a moment your child agrees to, without turning the morning into a school timetable.",
             "Keep the arrangement simple enough to explain: breakfast, a little reading, then whatever you have planned. If you’re leaving early that day, move the session or leave it out. There’s no need to squeeze it in while everyone is putting on their shoes."
           ]
         },
@@ -395,7 +395,7 @@
       "readingMinutes": 4,
       "app": {
         "title": "How SkillQuest helps with this",
-        "body": "For a new hobby such as playing an instrument, SkillQuest lets you choose the skill and start a timer with a fixed length. Each minute practiced earns 1 XP, so time spent trying counts even while the first tune is still taking shape. Your child can see progress after each session, and the timer runs while they practice without anyone needing to watch the screen. With the family feature, you can follow their progress and start their timer from your own phone. It is a way to record practice; a paper calendar and a kitchen timer are enough to build a routine too."
+        "body": "For a new hobby such as playing an instrument, SkillQuest lets you choose the skill and start a timer with a fixed length. Each minute practiced earns 1 XP, so time spent trying counts even while the first tune is still taking shape. Your child can see progress after each session, and the timer runs while they practice without anyone needing to watch the screen. With a Family plan, you can follow their progress and start their timer from your own phone. It is a way to record practice; a paper calendar and a kitchen timer are enough to build a routine too."
       },
       "sections": [
         {
@@ -415,8 +415,8 @@
         {
           "title": "3. A first goal your child can see",
           "paragraphs": [
-            "Choose something small enough to recognize when it happens: playing the opening of a favorite tune, drawing a face with the new pencils, or stopping the skateboard safely. Ask your child what they would like to try first. The goal should belong to them, even if you help make it smaller.",
-            "Keep the first drawing or write down the bit of music they are working on. Return to it together later so your child can notice what has changed. Reaching that first goal is a chance to choose another small step, without turning every session into a test."
+            "Choose something small enough to recognize when it happens: playing the opening of a favorite tune, drawing a person’s face with the new pencils, or stopping the skateboard safely. Ask your child what they would like to try first. The goal should belong to them, even if you help make it smaller.",
+            "Keep the first drawing or write down the piece of music your child is working on. Return to it together later so your child can notice what has changed. Reaching that first goal is a chance to choose another small step, without turning every session into a test."
           ]
         },
         {
@@ -466,9 +466,9 @@
       "slugs": {
         "nl": "kind-belonen-voor-oefenen",
         "de": "kind-fuers-ueben-belohnen",
-        "fr": "recompenser-enfant-pour-travailler",
-        "es": "premiar-ninos-por-estudiar",
-        "it": "premiare-bambini-per-lo-studio"
+        "fr": "recompenser-enfant-qui-sentraine",
+        "es": "premiar-ninos-por-practicar",
+        "it": "premiare-bambini-che-si-esercitano"
       },
       "eyebrow": "Motivation",
       "title": "Should you reward kids for practicing? 6 things to consider",
@@ -510,7 +510,7 @@
         {
           "title": "4. Practice has a purpose beyond the reward",
           "paragraphs": [
-            "Pocket money, treats and screen time deserve a little thought. Trading two songs for an hour on a tablet can make the songs look like the unpleasant price of getting to the good part. Before offering a trade, talk about what your child wants to learn.",
+            "Pocket money, sweets and screen time deserve a little thought. Trading two songs for an hour on a tablet can make the songs look like the unpleasant price of getting to the good part. Before offering a trade, talk about what your child wants to learn.",
             "Keep that goal nearby: being able to play a favorite tune, for example. If you use an extra reward, keep it modest and agreed in advance. Avoid raising the offer halfway through a difficult session.",
             "Never take practice away as a punishment, or add extra practice because your child has done something wrong. Deal with that separately, so learning doesn’t become a penalty."
           ]
@@ -538,7 +538,7 @@
         },
         {
           "question": "What if my child refuses to practice without a reward?",
-          "answer": "Leave the negotiation until a calmer moment and ask what feels difficult about practice. Honour anything already earned, then agree together what future sessions will involve. If the work seems too difficult, ask the teacher about changing it."
+          "answer": "Leave the negotiation until a calmer moment and ask what feels difficult about practice. Let your child keep any reward they have already earned, then agree together what future sessions will involve. If the work seems too difficult, ask the teacher about changing it."
         },
         {
           "question": "When should we stop using a reward chart?",
@@ -641,11 +641,11 @@
       "id": "child-rushes-through-practice",
       "slug": "child-rushes-through-homework-and-practice",
       "slugs": {
-        "nl": "kind-raffelt-oefenen-af",
-        "de": "kind-arbeitet-beim-ueben-schlampig",
+        "nl": "kind-raffelt-huiswerk-en-oefenen-af",
+        "de": "kind-hetzt-durch-hausaufgaben-und-ueben",
         "fr": "enfant-bacle-devoirs",
-        "es": "hijo-hace-deberes-rapido-y-mal",
-        "it": "bambino-fa-i-compiti-in-fretta"
+        "es": "hijo-hace-deberes-y-practica-a-toda-prisa",
+        "it": "bambino-compiti-ed-esercizi-in-fretta"
       },
       "eyebrow": "Focus",
       "title": "Child rushes through homework and practice? 6 tips for parents",
@@ -670,14 +670,14 @@
         {
           "title": "2. The reason for the rush",
           "paragraphs": [
-            "At a quiet moment, ask what they want to get past. They might be eager to play, bored by work that feels too easy, or skipping parts they find too hard. Ask whether they feel tired, too. Leave room for their answer before suggesting a fix.",
+            "At a quiet moment, ask your child what they want to get past. Your child might be eager to play, bored by work that feels too easy, or skipping parts that feel too hard. Ask whether they feel tired, too. Leave room for their answer before suggesting a fix.",
             "Match the next step to what they say. A familiar exercise might need a different challenge; a difficult passage might need breaking into smaller parts. If the work keeps feeling far too easy or too hard, talk to the teacher about a better fit."
           ]
         },
         {
           "title": "3. Less work with more care",
           "paragraphs": [
-            "For practice you set at home, choose a smaller amount that leaves room to think and check. As a rule of thumb, start with five minutes on a short passage or a few examples. Adjust from there. Fewer tasks done with care are a better aim than a full page rushed through.",
+            "For practice you set at home, choose a smaller task that leaves room to think and check. As a rule of thumb, start with five minutes on a short passage or a few examples. Adjust from there. Fewer tasks done with care are a better aim than a full page rushed through.",
             "For homework, follow the teacher’s instructions rather than quietly dropping half the assignment. You can still work on a small part at a time. Notice a specific effort: “You went back and checked that answer.” There’s no need to turn every mistake into a full restart."
           ]
         },
@@ -743,7 +743,7 @@
       "readingMinutes": 4,
       "app": {
         "title": "How SkillQuest helps with this",
-        "body": "For a shorter first week, you can choose a skill in SkillQuest, set a timer with a fixed length, and see progress after each session. Weekly progress gives you something to look back at together when the week ends. A streak freeze can cover a missed day. SkillQuest is for practice, such as reading or an instrument, rather than managing school assignments. You don’t need an app to rebuild the routine; a paper plan and a kitchen timer are enough to get started."
+        "body": "For a shorter first week, you can choose a skill in SkillQuest, set a timer with a fixed length, and see progress after each session. Weekly progress gives you something to look back at together when the week ends. Active days add up, even when they are not consecutive; a missed day does not reset your total. SkillQuest is for practice, such as reading or an instrument, rather than managing school assignments. You don’t need an app to rebuild the routine; a paper plan and a kitchen timer are enough to get started."
       },
       "sections": [
         {
@@ -818,7 +818,7 @@
         "de": "kind-will-hobby-aufgeben",
         "fr": "enfant-veut-arreter-activite",
         "es": "hijo-quiere-dejar-actividad",
-        "it": "bambino-vuole-smettere-sport-musica"
+        "it": "quando-lasciare-smettere-attivita-figlio"
       },
       "eyebrow": "Activities",
       "title": "When to let your child quit an activity: 6 things to consider",
@@ -837,8 +837,8 @@
           "title": "1. A pattern over several weeks",
           "paragraphs": [
             "There is no single right answer about when to stop. A difficult lesson can make an evening feel awful without changing how your child feels about the activity overall. Notice whether they enjoy themselves once they arrive, or come home wishing they had stayed away.",
-            "As a rule of thumb, look back over several weeks rather than deciding after one bad evening. Make a brief note together after each session about what felt good and what did not. You are looking for a pattern, not collecting reasons to make them stay.",
-            "You do not have to wait if your child is being hurt or treated badly. Take that seriously straight away."
+            "As a rule of thumb, look back over several weeks rather than deciding after one bad day. Make a brief note together after each session about what felt good and what did not. You are looking for a pattern, not collecting reasons to make your child stay.",
+            "You do not have to wait if your child is being harmed, bullied or treated unfairly in the activity. Take that seriously straight away."
           ]
         },
         {
@@ -861,13 +861,13 @@
           "paragraphs": [
             "Sometimes a child still likes the activity but wants to stop because they feel stuck. Ask them to choose something small they would like to get better at, such as playing a difficult passage more comfortably or making a pass to a teammate.",
             "Keep a simple note of what they practice and revisit something that used to be difficult. Let your child say what feels different before adding your observations. A calendar can show time spent; it does not have to prove improvement every day.",
-            "Visible progress is something to discuss, not a reason they owe you more lessons. They can recognize what they have learned and still want to move on."
+            "Visible progress is something to discuss, not a reason for your child to owe you more lessons. Your child can recognize what they have learned and still decide they want to stop."
           ]
         },
         {
           "title": "5. An agreed time to decide",
           "paragraphs": [
-            "If continuing feels manageable, agree together to finish the term or season and put the decision date on the calendar. Explain that you will take their wish to stop seriously when that date arrives. This gives the decision some distance from a bad evening.",
+            "If continuing feels manageable, agree together to finish the term or season and put the decision date on the calendar. Explain that you will take their wish to stop seriously when that date arrives. This gives the decision some distance from a bad day.",
             "Being part of a team or group is a reason to honour what was promised. Ask the coach or teacher what leaving would mean for the others and how to arrange it considerately. That commitment matters, but it does not mean staying at any cost.",
             "Keep listening during the remaining sessions. If things get worse, revisit the agreement. Finishing the season should not become a promise your child cannot ask you to reconsider."
           ]
@@ -904,8 +904,8 @@
       "slug": "how-to-get-a-child-to-practice-without-reminders",
       "slugs": {
         "nl": "kind-zelfstandig-leren-oefenen",
-        "de": "kind-selbststaendig-ueben-lernen",
-        "fr": "rendre-enfant-autonome-travail",
+        "de": "kind-selbststaendig-ueben-ohne-erinnern",
+        "fr": "enfant-sentrainer-sans-rappels",
         "es": "ensenar-nino-a-practicar-solo",
         "it": "insegnare-figli-esercitarsi-da-soli"
       },
@@ -919,13 +919,13 @@
       "readingMinutes": 4,
       "app": {
         "title": "How SkillQuest helps with this",
-        "body": "SkillQuest can give your child a way to start practice themselves: choose a skill, set a timer with a fixed length, and see progress after the session. With the family feature, each child has their own progress for a parent to follow. For younger children, you can start their timer on your own phone while they get ready to practice. It’s a tool for practice, not a school-assignment manager, and a routine can also take shape with a paper checklist and a kitchen timer."
+        "body": "SkillQuest can give your child a way to start practice themselves: choose a skill, set a timer with a fixed length, and see progress after the session. With a Family plan, each child has their own progress for a parent to follow. For younger children, you can start their timer on your own phone while they get ready to practice. It’s a tool for practice, not a school-assignment manager, and a routine can also take shape with a paper checklist and a kitchen timer."
       },
       "sections": [
         {
           "title": "1. A daily cue does some of the reminding",
           "paragraphs": [
-            "Choose a moment your child can recognize without checking the clock. After dinner could mean clearing their plate, then opening their book. Before the tablet could mean finishing practice before tablet time begins. Agree on the order together, away from the evening rush.",
+            "Choose a moment your child can recognize without checking the clock. After dinner could mean clearing the table, then opening their book. Before screen time could mean finishing practice before the tablet comes out. Agree on the order together, away from the evening rush.",
             "Keep the first session manageable. As a rule of thumb, try five minutes while you work on starting independently; ask the teacher what practice time suits the work. The cue gives your child something to notice without waiting for you to announce it."
           ]
         },
@@ -940,7 +940,7 @@
           "title": "3. Your child owns the first step",
           "paragraphs": [
             "Pick a small job your child can already do: taking out the book, setting up the music stand, or starting the timer for the agreed duration. Leave the materials within reach so that starting doesn’t depend on finding you.",
-            "Give them a real choice within the plan. They could choose which passage to read or which exercise to begin with. If the teacher has set specific work, the choice can be about the order. Let their choice stand, even if you would have started elsewhere."
+            "Give your child a real choice within the plan. Your child could choose which passage to read or which exercise to begin with. If the teacher has set specific work, the choice can be about the order. Let that choice stand, even if you would have started elsewhere."
           ]
         },
         {
@@ -962,7 +962,7 @@
           "title": "6. Progress gets a conversation too",
           "paragraphs": [
             "After practice, notice something concrete: your child got the book ready without help, or returned to a difficult passage. Ask what feels easier now or what they want to work on next. Leave room for their answer without turning it into another lesson.",
-            "Expect some forgotten starts. At a calm moment, look back together at what helped and what got in the way. Adjust the cue or offer more company if needed. Starting with less help takes practice too; an uneven week doesn’t mean you need to take everything back over."
+            "Expect some forgotten starts. At a calm moment, look back together at what helped and what got in the way. Adjust the cue or offer more company if needed. Starting with less help takes practice too; an uneven week doesn’t mean you have to start over or take the task back."
           ]
         }
       ],
