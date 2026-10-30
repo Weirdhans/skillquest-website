@@ -53,6 +53,29 @@ goed met "publiceer tip JJJJ-WW".
   aan", niet "Zo wordt het weer leuker").
 - Het artikel moet ook nuttig zijn voor wie de app nooit installeert.
 
+## Voorraad december 2026 en januari 2027
+
+De branch `tips/stock-2026-12` bevat acht extra artikelen in alle zes talen (nog
+niet gemerged; Hans keurt goed). `publishedAt` is de geplande woensdag; de
+site filtert niet op datum, dus een merge zet alles direct online. Wil je
+druppelen, haal dan de artikelen van latere weken uit de zes JSON-bestanden
+(op `id`) en zet ze in een volgende commit terug. De Pinterest-CSV in de app-repo
+(`docs/marketing/pinterest/`) plant pins niet vóór `publishedAt`.
+
+| publishedAt | id | Engelse zoekvraag |
+|---|---|---|
+| 2026-12-02 | `child-practice-during-holidays` | should my child practice during the school holidays |
+| 2026-12-09 | `help-child-stick-with-new-hobby` | how to help my child stick with a new hobby |
+| 2026-12-16 | `should-you-reward-kids-for-practicing` | should you reward kids for practicing |
+| 2026-12-23 | `child-gets-frustrated-learning` | my child gets frustrated when something does not work right away |
+| 2026-12-30 | `child-rushes-through-practice` | my child rushes through homework and practice just to be done |
+| 2027-01-06 | `back-into-routine-after-holidays` | how to get kids back into a routine after the holidays |
+| 2027-01-13 | `when-to-let-child-quit-activity` | when should I let my child quit an activity |
+| 2027-01-20 | `practice-without-constant-reminders` | how to get my child to practice without being reminded all the time |
+
+Per taal is de slug gebouwd op de zoekterm van ouders in dat land (zie `slugs`
+in `en.json`), niet op een vertaling van de Engelse zin.
+
 ## Taalwissel
 
 Een slug uit een andere taal (`/en/tips/kind-wil-niet-lezen`, na de taalkeuze in
