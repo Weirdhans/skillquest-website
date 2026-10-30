@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 import {Link} from '@/i18n/routing';
 import {routing} from '@/i18n/routing';
 import {
-  ANDROID_SIGNUP_URL,
+  ANDROID_STORE_URL,
   APP_STORE_URL,
   SITE_URL,
   createPageMetadata,
@@ -186,17 +186,15 @@ export default async function TipPage({
                   >
                     {copy.iphoneCta}
                   </a>
-                  <Link
-                    href={ANDROID_SIGNUP_URL}
+                  <a
+                    href={ANDROID_STORE_URL}
                     className="btn border theme-title"
                     style={{borderColor: 'var(--sq-border-strong)'}}
+                    rel="noopener"
                   >
                     {copy.androidCta}
-                  </Link>
+                  </a>
                 </div>
-                <p className="mt-4 text-sm leading-relaxed theme-copy">
-                  {copy.androidNote}
-                </p>
               </aside>
             </article>
           </div>

@@ -56,7 +56,6 @@ export type TipsUiCopy = {
   readingTime: string;
   iphoneCta: string;
   androidCta: string;
-  androidNote: string;
   faqHeading: string;
   moreTips: string;
 };
