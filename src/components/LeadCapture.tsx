@@ -1,6 +1,6 @@
 'use client';
 
-import {useMemo, useState} from 'react';
+import {useState} from 'react';
 import {useLocale} from 'next-intl';
 import type {MarketingCopy} from '@/lib/marketing';
 
@@ -62,14 +62,6 @@ export default function LeadCapture({
   // auto-fill every input on the page do, and we quietly drop those
   // submissions server-side instead of telling the bot it was rejected.
   const [company, setCompany] = useState('');
-
-  const showGmailHint = useMemo(
-    () =>
-      email.length > 0 &&
-      (platform === 'android' || platform === 'both') &&
-      !email.toLowerCase().endsWith('@gmail.com'),
-    [email, platform]
-  );
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -231,12 +223,6 @@ export default function LeadCapture({
                     : copy.submit}
               </button>
             </div>
-
-            {showGmailHint && status === 'idle' && (
-              <p className="rounded-lg border border-amber-300/40 bg-amber-400/15 px-4 py-3 text-sm text-amber-50">
-                {copy.gmailHint}
-              </p>
-            )}
 
             {status === 'success' && (
               <p className="rounded-lg bg-green-500 px-4 py-3 text-sm font-medium text-white">

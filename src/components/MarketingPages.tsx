@@ -1,15 +1,12 @@
 import Image from 'next/image';
 import {Link} from '@/i18n/routing';
 import LeadCapture from '@/components/LeadCapture';
-import {getFeedbackCopy} from '@/lib/feedback-copy';
 import StoreLinks from '@/components/StoreLinks';
 import {Reveal, Stagger, StaggerItem} from '@/components/Reveal';
 import ProductScrollTour from '@/components/ProductScrollTour';
 import {Check, CheckCircle} from '@phosphor-icons/react/dist/ssr';
 import {
-  ANDROID_ALPHA_JOIN_URL,
   ANDROID_STORE_URL,
-  ANDROID_TESTERS_GROUP_URL,
   APP_STORE_URL,
   type Locale,
   type MarketingCopy,
@@ -560,7 +557,7 @@ export function DownloadMarketingPage({
                   {copy.download.androidBody}
                 </p>
                 <a
-                  href={ANDROID_TESTERS_GROUP_URL}
+                  href={ANDROID_STORE_URL}
                   target="_blank"
                   rel="noreferrer"
                   className="btn btn-primary mt-7"
@@ -568,75 +565,6 @@ export function DownloadMarketingPage({
                   {copy.download.androidCta}
                 </a>
                 <QrHint src={`/qr/android-${locale}.svg`} text={copy.download.qrAndroid} />
-                <p className="mt-4 text-sm leading-relaxed theme-copy">
-                  {copy.download.testerNote}
-                </p>
-                <div
-                  className="mt-7 border-y py-5"
-                  style={{borderColor: 'var(--sq-border)'}}
-                >
-                  <h3 className="font-semibold theme-title">
-                    {copy.download.androidSteps.heading}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed theme-copy">
-                    {copy.download.androidSteps.sameAccount}
-                  </p>
-                  <ol className="mt-4 space-y-4">
-                    <li>
-                      <a
-                        href={ANDROID_TESTERS_GROUP_URL}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="font-semibold underline theme-copy"
-                      >
-                        {copy.download.androidSteps.group.label}
-                      </a>
-                      <p className="mt-1 text-sm leading-relaxed theme-copy">
-                        {copy.download.androidSteps.group.detail}
-                      </p>
-                    </li>
-                    <li>
-                      <a
-                        href={ANDROID_ALPHA_JOIN_URL}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="font-semibold underline theme-copy"
-                      >
-                        {copy.download.androidSteps.optIn.label}
-                      </a>
-                      <p className="mt-1 text-sm leading-relaxed theme-copy">
-                        {copy.download.androidSteps.optIn.detail}
-                      </p>
-                    </li>
-                    <li>
-                      <a
-                        href={ANDROID_STORE_URL}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="font-semibold underline theme-copy"
-                      >
-                        {copy.download.androidSteps.install.label}
-                      </a>
-                      <p className="mt-1 text-sm leading-relaxed theme-copy">
-                        {copy.download.androidSteps.install.detail}
-                      </p>
-                    </li>
-                  </ol>
-                  <p className="mt-4 text-sm leading-relaxed theme-copy">
-                    {copy.download.androidSteps.note}{' '}
-                    <Link href="/feedback" className="font-semibold underline theme-title">
-                      {getFeedbackCopy(locale).downloadCta}
-                    </Link>
-                  </p>
-                </div>
-                <a
-                  href={ANDROID_ALPHA_JOIN_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-2 inline-block text-sm underline theme-copy"
-                >
-                  {copy.download.androidAlreadyAdded}
-                </a>
               </article>
             </Reveal>
           </div>
