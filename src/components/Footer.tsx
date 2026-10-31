@@ -11,6 +11,8 @@ import {
   isLocale,
   type Locale
 } from '@/lib/marketing';
+import {useBlogNav} from '@/components/BlogNavContext';
+import {blogNavLabel} from '@/lib/blog-nav';
 import {tipsNavLabel} from '@/lib/tips-nav';
 import {communityGuidelines} from '@/lib/community-guidelines';
 
@@ -20,6 +22,7 @@ export default function Footer() {
     ? currentLocale
     : 'nl';
   const copy = getMarketingCopy(locale);
+  const hasBlog = useBlogNav();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -58,6 +61,13 @@ export default function Footer() {
                 <li>
                   <Link href="/tips" className="hover:text-white">
                     {tipsNavLabel[locale]}
+                  </Link>
+                </li>
+              )}
+              {hasBlog && blogNavLabel[locale] && (
+                <li>
+                  <Link href="/blog" className="hover:text-white">
+                    {blogNavLabel[locale]}
                   </Link>
                 </li>
               )}

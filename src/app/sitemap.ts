@@ -3,6 +3,13 @@ import {routing} from '@/i18n/routing';
 import {alternateLanguages, localizedPath} from '@/lib/marketing';
 import {featureLandingSlugs} from '@/lib/feature-pages';
 import {
+  blogAlternates,
+  blogIndexAlternates,
+  blogLocales,
+  blogPath,
+  getAllBlogArticles
+} from '@/lib/blog';
+import {
   getAllTips,
   tipAlternates,
   tipPath,
@@ -10,7 +17,7 @@ import {
   tipsLocales
 } from '@/lib/tips';
 
-// Regenerated hourly so tips appear on their publishedAt day without a deploy.
+// Regenerated hourly so tips and blog articles appear on their publishedAt day without a deploy.
 export const revalidate = 3600; // seconds; a literal, Next.js cannot read an imported value
 
 const baseRoutes = [
@@ -68,5 +75,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }));
 
-  return [...pages, ...tipsIndex, ...tips];
+  // The blog works the same way: own alternates, only public articles.
+  const blogIndex: MetadataRoute.Sitemap = blogLocales().map((locale) => ({
+    url: localizedPath(locale, '/blog'),
+    lastModified,
+    changeFrequency: 'weekly',
+    priority: 0.7,
+    alternates: {
+      languages: blogIndexAlternates()
+    }
+  }));
+
+  const blog: MetadataRoute.Sitemap = getAllBlogArticles().map((article) => ({
+    url: localizedPath(article.locale, blogPath(article)),
+    lastModified: new Date(article.publishedAt),
+    changeFrequency: 'monthly',
+    priority: 0.7,
+    alternates: {
+      languages: blogAlternates(article)
+    }
+  }));
+
+  return [...pages, ...tipsIndex, ...tips, ...blogIndex, ...blog];
 }

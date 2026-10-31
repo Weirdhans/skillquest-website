@@ -2,6 +2,8 @@ import {fontVariables} from '@/lib/fonts'
 import {Analytics} from '@vercel/analytics/next'
 import '../../styles/globals.css'
 import Navbar from '@/components/Navbar'
+import {BlogNavProvider} from '@/components/BlogNavContext';
+import {blogLocales} from '@/lib/blog';
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
 import {notFound} from 'next/navigation';
@@ -67,7 +69,9 @@ export default async function LocaleLayout({
       <body className={`${fontVariables} font-sans`}>
         <NextIntlClientProvider messages={messages}>
           <Navbar />
-          {children}
+          <BlogNavProvider enabled={blogLocales().includes(locale as Locale)}>
+            {children}
+          </BlogNavProvider>
         </NextIntlClientProvider>
         <Analytics />
         <SpeedInsights />
