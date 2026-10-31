@@ -5,7 +5,9 @@ import {getTips, getTipsUiCopy, tipPath, tipsLocales} from '@/lib/tips';
 // RSS 2.0 feed of the tips per language, at /feeds/tips-<locale>.xml.
 // Pinterest auto-publishes a Pin for every new item, using the enclosure
 // image; the .xml extension keeps the locale middleware out of the way.
+// Regenerated hourly: an item appears on its publishedAt day (00:00 UTC).
 export const dynamic = 'force-static';
+export const revalidate = 3600; // seconds; a literal, Next.js cannot read an imported value
 export const dynamicParams = false;
 
 export function generateStaticParams() {
@@ -41,7 +43,7 @@ export async function GET(
       <link>${link}</link>
       <guid isPermaLink="true">${link}</guid>
       <description>${escapeXml(tip.cardSummary)}</description>
-      <pubDate>${new Date(`${tip.publishedAt}T08:00:00Z`).toUTCString()}</pubDate>
+      <pubDate>${new Date(`${tip.publishedAt}T00:00:00Z`).toUTCString()}</pubDate>
       <enclosure url="${tipPinUrl(tip)}" type="image/png" length="0" />
       <media:content url="${tipPinUrl(tip)}" medium="image" type="image/png" width="1000" height="1500" />
     </item>`;

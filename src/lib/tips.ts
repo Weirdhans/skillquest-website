@@ -1,5 +1,6 @@
 import {routing} from '@/i18n/routing';
 import {languageTags, localizedPath, type Locale} from '@/lib/marketing';
+import {isPublished} from '@/lib/tips-publication.mjs';
 import de from '@/content/tips/de.json';
 import en from '@/content/tips/en.json';
 import es from '@/content/tips/es.json';
@@ -12,6 +13,14 @@ import nl from '@/content/tips/nl.json';
 // per language: an article only exists in the locales listed here, and its
 // slug can differ per locale. Translations come from DeepL, never from an AI
 // writing tool.
+//
+// An article is public from 00:00 UTC on its publishedAt date. Every function
+// below that returns articles skips the ones that are not public yet, at the
+// moment of the call (`now`, default: the current time), so a future article
+// is missing from the index, the sitemap, the feeds, the alternates and its
+// own URL. The pages that use them are statically generated and revalidated
+// hourly (`export const revalidate = 3600`), so they pick up a new day without a
+// new deployment.
 
 export const TIPS_AUTHOR = 'Hans Vlasblom';
 
@@ -56,7 +65,6 @@ export type TipsUiCopy = {
   readingTime: string;
   iphoneCta: string;
   androidCta: string;
-  androidNote: string;
   faqHeading: string;
   moreTips: string;
 };
@@ -101,14 +109,23 @@ export function getTipsUiCopy(locale: Locale): TipsUiCopy | undefined {
   return uiCopy[locale];
 }
 
-export function getTips(locale: Locale): TipArticle[] {
-  return articles
+/** The articles that are public at `now`. */
+function publishedArticles(now: Date): TipArticle[] {
+  return articles.filter((article) => isPublished(article, now));
+}
+
+export function getTips(locale: Locale, now = new Date()): TipArticle[] {
+  return publishedArticles(now)
     .filter((article) => article.locale === locale)
     .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
 }
 
-export function getTip(locale: Locale, slug: string): TipArticle | undefined {
-  return articles.find(
+export function getTip(
+  locale: Locale,
+  slug: string,
+  now = new Date()
+): TipArticle | undefined {
+  return publishedArticles(now).find(
     (article) => article.locale === locale && article.slug === slug
   );
 }
@@ -116,27 +133,29 @@ export function getTip(locale: Locale, slug: string): TipArticle | undefined {
 /** This locale's version of the article that uses `slug` in any locale. */
 export function findTranslation(
   locale: Locale,
-  slug: string
+  slug: string,
+  now = new Date()
 ): TipArticle | undefined {
-  const other = articles.find((article) => article.slug === slug);
+  const visible = publishedArticles(now);
+  const other = visible.find((article) => article.slug === slug);
   return other
-    ? articles.find((article) => article.id === other.id && article.locale === locale)
+    ? visible.find((article) => article.id === other.id && article.locale === locale)
     : undefined;
 }
 
-export function getAllTips(): TipArticle[] {
-  return articles;
+export function getAllTips(now = new Date()): TipArticle[] {
+  return publishedArticles(now);
 }
 
-/** Locales that have both UI copy and at least one article. */
-export function tipsLocales(): Locale[] {
+/** Locales that have both UI copy and at least one public article. */
+export function tipsLocales(now = new Date()): Locale[] {
   return routing.locales.filter(
-    (locale) => uiCopy[locale] && getTips(locale).length > 0
+    (locale) => uiCopy[locale] && getTips(locale, now).length > 0
   );
 }
 
-export function hasTips(locale: Locale): boolean {
-  return tipsLocales().includes(locale);
+export function hasTips(locale: Locale, now = new Date()): boolean {
+  return tipsLocales(now).includes(locale);
 }
 
 export function tipPath(article: TipArticle): string {
@@ -144,8 +163,11 @@ export function tipPath(article: TipArticle): string {
 }
 
 /** hreflang links to the language versions that exist of this article. */
-export function tipAlternates(article: TipArticle): Record<string, string> {
-  const versions = articles.filter((item) => item.id === article.id);
+export function tipAlternates(
+  article: TipArticle,
+  now = new Date()
+): Record<string, string> {
+  const versions = publishedArticles(now).filter((item) => item.id === article.id);
   const languages: Record<string, string> = Object.fromEntries(
     versions.map((item) => [
       languageTags[item.locale],
@@ -155,13 +177,15 @@ export function tipAlternates(article: TipArticle): Record<string, string> {
   const fallback =
     versions.find((item) => item.locale === routing.defaultLocale) ??
     versions[0];
-  languages['x-default'] = localizedPath(fallback.locale, tipPath(fallback));
+  if (fallback) {
+    languages['x-default'] = localizedPath(fallback.locale, tipPath(fallback));
+  }
   return languages;
 }
 
 /** hreflang links for the tips index, limited to locales that have tips. */
-export function tipsIndexAlternates(): Record<string, string> {
-  const locales = tipsLocales();
+export function tipsIndexAlternates(now = new Date()): Record<string, string> {
+  const locales = tipsLocales(now);
   const languages: Record<string, string> = Object.fromEntries(
     locales.map((locale) => [languageTags[locale], localizedPath(locale, '/tips')])
   );

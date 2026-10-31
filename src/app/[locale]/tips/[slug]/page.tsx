@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 import {Link} from '@/i18n/routing';
 import {routing} from '@/i18n/routing';
 import {
-  ANDROID_SIGNUP_URL,
+  ANDROID_STORE_URL,
   APP_STORE_URL,
   SITE_URL,
   createPageMetadata,
@@ -29,7 +29,12 @@ import {
 
 // A slug from another language (for example after switching language on an
 // article) redirects to this language's version, if there is one.
+// Articles that are not public yet answer 404. The locale pages are rendered
+// per request today (`next build` lists them as dynamic), so the publishedAt
+// check runs on every request and an article appears at 00:00 UTC. If the
+// pages ever become static, revalidate keeps them at most an hour behind.
 export const dynamicParams = true;
+export const revalidate = 3600; // seconds; a literal, Next.js cannot read an imported value
 
 function JsonLd({data}: {data: unknown}) {
   return (
@@ -186,17 +191,15 @@ export default async function TipPage({
                   >
                     {copy.iphoneCta}
                   </a>
-                  <Link
-                    href={ANDROID_SIGNUP_URL}
+                  <a
+                    href={ANDROID_STORE_URL}
                     className="btn border theme-title"
                     style={{borderColor: 'var(--sq-border-strong)'}}
+                    rel="noopener"
                   >
                     {copy.androidCta}
-                  </Link>
+                  </a>
                 </div>
-                <p className="mt-4 text-sm leading-relaxed theme-copy">
-                  {copy.androidNote}
-                </p>
               </aside>
             </article>
           </div>
