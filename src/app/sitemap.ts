@@ -10,6 +10,9 @@ import {
   tipsLocales
 } from '@/lib/tips';
 
+// Regenerated hourly so tips appear on their publishedAt day without a deploy.
+export const revalidate = 3600; // seconds; a literal, Next.js cannot read an imported value
+
 const baseRoutes = [
   '',
   '/download',

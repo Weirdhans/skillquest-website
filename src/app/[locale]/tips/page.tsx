@@ -13,8 +13,11 @@ import {
   tipsLocales
 } from '@/lib/tips';
 
-// Only locales with at least one article get a tips page.
+// Only locales with at least one public article get a tips page. The page is
+// rendered per request today, so a new article shows up at 00:00 UTC on its
+// publishedAt day; revalidate is the fallback if the pages ever become static.
 export const dynamicParams = false;
+export const revalidate = 3600; // seconds; a literal, Next.js cannot read an imported value
 
 export function generateStaticParams() {
   return tipsLocales().map((locale) => ({locale}));

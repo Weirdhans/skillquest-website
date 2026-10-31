@@ -6,9 +6,12 @@ import {PIN_HEIGHT, PIN_WIDTH} from '@/lib/tip-pin';
 import {getAllTips, getTip, getTipsUiCopy} from '@/lib/tips';
 
 // Built once per article and language; the path ends in .png, so the locale
-// middleware leaves it alone.
+// middleware leaves it alone. Only articles that are public at build time are
+// prerendered; a later one is built on its first request after its publishedAt
+// day (dynamicParams) and answers 404 before that.
 export const dynamic = 'force-static';
-export const dynamicParams = false;
+export const dynamicParams = true;
+export const revalidate = 3600; // seconds; a literal, Next.js cannot read an imported value
 
 export function generateStaticParams() {
   return getAllTips().map((tip) => ({locale: tip.locale, file: `${tip.slug}.png`}));

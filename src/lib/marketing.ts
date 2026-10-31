@@ -14,9 +14,6 @@ export const APP_STORE_URL =
   'https://apps.apple.com/app/apple-store/id6755604671?pt=128291575&ct=website&mt=8';
 export const ANDROID_STORE_URL =
   'https://play.google.com/store/apps/details?id=com.skillquest.app';
-// Android has been in production on Google Play since 29 October 2026. Kept
-// as an alias for the tips article page until it imports ANDROID_STORE_URL.
-export const ANDROID_SIGNUP_URL = ANDROID_STORE_URL;
 
 // Subscription prices in euros. Copy gets them through PRICES[locale], which
 // follows each language's notation (€ 3,99 in Dutch, 3,99 € in German, €3.99

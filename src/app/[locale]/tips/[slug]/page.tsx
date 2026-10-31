@@ -29,7 +29,12 @@ import {
 
 // A slug from another language (for example after switching language on an
 // article) redirects to this language's version, if there is one.
+// Articles that are not public yet answer 404. The locale pages are rendered
+// per request today (`next build` lists them as dynamic), so the publishedAt
+// check runs on every request and an article appears at 00:00 UTC. If the
+// pages ever become static, revalidate keeps them at most an hour behind.
 export const dynamicParams = true;
+export const revalidate = 3600; // seconds; a literal, Next.js cannot read an imported value
 
 function JsonLd({data}: {data: unknown}) {
   return (
