@@ -10,6 +10,7 @@ leveren per artikel ook een Pinterest-afbeelding.
 |---|---|
 | Teksten per taal | `src/content/tips/{nl,en,de,fr,es,it}.json` (`ui` + `articles`) |
 | Laden, hreflang, paden | `src/lib/tips.ts` |
+| Wanneer een artikel openbaar is | `src/lib/tips-publication.mjs` (`isPublished`, UTC); zie "Publicatiedatum" hieronder |
 | Footerlabel per taal | `src/lib/tips-nav.ts` (moet overeenkomen met `ui.eyebrow`; getest) |
 | Overzichtspagina | `src/app/[locale]/tips/page.tsx` |
 | Artikelpagina | `src/app/[locale]/tips/[slug]/page.tsx` (Article- en FAQ-structured data) |
@@ -53,17 +54,56 @@ goed met "publiceer tip JJJJ-WW".
   aan", niet "Zo wordt het weer leuker").
 - Het artikel moet ook nuttig zijn voor wie de app nooit installeert.
 
+## Publicatiedatum: een artikel verschijnt vanzelf
+
+`publishedAt` (`JJJJ-MM-DD`) is de dag waarop een artikel openbaar wordt, **vanaf
+00:00 UTC** (01:00 in de winter in Nederland, 02:00 in de zomer). Een artikel met
+een datum in de toekomst bestaat voor de buitenwereld niet: het staat niet in de
+lijst `/{taal}/tips`, de artikelpagina geeft 404, het staat niet in
+`sitemap.xml`, niet in de hreflang-links van andere artikelen, niet in de
+RSS-feed (`/feeds/tips-{taal}.xml`) en de pinafbeelding (`/tips-pins/...png`)
+geeft 404. Een datum die geen gewone `JJJJ-MM-DD` is, publiceert nooit.
+
+Hoe het werkt (besluit 31 oktober 2026, geen handmatig werk per week):
+
+- Alle code die artikelen toont gaat via `src/lib/tips.ts`, dat filtert met
+  `isPublished` uit `src/lib/tips-publication.mjs`. Een test controleert dat geen
+  enkel ander bestand de artikeltekst direct leest.
+- De pagina's onder `/{taal}/tips` worden bij elk bezoek gerenderd (`next build`
+  toont ze als dynamisch), dus de datumcontrole draait steeds opnieuw en een
+  artikel verschijnt om 00:00 UTC.
+- Sitemap, RSS-feeds en pinafbeeldingen zijn statisch maar hebben
+  `revalidate = 3600`: ze worden hooguit een uur na middernacht UTC ververst,
+  zonder nieuwe deploy. Next.js serveert na het verlopen eerst nog de oude versie
+  (stale-while-revalidate) en bouwt de nieuwe bij dat bezoek; het volgende bezoek
+  krijgt de nieuwe. Dat is lokaal getest met een nagebootste klok: de feed, de
+  sitemap en de pinafbeelding sloegen om na de verversing, en een 404 op de
+  pinafbeelding bleef daarna niet hangen.
+- Waarom geen cron of deploy-hook: dit werkt zonder geheimen of
+  Vercel-instellingen en zonder dat iemand iets hoeft te doen. Een dagelijkse
+  Vercel-cron die `revalidatePath` aanroept zou het een uur eerder kunnen laten
+  gebeuren, maar dat is niet nodig. Pinterest-pins staan pas een dag na
+  `publishedAt` gepland.
+- `revalidate` moet een letterlijk getal zijn (Next.js leest geen geïmporteerde
+  waarde); `tests/tips.test.mjs` controleert dat alle vijf bestanden `3600` hebben.
+- Gevolg voor Pinterest: de pinafbeelding van een artikel dat nog niet openbaar
+  is, geeft 404. Plan een CSV-rij dus niet vóór `publishedAt` (het script doet dat
+  al niet) en upload een CSV met pins van later alleen als Pinterest de afbeelding
+  pas bij het publiceren ophaalt (nog niet getest; zie de Pinterest-README in de app-repo).
+
 ## Voorraad december 2026 en januari 2027
 
-De branch `tips/stock-2026-12` bevat acht extra artikelen in alle zes talen (nog
-niet gemerged; Hans keurt goed). `publishedAt` is de geplande woensdag. De site
-filtert niet op datum en dat blijft zo (besluit 30 oktober 2026), dus een merge
-van de hele branch zet alles direct online. Daarom gaat de voorraad **wekelijks
-in delen** naar `master`, zie "Wekelijks live zetten" hieronder. De Pinterest-CSV
-in de app-repo (`docs/marketing/pinterest/`) plant een pin niet vóór `publishedAt`
-plus een dag en heeft hetzelfde weekschema.
+De branch `tips/stock-2026-12` bevat acht extra artikelen in alle zes talen. Ze
+gaan **in één keer** naar `master`; `publishedAt` bepaalt wanneer elk artikel
+zichtbaar wordt. Per artikel is de datum in alle zes talen dezelfde (een test
+controleert dat voor artikelen met een toekomstige datum). De data staan een
+week uit elkaar op woensdag, van 2 december 2026 tot 20 januari 2027 (49 dagen);
+samen met de eerste pin van elk artikel (de dag erna) beslaat het schema de
+bekende 60 dagen van het Pinterest-plan (1 december tot en met begin
+februari). De Pinterest-CSV in de app-repo (`docs/marketing/pinterest/`) plant een
+pin niet vóór `publishedAt` plus een dag.
 
-| publishedAt | id | Engelse zoekvraag |
+| publishedAt (UTC, alle talen) | id | Engelse zoekvraag |
 |---|---|---|
 | 2026-12-02 | `child-practice-during-holidays` | should my child practice during the school holidays |
 | 2026-12-09 | `help-child-stick-with-new-hobby` | how to help my child stick with a new hobby |
@@ -74,78 +114,32 @@ plus een dag en heeft hetzelfde weekschema.
 | 2027-01-13 | `when-to-let-child-quit-activity` | when should I let my child quit an activity |
 | 2027-01-20 | `practice-without-constant-reminders` | how to get my child to practice without being reminded all the time |
 
-## Wekelijks live zetten
-
-De commits van de branch zijn **niet per artikel gesplitst**: alle acht artikelen
-staan in dezelfde commits en in dezelfde zes JSON-bestanden. Een gewone cherry-pick
-per week kan dus niet. Het script `scripts/tips-release.mjs` doet het splitsen:
-het neemt alleen de gekozen artikelen (op `id`) uit de branch over in de zes
-JSON-bestanden van je werkmap. Eén commit van de branch is wel los te
-cherry-picken: `3de7b4f` (de Android-knop naar de Play Store; code en het
-`ui`-blok in de zes talen) past schoon op `origin/master`.
-
-| Week | Uiterlijk live | Artikel (`id`) | Eerste pin (app-repo) |
-|---|---|---|---|
-| 1 | wo 2 dec 2026 | `child-practice-during-holidays` | vr 4 dec |
-| 2 | wo 9 dec 2026 | `help-child-stick-with-new-hobby` | do 10 dec |
-| 3 | wo 16 dec 2026 | `should-you-reward-kids-for-practicing` | do 17 dec |
-| 4 | wo 23 dec 2026 | `child-gets-frustrated-learning` | do 24 dec |
-| 5 | wo 30 dec 2026 | `child-rushes-through-practice` | do 31 dec |
-| 6 | wo 6 jan 2027 | `back-into-routine-after-holidays` | do 7 jan |
-| 7 | wo 13 jan 2027 | `when-to-let-child-quit-activity` | do 14 jan |
-| 8 | wo 20 jan 2027 | `practice-without-constant-reminders` | do 21 jan |
-
 **Alle zes talen tegelijk, ook es en it, zonder nalezen (besluit Hans, 30 oktober 2026).**
-Elk wekelijks deel zet het artikel in nl, en, de, fr, es en it tegelijk live; het
-script kent geen deelverzameling van talen. De Spaanse en Italiaanse artikelen
-(en de Franse en Duitse) zijn gemaakt met DeepL en gecontroleerd door Antigravity
-aan `docs/TRANSLATION_DECISIONS_GLOSSARY.md` in de app-repo, maar **zijn niet
-nagelezen door iemand die de taal als moedertaal spreekt**. Er is geen
-moedertaallezer meer als voorwaarde voor week 1. Komt er later een fout aan het licht,
-verbeter die dan op de branch `tips/stock-2026-12` (het script leest altijd de nieuwste
-versie) en zet het artikel opnieuw over met `--ids <id>`; dat vervangt het al-live
-artikel op `id`. De slugs veranderen daarbij niet, dus er is geen doorverwijzing nodig,
-tenzij je bewust een slug aanpast (dan een redirect toevoegen).
+De artikelen in alle talen zijn gemaakt met DeepL en gecontroleerd door Antigravity
+aan `docs/TRANSLATION_DECISIONS_GLOSSARY.md` in de app-repo, maar **de Spaanse en
+Italiaanse (en de Franse en Duitse) zijn niet nagelezen door iemand die de taal als
+moedertaal spreekt**; Hans koos hier bewust voor. Komt er later een fout aan het
+licht, verbeter die dan in `src/content/tips/{taal}.json`; dat is een gewone
+wijziging op `master`. Verander een slug alleen met een doorverwijzing van de oude
+naar de nieuwe.
 
-**Elke week** (voorbeeld voor week 1; vervang de datum en het `id`):
+**Het mergen is eenmalig.** Er is geen wekelijks werk meer. Een datum aanpassen
+(naar eerder, later of vandaag) is een wijziging van `publishedAt` in de zes
+JSON-bestanden en een nieuwe deploy.
+
+Vóór de merge moet gelden (zie ook de checklist in het rapport van de sessie):
 
 ```bash
-git fetch origin
-git switch -c tips/live-2026-12-02 origin/master
-
-# alleen in week 1: de Android-knop, het script en deze handleiding meenemen
-git cherry-pick 3de7b4f
-git checkout tips/stock-2026-12 -- scripts/tips-release.mjs docs/TIPS.md
-
-# het artikel van deze week overzetten (zes talen)
-node scripts/tips-release.mjs --ids child-practice-during-holidays
-
-npm run test:seo
-npx tsc --noEmit -p .
-npm run build
-git add -A
-git commit -m "feat: publish the tips article of 2 December 2026"
-git push -u origin tips/live-2026-12-02
+git fetch origin && git switch tips/stock-2026-12   # of een branch met deze commits
+npm run test:seo && npx tsc --noEmit -p . && npx eslint . && npm run build
 ```
 
-Maak daarna een pull request naar `master`. Merge op of vóór de woensdag van
-`publishedAt`; Vercel deployt `master`. Draai daarna in de app-repo
+Na de merge: open `/{taal}/tips` en controleer dat alleen de artikelen met een
+datum van vandaag of eerder erop staan, en dat `sitemap.xml` ze alleen noemt.
+Op de dag van elk artikel (na 00:00 UTC) staat het artikel binnen een uur ook in
+de sitemap en de feed; draai daarna in de app-repo
 `python tools/pinterest_bulk_csv.py --verify-urls docs/marketing/pinterest/out/weekly/pins-<week>.csv`
-en upload dat weekbestand pas als alles 200 geeft.
-
-Handige opdrachten van het script:
-
-- `node scripts/tips-release.mjs --list` toont welke artikelen van de branch al in je werkmap staan;
-- `node scripts/tips-release.mjs --check` vergelijkt de artikelen met de branch
-  (na week 8 hoort dit "All articles match" te geven; verwijder dan de branch);
-- `--from origin/tips/stock-2026-12` als de branch niet lokaal staat;
-- een artikel dat al live staat opnieuw overzetten (bijvoorbeeld na een taalcorrectie)
-  vervangt het op `id`.
-
-Getest op 30 oktober 2026 in een aparte werkmap: cherry-pick van `3de7b4f` op
-`origin/master` gaf geen conflict; week 1 alleen gaf `npm run test:seo` (10 geslaagd),
-`tsc` en `npm run build` zonder fouten (de sitemap bevat dan vier Engelse tips);
-alle acht weken na elkaar gaf exact dezelfde `src/` als de branch (geen enkel verschil).
+voordat je dat weekbestand uploadt.
 
 Per taal is de slug gebouwd op de zoekterm van ouders in dat land (zie `slugs`
 in `en.json`), niet op een vertaling van de Engelse zin.
