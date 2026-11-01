@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import {readFile, readdir} from 'node:fs/promises';
 import {test} from 'node:test';
 import {isPublished, utcDay} from '../src/lib/tips-publication.mjs';
+import {isFirstPerson, sentences, slideBody, slideCount, tipSlides} from '../src/lib/tip-slides.mjs';
 
 const contentDir = new URL('../src/content/tips/', import.meta.url);
 
@@ -158,6 +159,7 @@ test('the pages, feeds, pin images and sitemap with tips are revalidated hourly'
     '../src/app/[locale]/tips/[slug]/page.tsx',
     '../src/app/feeds/[file]/route.ts',
     '../src/app/tips-pins/[locale]/[file]/route.tsx',
+    '../src/app/tips-slides/[locale]/[slug]/[file]/route.tsx',
     '../src/app/sitemap.ts'
   ];
   for (const file of files) {
@@ -188,4 +190,72 @@ test('flattening a transparent pin to JPEG keeps the background and stays under 
   assert.ok(jpeg.length < 10 * 1024 * 1024);
   const {data} = await sharp(jpeg).raw().toBuffer({resolveWithObject: true});
   assert.ok(Math.abs(data[0] - 2) <= 3 && Math.abs(data[1] - 27) <= 3 && Math.abs(data[2] - 34) <= 3, 'not black');
+});
+
+test('a carousel is a cover, one slide per section and a closing slide', async () => {
+  const content = await loadContent();
+  for (const article of content.en.articles) {
+    const slides = tipSlides({...article, locale: 'en'});
+    assert.equal(slides.length, article.sections.length + 2);
+    assert.equal(slides.length, slideCount(article));
+    assert.ok(slides.length <= 10, `${article.slug} fits Instagram's 10 slides`);
+    assert.deepEqual(slides.map((slide) => slide.n), slides.map((_, index) => index + 1));
+    assert.deepEqual([slides[0].kind, slides.at(-1).kind], ['cover', 'closing']);
+    assert.equal(slides[0].title, article.title);
+    assert.equal(slides[0].body, article.cardSummary);
+  }
+});
+
+test('a slide quotes the first sentence of its section and never a personal one', async () => {
+  const content = await loadContent();
+  for (const article of content.en.articles) {
+    for (const [index, slide] of tipSlides({...article, locale: 'en'}).entries()) {
+      if (slide.kind !== 'tip') continue;
+      const section = article.sections[index - 1];
+      assert.equal(slide.title, section.title.replace(/^\d+\.\s*/, ''));
+      if (slide.body) {
+        assert.ok(section.paragraphs[0].startsWith(slide.body), `${article.slug} slide ${slide.n} is the first sentence`);
+        assert.ok(!isFirstPerson(slide.body), `${article.slug} slide ${slide.n} is not personal`);
+        assert.ok(slide.body.length <= 200);
+      }
+    }
+  }
+});
+
+test('the story sentences of the founder stay off the slides', () => {
+  assert.ok(isFirstPerson('At our house, my son had to read for 10 minutes every day for school.'));
+  assert.ok(isFirstPerson('Now he picks up his iPad himself and starts the timer.'));
+  assert.ok(isFirstPerson('I’m sure it helps.'));
+  assert.ok(isFirstPerson('“I don’t feel like it” can mean all sorts of things.'));
+  assert.ok(!isFirstPerson("A timer makes it clear when it's time to stop."));
+  assert.ok(!isFirstPerson('Ask when it is not a struggle, and let them choose.'));
+  assert.equal(slideBody({paragraphs: ['At our house, my son read daily. A timer helps.']}), '');
+  assert.equal(slideBody({paragraphs: ['A timer helps. My son agrees.']}), 'A timer helps.');
+  assert.deepEqual(sentences('One. Two! “Three?” Four'), ['One.', 'Two!', '“Three?”', 'Four']);
+});
+
+test('slides are JPEGs of 1080x1350 for the English articles only and answer 404 outside the carousel', async () => {
+  const source = await readFile(new URL('../src/app/tips-slides/[locale]/[slug]/[file]/route.tsx', import.meta.url), 'utf8');
+  assert.match(source, /export const dynamicParams = true/);
+  assert.match(source, /generateStaticParams\(\) \{\s*return \[\];/);
+  assert.match(source, /'Content-Type': 'image\/jpeg'/);
+  assert.match(source, /JPEG_QUALITY = 92/);
+  assert.ok(source.includes(String.raw`/^([1-9]\d?)\.jpg$/`));
+  // Publication goes through getTip, the same filter as the article and the pins.
+  assert.equal(source.match(/getTip\(/g)?.length, 1);
+  const lib = await readFile(new URL('../src/lib/tip-slides.mjs', import.meta.url), 'utf8');
+  assert.match(lib, /SLIDE_WIDTH = 1080/);
+  assert.match(lib, /SLIDE_HEIGHT = 1350/);
+  assert.match(lib, /SLIDE_LOCALES = \['en'\]/);
+});
+
+test('the bio links of Instagram and Facebook go to the English tips with their UTM values', async () => {
+  const config = await readFile(new URL('../next.config.js', import.meta.url), 'utf8');
+  for (const source of ['instagram', 'facebook']) {
+    const short = source === 'instagram' ? '/ig' : '/fb';
+    assert.match(
+      config,
+      new RegExp(String.raw`source: '${short}',\s+destination: '/en/tips\?utm_source=${source}&utm_medium=social&utm_campaign=bio'`)
+    );
+  }
 });

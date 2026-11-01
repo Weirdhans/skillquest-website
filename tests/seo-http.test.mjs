@@ -167,3 +167,25 @@ test('a public tip pin exists as PNG and JPEG, a tip that is not public yet is a
     }
   }
 });
+
+test('a public tip has carousel slides as JPEG, nothing outside the carousel and nothing before publication', async () => {
+  const {readFile} = await import('node:fs/promises');
+  const en = JSON.parse(await readFile(new URL('../src/content/tips/en.json', import.meta.url), 'utf8'));
+  const today = new Date().toISOString().slice(0, 10);
+  const live = en.articles.find((article) => article.publishedAt <= today);
+  const upcoming = en.articles.find((article) => article.publishedAt > today);
+  const last = live.sections.length + 2;
+  for (const n of [1, 2, last]) {
+    const response = await fetch(`${origin}/tips-slides/en/${live.slug}/${n}.jpg`);
+    assert.equal(response.status, 200, `slide ${n}`);
+    assert.equal(response.headers.get('content-type'), 'image/jpeg');
+    assert.deepEqual([...new Uint8Array(await response.arrayBuffer()).subarray(0, 2)], [0xff, 0xd8]);
+  }
+  for (const n of [0, last + 1]) {
+    assert.equal((await fetch(`${origin}/tips-slides/en/${live.slug}/${n}.jpg`)).status, 404, `slide ${n}`);
+  }
+  assert.equal((await fetch(`${origin}/tips-slides/nl/${live.slug}/1.jpg`)).status, 404);
+  if (upcoming) {
+    assert.equal((await fetch(`${origin}/tips-slides/en/${upcoming.slug}/1.jpg`)).status, 404);
+  }
+});
