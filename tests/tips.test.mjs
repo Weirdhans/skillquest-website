@@ -178,6 +178,9 @@ test('every pin is served as a PNG and as a JPEG (quality 92) from the same rout
   assert.match(source, /JPEG_QUALITY = 92/);
   // The format must not change the publication filter: both read the tip through getTip.
   assert.equal(source.match(/getTip\(/g)?.length, 1);
+  // A 404 must not be remembered: the article goes live at 00:00 UTC.
+  assert.match(source, /NOT_FOUND_CACHE_CONTROL = 'no-store'/);
+  assert.match(source, /status: 404, headers: \{'Cache-Control': NOT_FOUND_CACHE_CONTROL\}/);
 });
 
 test('flattening a transparent pin to JPEG keeps the background and stays under 10 MB', async () => {

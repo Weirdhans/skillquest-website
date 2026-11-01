@@ -27,6 +27,7 @@ const ACCENT = '#26cda0';
 const MUTED = '#bed6d6';
 const JPEG_BACKGROUND = '#021b22';
 const JPEG_QUALITY = 92;
+const NOT_FOUND_CACHE_CONTROL = 'no-store';
 
 // Satori needs TTF/OTF. The fonts live in the repo (both SIL Open Font
 // License) so the build does not depend on Google Fonts: one timed-out font
@@ -48,7 +49,9 @@ export async function GET(
   const copy = isLocale(locale) ? getTipsUiCopy(locale) : undefined;
 
   if (!tip || !copy) {
-    return new Response('Not found', {status: 404});
+    // Not remembered as missing: the article goes live at 00:00 UTC and Pinterest or
+    // Buffer may ask before that.
+    return new Response('Not found', {status: 404, headers: {'Cache-Control': NOT_FOUND_CACHE_CONTROL}});
   }
 
   const eyebrow = `${copy.eyebrow} · ${tip.eyebrow}`.toUpperCase();

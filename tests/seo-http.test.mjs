@@ -164,6 +164,7 @@ test('a public tip pin exists as PNG and JPEG, a tip that is not public yet is a
     if (upcoming) {
       const hidden = await fetch(`${origin}/tips-pins/en/${upcoming.slug}.${extension}`);
       assert.equal(hidden.status, 404, `${extension} of a tip before its publishedAt`);
+      assert.equal(hidden.headers.get('cache-control'), 'no-store', `${extension} 404 is not cached`);
     }
   }
 });
