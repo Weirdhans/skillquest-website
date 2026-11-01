@@ -182,10 +182,14 @@ test('a public tip has carousel slides as JPEG, nothing outside the carousel and
     assert.deepEqual([...new Uint8Array(await response.arrayBuffer()).subarray(0, 2)], [0xff, 0xd8]);
   }
   for (const n of [0, last + 1]) {
-    assert.equal((await fetch(`${origin}/tips-slides/en/${live.slug}/${n}.jpg`)).status, 404, `slide ${n}`);
+    const missing = await fetch(`${origin}/tips-slides/en/${live.slug}/${n}.jpg`);
+    assert.equal(missing.status, 404, `slide ${n}`);
+    assert.equal(missing.headers.get('cache-control'), 'no-store', `404 of slide ${n} is not cached`);
   }
   assert.equal((await fetch(`${origin}/tips-slides/nl/${live.slug}/1.jpg`)).status, 404);
   if (upcoming) {
-    assert.equal((await fetch(`${origin}/tips-slides/en/${upcoming.slug}/1.jpg`)).status, 404);
+    const hidden = await fetch(`${origin}/tips-slides/en/${upcoming.slug}/1.jpg`);
+    assert.equal(hidden.status, 404);
+    assert.equal(hidden.headers.get('cache-control'), 'no-store', 'a slide before publication is not cached as missing');
   }
 });

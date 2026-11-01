@@ -25,6 +25,7 @@ const MUTED = '#bed6d6';
 const JPEG_BACKGROUND = '#021b22';
 const JPEG_QUALITY = 92;
 const MARGIN = 90;
+const NOT_FOUND_CACHE_CONTROL = 'no-store';
 
 const FONT_DIR = join(process.cwd(), 'assets', 'fonts');
 const fontsPromise = Promise.all([
@@ -43,7 +44,9 @@ export async function GET(
   const slide = tip && match ? tipSlides(tip).find((item) => item.n === Number(match[1])) : undefined;
 
   if (!tip || !copy || !slide) {
-    return new Response('Not found', {status: 404});
+    // A slide that is not public yet must not be remembered as missing: the article
+    // goes live at 00:00 UTC and Buffer or Instagram may ask before that.
+    return new Response('Not found', {status: 404, headers: {'Cache-Control': NOT_FOUND_CACHE_CONTROL}});
   }
 
   const [display, body] = await fontsPromise;

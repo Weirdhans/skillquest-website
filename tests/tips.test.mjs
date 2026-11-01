@@ -243,6 +243,9 @@ test('slides are JPEGs of 1080x1350 for the English articles only and answer 404
   assert.ok(source.includes(String.raw`/^([1-9]\d?)\.jpg$/`));
   // Publication goes through getTip, the same filter as the article and the pins.
   assert.equal(source.match(/getTip\(/g)?.length, 1);
+  // A 404 must not be remembered: the article goes live at 00:00 UTC.
+  assert.match(source, /NOT_FOUND_CACHE_CONTROL = 'no-store'/);
+  assert.match(source, /status: 404, headers: \{'Cache-Control': NOT_FOUND_CACHE_CONTROL\}/);
   const lib = await readFile(new URL('../src/lib/tip-slides.mjs', import.meta.url), 'utf8');
   assert.match(lib, /SLIDE_WIDTH = 1080/);
   assert.match(lib, /SLIDE_HEIGHT = 1350/);
