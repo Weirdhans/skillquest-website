@@ -168,3 +168,24 @@ test('the pages, feeds, pin images and sitemap with tips are revalidated hourly'
   const pins = await readFile(new URL(files[3], import.meta.url), 'utf8');
   assert.match(pins, /export const dynamicParams = true/);
 });
+
+test('every pin is served as a PNG and as a JPEG (quality 92) from the same route', async () => {
+  const source = await readFile(new URL('../src/app/tips-pins/[locale]/[file]/route.tsx', import.meta.url), 'utf8');
+  assert.match(source, /\['png', 'jpg'\]/);
+  assert.match(source, /'Content-Type': 'image\/jpeg'/);
+  assert.match(source, /JPEG_QUALITY = 92/);
+  // The format must not change the publication filter: both read the tip through getTip.
+  assert.equal(source.match(/getTip\(/g)?.length, 1);
+});
+
+test('flattening a transparent pin to JPEG keeps the background and stays under 10 MB', async () => {
+  const sharp = (await import('sharp')).default;
+  const png = await sharp({create: {width: 1000, height: 1500, channels: 4, background: {r: 2, g: 27, b: 34, alpha: 0}}})
+    .png()
+    .toBuffer();
+  const jpeg = await sharp(png).flatten({background: '#021b22'}).jpeg({quality: 92}).toBuffer();
+  assert.deepEqual([...jpeg.subarray(0, 2)], [0xff, 0xd8], 'JPEG signature');
+  assert.ok(jpeg.length < 10 * 1024 * 1024);
+  const {data} = await sharp(jpeg).raw().toBuffer({resolveWithObject: true});
+  assert.ok(Math.abs(data[0] - 2) <= 3 && Math.abs(data[1] - 27) <= 3 && Math.abs(data[2] - 34) <= 3, 'not black');
+});
