@@ -1,25 +1,32 @@
 import {ImageResponse} from 'next/og';
 import {readFile} from 'node:fs/promises';
 import {join} from 'node:path';
+import sharp from 'sharp';
 import {isLocale} from '@/lib/marketing';
 import {PIN_HEIGHT, PIN_WIDTH} from '@/lib/tip-pin';
 import {getAllTips, getTip, getTipsUiCopy} from '@/lib/tips';
 
-// Built once per article and language; the path ends in .png, so the locale
-// middleware leaves it alone. Only articles that are public at build time are
-// prerendered; a later one is built on its first request after its publishedAt
-// day (dynamicParams) and answers 404 before that.
+// Built once per article and language, as .png and as .jpg (Instagram only takes
+// JPEG through its API, so the social queue tool asks for the .jpg of every pin).
+// The path has an extension, so the locale middleware leaves it alone. Only
+// articles that are public at build time are prerendered; a later one is built on
+// its first request after its publishedAt day (dynamicParams) and answers 404
+// before that, for both formats.
 export const dynamic = 'force-static';
 export const dynamicParams = true;
 export const revalidate = 3600; // seconds; a literal, Next.js cannot read an imported value
 
 export function generateStaticParams() {
-  return getAllTips().map((tip) => ({locale: tip.locale, file: `${tip.slug}.png`}));
+  return getAllTips().flatMap((tip) =>
+    ['png', 'jpg'].map((extension) => ({locale: tip.locale, file: `${tip.slug}.${extension}`}))
+  );
 }
 
 const BACKGROUND = 'linear-gradient(160deg, #043d47 0%, #032a33 55%, #021b22 100%)';
 const ACCENT = '#26cda0';
 const MUTED = '#bed6d6';
+const JPEG_BACKGROUND = '#021b22';
+const JPEG_QUALITY = 92;
 
 // Satori needs TTF/OTF. The fonts live in the repo (both SIL Open Font
 // License) so the build does not depend on Google Fonts: one timed-out font
@@ -35,7 +42,8 @@ export async function GET(
   {params}: {params: Promise<{locale: string; file: string}>}
 ) {
   const {locale, file} = await params;
-  const slug = file.replace(/\.png$/, '');
+  const asJpeg = file.endsWith('.jpg');
+  const slug = file.replace(/\.(png|jpg)$/, '');
   const tip = isLocale(locale) ? getTip(locale, slug) : undefined;
   const copy = isLocale(locale) ? getTipsUiCopy(locale) : undefined;
 
@@ -50,7 +58,7 @@ export async function GET(
 
   const [display, body] = await fontsPromise;
 
-  return new ImageResponse(
+  const image = new ImageResponse(
     (
       <div
         style={{
@@ -120,4 +128,19 @@ export async function GET(
       ]
     }
   );
+
+  if (!asJpeg) {
+    return image;
+  }
+
+  // The pin has no transparency (a flat gradient), but flatten onto the darkest
+  // gradient colour anyway so an alpha channel can never turn black.
+  const png = Buffer.from(await image.arrayBuffer());
+  const jpeg = await sharp(png).flatten({background: JPEG_BACKGROUND}).jpeg({quality: JPEG_QUALITY}).toBuffer();
+  return new Response(new Uint8Array(jpeg), {
+    headers: {
+      'Content-Type': 'image/jpeg',
+      'Cache-Control': image.headers.get('Cache-Control') ?? 'public, max-age=31536000, immutable'
+    }
+  });
 }

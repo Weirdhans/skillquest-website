@@ -147,3 +147,23 @@ for (const path of ['/auth-callback', '/auth/reset-password', '/sitemap.xml', '/
     assert.equal(response.headers.get('location'), null);
   });
 }
+
+test('a public tip pin exists as PNG and JPEG, a tip that is not public yet is a 404 in both', async () => {
+  const {readFile} = await import('node:fs/promises');
+  const en = JSON.parse(await readFile(new URL('../src/content/tips/en.json', import.meta.url), 'utf8'));
+  const today = new Date().toISOString().slice(0, 10);
+  const live = en.articles.find((article) => article.publishedAt <= today);
+  const upcoming = en.articles.find((article) => article.publishedAt > today);
+  for (const [extension, type] of [['png', 'image/png'], ['jpg', 'image/jpeg']]) {
+    const response = await fetch(`${origin}/tips-pins/en/${live.slug}.${extension}`);
+    assert.equal(response.status, 200, `${extension} of a public tip`);
+    assert.equal(response.headers.get('content-type'), type);
+    if (extension === 'jpg') {
+      assert.deepEqual([...new Uint8Array(await response.arrayBuffer()).subarray(0, 2)], [0xff, 0xd8]);
+    }
+    if (upcoming) {
+      const hidden = await fetch(`${origin}/tips-pins/en/${upcoming.slug}.${extension}`);
+      assert.equal(hidden.status, 404, `${extension} of a tip before its publishedAt`);
+    }
+  }
+});
