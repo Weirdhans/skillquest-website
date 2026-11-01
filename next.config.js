@@ -28,12 +28,12 @@ const nextConfig = {
       // can change later without browsers caching the old target.
       {
         source: '/ig',
-        destination: '/?utm_source=instagram&utm_medium=social&utm_campaign=bio',
+        destination: '/en/tips?utm_source=instagram&utm_medium=social&utm_campaign=bio',
         permanent: false,
       },
       {
         source: '/fb',
-        destination: '/?utm_source=facebook&utm_medium=social&utm_campaign=bio',
+        destination: '/en/tips?utm_source=facebook&utm_medium=social&utm_campaign=bio',
         permanent: false,
       },
       // LinkedIn: the download page, scrolled to the Android card.
