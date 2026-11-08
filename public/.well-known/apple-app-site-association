@@ -9,6 +9,7 @@
           "/auth-callback/*",
           "/auth-callback.html",
           "/invite/*",
+          "/open/*",
           "/family/invite/*",
           "/nl/invite/*",
           "/en/invite/*",

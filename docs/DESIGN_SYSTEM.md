@@ -124,7 +124,7 @@ meeschakelen niet — de CDP/DevTools-kleurenschema-emulatie in die preview vuur
 
 ## Standalone routes (buiten `[locale]`)
 
-`auth/*`, `auth-callback/`, `invite/[code]/`, `family/invite/[code]/` liggen buiten de
+`auth/*`, `auth-callback/`, `invite/[code]/`, `family/invite/[code]/` en `open/[[...path]]/` (alleen een doorverwijzing, geen pagina) liggen buiten de
 `[locale]`-boom omdat ze bereikt worden via Supabase-links en deellinks zonder
 locale-prefix. Ze hebben daardoor geen toegang tot de locale-layout, en moeten dus zelf
 voor stylesheet, fonts en theme-script zorgen:

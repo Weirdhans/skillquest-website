@@ -41,6 +41,7 @@ skillquest-website/
 │   │   ├── auth/               # Wachtwoord-reset flow, geen locale-prefix (Supabase-links)
 │   │   ├── auth-callback/      # App-handoff na OAuth/magic link
 │   │   ├── invite/[code]/      # Vriendschapsuitnodiging, geen locale-prefix (deellinks)
+│   │   ├── open/[[...path]]/   # App-link "open de app": stuurt door naar de uitlegpagina op app.skill-quest.app
 │   │   ├── family/invite/[code]/
 │   │   └── api/                # subscribe, resend-verification, auth/confirm, verify
 │   ├── components/             # MarketingPages, Navbar, AuthShell, Reveal, ProductScrollTour, ...
@@ -52,7 +53,7 @@ skillquest-website/
 └── tailwind.config.js
 ```
 
-De routes onder `auth/`, `auth-callback/` en `invite/` staan bewust buiten `[locale]`,
+De routes onder `auth/`, `auth-callback/`, `invite/` en `open/` staan bewust buiten `[locale]`,
 omdat ze bereikt worden via Supabase-links en deellinks die geen locale-prefix kennen.
 Ze delen wel dezelfde fonts, tokens en het theme-script via `StandaloneLayout` en
 `AuthShell` in `src/components/`.
