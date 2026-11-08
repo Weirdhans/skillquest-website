@@ -26,6 +26,20 @@ test('campaign short links stay temporary so their UTM targets can change', asyn
   }
 });
 
+test('iOS universal links cover the app link /open/* next to the invite links', async () => {
+  const file = await readFile(new URL('../public/.well-known/apple-app-site-association', import.meta.url), 'utf8');
+  const paths = JSON.parse(file).applinks.details.flatMap((detail) => detail.paths);
+  assert.ok(paths.includes('/open/*'));
+  assert.ok(paths.includes('/invite/*'));
+});
+
+test('the /open route is exempt from the locale redirect and only points at the app host', async () => {
+  const proxy = await readFile(new URL('../src/proxy.ts', import.meta.url), 'utf8');
+  assert.match(proxy, /pathname\.startsWith\('\/open\/'\)/);
+  const route = await readFile(new URL('../src/app/open/[[...path]]/route.ts', import.meta.url), 'utf8');
+  assert.match(route, /const EXPLANATION_ORIGIN = 'https:\/\/app\.skill-quest\.app';/);
+});
+
 test('support page keeps a stable, visible FAQ anchor for legacy links', async () => {
   const source = await readFile(new URL('../src/app/[locale]/support/page.tsx', import.meta.url), 'utf8');
   assert.match(source, /<section id="faq"[^>]*>[\s\S]*?\{copy\.faqHeading\}/);

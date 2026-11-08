@@ -148,6 +148,12 @@ for (const path of ['/auth-callback', '/auth/reset-password', '/sitemap.xml', '/
   });
 }
 
+test('/open/add-child sends visitors without the app to the explanation page, without a locale detour', async () => {
+  const response = await fetch(`${origin}/open/add-child`, {redirect: 'manual'});
+  assert.equal(response.status, 307);
+  assert.equal(response.headers.get('location'), 'https://app.skill-quest.app/open/add-child');
+});
+
 test('a public tip pin exists as PNG and JPEG, a tip that is not public yet is a 404 in both', async () => {
   const {readFile} = await import('node:fs/promises');
   const en = JSON.parse(await readFile(new URL('../src/content/tips/en.json', import.meta.url), 'utf8'));

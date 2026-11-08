@@ -14,6 +14,8 @@ export function proxy(request: NextRequest) {
     pathname === '/auth' ||
     pathname.startsWith('/auth/') ||
     pathname.startsWith('/invite/') ||
+    pathname === '/open' ||
+    pathname.startsWith('/open/') ||
     pathname.startsWith('/family/invite/')
   ) {
     return NextResponse.next();
