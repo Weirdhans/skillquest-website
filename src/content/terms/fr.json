@@ -152,7 +152,7 @@
           "items": [
             {
               "lead": "Via la boutique.",
-              "text": "Tu achètes un abonnement auprès d’Apple (App Store) ou de Google (Play Store), pas chez nous. Tu vois le prix, la durée, les taxes et l’éventuel essai gratuit dans la boutique avant d’acheter. Tu paies Apple ou Google. Pour associer ton abonnement à ton compte SkillQuest, nous utilisons le service RevenueCat."
+              "text": "Tu achètes un abonnement auprès d’Apple (App Store) ou de Google (Play Store), pas chez nous. Tu vois le prix, la durée et les taxes dans la boutique avant d’acheter. Tu paies Apple ou Google. Pour associer ton abonnement à ton compte SkillQuest, nous utilisons le service RevenueCat."
             },
             {
               "lead": "Renouvellement automatique.",
@@ -161,10 +161,6 @@
             {
               "lead": "Résiliation.",
               "text": "Tu peux résilier ton abonnement dans la boutique : chez Apple, dans les réglages de ton identifiant Apple (Abonnements) ; chez Google, dans Google Play (Paiements et abonnements). La suppression de ton compte ou de l’appli ne résilie pas ton abonnement. Après la résiliation, tu conserves l’accès à la version Premium jusqu’à la fin de la période que tu as déjà payée."
-            },
-            {
-              "lead": "Essai gratuit.",
-              "text": "Si un abonnement propose une période d’essai gratuite, celle-ci est indiquée dans la boutique avant l’achat. Si tu ne résilies pas avant la fin de la période d’essai, l’abonnement payant démarre automatiquement. C’est la boutique qui décide qui peut bénéficier d’une période d’essai."
             },
             {
               "lead": "Modifications de prix.",

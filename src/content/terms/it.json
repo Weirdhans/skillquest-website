@@ -152,7 +152,7 @@
           "items": [
             {
               "lead": "Tramite lo store.",
-              "text": "Acquisti un abbonamento da Apple (App Store) o Google (Play Store), non da noi. Prima dell’acquisto, nello store puoi vedere il prezzo, la durata, le tasse e l’eventuale periodo di prova gratuito. Paghi ad Apple o a Google. Per collegare il tuo abbonamento al tuo account SkillQuest, utilizziamo il servizio RevenueCat."
+              "text": "Acquisti un abbonamento da Apple (App Store) o Google (Play Store), non da noi. Prima dell’acquisto, nello store puoi vedere il prezzo, la durata e le tasse. Paghi ad Apple o a Google. Per collegare il tuo abbonamento al tuo account SkillQuest, utilizziamo il servizio RevenueCat."
             },
             {
               "lead": "Rinnovo automatico.",
@@ -161,10 +161,6 @@
             {
               "lead": "Disdetta.",
               "text": "Puoi disdire l’abbonamento nello store: su Apple nelle impostazioni del tuo ID Apple (Abbonamenti), su Google in Google Play (Pagamenti e abbonamenti). Cancellare il tuo account o l’app non comporta la disdetta dell’abbonamento. Dopo la disdetta, potrai continuare a usufruire del servizio Premium fino alla fine del periodo che hai già pagato."
-            },
-            {
-              "lead": "Prova gratuita.",
-              "text": "Se un abbonamento prevede un periodo di prova gratuito, questo viene indicato nello store prima dell’acquisto. Se non lo disdici prima della fine del periodo di prova, l’abbonamento a pagamento inizia automaticamente. È lo store a decidere chi ha diritto al periodo di prova."
             },
             {
               "lead": "Modifiche ai prezzi.",

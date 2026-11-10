@@ -152,7 +152,7 @@
           "items": [
             {
               "lead": "Über den Store.",
-              "text": "Du erwirbst ein Abonnement bei Apple (App Store) oder Google (Play Store), nicht bei uns. Du siehst den Preis, die Laufzeit, Steuern und eventuelle kostenlose Testphasen im Store, bevor du kaufst. Du bezahlst an Apple oder Google. Um dein Abonnement mit deinem SkillQuest-Konto zu verknüpfen, nutzen wir den Dienst RevenueCat."
+              "text": "Du erwirbst ein Abonnement bei Apple (App Store) oder Google (Play Store), nicht bei uns. Du siehst den Preis, die Laufzeit und die Steuern im Store, bevor du kaufst. Du bezahlst an Apple oder Google. Um dein Abonnement mit deinem SkillQuest-Konto zu verknüpfen, nutzen wir den Dienst RevenueCat."
             },
             {
               "lead": "Automatische Verlängerung.",
@@ -161,10 +161,6 @@
             {
               "lead": "Kündigung.",
               "text": "Du kündigst im Store: bei Apple in deinen Apple-ID-Einstellungen (Abonnements), bei Google in Google Play (Zahlungen und Abos). Das Löschen deines Kontos oder der App führt nicht zur Kündigung eines Abonnements. Nach der Kündigung behältst du den Premium-Zugang bis zum Ende des Zeitraums, für den du bereits bezahlt hast."
-            },
-            {
-              "lead": "Kostenlose Testphase.",
-              "text": "Wenn ein Abonnement eine kostenlose Testphase beinhaltet, wird dies im Store vor dem Kauf angezeigt. Wenn du nicht vor Ablauf der Testphase kündigst, beginnt das kostenpflichtige Abonnement automatisch. Der Store entscheidet, wer für eine Testphase berechtigt ist."
             },
             {
               "lead": "Preisänderungen.",

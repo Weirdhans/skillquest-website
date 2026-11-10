@@ -152,7 +152,7 @@
           "items": [
             {
               "lead": "Through the store.",
-              "text": "You buy a subscription from Apple (App Store) or Google (Play Store), not from us. You see the price, term, taxes and any free trial in the store before you buy. You pay Apple or Google. To link your subscription to your SkillQuest account, we use the service RevenueCat."
+              "text": "You buy a subscription from Apple (App Store) or Google (Play Store), not from us. You see the price, term and taxes in the store before you buy. You pay Apple or Google. To link your subscription to your SkillQuest account, we use the service RevenueCat."
             },
             {
               "lead": "Automatic renewal.",
@@ -161,10 +161,6 @@
             {
               "lead": "Cancelling.",
               "text": "You cancel in the store: with Apple in your Apple ID settings (Subscriptions), with Google in Google Play (Payments & subscriptions). Deleting your account or the app does not cancel a subscription. After you cancel, you keep Premium until the end of the period you already paid for."
-            },
-            {
-              "lead": "Free trial.",
-              "text": "If a subscription has a free trial, this is shown in the store before you buy. If you do not cancel before the trial ends, the paid subscription starts automatically. The store decides who is eligible for a trial."
             },
             {
               "lead": "Price changes.",

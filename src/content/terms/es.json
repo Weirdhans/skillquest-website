@@ -152,7 +152,7 @@
           "items": [
             {
               "lead": "A través de la tienda.",
-              "text": "Compras una suscripción a través de Apple (App Store) o Google (Play Store), no a través de nosotros. Antes de comprar, ves el precio, la duración, los impuestos y cualquier periodo de prueba gratuito en la tienda. Pagas a Apple o a Google. Para vincular tu suscripción a tu cuenta de SkillQuest, utilizamos el servicio RevenueCat."
+              "text": "Compras una suscripción a través de Apple (App Store) o Google (Play Store), no a través de nosotros. Antes de comprar, ves el precio, la duración y los impuestos en la tienda. Pagas a Apple o a Google. Para vincular tu suscripción a tu cuenta de SkillQuest, utilizamos el servicio RevenueCat."
             },
             {
               "lead": "Renovación automática.",
@@ -161,10 +161,6 @@
             {
               "lead": "Cancelación.",
               "text": "Puedes cancelar la suscripción en la tienda: en el caso de Apple, en los ajustes de tu ID de Apple (Suscripciones); en el caso de Google, en Google Play (Pagos y suscripciones). Borrar tu cuenta o la app no cancela la suscripción. Una vez que la canceles, seguirás teniendo acceso a Premium hasta el final del periodo que ya hayas pagado."
-            },
-            {
-              "lead": "Prueba gratuita.",
-              "text": "Si una suscripción tiene un periodo de prueba gratuito, esto se muestra en la tienda antes de que la compres. Si no la cancelas antes de que termine el periodo de prueba, la suscripción de pago se activa automáticamente. La tienda decide quién puede acceder al periodo de prueba."
             },
             {
               "lead": "Cambios en los precios.",

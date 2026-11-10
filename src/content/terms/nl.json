@@ -152,7 +152,7 @@
           "items": [
             {
               "lead": "Via de winkel.",
-              "text": "Je koopt een abonnement bij Apple (App Store) of Google (Play Store), niet bij ons. Prijs, looptijd, belasting en een eventuele gratis proefperiode zie je in de winkel vóór je koopt. Je betaalt aan Apple of Google. Om je abonnement aan je SkillQuest-account te koppelen gebruiken we de dienst RevenueCat."
+              "text": "Je koopt een abonnement bij Apple (App Store) of Google (Play Store), niet bij ons. Prijs, looptijd en belasting zie je in de winkel vóór je koopt. Je betaalt aan Apple of Google. Om je abonnement aan je SkillQuest-account te koppelen gebruiken we de dienst RevenueCat."
             },
             {
               "lead": "Automatische verlenging.",
@@ -161,10 +161,6 @@
             {
               "lead": "Opzeggen.",
               "text": "Dat doe je in de winkel: bij Apple via de instellingen van je Apple-ID (Abonnementen), bij Google via Google Play (Betalingen en abonnementen). Je account of de app verwijderen zegt een abonnement niet op. Na opzeggen houd je Premium tot het einde van de periode die je al hebt betaald."
-            },
-            {
-              "lead": "Proefperiode.",
-              "text": "Als een abonnement een gratis proefperiode heeft, staat dat vóór de aankoop in de winkel. Zeg je niet op vóór het einde ervan, dan begint het betaalde abonnement automatisch. De winkel bepaalt wie voor een proefperiode in aanmerking komt."
             },
             {
               "lead": "Prijswijziging.",
