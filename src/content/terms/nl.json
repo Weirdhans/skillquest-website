@@ -1,0 +1,282 @@
+{
+  "locale": "nl",
+  "updated": "2026-11-09",
+  "lastUpdatedLabel": "Laatst bijgewerkt",
+  "heading": "Gebruiksvoorwaarden",
+  "metaTitle": "Gebruiksvoorwaarden | SkillQuest",
+  "metaDescription": "De voorwaarden voor het gebruik van de SkillQuest-app, de website en Premium-abonnementen.",
+  "sections": [
+    {
+      "title": "Wie wij zijn en waarvoor deze voorwaarden gelden",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "SkillQuest wordt aangeboden door Johannes Willem Vlasblom, eenmanszaak, handelend onder de namen SkillQuest en Zenith Reborn (KvK 42188670, Nederland). Je bereikt ons via hello@skill-quest.app."
+        },
+        {
+          "type": "p",
+          "text": "Deze voorwaarden gelden voor het gebruik van de SkillQuest-app (iPhone, iPad, Android en de webversie), de website skill-quest.app en onze Premium-abonnementen. Door een account aan te maken of de app te gebruiken ga je akkoord met deze voorwaarden. Ga je niet akkoord, gebruik SkillQuest dan niet."
+        },
+        {
+          "type": "p",
+          "text": "Hoe we met persoonsgegevens omgaan staat in ons <a href=\"/privacy\">privacybeleid</a>. De omgangsregels voor vrienden en uitdagingen staan in onze <a href=\"/community-guidelines\">communityrichtlijnen</a>. Beide horen bij deze voorwaarden."
+        }
+      ]
+    },
+    {
+      "title": "Wat SkillQuest is",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "SkillQuest is een app waarmee je oefentijd bijhoudt met een timer, XP verdient, je voortgang bekijkt, doelen stelt en, als je dat wilt, vrienden, uitdagingen, ranglijsten en de familiefunctie gebruikt."
+        },
+        {
+          "type": "p",
+          "text": "SkillQuest is een hulpmiddel om gemotiveerd te blijven. We beloven geen resultaten, zoals betere cijfers of een bepaald niveau. SkillQuest blokkeert geen apps en beperkt geen schermtijd. Het is geen medisch, therapeutisch of onderwijskundig advies."
+        },
+        {
+          "type": "p",
+          "text": "Je kunt SkillQuest ook als gast gebruiken, zonder account. Gastgegevens staan alleen op je toestel en kunnen verloren gaan als je de app verwijdert. Vrienden, ranglijsten, de familiefunctie en synchronisatie tussen toestellen werken alleen met een account."
+        }
+      ]
+    },
+    {
+      "title": "Je account",
+      "blocks": [
+        {
+          "type": "ul",
+          "items": [
+            {
+              "text": "Je maakt een account met e-mail, Google of Apple, afhankelijk van je toestel."
+            },
+            {
+              "text": "Geef correcte gegevens op. Een account is voor één persoon."
+            },
+            {
+              "text": "Houd je inloggegevens veilig en deel ze niet. Je bent verantwoordelijk voor wat er met je account gebeurt. Vermoed je misbruik, mail ons dan meteen."
+            },
+            {
+              "text": "Je kunt je account altijd verwijderen: in de app via Instellingen > Account verwijderen (je hebt 7 dagen om je te bedenken), of via hello@skill-quest.app als je niet meer kunt inloggen. Zie ook <a href=\"/delete-account\">skill-quest.app/delete-account</a>."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Leeftijd, kinderen en ouders",
+      "blocks": [
+        {
+          "type": "ul",
+          "items": [
+            {
+              "text": "Om zelf een account te maken moet je oud genoeg zijn om in jouw land zelf toestemming te geven voor een online dienst. Die leeftijd ligt tussen 13 en 16 jaar, afhankelijk van het land (in Nederland is het 16)."
+            },
+            {
+              "text": "Ben je jonger, dan kun je een account alleen gebruiken met toestemming van een ouder of voogd. Een kindaccount werkt pas na die toestemming. Een ouder kan de toestemming op elk moment intrekken."
+            },
+            {
+              "text": "Wie toestemming geeft, verklaart ouder of voogd van het kind te zijn en is verantwoordelijk voor het gebruik van SkillQuest door dat kind."
+            },
+            {
+              "text": "Een kind kan geen abonnement kopen. Aankopen doet een volwassene."
+            },
+            {
+              "text": "Merken we dat een kind een account heeft zonder de toestemming die nodig is, dan kunnen we dat account beperken of verwijderen. Zie het <a href=\"/privacy\">privacybeleid</a> voor wat er met de gegevens gebeurt."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Familie",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Met een Familie-abonnement kan de eigenaar een familie maken met maximaal zes leden, de eigenaar meegerekend. Leden hebben een rol: eigenaar, ouder, kind of lid. Je nodigt iemand uit met een link; de eigenaar keurt verzoeken om mee te doen goed."
+        },
+        {
+          "type": "p",
+          "text": "Ouders zien de voortgang van een kind alleen voor zover de toestemming en het abonnement dat toelaten; het <a href=\"/privacy\">privacybeleid</a> legt uit wat ze zien. Iemand de rol \"kind\" geven kan alleen met instemming van die persoon. De eigenaar is verantwoordelijk voor wie hij of zij uitnodigt."
+        },
+        {
+          "type": "p",
+          "text": "Eindigt het Familie-abonnement, dan kunnen de functies die daarvoor een betaald abonnement vragen stoppen."
+        }
+      ]
+    },
+    {
+      "title": "Gebruiksregels",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Gebruik SkillQuest eerlijk en netjes. Dit is niet toegestaan:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            {
+              "text": "SkillQuest, andere gebruikers of onze systemen schade toebrengen of onbevoegd toegang proberen te krijgen;"
+            },
+            {
+              "text": "de app uit elkaar halen, kopiëren of automatisch gegevens verzamelen, behalve voor zover de wet dat toestaat;"
+            },
+            {
+              "text": "XP, streaks of ranglijsten manipuleren, bijvoorbeeld met bots, automatische timers of meerdere accounts;"
+            },
+            {
+              "text": "een naam of profiel kiezen die beledigend, bedreigend, seksueel of misleidend is, of waarmee je iemand nabootst;"
+            },
+            {
+              "text": "vrienden en uitdagingen gebruiken voor reclame of spam;"
+            },
+            {
+              "text": "iets doen wat in strijd is met de wet."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "XP wordt op onze server uitgerekend uit je sessies. We kunnen XP corrigeren die op oneerlijke manier is verkregen. Wie zich niet aan de regels houdt, kan de toegang tot onderdelen van SkillQuest of het account verliezen (zie <a href=\"#s-12\">sectie 12</a>)."
+        }
+      ]
+    },
+    {
+      "title": "Premium en betalen",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "SkillQuest is gratis te gebruiken. Premium is een betaald abonnement met extra functies. Je kiest uit Premium (maandelijks of jaarlijks) en Familie."
+        },
+        {
+          "type": "ul",
+          "items": [
+            {
+              "lead": "Via de winkel.",
+              "text": "Je koopt een abonnement bij Apple (App Store) of Google (Play Store), niet bij ons. Prijs, looptijd, belasting en een eventuele gratis proefperiode zie je in de winkel vóór je koopt. Je betaalt aan Apple of Google. Om je abonnement aan je SkillQuest-account te koppelen gebruiken we de dienst RevenueCat."
+            },
+            {
+              "lead": "Automatische verlenging.",
+              "text": "Een abonnement verlengt zichzelf voor dezelfde periode en prijs, tenzij je minstens 24 uur voor het einde van de lopende periode opzegt."
+            },
+            {
+              "lead": "Opzeggen.",
+              "text": "Dat doe je in de winkel: bij Apple via de instellingen van je Apple-ID (Abonnementen), bij Google via Google Play (Betalingen en abonnementen). Je account of de app verwijderen zegt een abonnement niet op. Na opzeggen houd je Premium tot het einde van de periode die je al hebt betaald."
+            },
+            {
+              "lead": "Proefperiode.",
+              "text": "Als een abonnement een gratis proefperiode heeft, staat dat vóór de aankoop in de winkel. Zeg je niet op vóór het einde ervan, dan begint het betaalde abonnement automatisch. De winkel bepaalt wie voor een proefperiode in aanmerking komt."
+            },
+            {
+              "lead": "Prijswijziging.",
+              "text": "Verandert de prijs, dan meldt de winkel dat. Je kunt dan opzeggen voordat de nieuwe prijs ingaat."
+            },
+            {
+              "lead": "Terugbetalen.",
+              "text": "Betalingen en terugbetalingen lopen via Apple of Google. Vraag een terugbetaling aan in de winkel waar je kocht, of mail ons; we helpen waar dat kan. Je wettelijke rechten als consument blijven gelden."
+            },
+            {
+              "lead": "Apple.",
+              "text": "Voor iPhone en iPad geldt daarnaast Apple's standaardlicentieovereenkomst voor apps (<a href=\"https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\">Licensed Application End User License Agreement</a>). Apple is geen partij bij deze voorwaarden."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Jouw inhoud en gegevens",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Wat je invult, zoals de namen van je vaardigheden, je doelen, je gebruikersnaam en je profielfoto, blijft van jou. Je geeft ons het recht dat op te slaan en te tonen aan jou en, zoals jij of je familie dat instelt, aan anderen, uitsluitend om SkillQuest te laten werken."
+        },
+        {
+          "type": "p",
+          "text": "Hoe we met je persoonsgegevens omgaan, staat in het <a href=\"/privacy\">privacybeleid</a>. Je kunt je gegevens laten verwijderen zoals bij <a href=\"#s-3\">sectie 3</a> staat."
+        }
+      ]
+    },
+    {
+      "title": "Onze rechten",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "SkillQuest, de naam, de logo's, het ontwerp, de teksten en de code zijn van ons of van onze licentiegevers. Je krijgt een persoonlijk, niet-exclusief en niet-overdraagbaar recht om de app te gebruiken voor eigen, niet-zakelijk gebruik, zolang je deze voorwaarden volgt. Onderdelen met een open-sourcelicentie vallen onder hun eigen licentie."
+        },
+        {
+          "type": "p",
+          "text": "Stuur je ons feedback of een idee, dan mogen we dat gebruiken zonder vergoeding."
+        }
+      ]
+    },
+    {
+      "title": "Beschikbaarheid en wijzigingen",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "We doen ons best, maar SkillQuest wordt geleverd zoals het is. We beloven niet dat de app altijd beschikbaar of foutloos is. We kunnen onderhoud doen, functies veranderen of toevoegen en een nieuwere versie van de app vereisen."
+        },
+        {
+          "type": "p",
+          "text": "Stopt een betaald onderdeel dat je hebt gekocht voordat je betaalde periode afloopt, dan zoeken we samen met jou een redelijke oplossing, bijvoorbeeld terugbetaling van het resterende deel. Je wettelijke rechten als consument blijven gelden."
+        }
+      ]
+    },
+    {
+      "title": "Aansprakelijkheid",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Niets in deze voorwaarden beperkt onze aansprakelijkheid voor opzet of bewuste roekeloosheid, voor overlijden of lichamelijk letsel, of voor wat de wet niet toestaat te beperken."
+        },
+        {
+          "type": "p",
+          "text": "Voor het overige zijn we alleen aansprakelijk voor directe schade, en tot maximaal het bedrag dat je in de twaalf maanden voor de gebeurtenis aan Premium hebt betaald. We zijn niet aansprakelijk voor het verlies van gegevens die alleen op je toestel stonden, bijvoorbeeld als je zonder account de app verwijdert."
+        }
+      ]
+    },
+    {
+      "title": "Beëindigen",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Jij kunt altijd stoppen door je account te verwijderen (zie <a href=\"#s-3\">sectie 3</a>). Een abonnement zeg je apart in de winkel op (zie <a href=\"#s-7\">sectie 7</a>)."
+        },
+        {
+          "type": "p",
+          "text": "Wij kunnen je toegang beperken of je account beëindigen bij een ernstige of herhaalde overtreding van deze voorwaarden of van de wet, of als we SkillQuest stopzetten. Waar dat kan, waarschuwen we je eerst en leggen we uit waarom. Wat daarna met je gegevens gebeurt, staat in het <a href=\"/privacy\">privacybeleid</a>. Wat bedoeld is om door te lopen, zoals onze rechten en de aansprakelijkheid, blijft gelden."
+        }
+      ]
+    },
+    {
+      "title": "Toepasselijk recht en klachten",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Op deze voorwaarden is Nederlands recht van toepassing. Woon je als consument in een ander land, dan blijft de dwingende bescherming van dat land gelden en kun je ook naar de rechter in dat land."
+        },
+        {
+          "type": "p",
+          "text": "Heb je een klacht, mail ons dan eerst op hello@skill-quest.app. We reageren binnen 5 werkdagen."
+        }
+      ]
+    },
+    {
+      "title": "Wijzigingen in deze voorwaarden",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "We kunnen deze voorwaarden aanpassen, bijvoorbeeld door nieuwe functies of nieuwe regels. Bij wezenlijke wijzigingen laten we het je ten minste 30 dagen vooraf weten, in de app of per e-mail. Ga je niet akkoord, dan kun je stoppen en je account verwijderen. Blijf je SkillQuest gebruiken na de ingangsdatum, dan gelden de nieuwe voorwaarden voor jou."
+        }
+      ]
+    },
+    {
+      "title": "Contact",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Vragen over deze voorwaarden? Mail hello@skill-quest.app."
+        }
+      ]
+    }
+  ]
+}

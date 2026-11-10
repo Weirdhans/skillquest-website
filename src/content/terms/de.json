@@ -1,0 +1,282 @@
+{
+  "locale": "de",
+  "updated": "2026-11-09",
+  "heading": "Nutzungsbedingungen",
+  "metaTitle": "Nutzungsbedingungen | SkillQuest",
+  "metaDescription": "Die Nutzungsbedingungen für die SkillQuest-App, die Website und die Premium-Abonnements.",
+  "lastUpdatedLabel": "Zuletzt aktualisiert",
+  "sections": [
+    {
+      "title": "Wer wir sind und was diese Bedingungen abdecken",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "SkillQuest wird von Johannes Willem Vlasblom, Einzelunternehmen (eenmanszaak), unter den Namen SkillQuest und Zenith Reborn angeboten (Niederländische Handelskammer (KvK)-Nummer 42188670, Niederlande). Du erreichst uns unter hello@skill-quest.app."
+        },
+        {
+          "type": "p",
+          "text": "Diese Bedingungen gelten für deine Nutzung der SkillQuest-App (iPhone, iPad, Android und die Webversion), der Website skill-quest.app und unserer Premium-Abonnements. Indem du ein Konto erstellst oder die App nutzt, stimmst du diesen Bedingungen zu. Wenn du damit nicht einverstanden bist, nutze SkillQuest bitte nicht."
+        },
+        {
+          "type": "p",
+          "text": "Wie wir mit personenbezogenen Daten umgehen, ist in unserer <a href=\"/privacy\">Datenschutzerklärung</a> beschrieben. Die Regeln für Freunde und Herausforderungen findest du in unseren <a href=\"/community-guidelines\">Community-Richtlinien</a>. Beide sind Teil dieser Nutzungsbedingungen."
+        }
+      ]
+    },
+    {
+      "title": "Was ist SkillQuest?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "SkillQuest ist eine App, mit der du deine Übungszeit mit einem Timer aufzeichnen, XP sammeln, deinen Fortschritt verfolgen, Ziele setzen und – wenn du möchtest – Freunde, Herausforderungen, Ranglisten und die Familienfunktion nutzen kannst."
+        },
+        {
+          "type": "p",
+          "text": "SkillQuest ist ein Tool, das dir hilft, motiviert zu bleiben. Wir versprechen keine Ergebnisse wie bessere Noten oder ein bestimmtes Level. SkillQuest blockiert keine Apps und schränkt die Bildschirmzeit nicht ein. Es handelt sich nicht um medizinische, therapeutische oder pädagogische Beratung."
+        },
+        {
+          "type": "p",
+          "text": "Du kannst SkillQuest auch als Gast nutzen, ohne ein Konto anzulegen. Gastdaten bleiben auf deinem Gerät gespeichert und können verloren gehen, wenn du die App löschst. Freunde, Ranglisten, die Familienfunktion und die Synchronisierung zwischen Geräten funktionieren nur mit einem Konto."
+        }
+      ]
+    },
+    {
+      "title": "Dein Konto",
+      "blocks": [
+        {
+          "type": "ul",
+          "items": [
+            {
+              "text": "Du erstellst ein Konto mit deiner E-Mail-Adresse, über Google oder Apple, je nach Gerät."
+            },
+            {
+              "text": "Gib korrekte Informationen an. Ein Konto ist für eine Person bestimmt."
+            },
+            {
+              "text": "Bewahre deine Anmeldedaten sicher auf und gib sie nicht weiter. Du bist dafür verantwortlich, was mit deinem Konto passiert. Wenn du einen Missbrauch vermutest, schreib uns sofort eine E-Mail."
+            },
+            {
+              "text": "Du kannst dein Konto jederzeit löschen: in der App unter Einstellungen > Konto löschen (du hast 7 Tage Zeit, es dir anders zu überlegen) oder über hello@skill-quest.app, falls du dich nicht mehr einloggen kannst. Siehe auch <a href=\"/delete-account\">skill-quest.app/delete-account</a>."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Alter, Kinder und Eltern",
+      "blocks": [
+        {
+          "type": "ul",
+          "items": [
+            {
+              "text": "Um selbst ein Konto zu erstellen, musst du alt genug sein, um in deinem Land selbst in die Nutzung eines Online-Dienstes einzuwilligen. Dieses Alter liegt je nach Land zwischen 13 und 16 Jahren (in den Niederlanden sind es 16 Jahre)."
+            },
+            {
+              "text": "Wenn du jünger bist, darfst du ein Konto nur mit der Erlaubnis eines Elternteils oder Erziehungsberechtigten nutzen. Ein Kinderkonto funktioniert erst, nachdem diese Erlaubnis erteilt wurde. Ein Elternteil kann die Erlaubnis jederzeit widerrufen."
+            },
+            {
+              "text": "Jeder, der seine Einwilligung erteilt, erklärt, Elternteil oder Erziehungsberechtigter des Kindes zu sein und ist für die Nutzung von SkillQuest durch das Kind verantwortlich."
+            },
+            {
+              "text": "Ein Kind kann kein Abonnement abschließen. Käufe werden von einem Erwachsenen getätigt."
+            },
+            {
+              "text": "Sollten wir feststellen, dass ein Kind ein Konto ohne die erforderliche Erlaubnis hat, können wir dieses Konto einschränken oder löschen. Was mit den Daten geschieht, erfährst du in der <a href=\"/privacy\">Datenschutzerklärung</a>."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Familie",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Mit einem Familienabonnement kann der Eigentümer eine Familie mit bis zu sechs Mitgliedern gründen, den Eigentümer selbst eingeschlossen. Die Mitglieder haben eine Rolle: Eigentümer, Elternteil, Kind oder Mitglied. Du lädst jemanden über einen Link ein; der Eigentümer genehmigt die Beitrittsanfragen."
+        },
+        {
+          "type": "p",
+          "text": "Eltern sehen den Fortschritt ihres Kindes nur in dem Umfang, wie es die Berechtigungen und das Abonnement zulassen; in der <a href=\"/privacy\">Datenschutzerklärung</a> wird erklärt, was sie sehen. Jemandem die Rolle „Kind“ zuzuweisen, ist nur mit dessen Einverständnis möglich. Der Eigentümer ist dafür verantwortlich, wen er einlädt."
+        },
+        {
+          "type": "p",
+          "text": "Wenn das Familienabonnement endet, können die Funktionen, für die ein kostenpflichtiges Abonnement erforderlich ist, möglicherweise nicht mehr genutzt werden."
+        }
+      ]
+    },
+    {
+      "title": "Nutzungsregeln",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Nutze SkillQuest fair und anständig. Folgendes ist nicht erlaubt:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            {
+              "text": "SkillQuest, anderen Nutzern oder unseren Systemen Schaden zuzufügen oder zu versuchen, dir unbefugten Zugriff zu verschaffen;"
+            },
+            {
+              "text": "die App zu zerlegen, zu kopieren oder automatisch Daten daraus zu sammeln, außer soweit dies gesetzlich zulässig ist;"
+            },
+            {
+              "text": "das Manipulieren von XP, Streaks oder Ranglisten, zum Beispiel mit Bots, automatischen Timern oder mehreren Konten;"
+            },
+            {
+              "text": "die Wahl eines Namens oder Profils, das beleidigend, bedrohlich, sexuell anzüglich oder irreführend ist oder das eine andere Person nachahmt;"
+            },
+            {
+              "text": "die Funktionen für Freunde und Herausforderungen für Werbung oder Spam zu nutzen;"
+            },
+            {
+              "text": "Handlungen, die gegen das Gesetz verstoßen."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "XP werden auf unserem Server anhand deiner Sitzungen berechnet. Wir behalten uns vor, unrechtmäßig erworbene XP zu korrigieren. Wer sich nicht an die Regeln hält, kann den Zugriff auf Teile von SkillQuest oder sein Konto verlieren (siehe <a href=\"#s-12\">Abschnitt 12</a>)."
+        }
+      ]
+    },
+    {
+      "title": "Premium und Bezahlung",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "SkillQuest ist kostenlos nutzbar. Premium ist ein kostenpflichtiges Abonnement mit zusätzlichen Funktionen. Du wählst zwischen Premium (monatlich oder jährlich) und Familie."
+        },
+        {
+          "type": "ul",
+          "items": [
+            {
+              "lead": "Über den Store.",
+              "text": "Du erwirbst ein Abonnement bei Apple (App Store) oder Google (Play Store), nicht bei uns. Du siehst den Preis, die Laufzeit, Steuern und eventuelle kostenlose Testphasen im Store, bevor du kaufst. Du bezahlst an Apple oder Google. Um dein Abonnement mit deinem SkillQuest-Konto zu verknüpfen, nutzen wir den Dienst RevenueCat."
+            },
+            {
+              "lead": "Automatische Verlängerung.",
+              "text": "Ein Abonnement verlängert sich automatisch um denselben Zeitraum und zum gleichen Preis, es sei denn, du kündigst es mindestens 24 Stunden vor Ablauf des aktuellen Zeitraums."
+            },
+            {
+              "lead": "Kündigung.",
+              "text": "Du kündigst im Store: bei Apple in deinen Apple-ID-Einstellungen (Abonnements), bei Google in Google Play (Zahlungen und Abos). Das Löschen deines Kontos oder der App führt nicht zur Kündigung eines Abonnements. Nach der Kündigung behältst du den Premium-Zugang bis zum Ende des Zeitraums, für den du bereits bezahlt hast."
+            },
+            {
+              "lead": "Kostenlose Testphase.",
+              "text": "Wenn ein Abonnement eine kostenlose Testphase beinhaltet, wird dies im Store vor dem Kauf angezeigt. Wenn du nicht vor Ablauf der Testphase kündigst, beginnt das kostenpflichtige Abonnement automatisch. Der Store entscheidet, wer für eine Testphase berechtigt ist."
+            },
+            {
+              "lead": "Preisänderungen.",
+              "text": "Sollte sich der Preis ändern, wirst du vom Store darüber informiert. Du kannst dann kündigen, bevor der neue Preis in Kraft tritt."
+            },
+            {
+              "lead": "Rückerstattungen.",
+              "text": "Zahlungen und Rückerstattungen laufen über Apple oder Google. Beantrage eine Rückerstattung in dem Store, in dem du den Kauf getätigt hast, oder schreib uns eine E-Mail; wir helfen dir gerne weiter, soweit es uns möglich ist. Deine gesetzlichen Verbraucherrechte bleiben bestehen."
+            },
+            {
+              "lead": "Apple.",
+              "text": "Für iPhone und iPad gilt zusätzlich Apples standardmäßige <a href=\"https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\">Endbenutzer-Lizenzvereinbarung für lizenzierte Anwendungen</a>. Apple ist nicht Vertragspartei dieser Bedingungen."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Deine Inhalte und Daten",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Was du eingibst, wie zum Beispiel die Namen deiner Fähigkeiten, deine Ziele, deinen Benutzernamen und dein Profilbild, bleibt dein Eigentum. Du gibst uns das Recht, diese Daten zu speichern und sie dir sowie – je nachdem, wie du oder deine Familie es einrichtet – auch anderen anzuzeigen, und zwar ausschließlich, damit SkillQuest funktioniert."
+        },
+        {
+          "type": "p",
+          "text": "Wie wir mit deinen personenbezogenen Daten umgehen, ist in der <a href=\"/privacy\">Datenschutzerklärung</a> beschrieben. Du kannst deine Daten wie in <a href=\"#s-3\">Abschnitt 3</a> beschrieben löschen lassen."
+        }
+      ]
+    },
+    {
+      "title": "Unsere Rechte",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "SkillQuest, der Name, die Logos, das Design, die Texte und der Code gehören uns oder unseren Lizenzgebern. Du erhältst ein persönliches, nicht exklusives und nicht übertragbares Recht, die App für deinen eigenen, nicht kommerziellen Gebrauch zu nutzen, solange du diese Bedingungen einhältst. Teile, die unter einer Open-Source-Lizenz stehen, unterliegen ihrer eigenen Lizenz."
+        },
+        {
+          "type": "p",
+          "text": "Wenn du uns Feedback oder eine Idee schickst, dürfen wir diese ohne Vergütung nutzen."
+        }
+      ]
+    },
+    {
+      "title": "Verfügbarkeit und Änderungen",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Wir geben unser Bestes, aber SkillQuest wird so bereitgestellt, wie es ist. Wir versprechen nicht, dass die App immer verfügbar oder fehlerfrei ist. Wir können Wartungsarbeiten durchführen, Funktionen ändern oder hinzufügen und eine neuere Version der App erfordern."
+        },
+        {
+          "type": "p",
+          "text": "Sollte eine von dir gekaufte kostenpflichtige Funktion vor Ablauf deiner Zahlungsperiode nicht mehr verfügbar sein, werden wir gemeinsam mit dir eine angemessene Lösung finden, zum Beispiel eine Rückerstattung des verbleibenden Betrags. Deine gesetzlichen Verbraucherrechte bleiben davon unberührt."
+        }
+      ]
+    },
+    {
+      "title": "Haftung",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Keine Bestimmung dieser Bedingungen schränkt unsere Haftung für Vorsatz oder grobe Fahrlässigkeit, für Tod oder Körperverletzung oder für alles, was das Gesetz uns nicht zu beschränken erlaubt, ein."
+        },
+        {
+          "type": "p",
+          "text": "Ansonsten haften wir nur für direkte Schäden und höchstens bis zu dem Betrag, den du in den zwölf Monaten vor dem Ereignis für Premium bezahlt hast. Wir haften nicht für den Verlust von Daten, die sich ausschließlich auf deinem Gerät befanden, zum Beispiel wenn du die App ohne Konto löschst."
+        }
+      ]
+    },
+    {
+      "title": "Beendigung deiner Nutzung",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Du kannst die Nutzung jederzeit beenden, indem du dein Konto löschst (siehe <a href=\"#s-3\">Abschnitt 3</a>). Ein Abonnement kündigst du separat im Store (siehe <a href=\"#s-7\">Abschnitt 7</a>)."
+        },
+        {
+          "type": "p",
+          "text": "Wir können deinen Zugang einschränken oder dein Konto kündigen, falls ein schwerwiegender oder wiederholter Verstoß gegen diese Bedingungen oder gegen das Gesetz vorliegt oder wenn wir SkillQuest einstellen. Soweit möglich, warnen wir dich vorher und erklären dir, warum. Was danach mit deinen Daten geschieht, ist in der <a href=\"/privacy\">Datenschutzerklärung</a> beschrieben. Alles, was weiterhin gelten soll, wie beispielsweise unsere Rechte und unsere Haftung, bleibt in Kraft."
+        }
+      ]
+    },
+    {
+      "title": "Anwendbares Recht und Beschwerden",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Diese Nutzungsbedingungen unterliegen niederländischem Recht. Wenn du als Verbraucher in einem anderen Land lebst, gelten weiterhin die zwingenden Verbraucherschutzbestimmungen dieses Landes, und du kannst dich auch an ein Gericht in diesem Land wenden."
+        },
+        {
+          "type": "p",
+          "text": "Wenn du eine Beschwerde hast, schreib uns bitte zuerst eine E-Mail an hello@skill-quest.app. Wir antworten innerhalb von 5 Werktagen."
+        }
+      ]
+    },
+    {
+      "title": "Änderungen an diesen Bedingungen",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Wir können diese Bedingungen ändern, zum Beispiel wegen neuer Funktionen oder neuer Vorschriften. Bei wesentlichen Änderungen informieren wir dich mindestens 30 Tage im Voraus, entweder in der App oder per E-Mail. Wenn du damit nicht einverstanden bist, kannst du die Nutzung beenden und dein Konto löschen. Wenn du SkillQuest nach dem Datum des Inkrafttretens weiterhin nutzt, gelten für dich die neuen Bedingungen."
+        }
+      ]
+    },
+    {
+      "title": "Kontakt",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Hast du Fragen zu diesen Bedingungen? Schick eine E-Mail an hello@skill-quest.app."
+        }
+      ]
+    }
+  ]
+}

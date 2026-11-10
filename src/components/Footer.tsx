@@ -137,6 +137,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/terms" className="hover:text-white">
+                  {copy.footer.terms}
+                </Link>
+              </li>
+              <li>
                 <Link href="/community-guidelines" className="hover:text-white">
                   {communityGuidelines[locale].footerLabel}
                 </Link>
