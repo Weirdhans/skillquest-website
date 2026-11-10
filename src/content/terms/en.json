@@ -1,0 +1,282 @@
+{
+  "locale": "en",
+  "updated": "2026-11-10",
+  "lastUpdatedLabel": "Last updated",
+  "heading": "Terms of Service",
+  "metaTitle": "Terms of Service | SkillQuest",
+  "metaDescription": "The terms for using the SkillQuest app, the website and Premium subscriptions.",
+  "sections": [
+    {
+      "title": "Who we are and what these terms cover",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "SkillQuest is offered by Johannes Willem Vlasblom, sole proprietorship (eenmanszaak), trading as SkillQuest and Zenith Reborn (Dutch Chamber of Commerce (KvK) number 42188670, the Netherlands). You can reach us at hello@skill-quest.app."
+        },
+        {
+          "type": "p",
+          "text": "These terms apply to your use of the SkillQuest app (iPhone, iPad, Android and the web version), the website skill-quest.app and our Premium subscriptions. By creating an account or using the app, you agree to these terms. If you do not agree, please do not use SkillQuest."
+        },
+        {
+          "type": "p",
+          "text": "How we handle personal data is described in our <a href=\"/privacy\">Privacy Policy</a>. The rules for friends and challenges are in our <a href=\"/community-guidelines\">Community Guidelines</a>. Both are part of these terms."
+        }
+      ]
+    },
+    {
+      "title": "What SkillQuest is",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "SkillQuest is an app for tracking practice time with a timer, earning XP, seeing your progress, setting goals and, if you want, using friends, challenges, rankings and the family feature."
+        },
+        {
+          "type": "p",
+          "text": "SkillQuest is a tool to help you stay motivated. We do not promise results, such as better grades or a certain level. SkillQuest does not block apps or limit screen time. It is not medical, therapeutic or educational advice."
+        },
+        {
+          "type": "p",
+          "text": "You can also use SkillQuest as a guest, without an account. Guest data stays on your device and can be lost if you delete the app. Friends, rankings, the family feature and syncing between devices only work with an account."
+        }
+      ]
+    },
+    {
+      "title": "Your account",
+      "blocks": [
+        {
+          "type": "ul",
+          "items": [
+            {
+              "text": "You create an account with email, Google or Apple, depending on your device."
+            },
+            {
+              "text": "Give correct information. An account is for one person."
+            },
+            {
+              "text": "Keep your login details safe and do not share them. You are responsible for what happens with your account. If you suspect misuse, email us right away."
+            },
+            {
+              "text": "You can delete your account at any time: in the app under Settings > Delete account (you have 7 days to change your mind), or via hello@skill-quest.app if you can no longer log in. See also <a href=\"/delete-account\">skill-quest.app/delete-account</a>."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Age, children and parents",
+      "blocks": [
+        {
+          "type": "ul",
+          "items": [
+            {
+              "text": "To create an account yourself, you must be old enough to consent to an online service in your own country. That age is between 13 and 16, depending on the country (in the Netherlands it is 16)."
+            },
+            {
+              "text": "If you are younger, you can only use an account with the permission of a parent or guardian. A child account works only after that permission is given. A parent can withdraw permission at any time."
+            },
+            {
+              "text": "Anyone who gives permission declares to be the child's parent or guardian and is responsible for the child's use of SkillQuest."
+            },
+            {
+              "text": "A child cannot buy a subscription. Purchases are made by an adult."
+            },
+            {
+              "text": "If we find that a child has an account without the permission that is required, we may restrict or delete that account. See the <a href=\"/privacy\">Privacy Policy</a> for what happens to the data."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Family",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "With a Family subscription, the owner can create a family of up to six members, the owner included. Members have a role: owner, parent, child or member. You invite someone with a link; the owner approves requests to join."
+        },
+        {
+          "type": "p",
+          "text": "Parents only see a child's progress as far as the permission and the subscription allow; the <a href=\"/privacy\">Privacy Policy</a> explains what they see. Giving someone the \"child\" role is only possible with that person's agreement. The owner is responsible for whom they invite."
+        },
+        {
+          "type": "p",
+          "text": "If the Family subscription ends, the features that require a paid subscription may stop."
+        }
+      ]
+    },
+    {
+      "title": "Rules of use",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Use SkillQuest fairly and decently. The following is not allowed:"
+        },
+        {
+          "type": "ul",
+          "items": [
+            {
+              "text": "harming SkillQuest, other users or our systems, or trying to gain unauthorized access;"
+            },
+            {
+              "text": "taking the app apart, copying it or collecting data from it automatically, except as far as the law allows;"
+            },
+            {
+              "text": "manipulating XP, streaks or rankings, for example with bots, automatic timers or multiple accounts;"
+            },
+            {
+              "text": "choosing a name or profile that is offensive, threatening, sexual or misleading, or that imitates someone else;"
+            },
+            {
+              "text": "using friends and challenges for advertising or spam;"
+            },
+            {
+              "text": "doing anything that breaks the law."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "XP is calculated on our server from your sessions. We may correct XP that was obtained unfairly. Anyone who does not follow the rules may lose access to parts of SkillQuest or their account (see <a href=\"#s-12\">section 12</a>)."
+        }
+      ]
+    },
+    {
+      "title": "Premium and payment",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "SkillQuest is free to use. Premium is a paid subscription with extra features. You choose between Premium (monthly or yearly) and Family."
+        },
+        {
+          "type": "ul",
+          "items": [
+            {
+              "lead": "Through the store.",
+              "text": "You buy a subscription from Apple (App Store) or Google (Play Store), not from us. You see the price, term and taxes in the store before you buy. You pay Apple or Google. To link your subscription to your SkillQuest account, we use the service RevenueCat."
+            },
+            {
+              "lead": "Automatic renewal.",
+              "text": "A subscription renews itself for the same period and price unless you cancel at least 24 hours before the end of the current period."
+            },
+            {
+              "lead": "Cancelling.",
+              "text": "You cancel in the store: with Apple in your Apple ID settings (Subscriptions), with Google in Google Play (Payments & subscriptions). Deleting your account or the app does not cancel a subscription. After you cancel, you keep Premium until the end of the period you already paid for."
+            },
+            {
+              "lead": "Price changes.",
+              "text": "If the price changes, the store tells you. You can then cancel before the new price takes effect."
+            },
+            {
+              "lead": "Refunds.",
+              "text": "Payments and refunds go through Apple or Google. Ask for a refund in the store where you bought, or email us; we will help where we can. Your statutory consumer rights remain in place."
+            },
+            {
+              "lead": "Apple.",
+              "text": "For iPhone and iPad, Apple's standard <a href=\"https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\">Licensed Application End User License Agreement</a> also applies. Apple is not a party to these terms."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Your content and data",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "What you enter, such as the names of your skills, your goals, your username and your profile picture, remains yours. You give us the right to store it and to show it to you and, as you or your family set it up, to others, solely to make SkillQuest work."
+        },
+        {
+          "type": "p",
+          "text": "How we handle your personal data is described in the <a href=\"/privacy\">Privacy Policy</a>. You can have your data deleted as described in <a href=\"#s-3\">section 3</a>."
+        }
+      ]
+    },
+    {
+      "title": "Our rights",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "SkillQuest, the name, the logos, the design, the texts and the code belong to us or our licensors. You get a personal, non-exclusive and non-transferable right to use the app for your own non-commercial use, as long as you follow these terms. Parts under an open-source license are covered by their own license."
+        },
+        {
+          "type": "p",
+          "text": "If you send us feedback or an idea, we may use it without payment."
+        }
+      ]
+    },
+    {
+      "title": "Availability and changes",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "We do our best, but SkillQuest is provided as it is. We do not promise that the app is always available or error-free. We may carry out maintenance, change or add features and require a newer version of the app."
+        },
+        {
+          "type": "p",
+          "text": "If a paid feature you bought stops before your paid period ends, we will work with you on a reasonable solution, for example a refund of the remaining part. Your statutory consumer rights remain in place."
+        }
+      ]
+    },
+    {
+      "title": "Liability",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Nothing in these terms limits our liability for intent or gross negligence, for death, personal injury or damage to health, or for anything else the law does not allow us to limit, for example under privacy law or product liability law. This section also does not limit your statutory rights if SkillQuest or Premium does not work as it should, such as repair, a price reduction or a refund."
+        },
+        {
+          "type": "p",
+          "text": "In other cases, we are only liable for damage that we could reasonably foresee. SkillQuest is for personal use, so we are not liable for business losses, such as lost income or profit."
+        },
+        {
+          "type": "p",
+          "text": "If you use SkillQuest as a guest, or have sessions that have not been synced yet, that data is only on your device. If you delete the app, reset your device or lose it, we cannot get that data back. We are not liable for that, unless the loss is caused by a fault in SkillQuest."
+        }
+      ]
+    },
+    {
+      "title": "Ending your use",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "You can stop at any time by deleting your account (see <a href=\"#s-3\">section 3</a>). You cancel a subscription separately in the store (see <a href=\"#s-7\">section 7</a>)."
+        },
+        {
+          "type": "p",
+          "text": "We may restrict your access or end your account in case of a serious or repeated breach of these terms or of the law, or if we discontinue SkillQuest. Where possible, we warn you first and explain why. What happens to your data afterwards is described in the <a href=\"/privacy\">Privacy Policy</a>. Anything that is meant to continue, such as our rights and liability, stays in force."
+        }
+      ]
+    },
+    {
+      "title": "Governing law and complaints",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "These terms are governed by Dutch law. If you live in another country as a consumer, the mandatory protection of that country still applies and you can also go to a court in that country."
+        },
+        {
+          "type": "p",
+          "text": "If you have a complaint, please email us first at hello@skill-quest.app. We respond within 5 business days."
+        }
+      ]
+    },
+    {
+      "title": "Changes to these terms",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "We may change these terms, for example because of new features or new rules. For material changes, we will tell you at least 30 days in advance, in the app or by email. If you do not agree, you can stop and delete your account. If you keep using SkillQuest after the effective date, the new terms apply to you."
+        }
+      ]
+    },
+    {
+      "title": "Contact",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Questions about these terms? Email hello@skill-quest.app."
+        }
+      ]
+    }
+  ]
+}

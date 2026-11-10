@@ -104,6 +104,18 @@ for (const locale of locales) {
     assert.ok(html.includes('id="faq"'));
     assertLanguageMetadata(response, html, locale, '/support');
   });
+
+  test(`${locale} terms page is a working, indexable, self-canonical page`, async () => {
+    const response = await fetch(`${origin}/${locale}/terms`, {redirect: 'manual'});
+    const html = await response.text();
+
+    assert.equal(response.status, 200);
+    assert.match(response.headers.get('content-type') ?? '', /^text\/html/);
+    assert.ok(html.includes(`rel="canonical" href="https://www.skill-quest.app/${locale}/terms"`));
+    assert.ok(html.includes('name="robots" content="index, follow"'));
+    assertLanguageMetadata(response, html, locale, '/terms');
+    assert.equal(new Set(html.match(/id="s-\d+"/g)).size, 15, 'fifteen sections');
+  });
 }
 
 test('compact family image variants work and reduce bytes without lowering quality', async (t) => {
