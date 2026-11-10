@@ -1,6 +1,6 @@
 {
   "locale": "fr",
-  "updated": "2026-11-09",
+  "updated": "2026-11-10",
   "heading": "Conditions d’utilisation",
   "metaTitle": "Conditions d’utilisation | SkillQuest",
   "metaDescription": "Les conditions d’utilisation de l’appli SkillQuest, du site web et des abonnements Premium.",
@@ -222,11 +222,15 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Aucune disposition des présentes conditions ne limite notre responsabilité en cas de faute intentionnelle ou de négligence grave, en cas de décès ou de préjudice corporel, ou pour tout autre cas que la loi ne nous autorise pas à limiter."
+          "text": "Aucune disposition des présentes conditions ne limite notre responsabilité en cas de faute intentionnelle ou de faute lourde, en cas de décès, de blessure corporelle ou d’atteinte à la santé, ni pour tout autre cas que la loi ne nous autorise pas à limiter, par exemple en vertu de la législation sur la protection des données ou sur la responsabilité du fait des produits. Cette section ne limite pas non plus tes droits légaux si SkillQuest ou Premium ne fonctionne pas comme prévu, comme le droit à la réparation, à une réduction de prix ou à un remboursement."
         },
         {
           "type": "p",
-          "text": "Sinon, notre responsabilité se limite aux dommages directs, à concurrence du montant que tu as payé pour l’abonnement Premium au cours des douze mois précédant l’événement. Nous ne sommes pas responsables de la perte de données qui se trouvaient uniquement sur ton appareil, par exemple si tu supprimes l’appli sans avoir de compte."
+          "text": "Dans les autres cas, nous ne sommes responsables que des dommages que nous pouvions raisonnablement prévoir. SkillQuest est destiné à un usage personnel ; nous ne sommes donc pas responsables des pertes professionnelles, telles que la perte de revenus ou de bénéfices."
+        },
+        {
+          "type": "p",
+          "text": "Si tu utilises SkillQuest en tant qu’invité, ou si certaines de tes sessions n’ont pas encore été synchronisées, ces données ne se trouvent que sur ton appareil. Si tu supprimes l’appli, réinitialises ton appareil ou le perds, nous ne pourrons pas récupérer ces données. Nous ne sommes pas responsables de cette perte, sauf si elle est due à un dysfonctionnement de SkillQuest."
         }
       ]
     },

@@ -1,6 +1,6 @@
 {
   "locale": "de",
-  "updated": "2026-11-09",
+  "updated": "2026-11-10",
   "heading": "Nutzungsbedingungen",
   "metaTitle": "Nutzungsbedingungen | SkillQuest",
   "metaDescription": "Die Nutzungsbedingungen für die SkillQuest-App, die Website und die Premium-Abonnements.",
@@ -222,11 +222,15 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Keine Bestimmung dieser Bedingungen schränkt unsere Haftung für Vorsatz oder grobe Fahrlässigkeit, für Tod oder Körperverletzung oder für alles, was das Gesetz uns nicht zu beschränken erlaubt, ein."
+          "text": "Nichts in diesen Bedingungen schränkt unsere Haftung für Vorsatz oder grobe Fahrlässigkeit, für Tod, Körperverletzung oder Gesundheitsschäden oder für alles andere ein, was wir laut Gesetz nicht beschränken dürfen, zum Beispiel nach dem Datenschutzrecht oder dem Produkthaftungsrecht. Dieser Abschnitt schränkt auch deine gesetzlichen Rechte nicht ein, wenn SkillQuest oder Premium nicht so funktioniert, wie es sollte, etwa dein Recht auf Nachbesserung, Preisminderung oder Rückerstattung."
         },
         {
           "type": "p",
-          "text": "Ansonsten haften wir nur für direkte Schäden und höchstens bis zu dem Betrag, den du in den zwölf Monaten vor dem Ereignis für Premium bezahlt hast. Wir haften nicht für den Verlust von Daten, die sich ausschließlich auf deinem Gerät befanden, zum Beispiel wenn du die App ohne Konto löschst."
+          "text": "In allen anderen Fällen haften wir nur für Schäden, die wir vernünftigerweise vorhersehen konnten. SkillQuest ist für den privaten Gebrauch bestimmt, daher haften wir nicht für geschäftliche Verluste wie entgangene Einnahmen oder entgangenen Gewinn."
+        },
+        {
+          "type": "p",
+          "text": "Wenn du SkillQuest als Gast nutzt oder Sitzungen hast, die noch nicht synchronisiert wurden, befinden sich diese Daten ausschließlich auf deinem Gerät. Wenn du die App löschst, dein Gerät zurücksetzt oder es verlierst, können wir diese Daten nicht wiederherstellen. Wir haften dafür nicht, es sei denn, der Verlust wurde durch einen Fehler in SkillQuest verursacht."
         }
       ]
     },

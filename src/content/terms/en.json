@@ -1,6 +1,6 @@
 {
   "locale": "en",
-  "updated": "2026-11-09",
+  "updated": "2026-11-10",
   "lastUpdatedLabel": "Last updated",
   "heading": "Terms of Service",
   "metaTitle": "Terms of Service | SkillQuest",
@@ -222,11 +222,15 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Nothing in these terms limits our liability for intent or deliberate recklessness, for death or personal injury, or for anything the law does not allow us to limit."
+          "text": "Nothing in these terms limits our liability for intent or gross negligence, for death, personal injury or damage to health, or for anything else the law does not allow us to limit, for example under privacy law or product liability law. This section also does not limit your statutory rights if SkillQuest or Premium does not work as it should, such as repair, a price reduction or a refund."
         },
         {
           "type": "p",
-          "text": "Otherwise we are only liable for direct damage, and up to the amount you paid for Premium in the twelve months before the event. We are not liable for the loss of data that was only on your device, for example if you delete the app without an account."
+          "text": "In other cases, we are only liable for damage that we could reasonably foresee. SkillQuest is for personal use, so we are not liable for business losses, such as lost income or profit."
+        },
+        {
+          "type": "p",
+          "text": "If you use SkillQuest as a guest, or have sessions that have not been synced yet, that data is only on your device. If you delete the app, reset your device or lose it, we cannot get that data back. We are not liable for that, unless the loss is caused by a fault in SkillQuest."
         }
       ]
     },

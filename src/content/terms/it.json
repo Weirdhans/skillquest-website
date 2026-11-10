@@ -1,6 +1,6 @@
 {
   "locale": "it",
-  "updated": "2026-11-09",
+  "updated": "2026-11-10",
   "heading": "Termini di servizio",
   "metaTitle": "Termini di servizio | SkillQuest",
   "metaDescription": "I termini di servizio dell’app SkillQuest, del sito web e degli abbonamenti Premium.",
@@ -222,11 +222,15 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Nulla in queste condizioni limita la nostra responsabilità in caso di dolo o colpa grave, in caso di morte o lesioni personali, o per qualsiasi cosa che la legge non ci consenta di limitare."
+          "text": "Nulla in queste condizioni limita la nostra responsabilità in caso di dolo o colpa grave, in caso di morte, lesioni personali o danni alla salute, né per qualsiasi altra cosa che la legge non ci consenta di limitare, ad esempio ai sensi della normativa sulla privacy o sulla responsabilità per danno da prodotti difettosi. Questa sezione non limita inoltre i tuoi diritti legali se SkillQuest o Premium non funzionano come dovrebbero, come il diritto alla riparazione, alla riduzione del prezzo o al rimborso."
         },
         {
           "type": "p",
-          "text": "In caso contrario, siamo responsabili solo per i danni diretti e solo fino all’importo che hai pagato per l’abbonamento Premium nei dodici mesi precedenti l’evento. Non siamo responsabili per la perdita di dati presenti esclusivamente sul tuo dispositivo, ad esempio se elimini l’app senza avere un account."
+          "text": "In altri casi, siamo responsabili solo per i danni che avremmo potuto ragionevolmente prevedere. SkillQuest è destinata all’uso personale, pertanto non siamo responsabili per perdite commerciali, quali i mancati guadagni o profitti."
+        },
+        {
+          "type": "p",
+          "text": "Se usi SkillQuest come ospite o hai sessioni che non sono ancora state sincronizzate, quei dati sono presenti solo sul tuo dispositivo. Se elimini l’app, ripristini il dispositivo o lo perdi, non potremo recuperare quei dati. Non siamo responsabili di ciò, a meno che la perdita non sia causata da un malfunzionamento di SkillQuest."
         }
       ]
     },

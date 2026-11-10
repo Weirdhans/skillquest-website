@@ -1,6 +1,6 @@
 {
   "locale": "nl",
-  "updated": "2026-11-09",
+  "updated": "2026-11-10",
   "lastUpdatedLabel": "Laatst bijgewerkt",
   "heading": "Gebruiksvoorwaarden",
   "metaTitle": "Gebruiksvoorwaarden | SkillQuest",
@@ -222,11 +222,15 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Niets in deze voorwaarden beperkt onze aansprakelijkheid voor opzet of bewuste roekeloosheid, voor overlijden of lichamelijk letsel, of voor wat de wet niet toestaat te beperken."
+          "text": "Niets in deze voorwaarden beperkt onze aansprakelijkheid voor opzet of grove nalatigheid, voor overlijden, lichamelijk letsel of schade aan je gezondheid, of voor iets anders wat de wet ons niet toestaat te beperken, bijvoorbeeld op grond van de privacywetgeving of de regels voor productaansprakelijkheid. Deze sectie beperkt ook je wettelijke rechten niet als SkillQuest of Premium niet goed werkt, zoals herstel, prijsverlaging of terugbetaling."
         },
         {
           "type": "p",
-          "text": "Voor het overige zijn we alleen aansprakelijk voor directe schade, en tot maximaal het bedrag dat je in de twaalf maanden voor de gebeurtenis aan Premium hebt betaald. We zijn niet aansprakelijk voor het verlies van gegevens die alleen op je toestel stonden, bijvoorbeeld als je zonder account de app verwijdert."
+          "text": "In andere gevallen zijn we alleen aansprakelijk voor schade die we redelijkerwijs konden voorzien. SkillQuest is voor persoonlijk gebruik; voor zakelijke schade, zoals gemiste inkomsten of winst, zijn we niet aansprakelijk."
+        },
+        {
+          "type": "p",
+          "text": "Gebruik je SkillQuest als gast, of heb je sessies die nog niet zijn gesynchroniseerd, dan staan die gegevens alleen op je toestel. Verwijder je de app, zet je je toestel terug naar de fabrieksinstellingen of raak je het kwijt, dan kunnen wij die gegevens niet terughalen. Daarvoor zijn we niet aansprakelijk, tenzij het verlies komt door een fout in SkillQuest."
         }
       ]
     },

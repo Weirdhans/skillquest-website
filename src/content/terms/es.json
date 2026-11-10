@@ -1,6 +1,6 @@
 {
   "locale": "es",
-  "updated": "2026-11-09",
+  "updated": "2026-11-10",
   "heading": "Condiciones de servicio",
   "metaTitle": "Condiciones de servicio | SkillQuest",
   "metaDescription": "Las condiciones de servicio de la app SkillQuest, la página web y las suscripciones Premium.",
@@ -222,11 +222,15 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Nada de lo dispuesto en estas condiciones limita nuestra responsabilidad por dolo o negligencia grave, por muerte o lesiones personales, ni por cualquier otra cosa que la ley no nos permita limitar."
+          "text": "Nada de lo dispuesto en estas condiciones limita nuestra responsabilidad por dolo o negligencia grave, por muerte, lesiones personales o daños a la salud, ni por cualquier otra cosa que la ley no nos permita limitar, por ejemplo, en virtud de la normativa sobre privacidad o sobre responsabilidad por productos defectuosos. Esta sección tampoco limita tus derechos legales si SkillQuest o Premium no funcionan como deberían, como el derecho a la reparación, a una rebaja del precio o a un reembolso."
         },
         {
           "type": "p",
-          "text": "En cualquier otro caso, solo nos hacemos responsables de los daños directos, y hasta el importe que hayas pagado por la suscripción Premium en los doce meses anteriores al suceso. No nos hacemos responsables de la pérdida de datos que solo estuvieran en tu dispositivo, por ejemplo, si borras la app sin tener una cuenta."
+          "text": "En otros casos, solo respondemos de los daños que pudiéramos prever razonablemente. SkillQuest es para uso personal, así que no respondemos de pérdidas empresariales, como la pérdida de ingresos o beneficios."
+        },
+        {
+          "type": "p",
+          "text": "Si usas SkillQuest como invitado o tienes sesiones que aún no se han sincronizado, esos datos solo están en tu dispositivo. Si borras la app, restableces tu dispositivo o lo pierdes, no podremos recuperar esos datos. No respondemos de ello, a menos que la pérdida se deba a un fallo de SkillQuest."
         }
       ]
     },
