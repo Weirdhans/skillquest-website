@@ -1,6 +1,6 @@
 {
   "locale": "es",
-  "updated": "2026-11-10",
+  "updated": "2026-11-11",
   "heading": "Condiciones de servicio",
   "metaTitle": "Condiciones de servicio | SkillQuest",
   "metaDescription": "Las condiciones de servicio de la app SkillQuest, la página web y las suscripciones Premium.",
@@ -209,11 +209,15 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Hacemos todo lo posible, pero SkillQuest se ofrece tal y como está. No prometemos que la app esté siempre disponible ni que esté libre de errores. Podemos realizar tareas de mantenimiento, cambiar o añadir funciones y requerir una versión más reciente de la app."
+          "text": "Hacemos todo lo posible para que SkillQuest funcione bien, pero no prometemos que la app esté siempre disponible ni que esté libre de errores. Podemos realizar tareas de mantenimiento y requerir una versión más reciente de la app."
         },
         {
           "type": "p",
-          "text": "Si una función de pago que hayas comprado deja de funcionar antes de que termine el periodo de pago, buscaremos contigo una solución razonable, como por ejemplo un reembolso de la parte restante. Tus derechos legales como consumidor siguen vigentes."
+          "text": "Podemos cambiar, añadir o quitar funciones cuando haya un buen motivo: para mejorar la app, para mantenerla segura, por razones técnicas o porque una ley o una tienda (Apple o Google) lo exija. Si tienes una suscripción de pago y un cambio hace que Premium sea claramente peor para ti, te lo comunicaremos con antelación. Entonces podrás cancelarla sin coste en un plazo de 30 días desde nuestro aviso o, si es posterior, desde el cambio."
+        },
+        {
+          "type": "p",
+          "text": "En estos casos, y si una función de pago que hayas comprado deja de funcionar antes de que termine tu periodo de pago, recuperas la parte de tu periodo de pago que ya no puedas utilizar. Lo hacemos a través de la tienda en la que has hecho la compra. Si eso no es posible, acordamos contigo otra solución, por ejemplo Premium gratis durante el tiempo restante. Tus derechos legales como consumidor siguen vigentes."
         }
       ]
     },
@@ -243,7 +247,11 @@
         },
         {
           "type": "p",
-          "text": "Podemos restringir tu acceso o cancelar tu cuenta en caso de incumplimiento grave o reiterado de estas condiciones o de la ley, o si dejamos de ofrecer SkillQuest. Siempre que sea posible, te avisaremos primero y te explicaremos el motivo. Lo que ocurre con tus datos después se describe en la <a href=\"/privacy\">Política de privacidad</a>. Todo lo que esté destinado a seguir vigente, como nuestros derechos y nuestra responsabilidad, seguirá en vigor."
+          "text": "Podemos restringir tu acceso o cancelar tu cuenta en caso de incumplimiento grave o reiterado de estas condiciones o de la ley. Siempre que sea posible, te avisaremos primero y te explicaremos el motivo. Lo que ocurre con tus datos después se describe en la <a href=\"/privacy\">Política de privacidad</a>. Todo lo que esté destinado a seguir vigente, como nuestros derechos y nuestra responsabilidad, seguirá en vigor."
+        },
+        {
+          "type": "p",
+          "text": "Si dejamos de ofrecer SkillQuest, te lo comunicaremos con al menos 30 días de antelación, en la app o por correo electrónico. Si tienes una suscripción de pago, recuperas la parte de tu periodo de pago que ya no puedas utilizar, tal y como se describe en <a href=\"#s-10\">la sección 10</a>."
         }
       ]
     },
@@ -265,7 +273,7 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Podemos modificar estas condiciones, por ejemplo, debido a nuevas funciones o nuevas normas. En caso de cambios sustanciales, te lo comunicaremos con al menos 30 días de antelación, en la app o por correo electrónico. Si no estás de acuerdo, puedes dejar de usar la app y eliminar tu cuenta. Si sigues usando SkillQuest después de la fecha de entrada en vigor, se te aplicarán las nuevas condiciones."
+          "text": "Podemos modificar estas condiciones cuando haya un buen motivo, por ejemplo, debido a nuevas funciones, nuevas normas, la seguridad o cambios técnicos. En caso de cambios sustanciales, te lo comunicaremos con al menos 30 días de antelación, en la app o por correo electrónico. Si no estás de acuerdo, puedes dejar de usar la app y eliminar tu cuenta. Si tienes una suscripción de pago, también puedes cancelarla sin coste antes de que entren en vigor las nuevas condiciones y recuperar la parte de tu periodo de pago posterior a esa fecha, tal y como se describe en <a href=\"#s-10\">la sección 10</a>. Si sigues usando SkillQuest después de la fecha de entrada en vigor, se te aplicarán las nuevas condiciones."
         }
       ]
     },

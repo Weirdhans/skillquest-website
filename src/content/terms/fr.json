@@ -1,6 +1,6 @@
 {
   "locale": "fr",
-  "updated": "2026-11-10",
+  "updated": "2026-11-11",
   "heading": "Conditions d’utilisation",
   "metaTitle": "Conditions d’utilisation | SkillQuest",
   "metaDescription": "Les conditions d’utilisation de l’appli SkillQuest, du site web et des abonnements Premium.",
@@ -209,11 +209,15 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Nous faisons de notre mieux, mais SkillQuest est fournie « telle quelle ». Nous ne garantissons pas que l’appli soit toujours disponible ou exempte d’erreurs. Nous pouvons effectuer des opérations de maintenance, modifier ou ajouter des fonctionnalités, et exiger une version plus récente de l’appli."
+          "text": "Nous faisons de notre mieux pour que SkillQuest fonctionne bien, mais nous ne garantissons pas que l’appli soit toujours disponible ou exempte d’erreurs. Nous pouvons effectuer des opérations de maintenance et exiger une version plus récente de l’appli."
         },
         {
           "type": "p",
-          "text": "Si une fonctionnalité payante que tu as achetée cesse de fonctionner avant la fin de ta période d’abonnement, nous trouverons ensemble une solution raisonnable, par exemple un remboursement de la partie restante. Tes droits légaux en tant que consommateur restent applicables."
+          "text": "Nous pouvons modifier, ajouter ou supprimer des fonctionnalités lorsqu’il y a une bonne raison de le faire : pour améliorer l’appli, pour la garder sûre, pour des raisons techniques, ou parce qu’une loi ou une boutique d’applications (Apple ou Google) l’exige. Si tu as un abonnement payant et qu’une modification rend Premium nettement moins avantageux pour toi, nous t’en informerons à l’avance. Tu pourras alors résilier gratuitement dans les 30 jours suivant notre message ou, si c’est plus tard, suivant la modification."
+        },
+        {
+          "type": "p",
+          "text": "Dans ces cas, et si une fonctionnalité payante que tu as achetée cesse de fonctionner avant la fin de ta période d’abonnement, tu récupères la partie de ta période d’abonnement que tu ne peux plus utiliser. Nous le faisons via la boutique où tu as fait ton achat. Si ce n’est pas possible, nous convenons avec toi d’une autre solution, par exemple Premium gratuit pour le temps restant. Tes droits légaux en tant que consommateur restent applicables."
         }
       ]
     },
@@ -235,7 +239,7 @@
       ]
     },
     {
-      "title": "Mise fin de ton utilisation",
+      "title": "Fin de ton utilisation",
       "blocks": [
         {
           "type": "p",
@@ -243,7 +247,11 @@
         },
         {
           "type": "p",
-          "text": "Nous pouvons restreindre ton accès ou résilier ton compte en cas de violation grave ou répétée des présentes conditions ou de la loi, ou si nous mettons fin à SkillQuest. Dans la mesure du possible, nous t’avertirons d’abord et nous t’expliquerons pourquoi. Ce qu’il adviendra de tes données par la suite est décrit dans la <a href=\"/privacy\">Politique de confidentialité</a>. Tout ce qui est censé perdurer, comme nos droits et notre responsabilité, reste en vigueur."
+          "text": "Nous pouvons restreindre ton accès ou résilier ton compte en cas de violation grave ou répétée des présentes conditions ou de la loi. Dans la mesure du possible, nous t’avertirons d’abord et nous t’expliquerons pourquoi. Ce qu’il adviendra de tes données par la suite est décrit dans la <a href=\"/privacy\">Politique de confidentialité</a>. Tout ce qui est censé perdurer, comme nos droits et notre responsabilité, reste en vigueur."
+        },
+        {
+          "type": "p",
+          "text": "Si nous mettons fin à SkillQuest, nous t’en informerons au moins 30 jours à l’avance, dans l’appli ou par e-mail. Si tu as un abonnement payant, tu récupères la partie de ta période d’abonnement que tu ne peux plus utiliser, comme décrit dans la <a href=\"#s-10\">section 10</a>."
         }
       ]
     },
@@ -265,7 +273,7 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Nous pouvons modifier ces conditions, par exemple en raison de nouvelles fonctionnalités ou de nouvelles règles. En cas de modifications importantes, nous t’en informerons au moins 30 jours à l’avance, dans l’appli ou par e-mail. Si tu n’es pas d’accord, tu peux arrêter d’utiliser l’appli et supprimer ton compte. Si tu continues à utiliser SkillQuest après la date d’entrée en vigueur, les nouvelles conditions s’appliquent à toi."
+          "text": "Nous pouvons modifier ces conditions lorsqu’il y a une bonne raison de le faire, par exemple en raison de nouvelles fonctionnalités, de nouvelles règles, de la sécurité ou de changements techniques. En cas de modifications importantes, nous t’en informerons au moins 30 jours à l’avance, dans l’appli ou par e-mail. Si tu n’es pas d’accord, tu peux arrêter d’utiliser l’appli et supprimer ton compte. Si tu as un abonnement payant, tu peux aussi le résilier gratuitement avant l’entrée en vigueur des nouvelles conditions et récupérer la partie de ta période d’abonnement postérieure à cette date, comme décrit dans la <a href=\"#s-10\">section 10</a>. Si tu continues à utiliser SkillQuest après la date d’entrée en vigueur, les nouvelles conditions s’appliquent à toi."
         }
       ]
     },
