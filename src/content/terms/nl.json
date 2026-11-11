@@ -1,6 +1,6 @@
 {
   "locale": "nl",
-  "updated": "2026-11-10",
+  "updated": "2026-11-11",
   "lastUpdatedLabel": "Laatst bijgewerkt",
   "heading": "Gebruiksvoorwaarden",
   "metaTitle": "Gebruiksvoorwaarden | SkillQuest",
@@ -11,7 +11,7 @@
       "blocks": [
         {
           "type": "p",
-          "text": "SkillQuest wordt aangeboden door Johannes Willem Vlasblom, eenmanszaak, handelend onder de namen SkillQuest en Zenith Reborn (KvK 42188670, Nederland). Je bereikt ons via hello@skill-quest.app."
+          "text": "SkillQuest wordt aangeboden door Johannes Willem Vlasblom, eenmanszaak, handelend onder de namen SkillQuest en Zenith Reborn. Adres: Catharina Hoeve 13, 2804 HE Gouda, Nederland. KvK-nummer 42188670, btw-nummer NL004310890B26. Je bereikt ons via hello@skill-quest.app."
         },
         {
           "type": "p",
@@ -209,11 +209,15 @@
       "blocks": [
         {
           "type": "p",
-          "text": "We doen ons best, maar SkillQuest wordt geleverd zoals het is. We beloven niet dat de app altijd beschikbaar of foutloos is. We kunnen onderhoud doen, functies veranderen of toevoegen en een nieuwere versie van de app vereisen."
+          "text": "We doen ons best om SkillQuest goed te laten werken, maar we beloven niet dat de app altijd beschikbaar of foutloos is. We kunnen onderhoud doen en een nieuwere versie van de app vereisen."
         },
         {
           "type": "p",
-          "text": "Stopt een betaald onderdeel dat je hebt gekocht voordat je betaalde periode afloopt, dan zoeken we samen met jou een redelijke oplossing, bijvoorbeeld terugbetaling van het resterende deel. Je wettelijke rechten als consument blijven gelden."
+          "text": "We kunnen functies veranderen, toevoegen of weghalen als daar een goede reden voor is: om de app te verbeteren, om hem veilig te houden, om technische redenen, of omdat een wet of een winkel (Apple of Google) dat eist. Heb je een betaald abonnement en wordt Premium door zo’n wijziging duidelijk slechter voor jou, dan laten we dat je vooraf weten. Je kunt dan kosteloos opzeggen binnen 30 dagen na ons bericht of, als dat later is, na de wijziging."
+        },
+        {
+          "type": "p",
+          "text": "In die gevallen, en als een betaald onderdeel dat je hebt gekocht stopt voordat je betaalde periode afloopt, krijg je het deel van je betaalde periode terug dat je niet meer kunt gebruiken. Dat doen we via de winkel waar je hebt gekocht. Lukt dat niet, dan spreken we met jou een andere oplossing af, bijvoorbeeld gratis Premium voor de resterende tijd. Je wettelijke rechten als consument blijven gelden."
         }
       ]
     },
@@ -243,7 +247,11 @@
         },
         {
           "type": "p",
-          "text": "Wij kunnen je toegang beperken of je account beëindigen bij een ernstige of herhaalde overtreding van deze voorwaarden of van de wet, of als we SkillQuest stopzetten. Waar dat kan, waarschuwen we je eerst en leggen we uit waarom. Wat daarna met je gegevens gebeurt, staat in het <a href=\"/privacy\">privacybeleid</a>. Wat bedoeld is om door te lopen, zoals onze rechten en de aansprakelijkheid, blijft gelden."
+          "text": "Wij kunnen je toegang beperken of je account beëindigen bij een ernstige of herhaalde overtreding van deze voorwaarden of van de wet. Waar dat kan, waarschuwen we je eerst en leggen we uit waarom. Wat daarna met je gegevens gebeurt, staat in het <a href=\"/privacy\">privacybeleid</a>. Wat bedoeld is om door te lopen, zoals onze rechten en de aansprakelijkheid, blijft gelden."
+        },
+        {
+          "type": "p",
+          "text": "Stoppen we met SkillQuest, dan laten we dat je minstens 30 dagen van tevoren weten, in de app of per e-mail. Heb je een betaald abonnement, dan krijg je het deel van je betaalde periode terug dat je niet meer kunt gebruiken, zoals beschreven in <a href=\"#s-10\">sectie 10</a>."
         }
       ]
     },
@@ -265,7 +273,7 @@
       "blocks": [
         {
           "type": "p",
-          "text": "We kunnen deze voorwaarden aanpassen, bijvoorbeeld door nieuwe functies of nieuwe regels. Bij wezenlijke wijzigingen laten we het je ten minste 30 dagen vooraf weten, in de app of per e-mail. Ga je niet akkoord, dan kun je stoppen en je account verwijderen. Blijf je SkillQuest gebruiken na de ingangsdatum, dan gelden de nieuwe voorwaarden voor jou."
+          "text": "We kunnen deze voorwaarden aanpassen als daar een goede reden voor is, bijvoorbeeld door nieuwe functies, nieuwe regels, veiligheid of technische wijzigingen. Bij wezenlijke wijzigingen laten we het je ten minste 30 dagen vooraf weten, in de app of per e-mail. Ga je niet akkoord, dan kun je stoppen en je account verwijderen. Heb je een betaald abonnement, dan kun je het vóór de ingangsdatum ook kosteloos opzeggen en krijg je het deel van je betaalde periode na die datum terug, zoals beschreven in <a href=\"#s-10\">sectie 10</a>. Blijf je SkillQuest gebruiken na de ingangsdatum, dan gelden de nieuwe voorwaarden voor jou."
         }
       ]
     },

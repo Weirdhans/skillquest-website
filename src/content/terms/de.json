@@ -1,6 +1,6 @@
 {
   "locale": "de",
-  "updated": "2026-11-10",
+  "updated": "2026-11-11",
   "heading": "Nutzungsbedingungen",
   "metaTitle": "Nutzungsbedingungen | SkillQuest",
   "metaDescription": "Die Nutzungsbedingungen für die SkillQuest-App, die Website und die Premium-Abonnements.",
@@ -11,7 +11,7 @@
       "blocks": [
         {
           "type": "p",
-          "text": "SkillQuest wird von Johannes Willem Vlasblom, Einzelunternehmen (eenmanszaak), unter den Namen SkillQuest und Zenith Reborn angeboten (Niederländische Handelskammer (KvK)-Nummer 42188670, Niederlande). Du erreichst uns unter hello@skill-quest.app."
+          "text": "SkillQuest wird von Johannes Willem Vlasblom, Einzelunternehmen (eenmanszaak), unter den Namen SkillQuest und Zenith Reborn angeboten. Anschrift: Catharina Hoeve 13, 2804 HE Gouda, Niederlande. Nummer der niederländischen Handelskammer (KvK) 42188670, Umsatzsteuer-Identifikationsnummer NL004310890B26. Du erreichst uns unter hello@skill-quest.app."
         },
         {
           "type": "p",
@@ -209,11 +209,15 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Wir geben unser Bestes, aber SkillQuest wird so bereitgestellt, wie es ist. Wir versprechen nicht, dass die App immer verfügbar oder fehlerfrei ist. Wir können Wartungsarbeiten durchführen, Funktionen ändern oder hinzufügen und eine neuere Version der App erfordern."
+          "text": "Wir geben unser Bestes, damit SkillQuest gut funktioniert, versprechen aber nicht, dass die App immer verfügbar oder fehlerfrei ist. Wir können Wartungsarbeiten durchführen und eine neuere Version der App voraussetzen."
         },
         {
           "type": "p",
-          "text": "Sollte eine von dir gekaufte kostenpflichtige Funktion vor Ablauf deiner Zahlungsperiode nicht mehr verfügbar sein, werden wir gemeinsam mit dir eine angemessene Lösung finden, zum Beispiel eine Rückerstattung des verbleibenden Betrags. Deine gesetzlichen Verbraucherrechte bleiben davon unberührt."
+          "text": "Wir können Funktionen ändern, hinzufügen oder entfernen, wenn es dafür einen guten Grund gibt: um die App zu verbessern, um sie sicher zu halten, aus technischen Gründen oder weil ein Gesetz oder ein Store (Apple oder Google) es verlangt. Wenn du ein kostenpflichtiges Abonnement hast und eine Änderung Premium für dich deutlich verschlechtert, informieren wir dich im Voraus. Du kannst dann innerhalb von 30 Tagen nach unserer Mitteilung oder – falls das später ist – nach der Änderung kostenlos kündigen."
+        },
+        {
+          "type": "p",
+          "text": "In diesen Fällen und wenn eine von dir gekaufte kostenpflichtige Funktion vor Ablauf deiner Zahlungsperiode nicht mehr verfügbar ist, bekommst du den Teil deiner Zahlungsperiode zurück, den du nicht mehr nutzen kannst. Das erledigen wir über den Store, in dem du gekauft hast. Ist das nicht möglich, vereinbaren wir mit dir eine andere Lösung, zum Beispiel kostenloses Premium für die verbleibende Zeit. Deine gesetzlichen Verbraucherrechte bleiben davon unberührt."
         }
       ]
     },
@@ -243,7 +247,11 @@
         },
         {
           "type": "p",
-          "text": "Wir können deinen Zugang einschränken oder dein Konto kündigen, falls ein schwerwiegender oder wiederholter Verstoß gegen diese Bedingungen oder gegen das Gesetz vorliegt oder wenn wir SkillQuest einstellen. Soweit möglich, warnen wir dich vorher und erklären dir, warum. Was danach mit deinen Daten geschieht, ist in der <a href=\"/privacy\">Datenschutzerklärung</a> beschrieben. Alles, was weiterhin gelten soll, wie beispielsweise unsere Rechte und unsere Haftung, bleibt in Kraft."
+          "text": "Wir können deinen Zugang einschränken oder dein Konto kündigen, falls ein schwerwiegender oder wiederholter Verstoß gegen diese Bedingungen oder gegen das Gesetz vorliegt. Soweit möglich, warnen wir dich vorher und erklären dir, warum. Was danach mit deinen Daten geschieht, ist in der <a href=\"/privacy\">Datenschutzerklärung</a> beschrieben. Alles, was weiterhin gelten soll, wie beispielsweise unsere Rechte und unsere Haftung, bleibt in Kraft."
+        },
+        {
+          "type": "p",
+          "text": "Wenn wir SkillQuest einstellen, informieren wir dich mindestens 30 Tage im Voraus, in der App oder per E-Mail. Hast du ein kostenpflichtiges Abonnement, bekommst du den Teil deiner Zahlungsperiode zurück, den du nicht mehr nutzen kannst, wie in <a href=\"#s-10\">Abschnitt 10</a> beschrieben."
         }
       ]
     },
@@ -265,7 +273,7 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Wir können diese Bedingungen ändern, zum Beispiel wegen neuer Funktionen oder neuer Vorschriften. Bei wesentlichen Änderungen informieren wir dich mindestens 30 Tage im Voraus, entweder in der App oder per E-Mail. Wenn du damit nicht einverstanden bist, kannst du die Nutzung beenden und dein Konto löschen. Wenn du SkillQuest nach dem Datum des Inkrafttretens weiterhin nutzt, gelten für dich die neuen Bedingungen."
+          "text": "Wir können diese Bedingungen ändern, wenn es dafür einen guten Grund gibt, zum Beispiel wegen neuer Funktionen, neuer Vorschriften, Sicherheit oder technischer Änderungen. Bei wesentlichen Änderungen informieren wir dich mindestens 30 Tage im Voraus, entweder in der App oder per E-Mail. Wenn du damit nicht einverstanden bist, kannst du die Nutzung beenden und dein Konto löschen. Hast du ein kostenpflichtiges Abonnement, kannst du es außerdem vor Inkrafttreten der neuen Bedingungen kostenlos kündigen und bekommst den Teil deiner Zahlungsperiode nach diesem Datum zurück, wie in <a href=\"#s-10\">Abschnitt 10</a> beschrieben. Wenn du SkillQuest nach dem Datum des Inkrafttretens weiterhin nutzt, gelten für dich die neuen Bedingungen."
         }
       ]
     },

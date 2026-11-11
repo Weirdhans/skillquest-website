@@ -1,6 +1,6 @@
 {
   "locale": "en",
-  "updated": "2026-11-10",
+  "updated": "2026-11-11",
   "lastUpdatedLabel": "Last updated",
   "heading": "Terms of Service",
   "metaTitle": "Terms of Service | SkillQuest",
@@ -11,7 +11,7 @@
       "blocks": [
         {
           "type": "p",
-          "text": "SkillQuest is offered by Johannes Willem Vlasblom, sole proprietorship (eenmanszaak), trading as SkillQuest and Zenith Reborn (Dutch Chamber of Commerce (KvK) number 42188670, the Netherlands). You can reach us at hello@skill-quest.app."
+          "text": "SkillQuest is offered by Johannes Willem Vlasblom, sole proprietorship (eenmanszaak), trading as SkillQuest and Zenith Reborn. Address: Catharina Hoeve 13, 2804 HE Gouda, the Netherlands. Dutch Chamber of Commerce (KvK) number 42188670, VAT number NL004310890B26. You can reach us at hello@skill-quest.app."
         },
         {
           "type": "p",
@@ -209,11 +209,15 @@
       "blocks": [
         {
           "type": "p",
-          "text": "We do our best, but SkillQuest is provided as it is. We do not promise that the app is always available or error-free. We may carry out maintenance, change or add features and require a newer version of the app."
+          "text": "We do our best to keep SkillQuest working well, but we do not promise that the app is always available or error-free. We may carry out maintenance and require a newer version of the app."
         },
         {
           "type": "p",
-          "text": "If a paid feature you bought stops before your paid period ends, we will work with you on a reasonable solution, for example a refund of the remaining part. Your statutory consumer rights remain in place."
+          "text": "We may change, add or remove features if there is a good reason for it: to improve the app, to keep it secure, for technical reasons, or because a law or a store (Apple or Google) requires it. If you have a paid subscription and a change makes Premium clearly worse for you, we will tell you in advance. You can then cancel free of charge within 30 days of our notice or, if that is later, of the change."
+        },
+        {
+          "type": "p",
+          "text": "In these cases, and if a paid feature you bought stops before your paid period ends, you get back the part of your paid period that you can no longer use. We do that through the store where you bought it. If that is not possible, we agree another solution with you, for example free Premium for the remaining time. Your statutory consumer rights remain in place."
         }
       ]
     },
@@ -243,7 +247,11 @@
         },
         {
           "type": "p",
-          "text": "We may restrict your access or end your account in case of a serious or repeated breach of these terms or of the law, or if we discontinue SkillQuest. Where possible, we warn you first and explain why. What happens to your data afterwards is described in the <a href=\"/privacy\">Privacy Policy</a>. Anything that is meant to continue, such as our rights and liability, stays in force."
+          "text": "We may restrict your access or end your account in case of a serious or repeated breach of these terms or of the law. Where possible, we warn you first and explain why. What happens to your data afterwards is described in the <a href=\"/privacy\">Privacy Policy</a>. Anything that is meant to continue, such as our rights and liability, stays in force."
+        },
+        {
+          "type": "p",
+          "text": "If we discontinue SkillQuest, we will tell you at least 30 days in advance, in the app or by email. If you have a paid subscription, you get back the part of your paid period that you can no longer use, as described in <a href=\"#s-10\">section 10</a>."
         }
       ]
     },
@@ -265,7 +273,7 @@
       "blocks": [
         {
           "type": "p",
-          "text": "We may change these terms, for example because of new features or new rules. For material changes, we will tell you at least 30 days in advance, in the app or by email. If you do not agree, you can stop and delete your account. If you keep using SkillQuest after the effective date, the new terms apply to you."
+          "text": "We may change these terms if there is a good reason for it, for example because of new features, new rules, security or technical changes. For material changes, we will tell you at least 30 days in advance, in the app or by email. If you do not agree, you can stop and delete your account. If you have a paid subscription, you can also cancel it free of charge before the new terms take effect and get back the part of your paid period after that date, as described in <a href=\"#s-10\">section 10</a>. If you keep using SkillQuest after the effective date, the new terms apply to you."
         }
       ]
     },

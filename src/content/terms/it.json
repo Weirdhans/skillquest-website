@@ -1,6 +1,6 @@
 {
   "locale": "it",
-  "updated": "2026-11-10",
+  "updated": "2026-11-11",
   "heading": "Termini di servizio",
   "metaTitle": "Termini di servizio | SkillQuest",
   "metaDescription": "I termini di servizio dell’app SkillQuest, del sito web e degli abbonamenti Premium.",
@@ -11,7 +11,7 @@
       "blocks": [
         {
           "type": "p",
-          "text": "SkillQuest è offerta da Johannes Willem Vlasblom, impresa individuale (eenmanszaak), operante con i nomi commerciali SkillQuest e Zenith Reborn (numero di registrazione alla Camera di Commercio olandese (KvK) 42188670, Paesi Bassi). Puoi contattarci all’indirizzo hello@skill-quest.app."
+          "text": "SkillQuest è offerta da Johannes Willem Vlasblom, impresa individuale (eenmanszaak), operante con i nomi commerciali SkillQuest e Zenith Reborn. Indirizzo: Catharina Hoeve 13, 2804 HE Gouda, Paesi Bassi. Numero di registrazione alla Camera di Commercio olandese (KvK) 42188670, partita IVA NL004310890B26. Puoi contattarci all’indirizzo hello@skill-quest.app."
         },
         {
           "type": "p",
@@ -209,11 +209,15 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Facciamo del nostro meglio, ma SkillQuest viene fornita così com’è. Non garantiamo che l’app sia sempre disponibile o priva di errori. Potremmo effettuare interventi di manutenzione, modificare o aggiungere funzionalità e richiedere una versione più recente dell’app."
+          "text": "Facciamo del nostro meglio perché SkillQuest funzioni bene, ma non garantiamo che l’app sia sempre disponibile o priva di errori. Possiamo effettuare interventi di manutenzione e richiedere una versione più recente dell’app."
         },
         {
           "type": "p",
-          "text": "Se una funzione a pagamento che hai acquistato dovesse interrompersi prima della scadenza del periodo di abbonamento, troveremo insieme una soluzione ragionevole, ad esempio un rimborso della parte residua. I tuoi diritti legali in qualità di consumatore rimangono validi."
+          "text": "Possiamo modificare, aggiungere o rimuovere funzionalità se c’è un buon motivo: per migliorare l’app, per mantenerla sicura, per ragioni tecniche o perché una legge o uno store (Apple o Google) lo richiede. Se hai un abbonamento a pagamento e una modifica peggiora chiaramente Premium per te, te lo comunicheremo in anticipo. Potrai quindi disdire gratuitamente entro 30 giorni dalla nostra comunicazione o, se successiva, dalla modifica."
+        },
+        {
+          "type": "p",
+          "text": "In questi casi, e se una funzione a pagamento che hai acquistato si interrompe prima della scadenza del periodo di abbonamento, ti restituiamo la parte del periodo di abbonamento che non puoi più utilizzare. Lo facciamo tramite lo store in cui hai effettuato l’acquisto. Se non è possibile, concordiamo con te un’altra soluzione, ad esempio Premium gratuito per il tempo rimanente. I tuoi diritti legali in qualità di consumatore rimangono validi."
         }
       ]
     },
@@ -243,7 +247,11 @@
         },
         {
           "type": "p",
-          "text": "Potremmo limitare il tuo accesso o chiudere il tuo account in caso di violazione grave o ripetuta dei presenti termini o della legge, oppure se decidessimo di interrompere il servizio SkillQuest. Ove possibile, ti avviseremo prima spiegandoti il motivo. Cosa succederà ai tuoi dati in seguito è descritto <a href=\"/privacy\">nell’Informativa sulla privacy</a>. Tutto ciò che è destinato a continuare, come i nostri diritti e la nostra responsabilità, rimane in vigore."
+          "text": "Possiamo limitare il tuo accesso o chiudere il tuo account in caso di violazione grave o ripetuta dei presenti termini o della legge. Ove possibile, ti avviseremo prima spiegandoti il motivo. Cosa succederà ai tuoi dati in seguito è descritto <a href=\"/privacy\">nell’Informativa sulla privacy</a>. Tutto ciò che è destinato a continuare, come i nostri diritti e la nostra responsabilità, rimane in vigore."
+        },
+        {
+          "type": "p",
+          "text": "Se smettiamo di offrire SkillQuest, te lo comunicheremo con almeno 30 giorni di anticipo, nell’app o via e-mail. Se hai un abbonamento a pagamento, ti restituiamo la parte del periodo di abbonamento che non puoi più utilizzare, come descritto nella <a href=\"#s-10\">sezione 10</a>."
         }
       ]
     },
@@ -265,7 +273,7 @@
       "blocks": [
         {
           "type": "p",
-          "text": "Potremmo modificare questi termini, ad esempio a causa di nuove funzionalità o nuove regole. In caso di modifiche sostanziali, te lo comunicheremo con almeno 30 giorni di anticipo, tramite l’app o via e-mail. Se non sei d’accordo, puoi smettere di usare l’app ed eliminare il tuo account. Se continui a usare SkillQuest dopo la data di entrata in vigore, i nuovi termini si applicheranno a te."
+          "text": "Possiamo modificare questi termini se c’è un buon motivo, ad esempio a causa di nuove funzionalità, nuove regole, sicurezza o modifiche tecniche. In caso di modifiche sostanziali, te lo comunicheremo con almeno 30 giorni di anticipo, nell’app o via e-mail. Se non sei d’accordo, puoi smettere di usare l’app ed eliminare il tuo account. Se hai un abbonamento a pagamento, puoi anche disdirlo gratuitamente prima che i nuovi termini entrino in vigore e ricevere indietro la parte del periodo di abbonamento successiva a quella data, come descritto nella <a href=\"#s-10\">sezione 10</a>. Se continui a usare SkillQuest dopo la data di entrata in vigore, i nuovi termini si applicheranno a te."
         }
       ]
     },
