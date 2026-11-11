@@ -172,7 +172,7 @@
             },
             {
               "lead": "Apple.",
-              "text": "For iPhone and iPad, Apple's standard <a href=\"https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\">Licensed Application End User License Agreement</a> also applies. Apple is not a party to these terms."
+              "text": "For iPhone and iPad, Apple's standard <a href=\"https://www.apple.com/legal/internet-services/itunes/dev/stdeula/\">Licensed Application End User License Agreement</a> also applies. We do not rely on the parts of that license that limit our liability or exclude warranties: for claims against us, <a href=\"#s-11\">section 11</a> applies. Apple is not a party to these terms."
             }
           ]
         }
