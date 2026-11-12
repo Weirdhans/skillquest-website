@@ -167,6 +167,7 @@ export default async function DeleteAccountPage({
                     t('sections.whatWeMayRetain.items.subscriptions'),
                     t('sections.whatWeMayRetain.items.support'),
                     t('sections.whatWeMayRetain.items.security'),
+                    t('sections.whatWeMayRetain.items.parentProof'),
                     t('sections.whatWeMayRetain.items.analytics')
                   ].map((item) => (
                     <li key={item} className="flex gap-3 theme-copy">
