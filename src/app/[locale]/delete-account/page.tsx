@@ -68,7 +68,7 @@ export default async function DeleteAccountPage({
               <div>
                 <p className="font-semibold theme-title">{t('cta.title')}</p>
                 <p className="mt-1 text-sm theme-copy">
-                  {t('cta.description', {email: SUPPORT_EMAIL})}
+                  {t('cta.description')}
                 </p>
               </div>
               <a href={DELETE_PAGE_URL} className="btn btn-primary whitespace-nowrap">
