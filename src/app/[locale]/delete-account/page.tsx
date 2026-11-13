@@ -7,6 +7,9 @@ const locales = routing.locales;
 // Keep these in sync with your public-facing contact details.
 const SUPPORT_EMAIL = 'hello@skill-quest.app';
 const WEBSITE_URL = 'https://www.skill-quest.app';
+// Self-service deletion (SQ-173/SQ-175): the page sends a code to the account's
+// email address and schedules the deletion. It picks its own language.
+const DELETE_PAGE_URL = 'https://app.skill-quest.app/delete-account';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({locale}));
@@ -58,16 +61,17 @@ export default async function DeleteAccountPage({
           <article className="max-w-3xl">
             <p className="text-lead theme-copy">{t('intro')}</p>
 
-            {/* The whole page exists to get one email sent, so the action gets
-                its own tinted band instead of sitting inside the body copy. */}
+            {/* The deletion page is the main action, so it gets its own tinted
+                band instead of sitting inside the body copy. Email stays as
+                the second route below. */}
             <div className="theme-highlight-band mt-8 flex flex-col gap-4 rounded-2xl p-6 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <p className="font-semibold theme-title">{t('cta.title')}</p>
                 <p className="mt-1 text-sm theme-copy">
-                  {t('cta.description', {email: SUPPORT_EMAIL})}
+                  {t('cta.description')}
                 </p>
               </div>
-              <a href={mailtoHref} className="btn btn-primary whitespace-nowrap">
+              <a href={DELETE_PAGE_URL} className="btn btn-primary whitespace-nowrap">
                 {t('cta.button')}
               </a>
             </div>
@@ -121,6 +125,9 @@ export default async function DeleteAccountPage({
                   </li>
                 ))}
               </ol>
+              <a href={mailtoHref} className="btn btn-secondary mt-8 inline-flex">
+                {t('emailButton')}
+              </a>
             </section>
 
             {/* Deleted versus retained is the one comparison on this page, so
@@ -160,6 +167,7 @@ export default async function DeleteAccountPage({
                     t('sections.whatWeMayRetain.items.subscriptions'),
                     t('sections.whatWeMayRetain.items.support'),
                     t('sections.whatWeMayRetain.items.security'),
+                    t('sections.whatWeMayRetain.items.parentProof'),
                     t('sections.whatWeMayRetain.items.analytics')
                   ].map((item) => (
                     <li key={item} className="flex gap-3 theme-copy">
