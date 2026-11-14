@@ -27,11 +27,12 @@ import {
 // which only POSTs here after the visitor presses the button. A mail
 // scanner that follows the link therefore never subscribes anyone.
 //
-// Order matters: the contact is only marked subscribed (with its consent
-// record) after it is in the segment and on its language topic. If a step
-// fails, pressing the button again repeats the missing steps. A contact this
-// request created is removed again when a later step fails, so a failed
-// confirmation leaves nothing behind.
+// A new address is created in one Resend call that already holds
+// everything: subscribed, in the segment, on its language topic and with
+// the consent record. Nothing half-made is left behind if a call fails, so
+// there is nothing to clean up. An existing contact (unsubscribed earlier,
+// or created by a parallel confirmation) is updated in steps; the check for
+// a newer confirmation runs right before the first write that matters.
 //
 // The language is the one stored in the token: the page where the person
 // signed up.
@@ -66,45 +67,48 @@ export async function POST(request: NextRequest) {
     const locale = toNewsletterLocale(parsed.locale);
     const email = parsed.email;
     const resend = getResendClient();
+    const consent = {
+      locale,
+      // Never earlier than the token itself, even if this server's clock
+      // runs behind the one that issued it.
+      consent_at: new Date(Math.max(Date.now(), parsed.issuedAt)).toISOString(),
+      consent_version: NEWSLETTER_CONSENT_VERSION,
+      consent_source: 'website'
+    };
+
+    let contactId: string | null = null;
     const existing = await findContact(resend, email);
+    if (!existing) {
+      contactId = await createSubscribedContact(resend, email, locale, consent);
+    }
 
-    const supersededAnswer = supersededBy(existing, parsed.issuedAt);
-    if (supersededAnswer) return supersededAnswer;
+    if (!contactId) {
+      // Unsubscribed earlier, or a parallel confirmation created it first.
+      const contact = existing ?? (await findContact(resend, email));
+      if (!contact) throw new Error('Resend contact create failed and none exists');
 
-    const {id: contactId, createdHere} = existing
-      ? {id: existing.id, createdHere: false}
-      : await createContact(resend, email, locale);
+      const supersededAnswer = supersededBy(contact, parsed.issuedAt);
+      if (supersededAnswer) return supersededAnswer;
+      await ensureInSegment(resend, contact.id);
 
-    try {
-      await ensureInSegment(resend, contactId);
-      await setLanguageTopic(resend, contactId, locale);
-
-      // Look again right before subscribing: a newer link may have been
-      // confirmed (and perhaps unsubscribed) while this request was busy.
+      // Look again right before writing the language and consent: a newer
+      // link may have been confirmed (and perhaps unsubscribed) meanwhile.
       const latestAnswer = supersededBy(
         await findContact(resend, email),
         parsed.issuedAt
       );
       if (latestAnswer) return latestAnswer;
 
+      await setLanguageTopic(resend, contact.id, locale);
       const {error: updateError} = await resend.contacts.update({
-        id: contactId,
+        id: contact.id,
         unsubscribed: false,
-        properties: {
-          locale,
-          // Never earlier than the token itself, even if this server's clock
-          // runs behind the one that issued it.
-          consent_at: new Date(Math.max(Date.now(), parsed.issuedAt)).toISOString(),
-          consent_version: NEWSLETTER_CONSENT_VERSION,
-          consent_source: 'website'
-        }
+        properties: consent
       });
       if (updateError) {
         throw new Error(`Resend contact update failed: ${updateError.name}`);
       }
-    } catch (error) {
-      if (createdHere) await removeIfUnconfirmed(resend, email);
-      throw error;
+      contactId = contact.id;
     }
 
     const signature = signContactId(contactId, getUnsubscribeKey());
@@ -138,41 +142,39 @@ function supersededBy(
     : NextResponse.json({status: 'already_subscribed'});
 }
 
-// Removes the contact this request created when a later step failed, but
-// only while nobody has confirmed it: a parallel confirmation of the same
-// address may have finished in the meantime.
-async function removeIfUnconfirmed(resend: Resend, email: string) {
-  try {
-    const contact = await findContact(resend, email);
-    if (!contact || contact.consentAt !== null || !contact.unsubscribed) return;
-    const {error} = await resend.contacts.remove({id: contact.id});
-    if (error) console.error('Newsletter cleanup failed:', error.name);
-  } catch (error) {
-    console.error(
-      'Newsletter cleanup failed:',
-      error instanceof Error ? error.message : error
-    );
-  }
+function languageTopics(locale: NewsletterLocale) {
+  // One newsletter language per subscriber: the language of the page they
+  // signed up on.
+  return NEWSLETTER_LOCALES.map((topicLocale) => ({
+    id: NEWSLETTER_TOPIC_IDS[topicLocale],
+    subscription: (topicLocale === locale ? 'opt_in' : 'opt_out') as
+      | 'opt_in'
+      | 'opt_out'
+  }));
 }
 
-async function createContact(
+/**
+ * Creates a new contact that is complete in one call. The Resend API accepts
+ * segments and topics on create; SDK 6.5.2 does not pass them on, so the
+ * request goes through resend.post. Returns null when the contact could not
+ * be created, for example because a parallel confirmation created it first.
+ */
+async function createSubscribedContact(
   resend: Resend,
   email: string,
-  locale: NewsletterLocale
-): Promise<{id: string; createdHere: boolean}> {
-  // Created unsubscribed; the final update in POST subscribes it once the
-  // segment and topic are in place.
-  const {data, error} = await resend.contacts.create({
+  locale: NewsletterLocale,
+  consent: Record<string, string>
+): Promise<string | null> {
+  const {data, error} = await resend.post<{id: string}>('/contacts', {
     email,
-    unsubscribed: true,
-    properties: {locale}
+    unsubscribed: false,
+    properties: consent,
+    segments: [{id: NEWSLETTER_SEGMENT_ID}],
+    topics: languageTopics(locale)
   });
-  if (data) return {id: data.id, createdHere: true};
-
-  // Two confirmations at the same moment: the other one created it.
-  const raced = await findContact(resend, email);
-  if (raced) return {id: raced.id, createdHere: false};
-  throw new Error(`Resend contact create failed: ${error?.name ?? 'unknown'}`);
+  if (data?.id) return data.id;
+  console.error('Newsletter contact create failed:', error?.name ?? 'unknown');
+  return null;
 }
 
 async function ensureInSegment(resend: Resend, contactId: string) {
@@ -187,8 +189,6 @@ async function ensureInSegment(resend: Resend, contactId: string) {
   if (addError) throw new Error(`Resend segment add failed: ${addError.name}`);
 }
 
-// One newsletter language per subscriber: the language of the page they
-// signed up on. A new signup in another language, once confirmed, switches it.
 async function setLanguageTopic(
   resend: Resend,
   contactId: string,
@@ -196,10 +196,7 @@ async function setLanguageTopic(
 ) {
   const {error} = await resend.contacts.topics.update({
     id: contactId,
-    topics: NEWSLETTER_LOCALES.map((topicLocale) => ({
-      id: NEWSLETTER_TOPIC_IDS[topicLocale],
-      subscription: topicLocale === locale ? 'opt_in' : 'opt_out'
-    }))
+    topics: languageTopics(locale)
   });
   if (error) throw new Error(`Resend topic update failed: ${error.name}`);
 }

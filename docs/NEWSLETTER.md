@@ -44,12 +44,16 @@ productiedatabase (gedeeld met DailyQuest) bevat geen marketingadressen.
 2. **Link in de mail** → `/[locale]/newsletter/confirm?token=…`. De pagina toont
    een knop; pas die knop doet `POST /api/newsletter/confirm`. Zo kan een
    virusscanner die links opent niemand inschrijven.
-3. **Bevestigen**: contact aanmaken (eerst als afgemeld), in het segment zetten,
-   taal-topic zetten, en als laatste stap `unsubscribed: false` met de
-   toestemmingsvelden. Daarna een welkomstmail met afmeldlink en
-   `List-Unsubscribe`-headers (one-click, RFC 8058), met een idempotency-sleutel
-   per link zodat dubbel bevestigen één mail geeft. Mislukt een stap bij een
-   contact dat deze aanvraag aanmaakte, dan wordt het weer verwijderd.
+3. **Bevestigen**: een nieuw adres wordt in één Resend-aanroep compleet
+   aangemaakt: ingeschreven, in het segment, op zijn taal-topic en met de
+   toestemmingsvelden (de API kan dat; SDK 6.5.2 geeft `segments` en `topics`
+   niet door, dus via `resend.post`). Mislukt die aanroep, dan blijft er niets
+   half achter. Een bestaand contact (eerder afgemeld, of net aangemaakt door
+   een parallelle bevestiging) gaat in stappen: segment, nogmaals controleren
+   op een nieuwere bevestiging, dan taal-topic en toestemmingsvelden. Daarna een
+   welkomstmail met afmeldlink en `List-Unsubscribe`-headers (one-click,
+   RFC 8058), met een idempotency-sleutel per link zodat dubbel bevestigen één
+   mail geeft.
 4. Een token dat vóór de laatste bevestiging is uitgegeven, werkt niet meer.
    Zo maakt een oude link een afmelding niet ongedaan.
 
