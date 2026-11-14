@@ -20,7 +20,7 @@ export type NewsletterLocale = 'nl' | 'en' | 'de' | 'fr' | 'es' | 'it';
 // Created in Resend on 2026-11-15: segment "Newsletter", topics
 // "Newsletter <locale>" (private, default opt-out) and the string contact
 // properties locale, consent_at, consent_version and consent_source. The IDs
-// are not secret; they only work with the server-side RESEND_API_KEY.
+// are not secret; they only work with the server-side Resend API key.
 export const NEWSLETTER_SEGMENT_ID = 'b403b647-34d2-494a-8567-2850399eab2b';
 export const NEWSLETTER_TOPIC_IDS: Record<NewsletterLocale, string> = {
   nl: '0a884219-d9bc-4527-9599-bbf549a04765',
@@ -46,9 +46,13 @@ export function toNewsletterLocale(value: unknown): NewsletterLocale {
 
 export const NEWSLETTER_LOCALES = EMAIL_LOCALES as NewsletterLocale[];
 
+// The newsletter manages contacts, segments and topics, which Resend only
+// allows with a full-access API key. The site's RESEND_API_KEY is a
+// sending-only key and stays that way for the other emails (feedback,
+// password reset); only the newsletter routes get the broader key.
 export function getResendClient(): Resend {
-  const key = process.env.RESEND_API_KEY;
-  if (!key) throw new Error('RESEND_API_KEY is not configured');
+  const key = process.env.RESEND_NEWSLETTER_API_KEY;
+  if (!key) throw new Error('RESEND_NEWSLETTER_API_KEY is not configured');
   return new Resend(key);
 }
 

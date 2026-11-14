@@ -10,6 +10,12 @@ wachtlijst ("Ontvang productupdates"), die in de Supabase-tabel
 
 **Alleen in Resend.** Er is geen eigen tabel met inschrijvers.
 
+De nieuwsbriefroutes gebruiken een eigen Resend-sleutel met volledige toegang,
+`RESEND_NEWSLETTER_API_KEY` (Vercel, Production en Preview): Resend laat
+contacten, segmenten en topics alleen met volledige toegang beheren. De
+bestaande `RESEND_API_KEY` is een sleutel die alleen mag versturen en blijft
+voor de feedback- en resetmails.
+
 - Segment **Newsletter**: iedereen die zijn inschrijving heeft bevestigd.
 - Topics **Newsletter nl/en/de/fr/es/it**: één per taal, privé (niet zichtbaar op
   de afmeldpagina van Resend), standaard *opt-out*. Een bevestigd contact staat
