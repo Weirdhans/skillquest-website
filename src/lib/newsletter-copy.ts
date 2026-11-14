@@ -101,7 +101,7 @@ export const newsletterConfirmCopy: Record<Locale, NewsletterConfirmCopy> = {
     success: {heading: 'Tu es inscrit', body: 'Merci ! À partir de maintenant, tu recevras la newsletter de SkillQuest. Chaque newsletter contient un lien pour te désabonner en un clic.'},
     already: {heading: 'Tu étais déjà abonné', body: "Ton inscription est déjà confirmée. Tu n'as rien d'autre à faire."},
     errors: {
-      expired: {title: "Ce lien n'est plus valide", message: "Un lien de confirmation est valable 24 heures. Inscris-toi de nouveau et nous t'en enverrons un nouveau."},
+      expired: {title: "Ce lien n'est plus valide", message: "Un lien de confirmation est valable 24 heures. Inscris-toi à nouveau et nous t'en enverrons un autre."},
       invalid: {title: 'Ce lien ne fonctionne pas', message: "Le lien est incomplet ou incorrect. Copie le lien en entier depuis l'e-mail, ou réinscris-toi."},
       used: {title: 'Ce lien a déjà été utilisé', message: "Tu t'es désabonné après avoir confirmé avec ce lien, ou nous t'avons envoyé un lien plus récent depuis. Tu veux à nouveau recevoir la newsletter ? Inscris-toi de nouveau."},
       server_error: {title: "Une erreur s'est produite", message: "Ça n'a pas fonctionné de notre côté. Réessaie dans quelques minutes avec le même lien."}
@@ -138,13 +138,13 @@ export const newsletterConfirmCopy: Record<Locale, NewsletterConfirmCopy> = {
       button: 'Conferma l’iscrizione'
     },
     working: 'Conferma in corso...',
-    success: {heading: 'Ti sei iscritto', body: "Grazie! D'ora in poi riceverai la newsletter di SkillQuest. Ogni newsletter contiene un link per annullare l'iscrizione con un solo clic."},
+    success: {heading: 'Iscrizione confermata', body: "Grazie! D'ora in poi riceverai la newsletter di SkillQuest. Ogni newsletter contiene un link per annullare l'iscrizione con un solo clic."},
     already: {heading: 'Eri già iscritto', body: "L'iscrizione è già confermata. Non devi fare nient'altro."},
     errors: {
       expired: {title: 'Questo link è scaduto', message: 'Il link di conferma è valido per 24 ore. Iscriviti di nuovo e te ne manderemo uno nuovo.'},
       invalid: {title: 'Questo link non funziona', message: "Il link è incompleto o errato. Copia l'intero link dall'email oppure iscriviti di nuovo."},
       used: {title: 'Questo link è già stato utilizzato', message: "Hai annullato l'iscrizione dopo aver confermato con questo link, oppure nel frattempo te ne abbiamo mandato uno più recente. Vuoi ricevere di nuovo la newsletter? Iscriviti di nuovo."},
-      server_error: {title: 'Si è verificato un errore', message: 'Per un momento non ha funzionato da parte nostra. Riprova tra qualche minuto con lo stesso link.'}
+      server_error: {title: 'Si è verificato un errore', message: 'Qualcosa non ha funzionato da parte nostra. Riprova tra qualche minuto con lo stesso link.'}
     },
     resubscribe: 'Iscriviti di nuovo',
     backHome: '← Torna alla homepage'
@@ -224,7 +224,7 @@ export const newsletterUnsubscribeCopy: Record<Locale, NewsletterUnsubscribeCopy
       body: '¿Ya no quieres recibir el boletín de SkillQuest? Pulsa el botón y dejaremos de enviártelo.',
       button: 'Darse de baja'
     },
-    working: 'Dando de baja...',
+    working: 'Cancelando la suscripción...',
     success: {heading: 'Ya te has dado de baja', body: 'Ya no recibirás el boletín de SkillQuest. Si tienes una cuenta de SkillQuest, seguirá igual.'},
     errors: {
       invalid: {title: 'Este enlace no funciona', message: 'El enlace para darte de baja está incompleto. Usa el enlace que aparece al final del boletín o envíanos un correo a hello@skill-quest.app y te daremos de baja.'},
@@ -244,7 +244,7 @@ export const newsletterUnsubscribeCopy: Record<Locale, NewsletterUnsubscribeCopy
     success: {heading: 'Iscrizione annullata', body: 'Non riceverai più la newsletter di SkillQuest. Se hai un account SkillQuest, rimarrà attivo come prima.'},
     errors: {
       invalid: {title: 'Questo link non funziona', message: "Il link per annullare l'iscrizione è incompleto. Usa il link in fondo a una newsletter, oppure scrivici a hello@skill-quest.app e annulleremo noi l'iscrizione."},
-      server_error: {title: 'Si è verificato un errore', message: 'Per ora non ha funzionato da parte nostra. Riprova tra qualche minuto.'}
+      server_error: {title: 'Si è verificato un errore', message: 'Qualcosa non ha funzionato da parte nostra. Riprova tra qualche minuto.'}
     },
     backHome: '← Torna alla homepage'
   }

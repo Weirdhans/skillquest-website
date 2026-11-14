@@ -1279,7 +1279,7 @@ export const marketingCopy = {
       badge: 'Newsletter',
       heading: 'Abonne-toi à la newsletter',
       subheading: 'De temps en temps, tu recevras un e-mail sur les nouvelles fonctionnalités de SkillQuest et des conseils pour développer tes compétences, que ce soit pour toi ou avec tes enfants.',
-      placeholder: 'vous@example.com',
+      placeholder: 'toi@example.com',
       emailLabel: 'Adresse e-mail',
       submit: "S'abonner",
       submitting: 'Envoi en cours...',
