@@ -13,7 +13,7 @@ export type NewsletterConfirmCopy = {
   working: string;
   success: {heading: string; body: string};
   already: {heading: string; body: string};
-  errors: Record<'expired' | 'invalid' | 'used' | 'server_error', Message>;
+  errors: Record<'expired' | 'invalid' | 'used' | 'rate_limited' | 'server_error', Message>;
   resubscribe: string;
   backHome: string;
 };
@@ -44,6 +44,7 @@ export const newsletterConfirmCopy: Record<Locale, NewsletterConfirmCopy> = {
       expired: {title: 'De link is verlopen', message: 'Een bevestigingslink is 24 uur geldig. Schrijf je opnieuw in, dan sturen we je een nieuwe.'},
       invalid: {title: 'Deze link werkt niet', message: 'De link is niet compleet of klopt niet. Kopieer de hele link uit de e-mail, of schrijf je opnieuw in.'},
       used: {title: 'Deze link is al gebruikt', message: 'Je hebt je na het bevestigen met deze link weer afgemeld, of we hebben je intussen een nieuwere link gestuurd. Wil je de nieuwsbrief weer ontvangen? Schrijf je dan opnieuw in.'},
+      rate_limited: {title: 'Te veel pogingen', message: 'Je hebt het te vaak geprobeerd. Probeer het over een uur opnieuw met dezelfde link.'},
       server_error: {title: 'Er ging iets mis', message: 'Het lukte nu niet aan onze kant. Probeer het over een paar minuten opnieuw met dezelfde link.'}
     },
     resubscribe: 'Opnieuw inschrijven',
@@ -64,6 +65,7 @@ export const newsletterConfirmCopy: Record<Locale, NewsletterConfirmCopy> = {
       expired: {title: 'This link has expired', message: "A confirmation link is valid for 24 hours. Subscribe again and we'll send you a new one."},
       invalid: {title: "This link doesn't work", message: 'The link is incomplete or incorrect. Copy the whole link from the email, or subscribe again.'},
       used: {title: 'This link has already been used', message: 'You unsubscribed after confirming with this link, or we have sent you a newer link since. Want the newsletter again? Subscribe again.'},
+      rate_limited: {title: 'Too many attempts', message: 'You have tried too many times. Try again in an hour with the same link.'},
       server_error: {title: 'Something went wrong', message: "It didn't work on our side just now. Try again in a few minutes with the same link."}
     },
     resubscribe: 'Subscribe again',
@@ -84,6 +86,7 @@ export const newsletterConfirmCopy: Record<Locale, NewsletterConfirmCopy> = {
       expired: {title: 'Dieser Link ist abgelaufen', message: 'Ein Bestätigungslink ist 24 Stunden lang gültig. Melde dich einfach noch einmal an, dann schicken wir dir einen neuen.'},
       invalid: {title: 'Dieser Link funktioniert nicht', message: 'Der Link ist unvollständig oder falsch. Kopiere den gesamten Link aus der E-Mail oder melde dich erneut an.'},
       used: {title: 'Dieser Link wurde bereits verwendet', message: 'Du hast dich nach der Bestätigung mit diesem Link wieder abgemeldet, oder wir haben dir inzwischen einen neueren Link geschickt. Möchtest du den Newsletter wieder erhalten? Dann melde dich einfach erneut an.'},
+      rate_limited: {title: 'Zu viele Versuche', message: 'Du hast es zu oft versucht. Versuch es in einer Stunde noch einmal mit demselben Link.'},
       server_error: {title: 'Es ist ein Fehler aufgetreten', message: 'Bei uns hat es gerade nicht funktioniert. Versuch es in ein paar Minuten noch einmal mit demselben Link.'}
     },
     resubscribe: 'Erneut abonnieren',
@@ -104,6 +107,7 @@ export const newsletterConfirmCopy: Record<Locale, NewsletterConfirmCopy> = {
       expired: {title: "Ce lien n'est plus valide", message: "Un lien de confirmation est valable 24 heures. Inscris-toi à nouveau et nous t'en enverrons un autre."},
       invalid: {title: 'Ce lien ne fonctionne pas', message: "Le lien est incomplet ou incorrect. Copie le lien en entier depuis l'e-mail, ou réinscris-toi."},
       used: {title: 'Ce lien a déjà été utilisé', message: "Tu t'es désabonné après avoir confirmé avec ce lien, ou nous t'avons envoyé un lien plus récent depuis. Tu veux à nouveau recevoir la newsletter ? Inscris-toi de nouveau."},
+      rate_limited: {title: 'Trop de tentatives', message: 'Tu as essayé trop de fois. Réessaie dans une heure avec le même lien.'},
       server_error: {title: "Une erreur s'est produite", message: "Ça n'a pas fonctionné de notre côté. Réessaie dans quelques minutes avec le même lien."}
     },
     resubscribe: 'Se réinscrire',
@@ -124,6 +128,7 @@ export const newsletterConfirmCopy: Record<Locale, NewsletterConfirmCopy> = {
       expired: {title: 'Este enlace ha caducado', message: 'El enlace de confirmación es válido durante 24 horas. Si te vuelves a suscribir, te mandaremos uno nuevo.'},
       invalid: {title: 'Este enlace no funciona', message: 'El enlace está incompleto o es incorrecto. Copia el enlace completo del correo electrónico o vuelve a suscribirte.'},
       used: {title: 'Este enlace ya se ha utilizado', message: 'Te diste de baja después de confirmar con este enlace, o te hemos enviado un enlace más reciente desde entonces. ¿Quieres volver a recibir el boletín? Suscríbete de nuevo.'},
+      rate_limited: {title: 'Demasiados intentos', message: 'Lo has intentado demasiadas veces. Vuelve a intentarlo dentro de una hora con el mismo enlace.'},
       server_error: {title: 'Ha surgido un error', message: 'Ahora mismo no ha funcionado por nuestra parte. Inténtalo de nuevo dentro de unos minutos con el mismo enlace.'}
     },
     resubscribe: 'Volver a suscribirse',
@@ -144,6 +149,7 @@ export const newsletterConfirmCopy: Record<Locale, NewsletterConfirmCopy> = {
       expired: {title: 'Questo link è scaduto', message: 'Il link di conferma è valido per 24 ore. Iscriviti di nuovo e te ne manderemo uno nuovo.'},
       invalid: {title: 'Questo link non funziona', message: "Il link è incompleto o errato. Copia l'intero link dall'email oppure iscriviti di nuovo."},
       used: {title: 'Questo link è già stato utilizzato', message: "Hai annullato l'iscrizione dopo aver confermato con questo link, oppure nel frattempo te ne abbiamo mandato uno più recente. Vuoi ricevere di nuovo la newsletter? Iscriviti di nuovo."},
+      rate_limited: {title: 'Troppi tentativi', message: "Hai provato troppe volte. Riprova tra un'ora con lo stesso link."},
       server_error: {title: 'Si è verificato un errore', message: 'Qualcosa non ha funzionato da parte nostra. Riprova tra qualche minuto con lo stesso link.'}
     },
     resubscribe: 'Iscriviti di nuovo',

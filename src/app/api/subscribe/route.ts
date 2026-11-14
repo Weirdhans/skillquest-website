@@ -61,8 +61,9 @@ export async function POST(request: NextRequest) {
     }
     const locale = toNewsletterLocale(body.locale);
 
-    // The per-address limits and the daily budget are checked before anyone
-    // looks at the list, so every address gets the same answer.
+    // The daily budget and the per-address limits are checked before anyone
+    // looks at the list, and a subscribed address keeps its reservation like
+    // any other, so the counters behave the same for every address.
     const {decision, counterId} = await reserveConfirmationEmail(supabase, email);
     if (decision === 'over_budget') {
       return NextResponse.json({error: 'busy'}, {status: 429});
@@ -71,30 +72,37 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(OK);
     }
 
-    const resend = getResendClient();
-    const contact = await findContact(resend, email);
-    if (contact && !contact.unsubscribed && contact.consentAt !== null) {
-      // Already subscribed: no email, same answer.
-      await releaseConfirmationEmail(supabase, counterId);
+    try {
+      const resend = getResendClient();
+      const contact = await findContact(resend, email);
+      if (contact && !contact.unsubscribed && contact.consentAt !== null) {
+        // Already subscribed: no email, same answer.
+        return NextResponse.json(OK);
+      }
+
+      const token = createConfirmToken({email, locale}, getTokenKey());
+      const confirmUrl = `${getSiteUrl(request)}/${locale}/newsletter/confirm?token=${token}`;
+      const {subject, html} = renderVerificationEmail({locale, confirmUrl});
+
+      const {error: sendError} = await resend.emails.send({
+        from: NEWSLETTER_FROM,
+        to: email,
+        subject,
+        html
+      });
+      if (sendError) {
+        // Only during a Resend outage, which nobody can trigger on purpose;
+        // the visitor gets an honest error and may try again at once.
+        console.error('Newsletter confirmation email failed:', sendError.name);
+        await releaseConfirmationEmail(supabase, counterId);
+        return NextResponse.json({error: 'send_failed'}, {status: 502});
+      }
+
       return NextResponse.json(OK);
+    } catch (error) {
+      await releaseConfirmationEmail(supabase, counterId);
+      throw error;
     }
-
-    const token = createConfirmToken({email, locale}, getTokenKey());
-    const confirmUrl = `${getSiteUrl(request)}/${locale}/newsletter/confirm?token=${token}`;
-    const {subject, html} = renderVerificationEmail({locale, confirmUrl});
-
-    const {error: sendError} = await resend.emails.send({
-      from: NEWSLETTER_FROM,
-      to: email,
-      subject,
-      html
-    });
-    if (sendError) {
-      console.error('Newsletter confirmation email failed:', sendError.name);
-      return NextResponse.json({error: 'send_failed'}, {status: 502});
-    }
-
-    return NextResponse.json(OK);
   } catch (error) {
     console.error(
       'Newsletter subscribe failed:',

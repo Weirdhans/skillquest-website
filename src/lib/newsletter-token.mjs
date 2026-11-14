@@ -18,7 +18,8 @@ import {
   createCipheriv,
   createDecipheriv,
   createHmac,
-  randomBytes
+  randomBytes,
+  timingSafeEqual
 } from 'node:crypto';
 
 export const CONFIRM_TOKEN_TTL_MS = 24 * 60 * 60 * 1000;
@@ -124,6 +125,35 @@ export function normalizeEmail(value) {
   const email = value.trim().toLowerCase();
   if (email.length === 0 || email.length > 254) return null;
   return EMAIL_PATTERN.test(email) ? email : null;
+}
+
+// ---------------------------------------------------------------------------
+// Unsubscribe links in emails the site sends itself
+// ---------------------------------------------------------------------------
+
+const UNSUBSCRIBE_PURPOSE = 'skillquest-newsletter-unsubscribe-v1';
+
+export function deriveUnsubscribeKey(secret) {
+  if (typeof secret !== 'string' || secret.length < 16) {
+    throw new Error('Newsletter unsubscribe secret is missing or too short');
+  }
+  return createHmac('sha256', secret).update(UNSUBSCRIBE_PURPOSE).digest();
+}
+
+/** A 128-bit HMAC over the Resend contact ID, base64url. */
+export function signContactId(contactId, key) {
+  return createHmac('sha256', key)
+    .update(contactId)
+    .digest()
+    .subarray(0, 16)
+    .toString('base64url');
+}
+
+export function verifyContactSignature(contactId, signature, key) {
+  if (!isUuid(contactId) || typeof signature !== 'string') return false;
+  const expected = Buffer.from(signContactId(contactId, key), 'utf8');
+  const given = Buffer.from(signature, 'utf8');
+  return expected.length === given.length && timingSafeEqual(expected, given);
 }
 
 const UUID_PATTERN =

@@ -5,9 +5,12 @@ import {
   CONFIRM_TOKEN_TTL_MS,
   createConfirmToken,
   deriveTokenKey,
+  deriveUnsubscribeKey,
   isUuid,
   normalizeEmail,
-  readConfirmToken
+  readConfirmToken,
+  signContactId,
+  verifyContactSignature
 } from '../src/lib/newsletter-token.mjs';
 import {
   EMAIL_LOCALES,
@@ -92,6 +95,22 @@ test('contact IDs must be UUIDs', () => {
   assert.equal(isUuid(null), false);
 });
 
+test('unsubscribe links are signed per contact', () => {
+  const unsubscribeKey = deriveUnsubscribeKey('test-secret-that-is-long-enough');
+  const id = 'e169aa45-1ecf-4183-9955-b1499d5701d3';
+  const signature = signContactId(id, unsubscribeKey);
+
+  assert.match(signature, /^[A-Za-z0-9_-]{22}$/);
+  assert.equal(verifyContactSignature(id, signature, unsubscribeKey), true);
+  assert.equal(verifyContactSignature('0d9f6a8e-2b1c-4f3a-9e7d-5c4b3a2f1e0d', signature, unsubscribeKey), false);
+  assert.equal(verifyContactSignature(id, signature.slice(1), unsubscribeKey), false);
+  assert.equal(verifyContactSignature(id, signature, deriveUnsubscribeKey('another-secret-entirely')), false);
+  assert.equal(verifyContactSignature(id, null, unsubscribeKey), false);
+  assert.equal(verifyContactSignature('not-a-uuid', signature, unsubscribeKey), false);
+  // A different purpose gives a different key than the confirmation tokens.
+  assert.notDeepEqual(unsubscribeKey, deriveTokenKey('test-secret-that-is-long-enough'));
+});
+
 test('every language has a confirmation email with the confirm link', () => {
   const confirmUrl = 'https://www.skill-quest.app/nl/newsletter/confirm?token=abc&x=1';
   for (const locale of EMAIL_LOCALES) {
@@ -104,10 +123,10 @@ test('every language has a confirmation email with the confirm link', () => {
 
 test('every welcome email carries a working unsubscribe link', () => {
   const unsubscribeUrl =
-    'https://www.skill-quest.app/api/newsletter/unsubscribe?c=e169aa45-1ecf-4183-9955-b1499d5701d3&l=fr';
+    'https://www.skill-quest.app/api/newsletter/unsubscribe?c=e169aa45-1ecf-4183-9955-b1499d5701d3&s=abc&l=fr';
   for (const locale of EMAIL_LOCALES) {
     const {html} = renderWelcomeEmail({locale, unsubscribeUrl});
-    assert.ok(html.includes(`href="${unsubscribeUrl.replace('&', '&amp;')}"`), `${locale} unsubscribe link`);
+    assert.ok(html.includes(`href="${unsubscribeUrl.replaceAll('&', '&amp;')}"`), `${locale} unsubscribe link`);
   }
 });
 

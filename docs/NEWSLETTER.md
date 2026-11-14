@@ -20,7 +20,8 @@ voor de feedback- en resetmails.
 - Topics **Newsletter nl/en/de/fr/es/it**: één per taal, privé (niet zichtbaar op
   de afmeldpagina van Resend), standaard *opt-out*. Een bevestigd contact staat
   op *opt-in* voor precies één taal: die van de pagina waarop het zich inschreef
-  (de taal zit in het token). Een nieuwe inschrijving in een andere taal wisselt hem.
+  (de taal zit in het token). Wie al ingeschreven is en een andere taal wil,
+  meldt zich af en schrijft zich opnieuw in (of mailt ons).
 - Contactvelden: `locale`, `consent_at` (ISO-tijd van de bevestiging),
   `consent_version` (`NEWSLETTER_CONSENT_VERSION` in `src/lib/newsletter.ts`) en
   `consent_source` (`website`).
@@ -64,12 +65,14 @@ maximaal een dag (elke aanvraag ruimt oudere rijen op):
 | alle `em:`-rijen samen | 40 bevestigingsmails per dag |
 | `cf:<hash>` per bevestigpoging | 10 per uur per IP |
 
-Elke teller voegt eerst zijn rij in en telt daarna, zodat gelijktijdige
-aanvragen elkaar zien (bij een race wordt geweigerd, niet doorgelaten). Een
-`em:`-rij blijft alleen staan als er echt een mail uit mag; overgeslagen
-pogingen geven hun rij terug, zodat herhalen het dagbudget niet opmaakt. De
-limieten en het budget worden gecontroleerd vóór er in Resend wordt gekeken,
-zodat elk adres hetzelfde antwoord krijgt.
+Elke teller voegt eerst zijn rij in en telt daarna alleen de rijen die er
+eerder waren, zodat van twee gelijktijdige aanvragen voor hetzelfde adres er
+precies één doorgaat. Het dagbudget wordt als eerste gecontroleerd, dus "te
+druk" geldt voor iedereen gelijk. Een `em:`-rij blijft staan als de aanvraag
+door de grenzen kwam, ook voor een adres dat al ingeschreven is (zo gedragen
+de tellers zich voor elk adres hetzelfde); overgeslagen aanvragen en
+aanvragen waarbij het versturen mislukt, geven hun rij terug. De grenzen
+worden gecontroleerd vóór er in Resend wordt gekeken.
 
 E-mailadressen worden streng gecontroleerd (`normalizeEmail`): de Resend-SDK zet
 het adres ongecodeerd in het API-pad, dus tekens als `/`, `?`, `#` en `%` mogen er
@@ -83,7 +86,12 @@ dag), dat de app ook gebruikt voor de mails aan ouders en de verwijdercodes.
 - **Nieuwsbrieven (Resend Broadcasts)**: zet altijd `{{{RESEND_UNSUBSCRIBE_URL}}}`
   in de mail. Resend voegt zelf de `List-Unsubscribe`-headers toe en zet het
   contact op afgemeld.
-- **Welkomstmail**: eigen link `/api/newsletter/unsubscribe?c=<contact-id>&l=<taal>`.
+- **Welkomstmail**: eigen link
+  `/api/newsletter/unsubscribe?c=<contact-id>&s=<handtekening>&l=<taal>`. De
+  handtekening is een HMAC over het contact-ID (sleutel afgeleid van
+  `SUPABASE_SERVICE_ROLE_KEY`); zonder geldige handtekening doet de route geen
+  Resend-aanroep. Wordt die sleutel ooit vervangen, dan werken oude
+  welkomstlinks niet meer; elke nieuwsbrief heeft dan nog de Resend-afmeldlink.
   Openen in de browser toont een pagina met een knop
   (`/[locale]/newsletter/unsubscribe`); een POST (de knop of de one-click van
   een mailprogramma) zet het contact direct op afgemeld.
@@ -122,5 +130,6 @@ zodra deze website live is en de tabel nergens meer wordt gelezen;
 `npm run test:seo` draait ook `tests/newsletter.test.mjs`: tokens (verloop,
 knoeien, andere sleutel), mailteksten in zes talen met bevestigings- en
 afmeldlink, en een privacybeleid zonder wachtlijst. Een preview op Vercel linkt
-in de mails naar zichzelf (`getSiteUrl` in `src/lib/newsletter.ts`), zodat een
-testinschrijving op dezelfde preview te bevestigen is.
+in de mails naar zijn eigen deployment-URL (`VERCEL_URL`, zie `getSiteUrl` in
+`src/lib/newsletter.ts`), zodat een testinschrijving op dezelfde preview te
+bevestigen is; de Host-header wordt nergens vertrouwd.

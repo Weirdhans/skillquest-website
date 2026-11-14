@@ -12,7 +12,7 @@ import {createHash} from 'crypto';
 import {createClient, type SupabaseClient} from '@supabase/supabase-js';
 import {Resend} from 'resend';
 import type {NextRequest} from 'next/server';
-import {deriveTokenKey} from '@/lib/newsletter-token.mjs';
+import {deriveTokenKey, deriveUnsubscribeKey} from '@/lib/newsletter-token.mjs';
 import {EMAIL_LOCALES, normalizeEmailLocale} from '@/lib/email-templates.mjs';
 
 export type NewsletterLocale = 'nl' | 'en' | 'de' | 'fr' | 'es' | 'it';
@@ -70,24 +70,34 @@ export function getTokenKey(): Buffer {
   return deriveTokenKey(process.env.SUPABASE_SERVICE_ROLE_KEY ?? '');
 }
 
+// Signs the contact ID in the welcome email's unsubscribe link, so the
+// unsubscribe route can refuse made-up IDs without calling Resend. If the
+// service role key is ever rotated, old welcome-email links stop working;
+// every newsletter still carries Resend's own unsubscribe link.
+export function getUnsubscribeKey(): Buffer {
+  return deriveUnsubscribeKey(process.env.SUPABASE_SERVICE_ROLE_KEY ?? '');
+}
+
 const CANONICAL_SITE_URL = 'https://www.skill-quest.app';
 
 /**
- * Base URL for links in emails. Production uses the canonical domain, never
- * the request's Host header. A preview deployment (*.vercel.app) or a local
- * run links back to itself, so a test signup can be confirmed on the same
- * deployment; any other host falls back to the canonical domain.
+ * Base URL for links in emails. Never taken from the request's Host header:
+ * production uses the canonical domain, a preview deployment its own
+ * deployment URL (VERCEL_URL, set by Vercel), so a test signup can be
+ * confirmed on the same preview. Only a local run (no VERCEL_ENV) on
+ * localhost links back to itself.
  */
 export function getSiteUrl(request: NextRequest): string {
   const canonical = process.env.NEXT_PUBLIC_SITE_URL || CANONICAL_SITE_URL;
   if (process.env.VERCEL_ENV === 'production') return canonical;
-
-  const {hostname, origin} = request.nextUrl;
-  const isPreviewOrLocal =
-    hostname === 'localhost' ||
-    hostname === '127.0.0.1' ||
-    hostname.endsWith('.vercel.app');
-  return isPreviewOrLocal ? origin : canonical;
+  if (process.env.VERCEL_ENV === 'preview' && process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+  if (!process.env.VERCEL_ENV) {
+    const {hostname, origin} = request.nextUrl;
+    if (hostname === 'localhost' || hostname === '127.0.0.1') return origin;
+  }
+  return canonical;
 }
 
 export function getClientIp(request: NextRequest): string {
@@ -134,7 +144,7 @@ export async function findContact(
 // serves several counters without a schema change:
 //   ip:<hash>  one row per signup attempt from an IP address
 //   cf:<hash>  one row per confirm attempt from an IP address
-//   em:<hash>  one row per confirmation email that may go out to an address
+//   em:<hash>  one row per confirmation request that passed the limits
 // Hashes are salted with a server secret; the IP hashes also change every
 // day, like the feedback form. Nothing is needed after a day, and every
 // signup removes older rows.
@@ -166,16 +176,16 @@ function counterKey(kind: CounterKind, value: string): string {
 async function insertCounter(
   supabase: SupabaseClient,
   key: string
-): Promise<string> {
+): Promise<{id: string; createdAt: string}> {
   const {data, error} = await supabase
     .from('subscribe_attempts')
     .insert([{ip_address: key}])
-    .select('id')
+    .select('id, created_at')
     .single();
   if (error || !data) {
     throw new Error(`subscribe_attempts insert failed: ${error?.message ?? 'no row'}`);
   }
-  return data.id as string;
+  return {id: data.id as string, createdAt: data.created_at as string};
 }
 
 /** Housekeeping: nothing in subscribe_attempts is needed after a day. */
@@ -214,55 +224,62 @@ export type SendDecision = 'send' | 'skip_address' | 'over_budget';
 
 export type Reservation = {decision: SendDecision; counterId: string | null};
 
+type CounterRow = {id: string; ip_address: string; created_at: string};
+
 /**
  * Records a confirmation request for this address and decides whether a
- * confirmation email may go out. 'skip_address' means the address got a
- * confirmation email in the last 10 minutes or too many today;
- * 'over_budget' means the daily budget is used up. The caller must call this
- * for every address, subscribed or not, so the answer never depends on who
- * is on the list. Only a 'send' keeps its row: the counters count emails
- * that may actually go out, not attempts.
+ * confirmation email may go out:
+ * - 'over_budget': the daily budget is used up. Checked first, so this
+ *   answer is the same for every address.
+ * - 'skip_address': this address had a request in the last 10 minutes or
+ *   too many today.
+ * Only rows that were inserted before this one count, so of two concurrent
+ * requests for the same address exactly one gets 'send'. The caller must
+ * call this for every address, subscribed or not, and must release the
+ * reservation when no email goes out because something failed.
  */
 export async function reserveConfirmationEmail(
   supabase: SupabaseClient,
   email: string
 ): Promise<Reservation> {
   const now = Date.now();
-  const dayStart = new Date(now - DAY_MS).toISOString();
   const key = counterKey('em', email);
-  const ownId = await insertCounter(supabase, key);
+  const own = await insertCounter(supabase, key);
 
-  const {data: rows, error: rowsError} = await supabase
-    .from('subscribe_attempts')
-    .select('id, created_at')
-    .eq('ip_address', key)
-    .gte('created_at', dayStart);
-  if (rowsError) {
-    throw new Error(`subscribe_attempts lookup failed: ${rowsError.message}`);
-  }
+  try {
+    const {data, error} = await supabase
+      .from('subscribe_attempts')
+      .select('id, ip_address, created_at')
+      .like('ip_address', 'em:%')
+      .gte('created_at', new Date(now - DAY_MS).toISOString());
+    if (error) throw new Error(`subscribe_attempts lookup failed: ${error.message}`);
 
-  const earlier = (rows ?? []).filter((row) => row.id !== ownId);
-  const recent = earlier.some(
-    (row) => now - Date.parse(row.created_at) < EMAIL_COOLDOWN_MS
-  );
-  if (recent || earlier.length >= EMAIL_MAX_PER_DAY) {
-    await releaseConfirmationEmail(supabase, ownId);
-    return {decision: 'skip_address', counterId: null};
-  }
+    // PostgREST returns created_at in one fixed format, so the strings sort
+    // in time order; the ID breaks ties within the same microsecond.
+    const before = (row: CounterRow) =>
+      row.created_at < own.createdAt ||
+      (row.created_at === own.createdAt && row.id < own.id);
+    const earlier = ((data ?? []) as CounterRow[]).filter(before);
 
-  const {count, error: budgetError} = await supabase
-    .from('subscribe_attempts')
-    .select('id', {count: 'exact', head: true})
-    .like('ip_address', 'em:%')
-    .gte('created_at', dayStart);
-  if (budgetError) {
-    throw new Error(`subscribe_attempts budget failed: ${budgetError.message}`);
+    if (earlier.length >= DAILY_CONFIRMATION_BUDGET) {
+      await releaseConfirmationEmail(supabase, own.id);
+      return {decision: 'over_budget', counterId: null};
+    }
+
+    const sameAddress = earlier.filter((row) => row.ip_address === key);
+    const recent = sameAddress.some(
+      (row) => now - Date.parse(row.created_at) < EMAIL_COOLDOWN_MS
+    );
+    if (recent || sameAddress.length >= EMAIL_MAX_PER_DAY) {
+      await releaseConfirmationEmail(supabase, own.id);
+      return {decision: 'skip_address', counterId: null};
+    }
+
+    return {decision: 'send', counterId: own.id};
+  } catch (error) {
+    await releaseConfirmationEmail(supabase, own.id);
+    throw error;
   }
-  if ((count ?? 0) > DAILY_CONFIRMATION_BUDGET) {
-    await releaseConfirmationEmail(supabase, ownId);
-    return {decision: 'over_budget', counterId: null};
-  }
-  return {decision: 'send', counterId: ownId};
 }
 
 /** Gives a reserved confirmation email back when it is not sent after all. */

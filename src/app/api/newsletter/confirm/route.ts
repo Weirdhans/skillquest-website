@@ -1,7 +1,7 @@
 import {NextRequest, NextResponse} from 'next/server';
 import type {Resend} from 'resend';
 import {renderWelcomeEmail} from '@/lib/email-templates.mjs';
-import {readConfirmToken} from '@/lib/newsletter-token.mjs';
+import {readConfirmToken, signContactId} from '@/lib/newsletter-token.mjs';
 import {
   NEWSLETTER_CONSENT_VERSION,
   NEWSLETTER_FROM,
@@ -14,8 +14,10 @@ import {
   getSiteUrl,
   getSupabaseAdmin,
   getTokenKey,
+  getUnsubscribeKey,
   recordIpAttempt,
   toNewsletterLocale,
+  type NewsletterContact,
   type NewsletterLocale
 } from '@/lib/newsletter';
 
@@ -66,13 +68,8 @@ export async function POST(request: NextRequest) {
     const resend = getResendClient();
     const existing = await findContact(resend, email);
 
-    // A link issued before the latest confirmation was already used, or was
-    // replaced by a newer one. It must not undo a later unsubscribe.
-    if (existing?.consentAt != null && existing.consentAt >= parsed.issuedAt) {
-      return existing.unsubscribed
-        ? NextResponse.json({error: 'used'}, {status: 409})
-        : NextResponse.json({status: 'already_subscribed'});
-    }
+    const supersededAnswer = supersededBy(existing, parsed.issuedAt);
+    if (supersededAnswer) return supersededAnswer;
 
     const {id: contactId, createdHere} = existing
       ? {id: existing.id, createdHere: false}
@@ -81,6 +78,14 @@ export async function POST(request: NextRequest) {
     try {
       await ensureInSegment(resend, contactId);
       await setLanguageTopic(resend, contactId, locale);
+
+      // Look again right before subscribing: a newer link may have been
+      // confirmed (and perhaps unsubscribed) while this request was busy.
+      const latestAnswer = supersededBy(
+        await findContact(resend, email),
+        parsed.issuedAt
+      );
+      if (latestAnswer) return latestAnswer;
 
       const {error: updateError} = await resend.contacts.update({
         id: contactId,
@@ -98,14 +103,15 @@ export async function POST(request: NextRequest) {
         throw new Error(`Resend contact update failed: ${updateError.name}`);
       }
     } catch (error) {
-      if (createdHere) await resend.contacts.remove({id: contactId});
+      if (createdHere) await removeIfUnconfirmed(resend, email);
       throw error;
     }
 
+    const signature = signContactId(contactId, getUnsubscribeKey());
     await sendWelcome(resend, {
       email,
       locale,
-      unsubscribeUrl: `${getSiteUrl(request)}/api/newsletter/unsubscribe?c=${contactId}&l=${locale}`,
+      unsubscribeUrl: `${getSiteUrl(request)}/api/newsletter/unsubscribe?c=${contactId}&s=${signature}&l=${locale}`,
       // Two confirmations with the same link send one welcome email.
       idempotencyKey: `newsletter-welcome/${contactId}/${parsed.issuedAt}`
     });
@@ -117,6 +123,35 @@ export async function POST(request: NextRequest) {
       error instanceof Error ? error.message : error
     );
     return NextResponse.json({error: 'server_error'}, {status: 500});
+  }
+}
+
+// A link issued before the latest confirmation was already used, or was
+// replaced by a newer one. It must not undo a later unsubscribe.
+function supersededBy(
+  contact: NewsletterContact | null,
+  issuedAt: number
+): NextResponse | null {
+  if (contact?.consentAt == null || contact.consentAt < issuedAt) return null;
+  return contact.unsubscribed
+    ? NextResponse.json({error: 'used'}, {status: 409})
+    : NextResponse.json({status: 'already_subscribed'});
+}
+
+// Removes the contact this request created when a later step failed, but
+// only while nobody has confirmed it: a parallel confirmation of the same
+// address may have finished in the meantime.
+async function removeIfUnconfirmed(resend: Resend, email: string) {
+  try {
+    const contact = await findContact(resend, email);
+    if (!contact || contact.consentAt !== null || !contact.unsubscribed) return;
+    const {error} = await resend.contacts.remove({id: contact.id});
+    if (error) console.error('Newsletter cleanup failed:', error.name);
+  } catch (error) {
+    console.error(
+      'Newsletter cleanup failed:',
+      error instanceof Error ? error.message : error
+    );
   }
 }
 

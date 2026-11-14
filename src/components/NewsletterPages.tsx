@@ -21,6 +21,7 @@ type ConfirmState =
   | 'expired'
   | 'invalid'
   | 'used'
+  | 'rate_limited'
   | 'server_error';
 
 export function NewsletterConfirm({copy}: {copy: NewsletterConfirmCopy}) {
@@ -44,7 +45,8 @@ export function NewsletterConfirm({copy}: {copy: NewsletterConfirmCopy}) {
       } else if (
         data.error === 'expired' ||
         data.error === 'invalid' ||
-        data.error === 'used'
+        data.error === 'used' ||
+        data.error === 'rate_limited'
       ) {
         setState(data.error);
       } else {
@@ -96,7 +98,7 @@ export function NewsletterConfirm({copy}: {copy: NewsletterConfirmCopy}) {
         <button type="button" onClick={confirm} className="btn btn-primary mt-8">
           {copy.ready.button}
         </button>
-      ) : (
+      ) : state === 'rate_limited' ? null : (
         <Link href="/#newsletter" className="btn btn-primary mt-8 inline-flex">
           {copy.resubscribe}
         </Link>
@@ -112,9 +114,11 @@ const CONTACT_ID_PATTERN =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 export function NewsletterUnsubscribe({copy}: {copy: NewsletterUnsubscribeCopy}) {
-  const contactId = useSearchParams().get('c');
+  const searchParams = useSearchParams();
+  const contactId = searchParams.get('c');
+  const signature = searchParams.get('s');
   const [state, setState] = useState<UnsubscribeState>(
-    contactId && CONTACT_ID_PATTERN.test(contactId) ? 'ready' : 'invalid'
+    contactId && CONTACT_ID_PATTERN.test(contactId) && signature ? 'ready' : 'invalid'
   );
 
   async function unsubscribe() {
@@ -123,7 +127,7 @@ export function NewsletterUnsubscribe({copy}: {copy: NewsletterUnsubscribeCopy})
       const response = await fetch('/api/newsletter/unsubscribe', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({c: contactId})
+        body: JSON.stringify({c: contactId, s: signature})
       });
       setState(response.ok ? 'done' : response.status === 400 ? 'invalid' : 'server_error');
     } catch {
