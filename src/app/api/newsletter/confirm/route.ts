@@ -67,8 +67,11 @@ export async function POST(request: NextRequest) {
     const locale = toNewsletterLocale(parsed.locale);
     const email = parsed.email;
     const resend = getResendClient();
-    // Built at the moment of each write, so a slow parallel request can never
-    // store an older consent time over a newer one.
+    // Built at the moment of each write rather than up front, which keeps a
+    // slow parallel request from storing an older consent time over a newer
+    // one in all but a tiny window: Resend has no conditional writes, so two
+    // different links confirmed within the same fraction of a second can
+    // still race.
     const consent = () => ({
       locale,
       // Never earlier than the token itself, even if this server's clock
