@@ -1,7 +1,6 @@
-// Shared transactional email copy + HTML rendering, used by the Next.js API
-// routes (imported from .ts) AND by the standalone scripts/*.mjs admin
-// scripts (plain Node ESM import) — kept as .mjs so both can import it
-// without a build step.
+// Newsletter email copy + HTML rendering, used by the Next.js API routes
+// (src/app/api/subscribe and src/app/api/newsletter/confirm). Kept as .mjs so
+// tests can import it with plain `node --test`.
 
 export const EMAIL_LOCALES = ['nl', 'en', 'de', 'fr', 'es', 'it'];
 
@@ -13,18 +12,12 @@ const LOGO_URL = 'https://www.skill-quest.app/skillquest-logo.png';
 const SITE_URL = 'https://www.skill-quest.app';
 const SUPPORT_EMAIL = 'hello@skill-quest.app';
 
-const PLATFORM_TEXT = {
-  nl: { ios: 'voor iOS', android: 'voor Android', both: 'voor iOS en Android' },
-  en: { ios: 'for iOS', android: 'for Android', both: 'for iOS and Android' },
-  de: { ios: 'für iOS', android: 'für Android', both: 'für iOS und Android' },
-  fr: { ios: 'pour iOS', android: 'pour Android', both: 'pour iOS et Android' },
-  es: { ios: 'para iOS', android: 'para Android', both: 'para iOS y Android' },
-  it: { ios: 'per iOS', android: 'per Android', both: 'per iOS e Android' },
-};
-
-function platformText(locale, platform) {
-  const table = PLATFORM_TEXT[locale] ?? PLATFORM_TEXT.nl;
-  return table[platform] ?? table.both;
+function escapeAttribute(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
 }
 
 function shell(bodyHtml, title) {
@@ -60,108 +53,98 @@ function ctaButton(href, label) {
   return `
           <tr>
             <td align="center" style="padding: 0 0 32px 0;">
-              <a href="${href}" style="display: inline-block; padding: 18px 40px; background: linear-gradient(135deg, #FF6B35 0%, #D2381C 100%); color: #FFFFFF; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 18px; box-shadow: 0 4px 6px -1px rgba(210, 56, 28, 0.3);">
+              <a href="${escapeAttribute(href)}" style="display: inline-block; padding: 18px 40px; background: linear-gradient(135deg, #FF6B35 0%, #D2381C 100%); color: #FFFFFF; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 18px; box-shadow: 0 4px 6px -1px rgba(210, 56, 28, 0.3);">
                 ${label}
               </a>
             </td>
           </tr>`;
 }
 
-function footer(questionsLabel) {
+const QUESTIONS = {
+  nl: 'Vragen? Stuur ons een e-mail naar',
+  en: 'Questions? Email us at',
+  de: 'Fragen? Schick uns eine E-Mail an',
+  fr: 'Des questions ? Envoie-nous un e-mail à l\'adresse',
+  es: '¿Tienes alguna pregunta? Envíanos un correo a',
+  it: 'Hai domande? Scrivici all\'indirizzo',
+};
+
+function footer(locale, extraHtml = '') {
   return `
           <tr>
             <td align="center" style="padding-top: 24px; border-top: 1px solid #DCE5DF;">
               <p style="margin: 0; font-size: 12px; color: #94A3B8; line-height: 1.6;">
                 SkillQuest | <a href="${SITE_URL}" style="color: #0F766E; text-decoration: none;">www.skill-quest.app</a><br>
-                ${questionsLabel} <a href="mailto:${SUPPORT_EMAIL}" style="color: #0F766E; text-decoration: none;">${SUPPORT_EMAIL}</a>
-              </p>
+                ${QUESTIONS[locale]} <a href="mailto:${SUPPORT_EMAIL}" style="color: #0F766E; text-decoration: none;">${SUPPORT_EMAIL}</a>
+              </p>${extraHtml}
             </td>
           </tr>`;
 }
 
 // ---------------------------------------------------------------------------
-// Verification email ("confirm your signup")
+// Confirmation email (step 1 of the double opt-in)
 // ---------------------------------------------------------------------------
 
 const VERIFY_COPY = {
   nl: {
-    subject: 'Bevestig je aanmelding voor SkillQuest',
-    title: 'Bevestig je aanmelding',
-    heading: 'Bevestig je aanmelding',
-    hey: (name) => `Hey${name ? ` ${name}` : ''}!`,
-    intro: (brand) => `Je bent er bijna! Klik op de knop hieronder om je aanmelding voor updates over <strong style="color: #0F766E;">${brand}</strong> te bevestigen.`,
-    platformInfo: (p) => `Je krijgt relevante SkillQuest-updates ${p}, inclusief informatie over Android Early Access als je je daarvoor aanmeldt.`,
-    androidNote: 'Android staat op Google Play. Deze e-mailinschrijving is alleen voor productupdates.',
-    cta: 'Bevestig mijn aanmelding',
-    expiry: 'Deze link is 24 uur geldig.<br>Heb je hier niet om gevraagd? Dan kun je deze e-mail gewoon negeren.',
-    questions: 'Vragen? Stuur ons een e-mail naar',
+    subject: 'Bevestig je inschrijving voor de SkillQuest-nieuwsbrief',
+    heading: 'Bevestig je inschrijving',
+    hey: 'Hoi!',
+    intro: 'Je hebt je ingeschreven voor de nieuwsbrief van <strong style="color: #0F766E;">SkillQuest</strong>. Klik op de knop hieronder om dat te bevestigen. Pas daarna sturen we je de nieuwsbrief.',
+    expect: 'Je krijgt af en toe een e-mail over nieuwe functies in SkillQuest en tips om vaardigheden op te bouwen, voor jezelf of samen met je kinderen. In elke nieuwsbrief kun je je met één klik afmelden.',
+    cta: 'Inschrijving bevestigen',
+    expiry: 'Deze link is 24 uur geldig.<br>Heb je je niet ingeschreven? Dan kun je deze e-mail negeren: zonder bevestiging sturen we je niets.',
   },
   en: {
-    subject: 'Confirm your SkillQuest signup',
-    title: 'Confirm your signup',
-    heading: 'Confirm your signup',
-    hey: (name) => `Hey${name ? ` ${name}` : ''}!`,
-    intro: (brand) => `Almost there! Click the button below to confirm your signup for <strong style="color: #0F766E;">${brand}</strong> updates.`,
-    platformInfo: (p) => `You'll get relevant SkillQuest updates ${p}, including Android Early Access information if you opt in.`,
-    androidNote: 'Android is available on Google Play. This email signup is for product updates only.',
-    cta: 'Confirm my signup',
-    expiry: 'This link is valid for 24 hours.<br>Didn\'t request this? You can ignore this email.',
-    questions: 'Questions? Email us at',
+    subject: 'Confirm your subscription to the SkillQuest newsletter',
+    heading: 'Confirm your subscription',
+    hey: 'Hi!',
+    intro: 'You signed up for the <strong style="color: #0F766E;">SkillQuest</strong> newsletter. Click the button below to confirm. We only start sending the newsletter after that.',
+    expect: "Now and then you'll get an email about new features in SkillQuest and tips for building skills, for yourself or with your kids. Every newsletter has a link to unsubscribe in one click.",
+    cta: 'Confirm subscription',
+    expiry: "This link is valid for 24 hours.<br>Didn't sign up? Then you can ignore this email: without confirmation, we won't send you anything.",
   },
   de: {
-    subject: 'Bestätige deine Anmeldung bei SkillQuest',
-    title: 'Bestätige deine Anmeldung',
-    heading: 'Bestätige deine Anmeldung',
-    hey: (name) => `Hey${name ? ` ${name}` : ''}!`,
-    intro: (brand) => `Fast geschafft! Klick auf die Schaltfläche unten, um deine Anmeldung für Updates zu <strong style="color: #0F766E;">${brand}</strong> zu bestätigen.`,
-    platformInfo: (p) => `Du erhältst relevante SkillQuest-Updates ${p}, einschließlich Informationen zu Android Early Access, wenn du dich dafür anmeldest.`,
-    androidNote: 'Android ist bei Google Play verfügbar. Diese E-Mail-Anmeldung ist nur für Produktupdates.',
-    cta: 'Meine Anmeldung bestätigen',
-    expiry: 'Dieser Link ist 24 Stunden lang gültig.<br>Hast du das nicht angefordert? Dann kannst du diese E-Mail einfach ignorieren.',
-    questions: 'Fragen? Schick uns eine E-Mail an',
+    subject: 'Bestätige dein Abonnement für den SkillQuest-Newsletter',
+    heading: 'Bestätige dein Abonnement',
+    hey: 'Hallo!',
+    intro: 'Du hast dich für den Newsletter von <strong style="color: #0F766E;">SkillQuest</strong> angemeldet. Klicke auf die Schaltfläche unten, um die Anmeldung zu bestätigen. Erst danach beginnen wir mit dem Versand des Newsletters.',
+    expect: 'Ab und zu bekommst du eine E-Mail über neue Funktionen bei SkillQuest und Tipps zum Aufbau von Fähigkeiten – für dich selbst oder gemeinsam mit deinen Kindern. Jeder Newsletter enthält einen Link, über den du dich mit einem Klick abmelden kannst.',
+    cta: 'Abonnement bestätigen',
+    expiry: 'Dieser Link ist 24 Stunden lang gültig.<br>Hast du dich nicht angemeldet? Dann kannst du diese E-Mail ignorieren: Ohne Bestätigung schicken wir dir nichts.',
   },
   fr: {
-    subject: 'Confirme ton inscription à SkillQuest',
-    title: 'Confirme ton inscription',
+    subject: 'Confirme ton inscription à la newsletter de SkillQuest',
     heading: 'Confirme ton inscription',
-    hey: (name) => `Bonjour${name ? ` ${name}` : ''} !`,
-    intro: (brand) => `C'est presque fini ! Clique sur le bouton ci-dessous pour confirmer ton inscription aux actualités de <strong style="color: #0F766E;">${brand}</strong>.`,
-    platformInfo: (p) => `Tu recevras les dernières infos sur SkillQuest ${p}, y compris des infos sur l’accès anticipé Android si tu t'inscris.`,
-    androidNote: 'Android est disponible sur Google Play. Cette inscription par e-mail sert uniquement aux mises à jour du produit.',
-    cta: 'Valider mon inscription',
-    expiry: 'Ce lien est valable pendant 24 heures.<br>Tu n\'as pas demandé ça ? Tu peux ignorer cet e-mail.',
-    questions: 'Des questions ? Envoie-nous un e-mail à l\'adresse',
+    hey: 'Salut !',
+    intro: "Tu t'es inscrit à la newsletter de <strong style=\"color: #0F766E;\">SkillQuest</strong>. Clique sur le bouton ci-dessous pour confirmer. Nous ne t'enverrons la newsletter qu'ensuite.",
+    expect: 'De temps en temps, tu recevras un e-mail sur les nouvelles fonctionnalités de SkillQuest et des conseils pour développer tes compétences, pour toi ou avec tes enfants. Chaque newsletter comporte un lien pour te désabonner en un clic.',
+    cta: "Confirmer l'inscription",
+    expiry: "Ce lien est valable pendant 24 heures.<br>Tu ne t'es pas inscrit ? Tu peux ignorer cet e-mail : sans confirmation, nous ne t'enverrons rien.",
   },
   es: {
-    subject: 'Confirma tu inscripción en SkillQuest',
-    title: 'Confirma tu registro',
-    heading: 'Confirma tu registro',
-    hey: (name) => `¡Hola${name ? ` ${name}` : ''}!`,
-    intro: (brand) => `¡Ya casi está! Haz clic en el botón de abajo para confirmar tu suscripción a las novedades de <strong style="color: #0F766E;">${brand}</strong>.`,
-    platformInfo: (p) => `Recibirás las últimas novedades de SkillQuest ${p}, incluida información sobre el acceso anticipado de Android si te suscribes.`,
-    androidNote: 'Android está disponible en Google Play. Esta suscripción por correo solo sirve para recibir novedades del producto.',
-    cta: 'Confirmar mi registro',
-    expiry: 'Este enlace es válido durante 24 horas.<br>¿No lo has pedido? Puedes ignorar este correo.',
-    questions: '¿Tienes alguna pregunta? Envíanos un correo a',
+    subject: 'Confirma tu suscripción al boletín de SkillQuest',
+    heading: 'Confirma tu suscripción',
+    hey: '¡Hola!',
+    intro: 'Te has suscrito al boletín de <strong style="color: #0F766E;">SkillQuest</strong>. Haz clic en el botón de abajo para confirmarlo. Solo empezaremos a enviarte el boletín después de eso.',
+    expect: 'De vez en cuando recibirás un correo sobre las novedades de SkillQuest y consejos para desarrollar habilidades, ya sea para ti o con tus hijos. Cada boletín incluye un enlace para darte de baja con un solo clic.',
+    cta: 'Confirmar suscripción',
+    expiry: 'Este enlace es válido durante 24 horas.<br>¿No te has suscrito? Entonces puedes ignorar este correo: sin confirmación, no te enviaremos nada.',
   },
   it: {
-    subject: 'Conferma la tua iscrizione a SkillQuest',
-    title: 'Conferma la tua iscrizione',
+    subject: 'Conferma la tua iscrizione alla newsletter di SkillQuest',
     heading: 'Conferma la tua iscrizione',
-    hey: (name) => `Ciao${name ? ` ${name}` : ''}!`,
-    intro: (brand) => `Ci siamo quasi! Clicca sul pulsante qui sotto per confermare la tua iscrizione agli aggiornamenti di <strong style="color: #0F766E;">${brand}</strong>.`,
-    platformInfo: (p) => `Riceverai gli aggiornamenti su SkillQuest ${p}, comprese le informazioni sull’accesso anticipato Android se decidi di iscriverti.`,
-    androidNote: 'Android è disponibile su Google Play. Questa iscrizione via email serve solo per gli aggiornamenti sul prodotto.',
-    cta: 'Conferma la tua registrazione',
-    expiry: 'Questo link è valido per 24 ore.<br>Non l\'hai richiesto? Puoi ignorare questa email.',
-    questions: 'Hai domande? Scrivici all\'indirizzo',
+    hey: 'Ciao!',
+    intro: 'Ti sei iscritto alla newsletter di <strong style="color: #0F766E;">SkillQuest</strong>. Clicca sul pulsante qui sotto per confermare. Solo dopo inizieremo a inviarti la newsletter.',
+    expect: "Di tanto in tanto riceverai un'email con le novità di SkillQuest e consigli per sviluppare le tue abilità, da solo o insieme ai tuoi figli. Ogni newsletter ha un link per annullare l'iscrizione con un solo clic.",
+    cta: "Conferma l'iscrizione",
+    expiry: 'Questo link è valido per 24 ore.<br>Non ti sei iscritto? Allora puoi ignorare questa email: senza conferma, non ti manderemo nulla.',
   },
 };
 
-export function renderVerificationEmail({ locale, name, verifyUrl, platform }) {
+export function renderVerificationEmail({ locale, confirmUrl }) {
   const loc = normalizeEmailLocale(locale);
   const t = VERIFY_COPY[loc];
-  const p = platformText(loc, platform);
 
   const body = `
           <tr>
@@ -171,130 +154,134 @@ export function renderVerificationEmail({ locale, name, verifyUrl, platform }) {
           </tr>
           <tr>
             <td style="padding-bottom: 32px; font-size: 16px; line-height: 1.6; color: #475569;">
-              <p style="margin: 0 0 16px 0;">${t.hey(name)}</p>
-              <p style="margin: 0 0 16px 0;">${t.intro('SkillQuest')}</p>
-              <p style="margin: 0 0 16px 0;">${t.platformInfo(p)}</p>
-              ${platform !== 'ios' ? `<p style="margin: 0 0 16px 0;">${t.androidNote}</p>` : ''}
+              <p style="margin: 0 0 16px 0;">${t.hey}</p>
+              <p style="margin: 0 0 16px 0;">${t.intro}</p>
+              <p style="margin: 0 0 16px 0;">${t.expect}</p>
             </td>
           </tr>
-${ctaButton(verifyUrl, t.cta)}
+${ctaButton(confirmUrl, t.cta)}
           <tr>
             <td style="padding-bottom: 24px; font-size: 14px; color: #94A3B8; text-align: center;">
               <p style="margin: 0;">${t.expiry}</p>
             </td>
           </tr>
-${footer(t.questions)}`;
+${footer(loc)}`;
 
-  return { subject: t.subject, html: shell(body, t.title) };
+  return { subject: t.subject, html: shell(body, t.heading) };
 }
 
 // ---------------------------------------------------------------------------
-// Welcome email ("your signup is confirmed")
+// Welcome email (after the subscription is confirmed)
 // ---------------------------------------------------------------------------
 
 const WELCOME_COPY = {
   nl: {
-    subject: 'Welkom bij de updates van SkillQuest!',
-    title: 'Welkom bij SkillQuest',
-    heading: 'Je aanmelding is bevestigd',
-    hey: (name) => `Hey${name ? ` ${name}` : ''}!`,
-    thanks: (p) => `Bedankt voor het bevestigen van je aanmelding voor updates van <strong style="color: #0F766E;">SkillQuest</strong> ${p}.`,
+    subject: 'Je bent ingeschreven voor de SkillQuest-nieuwsbrief',
+    title: 'Welkom bij de SkillQuest-nieuwsbrief',
+    heading: 'Je inschrijving is bevestigd',
+    hey: 'Hoi!',
+    thanks: 'Bedankt voor het bevestigen. Vanaf nu krijg je de nieuwsbrief van <strong style="color: #0F766E;">SkillQuest</strong>.',
     appIntro: 'SkillQuest helpt mensen en gezinnen vaardigheden op te bouwen met concentratietimers, XP, levels, statistieken, vrienden, uitdagingen en gezinsfuncties.',
     featuresHeading: 'Waarom is SkillQuest zo handig?',
     features: ['Focus-timers voor je vaardigheden', 'XP, levels en streaks', 'Statistieken per vaardigheid', 'Vrienden, uitdagingen en ranglijsten', 'Hulpmiddelen voor ouders en kinderen'],
     nextHeading: 'Wat kun je verwachten?',
-    next: ['Nieuws over nieuwe functies', 'Info over Android Early Access en de gesloten testfase op Google Play', 'Tips om je vaardigheden en die van je gezin te ontwikkelen'],
-    androidNote: 'Android staat op Google Play. Deze e-mailinschrijving is alleen voor productupdates.',
+    next: ['Nieuws over nieuwe functies', 'Tips om je vaardigheden en die van je gezin te ontwikkelen'],
     cta: 'Ga naar www.skill-quest.app',
-    questions: 'Vragen? Stuur ons een e-mail naar',
-    reason: 'Je krijgt deze e-mail omdat je je hebt aangemeld voor updates van SkillQuest.<br>We respecteren je privacy en sturen je alleen relevante updates.',
+    reason: 'Je krijgt deze e-mail omdat je je hebt ingeschreven voor de SkillQuest-nieuwsbrief.',
+    unsubscribeLead: 'Wil je de nieuwsbrief niet meer ontvangen?',
+    unsubscribeLink: 'Afmelden',
   },
   en: {
-    subject: 'Welcome to SkillQuest updates!',
-    title: 'Welcome to SkillQuest',
-    heading: 'Your signup is confirmed',
-    hey: (name) => `Hey${name ? ` ${name}` : ''}!`,
-    thanks: (p) => `Thanks for confirming your signup for <strong style="color: #0F766E;">SkillQuest</strong> updates ${p}.`,
+    subject: "You're subscribed to the SkillQuest newsletter",
+    title: 'Welcome to the SkillQuest newsletter',
+    heading: 'Your subscription is confirmed',
+    hey: 'Hi!',
+    thanks: 'Thanks for confirming. From now on you\'ll get the <strong style="color: #0F766E;">SkillQuest</strong> newsletter.',
     appIntro: 'SkillQuest helps people and families build skills with focus timers, XP, levels, stats, friends, challenges, and family tools.',
     featuresHeading: 'What makes SkillQuest useful?',
     features: ['Focus timers for your skills', 'XP, levels, and streaks', 'Stats per skill', 'Friends, challenges, and rankings', 'Family tools for parents and kids'],
     nextHeading: 'What can you expect?',
-    next: ['Updates on new features', 'Information about Android Early Access and Google Play closed testing', 'Tips on skill development for you and your family'],
-    androidNote: 'Android is available on Google Play. This email signup is for product updates only.',
+    next: ['Updates on new features', 'Tips on skill development for you and your family'],
     cta: 'Visit www.skill-quest.app',
-    questions: 'Questions? Email us at',
-    reason: 'You\'re receiving this email because you confirmed your signup for SkillQuest updates.<br>We respect your privacy and only send relevant updates.',
+    reason: "You're getting this email because you subscribed to the SkillQuest newsletter.",
+    unsubscribeLead: "Don't want the newsletter anymore?",
+    unsubscribeLink: 'Unsubscribe',
   },
   de: {
-    subject: 'Willkommen bei den SkillQuest-Updates!',
-    title: 'Willkommen bei SkillQuest',
-    heading: 'Deine Anmeldung wurde bestätigt',
-    hey: (name) => `Hey${name ? ` ${name}` : ''}!`,
-    thanks: (p) => `Danke, dass du deine Anmeldung für Updates zu <strong style="color: #0F766E;">SkillQuest</strong> ${p} bestätigt hast.`,
+    subject: 'Du hast den SkillQuest-Newsletter abonniert',
+    title: 'Willkommen beim SkillQuest-Newsletter',
+    heading: 'Dein Abonnement ist bestätigt',
+    hey: 'Hallo!',
+    thanks: 'Danke für deine Bestätigung. Ab sofort erhältst du den Newsletter von <strong style="color: #0F766E;">SkillQuest</strong>.',
     appIntro: 'SkillQuest hilft Einzelpersonen und Familien dabei, Fähigkeiten aufzubauen – mit Konzentrations-Timern, XP, Levels, Statistiken, Freunden, Herausforderungen und Tools für die ganze Familie.',
     featuresHeading: 'Was macht SkillQuest so nützlich?',
     features: ['Fokus-Timer für deine Fähigkeiten', 'XP, Level und Serien', 'Statistiken pro Fertigkeit', 'Freunde, Herausforderungen und Ranglisten', 'Hilfsmittel für Eltern und Kinder'],
     nextHeading: 'Was kannst du erwarten?',
-    next: ['Neues zu den neuen Funktionen', 'Infos zu Android Early Access und zum geschlossenen Test auf Google Play', 'Tipps zur Kompetenzentwicklung für dich und deine Familie'],
-    androidNote: 'Android ist bei Google Play verfügbar. Diese E-Mail-Anmeldung ist nur für Produktupdates.',
+    next: ['Neues zu den neuen Funktionen', 'Tipps zur Kompetenzentwicklung für dich und deine Familie'],
     cta: 'Besuch www.skill-quest.app',
-    questions: 'Fragen? Schick uns eine E-Mail an',
-    reason: 'Du erhältst diese E-Mail, weil du deine Anmeldung für SkillQuest-Updates bestätigt hast.<br>Wir respektieren deine Privatsphäre und senden dir nur relevante Updates.',
+    reason: 'Du erhältst diese E-Mail, weil du den SkillQuest-Newsletter abonniert hast.',
+    unsubscribeLead: 'Willst du den Newsletter nicht mehr erhalten?',
+    unsubscribeLink: 'Abmelden',
   },
   fr: {
-    subject: 'Bienvenue dans les actualités de SkillQuest !',
-    title: 'Bienvenue chez SkillQuest',
+    subject: 'Tu es inscrit à la newsletter de SkillQuest',
+    title: 'Bienvenue dans la newsletter de SkillQuest',
     heading: 'Ton inscription est confirmée',
-    hey: (name) => `Bonjour${name ? ` ${name}` : ''} !`,
-    thanks: (p) => `Merci d\'avoir confirmé ton inscription aux actualités de <strong style="color: #0F766E;">SkillQuest</strong> ${p}.`,
+    hey: 'Salut !',
+    thanks: 'Merci d\'avoir confirmé. Désormais, tu recevras la newsletter de <strong style="color: #0F766E;">SkillQuest</strong>.',
     appIntro: 'SkillQuest aide les gens et les familles à développer leurs compétences grâce à des minuteurs de concentration, des XP, des niveaux, des statistiques, des amis, des défis et des outils pour la famille.',
     featuresHeading: 'En quoi SkillQuest est-il utile ?',
     features: ['Minuteurs de concentration pour tes compétences', 'XP, niveaux et séries', 'Statistiques par compétence', 'Amis, défis et classements', 'Des outils pour toute la famille, destinés aux parents et aux enfants'],
     nextHeading: 'Ce qui t\'attend',
-    next: ['Nouveautés concernant les nouvelles fonctionnalités', 'Infos sur l’accès anticipé Android et les tests fermés sur Google Play', 'Des conseils pour développer tes compétences et celles de ta famille'],
-    androidNote: 'Android est disponible sur Google Play. Cette inscription par e-mail sert uniquement aux mises à jour du produit.',
+    next: ['Nouveautés concernant les nouvelles fonctionnalités', 'Des conseils pour développer tes compétences et celles de ta famille'],
     cta: 'Rends-toi sur www.skill-quest.app',
-    questions: 'Des questions ? Envoie-nous un e-mail à l\'adresse',
-    reason: 'Tu reçois cet e-mail parce que tu as confirmé ton inscription aux actualités de SkillQuest.<br>Nous respectons ta vie privée et ne t\'envoyons que des informations pertinentes.',
+    reason: "Tu reçois cet e-mail parce que tu t'es abonné à la newsletter de SkillQuest.",
+    unsubscribeLead: 'Tu ne veux plus recevoir la newsletter ?',
+    unsubscribeLink: 'Se désabonner',
   },
   es: {
-    subject: '¡Te damos la bienvenida a las novedades de SkillQuest!',
-    title: 'Bienvenido a SkillQuest',
-    heading: 'Ya se ha confirmado tu registro',
-    hey: (name) => `¡Hola${name ? ` ${name}` : ''}!`,
-    thanks: (p) => `Gracias por confirmar tu suscripción a las novedades de <strong style="color: #0F766E;">SkillQuest</strong> ${p}.`,
+    subject: 'Ya estás suscrito al boletín de SkillQuest',
+    title: 'Te damos la bienvenida al boletín de SkillQuest',
+    heading: 'Tu suscripción está confirmada',
+    hey: '¡Hola!',
+    thanks: 'Gracias por confirmar. A partir de ahora recibirás el boletín de <strong style="color: #0F766E;">SkillQuest</strong>.',
     appIntro: 'SkillQuest ayuda a las personas y a las familias a desarrollar habilidades mediante temporizadores de concentración, XP, niveles, estadísticas, amigos, retos y herramientas para la familia.',
     featuresHeading: '¿Por qué es útil SkillQuest?',
     features: ['Temporizadores de concentración para tus habilidades', 'XP, niveles y rachas', 'Estadísticas por habilidad', 'Amigos, retos y clasificaciones', 'Herramientas familiares para padres e hijos'],
     nextHeading: '¿Qué puedes esperar?',
-    next: ['Novedades sobre las nuevas funciones', 'Información sobre el acceso anticipado de Android y las pruebas cerradas de Google Play', 'Consejos para que tú y tu familia desarrolléis vuestras habilidades'],
-    androidNote: 'Android está disponible en Google Play. Esta suscripción por correo solo sirve para recibir novedades del producto.',
+    next: ['Novedades sobre las nuevas funciones', 'Consejos para que tú y tu familia desarrolléis vuestras habilidades'],
     cta: 'Visita www.skill-quest.app',
-    questions: '¿Tienes alguna pregunta? Envíanos un correo a',
-    reason: 'Recibes este correo porque has confirmado que quieres recibir las novedades de SkillQuest.<br>Respetamos tu privacidad y solo te enviamos novedades que te interesen.',
+    reason: 'Recibes este correo porque te has suscrito al boletín de SkillQuest.',
+    unsubscribeLead: '¿Ya no quieres recibir el boletín?',
+    unsubscribeLink: 'Darse de baja',
   },
   it: {
-    subject: 'Ti diamo il benvenuto agli aggiornamenti di SkillQuest!',
-    title: 'Benvenuto in SkillQuest',
-    heading: 'La tua registrazione è stata confermata',
-    hey: (name) => `Ciao${name ? ` ${name}` : ''}!`,
-    thanks: (p) => `Grazie per aver confermato la tua iscrizione agli aggiornamenti di <strong style="color: #0F766E;">SkillQuest</strong> ${p}.`,
+    subject: 'Ti sei iscritto alla newsletter di SkillQuest',
+    title: 'Ti diamo il benvenuto nella newsletter di SkillQuest',
+    heading: 'La tua iscrizione è confermata',
+    hey: 'Ciao!',
+    thanks: 'Grazie per la conferma. D\'ora in poi riceverai la newsletter di <strong style="color: #0F766E;">SkillQuest</strong>.',
     appIntro: 'SkillQuest aiuta le persone e le famiglie a sviluppare le proprie competenze grazie a timer di concentrazione, XP, livelli, statistiche, amici, sfide e strumenti per la famiglia.',
     featuresHeading: 'Cosa rende SkillQuest così utile?',
     features: ['Timer di concentrazione per le tue abilità', 'XP, livelli e serie consecutive', 'Statistiche per abilità', 'Amici, sfide e classifiche', 'Strumenti per la famiglia, per genitori e bambini'],
     nextHeading: 'Cosa ti puoi aspettare?',
-    next: ['Novità sulle nuove funzionalità', 'Informazioni sull’accesso anticipato Android e sul test chiuso di Google Play', 'Consigli su come sviluppare le tue capacità e quelle della tua famiglia'],
-    androidNote: 'Android è disponibile su Google Play. Questa iscrizione via email serve solo per gli aggiornamenti sul prodotto.',
+    next: ['Novità sulle nuove funzionalità', 'Consigli su come sviluppare le tue capacità e quelle della tua famiglia'],
     cta: 'Visita il sito www.skill-quest.app',
-    questions: 'Hai domande? Scrivici all\'indirizzo',
-    reason: 'Hai ricevuto questa email perché hai confermato la tua iscrizione agli aggiornamenti di SkillQuest.<br>Rispettiamo la tua privacy e ti inviamo solo aggiornamenti pertinenti.',
+    reason: 'Hai ricevuto questa email perché ti sei iscritto alla newsletter di SkillQuest.',
+    unsubscribeLead: 'Non vuoi più ricevere la newsletter?',
+    unsubscribeLink: 'Annulla iscrizione',
   },
 };
 
-export function renderWelcomeEmail({ locale, name, platform }) {
+export function renderWelcomeEmail({ locale, unsubscribeUrl }) {
   const loc = normalizeEmailLocale(locale);
   const t = WELCOME_COPY[loc];
-  const p = platformText(loc, platform);
+
+  const unsubscribe = `
+              <p style="margin: 16px 0 0 0; font-size: 11px; color: #94A3B8; line-height: 1.6;">
+                ${t.reason}<br>
+                ${t.unsubscribeLead} <a href="${escapeAttribute(unsubscribeUrl)}" style="color: #0F766E;">${t.unsubscribeLink}</a>
+              </p>`;
 
   const body = `
           <tr>
@@ -304,8 +291,8 @@ export function renderWelcomeEmail({ locale, name, platform }) {
           </tr>
           <tr>
             <td style="padding-bottom: 32px; font-size: 16px; line-height: 1.6; color: #475569;">
-              <p style="margin: 0 0 16px 0;">${t.hey(name)}</p>
-              <p style="margin: 0 0 16px 0;">${t.thanks(p)}</p>
+              <p style="margin: 0 0 16px 0;">${t.hey}</p>
+              <p style="margin: 0 0 16px 0;">${t.thanks}</p>
               <p style="margin: 0 0 16px 0;">${t.appIntro}</p>
             </td>
           </tr>
@@ -325,115 +312,8 @@ export function renderWelcomeEmail({ locale, name, platform }) {
               </ul>
             </td>
           </tr>
-          ${platform !== 'ios' ? `<tr>
-            <td style="padding-bottom: 24px; font-size: 15px; line-height: 1.6; color: #475569;">
-              <p style="margin: 0;">${t.androidNote}</p>
-            </td>
-          </tr>` : ''}
 ${ctaButton(SITE_URL, t.cta)}
-          <tr>
-            <td align="center" style="padding-top: 8px; border-top: 1px solid #DCE5DF;">
-              <p style="margin: 0; font-size: 12px; color: #94A3B8; line-height: 1.6;">
-                SkillQuest | <a href="${SITE_URL}" style="color: #0F766E; text-decoration: none;">www.skill-quest.app</a><br>
-                ${t.questions} <a href="mailto:${SUPPORT_EMAIL}" style="color: #0F766E; text-decoration: none;">${SUPPORT_EMAIL}</a>
-              </p>
-              <p style="margin: 16px 0 0 0; font-size: 11px; color: #CBD5E1;">${t.reason}</p>
-            </td>
-          </tr>`;
-
-  return { subject: t.subject, html: shell(body, t.title) };
-}
-
-// ---------------------------------------------------------------------------
-// Android install-notify email ("you can install now")
-// ---------------------------------------------------------------------------
-
-const INSTALL_COPY = {
-  nl: {
-    subject: 'Je kunt SkillQuest nu installeren op Android!',
-    title: 'Je kunt SkillQuest nu installeren',
-    heading: 'Je bent toegevoegd als Android-tester!',
-    hey: (name) => `Hey${name ? ` ${name}` : ''}!`,
-    body: 'Je e-mailadres staat nu op de Google Play-testerslijst voor SkillQuest. Open de onderstaande link <strong>met hetzelfde Google-account op je Android-apparaat</strong> om mee te doen aan de test en de app te installeren.',
-    cta: 'Word tester en installeer',
-    note: 'Werkt de link niet meteen? Het kan tot een uur duren voordat Google Play je toevoeging heeft verwerkt.',
-    questions: 'Vragen? Stuur ons een e-mail naar',
-  },
-  en: {
-    subject: 'You can now install SkillQuest on Android!',
-    title: 'You can now install SkillQuest',
-    heading: "You've been added as an Android tester!",
-    hey: (name) => `Hey${name ? ` ${name}` : ''}!`,
-    body: 'Your email is now on the Google Play tester list for SkillQuest. Open the link below <strong>using the same Google account on your Android device</strong> to join the test and install the app.',
-    cta: 'Become a tester and install',
-    note: "Link not working right away? It can take up to an hour for Google Play to process your addition.",
-    questions: 'Questions? Email us at',
-  },
-  de: {
-    subject: 'Du kannst SkillQuest jetzt auf Android installieren!',
-    title: 'Du kannst SkillQuest jetzt installieren',
-    heading: 'Du wurdest als Android-Tester hinzugefügt!',
-    hey: (name) => `Hey${name ? ` ${name}` : ''}!`,
-    body: 'Deine E-Mail-Adresse steht jetzt auf der Google Play-Testerliste für SkillQuest. Öffne den unten stehenden Link <strong>mit demselben Google-Konto auf deinem Android-Gerät</strong>, um am Test teilzunehmen und die App zu installieren.',
-    cta: 'Tester werden und installieren',
-    note: 'Der Link funktioniert nicht sofort? Es kann bis zu einer Stunde dauern, bis Google Play deinen Eintrag verarbeitet hat.',
-    questions: 'Fragen? Schick uns eine E-Mail an',
-  },
-  fr: {
-    subject: 'Tu peux désormais installer SkillQuest sur Android !',
-    title: 'Tu peux désormais installer SkillQuest',
-    heading: 'Tu as été ajouté à la liste des testeurs Android !',
-    hey: (name) => `Bonjour${name ? ` ${name}` : ''} !`,
-    body: 'Ton adresse e-mail figure désormais sur la liste des testeurs de SkillQuest sur Google Play. Clique sur le lien ci-dessous <strong>en utilisant le même compte Google sur ton appareil Android</strong> pour participer au test et installer l\'appli.',
-    cta: 'Devenir testeur et installer',
-    note: 'Le lien ne fonctionne pas tout de suite ? Le traitement de ton ajout par Google Play peut prendre jusqu\'à une heure.',
-    questions: 'Des questions ? Envoie-nous un e-mail à l\'adresse',
-  },
-  es: {
-    subject: '¡Ya puedes instalar SkillQuest en Android!',
-    title: 'Ya puedes instalar SkillQuest',
-    heading: '¡Ya te hemos añadido como probador de Android!',
-    hey: (name) => `¡Hola${name ? ` ${name}` : ''}!`,
-    body: 'Tu correo electrónico ya figura en la lista de probadores de SkillQuest en Google Play. Abre el enlace que aparece a continuación <strong>con la misma cuenta de Google en tu dispositivo Android</strong> para unirte a la prueba e instalar la app.',
-    cta: 'Hazte probador e instala',
-    note: '¿El enlace no funciona de inmediato? Google Play puede tardar hasta una hora en procesar tu alta.',
-    questions: '¿Tienes alguna pregunta? Envíanos un correo a',
-  },
-  it: {
-    subject: 'Ora puoi installare SkillQuest su Android!',
-    title: 'Ora puoi installare SkillQuest',
-    heading: 'Sei stato aggiunto come tester per Android!',
-    hey: (name) => `Ciao${name ? ` ${name}` : ''}!`,
-    body: 'Il tuo indirizzo email è ora nella lista dei tester di SkillQuest su Google Play. Apri il link qui sotto <strong>usando lo stesso account Google sul tuo dispositivo Android</strong> per partecipare al test e installare l\'app.',
-    cta: 'Diventa un tester e installa',
-    note: 'Il link non funziona subito? Google Play potrebbe impiegare fino a un\'ora per elaborare la tua richiesta.',
-    questions: 'Hai domande? Scrivici all\'indirizzo',
-  },
-};
-
-export function renderInstallEmail({ locale, name, androidJoinUrl }) {
-  const loc = normalizeEmailLocale(locale);
-  const t = INSTALL_COPY[loc];
-
-  const body = `
-          <tr>
-            <td align="center" style="padding-bottom: 24px;">
-              <h1 style="margin: 0; font-size: 28px; font-weight: bold; color: #115E59;">${t.heading}</h1>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding-bottom: 32px; font-size: 16px; line-height: 1.6; color: #475569;">
-              <p style="margin: 0 0 16px 0;">${t.hey(name)}</p>
-              <p style="margin: 0 0 16px 0;">${t.body}</p>
-            </td>
-          </tr>
-${ctaButton(androidJoinUrl, t.cta)}
-          <tr>
-            <td style="padding-bottom: 24px; font-size: 14px; color: #94A3B8; text-align: center;">
-              <p style="margin: 0;">${t.note}</p>
-            </td>
-          </tr>
-${footer(t.questions)}`;
+${footer(loc, unsubscribe)}`;
 
   return { subject: t.subject, html: shell(body, t.title) };
 }
