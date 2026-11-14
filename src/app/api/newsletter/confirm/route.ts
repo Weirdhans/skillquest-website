@@ -67,19 +67,21 @@ export async function POST(request: NextRequest) {
     const locale = toNewsletterLocale(parsed.locale);
     const email = parsed.email;
     const resend = getResendClient();
-    const consent = {
+    // Built at the moment of each write, so a slow parallel request can never
+    // store an older consent time over a newer one.
+    const consent = () => ({
       locale,
       // Never earlier than the token itself, even if this server's clock
       // runs behind the one that issued it.
       consent_at: new Date(Math.max(Date.now(), parsed.issuedAt)).toISOString(),
       consent_version: NEWSLETTER_CONSENT_VERSION,
       consent_source: 'website'
-    };
+    });
 
     let contactId: string | null = null;
     const existing = await findContact(resend, email);
     if (!existing) {
-      contactId = await createSubscribedContact(resend, email, locale, consent);
+      contactId = await createSubscribedContact(resend, email, locale, consent());
     }
 
     if (!contactId) {
@@ -103,7 +105,7 @@ export async function POST(request: NextRequest) {
       const {error: updateError} = await resend.contacts.update({
         id: contact.id,
         unsubscribed: false,
-        properties: consent
+        properties: consent()
       });
       if (updateError) {
         throw new Error(`Resend contact update failed: ${updateError.name}`);
