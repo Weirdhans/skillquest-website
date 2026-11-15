@@ -67,11 +67,15 @@ jobs:
           node code/scripts/newsletter.mjs "${args[@]}"
 
       - name: Save the state branch
+        id: save
         if: always()
         run: bash code/scripts/newsletter-state.sh state commit "newsletter daily ${GITHUB_RUN_ID}"
 
+      # Also after a failed run: the script writes what it knows before it prepares,
+      # so issues of earlier months are still opened, reminded and closed. Never when
+      # the state could not be saved: issues must not run ahead of the state branch.
       - name: Open, remind and close issues
-        if: success()
+        if: always() && steps.save.outcome == 'success' && hashFiles('summary.json') != ''
         run: |
           set -euo pipefail
           if [ "$(jq -r .dryRun summary.json)" = "true" ]; then
@@ -83,10 +87,12 @@ jobs:
           gh label create newsletter --color 0e8a16 --description "Monthly newsletter" --repo "$GITHUB_REPOSITORY" 2>/dev/null || true
           gh label create approved --color 1d76db --description "Schedule the ticked languages" --repo "$GITHUB_REPOSITORY" 2>/dev/null || true
 
+          # The issue list itself, not GitHub search (search lags behind new issues).
+          gh issue list --repo "$GITHUB_REPOSITORY" --state all --label newsletter --limit 200 \
+            --json number,title,state > issues.json
           find_issue() { # find_issue <open|all> <title>: number of the newsletter issue with exactly this title
-            gh issue list --repo "$GITHUB_REPOSITORY" --state "$1" --label newsletter --limit 50 \
-                --search "\"$2\" in:title" --json number,title \
-              | jq -r --arg t "$2" '[.[] | select(.title == $t)][0].number // empty'
+            jq -r --arg s "$1" --arg t "$2" \
+              '[.[] | select(.title == $t and ($s == "all" or .state == "OPEN"))][0].number // empty' issues.json
           }
 
           jq -c '.close[]' summary.json | while read -r item; do
@@ -106,7 +112,8 @@ jobs:
 
           # Open the approval issue of every issue that waits, unless one with that title
           # exists already (open, or closed by Hans on purpose). Also repairs a run that
-          # stopped between saving the drafts and opening the issue.
+          # stopped between saving the drafts and opening the issue. A rebuilt issue has
+          # a title of its own ("(versie 2)").
           count=$(jq '.ensure | length' summary.json)
           for i in $(seq 0 $((count - 1))); do
             title=$(jq -r ".ensure[$i].title" summary.json)

@@ -181,7 +181,9 @@ kent en per taal een vinkje kan weghalen.
    en zet de artikelen terug in de pool. De dagelijkse stap houdt ook concepten
    bij: nam Resend een verzendopdracht aan terwijl het antwoord verloren ging,
    dan staat de taal de volgende dag toch op `scheduled` of `sent`, zodat de
-   artikelen niet nog eens meegaan.
+   artikelen niet nog eens meegaan. Ging een concept buiten de straat om de
+   deur uit met andere inhoud dan de proefmail, dan wordt dat `outside`: de
+   artikelen blijven beschikbaar en de run geeft een waarschuwing.
 
 Zonder goedkeuring komt er op dag 7 en dag 14 een herinnering op het issue. Op
 dag 21 worden de concepten verwijderd en sluit het issue. De artikelen gaan dan
@@ -204,11 +206,18 @@ Een losse branch zonder gemeenschappelijke geschiedenis met `master`
 (`scripts/newsletter-state.sh`, zelfde patroon als `social-queue` in de
 app-repo), met `issues/JJJJ-MM.json` per nummer. Per taal staan daarin de
 status (`draft`, `scheduled`, `sent`, `skipped`, `expired`, `cancelled`,
-`empty`), het broadcast-ID, de vingerafdruk, het onderwerp en de verstuurde
-items (`tip:<id>`, `blog:<id>`, `app:<versie>`). Er staan **geen e-mailadressen
-of aantallen** in. Dat is nodig, want de repo is openbaar. Een nummer dat bij
-het klaarzetten halverwege stukging (`complete: false`), wordt de volgende dag
-opnieuw gebouwd: oude concepten met dezelfde naam worden eerst opgeruimd.
+`outside`, `empty`), het broadcast-ID, de vingerafdruk, het onderwerp en de
+verstuurde items (`tip:<id>`, `blog:<id>`, `app:<versie>`). Alleen `scheduled`
+en `sent` tellen als verstuurd. Er staan **geen e-mailadressen of aantallen**
+in. Dat is nodig, want de repo is openbaar.
+
+Een nummer dat bij het klaarzetten halverwege stukging (`complete: false`),
+wordt de volgende dag opnieuw gebouwd: oude concepten met dezelfde naam worden
+eerst opgeruimd. Bij een rebuild worden het nieuwe versienummer en de oude
+titel (`retired`) meteen opgeslagen, zodat een mislukte poging ze niet kwijtraakt.
+Welke issues open moeten en welke dicht kunnen, rekent elke dagelijkse run
+opnieuw uit de status uit. De run schrijft dat al op vóór het klaarzetten, dus
+ook een mislukte run sluit oude issues en opent een gemist issue.
 
 ### Geheimen (GitHub → Settings → Secrets and variables → Actions)
 
@@ -295,4 +304,9 @@ bevestigen is; de Host-header wordt nergens vertrouwd.
 nieuwsbrief: welke artikelen meegaan, de opmaak in zes talen met afmeldlink en
 escaping, het tijdstip van verzending, het goedkeuringsissue, de vingerafdruk,
 de weigering van een concept zonder topic, en de beveiligingsregels van de
-workflows.
+workflows. `tests/newsletter-flow.test.mjs` draait het echte script tegen een
+nagebootste Resend (`tests/fixtures/newsletter-fake-fetch.mjs`, geen netwerk):
+een hele maand van klaarzetten tot versturen, de maand erna, een ontbrekende of
+mislukte proefmail, een in Resend gewijzigd concept, een verloren
+verzendantwoord, een rebuild die halverwege mislukt en een nummer dat vervalt
+als de volgende maand begint.

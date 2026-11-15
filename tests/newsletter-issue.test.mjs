@@ -22,6 +22,8 @@ import {
   issueItemIds,
   nextSendTime,
   parseApprovalIssue,
+  hasDrafts,
+  issuesToClose,
   previewEmail,
   reconciledStatus,
   renderApprovalIssue,
@@ -293,20 +295,48 @@ test('the send step schedules only an unchanged, ticked draft', () => {
 });
 
 test('the daily step follows what Resend reports', () => {
-  assert.equal(reconciledStatus('scheduled', {status: 'sent'}), 'sent');
-  assert.equal(reconciledStatus('scheduled', {status: 'queued'}), null);
-  assert.equal(reconciledStatus('scheduled', null), 'cancelled');
-  assert.equal(reconciledStatus('scheduled', {status: 'draft'}), 'cancelled');
-  assert.equal(reconciledStatus('scheduled', {status: 'canceled'}), 'cancelled');
-  assert.equal(reconciledStatus('draft', {status: 'draft'}), null);
-  assert.equal(reconciledStatus('draft', {status: 'queued'}), 'scheduled');
-  assert.equal(reconciledStatus('draft', {status: 'scheduled'}), 'scheduled');
-  assert.equal(reconciledStatus('draft', {status: 'sent'}), 'sent');
-  assert.equal(reconciledStatus('draft', null), 'cancelled');
-  assert.equal(reconciledStatus('draft', {status: 'something new'}), null);
-  for (const status of ['sent', 'expired', 'skipped', 'cancelled', 'empty']) {
-    assert.equal(reconciledStatus(status, null), null, status);
+  const {stored, entry} = draftFor('nl');
+  const scheduled = {...entry, status: 'scheduled'};
+  assert.equal(reconciledStatus(scheduled, {...stored, status: 'sent'}), 'sent');
+  assert.equal(reconciledStatus(scheduled, {...stored, status: 'queued'}), null);
+  assert.equal(reconciledStatus(scheduled, null), 'cancelled');
+  assert.equal(reconciledStatus(scheduled, {...stored, status: 'draft'}), 'cancelled');
+  assert.equal(reconciledStatus(scheduled, {...stored, status: 'canceled'}), 'cancelled');
+  assert.equal(reconciledStatus(entry, {...stored, status: 'draft'}), null);
+  assert.equal(reconciledStatus(entry, {...stored, status: 'queued'}), 'scheduled');
+  assert.equal(reconciledStatus(entry, {...stored, status: 'scheduled'}), 'scheduled');
+  assert.equal(reconciledStatus(entry, {...stored, status: 'sent'}), 'sent');
+  assert.equal(reconciledStatus(entry, null), 'cancelled');
+  assert.equal(reconciledStatus(entry, {...stored, status: 'something new'}), null);
+  // Sent or scheduled with other content than the preview: its articles stay available.
+  assert.equal(reconciledStatus(entry, {...stored, status: 'sent', html: 'edited'}), 'outside');
+  assert.equal(reconciledStatus(entry, {...stored, status: 'queued', topic_id: 'other'}), 'outside');
+  for (const status of ['sent', 'expired', 'skipped', 'cancelled', 'empty', 'outside']) {
+    assert.equal(reconciledStatus({status}, null), null, status);
   }
+  assert.deepEqual(
+    [...sentItemIds([{issue: 'x', locales: {nl: {status: 'outside', items: ['tip:a']}}}], 'nl')],
+    []
+  );
+});
+
+test('approval issues are closed from the state alone, so a failed run is repaired', () => {
+  const now = new Date('2027-01-10T06:17:00Z');
+  const manifests = [
+    {issue: '2026-12', revision: 2, preparedAt: '2026-12-08T06:17:00Z', complete: true, retired: ['Nieuwsbrief 2026-12'],
+      expiredReason: 'superseded:2027-01', locales: {nl: {status: 'expired'}}},
+    {issue: '2027-01', revision: 1, preparedAt: '2027-01-04T06:17:00Z', complete: true, locales: {nl: {status: 'draft'}}},
+    {issue: '2027-02', revision: 1, preparedAt: '2027-01-10T06:17:00Z', complete: false, retired: [], locales: {}},
+    {issue: '2026-06', revision: 1, preparedAt: '2026-06-01T06:17:00Z', complete: true, locales: {nl: {status: 'sent'}}}
+  ];
+  const close = issuesToClose(manifests, now);
+  assert.deepEqual(close.map((c) => c.title).sort(), ['Nieuwsbrief 2026-12', 'Nieuwsbrief 2026-12 (versie 2)']);
+  assert.match(close.find((c) => c.title.endsWith('(versie 2)')).comment, /Vervangen door het nummer van 2027-01/);
+  assert.match(close.find((c) => c.title === 'Nieuwsbrief 2026-12').comment, /nieuwe versie/);
+  assert.equal(hasDrafts(manifests[1]), true);
+  assert.equal(hasDrafts(manifests[0]), false);
+  const aged = issuesToClose([{...manifests[0], retired: [], expiredReason: 'age'}], now);
+  assert.match(aged[0].comment, new RegExp(`${EXPIRE_DAYS} dagen`));
 });
 
 test('the approval issue round-trips and only reads month and ticks', () => {
@@ -341,10 +371,18 @@ test('the approval issue round-trips and only reads month and ticks', () => {
     '<!--\n- [x] `de` in a comment\n-->',
     '```\n- [x] `de` in a code block\n```',
     '~~~md\n- [x] `de` in a code block\n~~~',
-    '```\n- [x] `de` in a code block that never ends'
+    '```\n- [x] `de` in a code block that never ends',
+    '   ```\n- [x] `de` in an indented code block\n   ```',
+    '````\n```\n- [x] `de` a shorter fence does not close a longer one\n````',
+    '```\n``` not a closing fence\n- [x] `de` still in the block\n```'
   ]) {
     assert.deepEqual([...parseApprovalIssue(`${hidden}\n${extra}`).ticked], ['nl'], extra);
   }
+  // Inline code at the start of a line is no fence and hides nothing after it.
+  assert.deepEqual(
+    [...parseApprovalIssue(`\`\`\`inline\`\`\` text\n${body}`).ticked].sort(),
+    ['en', 'nl']
+  );
 
   const unticked = body.replace('- [x] `en`', '- [ ] `en`').replace(/\n/g, '\r\n');
   assert.deepEqual([...parseApprovalIssue(unticked).ticked], ['nl']);
@@ -377,6 +415,7 @@ test('the workflows only act on the owner, never interpolate issue text and pin 
   assert.match(send, /github\.actor_id == github\.repository_owner_id/);
   assert.match(send, /index\("approved"\) != null/, 'the label is checked again when the job starts');
   assert.match(daily, /dry_run:[\s\S]*?default: true/);
+  assert.match(daily, /steps\.save\.outcome == 'success'/, 'issues never run ahead of the state branch');
   assert.match(send, /execute:[\s\S]*?default: false/);
   assert.doesNotMatch(daily, /npm (ci|install)/, 'no packages are installed next to the Resend key');
   assert.doesNotMatch(send, /npm (ci|install)/);

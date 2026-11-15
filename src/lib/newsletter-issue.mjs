@@ -486,17 +486,56 @@ const CANCELLED_STATUSES = ['canceled', 'cancelled'];
  * The new manifest status of a draft or scheduled language, given what Resend
  * reports for its broadcast (null when the broadcast is gone), or null when
  * nothing changes. Also catches a send that Resend accepted while its answer
- * got lost, and a draft someone scheduled or deleted in the dashboard.
+ * got lost. A draft that went out with other content than its preview (sent
+ * or scheduled in the dashboard after an edit) becomes 'outside': it does not
+ * count as sent, so its articles stay available, and the run warns about it.
  */
-export function reconciledStatus(entryStatus, broadcast) {
-  if (entryStatus !== 'draft' && entryStatus !== 'scheduled') return null;
+export function reconciledStatus(entry, broadcast) {
+  const current = entry?.status;
+  if (current !== 'draft' && current !== 'scheduled') return null;
   if (!broadcast) return 'cancelled';
   const status = broadcast.status;
-  if (status === 'sent') return 'sent';
-  if (SCHEDULED_STATUSES.includes(status)) return entryStatus === 'scheduled' ? null : 'scheduled';
   if (CANCELLED_STATUSES.includes(status)) return 'cancelled';
-  if (status === 'draft') return entryStatus === 'scheduled' ? 'cancelled' : null;
-  return null;
+  if (current === 'scheduled') {
+    if (status === 'sent') return 'sent';
+    if (status === 'draft') return 'cancelled';
+    return null;
+  }
+  const goneOut = status === 'sent' || SCHEDULED_STATUSES.includes(status);
+  if (!goneOut) return null;
+  if (broadcastFingerprint(broadcast) !== entry.fingerprint) return 'outside';
+  return status === 'sent' ? 'sent' : 'scheduled';
+}
+
+export function hasDrafts(manifest) {
+  return Object.values(manifest.locales ?? {}).some((entry) => entry.status === 'draft');
+}
+
+/** Issues whose approval issue may be closed are looked at for this many days. */
+const CLOSE_WINDOW_DAYS = 120;
+
+/**
+ * The approval issues that should be closed, worked out from the state alone
+ * on every run, so a run that stopped halfway is repaired by the next one. The
+ * workflow closes (and comments on) only the ones that are still open.
+ */
+export function issuesToClose(manifests, now) {
+  const close = new Map();
+  for (const manifest of manifests) {
+    if (daysBetween(new Date(manifest.preparedAt), now) > CLOSE_WINDOW_DAYS) continue;
+    for (const title of manifest.retired ?? []) {
+      close.set(title, 'Opnieuw klaargezet: dit issue is vervangen door een nieuwe versie met nieuwe concepten en proefmails.');
+    }
+    if (manifest.complete !== true || hasDrafts(manifest)) continue;
+    const reason = manifest.expiredReason ?? '';
+    const comment = reason.startsWith('superseded:')
+      ? `Vervangen door het nummer van ${reason.slice('superseded:'.length)}: de concepten zijn verwijderd en de artikelen gaan mee in het nieuwe nummer.`
+      : reason === 'age'
+        ? `Niet goedgekeurd binnen ${EXPIRE_DAYS} dagen: de concepten zijn verwijderd. De artikelen gaan mee in het volgende nummer.`
+        : 'Er wacht niets meer op goedkeuring.';
+    close.set(approvalIssueTitle(manifest.issue, manifest.revision ?? 1), comment);
+  }
+  return [...close].map(([title, comment]) => ({title, comment}));
 }
 
 /**
@@ -545,6 +584,32 @@ function oneLine(value) {
   return String(value).replace(/[\r\n]+/g, ' ').trim();
 }
 
+/**
+ * The lines of Markdown text outside fenced code blocks (CommonMark: a fence
+ * of 3+ backticks or tildes, indented at most 3 spaces, closed by a fence of
+ * the same character that is at least as long and has nothing after it; an
+ * unclosed block runs to the end).
+ */
+function visibleLines(text) {
+  const lines = [];
+  let fence = null;
+  for (const line of text.split('\n')) {
+    if (fence) {
+      const close = line.match(/^ {0,3}(`{3,}|~{3,})[ \t]*$/);
+      if (close && close[1][0] === fence[0] && close[1].length >= fence.length) fence = null;
+      continue;
+    }
+    const open = line.match(/^ {0,3}(`{3,}|~{3,})(.*)$/);
+    // A backtick fence's info string has no backticks; otherwise it is inline code.
+    if (open && !(open[1][0] === '`' && open[2].includes('`'))) {
+      fence = open[1];
+      continue;
+    }
+    lines.push(line);
+  }
+  return lines;
+}
+
 /** The body of the approval issue (Dutch: it is for Hans). */
 export function renderApprovalIssue(manifest) {
   const lines = [
@@ -588,13 +653,9 @@ export function parseApprovalIssue(body) {
   const text = String(body ?? '').replace(/\r\n?/g, '\n');
   const marker = text.match(ISSUE_MARKER);
   if (!marker) return null;
-  const visible = text
-    .replace(/<!--[\s\S]*?(?:-->|$)/g, '')
-    .replace(/^(`{3,}|~{3,})[^\n]*\n[\s\S]*?^\1[^\n]*$/gm, '')
-    .replace(/^(`{3,}|~{3,})[\s\S]*$/m, '');
   const listed = new Set();
   const ticked = new Set();
-  for (const line of visible.split('\n')) {
+  for (const line of visibleLines(text.replace(/<!--[\s\S]*?(?:-->|$)/g, ''))) {
     const match = line.match(TICK_LINE);
     if (!match) continue;
     const locale = match[2];

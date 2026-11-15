@@ -100,7 +100,7 @@ jobs:
             ''|*[!0-9]*) exit 0 ;;
           esac
           if [ ! -f summary.json ]; then
-            gh issue comment "$ISSUE" --repo "$GITHUB_REPOSITORY" --body "Inplannen is mislukt; er is niets verstuurd. Zie $RUN_URL"
+            gh issue comment "$ISSUE" --repo "$GITHUB_REPOSITORY" --body "Deze run is gestopt zonder verslag (bijvoorbeeld omdat het label \`approved\` er niet meer op stond, of door een fout): $RUN_URL. Wat eventueel al was ingepland, staat in Resend en op de branch newsletter-state; de dagelijkse stap werkt dat bij."
             if [ "$EXECUTE" = "true" ]; then gh issue edit "$ISSUE" --repo "$GITHUB_REPOSITORY" --remove-label approved || true; fi
             exit 0
           fi

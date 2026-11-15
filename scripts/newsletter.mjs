@@ -16,8 +16,8 @@
 //             day 21, or as soon as the next month's issue is prepared;
 //          3. from the first Monday of the month: prepare this month's issue if
 //             it is not there yet (or redo one that a crash left incomplete);
-//          4. list the approval issues that must exist, so the workflow can
-//             open one that a failed run never opened.
+//          4. work out from the state which approval issues must exist and
+//             which can be closed, so a failed run is repaired by the next.
 // send     schedules the ticked languages of an approved issue, after checking
 //          that each draft is still exactly what the preview showed.
 // preview  renders the issue to HTML and text files; touches nothing.
@@ -29,7 +29,7 @@
 // checkout of the branch newsletter-state: issues/<YYYY-MM>.json per issue.
 // Nothing here writes an email address to a file or a log.
 
-import {existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync} from 'node:fs';
+import {existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync} from 'node:fs';
 import {join} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {
@@ -46,7 +46,9 @@ import {
   broadcastName,
   broadcastPayload,
   daysBetween,
+  hasDrafts,
   isPrepareDue,
+  issuesToClose,
   issueIdFor,
   issueItemIds,
   nextSendTime,
@@ -157,15 +159,13 @@ function saveManifest(state, manifest) {
   writeJson(join(issuesDir(state), `${manifest.issue}.json`), manifest);
 }
 
-function removeManifest(state, issueId) {
-  rmSync(join(issuesDir(state), `${issueId}.json`), {force: true});
-}
-
 // ---------------------------------------------------------------------------
 // Resend REST API
 // ---------------------------------------------------------------------------
 
 let lastCall = 0;
+// Milliseconds between API calls; tests/newsletter-flow.test.mjs sets 0.
+const CALL_SPACING_MS = Number(process.env.NEWSLETTER_CALL_SPACING_MS ?? 250);
 
 function retryAfterMs(response) {
   const seconds = Number(response.headers.get('retry-after'));
@@ -182,7 +182,7 @@ async function resend(method, path, body, {allow404 = false, idempotencyKey} = {
   const key = process.env.RESEND_NEWSLETTER_API_KEY;
   if (!key) throw new Error('RESEND_NEWSLETTER_API_KEY is not set');
   for (let attempt = 1; ; attempt++) {
-    const wait = lastCall + 250 - Date.now();
+    const wait = lastCall + CALL_SPACING_MS - Date.now();
     if (wait > 0) await sleep(wait);
     lastCall = Date.now();
     const headers = {
@@ -346,15 +346,20 @@ async function sendPreview({stored, locale, issueId, fingerprint}) {
 // ---------------------------------------------------------------------------
 
 /** Brings draft and scheduled languages in step with what Resend reports. */
-async function reconcile(state, manifests) {
+async function reconcile(state, manifests, warnings) {
   for (const manifest of Object.values(manifests)) {
     let changed = false;
     for (const [locale, entry] of Object.entries(manifest.locales ?? {})) {
       if (entry.status !== 'draft' && entry.status !== 'scheduled') continue;
       const broadcast = await resend('GET', `/broadcasts/${entry.broadcastId}`, undefined, {allow404: true});
-      const status = reconciledStatus(entry.status, broadcast);
+      const status = reconciledStatus(entry, broadcast);
       if (!status) continue;
       log(`${manifest.issue} ${locale}: ${entry.status} -> ${status}`);
+      if (status === 'outside') {
+        warnings.push(
+          `${manifest.issue} ${locale}: went out or was scheduled in Resend with other content than its preview; its articles stay available`
+        );
+      }
       entry.status = status;
       if (status === 'sent') entry.sentAt = broadcast?.sent_at ?? null;
       if (status === 'scheduled') entry.scheduledAt = broadcast?.scheduled_at ?? null;
@@ -365,25 +370,22 @@ async function reconcile(state, manifests) {
 }
 
 /** Deletes the remaining drafts of an issue and marks those languages expired. */
-async function expire(state, manifest, dryRun) {
+async function expire(state, manifest, reason, dryRun) {
   if (dryRun) return;
   for (const entry of Object.values(manifest.locales ?? {})) {
     if (entry.status !== 'draft') continue;
     await deleteBroadcast(entry.broadcastId);
     entry.status = 'expired';
   }
+  manifest.expiredReason = reason;
   saveManifest(state, manifest);
 }
 
-function hasDrafts(manifest) {
-  return Object.values(manifest.locales ?? {}).some((entry) => entry.status === 'draft');
-}
-
-async function prepare({state, now, issueId, revision, manifests, dryRun, warnings}) {
+async function prepare({state, now, issueId, revision, retired, manifests, dryRun, warnings}) {
   if (!dryRun && !process.env.NEWSLETTER_PREVIEW_TO) {
     throw new Error('NEWSLETTER_PREVIEW_TO is not set: nothing is prepared without a preview');
   }
-  const manifest = {issue: issueId, revision, preparedAt: now.toISOString(), complete: false, locales: {}};
+  const manifest = {issue: issueId, revision, preparedAt: now.toISOString(), complete: false, retired, locales: {}};
   const existing = dryRun ? [] : await listBroadcasts();
   const history = Object.values(manifests).filter((m) => m.issue !== issueId);
 
@@ -435,6 +437,23 @@ async function prepare({state, now, issueId, revision, manifests, dryRun, warnin
   return manifest;
 }
 
+/**
+ * What the workflow does with GitHub issues, worked out from the state alone:
+ * open the approval issue of every issue that waits (when no issue with that
+ * title exists, open or closed), close the ones that no longer wait. Written
+ * before and after preparing, so a failed prepare still repairs the rest.
+ */
+function issueActions(manifests, now) {
+  const waiting = Object.values(manifests).filter((m) => m.complete === true && hasDrafts(m));
+  return {
+    ensure: waiting.map((m) => ({
+      title: approvalIssueTitle(m.issue, m.revision ?? 1),
+      body: renderApprovalIssue(m)
+    })),
+    close: issuesToClose(Object.values(manifests), now)
+  };
+}
+
 async function daily(options) {
   const state = required(options, 'state');
   const summaryPath = required(options, 'summary');
@@ -442,84 +461,76 @@ async function daily(options) {
   const now = parseToday(options.today);
   const manifests = loadManifests(state);
   const warnings = [];
-  // ensure: approval issues that must exist (opened when no issue with that
-  // title exists yet, open or closed); close: open issues to close.
-  const summary = {dryRun, preview: null, ensure: [], reminders: [], close: [], warnings};
+  const summary = {dryRun, complete: false, preview: null, ensure: [], close: [], reminders: [], warnings};
+  const writeSummary = () => {
+    if (!dryRun) Object.assign(summary, issueActions(manifests, now));
+    writeJson(summaryPath, summary);
+  };
 
-  if (!dryRun) await reconcile(state, manifests);
+  if (!dryRun) await reconcile(state, manifests, warnings);
 
   const issueId = issueIdFor(now);
-  const current = manifests[issueId];
+  let current = manifests[issueId];
   let revision = current?.revision ?? 1;
+  let retired = current?.retired ?? [];
 
-  // Rebuild this month's issue: by hand, or because a crash left it incomplete.
+  // Rebuild this month's issue: by hand, or because a crash left it
+  // incomplete. The new revision and the retired title are saved at once, so
+  // a prepare that fails afterwards cannot bring the old title back.
   if (current && (current.complete !== true || options.rebuild === true)) {
     const locked = Object.values(current.locales ?? {}).some((entry) =>
       ['scheduled', 'sent'].includes(entry.status)
     );
     if (locked) throw new Error(`${issueId} is already scheduled or sent; it cannot be prepared again`);
+    if (current.complete === true) {
+      retired = [...retired, approvalIssueTitle(issueId, revision)];
+      revision += 1;
+    }
+    const previous = manifests[issueId];
+    current = {issue: issueId, revision, preparedAt: now.toISOString(), complete: false, retired, locales: {}};
+    manifests[issueId] = current;
     if (!dryRun) {
-      for (const entry of Object.values(current.locales ?? {})) {
+      // Save first, delete after: if a delete fails, the next run still sees an
+      // incomplete issue, and prepare cleans up leftover drafts by name.
+      saveManifest(state, current);
+      for (const entry of Object.values(previous.locales ?? {})) {
         if (entry.status === 'draft' && entry.broadcastId) await deleteBroadcast(entry.broadcastId);
       }
-      removeManifest(state, issueId);
-    }
-    delete manifests[issueId];
-    if (current.complete === true) {
-      summary.close.push({
-        title: approvalIssueTitle(issueId, revision),
-        comment: 'Opnieuw klaargezet: dit issue is vervangen door een nieuwe versie met nieuwe concepten en proefmails.'
-      });
-      revision += 1;
     }
   }
 
-  const prepareNow = isPrepareDue(now) && !manifests[issueId];
+  const prepareNow = isPrepareDue(now) && (!current || current.complete !== true);
 
   // Reminders and expiry. When a new month's issue is prepared, an older one
-  // that still waits is expired first: one open issue at a time, so the same
-  // articles can never be approved twice.
+  // that still waits is expired first: one waiting issue at a time, so the
+  // same articles can never be approved twice.
   for (const manifest of Object.values(manifests)) {
     if (manifest.complete !== true || !hasDrafts(manifest)) continue;
-    const title = approvalIssueTitle(manifest.issue, manifest.revision ?? 1);
     const age = daysBetween(new Date(manifest.preparedAt), now);
     const superseded = prepareNow && manifest.issue !== issueId;
-    if (age >= EXPIRE_DAYS || superseded) {
-      await expire(state, manifest, dryRun);
-      summary.close.push({
-        title,
-        comment: superseded
-          ? `Vervangen door het nummer van ${issueId}: de concepten zijn verwijderd en de artikelen gaan mee in het nieuwe nummer.`
-          : `Niet goedgekeurd binnen ${EXPIRE_DAYS} dagen: de concepten zijn verwijderd. De artikelen gaan mee in het volgende nummer.`
-      });
+    if (superseded) {
+      await expire(state, manifest, `superseded:${issueId}`, dryRun);
+    } else if (age >= EXPIRE_DAYS) {
+      await expire(state, manifest, 'age', dryRun);
     } else if (REMINDER_DAYS.includes(age)) {
       summary.reminders.push({
-        title,
+        title: approvalIssueTitle(manifest.issue, manifest.revision ?? 1),
         comment: `Nog niet goedgekeurd, dus er is niets verstuurd. Zet het label \`approved\` om de aangevinkte talen in te plannen. Na ${EXPIRE_DAYS} dagen vervallen de concepten.`
       });
     }
   }
 
+  writeSummary();
+
   if (prepareNow) {
-    const manifest = await prepare({state, now, issueId, revision, manifests, dryRun, warnings});
+    const manifest = await prepare({state, now, issueId, revision, retired, manifests, dryRun, warnings});
     if (dryRun) {
       summary.preview = {title: approvalIssueTitle(issueId, revision), body: renderApprovalIssue(manifest)};
     }
   }
 
-  // Every issue that waits for approval needs its approval issue; this also
-  // repairs a run that stopped between saving the drafts and opening it.
-  if (!dryRun) {
-    for (const manifest of Object.values(manifests)) {
-      if (manifest.complete !== true || !hasDrafts(manifest)) continue;
-      summary.ensure.push({
-        title: approvalIssueTitle(manifest.issue, manifest.revision ?? 1),
-        body: renderApprovalIssue(manifest)
-      });
-    }
-  }
-
-  writeJson(summaryPath, summary);
+  summary.complete = true;
+  writeSummary();
   for (const warning of warnings) log(`warning: ${warning}`);
   log(
     prepareNow
@@ -589,9 +600,12 @@ async function send(options) {
       if (execute) {
         entry.status = decision.status;
         entry.scheduledAt = stored.scheduled_at ?? null;
+        if (decision.status === 'sent') entry.sentAt = stored.sent_at ?? null;
         saveManifest(state, manifest);
       }
-      summary.lines.push(`\`${locale}\`: stond al ${decision.status === 'sent' ? 'verstuurd' : 'ingepland'} in Resend met de goedgekeurde inhoud; bijgewerkt.`);
+      summary.lines.push(
+        `\`${locale}\`: stond al ${decision.status === 'sent' ? 'verstuurd' : 'ingepland'} in Resend met de goedgekeurde inhoud; ${execute ? 'bijgewerkt' : 'zou bijgewerkt worden'}.`
+      );
     } else if (decision.action === 'refuse') {
       summary.failed = true;
       summary.lines.push(
