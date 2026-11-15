@@ -79,17 +79,22 @@ export default async function PrivacyPage({
   // Get section keys for current locale
   const sectionKeys = SECTION_KEYS_BY_LOCALE[locale] || SECTION_KEYS_BY_LOCALE['nl']
 
-  const sections = sectionKeys.map((key, index) => ({
-    key,
-    // Anchor ids are positional rather than derived from the translated key, so
-    // the same section is /privacy#s-9 in every language.
-    id: `s-${index + 1}`,
-    number: String(index + 1).padStart(2, '0'),
-    title: t(`sections.${key}.title`),
-    // The bodies still carry a few Markdown leftovers (### headings, a pipe
-    // table); normalizePrivacyHtml turns those into real HTML.
-    content: normalizePrivacyHtml(t.raw(`sections.${key}.content`) as string)
-  }))
+  const sections = sectionKeys.map((key, index) => {
+    const title = t(`sections.${key}.title`)
+
+    return {
+      key,
+      // Anchor ids are positional rather than derived from the translated key, so
+      // the same section is /privacy#s-9 in every language.
+      id: `s-${index + 1}`,
+      number: String(index + 1).padStart(2, '0'),
+      title,
+      // The bodies still carry a few Markdown leftovers (### headings, a pipe
+      // table); normalizePrivacyHtml turns those into real HTML. The section
+      // title names the scrolling box around a table for screen readers.
+      content: normalizePrivacyHtml(t.raw(`sections.${key}.content`) as string, {tableLabel: title})
+    }
+  })
 
   return (
     <>
