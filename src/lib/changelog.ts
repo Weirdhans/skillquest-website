@@ -156,7 +156,7 @@ const changelogEntries: Record<Locale, ChangelogEntry[]> = {
       date: '2026-07-24',
       title: 'Nouvelle page FAQ',
       description:
-        'On a ajouté une FAQ avec fonction de recherche qui couvre les tarifs, le forfait Family, les minuteries de concentration et la confidentialité, avec des données structurées pour que les réponses apparaissent directement dans les résultats de recherche Google.'
+        'On a ajouté une FAQ avec fonction de recherche qui couvre les tarifs, le forfait Family, les minuteurs de concentration et la confidentialité, avec des données structurées pour que les réponses apparaissent directement dans les résultats de recherche Google.'
     }
   ],
   es: [
