@@ -1,6 +1,7 @@
 // Newsletter email copy + HTML rendering, used by the Next.js API routes
-// (src/app/api/subscribe and src/app/api/newsletter/confirm). Kept as .mjs so
-// tests can import it with plain `node --test`.
+// (src/app/api/subscribe and src/app/api/newsletter/confirm) and by the
+// monthly issue (src/lib/newsletter-issue.mjs). Kept as .mjs so tests and
+// scripts can import it with plain `node`.
 
 export const EMAIL_LOCALES = ['nl', 'en', 'de', 'fr', 'es', 'it'];
 
@@ -12,7 +13,8 @@ const LOGO_URL = 'https://www.skill-quest.app/skillquest-logo.png';
 const SITE_URL = 'https://www.skill-quest.app';
 const SUPPORT_EMAIL = 'hello@skill-quest.app';
 
-function escapeAttribute(value) {
+/** Escapes text for an HTML attribute in double quotes or a text node. */
+export function escapeAttribute(value) {
   return String(value)
     .replace(/&/g, '&amp;')
     .replace(/"/g, '&quot;')
@@ -20,7 +22,7 @@ function escapeAttribute(value) {
     .replace(/>/g, '&gt;');
 }
 
-function shell(bodyHtml, title) {
+export function shell(bodyHtml, title) {
   return `
 <!DOCTYPE html>
 <html>
@@ -69,7 +71,7 @@ const QUESTIONS = {
   it: 'Hai domande? Scrivici all\'indirizzo',
 };
 
-function footer(locale, extraHtml = '') {
+export function footer(locale, extraHtml = '') {
   return `
           <tr>
             <td align="center" style="padding-top: 24px; border-top: 1px solid #DCE5DF;">
@@ -272,6 +274,20 @@ const WELCOME_COPY = {
     unsubscribeLink: 'Annulla iscrizione',
   },
 };
+
+/**
+ * The greeting and the "why you get this / unsubscribe" lines of the welcome
+ * email, reused by every monthly newsletter so the wording stays the same.
+ */
+export function newsletterFooterCopy(locale) {
+  const t = WELCOME_COPY[normalizeEmailLocale(locale)];
+  return {
+    hey: t.hey,
+    reason: t.reason,
+    unsubscribeLead: t.unsubscribeLead,
+    unsubscribeLink: t.unsubscribeLink,
+  };
+}
 
 export function renderWelcomeEmail({ locale, unsubscribeUrl }) {
   const loc = normalizeEmailLocale(locale);
