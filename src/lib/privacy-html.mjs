@@ -17,10 +17,13 @@ const HEADING = /^<p>(#{3,4}) (.+)<\/p>$/;
 const RULE = /^<p>-{3,}<\/p>$/;
 const ROW = /^<p>\|(.*)\|<\/p>$/;
 const SEPARATOR_CELL = /^:?-+:?$/;
+const TAG_START = /[A-Za-z/!]/;
 
 /**
  * Splits one table line into cells. A pipe inside a tag, for example in
- * `<a href="/x?a|b">`, is part of that tag and not a cell border.
+ * `<a href="/x?a|b">`, is part of that tag and not a cell border. A tag starts
+ * at a "<" that is followed by a letter, "/" or "!" (so "x < 5" is just text)
+ * and ends at the first ">" outside a quoted attribute value.
  *
  * @param {string} row the text between the outer pipes
  * @returns {string[]}
@@ -29,12 +32,24 @@ function cells(row) {
   const out = [];
   let cell = '';
   let inTag = false;
+  let quote = '';
 
-  for (const char of row) {
-    if (char === '<') inTag = true;
-    else if (char === '>') inTag = false;
+  for (let i = 0; i < row.length; i += 1) {
+    const char = row[i];
 
-    if (char === '|' && !inTag) {
+    if (inTag) {
+      if (quote) {
+        if (char === quote) quote = '';
+      } else if (char === '"' || char === "'") {
+        quote = char;
+      } else if (char === '>') {
+        inTag = false;
+      }
+      cell += char;
+    } else if (char === '<' && TAG_START.test(row[i + 1] ?? '')) {
+      inTag = true;
+      cell += char;
+    } else if (char === '|') {
       out.push(cell.trim());
       cell = '';
     } else {
@@ -88,8 +103,9 @@ function renderTable(lines, label) {
   // squeezing every cell to a few characters per line. With a name it is a
   // region a keyboard user can reach and scroll; without a name it stays a
   // plain box, because a focus stop that announces nothing helps no one.
-  const region = label
-    ? ` role="region" aria-label="${escapeAttribute(label)}" tabindex="0"`
+  const name = label?.trim();
+  const region = name
+    ? ` role="region" aria-label="${escapeAttribute(name)}" tabindex="0"`
     : '';
 
   return [
