@@ -177,32 +177,32 @@ export const authCopy: Record<AuthLocale, AuthCopy> = {
     logoText: 'SQ',
     forgotTitle: 'Mot de passe oublié',
     forgotIntro:
-      'Saisissez votre adresse e-mail. Nous vous enverrons un lien pour choisir un nouveau mot de passe sur le site web.',
+      'Saisis ton adresse e-mail. Nous t’enverrons un lien pour choisir un nouveau mot de passe sur le site web.',
     emailLabel: 'Adresse e-mail',
     forgotSubmit: 'Envoyer le lien de réinitialisation',
     forgotSubmitting: 'Envoi en cours...',
-    forgotSentTitle: 'Vérifiez vos e-mails',
+    forgotSentTitle: 'Vérifie tes e-mails',
     forgotSentBody:
-      'Si un compte existe pour cette adresse e-mail, vous recevrez un lien pour réinitialiser votre mot de passe. Le lien fonctionne sur votre téléphone et votre ordinateur.',
+      'Si un compte existe pour cette adresse e-mail, tu recevras un lien pour réinitialiser ton mot de passe. Le lien fonctionne sur ton téléphone comme sur ton ordinateur.',
     backToSkillQuest: 'Retour à SkillQuest',
-    forgotError: "Impossible d'envoyer l'e-mail. Veuillez réessayer plus tard.",
+    forgotError: "Impossible d'envoyer l'e-mail. Réessaie plus tard.",
     confirmTitle: 'Réinitialiser le mot de passe',
     confirmIntro:
-      'Veuillez confirmer que vous souhaitez modifier votre mot de passe SkillQuest. Vous pourrez ensuite choisir un nouveau mot de passe.',
+      'Confirme que tu veux modifier ton mot de passe SkillQuest. Tu pourras ensuite en choisir un nouveau.',
     continueButton: 'Continuer',
     expiredTitle: 'Lien de réinitialisation expiré',
     confirmExpiredBody:
-      "Ce lien est incomplet ou n'est plus valide. Veuillez demander une nouvelle réinitialisation de mot de passe.",
+      "Ce lien est incomplet ou n'est plus valide. Demande une nouvelle réinitialisation de mot de passe.",
     requestNewLink: 'Demander un nouveau lien de réinitialisation',
     resetSuccessTitle: 'Mot de passe modifié',
     resetSuccessBody:
-      'Votre mot de passe a été mis à jour. Nous vous avons déconnecté de vos sessions actuelles ; veuillez vous reconnecter avec votre nouveau mot de passe.',
+      'Ton mot de passe a été mis à jour. Toutes tes sessions en cours ont été fermées : reconnecte-toi avec ton nouveau mot de passe.',
     openSkillQuest: 'Ouvrir SkillQuest',
     resetExpiredBody:
-      'Veuillez demander une nouvelle réinitialisation de mot de passe et ouvrir le dernier lien reçu par e-mail.',
+      'Demande une nouvelle réinitialisation de mot de passe et ouvre le dernier lien reçu par e-mail.',
     resetTitle: 'Définir un nouveau mot de passe',
     resetIntro:
-      'Choisissez un nouveau mot de passe fort pour votre compte SkillQuest.',
+      'Choisis un nouveau mot de passe fort pour ton compte SkillQuest.',
     newPasswordLabel: 'Nouveau mot de passe',
     confirmPasswordLabel: 'Confirmer le mot de passe',
     showPasswordSuffix: 'afficher',
@@ -210,10 +210,10 @@ export const authCopy: Record<AuthLocale, AuthCopy> = {
     passwordRequirements:
       'Au moins 12 caractères avec une lettre minuscule, une lettre majuscule et un chiffre.',
     passwordManagerHint:
-      'Utilisez de préférence un mot de passe unique provenant de votre gestionnaire de mots de passe.',
+      'Utilise de préférence un mot de passe unique provenant de ton gestionnaire de mots de passe.',
     mismatchError: 'Les mots de passe ne correspondent pas.',
     resetGenericError:
-      "Votre mot de passe n'a pas pu être modifié. Veuillez réessayer.",
+      "Ton mot de passe n'a pas pu être modifié. Réessaie.",
     checkingButton: 'Vérification...',
     updatingButton: 'Mise à jour...',
     updatePasswordButton: 'Modifier le mot de passe'
