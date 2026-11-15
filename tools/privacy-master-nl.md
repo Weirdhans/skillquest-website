@@ -32,7 +32,7 @@ Als je je aanmeldt voor vroege toegang tot onze Android beta, verzamelen we:
 - Naam (optioneel)
 - Platformvoorkeur (Android)
 
-Deze gegevens worden veilig opgeslagen in **Supabase** (EU-servers) en gebruikt om je op de hoogte te houden over de app-lancering.
+Deze gegevens worden veilig opgeslagen in **Supabase** (servers in de Verenigde Staten) en gebruikt om je op de hoogte te houden over de app-lancering.
 
 ### 3.3 Contactformulieren
 Als je contact met ons opneemt via een contactformulier, verzamelen we:
@@ -93,7 +93,7 @@ We gebruiken de volgende GDPR-conforme diensten:
 | Dienst | Doel | Locatie | GDPR Status |
 |--------|------|---------|-------------|
 | **Vercel** | Website hosting en analytics | EU/US | Standard Contractual Clauses (SCC) |
-| **Supabase** | Database voor wachtlijst en app data | EU servers | GDPR-compliant |
+| **Supabase** | Database voor wachtlijst en app data | US | Standard Contractual Clauses (SCC) |
 | **Resend** | E-mail delivery voor contactformulieren | US | GDPR-compliant, SCC |
 | **Google Play Services** | Android app distributie (toekomstig) | US | GDPR-compliant |
 
@@ -167,7 +167,7 @@ Sommige van onze derde partij diensten (bijv. Vercel, Resend) kunnen gegevens op
 - Diensten voldoen aan GDPR vereisten
 - Passende technische en organisatorische maatregelen zijn geïmplementeerd
 
-Jouw primaire app-gegevens worden opgeslagen op **EU-servers** (Supabase EU regio).
+Jouw primaire app-gegevens worden door Supabase opgeslagen op servers in de **Verenigde Staten**.
 
 ## 13. Wijzigingen in Dit Privacybeleid
 
