@@ -1,6 +1,7 @@
 import {getTranslations} from 'next-intl/server'
 import {routing} from '@/i18n/routing'
 import Footer from '@/components/Footer'
+import {normalizePrivacyHtml} from '@/lib/privacy-html.mjs'
 
 const locales = routing.locales
 
@@ -85,7 +86,9 @@ export default async function PrivacyPage({
     id: `s-${index + 1}`,
     number: String(index + 1).padStart(2, '0'),
     title: t(`sections.${key}.title`),
-    content: t.raw(`sections.${key}.content`) as string
+    // The bodies still carry a few Markdown leftovers (### headings, a pipe
+    // table); normalizePrivacyHtml turns those into real HTML.
+    content: normalizePrivacyHtml(t.raw(`sections.${key}.content`) as string)
   }))
 
   return (
@@ -126,7 +129,11 @@ export default async function PrivacyPage({
               </ol>
             </nav>
 
-            <article className="max-w-3xl">
+            {/* min-w-0: a grid item is never narrower than its widest child by
+                default, and the third-party table has a minimum width. Without
+                this the table widens the whole page on a phone instead of
+                scrolling inside its own box. */}
+            <article className="min-w-0 max-w-3xl">
               {sections.map((section, index) => (
                 <section
                   key={section.key}
