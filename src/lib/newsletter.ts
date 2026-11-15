@@ -12,7 +12,11 @@ import {createHash} from 'crypto';
 import {createClient, type SupabaseClient} from '@supabase/supabase-js';
 import {Resend} from 'resend';
 import type {NextRequest} from 'next/server';
-import {deriveTokenKey, deriveUnsubscribeKey} from '@/lib/newsletter-token.mjs';
+import {
+  deriveTokenKey,
+  deriveUnsubscribeKey,
+  resolveNewsletterSecrets
+} from '@/lib/newsletter-token.mjs';
 import {EMAIL_LOCALES, normalizeEmailLocale} from '@/lib/email-templates.mjs';
 import {
   NEWSLETTER_FROM as CONFIG_FROM,
@@ -60,19 +64,38 @@ export function getSupabaseAdmin(): SupabaseClient {
   return createClient(url, key);
 }
 
-// The service role key never leaves the server; deriveTokenKey turns it into
-// a separate key that is only used for confirmation tokens. Rotating the
-// service role key only invalidates links that are less than a day old.
+// The links in the newsletter's own emails are protected with
+// NEWSLETTER_TOKEN_SECRET (falling back to the Supabase service role key
+// until that is set); see resolveNewsletterSecrets for which secret signs
+// and which ones are still accepted. The secret never leaves the server:
+// the derive functions turn it into a separate key per purpose.
+function newsletterSecrets() {
+  return resolveNewsletterSecrets(process.env);
+}
+
+/** Encrypts new confirmation tokens. */
 export function getTokenKey(): Buffer {
-  return deriveTokenKey(process.env.SUPABASE_SERVICE_ROLE_KEY ?? '');
+  return deriveTokenKey(newsletterSecrets().current);
+}
+
+/** Every key a confirmation token may have been made with. */
+export function getAcceptedTokenKeys(): Buffer[] {
+  return newsletterSecrets().accepted.map((secret) => deriveTokenKey(secret));
 }
 
 // Signs the contact ID in the welcome email's unsubscribe link, so the
-// unsubscribe route can refuse made-up IDs without calling Resend. If the
-// service role key is ever rotated, old welcome-email links stop working;
+// unsubscribe route can refuse made-up IDs without calling Resend. Once no
+// accepted secret matches an old link any more, that link stops working;
 // every newsletter still carries Resend's own unsubscribe link.
 export function getUnsubscribeKey(): Buffer {
-  return deriveUnsubscribeKey(process.env.SUPABASE_SERVICE_ROLE_KEY ?? '');
+  return deriveUnsubscribeKey(newsletterSecrets().current);
+}
+
+/** Every key a welcome-email unsubscribe link may have been signed with. */
+export function getAcceptedUnsubscribeKeys(): Buffer[] {
+  return newsletterSecrets().accepted.map((secret) =>
+    deriveUnsubscribeKey(secret)
+  );
 }
 
 const CANONICAL_SITE_URL = 'https://www.skill-quest.app';
@@ -162,7 +185,9 @@ const DAY_MS = 24 * 60 * 60 * 1000;
 type CounterKind = 'ip' | 'cf' | 'em';
 
 function counterKey(kind: CounterKind, value: string): string {
-  const secret = process.env.SUPABASE_SERVICE_ROLE_KEY ?? '';
+  // A new secret starts the counters afresh, which is harmless: they only
+  // cover a day.
+  const secret = newsletterSecrets().current;
   const salt = kind === 'em' ? 'em' : new Date().toISOString().slice(0, 10);
   const hash = createHash('sha256')
     .update(`newsletter:${kind}:${salt}:${secret}:${value}`)

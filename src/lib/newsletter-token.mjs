@@ -156,6 +156,77 @@ export function verifyContactSignature(contactId, signature, key) {
   return expected.length === given.length && timingSafeEqual(expected, given);
 }
 
+// ---------------------------------------------------------------------------
+// Which secret signs what
+// ---------------------------------------------------------------------------
+//
+// NEWSLETTER_TOKEN_SECRET is the newsletter's own secret. Until it is set,
+// the Supabase service role key is used instead; that is how the newsletter
+// started in November 2026. The newsletter must not depend on that key for
+// good: it changes when the database moves to another Supabase project, and
+// links in emails that are already out would stop working.
+//
+// New tokens and signatures always use `current`. Reading also accepts
+// NEWSLETTER_TOKEN_SECRET_PREVIOUS, set by hand for a while so links made
+// with the secret before keep working: at the switch-over it holds the
+// service role key that signed the links until then, later the replaced own
+// secret (see docs/NEWSLETTER.md). The service role key is never accepted on
+// its own once the own secret is set: whoever holds it would otherwise also
+// be able to forge newsletter confirmations and unsubscribes.
+
+const MIN_OWN_SECRET_LENGTH = 32;
+
+/**
+ * @param {Record<string, string | undefined>} env usually process.env
+ * @returns {{current: string, accepted: string[]}}
+ */
+export function resolveNewsletterSecrets(env) {
+  const own = presentSecret(env.NEWSLETTER_TOKEN_SECRET, 'NEWSLETTER_TOKEN_SECRET');
+  const previous = presentSecret(
+    env.NEWSLETTER_TOKEN_SECRET_PREVIOUS,
+    'NEWSLETTER_TOKEN_SECRET_PREVIOUS'
+  );
+  const serviceRole = presentSecret(env.SUPABASE_SERVICE_ROLE_KEY, null);
+  const current = own ?? serviceRole;
+  if (!current) {
+    throw new Error(
+      'Newsletter secret missing: set NEWSLETTER_TOKEN_SECRET (or SUPABASE_SERVICE_ROLE_KEY)'
+    );
+  }
+  const accepted = previous && previous !== current ? [current, previous] : [current];
+  return {current, accepted};
+}
+
+function presentSecret(value, ownName) {
+  if (typeof value !== 'string' || value.trim() === '') return null;
+  // A short own secret is a configuration mistake; fail loudly instead of
+  // signing links with a weak key.
+  if (ownName && value.length < MIN_OWN_SECRET_LENGTH) {
+    throw new Error(`${ownName} must be at least ${MIN_OWN_SECRET_LENGTH} characters`);
+  }
+  return value;
+}
+
+/**
+ * readConfirmToken with each accepted key in turn.
+ * @returns {ReturnType<typeof readConfirmToken>}
+ */
+export function readConfirmTokenWithKeys(token, keys, now = Date.now()) {
+  /** @type {ReturnType<typeof readConfirmToken>} */
+  let result = {ok: false, reason: 'invalid'};
+  for (const key of keys) {
+    result = readConfirmToken(token, key, now);
+    // "expired" only comes back after the key decrypted the token.
+    if (result.ok || result.reason === 'expired') return result;
+  }
+  return result;
+}
+
+/** verifyContactSignature with each accepted key in turn. */
+export function verifyContactSignatureWithKeys(contactId, signature, keys) {
+  return keys.some((key) => verifyContactSignature(contactId, signature, key));
+}
+
 const UUID_PATTERN =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 

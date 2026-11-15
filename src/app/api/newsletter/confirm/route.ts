@@ -1,7 +1,7 @@
 import {NextRequest, NextResponse} from 'next/server';
 import type {Resend} from 'resend';
 import {renderWelcomeEmail} from '@/lib/email-templates.mjs';
-import {readConfirmToken, signContactId} from '@/lib/newsletter-token.mjs';
+import {readConfirmTokenWithKeys, signContactId} from '@/lib/newsletter-token.mjs';
 import {
   NEWSLETTER_CONSENT_VERSION,
   NEWSLETTER_FROM,
@@ -9,11 +9,11 @@ import {
   NEWSLETTER_SEGMENT_ID,
   NEWSLETTER_TOPIC_IDS,
   findContact,
+  getAcceptedTokenKeys,
   getClientIp,
   getResendClient,
   getSiteUrl,
   getSupabaseAdmin,
-  getTokenKey,
   getUnsubscribeKey,
   recordIpAttempt,
   toNewsletterLocale,
@@ -50,7 +50,7 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const parsed = readConfirmToken(body.token, getTokenKey());
+    const parsed = readConfirmTokenWithKeys(body.token, getAcceptedTokenKeys());
     if (!parsed.ok) {
       return NextResponse.json(
         {error: parsed.reason},
