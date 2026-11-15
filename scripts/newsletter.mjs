@@ -47,6 +47,7 @@ import {
   broadcastPayload,
   daysBetween,
   hasDrafts,
+  issueTextLine,
   isPrepareDue,
   issuesToClose,
   issueIdFor,
@@ -113,7 +114,7 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 /** Error text without email addresses: the run logs of a public repo are public. */
 function redact(value) {
-  return String(value ?? '').replace(/[^\s@<>"']+@[^\s@<>"']+/g, '<address>');
+  return String(value ?? '').replace(/[^\s@<>"']+@[^\s@<>"']+/g, '[address]');
 }
 
 function log(message) {
@@ -464,6 +465,9 @@ async function daily(options) {
   const summary = {dryRun, complete: false, preview: null, ensure: [], close: [], reminders: [], warnings};
   const writeSummary = () => {
     if (!dryRun) Object.assign(summary, issueActions(manifests, now));
+    // Warnings end up as list items in the approval issue: one line each, and
+    // nothing that parseApprovalIssue refuses.
+    summary.warnings = warnings.map(issueTextLine);
     writeJson(summaryPath, summary);
   };
 

@@ -146,7 +146,7 @@ test('without a preview nothing waits for approval, and the next day repairs it'
 
   result = daily(dir, '2026-12-07', [], {FAKE_RESEND_FAIL: 'emails'});
   assert.notEqual(result.status, 0);
-  assert.match(result.stderr, /<address>/, 'the error is logged without the address');
+  assert.match(result.stderr, /\[address\]/, 'the error is logged without the address');
   assert.equal(manifest(dir, '2026-12').complete, false);
   assert.equal(summary(dir).complete, false);
   assert.deepEqual(summary(dir).ensure, [], 'no approval issue for an unpreviewed draft');

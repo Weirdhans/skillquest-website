@@ -23,6 +23,7 @@ import {
   nextSendTime,
   parseApprovalIssue,
   hasDrafts,
+  issueTextLine,
   issuesToClose,
   previewEmail,
   reconciledStatus,
@@ -365,30 +366,62 @@ test('the approval issue round-trips and only reads month and ticks', () => {
   assert.equal(approvalIssueTitle('2026-12', 2), 'Nieuwsbrief 2026-12 (versie 2)');
   assert.equal(parseApprovalIssue(renderApprovalIssue({...manifest, revision: 2})).revision, 2);
 
-  // Ticks in HTML comments and code blocks are not visible, so they do not count.
-  const hidden = body.replace('- [x] `en`', '- [ ] `en`');
+  // Anything that could hide a tick in GitHub's rendering makes the issue
+  // ambiguous, so nothing is approved: no guessing what is visible.
   for (const extra of [
     '<!--\n- [x] `de` in a comment\n-->',
     '```\n- [x] `de` in a code block\n```',
     '~~~md\n- [x] `de` in a code block\n~~~',
     '```\n- [x] `de` in a code block that never ends',
     '   ```\n- [x] `de` in an indented code block\n   ```',
-    '````\n```\n- [x] `de` a shorter fence does not close a longer one\n````',
-    '```\n``` not a closing fence\n- [x] `de` still in the block\n```'
+    '```\n``` <!-- not a closing fence -->\n- [x] `de` still in the block\n```',
+    '<details>\n- [x] `de` in raw HTML\n</details>',
+    '<pre>\n- [x] `de`\n</pre>',
+    'text <!-- a comment in the middle of a line -->',
+    'text <details> in the middle of a line',
+    '$$\n- [x] `de` in a math block\n$$',
+    '> - [x] `de` quoted',
+    '    - [x] `de` indented code',
+    '| a | b |\n|---|---|',
+    '[x]: https://example.com',
+    '==='
   ]) {
-    assert.deepEqual([...parseApprovalIssue(`${hidden}\n${extra}`).ticked], ['nl'], extra);
+    assert.equal(parseApprovalIssue(`${body}\n${extra}`), null, extra);
   }
-  // Inline code at the start of a line is no fence and hides nothing after it.
-  assert.deepEqual(
-    [...parseApprovalIssue(`\`\`\`inline\`\`\` text\n${body}`).ticked].sort(),
-    ['en', 'nl']
-  );
+  assert.equal(parseApprovalIssue(`${body}\n${body}`), null, 'two markers');
+  // A tick on the marker's own line is part of the HTML block: never counted.
+  assert.equal(parseApprovalIssue('<!-- newsletter-issue: 2026-12 r1 -->- [x] `nl`'), null);
+  assert.equal(parseApprovalIssue(` <!-- newsletter-issue: 2026-12 r1 -->\n- [x] \`nl\``), null);
+
+  // What the workflow itself writes stays valid: warnings appended as list
+  // items, and a title with characters that could act as HTML or math.
+  const own = renderApprovalIssue({
+    ...manifest,
+    locales: {
+      ...manifest.locales,
+      nl: {
+        ...manifest.locales.nl,
+        subject: 'What newsletter-issue means',
+        titles: ['Tip: 2 < 3 and $$x$$', 'Tip: $$$ and $$$$', 'App: versie 1.0.5', '']
+      }
+    }
+  });
+  const warnings = [
+    'nl: tip x left out, https://www.skill-quest.app/nl/tips/newsletter-issue answered 404',
+    'en: no app news (failed\nwith <b>503</b> $$$)',
+    '   '
+  ];
+  const withWarnings = `${own}\n\nWaarschuwingen:\n${warnings.map((w) => `- ${issueTextLine(w)}`).join('\n')}`;
+  assert.deepEqual([...parseApprovalIssue(withWarnings).ticked].sort(), ['en', 'nl']);
+  assert.ok(own.includes('2 ‹ 3'));
+  assert.ok(!withWarnings.split('\n').slice(1).some((line) => line.includes('<') || line.includes('$$')));
 
   const unticked = body.replace('- [x] `en`', '- [ ] `en`').replace(/\n/g, '\r\n');
   assert.deepEqual([...parseApprovalIssue(unticked).ticked], ['nl']);
 
-  // Nested or quoted lines and other text do not count as ticks.
-  const noisy = `${body}\n  - [x] \`de\` nested\n> - [x] \`fr\` quoted\n- [x] \`xx\` unknown`;
+  // Nested lines and unknown languages do not count as ticks (quoted lines
+  // make the issue ambiguous, see above).
+  const noisy = `${body}\n  - [x] \`de\` nested\n- [x] \`xx\` unknown`;
   assert.deepEqual([...parseApprovalIssue(noisy).ticked].sort(), ['en', 'nl']);
 
   // A language listed twice is ambiguous: nothing is approved.

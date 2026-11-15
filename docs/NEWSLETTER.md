@@ -166,9 +166,12 @@ kent en per taal een vinkje kan weghalen.
    door de eigenaar van de repo is gezet, op een open issue met het label
    `newsletter` dat door de workflow zelf is geopend. Als de job start, kijkt
    hij opnieuw of het label er nog op staat (ook bij een handmatige run). Uit
-   het issue leest hij alleen de maand, de versie en de vinkjes, en alleen
-   zichtbare regels: vinkjes in HTML-commentaar of codeblokken tellen niet.
-   De rest komt van de statusbranch.
+   het issue leest hij alleen de maand, de versie en de vinkjes. Het issue mag
+   alleen het soort regels bevatten dat de workflow zelf schrijft (de markering
+   op een eigen regel, gewone tekst, lijstregels); een `<`, `$$`, codeblok,
+   citaat, tabel of ingesprongen blok kan in GitHub een vinkje verbergen, en
+   dan weigert hij en wordt er niets ingepland. Bewerk het issue dus alleen
+   door vinkjes weg te halen. De rest komt van de statusbranch.
 3. **Inplannen**: per aangevinkte taal moet het concept nog precies gelijk zijn
    aan de proefmail (vingerafdruk over naam, segment, topic, afzender,
    onderwerp, reply-to, voorbeeldtekst, HTML en tekst). Dan wordt het ingepland
@@ -252,6 +255,26 @@ script weigert een taaltopic. Het gebruikt dezelfde aanroepen als een echt
 nummer: concept maken, teruglezen, proefmail (als `NEWSLETTER_PREVIEW_TO` is
 gezet) en inplannen met `scheduled_at`, 3 minuten later. Zo is het hele
 Resend-pad getest, inclusief de echte afmeldlink.
+
+**Eindtest op 15 november 2026** (met Hans' ja, via een tijdelijke workflow op
+de feature-branch, die daarna is weggehaald). Er werd een tijdelijk privé-topic
+"Newsletter test" aangemaakt, met alleen Hans' contact; zijn Nederlandse topic
+stond tijdens de test uit. Gezien in GitHub Actions (Node 24) en Resend:
+
+- de dry-run haalde de echte App Store-tekst op en controleerde de live links;
+- `POST /broadcasts` met `topic_id` werkt, en `GET` geeft `topic_id`,
+  `segment_id` en status `draft` terug;
+- de proefmail kwam aan;
+- na `POST /broadcasts/{id}/send` met `scheduled_at` is de status `scheduled`,
+  met een ongewijzigde vingerafdruk, en na het tijdstip `sent`;
+- de broadcast ging naar precies 1 ontvanger;
+- Gmail zette hem in de inbox (tabblad Updates) met een ingevulde
+  `unsubscribe.resend.com`-link.
+
+Daarna is het topic verwijderd en staat Hans' contact weer zoals vóór de test
+(afgemeld, Nederlands aan). De testbroadcast `newsletter-test-2026-11-nl` blijft
+in de lijst van Resend staan (verzonden broadcasts kunnen niet weg); de straat
+negeert hem, want de naam wijkt af.
 
 ### Bekende grenzen
 

@@ -577,38 +577,31 @@ export function approvalIssueTitle(issueId, revision = 1) {
   return revision > 1 ? `Nieuwsbrief ${issueId} (versie ${revision})` : `Nieuwsbrief ${issueId}`;
 }
 
-const ISSUE_MARKER = /<!-- newsletter-issue: (\d{4}-\d{2}) r(\d+) -->/;
+const ISSUE_MARKER = /^<!-- newsletter-issue: (\d{4}-\d{2}) r(\d+) -->$/;
 const TICK_LINE = /^- \[([ xX])\] `(nl|en|de|fr|es|it)`(?:\s|$)/;
 
-function oneLine(value) {
-  return String(value).replace(/[\r\n]+/g, ' ').trim();
-}
+// The only kinds of line the approval issue may have: what the workflow writes
+// itself (empty lines, text that starts with a letter, digit or bold, list
+// items and their two-space sub-items). Anything else, such as HTML, a code
+// fence, math, a quote, a table or an indented block, could hide a tick from
+// view in GitHub, so the issue is refused instead of guessing.
+const ALLOWED_LINES = [/^$/, /^[\p{L}\p{N}]/u, /^\*\*\S/, /^- \S/, /^ {2}- \S/];
 
 /**
- * The lines of Markdown text outside fenced code blocks (CommonMark: a fence
- * of 3+ backticks or tildes, indented at most 3 spaces, closed by a fence of
- * the same character that is at least as long and has nothing after it; an
- * unclosed block runs to the end).
+ * One line of issue text, with nothing that could act as HTML or math. Also
+ * used by scripts/newsletter.mjs for the warnings the workflow appends.
  */
-function visibleLines(text) {
-  const lines = [];
-  let fence = null;
-  for (const line of text.split('\n')) {
-    if (fence) {
-      const close = line.match(/^ {0,3}(`{3,}|~{3,})[ \t]*$/);
-      if (close && close[1][0] === fence[0] && close[1].length >= fence.length) fence = null;
-      continue;
-    }
-    const open = line.match(/^ {0,3}(`{3,}|~{3,})(.*)$/);
-    // A backtick fence's info string has no backticks; otherwise it is inline code.
-    if (open && !(open[1][0] === '`' && open[2].includes('`'))) {
-      fence = open[1];
-      continue;
-    }
-    lines.push(line);
-  }
-  return lines;
+export function issueTextLine(value) {
+  return (
+    String(value ?? '')
+      .replace(/[\r\n]+/g, ' ')
+      .replace(/</g, '‹')
+      .replace(/\$(?=\$)/g, '$ ')
+      .trim() || '-'
+  );
 }
+
+const oneLine = issueTextLine;
 
 /** The body of the approval issue (Dutch: it is for Hans). */
 export function renderApprovalIssue(manifest) {
@@ -645,17 +638,24 @@ export function renderApprovalIssue(manifest) {
 /**
  * Reads the approval issue: which month and revision, and which languages are
  * ticked. The issue body is only data here; everything else comes from the
- * manifest on the state branch. Only visible task-list lines count: lines in
- * HTML comments and code blocks do not. Returns null when the marker is
- * missing or a language is listed twice (ambiguous, so nothing is sent).
+ * manifest on the state branch. Returns null, so nothing is sent, when the
+ * issue is ambiguous: not exactly one marker on a line of its own, a language
+ * listed twice, any `<` or `$$` outside the marker, or a line of a kind the
+ * workflow never writes (see ALLOWED_LINES). Refusing is safer than guessing
+ * which lines GitHub shows as ticked boxes.
  */
 export function parseApprovalIssue(body) {
-  const text = String(body ?? '').replace(/\r\n?/g, '\n');
-  const marker = text.match(ISSUE_MARKER);
-  if (!marker) return null;
+  const lines = String(body ?? '').replace(/\r\n?/g, '\n').split('\n');
+  // Any other comment or marker is refused below, because it contains `<`.
+  const markerAt = lines.findIndex((line) => ISSUE_MARKER.test(line));
+  if (markerAt === -1) return null;
+  const marker = lines[markerAt].match(ISSUE_MARKER);
+  const rest = lines.filter((_, index) => index !== markerAt);
+  if (rest.some((line) => line.includes('<') || line.includes('$$'))) return null;
+  if (!rest.every((line) => ALLOWED_LINES.some((allowed) => allowed.test(line)))) return null;
   const listed = new Set();
   const ticked = new Set();
-  for (const line of visibleLines(text.replace(/<!--[\s\S]*?(?:-->|$)/g, ''))) {
+  for (const line of rest) {
     const match = line.match(TICK_LINE);
     if (!match) continue;
     const locale = match[2];
