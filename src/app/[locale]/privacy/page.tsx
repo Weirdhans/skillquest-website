@@ -27,39 +27,39 @@ export async function generateMetadata({
 // Define section keys per locale - these must match the keys in messages/{locale}.json
 const SECTION_KEYS_BY_LOCALE: Record<string, string[]> = {
   nl: [
-    'introductie', 'gegevensbeheerder', 'welkeGegevensVerzamelenWe', 'campagneAttributie', 'hoeGebruikenWeJouwGegevens',
+    'introductie', 'gegevensbeheerder', 'welkeGegevensVerzamelenWe', 'nieuwsbrief', 'hoeGebruikenWeJouwGegevens',
     'juridischeGrondslagVoorVerwerking', 'hoeBeschermenWeJouwGegevens', 'derdePartijDiensten',
     'cookiesEnTracking', 'jouwAvgRechten', 'gegevensretentie', 'kinderenEnPrivacy',
     'internationaleGegevensoverdracht', 'wijzigingenInDitPrivacybeleid', 'contactOpnemen'
   ],
   en: [
-    'introduction', 'dataController', 'whatDataDoWeCollect', 'campaignAttribution', 'howDoWeUseYourData',
+    'introduction', 'dataController', 'whatDataDoWeCollect', 'newsletter', 'howDoWeUseYourData',
     'legalBasisForProcessing', 'howDoWeProtectYourData', 'thirdpartyServices',
     'cookiesAndTracking', 'yourGdprRights', 'dataRetention', 'childrenAndPrivacy',
     'internationalDataTransfer', 'changesToThisPrivacyPolicy', 'contactUs'
   ],
   de: [
     'einleitung', 'verantwortlicherFrDieDatenverarbeitung', 'welcheDatenSammelnWir',
-    'kampagnenzuordnung', 'wieVerwendenWirIhreDaten', 'rechtsgrundlageFrDieVerarbeitung', 'wieSchtzenWirIhreDaten',
+    'newsletter', 'wieVerwendenWirIhreDaten', 'rechtsgrundlageFrDieVerarbeitung', 'wieSchtzenWirIhreDaten',
     'diensteDritter', 'cookiesUndTracking', 'ihreDsgvorechte', 'datenaufbewahrung',
     'kinderUndDatenschutz', 'internationaleDatenbermittlung', 'nderungenDieserDatenschutzrichtlinie',
     'kontaktAufnehmen'
   ],
   fr: [
     'introduction', 'responsableDuTraitement', 'quellesDonnesCollectonsnous',
-    'attributionDeCampagne', 'commentUtilisonsnousVosDonnes', 'baseJuridiqueDuTraitement', 'commentProtgeonsnousVosDonnes',
+    'newsletter', 'commentUtilisonsnousVosDonnes', 'baseJuridiqueDuTraitement', 'commentProtgeonsnousVosDonnes',
     'servicesTiers', 'cookiesEtSuivi', 'vosDroitsEnVertuDuRgpd', 'conservationDesDonnes',
     'enfantsEtConfidentialit', 'transfertInternationalDeDonnes',
     'modificationsDeCettePolitiqueDeConfidentialit', 'nousContacter'
   ],
   es: [
-    'introduccin', 'responsableDelTratamiento', 'quDatosRecopilamos', 'atribucionDeCampana', 'cmoUsamosTusDatos',
+    'introduccin', 'responsableDelTratamiento', 'quDatosRecopilamos', 'boletin', 'cmoUsamosTusDatos',
     'baseLegalParaElTratamiento', 'cmoProtegemosTusDatos', 'serviciosDeTerceros',
     'cookiesYSeguimiento', 'tusDerechosBajoElRgpd', 'retencinDeDatos', 'niosYPrivacidad',
     'transferenciaInternacionalDeDatos', 'cambiosAEstaPolticaDePrivacidad', 'contactar'
   ],
   it: [
-    'introduzione', 'titolareDelTrattamento', 'qualiDatiRaccogliamo', 'attribuzioneCampagna', 'comeUtilizziamoITuoiDati',
+    'introduzione', 'titolareDelTrattamento', 'qualiDatiRaccogliamo', 'newsletter', 'comeUtilizziamoITuoiDati',
     'baseGiuridicaPerIlTrattamento', 'comeProteggiamoITuoiDati', 'serviziDiTerzeParti',
     'cookieETracciamento', 'iTuoiDirittiAiSensiDelGdpr', 'conservazioneDeiDati',
     'bambiniEPrivacy', 'trasferimentoInternazionaleDiDati',
