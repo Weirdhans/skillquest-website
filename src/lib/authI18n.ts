@@ -202,7 +202,7 @@ export const authCopy: Record<AuthLocale, AuthCopy> = {
       'Demande une nouvelle réinitialisation de mot de passe et ouvre le dernier lien reçu par e-mail.',
     resetTitle: 'Définir un nouveau mot de passe',
     resetIntro:
-      'Choisis un nouveau mot de passe fort pour ton compte SkillQuest.',
+      'Choisis un nouveau mot de passe robuste pour ton compte SkillQuest.',
     newPasswordLabel: 'Nouveau mot de passe',
     confirmPasswordLabel: 'Confirmer le mot de passe',
     showPasswordSuffix: 'afficher',
@@ -283,7 +283,7 @@ export const authCopy: Record<AuthLocale, AuthCopy> = {
     expiredTitle: 'Link di ripristino scaduto',
     confirmExpiredBody:
       'Questo link non contiene dati sufficienti o non è più valido. Richiedi un nuovo ripristino della password.',
-    requestNewLink: 'Richiedi nuovo link di ripristino',
+    requestNewLink: 'Richiedi un nuovo link di ripristino',
     resetSuccessTitle: 'Password modificata',
     resetSuccessBody:
       'La tua password è stata aggiornata. Abbiamo disconnesso tutte le sessioni; accedi di nuovo con la tua nuova password.',
@@ -299,7 +299,7 @@ export const authCopy: Record<AuthLocale, AuthCopy> = {
     passwordRequirements:
       'Almeno 12 caratteri con una lettera minuscola, una maiuscola e un numero.',
     passwordManagerHint:
-      'Si consiglia di utilizzare una password unica dal proprio password manager.',
+      'Usa una password unica, magari generata dal tuo password manager.',
     mismatchError: 'Le password non corrispondono.',
     resetGenericError: 'Impossibile modificare la password. Riprova.',
     checkingButton: 'Verifica in corso...',
@@ -410,7 +410,7 @@ export const handoffCopy: Record<AuthLocale, HandoffCopy> = {
       'Diesem Link fehlen außerdem die Authentifizierungsdaten. Fordere eine neue E-Mail aus SkillQuest an.'
   },
   fr: {
-    friendInviteTitle: 'Invitation entre amis',
+    friendInviteTitle: 'Invitation d’un ami',
     familyInviteTitle: 'Invitation familiale',
     inviteInvalid: "Ce lien d'invitation est invalide ou incomplet.",
     friendInviteIntro: "Nous essayons d'ouvrir SkillQuest avec ton invitation.",
@@ -424,7 +424,7 @@ export const handoffCopy: Record<AuthLocale, HandoffCopy> = {
     friendInviteFallback:
       'Rien ne se passe ? Ouvre SkillQuest et saisis {code} dans Amis, Ajouter un ami.',
     familyInviteFallback:
-      "Rien ne se passe ? Ouvre SkillQuest et va dans Profil, Famille, J'ai un code d'invitation. Saisis-y {code}.",
+      "Rien ne se passe ? Ouvre SkillQuest et va dans Profil, Famille, J'ai un code d'invitation. Saisis le code {code}.",
     callbackRecoveryTitle: 'Réinitialise ton mot de passe dans SkillQuest',
     callbackTitle: 'Ouvre SkillQuest pour continuer',
     callbackIntro:
@@ -474,15 +474,15 @@ export const handoffCopy: Record<AuthLocale, HandoffCopy> = {
     friendInviteFallback:
       'Non succede nulla? Apri SkillQuest e usa {code} in Amici, Aggiungi amico.',
     familyInviteFallback:
-      'Non succede nulla? Apri SkillQuest e vai su Profilo, Famiglia, Ho un codice invito. Usa lì {code}.',
+      'Non succede nulla? Apri SkillQuest e vai su Profilo, Famiglia, Ho un codice invito, quindi inserisci {code}.',
     callbackRecoveryTitle: 'Reimposta la password in SkillQuest',
     callbackTitle: 'Apri SkillQuest per continuare',
     callbackIntro:
       "Stiamo provando ad aprire SkillQuest automaticamente. Se stai leggendo questa pagina sul computer, apri la stessa email sul telefono su cui è installato SkillQuest.",
     callbackFallback:
-      "Non succede nulla? Usa questo link sul tuo iPhone o dispositivo Android. Da computer di solito non è possibile aprire l'app.",
+      "Non succede nulla? Usa questo link sul tuo iPhone o dispositivo Android. Da un computer di solito non è possibile aprire l'app.",
     callbackMissingParams:
-      'A questo link mancano anche i dati di autenticazione. Richiedi una nuova email da SkillQuest.'
+      'In questo link mancano anche i dati di autenticazione. Richiedi una nuova email da SkillQuest.'
   }
 };
 
