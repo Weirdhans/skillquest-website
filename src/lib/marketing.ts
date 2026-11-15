@@ -1143,9 +1143,9 @@ export const marketingCopy = {
   fr: {
     localeName: localeNames.fr,
     meta: {
-      title: 'SkillQuest | Développez vos compétences avec timers, XP et famille',
+      title: 'SkillQuest | Développe tes compétences : minuteurs, XP et famille',
       description:
-        'SkillQuest aide les utilisateurs et les familles à développer des compétences avec des minuteurs de concentration, XP, statistiques, amis, défis et synchronisation respectueuse de la vie privée.'
+        'SkillQuest aide les personnes et les familles à développer leurs compétences : minuteurs de concentration, XP, statistiques, amis, défis et synchronisation privée.'
     },
     nav: {
       features: 'Fonctions',
@@ -1156,49 +1156,49 @@ export const marketingCopy = {
     },
     hero: {
       eyebrow: 'Disponible sur l’App Store et sur Google Play.',
-      title: 'Chaque minute de focus compte pour une compétence',
+      title: 'Chaque minute de concentration compte pour une compétence',
       subtitle:
-        'Un skill tracker avec focus timers intégrés. Gagne des XP, construis des streaks et suis exactement ton temps de pratique.',
+        'Une app de suivi de compétences avec minuteurs de concentration intégrés. Gagne des XP, construis des séries et vois exactement où passe ton temps de pratique.',
       primaryCta: 'Télécharger sur l’App Store',
       secondaryCta: 'Télécharger pour Android',
       tertiaryCta: 'Comparer les prix',
       trust: ['Démarrage gratuit', 'Sans publicité', 'Synchronisation privée']
     },
     audiences: {
-      heading: 'Un tracker de compétences pour progresser seul ou en famille',
+      heading: 'Un suivi de compétences pour progresser seul ou en famille',
       items: [
         {
-          title: 'Pour progresser soi-même',
+          title: 'Pour ton développement personnel',
           body:
-            'Suivez les études, l’entraînement, la création, la lecture, le code, la musique et toute habitude que vous voulez renforcer.'
+            'Suis tes études, ton entraînement, tes créations, tes lectures, ton code, ta musique et toute habitude que tu veux renforcer.'
         },
         {
           title: 'Pour les parents',
           body:
-            'Structurez le temps de pratique, aidez les enfants avec des timers et rendez les progrès visibles sans ajouter de pression.'
+            'Structure le temps de pratique, aide tes enfants avec des minuteurs et rends les progrès visibles, sans ajouter de pression.'
         }
       ]
     },
     familySupport: {
       badge: 'Abonnement Family',
-      heading: 'Donnez de la structure aux enfants sans prendre leur progrès en main',
+      heading: 'Offre un cadre à tes enfants sans prendre le contrôle de leur progression',
       body:
-        'Avec l’abonnement Family, les parents peuvent voir quand un enfant lance des timers de concentration et lancer des timers pour les enfants quand il est temps de pratiquer. La famille obtient ainsi un rythme partagé : l’enfant sait sur quoi travailler et les parents peuvent soutenir la routine sans deviner.',
+        'Avec l’abonnement Family, les parents voient quand un enfant lance un minuteur de concentration et peuvent en lancer un pour lui quand il est temps de pratiquer. La famille trouve ainsi un rythme commun : l’enfant sait sur quoi travailler, et les parents soutiennent la routine sans avoir à deviner.',
       items: [
         {
-          title: 'Voir l’activité des timers',
+          title: 'Voir l’activité des minuteurs',
           body:
-            'Suivez le démarrage des sessions, pour discuter école, sport, musique ou création à partir d’un effort visible.'
+            'Vois quand les sessions démarrent, pour parler d’école, de sport, de musique ou de création à partir d’un effort visible.'
         },
         {
-          title: 'Lancer des timers pour les enfants',
+          title: 'Lancer des minuteurs pour les enfants',
           body:
-            'Aidez un enfant à commencer une session concentrée depuis l’espace famille, avec une prochaine étape claire.'
+            'Aide ton enfant à démarrer une session de concentration depuis l’espace famille, avec une prochaine étape claire.'
         },
         {
           title: 'Avancer vers un objectif',
           body:
-            'XP, niveaux et progression des compétences rendent la pratique répétée visible pour parents et enfants.'
+            'XP, niveaux et progression des compétences rendent la pratique régulière visible pour les parents comme pour les enfants.'
         },
         {
           title: 'Inclus dans Family',
@@ -1207,56 +1207,56 @@ export const marketingCopy = {
         }
       ],
       note:
-        'Les fonctions famille nécessitent un abonnement Family et sont conçues pour apporter cadre, structure et motivation partagée.',
+        'Les fonctions famille nécessitent un abonnement Family. Elles sont conçues pour apporter un cadre et une motivation partagée.',
       cta: 'Voir Family',
       imageAlt: 'Capture d’écran des fonctions famille et sociales de SkillQuest'
     },
     product: {
       heading: 'Des progrès réels, pas une simple liste d’habitudes',
       body:
-        'SkillQuest relie timers, compétences, XP, séries, statistiques, amis, classements et fonctions famille dans une app mobile ciblée.',
+        'SkillQuest relie minuteurs, compétences, XP, séries, statistiques, amis, classements et fonctions famille dans une app mobile qui va à l’essentiel.',
       captions: [
-        'Développez chaque compétence',
-        'Concentrez-vous avec des timers',
-        'Gagnez de l’XP chaque jour',
-        'Voyez vos progrès',
-        'Montez dans les classements',
-        'Progressez ensemble',
-        'Personnalisez l’expérience'
+        'Développe chaque compétence',
+        'Concentre-toi avec les minuteurs',
+        'Gagne de l’XP chaque jour',
+        'Vois tes progrès',
+        'Grimpe dans les classements',
+        'Progresse avec les autres',
+        'Personnalise l’expérience'
       ]
     },
     benefits: {
       heading: 'Ce qui fait revenir les utilisateurs',
       items: [
         {
-          title: 'Timers par compétence',
+          title: 'Minuteurs par compétence',
           body:
-            'Lancez une session pour la compétence travaillée et reliez l’effort à des progrès concrets.'
+            'Lance une session pour la compétence que tu travailles et relie l’effort à des progrès concrets.'
         },
         {
           title: 'XP, niveaux et séries',
           body:
-            'Rendez les progrès visibles après chaque session avec des récompenses qui soutiennent la régularité.'
+            'Rends tes progrès visibles après chaque session, avec des récompenses qui encouragent la régularité.'
         },
         {
           title: 'Statistiques par compétence',
           body:
-            'Analysez temps, sessions et évolution par jour, semaine, mois et année.'
+            'Analyse le temps, les sessions et ton évolution par jour, semaine, mois et année.'
         },
         {
           title: 'Motivation sociale et familiale',
           body:
-            'Utilisez amis, défis, classements et fonctions famille quand l’engagement aide.'
+            'Appuie-toi sur les amis, les défis, les classements et les fonctions famille quand s’engager devant les autres t’aide à tenir.'
         },
         {
           title: 'Thèmes et personnalisation',
           body:
-            'Adaptez l’expérience tout en gardant un flux simple et répétable.'
+            'Adapte l’expérience tout en gardant un parcours simple, facile à répéter.'
         },
         {
-          title: 'Guest Mode',
+          title: 'Mode invité',
           body:
-            'Essayez l’app immédiatement avant de créer un compte ou de synchroniser vos progrès.'
+            'Essaie l’app tout de suite, avant de créer un compte ou de synchroniser tes progrès.'
         }
       ]
     },
@@ -1264,15 +1264,15 @@ export const marketingCopy = {
       heading: 'Des abonnements simples',
       body:
         `Premium coûte ${PRICES.fr.premiumMonthly}/mois ou ${PRICES.fr.premiumYearly}/an. Family coûte ${PRICES.fr.familyMonthly}/mois ou ${PRICES.fr.familyYearly}/an.`,
-      cta: 'Voir les plans'
+      cta: 'Voir les formules'
     },
     trust: {
       heading: 'La confiance avant la croissance',
       items: [
-        'Consultez les changements de l’app sur la page « Nouveautés ».',
+        'Retrouve les changements de l’app sur la page « Nouveautés ».',
         'Disponible sur l’App Store et sur Google Play.',
         'Le support est disponible via hello@skill-quest.app.',
-        'La confidentialité et la suppression de compte sont liées dans chaque langue.'
+        'Les pages de confidentialité et de suppression de compte sont accessibles dans chaque langue.'
       ]
     },
     lead: {
@@ -1293,15 +1293,15 @@ export const marketingCopy = {
       privacyLink: 'Comment nous traitons tes données'
     },
     finalCta: {
-      heading: 'Commencez les compétences que vous voulez vraiment pratiquer',
+      heading: 'Commence par les compétences que tu veux vraiment pratiquer',
       body:
-        'Téléchargez SkillQuest sur l’App Store ou sur Google Play.',
+        'Télécharge SkillQuest sur l’App Store ou sur Google Play.',
       primary: 'Télécharger sur l’App Store',
       secondary: 'Télécharger pour Android'
     },
     footer: {
       description:
-        'SkillQuest aide les personnes et les familles à transformer la pratique concentrée en progrès visibles.',
+        'SkillQuest aide les personnes et les familles à transformer des séances de concentration en progrès visibles.',
       product: 'Produit',
       resources: 'Ressources',
       legal: 'Légal',
@@ -1319,36 +1319,36 @@ export const marketingCopy = {
     download: {
       metaTitle: 'Télécharger SkillQuest | App Store et Google Play',
       metaDescription:
-        'Téléchargez SkillQuest sur l’App Store ou sur Google Play.',
+        'Télécharge SkillQuest sur l’App Store ou sur Google Play.',
       title: 'Télécharger SkillQuest',
       subtitle:
         'SkillQuest est disponible sur l’App Store et sur Google Play.',
       iosTitle: 'iPhone et iPad',
-      iosStatus: 'Disponible maintenant sur l’App Store',
+      iosStatus: 'Disponible dès maintenant sur l’App Store',
       iosBody:
-        'Téléchargez la version iOS en ligne et commencez avec compétences, timers, XP, statistiques, amis et fonctions famille.',
+        'Télécharge la version iOS et commence avec les compétences, les minuteurs, les XP, les statistiques, les amis et les fonctions famille.',
       iosCta: 'Ouvrir l’App Store',
       androidTitle: 'Android',
-      androidStatus: 'Disponible maintenant sur Google Play',
+      androidStatus: 'Disponible dès maintenant sur Google Play',
       androidBody:
-        'Téléchargez l’app Android et entraînez-vous avec des minuteurs, de l’XP et des statistiques.',
+        'Télécharge l’app Android et entraîne-toi avec des minuteurs, des XP et des statistiques.',
       androidCta: 'Télécharger pour Android',
       qrIos: 'Tu es sur un ordinateur ? Scanne le code avec ton iPhone ou ton iPad pour ouvrir l’App Store.',
       qrAndroid: 'Tu es sur un ordinateur ? Scanne le code avec ton téléphone Android pour y ouvrir cette page.',
-      screenshotsHeading: 'Voir l’app avant installation',
+      screenshotsHeading: 'Découvrir l’app avant de l’installer',
       screenshotsBody:
-        'Ces captures proviennent de la vraie app SkillQuest avec des données de démonstration propres.',
-      finalHeading: 'Choisissez votre plateforme',
+        'Ces captures proviennent de la vraie app SkillQuest avec des données de démonstration.',
+      finalHeading: 'Choisis ta plateforme',
       finalBody:
-        'Les utilisateurs iOS et Android peuvent installer maintenant.'
+        'Les utilisateurs iOS et Android peuvent l’installer dès maintenant.'
     },
     pricing: {
       metaTitle: 'Prix SkillQuest | Premium et Family',
       metaDescription:
-        `Comparez Free, Premium et Family pour SkillQuest. Premium coûte ${PRICES.fr.premiumMonthly}/mois ou ${PRICES.fr.premiumYearly}/an. Family coûte ${PRICES.fr.familyMonthly}/mois ou ${PRICES.fr.familyYearly}/an.`,
+        `Compare Free, Premium et Family pour SkillQuest. Premium coûte ${PRICES.fr.premiumMonthly}/mois ou ${PRICES.fr.premiumYearly}/an. Family coûte ${PRICES.fr.familyMonthly}/mois ou ${PRICES.fr.familyYearly}/an.`,
       title: 'Prix SkillQuest',
       subtitle:
-        'Commencez gratuitement. Passez à Premium quand des statistiques plus poussées, plus de liberté ou des fonctions famille valent le coût.',
+        'Commence gratuitement. Passe à Premium quand des statistiques plus poussées, plus de liberté ou les fonctions famille te semblent en valoir la peine.',
       billingNote: 'Les abonnements sont gérés via l’App Store ou Google Play.',
       plans: [
         {
@@ -1356,20 +1356,20 @@ export const marketingCopy = {
           price: PRICES.fr.free,
           cadence: 'Commencer maintenant',
           description:
-            'Essayez SkillQuest avec Guest Mode et le suivi de compétences essentiel avant de vous abonner.',
-          features: ['Timers de concentration', '78 compétences', 'XP et niveaux', 'Guest Mode']
+            'Essaie SkillQuest avec le mode invité et le suivi de compétences essentiel avant de t’abonner.',
+          features: ['Minuteurs de concentration', '78 compétences', 'XP et niveaux', 'Mode invité']
         },
         {
           name: 'Premium',
           price: `${PRICES.fr.premiumMonthly}/mois`,
           cadence: `${PRICES.fr.premiumYearly}/an`,
           description:
-            'Pour les utilisateurs qui veulent plus de liberté, statistiques étendues, thèmes supplémentaires et fonctions avancées.',
+            'Pour les utilisateurs qui veulent plus de liberté, des statistiques plus poussées, des thèmes supplémentaires et des fonctions avancées.',
           features: [
             'Croissance illimitée des compétences',
             'Statistiques étendues',
             'Thèmes supplémentaires',
-            'Fonctions avancées de timer'
+            'Fonctions avancées de minuteur'
           ],
           highlighted: true
         },
@@ -1378,11 +1378,11 @@ export const marketingCopy = {
           price: `${PRICES.fr.familyMonthly}/mois`,
           cadence: `${PRICES.fr.familyYearly}/an`,
           description:
-            'Pour les parents qui veulent Premium avec structure familiale, statistiques enfant, timers, objectifs et compliments.',
+            'Pour les parents qui veulent Premium avec une structure familiale, les statistiques des enfants, des minuteurs, des objectifs et des compliments.',
           features: [
             'Gestion familiale',
-            'Voir l’activité timer et les statistiques enfant',
-            'Lancer des timers pour les enfants',
+            'Voir l’activité des minuteurs et les statistiques des enfants',
+            'Lancer des minuteurs pour les enfants',
             'Objectifs et compliments partagés',
             'Fonctions Premium pour le foyer'
           ]
@@ -1392,7 +1392,7 @@ export const marketingCopy = {
         {
           question: 'Puis-je commencer gratuitement ?',
           answer:
-            'Oui. SkillQuest inclut un démarrage gratuit avec Guest Mode et le suivi de compétences essentiel.'
+            'Oui. SkillQuest inclut un démarrage gratuit avec le mode invité et le suivi de compétences essentiel.'
         },
         {
           question: 'Quels sont les prix finaux des abonnements ?',
@@ -1402,14 +1402,14 @@ export const marketingCopy = {
         {
           question: 'Comment annuler ?',
           answer:
-            'Les abonnements sont gérés par l’App Store ou Google Play. Vous pouvez annuler via le compte store qui a lancé l’abonnement.'
+            'Les abonnements sont gérés par l’App Store ou Google Play. Tu peux annuler ton abonnement depuis le compte App Store ou Google Play avec lequel tu t’es abonné.'
         }
       ]
     },
     featuresPage: {
-      metaTitle: 'Fonctions SkillQuest | Timers, XP, stats, amis, famille',
+      metaTitle: 'Fonctions SkillQuest | Minuteurs, XP, stats, amis, famille',
       metaDescription:
-        'Explorez les fonctions SkillQuest pour suivi des compétences, timers, XP, niveaux, statistiques, classements, amis, famille, Guest Mode et synchronisation privée.',
+        'Découvre les fonctions de SkillQuest : suivi des compétences, minuteurs, XP, niveaux, statistiques, classements, amis, famille, mode invité et synchronisation privée.',
       title: 'Des fonctions qui transforment la pratique en progrès',
       subtitle:
         'SkillQuest repose sur la boucle essentielle : choisir une compétence, se concentrer, gagner de l’XP, revoir ses progrès et revenir demain.',
@@ -1417,17 +1417,17 @@ export const marketingCopy = {
         {
           title: 'Suivre toute compétence',
           body:
-            'Utilisez SkillQuest pour études, sport, musique, lecture, code, création ou toute habitude à renforcer.'
+            'Utilise SkillQuest pour tes études, le sport, la musique, la lecture, le code, la création ou toute habitude que tu veux renforcer.'
         },
         {
-          title: 'Timers de concentration',
+          title: 'Minuteurs de concentration',
           body:
-            'Utilisez des techniques comme Pomodoro, Deep Work, Flowtime, 52-17, sessions personnalisées et EMOM quand l’app les prend en charge.'
+            'Utilise des techniques comme Pomodoro, Deep Work, Flowtime, 52-17, des sessions personnalisées et EMOM quand l’app les prend en charge.'
         },
         {
           title: 'Des progrès vérifiables',
           body:
-            'XP, niveaux, séries, historique des sessions et graphiques montrent ce que vous avez réellement pratiqué.'
+            'XP, niveaux, séries, historique des sessions et graphiques montrent ce que tu as réellement pratiqué.'
         },
         {
           title: 'Motivation avec limites',
@@ -1437,7 +1437,7 @@ export const marketingCopy = {
         {
           title: 'Pratique guidée par les parents',
           body:
-            'Avec Family, les parents peuvent voir quand les enfants lancent des timers, lancer des timers pour eux et relier la pratique à un objectif clair.'
+            'Avec Family, les parents peuvent voir quand les enfants lancent des minuteurs, en lancer pour eux et relier la pratique à un objectif clair.'
         }
       ]
     }
@@ -1747,9 +1747,9 @@ export const marketingCopy = {
   it: {
     localeName: localeNames.it,
     meta: {
-      title: 'SkillQuest | Sviluppa competenze con timer, XP e funzioni famiglia',
+      title: 'SkillQuest | Sviluppa le tue abilità con timer, XP e funzioni famiglia',
       description:
-        'SkillQuest aiuta utenti e famiglie a sviluppare competenze con timer di concentrazione, XP, statistiche, amici, sfide e sincronizzazione attenta alla privacy.'
+        'SkillQuest aiuta persone e famiglie a sviluppare le proprie abilità con timer di concentrazione, XP, statistiche, amici, sfide e sincronizzazione rispettosa della privacy.'
     },
     nav: {
       features: 'Funzioni',
@@ -1762,14 +1762,14 @@ export const marketingCopy = {
       eyebrow: 'Disponibile su App Store e su Google Play.',
       title: 'Ogni minuto di concentrazione conta per un’abilità',
       subtitle:
-        'Skill tracker con focus timer integrati. Guadagna XP, costruisci streaks e vedi esattamente dove va il tuo tempo di pratica.',
+        'Un’app per tracciare le tue abilità, con timer di concentrazione integrati. Guadagna XP, costruisci le tue serie e vedi esattamente dove va il tuo tempo di pratica.',
       primaryCta: 'Scarica da App Store',
       secondaryCta: 'Scarica per Android',
       tertiaryCta: 'Confronta i prezzi',
-      trust: ['Inizio gratuito', 'Niente pubblicità', 'Sync attenta alla privacy']
+      trust: ['Inizia gratis', 'Niente pubblicità', 'Sincronizzazione rispettosa della privacy']
     },
     audiences: {
-      heading: 'Un tracker di competenze per crescita personale e pratica familiare guidata',
+      heading: 'Un tracker di abilità per la crescita personale e la pratica guidata in famiglia',
       items: [
         {
           title: 'Per la crescita personale',
@@ -1777,7 +1777,7 @@ export const marketingCopy = {
             'Traccia studio, allenamento, lavoro creativo, lettura, programmazione, musica e ogni abitudine che vuoi rafforzare.'
         },
         {
-          title: 'Per genitori',
+          title: 'Per i genitori',
           body:
             'Dai struttura al tempo di pratica, aiuta i figli con i timer e rendi i progressi visibili senza aggiungere pressione.'
         }
@@ -1785,9 +1785,9 @@ export const marketingCopy = {
     },
     familySupport: {
       badge: 'Abbonamento Family',
-      heading: 'Dai struttura ai figli senza prendere il controllo dei loro progressi',
+      heading: 'Dai struttura alla routine dei tuoi figli senza prendere il controllo dei loro progressi',
       body:
-        'Con l’abbonamento Family, i genitori possono vedere quando un figlio avvia timer di concentrazione e possono avviare timer per i figli quando è il momento di praticare. Così la famiglia ha un ritmo condiviso: il figlio sa su cosa lavorare e i genitori possono sostenere la routine senza andare a intuito.',
+        'Con l’abbonamento Family, i genitori possono vedere quando un figlio avvia un timer di concentrazione e possono avviare i timer per i figli quando è il momento di fare pratica. Così la famiglia ha un ritmo condiviso: il figlio sa su cosa lavorare e i genitori possono sostenere la routine senza dover tirare a indovinare.',
       items: [
         {
           title: 'Vedi l’attività dei timer',
@@ -1797,12 +1797,12 @@ export const marketingCopy = {
         {
           title: 'Avvia timer per i figli',
           body:
-            'Aiuta un figlio a iniziare una sessione focalizzata dall’ambiente famiglia e trasforma la pratica in un passo chiaro.'
+            'Aiuta tuo figlio a iniziare una sessione di concentrazione dalla sezione famiglia, con un passo successivo chiaro.'
         },
         {
           title: 'Lavora verso un obiettivo',
           body:
-            'XP, livelli e progressi delle competenze rendono visibile la pratica ripetuta per genitori e figli.'
+            'XP, livelli e progressi delle abilità rendono visibile la pratica costante a genitori e figli.'
         },
         {
           title: 'Incluso in Family',
@@ -1811,31 +1811,31 @@ export const marketingCopy = {
         }
       ],
       note:
-        'Le funzioni famiglia richiedono un abbonamento Family e sono pensate per creare guida, struttura e motivazione condivisa.',
+        'Le funzioni famiglia richiedono un abbonamento Family e sono pensate per offrire orientamento, struttura e motivazione condivisa.',
       cta: 'Vedi Family',
       imageAlt: 'Screenshot SkillQuest con funzioni famiglia e social'
     },
     product: {
       heading: 'Progressi reali, non un’altra lista vaga di abitudini',
       body:
-        'SkillQuest collega timer, competenze, XP, serie, statistiche, amici, classifiche e funzioni famiglia in un’app mobile focalizzata.',
+        'SkillQuest collega timer, abilità, XP, serie, statistiche, amici, classifiche e funzioni famiglia in un’unica app mobile, semplice e mirata.',
       captions: [
-        'Sviluppa ogni competenza',
+        'Sviluppa ogni abilità',
         'Concentrati con i timer',
         'Guadagna XP ogni giorno',
         'Vedi i progressi',
         'Sali in classifica',
-        'Crescete insieme',
-        'Rendilo tuo'
+        'Cresci insieme agli altri',
+        'Personalizza a modo tuo'
       ]
     },
     benefits: {
-      heading: 'Perché gli utenti tornano',
+      heading: 'Perché gli utenti continuano a usare SkillQuest',
       items: [
         {
-          title: 'Timer per competenza',
+          title: 'Timer per abilità',
           body:
-            'Avvia una sessione per la competenza su cui lavori e collega lo sforzo a progressi reali.'
+            'Avvia una sessione per l’abilità su cui lavori e collega l’impegno a progressi reali.'
         },
         {
           title: 'XP, livelli e serie',
@@ -1843,22 +1843,22 @@ export const marketingCopy = {
             'Rendi visibili i progressi dopo ogni sessione con ricompense che rafforzano la costanza.'
         },
         {
-          title: 'Statistiche per competenza',
+          title: 'Statistiche per abilità',
           body:
             'Controlla tempo, sessioni e crescita per giorno, settimana, mese e anno.'
         },
         {
           title: 'Motivazione sociale e familiare',
           body:
-            'Usa amici, sfide, classifiche e funzioni famiglia quando l’accountability aiuta.'
+            'Usa amici, sfide, classifiche e funzioni famiglia quando condividere i tuoi impegni con qualcuno ti dà la spinta giusta.'
         },
         {
           title: 'Temi e personalizzazione',
           body:
-            'Personalizza l’esperienza mantenendo semplice e ripetibile il flusso principale.'
+            'Personalizza l’esperienza senza complicare il percorso principale, che resta semplice e ripetibile.'
         },
         {
-          title: 'Guest Mode',
+          title: 'Modalità ospite',
           body:
             'Prova subito l’app prima di creare un account o sincronizzare i progressi.'
         }
@@ -1875,8 +1875,8 @@ export const marketingCopy = {
       items: [
         'Leggi gli aggiornamenti dell’app nella pagina «Novità».',
         'Disponibile su App Store e su Google Play.',
-        'Il supporto è disponibile a hello@skill-quest.app.',
-        'Privacy ed eliminazione account sono linkate in ogni lingua.'
+        'Per il supporto scrivi a hello@skill-quest.app.',
+        'Le pagine su privacy ed eliminazione dell’account sono disponibili in ogni lingua.'
       ]
     },
     lead: {
@@ -1897,7 +1897,7 @@ export const marketingCopy = {
       privacyLink: 'Come trattiamo i tuoi dati'
     },
     finalCta: {
-      heading: 'Inizia dalle competenze che vuoi davvero praticare',
+      heading: 'Inizia dalle abilità che vuoi davvero praticare',
       body:
         'Scarica SkillQuest su App Store o su Google Play.',
       primary: 'Scarica da App Store',
@@ -1905,10 +1905,10 @@ export const marketingCopy = {
     },
     footer: {
       description:
-        'SkillQuest aiuta persone e famiglie a trasformare la pratica focalizzata in crescita visibile.',
+        'SkillQuest aiuta persone e famiglie a trasformare la pratica mirata in crescita visibile.',
       product: 'Prodotto',
       resources: 'Risorse',
-      legal: 'Legale',
+      legal: 'Note legali',
       download: 'Scarica',
       features: 'Funzioni',
       pricing: 'Prezzi',
@@ -1930,7 +1930,7 @@ export const marketingCopy = {
       iosTitle: 'iPhone e iPad',
       iosStatus: 'Disponibile ora su App Store',
       iosBody:
-        'Scarica la release iOS live e inizia con competenze, timer, XP, statistiche, amici e funzioni famiglia.',
+        'Scarica l’app per iOS e inizia con abilità, timer, XP, statistiche, amici e funzioni famiglia.',
       iosCta: 'Apri App Store',
       androidTitle: 'Android',
       androidStatus: 'Disponibile ora su Google Play',
@@ -1939,12 +1939,12 @@ export const marketingCopy = {
       androidCta: 'Scarica per Android',
       qrIos: 'Sei al computer? Scansiona il codice con il tuo iPhone o iPad per aprire l’App Store.',
       qrAndroid: 'Sei al computer? Scansiona il codice con il tuo telefono Android per aprire questa pagina sul telefono.',
-      screenshotsHeading: 'Guarda l’app prima di installare',
+      screenshotsHeading: 'Guarda l’app prima di installarla',
       screenshotsBody:
-        'Questi screenshot provengono dalla vera app SkillQuest con dati demo puliti.',
+        'Questi screenshot provengono dalla vera app SkillQuest con dati di esempio.',
       finalHeading: 'Scegli la piattaforma',
       finalBody:
-        'Gli utenti iOS e Android possono installare ora.'
+        'Puoi installare subito l’app su iOS e Android.'
     },
     pricing: {
       metaTitle: 'Prezzi SkillQuest | Premium e Family',
@@ -1952,7 +1952,7 @@ export const marketingCopy = {
         `Confronta Free, Premium e Family per SkillQuest. Premium costa ${PRICES.it.premiumMonthly}/mese o ${PRICES.it.premiumYearly}/anno. Family costa ${PRICES.it.familyMonthly}/mese o ${PRICES.it.familyYearly}/anno.`,
       title: 'Prezzi SkillQuest',
       subtitle:
-        'Inizia gratis. Passa a Premium quando statistiche più profonde, più libertà o funzioni famiglia valgono il prezzo.',
+        'Inizia gratis. Passa a Premium quando statistiche più approfondite, più libertà o le funzioni famiglia fanno al caso tuo.',
       billingNote: 'Gli abbonamenti sono gestiti tramite App Store o Google Play.',
       plans: [
         {
@@ -1960,15 +1960,15 @@ export const marketingCopy = {
           price: PRICES.it.free,
           cadence: 'Inizia subito',
           description:
-            'Prova SkillQuest con Guest Mode e tracking essenziale prima di abbonarti.',
-          features: ['Timer di concentrazione', '78 competenze', 'XP e livelli', 'Guest Mode']
+            'Prova SkillQuest con la Modalità ospite e il tracciamento essenziale delle abilità prima di abbonarti.',
+          features: ['Timer di concentrazione', '78 abilità', 'XP e livelli', 'Modalità ospite']
         },
         {
           name: 'Premium',
           price: `${PRICES.it.premiumMonthly}/mese`,
           cadence: `${PRICES.it.premiumYearly}/anno`,
           description:
-            'Per utenti che vogliono più libertà, statistiche ampliate, temi extra e funzioni avanzate.',
+            'Per chi vuole più libertà, statistiche ampliate, temi extra e funzioni avanzate.',
           features: [
             'Crescita illimitata',
             'Statistiche ampliate',
@@ -1985,8 +1985,8 @@ export const marketingCopy = {
             'Per genitori che vogliono Premium con struttura familiare, statistiche dei figli, timer, obiettivi e complimenti.',
           features: [
             'Gestione famiglia',
-            'Vedi attività timer e statistiche dei figli',
-            'Avvia timer per i figli',
+            'Vedi l’attività dei timer e le statistiche dei figli',
+            'Avvia i timer per i figli',
             'Obiettivi e complimenti condivisi',
             'Funzioni Premium per la famiglia'
           ]
@@ -1996,7 +1996,7 @@ export const marketingCopy = {
         {
           question: 'Posso iniziare senza pagare?',
           answer:
-            'Sì. SkillQuest include un inizio gratuito con Guest Mode e tracking essenziale delle competenze.'
+            'Sì. Puoi iniziare gratis con la Modalità ospite e il tracciamento essenziale delle abilità.'
         },
         {
           question: 'Quali sono i prezzi finali?',
@@ -2004,22 +2004,22 @@ export const marketingCopy = {
             `Premium costa ${PRICES.it.premiumMonthly} al mese o ${PRICES.it.premiumYearly} all’anno. Family costa ${PRICES.it.familyMonthly} al mese o ${PRICES.it.familyYearly} all’anno.`
         },
         {
-          question: 'Come annullo?',
+          question: 'Come posso annullare l’abbonamento?',
           answer:
-            'Gli abbonamenti sono gestiti da App Store o Google Play. Puoi annullare dall’account store che ha avviato l’abbonamento.'
+            'Gli abbonamenti sono gestiti da App Store o Google Play. Puoi annullare l’abbonamento dall’account dello store con cui lo hai attivato.'
         }
       ]
     },
     featuresPage: {
       metaTitle: 'Funzioni SkillQuest | Timer, XP, statistiche, amici, famiglia',
       metaDescription:
-        'Scopri le funzioni SkillQuest per skill tracking, timer, XP, livelli, statistiche, classifiche, amici, famiglia, Guest Mode e sync attenta alla privacy.',
+        'Scopri le funzioni di SkillQuest: tracciamento delle abilità, timer, XP, livelli, statistiche, classifiche, amici, famiglia, Modalità ospite e sincronizzazione attenta alla privacy.',
       title: 'Funzioni che trasformano la pratica in progresso',
       subtitle:
-        'SkillQuest si basa sul ciclo che conta: scegli una competenza, concentrati, guadagna XP, rivedi i progressi e torna domani.',
+        'SkillQuest si basa sul ciclo che conta: scegli un’abilità, concentrati, guadagna XP, rivedi i progressi e torna domani.',
       sections: [
         {
-          title: 'Traccia qualsiasi competenza',
+          title: 'Traccia qualsiasi abilità',
           body:
             'Usa SkillQuest per studio, sport, musica, lettura, programmazione, creatività o abitudini da rafforzare.'
         },
@@ -2034,9 +2034,9 @@ export const marketingCopy = {
             'XP, livelli, serie, cronologia sessioni e grafici mostrano cosa hai davvero praticato.'
         },
         {
-          title: 'Motivazione con limiti',
+          title: 'Motivazione senza pressioni',
           body:
-            'Amici, sfide, classifiche e funzioni Family aggiungono responsabilità senza sostituire il lavoro reale.'
+            'Amici, sfide, classifiche e funzioni Family ti danno un motivo in più per impegnarti, senza sostituire il lavoro vero.'
         },
         {
           title: 'Pratica guidata dai genitori',
