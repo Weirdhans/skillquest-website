@@ -58,7 +58,7 @@
       },
       "privacyFirst": {
         "title": "Datenschutz zuerst",
-        "description": "Europäische Server, GDPR-konform, kein Datenverkauf. Ihre Familie, Ihre Daten.",
+        "description": "Kein Datenverkauf. Ihre Familie, Ihre Daten.",
         "highlight": "100% sicher"
       }
     },
@@ -197,7 +197,7 @@
     },
     "heading": "Datenschutzrichtlinie",
     "lastUpdatedLabel": "Zuletzt aktualisiert",
-    "lastUpdated": "14. November 2026",
+    "lastUpdated": "15. November 2026",
     "sections": {
       "einleitung": {
         "title": "Einleitung",
@@ -229,7 +229,7 @@
       },
       "diensteDritter": {
         "title": "Dienste Dritter",
-        "content": "<p>Wir verwenden die folgenden DSGVO-konformen Dienste:</p>\n<p>| Dienst | Zweck | Standort | DSGVO-Status |</p>\n<p>|--------|------|---------|-------------|</p>\n<p>| <strong>Vercel</strong> | Website-Hosting und -Analysen sowie die Seiten, auf denen ein Elternteil entscheidet und auf denen du dein Konto löschst | EU/US | Standardvertragsklauseln (SCC) |</p>\n<p>| <strong>Supabase</strong> | Datenbank für App- und Formulardaten | EU-Server | DSGVO-konform |</p>\n<p>| <strong>RevenueCat</strong> | Verwaltung von Premium-Abonnements in der App | US | Standardvertragsklauseln (SCC) |</p>\n<p>| <strong>Resend</strong> | E-Mail: der Newsletter (Abonnentenliste und Versand), Kontaktformulare, die E-Mails an Eltern und der Code zum Löschen des Kontos | US | DSGVO-konform, SCC |</p>\n<p>| <strong>Google Play Services</strong> | Android App-Distribution (zukünftig) | US | DSGVO-konform |</p>\n<p>| <strong>Aptabase</strong> | Anonyme Nutzungsstatistiken innerhalb der App | EU (Deutschland) | DSGVO-konform, keine personenbezogenen Daten |</p>\n<p>| <strong>Apple Declared Age Range</strong> | Altersprüfung, wo das Gesetz sie verlangt (nur iOS) | Apple | Nur eine Altersspanne, nie ein Geburtsdatum |</p>\n<p>Alle diese Dienste verfügen über geeignete Garantien für die Datenübermittlung in Länder außerhalb der EU.</p>"
+        "content": "<p>Wir verwenden die folgenden DSGVO-konformen Dienste:</p>\n<p>| Dienst | Zweck | Standort | DSGVO-Status |</p>\n<p>|--------|------|---------|-------------|</p>\n<p>| <strong>Vercel</strong> | Website-Hosting und -Analysen sowie die Seiten, auf denen ein Elternteil entscheidet und auf denen du dein Konto löschst | EU/US | Standardvertragsklauseln (SCC) |</p>\n<p>| <strong>Supabase</strong> | Datenbank für App- und Formulardaten | US | Standardvertragsklauseln (SCC) |</p>\n<p>| <strong>RevenueCat</strong> | Verwaltung von Premium-Abonnements in der App | US | Standardvertragsklauseln (SCC) |</p>\n<p>| <strong>Resend</strong> | E-Mail: der Newsletter (Abonnentenliste und Versand), Kontaktformulare, die E-Mails an Eltern und der Code zum Löschen des Kontos | US | DSGVO-konform, SCC |</p>\n<p>| <strong>Google Play Services</strong> | Android App-Distribution (zukünftig) | US | DSGVO-konform |</p>\n<p>| <strong>Aptabase</strong> | Anonyme Nutzungsstatistiken innerhalb der App | EU (Deutschland) | DSGVO-konform, keine personenbezogenen Daten |</p>\n<p>| <strong>Apple Declared Age Range</strong> | Altersprüfung, wo das Gesetz sie verlangt (nur iOS) | Apple | Nur eine Altersspanne, nie ein Geburtsdatum |</p>\n<p>Alle diese Dienste verfügen über geeignete Garantien für die Datenübermittlung in Länder außerhalb der EU.</p>"
       },
       "cookiesUndTracking": {
         "title": "Cookies und Tracking",
@@ -249,7 +249,7 @@
       },
       "internationaleDatenbermittlung": {
         "title": "Internationale Datenübermittlung",
-        "content": "<p>Einige unserer Drittanbieterdienste (z.B. Vercel, Resend, RevenueCat) können Daten auf Servern in den Vereinigten Staaten speichern. Wir stellen sicher, dass:</p>\n<ul>\n<li>Alle Übermittlungen durch von der Europäischen Kommission genehmigte <strong>Standardvertragsklauseln (SCC)</strong> geschützt sind</li>\n<li>Dienste die DSGVO-Anforderungen erfüllen</li>\n<li>Angemessene technische und organisatorische Maßnahmen implementiert sind</li>\n</ul>\n<p>Ihre primären App-Daten werden auf <strong>EU-Servern</strong> (Supabase EU-Region) gespeichert.</p>"
+        "content": "<p>Deine App-Daten (dein Konto, deine Fähigkeiten, deine Timer-Sitzungen und deine Familiendaten) werden von <strong>Supabase</strong> (Supabase Pte. Ltd., Singapur) auf Servern in den <strong>Vereinigten Staaten</strong> gespeichert. Mitarbeitende von Supabase in anderen Ländern, darunter Singapur, können auf diese Daten zugreifen, wenn das für Support oder Sicherheit erforderlich ist. Technische Protokolle können auch in anderen Regionen verarbeitet werden.</p>\n<p>Einige unserer anderen Drittanbieterdienste (z.B. Vercel, Resend, RevenueCat) können ebenfalls Daten auf Servern in den Vereinigten Staaten speichern. Wir stellen sicher, dass:</p>\n<ul>\n<li>Alle Übermittlungen durch von der Europäischen Kommission genehmigte <strong>Standardvertragsklauseln (SCC)</strong> geschützt sind</li>\n<li>Dienste die DSGVO-Anforderungen erfüllen</li>\n<li>Angemessene technische und organisatorische Maßnahmen implementiert sind</li>\n</ul>\n<p>Bei Supabase sind diese Standardvertragsklauseln Teil der Datenverarbeitungsvereinbarung (supabase.com/legal/dpa). Eine Kopie kannst du per E-Mail an hello@skill-quest.app bei uns anfordern.</p>\n<p><strong>Berichtigung vom 15. November 2026:</strong> In früheren Versionen dieser Datenschutzrichtlinie stand, dass deine App-Daten auf EU-Servern gespeichert würden. Das war nicht korrekt. Unsere Datenbank befand sich schon damals in den Vereinigten Staaten.</p>"
       },
       "nderungenDieserDatenschutzrichtlinie": {
         "title": "Änderungen dieser Datenschutzrichtlinie",

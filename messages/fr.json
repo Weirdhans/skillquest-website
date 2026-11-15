@@ -58,7 +58,7 @@
       },
       "privacyFirst": {
         "title": "Le respect de la vie privée d'abord",
-        "description": "Serveurs européens, conformes au GDPR, aucune donnée vendue. Votre famille, vos données.",
+        "description": "Aucune donnée vendue. Votre famille, vos données.",
         "highlight": "100% sûr"
       }
     },
@@ -197,7 +197,7 @@
     },
     "heading": "Politique de Confidentialité",
     "lastUpdatedLabel": "Dernière mise à jour ",
-    "lastUpdated": "14 novembre 2026",
+    "lastUpdated": "15 novembre 2026",
     "sections": {
       "introduction": {
         "title": "Introduction",
@@ -229,7 +229,7 @@
       },
       "servicesTiers": {
         "title": "Services Tiers",
-        "content": "<p>Nous utilisons les services conformes au RGPD suivants :</p>\n<p>| Service | Objectif | Localisation | Statut RGPD |</p>\n<p>|---------|----------|--------------|-------------|</p>\n<p>| <strong>Vercel</strong> | Hébergement et analyses du site web, ainsi que les pages où un parent décide et où vous supprimez votre compte | UE/US | Clauses Contractuelles Types (CCT) |</p>\n<p>| <strong>Supabase</strong> | Base de données pour les données de l'appli et des formulaires | Serveurs UE | Conforme RGPD |</p>\n<p>| <strong>RevenueCat</strong> | Gestion des abonnements Premium dans l'application | US | Clauses Contractuelles Types (CCT) |</p>\n<p>| <strong>Resend</strong> | E-mails : la newsletter (liste des abonnés et envoi), les formulaires de contact, les e-mails adressés aux parents et le code de suppression de compte | US | Conforme RGPD, CCT |</p>\n<p>| <strong>Google Play Services</strong> | Distribution d'application Android (à venir) | US | Conforme RGPD |</p>\n<p>| <strong>Aptabase</strong> | Statistiques d'utilisation anonymes au sein de l'application | UE (Allemagne) | Conforme au RGPD, aucune donnée à caractère personnel |</p>\n<p>| <strong>Apple Declared Age Range</strong> | Vérification de l'âge là où la loi l'exige (iOS uniquement) | Apple | Une tranche d'âge uniquement, jamais de date de naissance |</p>\n<p>Tous ces services disposent de garanties appropriées pour les transferts de données vers des pays hors UE.</p>"
+        "content": "<p>Nous utilisons les services conformes au RGPD suivants :</p>\n<p>| Service | Objectif | Localisation | Statut RGPD |</p>\n<p>|---------|----------|--------------|-------------|</p>\n<p>| <strong>Vercel</strong> | Hébergement et analyses du site web, ainsi que les pages où un parent décide et où vous supprimez votre compte | UE/US | Clauses Contractuelles Types (CCT) |</p>\n<p>| <strong>Supabase</strong> | Base de données pour les données de l'appli et des formulaires | US | Clauses Contractuelles Types (CCT) |</p>\n<p>| <strong>RevenueCat</strong> | Gestion des abonnements Premium dans l'application | US | Clauses Contractuelles Types (CCT) |</p>\n<p>| <strong>Resend</strong> | E-mails : la newsletter (liste des abonnés et envoi), les formulaires de contact, les e-mails adressés aux parents et le code de suppression de compte | US | Conforme RGPD, CCT |</p>\n<p>| <strong>Google Play Services</strong> | Distribution d'application Android (à venir) | US | Conforme RGPD |</p>\n<p>| <strong>Aptabase</strong> | Statistiques d'utilisation anonymes au sein de l'application | UE (Allemagne) | Conforme au RGPD, aucune donnée à caractère personnel |</p>\n<p>| <strong>Apple Declared Age Range</strong> | Vérification de l'âge là où la loi l'exige (iOS uniquement) | Apple | Une tranche d'âge uniquement, jamais de date de naissance |</p>\n<p>Tous ces services disposent de garanties appropriées pour les transferts de données vers des pays hors UE.</p>"
       },
       "cookiesEtSuivi": {
         "title": "Cookies et Suivi",
@@ -249,7 +249,7 @@
       },
       "transfertInternationalDeDonnes": {
         "title": "Transfert International de Données",
-        "content": "<p>Certains de nos services tiers (par ex. Vercel, Resend, RevenueCat) peuvent stocker des données sur des serveurs aux États-Unis. Nous nous assurons que :</p>\n<ul>\n<li>Tous les transferts sont protégés par des <strong>Clauses Contractuelles Types (CCT)</strong> approuvées par la Commission européenne</li>\n<li>Les services respectent les exigences du RGPD</li>\n<li>Des mesures techniques et organisationnelles appropriées sont mises en œuvre</li>\n</ul>\n<p>Vos données d'application principales sont stockées sur des <strong>serveurs UE</strong> (région UE de Supabase).</p>"
+        "content": "<p>Tes données d'application (ton compte, tes compétences, tes sessions de minuteur et les données de ta famille) sont stockées par <strong>Supabase</strong> (Supabase Pte. Ltd., Singapour) sur des serveurs aux <strong>États-Unis</strong>. Le personnel de Supabase dans d'autres pays, y compris à Singapour, peut accéder à ces données lorsque c'est nécessaire pour l'assistance ou la sécurité. Les journaux techniques peuvent aussi être traités dans d'autres régions.</p>\n<p>Certains de nos autres services tiers (par ex. Vercel, Resend, RevenueCat) peuvent aussi stocker des données sur des serveurs aux États-Unis. Nous nous assurons que :</p>\n<ul>\n<li>Tous les transferts sont protégés par des <strong>Clauses Contractuelles Types (CCT)</strong> approuvées par la Commission européenne</li>\n<li>Les services respectent les exigences du RGPD</li>\n<li>Des mesures techniques et organisationnelles appropriées sont mises en œuvre</li>\n</ul>\n<p>Pour Supabase, ces clauses font partie de son accord de traitement des données (supabase.com/legal/dpa). Tu peux nous en demander une copie en écrivant à hello@skill-quest.app.</p>\n<p><strong>Rectificatif du 15 novembre 2026 :</strong> les versions précédentes de cette politique indiquaient que tes données d'application étaient stockées sur des serveurs dans l'UE. Ce n'était pas exact. Notre base de données se trouvait déjà aux États-Unis à ce moment-là.</p>"
       },
       "modificationsDeCettePolitiqueDeConfidentialit": {
         "title": "Modifications de Cette Politique de Confidentialité",

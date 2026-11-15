@@ -58,7 +58,7 @@
       },
       "privacyFirst": {
         "title": "Privacy First",
-        "description": "European servers, GDPR compliant, no data sold. Your family, your data.",
+        "description": "No data sold. Your family, your data.",
         "highlight": "100% Safe"
       }
     },
@@ -197,7 +197,7 @@
     },
     "heading": "Privacy Policy",
     "lastUpdatedLabel": "Last updated",
-    "lastUpdated": "November 14, 2026",
+    "lastUpdated": "November 15, 2026",
     "sections": {
       "introduction": {
         "title": "Introduction",
@@ -229,7 +229,7 @@
       },
       "thirdpartyServices": {
         "title": "Third-Party Services",
-        "content": "<p>We use the following GDPR-compliant services:</p>\n<p>| Service | Purpose | Location | GDPR Status |</p>\n<p>|--------|------|---------|-------------|</p>\n<p>| <strong>Vercel</strong> | Website hosting and analytics, and the pages where a parent decides and where you delete your account | EU/US | Standard Contractual Clauses (SCC) |</p>\n<p>| <strong>Supabase</strong> | Database for app and form data | EU servers | GDPR-compliant |</p>\n<p>| <strong>RevenueCat</strong> | Managing Premium subscriptions in the app | US | Standard Contractual Clauses (SCC) |</p>\n<p>| <strong>Resend</strong> | Email: the newsletter (list of subscribers and sending), contact forms, the emails to a parent and the account deletion code | US | GDPR-compliant, SCC |</p>\n<p>| <strong>Google Play Services</strong> | Android closed testing and app distribution | US | GDPR-compliant |</p>\n<p>| <strong>Aptabase</strong> | Anonymous in-app usage statistics | EU (Germany) | GDPR-compliant, no personal data |</p>\n<p>| <strong>Apple Declared Age Range</strong> | Age check where the law requires it (iOS only) | Apple | Age range only, never a birth date |</p>\n<p>All these services have appropriate safeguards for data transfer to countries outside the EU.</p>"
+        "content": "<p>We use the following GDPR-compliant services:</p>\n<p>| Service | Purpose | Location | GDPR Status |</p>\n<p>|--------|------|---------|-------------|</p>\n<p>| <strong>Vercel</strong> | Website hosting and analytics, and the pages where a parent decides and where you delete your account | EU/US | Standard Contractual Clauses (SCC) |</p>\n<p>| <strong>Supabase</strong> | Database for app and form data | US | Standard Contractual Clauses (SCC) |</p>\n<p>| <strong>RevenueCat</strong> | Managing Premium subscriptions in the app | US | Standard Contractual Clauses (SCC) |</p>\n<p>| <strong>Resend</strong> | Email: the newsletter (list of subscribers and sending), contact forms, the emails to a parent and the account deletion code | US | GDPR-compliant, SCC |</p>\n<p>| <strong>Google Play Services</strong> | Android closed testing and app distribution | US | GDPR-compliant |</p>\n<p>| <strong>Aptabase</strong> | Anonymous in-app usage statistics | EU (Germany) | GDPR-compliant, no personal data |</p>\n<p>| <strong>Apple Declared Age Range</strong> | Age check where the law requires it (iOS only) | Apple | Age range only, never a birth date |</p>\n<p>All these services have appropriate safeguards for data transfer to countries outside the EU.</p>"
       },
       "cookiesAndTracking": {
         "title": "Cookies and Tracking",
@@ -249,7 +249,7 @@
       },
       "internationalDataTransfer": {
         "title": "International Data Transfer",
-        "content": "<p>Some of our third-party services (e.g., Vercel, Resend, RevenueCat) may store data on servers in the United States. We ensure that:</p>\n<ul>\n<li>All transfers are protected by <strong>Standard Contractual Clauses (SCC)</strong> approved by the European Commission</li>\n<li>Services comply with GDPR requirements</li>\n<li>Appropriate technical and organizational measures are implemented</li>\n</ul>\n<p>Your primary app data is stored on <strong>EU servers</strong> (Supabase EU region).</p>"
+        "content": "<p>Your app data (your account, your skills, your timer sessions and your family data) is stored by <strong>Supabase</strong> (Supabase Pte. Ltd., Singapore) on servers in the <strong>United States</strong>. Supabase staff in other countries, including Singapore, can access this data when that is needed for support or security. Technical logs can also be processed in other regions.</p>\n<p>Some of our other third-party services (e.g., Vercel, Resend, RevenueCat) may also store data on servers in the United States. We ensure that:</p>\n<ul>\n<li>All transfers are protected by <strong>Standard Contractual Clauses (SCC)</strong> approved by the European Commission</li>\n<li>Services comply with GDPR requirements</li>\n<li>Appropriate technical and organizational measures are implemented</li>\n</ul>\n<p>For Supabase, these clauses are part of its data processing agreement (supabase.com/legal/dpa). You can ask us for a copy at hello@skill-quest.app.</p>\n<p><strong>Correction of November 15, 2026:</strong> earlier versions of this policy said that your app data was stored on EU servers. That was not correct. Our database was already in the United States at that time.</p>"
       },
       "changesToThisPrivacyPolicy": {
         "title": "Changes to This Privacy Policy",
