@@ -166,6 +166,7 @@ export default async function DeleteAccountPage({
                     t('sections.whatWeMayRetain.items.payments'),
                     t('sections.whatWeMayRetain.items.subscriptions'),
                     t('sections.whatWeMayRetain.items.support'),
+                    t('sections.whatWeMayRetain.items.newsletter'),
                     t('sections.whatWeMayRetain.items.security'),
                     t('sections.whatWeMayRetain.items.parentProof'),
                     t('sections.whatWeMayRetain.items.analytics')

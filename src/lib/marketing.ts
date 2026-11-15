@@ -370,26 +370,21 @@ export const marketingCopy = {
       ]
     },
     lead: {
-      badge: 'Product updates',
-      heading: 'Get product updates',
-      subheading:
-        'Leave your email for SkillQuest product updates.',
-      platformQuestion: 'Which updates do you want?',
-      platforms: {
-        ios: 'iOS',
-        android: 'Android',
-        both: 'Both'
-      },
+      badge: 'Newsletter',
+      heading: 'Subscribe to the newsletter',
+      subheading: 'Now and then an email about new features in SkillQuest and tips for building skills, for yourself or with your kids.',
       placeholder: 'you@example.com',
-      submit: 'Keep me updated',
-      submitting: 'Submitting...',
-      submitted: 'Signed up',
-      success: 'Check your inbox for the confirmation link.',
-      duplicate: 'Your preferences are saved. You are already on the list.',
-      pendingVerification: 'You signed up earlier but have not confirmed yet.',
-      resendLink: 'Resend verification email',
-      error: 'Something went wrong. Please try again.',
-      privacy: 'No spam. Unsubscribe anytime.'
+      emailLabel: 'Email address',
+      submit: 'Subscribe',
+      submitting: 'Sending...',
+      submitted: 'Almost done',
+      success: 'Check your inbox and confirm with the link in the email.',
+      rateLimited: "You've tried a few times already. Try again in an hour.",
+      busy: "We can't send any more confirmation emails today. Try again tomorrow.",
+      invalidEmail: 'Enter a valid email address.',
+      error: 'Something went wrong. Try again.',
+      privacy: 'No spam. Every newsletter has a link to unsubscribe.',
+      privacyLink: 'How we handle your data'
     },
     finalCta: {
       heading: 'Start building the skills you keep meaning to practice',
@@ -677,26 +672,21 @@ export const marketingCopy = {
       ]
     },
     lead: {
-      badge: 'Productupdates',
-      heading: 'Ontvang productupdates',
-      subheading:
-        'Laat je e-mail achter voor SkillQuest-productupdates.',
-      platformQuestion: 'Welke updates wil je ontvangen?',
-      platforms: {
-        ios: 'iOS',
-        android: 'Android',
-        both: 'Beide'
-      },
+      badge: 'Nieuwsbrief',
+      heading: 'Schrijf je in voor de nieuwsbrief',
+      subheading: 'Af en toe een e-mail over nieuwe functies in SkillQuest en tips om vaardigheden op te bouwen, voor jezelf of samen met je kinderen.',
       placeholder: 'jij@voorbeeld.nl',
-      submit: 'Houd me op de hoogte',
+      emailLabel: 'E-mailadres',
+      submit: 'Inschrijven',
       submitting: 'Versturen...',
-      submitted: 'Aangemeld',
-      success: 'Check je inbox voor de bevestigingslink.',
-      duplicate: 'Je voorkeuren zijn opgeslagen. Je staat al op de lijst.',
-      pendingVerification: 'Je hebt je eerder aangemeld maar nog niet bevestigd.',
-      resendLink: 'Verificatiemail opnieuw sturen',
+      submitted: 'Bijna klaar',
+      success: 'Kijk in je inbox en bevestig je inschrijving met de link in de e-mail.',
+      rateLimited: 'Je hebt het al een paar keer geprobeerd. Probeer het over een uur opnieuw.',
+      busy: 'We kunnen vandaag geen bevestigingsmails meer versturen. Probeer het morgen opnieuw.',
+      invalidEmail: 'Vul een geldig e-mailadres in.',
       error: 'Er ging iets mis. Probeer het opnieuw.',
-      privacy: 'Geen spam. Uitschrijven kan altijd.'
+      privacy: 'Geen spam. In elke nieuwsbrief kun je je afmelden.',
+      privacyLink: 'Zo gaan we om met je gegevens'
     },
     finalCta: {
       heading: 'Begin met de skills die je steeds wilt oefenen',
@@ -984,26 +974,21 @@ export const marketingCopy = {
       ]
     },
     lead: {
-      badge: 'Produktupdates',
-      heading: 'Produktupdates erhalten',
-      subheading:
-        'Hinterlasse deine E-Mail für SkillQuest-Produktupdates.',
-      platformQuestion: 'Welche Updates möchtest du?',
-      platforms: {
-        ios: 'iOS',
-        android: 'Android',
-        both: 'Beides'
-      },
+      badge: 'Newsletter',
+      heading: 'Abonniere den Newsletter',
+      subheading: 'Ab und zu eine E-Mail über neue Funktionen bei SkillQuest und Tipps zum Aufbau von Fähigkeiten – für dich selbst oder gemeinsam mit deinen Kindern.',
       placeholder: 'du@example.com',
-      submit: 'Auf dem Laufenden halten',
-      submitting: 'Senden...',
-      submitted: 'Angemeldet',
-      success: 'Prüfe deinen Posteingang für den Bestätigungslink.',
-      duplicate: 'Deine Auswahl ist gespeichert. Du stehst bereits auf der Liste.',
-      pendingVerification: 'Du hast dich früher angemeldet, aber noch nicht bestätigt.',
-      resendLink: 'Bestätigung erneut senden',
-      error: 'Etwas ist schiefgelaufen. Bitte versuche es erneut.',
-      privacy: 'Kein Spam. Abmeldung jederzeit möglich.'
+      emailLabel: 'E-Mail-Adresse',
+      submit: 'Abonnieren',
+      submitting: 'Wird gesendet ...',
+      submitted: 'Fast fertig',
+      success: 'Schau in deinen Posteingang und bestätige die Anmeldung über den Link in der E-Mail.',
+      rateLimited: 'Du hast es schon ein paar Mal versucht. Versuch es in einer Stunde noch einmal.',
+      busy: 'Wir können heute keine weiteren Bestätigungs-E-Mails mehr versenden. Versuch es morgen noch einmal.',
+      invalidEmail: 'Gib eine gültige E-Mail-Adresse ein.',
+      error: 'Es ist ein Fehler aufgetreten. Versuch es noch einmal.',
+      privacy: 'Kein Spam. Jeder Newsletter enthält einen Link zum Abmelden.',
+      privacyLink: 'Wie wir mit deinen Daten umgehen'
     },
     finalCta: {
       heading: 'Starte mit den Skills, die du schon lange üben willst',
@@ -1291,26 +1276,21 @@ export const marketingCopy = {
       ]
     },
     lead: {
-      badge: 'Actualités produit',
-      heading: 'Recevoir les mises à jour du produit',
-      subheading:
-        'Laissez votre e-mail pour recevoir les mises à jour de SkillQuest.',
-      platformQuestion: 'Quelles actualités voulez-vous recevoir ?',
-      platforms: {
-        ios: 'iOS',
-        android: 'Android',
-        both: 'Les deux'
-      },
-      placeholder: 'vous@example.com',
-      submit: 'Me tenir informé',
-      submitting: 'Envoi...',
-      submitted: 'Inscrit',
-      success: 'Vérifiez votre boîte mail pour le lien de confirmation.',
-      duplicate: 'Vos préférences sont enregistrées. Vous êtes déjà sur la liste.',
-      pendingVerification: 'Vous vous êtes déjà inscrit mais pas encore confirmé.',
-      resendLink: 'Renvoyer l’e-mail de vérification',
-      error: 'Une erreur est survenue. Réessayez.',
-      privacy: 'Pas de spam. Désinscription possible à tout moment.'
+      badge: 'Newsletter',
+      heading: 'Abonne-toi à la newsletter',
+      subheading: 'De temps en temps, tu recevras un e-mail sur les nouvelles fonctionnalités de SkillQuest et des conseils pour développer tes compétences, que ce soit pour toi ou avec tes enfants.',
+      placeholder: 'toi@example.com',
+      emailLabel: 'Adresse e-mail',
+      submit: "S'abonner",
+      submitting: 'Envoi en cours...',
+      submitted: "C'est presque fini",
+      success: "Vérifie ta boîte de réception et confirme en cliquant sur le lien contenu dans l'e-mail.",
+      rateLimited: 'Tu as déjà essayé plusieurs fois. Réessaie dans une heure.',
+      busy: "Nous ne pouvons plus envoyer d'e-mails de confirmation aujourd'hui. Réessaie demain.",
+      invalidEmail: 'Entre une adresse e-mail valide.',
+      error: "Une erreur s'est produite. Réessaie.",
+      privacy: 'Pas de spam. Chaque newsletter comporte un lien pour se désabonner.',
+      privacyLink: 'Comment nous traitons tes données'
     },
     finalCta: {
       heading: 'Commencez les compétences que vous voulez vraiment pratiquer',
@@ -1598,26 +1578,21 @@ export const marketingCopy = {
       ]
     },
     lead: {
-      badge: 'Actualizaciones',
-      heading: 'Recibe novedades del producto',
-      subheading:
-        'Deja tu email para recibir novedades de SkillQuest.',
-      platformQuestion: '¿Qué novedades quieres recibir?',
-      platforms: {
-        ios: 'iOS',
-        android: 'Android',
-        both: 'Ambas'
-      },
+      badge: 'Boletín informativo',
+      heading: 'Suscríbete al boletín',
+      subheading: 'De vez en cuando te mandaremos un correo sobre las novedades de SkillQuest y consejos para desarrollar habilidades, ya sea para ti o con tus hijos.',
       placeholder: 'tu@example.com',
-      submit: 'Mantenerme informado',
+      emailLabel: 'Correo electrónico',
+      submit: 'Suscribirse',
       submitting: 'Enviando...',
-      submitted: 'Registrado',
-      success: 'Revisa tu correo para el enlace de confirmación.',
-      duplicate: 'Tus preferencias están guardadas. Ya estás en la lista.',
-      pendingVerification: 'Ya te registraste, pero aún no confirmaste.',
-      resendLink: 'Reenviar email de verificación',
-      error: 'Algo salió mal. Inténtalo de nuevo.',
-      privacy: 'Sin spam. Puedes darte de baja cuando quieras.'
+      submitted: 'Ya casi está',
+      success: 'Echa un vistazo a tu bandeja de entrada y confirma tu suscripción con el enlace del correo.',
+      rateLimited: 'Ya lo has intentado unas cuantas veces. Vuelve a intentarlo dentro de una hora.',
+      busy: 'Hoy no podemos enviar más correos de confirmación. Inténtalo de nuevo mañana.',
+      invalidEmail: 'Introduce una dirección de correo electrónico válida.',
+      error: 'Ha habido un error. Inténtalo de nuevo.',
+      privacy: 'Sin spam. Cada boletín incluye un enlace para darte de baja.',
+      privacyLink: 'Cómo tratamos tus datos'
     },
     finalCta: {
       heading: 'Empieza con las habilidades que siempre quieres practicar',
@@ -1905,26 +1880,21 @@ export const marketingCopy = {
       ]
     },
     lead: {
-      badge: 'Aggiornamenti prodotto',
-      heading: 'Ricevi aggiornamenti sul prodotto',
-      subheading:
-        'Lascia la tua email per ricevere aggiornamenti su SkillQuest.',
-      platformQuestion: 'Quali aggiornamenti vuoi?',
-      platforms: {
-        ios: 'iOS',
-        android: 'Android',
-        both: 'Entrambi'
-      },
+      badge: 'Newsletter',
+      heading: 'Iscriviti alla newsletter',
+      subheading: "Di tanto in tanto un'email con le novità di SkillQuest e consigli per sviluppare le tue abilità, da solo o insieme ai tuoi figli.",
       placeholder: 'tu@example.com',
-      submit: 'Tienimi aggiornato',
-      submitting: 'Invio...',
-      submitted: 'Iscritto',
-      success: 'Controlla la posta per il link di conferma.',
-      duplicate: 'Le tue preferenze sono state salvate. Sei già nella lista.',
-      pendingVerification: 'Ti sei già iscritto ma non hai ancora confermato.',
-      resendLink: 'Rinvia email di verifica',
-      error: 'Qualcosa è andato storto. Riprova.',
-      privacy: 'Niente spam. Puoi annullare l’iscrizione quando vuoi.'
+      emailLabel: 'Indirizzo email',
+      submit: 'Iscriviti',
+      submitting: 'Invio in corso...',
+      submitted: 'Ci siamo quasi',
+      success: "Controlla la tua casella di posta e conferma con il link nell'email.",
+      rateLimited: "Ci hai già provato un paio di volte. Riprova tra un'ora.",
+      busy: 'Oggi non possiamo più inviare email di conferma. Riprova domani.',
+      invalidEmail: 'Inserisci un indirizzo e-mail valido.',
+      error: 'Si è verificato un errore. Riprova.',
+      privacy: 'Niente spam. Ogni newsletter ha un link per annullare l’iscrizione.',
+      privacyLink: 'Come trattiamo i tuoi dati'
     },
     finalCta: {
       heading: 'Inizia dalle competenze che vuoi davvero praticare',
