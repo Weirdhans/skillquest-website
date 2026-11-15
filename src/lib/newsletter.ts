@@ -14,29 +14,26 @@ import {Resend} from 'resend';
 import type {NextRequest} from 'next/server';
 import {deriveTokenKey, deriveUnsubscribeKey} from '@/lib/newsletter-token.mjs';
 import {EMAIL_LOCALES, normalizeEmailLocale} from '@/lib/email-templates.mjs';
+import {
+  NEWSLETTER_FROM as CONFIG_FROM,
+  NEWSLETTER_SEGMENT_ID as CONFIG_SEGMENT_ID,
+  NEWSLETTER_TOPIC_IDS as CONFIG_TOPIC_IDS
+} from '@/lib/newsletter-config.mjs';
 
 export type NewsletterLocale = 'nl' | 'en' | 'de' | 'fr' | 'es' | 'it';
 
-// Created in Resend on 2026-11-15: segment "Newsletter", topics
-// "Newsletter <locale>" (private, default opt-out) and the string contact
-// properties locale, consent_at, consent_version and consent_source. The IDs
-// are not secret; they only work with the server-side Resend API key.
-export const NEWSLETTER_SEGMENT_ID = 'b403b647-34d2-494a-8567-2850399eab2b';
-export const NEWSLETTER_TOPIC_IDS: Record<NewsletterLocale, string> = {
-  nl: '0a884219-d9bc-4527-9599-bbf549a04765',
-  en: 'ffb05cce-25f0-493d-bf51-079fc5585a80',
-  de: 'aab5d67a-fd9e-4d46-9012-ce73fa338554',
-  fr: '020f0dfe-fc0b-434b-bfea-8980d253a2ca',
-  es: 'dda7591b-b766-4f4d-ac6d-6a0c536fb136',
-  it: '82a6974b-3cc8-4a8b-a399-e92b5ebe3bc4'
-};
+// Segment, topic IDs and sender live in src/lib/newsletter-config.mjs, shared
+// with the monthly newsletter script (scripts/newsletter.mjs).
+export const NEWSLETTER_SEGMENT_ID: string = CONFIG_SEGMENT_ID;
+export const NEWSLETTER_TOPIC_IDS: Record<NewsletterLocale, string> =
+  CONFIG_TOPIC_IDS;
 
 // Bump when the signup form, the confirmation email or the newsletter part
 // of the privacy policy changes meaningfully. The texts of each version are
 // in git history; the contact stores which version it agreed to.
 export const NEWSLETTER_CONSENT_VERSION = '2026-11-14';
 
-export const NEWSLETTER_FROM = 'SkillQuest <hello@skill-quest.app>';
+export const NEWSLETTER_FROM: string = CONFIG_FROM;
 
 export function toNewsletterLocale(value: unknown): NewsletterLocale {
   return normalizeEmailLocale(

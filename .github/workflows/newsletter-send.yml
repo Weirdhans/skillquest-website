@@ -1,0 +1,122 @@
+name: Newsletter - send
+
+# Schedules the ticked languages of a newsletter issue when Hans puts the label `approved`
+# on it (one tap in the GitHub app). The label only counts when
+#   - it is `approved` and the issue has the label `newsletter` and is open,
+#   - the issue was opened by this repository's workflow (github-actions[bot]),
+#   - the owner of this repository set the label.
+# The issue body is only read for the month and the ticks. Everything else comes from the
+# state branch, and each draft must still match the fingerprint of the preview Hans got.
+# Scheduled for the first 07:00 UTC at least two hours later, so there is time to cancel
+# (delete the broadcast in Resend). See docs/NEWSLETTER.md.
+# A run by hand (owner only, and only on an issue that has the label `approved`) is a
+# dry run unless `execute` is ticked. The label is checked again when the job starts.
+# Secret: RESEND_NEWSLETTER_API_KEY.
+
+on:
+  issues:
+    types: [labeled]
+  workflow_dispatch:
+    inputs:
+      issue:
+        description: 'Number of the newsletter issue'
+        required: true
+      execute:
+        description: 'Really schedule (default: dry run)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write   # the branch newsletter-state
+  issues: write     # comments, label and closing
+
+concurrency:
+  group: newsletter-state
+  cancel-in-progress: false
+
+jobs:
+  send:
+    if: >-
+      (github.event_name == 'workflow_dispatch' && github.actor_id == github.repository_owner_id) ||
+      (github.event_name == 'issues' &&
+       github.event.label.name == 'approved' &&
+       contains(github.event.issue.labels.*.name, 'newsletter') &&
+       github.event.issue.state == 'open' &&
+       github.event.issue.user.login == 'github-actions[bot]' &&
+       github.event.sender.id == github.repository_owner_id)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      ISSUE: ${{ github.event.issue.number || inputs.issue }}
+      EXECUTE: ${{ github.event_name == 'issues' || inputs.execute }}
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          path: code
+          persist-credentials: false
+
+      - name: Check out the state branch
+        run: bash code/scripts/newsletter-state.sh state
+
+      - name: Read the issue
+        run: |
+          set -euo pipefail
+          case "$ISSUE" in
+            ''|*[!0-9]*) echo "Not an issue number." >&2; exit 1 ;;
+          esac
+          gh issue view "$ISSUE" --repo "$GITHUB_REPOSITORY" --json body,author,labels,state > issue.json
+          # Checked again now, after waiting in the concurrency queue: the label `approved`
+          # must still be on the issue, also for a run by hand.
+          if ! jq -e '.state == "OPEN" and .author.is_bot == true and (.author.login | test("github-actions"))
+                      and ([.labels[].name] | index("newsletter") != null)
+                      and ([.labels[].name] | index("approved") != null)' issue.json > /dev/null; then
+            echo "Issue $ISSUE is not an open, approved newsletter issue opened by this workflow." >&2
+            exit 1
+          fi
+          jq -r .body issue.json > body.md
+
+      - name: Schedule the ticked languages
+        env:
+          RESEND_NEWSLETTER_API_KEY: ${{ secrets.RESEND_NEWSLETTER_API_KEY }}
+        run: |
+          set -euo pipefail
+          args=(send --state state --body body.md --summary summary.json)
+          if [ "$EXECUTE" = "true" ]; then args+=(--execute); fi
+          node code/scripts/newsletter.mjs "${args[@]}"
+
+      - name: Save the state branch
+        if: always()
+        run: bash code/scripts/newsletter-state.sh state commit "newsletter send ${GITHUB_RUN_ID}"
+
+      - name: Report on the issue
+        if: always()
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -uo pipefail
+          case "$ISSUE" in
+            ''|*[!0-9]*) exit 0 ;;
+          esac
+          if [ ! -f summary.json ]; then
+            gh issue comment "$ISSUE" --repo "$GITHUB_REPOSITORY" --body "Deze run is gestopt zonder verslag (bijvoorbeeld omdat het label \`approved\` er niet meer op stond, of door een fout): $RUN_URL. Wat eventueel al was ingepland, staat in Resend en op de branch newsletter-state; de dagelijkse stap werkt dat bij."
+            if [ "$EXECUTE" = "true" ]; then gh issue edit "$ISSUE" --repo "$GITHUB_REPOSITORY" --remove-label approved || true; fi
+            exit 0
+          fi
+          {
+            if [ "$(jq -r .execute summary.json)" = "true" ]; then echo "**Nieuwsbrief inplannen**"; else echo "**PROEFRUN: er is niets ingepland**"; fi
+            echo
+            jq -r '.lines[] | "- " + .' summary.json
+            echo
+            echo "Annuleren kan tot het verzendmoment: verwijder de broadcast in Resend."
+          } > comment.md
+          gh issue comment "$ISSUE" --repo "$GITHUB_REPOSITORY" --body-file comment.md
+          if [ "$(jq -r .execute summary.json)" = "true" ]; then
+            if [ "$(jq -r .failed summary.json)" = "true" ]; then
+              # Take the label off, so putting it back after a fix starts a new run.
+              gh issue edit "$ISSUE" --repo "$GITHUB_REPOSITORY" --remove-label approved || true
+            elif [ "$(jq -r .done summary.json)" = "true" ]; then
+              gh issue close "$ISSUE" --repo "$GITHUB_REPOSITORY" --reason completed
+            fi
+          fi
