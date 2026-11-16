@@ -94,17 +94,94 @@ dag), dat de app ook gebruikt voor de mails aan ouders en de verwijdercodes.
   contact op afgemeld.
 - **Welkomstmail**: eigen link
   `/api/newsletter/unsubscribe?c=<contact-id>&s=<handtekening>&l=<taal>`. De
-  handtekening is een HMAC over het contact-ID (sleutel afgeleid van
-  `SUPABASE_SERVICE_ROLE_KEY`); zonder geldige handtekening doet de route geen
-  Resend-aanroep. Wordt die sleutel ooit vervangen, dan werken oude
-  welkomstlinks niet meer; elke nieuwsbrief heeft dan nog de Resend-afmeldlink.
-  Openen in de browser toont een pagina met een knop
+  handtekening is een HMAC over het contact-ID, met een sleutel die is
+  afgeleid van het geheim hieronder ([Geheim voor de links](#geheim-voor-de-links)).
+  Zonder geldige handtekening doet de route geen Resend-aanroep. Openen in de
+  browser toont een pagina met een knop
   (`/[locale]/newsletter/unsubscribe`); een POST (de knop of de one-click van
   een mailprogramma) zet het contact direct op afgemeld.
 
 Na afmelden blijft het contact bestaan met de markering "afgemeld" en de
 toestemmingsvelden, zodat niemand per ongeluk opnieuw gemaild wordt. Wie vraagt
 om alles te wissen, wordt in Resend verwijderd (Audience → contact → Delete).
+
+## Geheim voor de links
+
+Het bevestigingstoken, de handtekening in de afmeldlink van de welkomstmail en
+de hashes van de tellers gebruiken één servergeheim: `NEWSLETTER_TOKEN_SECRET`
+(Vercel, Production en Preview). Voor het token en de handtekening wordt er elk
+een eigen sleutel uit afgeleid (`src/lib/newsletter-token.mjs`); de tellers
+gebruiken het geheim als zout in hun hash (`counterKey` in
+`src/lib/newsletter.ts`).
+
+- Zolang `NEWSLETTER_TOKEN_SECRET` niet gezet is, gebruikt de site
+  `SUPABASE_SERVICE_ROLE_KEY`, zoals bij de start van de nieuwsbrief. Dat mag
+  niet zo blijven: die sleutel verandert als de database naar een ander
+  Supabase-project gaat, en dan werken links in al verstuurde mails niet meer.
+- Nieuwe links gebruiken altijd het huidige geheim. Bij het lezen accepteert de
+  site ook `NEWSLETTER_TOKEN_SECRET_PREVIOUS` (als die gezet is), zodat links
+  van vóór een wissel blijven werken (`resolveNewsletterSecrets`). De service
+  role key zelf wordt niet meer geaccepteerd zodra het eigen geheim staat: wie
+  die sleutel heeft, zou anders ook inschrijvingen en afmeldingen kunnen
+  vervalsen.
+- Een geheim van minder dan 32 tekens geeft een foutmelding (aanmelden,
+  bevestigen en afmelden geven dan 500) in plaats van zwakke links. Test na
+  het instellen daarom één keer het formulier.
+- Bij een nieuw geheim beginnen de tellers per IP en per adres opnieuw; dat kan
+  geen kwaad, ze gelden hooguit een dag. Het dagbudget van 40 mails telt
+  gewoon door.
+
+### Instellen (eenmalig, vóór de EU-verhuizing van Supabase)
+
+Hans zet de waarde; Claude voert geen geheimen in.
+
+Doe dit **minstens 24 uur vóór** de omzetdag van de verhuizing (gepland op
+10 december 2026), het moment waarop `SUPABASE_SERVICE_ROLE_KEY` verandert.
+
+1. Maak een willekeurige waarde, bijvoorbeeld met `openssl rand -base64 48`.
+2. Zet die in Vercel (project `skillquest-website`) als
+   `NEWSLETTER_TOKEN_SECRET`, type *Sensitive*, voor **Production en Preview**
+   (dezelfde waarde mag).
+3. Zet in Vercel ook `NEWSLETTER_TOKEN_SECRET_PREVIOUS` op de **huidige
+   waarde van `SUPABASE_SERVICE_ROLE_KEY`**, type *Sensitive*, voor
+   Production en Preview. Daarmee
+   blijven de links van tot nu toe werken, ook na de verhuizing: open
+   bevestigingslinks en de afmeldlinks in welkomstmails die al verstuurd zijn.
+   Sla je deze stap over, dan werken die links meteen na stap 4 niet meer.
+4. **Rol daarna opnieuw uit** (Redeploy van de huidige productie-deployment);
+   een bestaande deployment leest nieuwe variabelen niet.
+5. Test één keer aanmelden en bevestigen op de site.
+
+`PREVIOUS` bevat dan de oude service role key. Zolang die waarde staat, kan wie
+de oude sleutel heeft ook nieuwsbrieflinks maken (inschrijven en afmelden). Tot
+de omzetdag voegt dat niets toe: dezelfde waarde staat dan nog in
+`SUPABASE_SERVICE_ROLE_KEY` en geeft toegang tot de hele database. Na de
+omzetdag is het wel een extra mogelijkheid, dus haal `PREVIOUS` dan snel weg:
+**een week na de omzetdag**, of eerder als de afmeldlinks in oude welkomstmails
+er niet meer toe doen. Wie zich daarna via zo'n oude link wil afmelden, gebruikt
+de afmeldlink van Resend in elke nieuwsbrief of mailt ons.
+
+### Vervangen (gewoon onderhoud)
+
+1. Zet de huidige waarde in `NEWSLETTER_TOKEN_SECRET_PREVIOUS` en een nieuwe in
+   `NEWSLETTER_TOKEN_SECRET`, voor Production en Preview; rol opnieuw uit.
+2. Bevestigingslinks met het oude geheim werken nog tot ze verlopen (24 uur),
+   afmeldlinks in oude welkomstmails zolang `PREVIOUS` staat.
+3. Haal `NEWSLETTER_TOKEN_SECRET_PREVIOUS` weg als die oude links er niet meer
+   toe doen.
+
+### Vervangen na een lek
+
+1. Zet altijd een **nieuwe** waarde in `NEWSLETTER_TOKEN_SECRET`, voor
+   Production én Preview (een Preview met het gelekte geheim accepteert het
+   anders nog).
+2. Zet de gelekte waarde **niet** in `NEWSLETTER_TOKEN_SECRET_PREVIOUS`; staat
+   ze daar al, haal haar weg.
+3. Is de service role key gelekt, vervang die dan in Supabase en Vercel, en
+   haal hem uit `PREVIOUS` als hij daar nog staat.
+4. Rol opnieuw uit. Oude bevestigings- en welkomstlinks die met de gelekte
+   waarde gemaakt zijn, werken dan niet meer; dat is de bedoeling. Elke
+   nieuwsbrief heeft de afmeldlink van Resend.
 
 ## De maandelijkse nieuwsbrief (SQ-196)
 
@@ -317,7 +394,8 @@ zodra deze website live is en de tabel nergens meer wordt gelezen;
 ## Testen
 
 `npm run test:seo` draait ook `tests/newsletter.test.mjs`: tokens (verloop,
-knoeien, andere sleutel), mailteksten in zes talen met bevestigings- en
+knoeien, andere sleutel), welk geheim tekent en welke nog geaccepteerd worden,
+mailteksten in zes talen met bevestigings- en
 afmeldlink, en een privacybeleid zonder wachtlijst. Een preview op Vercel linkt
 in de mails naar zijn eigen deployment-URL (`VERCEL_URL`, zie `getSiteUrl` in
 `src/lib/newsletter.ts`), zodat een testinschrijving op dezelfde preview te

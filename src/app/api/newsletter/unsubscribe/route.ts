@@ -1,9 +1,9 @@
 import {NextRequest, NextResponse} from 'next/server';
-import {isUuid, verifyContactSignature} from '@/lib/newsletter-token.mjs';
+import {isUuid, verifyContactSignatureWithKeys} from '@/lib/newsletter-token.mjs';
 import {
+  getAcceptedUnsubscribeKeys,
   getResendClient,
   getSiteUrl,
-  getUnsubscribeKey,
   toNewsletterLocale
 } from '@/lib/newsletter';
 
@@ -49,7 +49,13 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    if (!verifyContactSignature(contactId, signature, getUnsubscribeKey())) {
+    if (
+      !verifyContactSignatureWithKeys(
+        contactId,
+        signature,
+        getAcceptedUnsubscribeKeys()
+      )
+    ) {
       return NextResponse.json({error: 'invalid'}, {status: 400});
     }
 
