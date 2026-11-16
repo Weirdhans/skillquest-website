@@ -1,0 +1,141 @@
+{
+  "issue": "2026-11",
+  "revision": 1,
+  "preparedAt": "2026-11-16T16:01:03.520Z",
+  "complete": true,
+  "retired": [],
+  "locales": {
+    "nl": {
+      "status": "draft",
+      "broadcastId": "da28ab17-1064-49c4-94b8-1f61cc42b47a",
+      "fingerprint": "da58df6c5b20c454b06e1c14cd93382465909f74738aefd4e7b11525fa721991",
+      "subject": "Kind wil geen huiswerk maken? 6 tips voor een vaste routine",
+      "items": [
+        "tip:child-wont-do-homework",
+        "tip:child-reluctant-reader",
+        "tip:child-wont-practice-instrument",
+        "blog:pomodoro-vs-deep-work-vs-flowtime",
+        "blog:best-pomodoro-app-for-students",
+        "app:1.0.5"
+      ],
+      "titles": [
+        "Tip: Kind wil geen huiswerk maken? 6 tips voor een vaste routine",
+        "Tip: Kind heeft geen zin in lezen? Zo wordt 10 minuten per dag makkelijker",
+        "Tip: Kind wil niet oefenen op piano of gitaar? Zo pak je het aan",
+        "Blog: Pomodoro vs Deep Work vs Flowtime: welke past bij jouw taak?",
+        "Blog: De beste Pomodoro-app voor studenten: een praktische gids",
+        "App: versie 1.0.5"
+      ]
+    },
+    "en": {
+      "status": "draft",
+      "broadcastId": "8853b9f4-c0d7-480a-98e0-46bc79a67af6",
+      "fingerprint": "68364a5480a43e33ff8797f486f1600d784d3ceb0bfc250b0e044c8dcf0fc672",
+      "subject": "Your child won't do homework? 6 tips for a steady routine",
+      "items": [
+        "tip:child-wont-do-homework",
+        "tip:child-reluctant-reader",
+        "tip:child-wont-practice-instrument",
+        "blog:pomodoro-vs-deep-work-vs-flowtime",
+        "blog:best-pomodoro-app-for-students",
+        "app:1.0.5"
+      ],
+      "titles": [
+        "Tip: Your child won't do homework? 6 tips for a steady routine",
+        "Tip: Is your child reluctant to read? Here’s how to make 10 minutes a day easier",
+        "Tip: Is your child reluctant to practice the piano or guitar? Here’s how to handle it",
+        "Blog: Pomodoro vs deep work vs flowtime: Which fits your task?",
+        "Blog: The best pomodoro app for students: a practical guide",
+        "App: versie 1.0.5"
+      ]
+    },
+    "de": {
+      "status": "draft",
+      "broadcastId": "72b46627-e77d-4893-a5df-54ee70cd8957",
+      "fingerprint": "b7c1d186446b3ee039c24e3dc7a4f202d1a3a6ff1f816ac7b5179bfee170c77c",
+      "subject": "Dein Kind will keine Hausaufgaben machen? 6 Tipps für eine feste Routine",
+      "items": [
+        "tip:child-wont-do-homework",
+        "tip:child-reluctant-reader",
+        "tip:child-wont-practice-instrument",
+        "blog:pomodoro-vs-deep-work-vs-flowtime",
+        "blog:best-pomodoro-app-for-students",
+        "app:1.0.5"
+      ],
+      "titles": [
+        "Tip: Dein Kind will keine Hausaufgaben machen? 6 Tipps für eine feste Routine",
+        "Tip: Dein Kind hat keine Lust zum Lesen? So werden 10 Minuten pro Tag einfacher",
+        "Tip: Dein Kind will nicht Klavier oder Gitarre üben? So gehst du damit um",
+        "Blog: Pomodoro vs. Deep Work vs. Flowtime: Was passt zu deiner Aufgabe?",
+        "Blog: Die beste Pomodoro-App für Schüler und Studierende: ein praktischer Leitfaden",
+        "App: versie 1.0.5"
+      ]
+    },
+    "fr": {
+      "status": "draft",
+      "broadcastId": "d5528bd1-67b7-4774-8584-047c5073c7c1",
+      "fingerprint": "c0356ac6f2ac5353dfbc887e39577c827b60af4f3dcc9276207ff8b6dc7239da",
+      "subject": "Ton enfant ne veut pas faire ses devoirs ? 6 conseils pour mettre en place une routine régulière",
+      "items": [
+        "tip:child-wont-do-homework",
+        "tip:child-reluctant-reader",
+        "tip:child-wont-practice-instrument",
+        "blog:pomodoro-vs-deep-work-vs-flowtime",
+        "blog:best-pomodoro-app-for-students",
+        "app:1.0.5"
+      ],
+      "titles": [
+        "Tip: Ton enfant ne veut pas faire ses devoirs ? 6 conseils pour mettre en place une routine régulière",
+        "Tip: Ton enfant n'a pas envie de lire ? Voici comment lui faire passer plus facilement 10 minutes par jour à lire",
+        "Tip: Ton enfant ne veut pas s'entraîner au piano ou à la guitare ? Voici comment t'y prendre",
+        "Blog: Pomodoro vs Deep Work vs Flowtime : lequel convient à ta tâche ?",
+        "Blog: La meilleure application Pomodoro pour étudiants : un guide pratique",
+        "App: versie 1.0.5"
+      ]
+    },
+    "es": {
+      "status": "draft",
+      "broadcastId": "5e139c69-219a-4db1-b9f7-5353e613b0fa",
+      "fingerprint": "c293eb07c7372180b9204113651b41801ef9bed63f894699049ed8d1fa37faf4",
+      "subject": "¿Tu hijo no quiere hacer los deberes? 6 consejos para crear una rutina",
+      "items": [
+        "tip:child-wont-do-homework",
+        "tip:child-reluctant-reader",
+        "tip:child-wont-practice-instrument",
+        "blog:pomodoro-vs-deep-work-vs-flowtime",
+        "blog:best-pomodoro-app-for-students",
+        "app:1.0.5"
+      ],
+      "titles": [
+        "Tip: ¿Tu hijo no quiere hacer los deberes? 6 consejos para crear una rutina",
+        "Tip: ¿A tu hijo no le apetece leer? Así te resultará más fácil dedicarle 10 minutos al día",
+        "Tip: ¿Tu hijo no quiere practicar piano o guitarra? Así puedes abordarlo",
+        "Blog: Pomodoro vs deep work vs flowtime: ¿cuál encaja con tu tarea?",
+        "Blog: La mejor app Pomodoro para estudiantes: guía práctica",
+        "App: versie 1.0.5"
+      ]
+    },
+    "it": {
+      "status": "draft",
+      "broadcastId": "74e433f0-a0e2-40bc-b050-6434286a79ee",
+      "fingerprint": "09c07fe3f25c0f0a27c3845f694b35db24d856f52adb697e38fa631f7efa5fd2",
+      "subject": "Tuo figlio non vuole fare i compiti? 6 consigli per una routine fissa",
+      "items": [
+        "tip:child-wont-do-homework",
+        "tip:child-reluctant-reader",
+        "tip:child-wont-practice-instrument",
+        "blog:pomodoro-vs-deep-work-vs-flowtime",
+        "blog:best-pomodoro-app-for-students",
+        "app:1.0.5"
+      ],
+      "titles": [
+        "Tip: Tuo figlio non vuole fare i compiti? 6 consigli per una routine fissa",
+        "Tip: Tuo figlio non ha voglia di leggere? Ecco come rendere più facile dedicarci 10 minuti al giorno",
+        "Tip: Tuo figlio non vuole esercitarsi al pianoforte o alla chitarra? Ecco come affrontare la situazione",
+        "Blog: Pomodoro vs Deep Work vs Flowtime: quale si adatta al tuo compito?",
+        "Blog: La migliore app pomodoro per studenti: guida pratica",
+        "App: versie 1.0.5"
+      ]
+    }
+  }
+}
