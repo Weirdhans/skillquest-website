@@ -125,7 +125,7 @@ const copyByLocale: Record<Locale, GuidesPageCopy> = {
   it: {
     metaTitle: 'Guide | SkillQuest',
     metaDescription:
-      'Sfoglia tutte le guide di SkillQuest: tecniche di concentrazione, progresso e motivazione, competenze e Family, personalizzazione.',
+      'Sfoglia tutte le guide di SkillQuest: tecniche di concentrazione, progresso e motivazione, abilità e Family, personalizzazione.',
     eyebrow: 'Guide',
     heading: 'Tutto quello che puoi fare con SkillQuest',
     subtitle:
@@ -133,7 +133,7 @@ const copyByLocale: Record<Locale, GuidesPageCopy> = {
     categories: {
       focus: 'Tecniche di concentrazione',
       progress: 'Progresso e motivazione',
-      skillsFamily: 'Competenze e Family',
+      skillsFamily: 'Abilità e Family',
       personalization: 'Personalizzazione e accesso'
     }
   }

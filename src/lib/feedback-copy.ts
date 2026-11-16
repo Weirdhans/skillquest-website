@@ -119,7 +119,7 @@ export const feedbackCopy: Record<(typeof routing.locales)[number], FeedbackCopy
     "heading": "Comment s'est passé SkillQuest pour toi ?",
     "intro": "Merci d'avoir testé l'appli ! Ça prend environ deux minutes. Tes réponses sont transmises uniquement au développeur de l'appli et lui permettent de déterminer les améliorations à apporter en priorité.",
     "clearLabel": "Qu'est-ce qui t'a tout de suite sauté aux yeux ?",
-    "clearHint": "Par exemple : choisir une compétence, lancer un chronomètre ou suivre ta progression.",
+    "clearHint": "Par exemple : choisir une compétence, lancer un minuteur ou suivre ta progression.",
     "confusingLabel": "Qu'est-ce qui t'a semblé confus ou qui n'a pas fonctionné comme tu t'y attendais ?",
     "confusingHint": "Dis-nous où tu es bloqué. Le simple fait de citer un écran ou une étape nous aide déjà.",
     "firstFixLabel": "Qu'est-ce qui devrait s'améliorer en premier ?",

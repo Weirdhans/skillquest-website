@@ -217,63 +217,63 @@ const copyByLocale: Record<string, SupportCopy> = {
   },
   fr: {
     metaTitle: 'Support - SkillQuest',
-    metaDescription: 'Contactez le support SkillQuest pour votre compte, abonnement, minuteurs ou donnees.',
+    metaDescription: 'Contacte le support SkillQuest pour obtenir de l’aide avec ton compte, ton abonnement, tes minuteurs ou tes données.',
     heading: 'Support',
-    subtitle: 'Besoin d aide avec SkillQuest ? Envoyez-nous un message et nous vous aiderons.',
-    updatedLabel: 'Derniere mise a jour',
+    subtitle: 'Besoin d’aide avec SkillQuest ? Envoie-nous un message, nous t’aiderons.',
+    updatedLabel: 'Dernière mise à jour',
     updated: '20 mai 2026',
     emailTitle: 'Nous contacter',
-    emailBody: 'Pour toute question sur l app, votre compte, les abonnements, les paiements ou la confidentialite, ecrivez a {email}.',
+    emailBody: 'Pour toute question sur l’app, ton compte, les abonnements, les paiements ou la confidentialité, écris à {email}.',
     emailButton: 'Envoyer un e-mail',
-    responseTitle: 'Delais de reponse',
+    responseTitle: 'Délais de réponse',
     responseItems: [
-      'Questions generales : generalement sous 5 jours ouvrables.',
-      'Demandes de confidentialite et de donnees : sous 30 jours.',
-      'Paiements et abonnements : des que possible, selon les informations de l App Store.'
+      'Questions générales : généralement sous 5 jours ouvrables.',
+      'Demandes de confidentialité et de données : sous 30 jours.',
+      'Paiements et abonnements : dès que possible, selon les informations de l’App Store.'
     ],
-    helpTitle: 'Comment pouvons-nous aider ?',
+    helpTitle: 'Comment pouvons-nous t’aider ?',
     helpItems: [
       {
         title: 'Compte et connexion',
-        body: 'Aide pour la connexion, l acces au compte, le nom d utilisateur, le profil et la suppression du compte.'
+        body: 'Aide pour la connexion, l’accès au compte, le nom d’utilisateur, le profil et la suppression du compte.'
       },
       {
-        title: 'Minuteurs et progres',
-        body: 'Questions sur les minuteurs, XP, series, statistiques, synchronisation ou notifications.'
+        title: 'Minuteurs et progrès',
+        body: 'Questions sur les minuteurs, les XP, les séries, les statistiques, la synchronisation ou les notifications.'
       },
       {
         title: 'Abonnements',
-        body: 'Aide avec Premium, Famille, restauration des achats et abonnements App Store.'
+        body: 'Aide avec Premium, Family, la restauration des achats et les abonnements App Store.'
       },
       {
-        title: 'Confidentialite et donnees',
-        body: 'Questions sur l acces, l export, la correction ou la suppression des donnees SkillQuest.'
+        title: 'Confidentialité et données',
+        body: 'Questions sur l’accès, l’export, la correction ou la suppression des données SkillQuest.'
       }
     ],
-    includeTitle: 'A inclure dans votre message',
+    includeTitle: 'À inclure dans ton message',
     includeItems: [
-      'L adresse e-mail liee a votre compte SkillQuest.',
-      'Votre plateforme : iOS, Android ou web.',
-      'Votre version de l app si vous la connaissez.',
-      'Une breve description du probleme et le message d erreur eventuel.'
+      'L’adresse e-mail liée à ton compte SkillQuest.',
+      'Ta plateforme : iOS, Android ou web.',
+      'Ta version de l’app, si tu la connais.',
+      'Une brève description du problème et le message d’erreur éventuel.'
     ],
     linksTitle: 'Liens utiles',
-    privacyLink: 'Politique de confidentialite',
-    deleteAccountLink: 'Suppression de compte',
+    privacyLink: 'Politique de confidentialité',
+    deleteAccountLink: 'Suppression du compte',
     faqHeading: 'Questions fréquentes',
     faq: [
-      {question: 'Est-ce que je peux essayer SkillQuest gratuitement ?', answer: 'Oui. SkillQuest propose une version gratuite avec suivi des compétences, minuteurs de concentration, XP, niveaux et mode Invité, ce qui te permet de l\'essayer avant de créer un compte ou de t\'abonner.'},
-      {question: 'Quelle est la différence entre les formules « Free », « Premium » et « Family » ?', answer: 'Avec la version gratuite, tu peux commencer à suivre tes compétences, utiliser des minuteurs de concentration, gagner des XP et passer des niveaux. La version Premium t\'offre davantage de techniques de minuteurs, des statistiques plus détaillées, un historique plus complet et des options de personnalisation. La version Famille inclut la formule Premium pour toute la famille, ainsi que des rôles parentaux, des statistiques pour les enfants, des minuteurs adaptés aux enfants, des objectifs hebdomadaires et des encouragements.'},
-      {question: 'Quelles techniques de minuterie de concentration SkillQuest prend-il en charge ?', answer: 'SkillQuest prend en charge les méthodes Pomodoro, Deep Work, 52-17, Flowtime, Until Time et EMOM, selon ta formule d\'abonnement.'},
-      {question: 'Est-ce que je peux utiliser Pomodoro dans SkillQuest ?', answer: 'Oui, la méthode Pomodoro fait partie des techniques de chronomètre de concentration intégrées, disponibles dans la version gratuite.'},
-      {question: 'C\'est quoi, les XP, les niveaux et les séries ?', answer: 'Chaque séance te rapporte des XP pour la compétence que tu as travaillée. Les XP s\'accumulent pour te faire passer au niveau supérieur pour chaque compétence, et une série quotidienne te permet de suivre ta régularité ; la série est gelée pour te protéger en cas de jour manqué de temps en temps.'},
+      {question: 'Est-ce que je peux essayer SkillQuest gratuitement ?', answer: 'Oui. SkillQuest propose une version gratuite avec suivi des compétences, minuteurs de concentration, XP, niveaux et mode invité, ce qui te permet de l\'essayer avant de créer un compte ou de t\'abonner.'},
+      {question: 'Quelle est la différence entre les formules « Free », « Premium » et « Family » ?', answer: 'Avec la version gratuite, tu peux commencer à suivre tes compétences, utiliser des minuteurs de concentration, gagner des XP et passer des niveaux. La version Premium t\'offre davantage de techniques de minuteur, des statistiques plus détaillées, un historique plus complet et des options de personnalisation. La formule Family inclut Premium pour toute la famille, ainsi que des rôles pour les parents, des statistiques pour les enfants, des minuteurs pour les enfants, des objectifs hebdomadaires et des encouragements.'},
+      {question: 'Quelles techniques de minuteur de concentration SkillQuest prend-il en charge ?', answer: 'SkillQuest prend en charge les méthodes Pomodoro, Deep Work, 52-17, Flowtime, Until Time et EMOM, selon ta formule d\'abonnement.'},
+      {question: 'Est-ce que je peux utiliser Pomodoro dans SkillQuest ?', answer: 'Oui, la méthode Pomodoro fait partie des techniques de minuteur de concentration intégrées, disponibles dans la version gratuite.'},
+      {question: 'C\'est quoi, les XP, les niveaux et les séries ?', answer: 'Chaque séance te rapporte des XP pour la compétence que tu as travaillée. Les XP s\'accumulent pour te faire monter de niveau dans chaque compétence, tandis que la série quotidienne reflète ta régularité. Enfin, les gels de série te protègent quand tu manques un jour de temps en temps.'},
       {question: 'Que peuvent faire les parents avec Family ?', answer: 'Avec « Family », les parents peuvent lancer des minuteurs pour leurs enfants, consulter leurs statistiques, définir des objectifs hebdomadaires et leur envoyer des compliments, le tout au sein d\'un groupe familial partagé où les rôles des parents et des enfants sont clairement définis.'},
-      {question: 'Est-ce que les parents peuvent lancer le chronomètre pour leurs enfants ?', answer: 'Oui. Avec l\'option « Famille », les parents et le titulaire du compte familial peuvent lancer des chronomètres pour les enfants du groupe familial. La session est associée au compte de l\'enfant, ce qui permet de suivre ses progrès et son temps d\'entraînement.'},
-      {question: 'Est-ce que je peux suivre les progrès de mon enfant ?', answer: 'Avec « Famille », les parents peuvent consulter les statistiques de leur enfant, notamment les sessions, le temps de jeu, les points d\'expérience, le détail des compétences et l\'activité récente.'},
+      {question: 'Est-ce que les parents peuvent lancer un minuteur pour leurs enfants ?', answer: 'Oui. Avec Family, les parents et le titulaire du compte familial peuvent lancer des minuteurs pour les enfants du groupe familial. La session est associée au compte de l\'enfant, ce qui permet de suivre ses progrès et son temps d\'entraînement.'},
+      {question: 'Est-ce que je peux suivre les progrès de mon enfant ?', answer: 'Avec Family, les parents peuvent consulter les statistiques de leur enfant, notamment les sessions, les minutes, les XP, le détail des compétences et l\'activité récente.'},
       {question: 'Est-ce que SkillQuest convient aux jeunes enfants ?', answer: 'SkillQuest s\'adresse aux utilisateurs âgés de 13 ans et plus, et ne collecte pas sciemment de données auprès d\'enfants de moins de 13 ans. Cette appli n\'est ni conçue ni commercialisée pour les jeunes enfants.'},
       {question: 'Comment installer SkillQuest sur Android ?', answer: 'Ouvre SkillQuest sur Google Play et appuie sur « Installer ». L’inscription par e-mail sert uniquement aux mises à jour produit.'},
-      {question: 'Comment mes données sont-elles protégées ?', answer: 'SkillQuest utilise une sécurité au niveau des lignes pour que tes données ne soient accessibles qu\'à toi (et, dans un groupe « Famille », aux parents pour les statistiques sur les enfants), une gestion des secrets basée sur l\'environnement et des connexions cryptées de bout en bout.'},
-      {question: 'Comment je fais pour supprimer mon compte ?', answer: 'Tu peux demander la suppression de ton compte depuis l\'application ou via la page dédiée à la suppression de compte sur ce site web.'},
+      {question: 'Comment mes données sont-elles protégées ?', answer: 'SkillQuest utilise une sécurité au niveau des lignes pour que tes données ne soient accessibles qu\'à toi (et, dans un groupe « Family », aux parents pour les statistiques sur les enfants), une gestion des secrets basée sur l\'environnement et des connexions chiffrées de bout en bout.'},
+      {question: 'Comment supprimer mon compte ?', answer: 'Tu peux demander la suppression de ton compte depuis l\'application ou via la page dédiée à la suppression de compte sur ce site web.'},
     ]
   },
   es: {
@@ -345,19 +345,19 @@ const copyByLocale: Record<string, SupportCopy> = {
     updatedLabel: 'Ultimo aggiornamento',
     updated: '20 maggio 2026',
     emailTitle: 'Contattaci',
-    emailBody: 'Per domande sull app, account, abbonamenti, pagamenti o privacy, scrivici a {email}.',
+    emailBody: 'Per domande sull’app, l’account, gli abbonamenti, i pagamenti o la privacy, scrivici a {email}.',
     emailButton: 'Invia email',
     responseTitle: 'Tempi di risposta',
     responseItems: [
       'Domande generali: di solito entro 5 giorni lavorativi.',
       'Richieste privacy e dati: entro 30 giorni.',
-      'Pagamenti e abbonamenti: il prima possibile, in base alle informazioni App Store.'
+      'Pagamenti e abbonamenti: il prima possibile, in base alle informazioni dell’App Store.'
     ],
-    helpTitle: 'Come possiamo aiutare?',
+    helpTitle: 'Come possiamo aiutarti?',
     helpItems: [
       {
         title: 'Account e accesso',
-        body: 'Aiuto con login, accesso account, nome utente, profilo ed eliminazione account.'
+        body: 'Aiuto con l’accesso, l’account, il nome utente, il profilo e l’eliminazione dell’account.'
       },
       {
         title: 'Timer e progressi',
@@ -365,37 +365,37 @@ const copyByLocale: Record<string, SupportCopy> = {
       },
       {
         title: 'Abbonamenti',
-        body: 'Aiuto con Premium, Famiglia, ripristino acquisti e abbonamenti App Store.'
+        body: 'Aiuto con Premium, Family, il ripristino degli acquisti e gli abbonamenti App Store.'
       },
       {
         title: 'Privacy e dati',
-        body: 'Domande su accesso, export, correzione o eliminazione dei dati SkillQuest.'
+        body: 'Domande su accesso, esportazione, correzione o eliminazione dei dati SkillQuest.'
       }
     ],
-    includeTitle: 'Includi questo nel messaggio',
+    includeTitle: 'Cosa includere nel messaggio',
     includeItems: [
-      'L email collegata al tuo account SkillQuest.',
+      'L’email collegata al tuo account SkillQuest.',
       'La piattaforma: iOS, Android o web.',
-      'La versione dell app se la conosci.',
-      'Una breve descrizione del problema e eventuali messaggi di errore.'
+      'La versione dell’app, se la conosci.',
+      'Una breve descrizione del problema ed eventuali messaggi di errore.'
     ],
     linksTitle: 'Link utili',
     privacyLink: 'Informativa privacy',
     deleteAccountLink: 'Eliminazione account',
     faqHeading: 'Domande frequenti',
     faq: [
-      {question: 'Posso provare SkillQuest gratis?', answer: 'Sì. SkillQuest offre un piano gratuito che include il monitoraggio delle abilità, i timer di concentrazione, l\'XP, i livelli e la Modalità Ospite, così puoi provarlo prima di creare un account o di abbonarti.'},
-      {question: 'Qual è la differenza tra Free, Premium e Family?', answer: 'Con la versione gratuita puoi iniziare a monitorare le tue abilità, usare i timer di concentrazione, guadagnare XP e salire di livello. La versione Premium aggiunge altre tecniche di timer, statistiche più approfondite, una cronologia più ampia e opzioni di personalizzazione. La versione Family include la Premium per tutta la famiglia, oltre a ruoli genitoriali, statistiche sui bambini, timer per i bambini, obiettivi settimanali e complimenti.'},
+      {question: 'Posso provare SkillQuest gratis?', answer: 'Sì. SkillQuest offre un piano gratuito che include il monitoraggio delle abilità, i timer di concentrazione, l\'XP, i livelli e la Modalità ospite, così puoi provarlo prima di creare un account o di abbonarti.'},
+      {question: 'Qual è la differenza tra Free, Premium e Family?', answer: 'Con la versione gratuita puoi iniziare a monitorare le tue abilità, usare i timer di concentrazione, guadagnare XP e salire di livello. La versione Premium aggiunge altre tecniche di timer, statistiche più approfondite, una cronologia più ampia e opzioni di personalizzazione. Family include Premium per tutta la famiglia, oltre a ruoli per i genitori, statistiche dei figli, timer per i figli, obiettivi settimanali e complimenti.'},
       {question: 'Quali tecniche di timer di concentrazione supporta SkillQuest?', answer: 'SkillQuest supporta le tecniche Pomodoro, Deep Work, 52-17, Flowtime, Until Time ed EMOM, a seconda del tuo piano.'},
-      {question: 'Posso usare Pomodoro su SkillQuest?', answer: 'Sì, il Pomodoro è una delle tecniche di timer per la concentrazione integrate, disponibile nel piano gratuito.'},
-      {question: 'Cosa sono gli XP, i livelli e le serie?', answer: 'Ogni sessione di esercitazione ti fa guadagnare XP per l\'abilità che hai praticato. Gli XP si sommano per raggiungere i livelli per ogni abilità, e una serie giornaliera tiene traccia della tua costanza nel partecipare; la serie si blocca per proteggerti in caso di un giorno saltato ogni tanto.'},
-      {question: 'Cosa possono fare i genitori con Family?', answer: 'Con Family, i genitori possono impostare i timer per i propri figli, visualizzare le statistiche dei bambini, fissare obiettivi settimanali e inviare complimenti, il tutto all’interno di un gruppo familiare condiviso con ruoli ben definiti per genitori e figli.'},
-      {question: 'I genitori possono impostare i timer per i propri figli?', answer: 'Sì. Con Family, i genitori e il titolare del conto familiare possono avviare i timer per i bambini all’interno del gruppo familiare. La sessione è collegata all’account del bambino, quindi i suoi progressi e il tempo dedicato all’allenamento rimangono visibili.'},
+      {question: 'Posso usare il metodo Pomodoro su SkillQuest?', answer: 'Sì, il Pomodoro è una delle tecniche di timer per la concentrazione integrate, disponibile nel piano gratuito.'},
+      {question: 'Cosa sono gli XP, i livelli e le serie?', answer: 'Ogni sessione ti fa guadagnare XP per l\'abilità che hai praticato. Gli XP si sommano per raggiungere i livelli di ogni abilità, mentre la serie giornaliera tiene traccia della tua costanza e i congelamenti della serie ti proteggono se salti un giorno ogni tanto.'},
+      {question: 'Cosa possono fare i genitori con Family?', answer: 'Con Family, i genitori possono avviare i timer per i propri figli, visualizzare le statistiche dei figli, fissare obiettivi settimanali e inviare complimenti, il tutto all’interno di un gruppo familiare condiviso con ruoli ben definiti per genitori e figli.'},
+      {question: 'I genitori possono avviare i timer per i propri figli?', answer: 'Sì. Con Family, i genitori e i proprietari possono avviare i timer per i figli all’interno del gruppo familiare. La sessione è collegata all’account del figlio, quindi i suoi progressi e il tempo dedicato alla pratica rimangono visibili.'},
       {question: 'Posso vedere i progressi di mio figlio?', answer: 'Con Family, i genitori possono visualizzare le statistiche dei propri figli, tra cui sessioni, minuti, XP, un riepilogo delle abilità e l\'attività recente.'},
-      {question: 'SkillQuest è adatto ai bambini piccoli?', answer: 'SkillQuest è pensata per utenti dai 13 anni in su e non raccoglie consapevolmente dati da minori di 13 anni. Non è stata progettata né commercializzata come app per bambini piccoli.'},
+      {question: 'SkillQuest è adatta ai bambini piccoli?', answer: 'SkillQuest è pensata per utenti dai 13 anni in su e non raccoglie consapevolmente dati da minori di 13 anni. Non è stata progettata né commercializzata come app per bambini piccoli.'},
       {question: 'Come installo SkillQuest su Android?', answer: 'Apri SkillQuest su Google Play e tocca «Installa». L’iscrizione via email serve solo per gli aggiornamenti prodotto.'},
-      {question: 'Come vengono protetti i miei dati?', answer: 'SkillQuest utilizza la sicurezza a livello di riga, così i tuoi dati sono accessibili solo a te (e, in un gruppo Famiglia, ai genitori per le statistiche sui figli), la gestione delle chiavi segrete basata sull\'ambiente e connessioni crittografate in ogni fase.'},
-      {question: 'Come faccio a cancellare il mio account?', answer: 'Puoi richiedere la cancellazione dell\'account direttamente dall\'app oppure tramite la pagina dedicata alla cancellazione dell\'account su questo sito web.'},
+      {question: 'Come vengono protetti i miei dati?', answer: 'SkillQuest utilizza la sicurezza a livello di riga, così i tuoi dati sono accessibili solo a te (e, in un gruppo Family, ai genitori per le statistiche sui figli), la gestione delle chiavi segrete basata sull\'ambiente e connessioni crittografate in ogni fase.'},
+      {question: 'Come faccio a eliminare il mio account?', answer: 'Puoi richiedere l\'eliminazione dell\'account direttamente dall\'app oppure tramite la pagina dedicata all\'eliminazione dell\'account su questo sito web.'},
     ]
   }
 };
