@@ -9,6 +9,12 @@ export type ChangelogEntry = {
 const changelogEntries: Record<Locale, ChangelogEntry[]> = {
   en: [
     {
+      date: '2026-11-14',
+      title: 'A newsletter instead of a waitlist',
+      description:
+        'The product updates form is now a newsletter. You confirm with a link in your email, every newsletter has a link to unsubscribe in one click, and we only keep what we need for that.'
+    },
+    {
       date: '2026-07-24',
       title: 'Android Early Access, the easy way',
       description:
@@ -40,6 +46,12 @@ const changelogEntries: Record<Locale, ChangelogEntry[]> = {
     }
   ],
   nl: [
+    {
+      date: '2026-11-14',
+      title: 'Een nieuwsbrief in plaats van een wachtlijst',
+      description:
+        'Het formulier voor productupdates is nu een nieuwsbrief. Je bevestigt je inschrijving met een link in je mail, in elke nieuwsbrief kun je je met één klik afmelden, en we bewaren alleen wat daarvoor nodig is.'
+    },
     {
       date: '2026-07-24',
       title: 'Android Early Access, zonder gedoe',
@@ -73,6 +85,12 @@ const changelogEntries: Record<Locale, ChangelogEntry[]> = {
   ],
   de: [
     {
+      date: '2026-11-14',
+      title: 'Ein Newsletter statt einer Warteliste',
+      description:
+        'Das Formular für Produkt-Updates ist jetzt ein Newsletter. Du bestätigst die Anmeldung über einen Link in deiner E-Mail, jeder Newsletter enthält einen Link zum Abmelden mit einem Klick, und wir speichern nur das, was wir dafür benötigen.'
+    },
+    {
       date: '2026-07-24',
       title: 'Android Early Access – ganz einfach',
       description:
@@ -105,6 +123,12 @@ const changelogEntries: Record<Locale, ChangelogEntry[]> = {
   ],
   fr: [
     {
+      date: '2026-11-14',
+      title: "Une newsletter plutôt qu'une liste d'attente",
+      description:
+        'Le formulaire des actualités produit est désormais une newsletter. Tu confirmes ton inscription avec un lien reçu par e-mail, chaque newsletter contient un lien pour te désabonner en un clic, et nous ne conservons que ce qui est nécessaire pour cela.'
+    },
+    {
       date: '2026-07-24',
       title: 'Accès anticipé Android, en toute simplicité',
       description:
@@ -132,10 +156,16 @@ const changelogEntries: Record<Locale, ChangelogEntry[]> = {
       date: '2026-07-24',
       title: 'Nouvelle page FAQ',
       description:
-        'On a ajouté une FAQ avec fonction de recherche qui couvre les tarifs, le forfait Family, les minuteries de concentration et la confidentialité, avec des données structurées pour que les réponses apparaissent directement dans les résultats de recherche Google.'
+        'On a ajouté une FAQ avec fonction de recherche qui couvre les tarifs, le forfait Family, les minuteurs de concentration et la confidentialité, avec des données structurées pour que les réponses apparaissent directement dans les résultats de recherche Google.'
     }
   ],
   es: [
+    {
+      date: '2026-11-14',
+      title: 'Un boletín informativo en lugar de una lista de espera',
+      description:
+        'El formulario de actualizaciones del producto ahora es un boletín. Lo confirmas con un enlace que te llega por correo electrónico; cada boletín tiene un enlace para darte de baja con un solo clic, y solo guardamos lo necesario para eso.'
+    },
     {
       date: '2026-07-24',
       title: 'Acceso anticipado de Android, de forma sencilla',
@@ -168,6 +198,12 @@ const changelogEntries: Record<Locale, ChangelogEntry[]> = {
     }
   ],
   it: [
+    {
+      date: '2026-11-14',
+      title: 'Una newsletter invece di una lista d’attesa',
+      description:
+        'Il modulo per gli aggiornamenti sul prodotto ora è una newsletter. Confermi tramite un link nella tua email, ogni newsletter ha un link per disiscriverti con un clic e conserviamo solo i dati necessari a tal fine.'
+    },
     {
       date: '2026-07-24',
       title: 'Accesso anticipato Android, in modo semplicissimo',

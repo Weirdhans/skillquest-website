@@ -84,9 +84,9 @@ const featureOverviewCopy: Record<Locale, FeatureOverviewCopy> = {
   },
   fr: {
     eyebrow: 'Fonctions par usage',
-    title: 'Découvrez comment SkillQuest aide au quotidien',
+    title: 'Découvre comment SkillQuest t’aide au quotidien',
     body:
-      'Des minuteurs de concentration aux outils Family, ces pages expliquent ce que fait SkillQuest, pour qui cela fonctionne et quels progrès deviennent visibles.',
+      'Des minuteurs de concentration aux outils Family, ces pages expliquent ce que fait SkillQuest, à qui elle s’adresse et quels progrès deviennent visibles.',
     cta: 'Voir la fonction',
     guidesCta: 'Voir tous les guides'
   },
@@ -99,11 +99,11 @@ const featureOverviewCopy: Record<Locale, FeatureOverviewCopy> = {
     guidesCta: 'Ver todas las guías'
   },
   it: {
-    eyebrow: 'Funzioni per uso',
-    title: 'Scopri come SkillQuest aiuta nelle routine reali',
+    eyebrow: 'Funzioni per ogni esigenza',
+    title: 'Scopri come SkillQuest ti aiuta ogni giorno',
     body:
       'Dai timer di concentrazione agli strumenti Family, queste pagine spiegano cosa fa SkillQuest, a chi serve e quali progressi diventano visibili.',
-    cta: 'Vedi funzione',
+    cta: 'Scopri la funzione',
     guidesCta: 'Vedi tutte le guide'
   }
 };
@@ -2451,21 +2451,22 @@ pages.de = {
 pages.fr = {
   'focus-timer': {
     ...pages.en['focus-timer'],
-    title: 'Un Focus Timer qui suit vos progrès',
-    metaTitle: 'Application Focus Timer | Pomodoro, Deep Work et Flowtime | SkillQuest',
+    title: 'Un minuteur de concentration qui suit tes progrès',
+    eyebrow: 'Minuteur de concentration',
+    metaTitle: 'Minuteur de concentration | Pomodoro, Deep Work, Flowtime | SkillQuest',
     metaDescription:
-      'Utilisez SkillQuest comme Focus Timer pour Pomodoro, Deep Work, 52-17, Flowtime, Until Time et EMOM. Chaque session compte pour XP, niveaux et progrès.',
+      'Utilise SkillQuest comme minuteur de concentration : Pomodoro, Deep Work, 52-17, Flowtime, Until Time et EMOM. Chaque session fait grimper tes XP et tes niveaux.',
     summary:
-      'Lancez un timer pour la compétence que vous développez. SkillQuest relie les minutes de concentration à XP, aux niveaux, aux statistiques et à une progression visible.',
+      'Lance un minuteur pour la compétence que tu développes. SkillQuest relie tes minutes de concentration aux XP, aux niveaux, aux statistiques et à une progression visible.',
     cardSummary:
-      'Pomodoro, Deep Work, Flowtime et autres modes de timer reliés à une vraie progression de compétence.',
+      'Pomodoro, Deep Work, Flowtime et autres modes de minuteur, reliés à une vraie progression de tes compétences.',
     primaryCta: 'Télécharger SkillQuest',
     secondaryCta: 'Comparer Premium',
     sections: [
       {
-        title: 'Choisissez le timer adapté à votre tâche',
+        title: 'Choisis le minuteur adapté à ta tâche',
         body:
-          'SkillQuest prend en charge plusieurs formes de concentration, afin que vous ne soyez pas limité à un seul flux Pomodoro.',
+          'SkillQuest propose plusieurs façons de se concentrer, pour que tu ne sois pas limité à un seul rythme Pomodoro.',
         bullets: [
           'Pomodoro pour des sessions courtes d’étude ou de travail.',
           'Deep Work et 52-17 pour des blocs de concentration plus longs.',
@@ -2476,22 +2477,22 @@ pages.fr = {
       {
         title: 'Chaque minute compte pour une compétence',
         body:
-          'Un timer n’est pas séparé de votre progression. Vous choisissez d’abord une compétence, puis vous voyez XP, niveaux et statistiques évoluer.',
+          'Un minuteur n’est pas séparé de ta progression. Tu choisis d’abord une compétence, puis tu vois tes XP, tes niveaux et tes statistiques évoluer.',
         bullets: [
-          'Gagnez de l’XP après les sessions terminées.',
-          'Suivez le temps de concentration par compétence.',
-          'Consultez les sessions par compétence dans les statistiques.',
-          'Construisez des séries grâce à la pratique répétée.'
+          'Gagne de l’XP après chaque session terminée.',
+          'Suis ton temps de concentration par compétence.',
+          'Consulte tes sessions par compétence dans les statistiques.',
+          'Construis des séries grâce à la pratique régulière.'
         ]
       },
       {
         title: 'Premium pour plus de liberté de concentration',
         body:
-          'Premium s’adresse aux utilisateurs qui veulent plus de techniques de timer, une durée personnalisée et des statistiques plus profondes.',
+          'Premium s’adresse à celles et ceux qui veulent plus de techniques, des durées personnalisées et des statistiques plus poussées.',
         bullets: [
-          'Durée Flowtime personnalisée et timers personnalisés.',
-          'Modes de timer avancés pour différentes routines.',
-          'Plus d’historique et de statistiques pour le progrès à long terme.',
+          'Durée Flowtime personnalisée et minuteurs personnalisés.',
+          'Modes de minuteur avancés pour différentes routines.',
+          'Plus d’historique et de statistiques pour suivre ta progression sur la durée.',
           'Premium coûte EUR 3.99 par mois ou EUR 39.99 par an.'
         ]
       }
@@ -2500,72 +2501,72 @@ pages.fr = {
       {
         question: 'SkillQuest est-elle une application Pomodoro ?',
         answer:
-          'Oui. SkillQuest prend en charge Pomodoro et d’autres modes de concentration comme 52-17, Deep Work, Flowtime, Until Time et EMOM. Certaines fonctions avancées appartiennent à Premium.'
+          'Oui. SkillQuest prend en charge Pomodoro et d’autres modes de concentration comme 52-17, Deep Work, Flowtime, Until Time et EMOM. Certaines fonctions avancées sont incluses dans Premium.'
       },
       {
-        question: 'Les timers sont-ils liés aux compétences ?',
+        question: 'Les minuteurs sont-ils liés aux compétences ?',
         answer:
-          'Oui. Les sessions terminées sont liées à la compétence choisie, ce qui rend XP, statistiques et progression visibles.'
+          'Oui. Les sessions terminées sont liées à la compétence choisie, ce qui rend les XP, les statistiques et la progression visibles.'
       },
       {
         question: 'Puis-je utiliser des durées personnalisées ?',
         answer:
-          'Oui. Les durées personnalisées et options de timer avancées font partie des fonctions Premium.'
+          'Oui. Les durées personnalisées et les options avancées de minuteur font partie des fonctions Premium.'
       }
     ]
   },
   family: {
     ...pages.en.family,
-    title: 'Aidez les enfants à pratiquer avec structure, objectifs et progrès visibles',
-    metaTitle: 'Application Family pour parents | Timers, objectifs et statistiques enfant | SkillQuest',
+    title: 'Aide tes enfants à s’entraîner avec un cadre clair, des objectifs et des progrès visibles',
+    metaTitle: 'Family pour parents | Minuteurs, objectifs, statistiques | SkillQuest',
     metaDescription:
-      'Avec SkillQuest Family, les parents peuvent lancer des timers pour les enfants, consulter les statistiques enfant, définir des objectifs hebdomadaires et envoyer des compliments.',
+      'Avec SkillQuest Family, les parents lancent des minuteurs pour leurs enfants, consultent leurs statistiques, fixent des objectifs hebdomadaires et envoient des compliments.',
     summary:
-      'Family donne un cadre aux parents sans prendre le contrôle de la progression de l’enfant. Timers, objectifs, XP et compliments rendent le temps de pratique concret.',
+      'Family donne un cadre aux parents sans prendre le contrôle de la progression de l’enfant. Minuteurs, objectifs, XP et compliments rendent le temps de pratique concret.',
     cardSummary:
-      'Les parents peuvent lancer des timers, consulter les statistiques enfant, définir des objectifs et accompagner positivement.',
+      'Les parents peuvent lancer des minuteurs, consulter les statistiques de leurs enfants, fixer des objectifs et les encourager positivement.',
     primaryCta: 'Voir Family',
     secondaryCta: 'Télécharger l’app',
     sections: [
       {
-        title: 'Voyez quand les enfants pratiquent',
+        title: 'Vois quand tes enfants pratiquent',
         body:
-          'Avec Family, les parents peuvent voir quelles sessions ont été lancées et comment la progression évolue par compétence.',
+          'Avec Family, les parents peuvent voir quelles sessions ont été lancées et suivre l’évolution de chaque compétence.',
         bullets: [
-          'Consultez l’activité des timers des enfants.',
-          'Vérifiez les statistiques enfant pour sessions, minutes et XP.',
-          'Discutez de la progression par compétence.',
-          'Environnement familial privé avec rôles parent.'
+          'Consulte l’activité des minuteurs de tes enfants.',
+          'Vérifie leurs statistiques : sessions, minutes et XP.',
+          'Discute de la progression par compétence.',
+          'Un espace familial privé avec des rôles pour les parents.'
         ]
       },
       {
-        title: 'Lancez des timers pour les enfants',
+        title: 'Lance des minuteurs pour tes enfants',
         body:
-          'Les parents et propriétaires peuvent lancer un timer pour un enfant. La session est liée à l’enfant, afin que la progression reste visible de son côté.',
+          'Les parents et le titulaire du compte peuvent lancer un minuteur pour un enfant. La session est liée à l’enfant, pour que la progression reste visible de son côté.',
         bullets: [
-          'Choisissez un enfant et une compétence depuis l’espace famille.',
-          'Lancez le temps de pratique quand un objectif clair est nécessaire.',
-          'Reliez les minutes de concentration à XP et à la progression.',
-          'Les enfants voient les timers lancés par les parents.'
+          'Choisis un enfant et une compétence depuis l’espace famille.',
+          'Lance une session de pratique quand un objectif clair s’impose.',
+          'Relie les minutes de concentration aux XP et à la progression.',
+          'Les enfants voient les minuteurs lancés par leurs parents.'
         ]
       },
       {
-        title: 'Avancez ensemble vers des objectifs',
+        title: 'Avancer ensemble vers des objectifs',
         body:
-          'Family prend en charge les objectifs hebdomadaires et les compliments, afin que l’accompagnement ne soit pas seulement du contrôle.',
+          'Family prend en charge les objectifs hebdomadaires et les compliments, pour que l’accompagnement ne se résume pas au contrôle.',
         bullets: [
-          'Définissez des objectifs en minutes ou en sessions.',
-          'Envoyez des compliments pour l’effort et la progression.',
-          'Donnez à la famille une prochaine étape claire.',
+          'Fixe des objectifs en minutes ou en sessions.',
+          'Envoie des compliments pour l’effort et les progrès.',
+          'Donne à ta famille une prochaine étape claire.',
           'Family coûte EUR 6.99 par mois ou EUR 69.99 par an.'
         ]
       }
     ],
     faq: [
       {
-        question: 'Les parents peuvent-ils lancer des timers pour les enfants ?',
+        question: 'Les parents peuvent-ils lancer des minuteurs pour les enfants ?',
         answer:
-          'Oui. Avec Family, les parents et propriétaires peuvent lancer des timers pour les enfants dans l’environnement familial.'
+          'Oui. Avec Family, les parents et le titulaire du compte peuvent lancer des minuteurs pour les enfants au sein du groupe familial.'
       },
       {
         question: 'Puis-je voir la progression de mon enfant ?',
@@ -2575,7 +2576,7 @@ pages.fr = {
       {
         question: 'Family est-il inclus dans Premium ?',
         answer:
-          'Non. Family est un abonnement familial séparé avec Premium plus rôles parent, statistiques enfant, timers pour enfants, objectifs et compliments.'
+          'Non. Family est un abonnement familial séparé : il inclut Premium, avec en plus des rôles parent, des statistiques enfant, des minuteurs pour les enfants, des objectifs et des compliments.'
       },
       {
         question: 'SkillQuest est-il destiné aux jeunes enfants ?',
@@ -2586,26 +2587,27 @@ pages.fr = {
   },
   'skill-tracker': {
     ...pages.en['skill-tracker'],
-    title: 'Suivez les compétences, pas seulement les tâches',
-    metaTitle: 'Application Skill Tracker | XP, niveaux et progression | SkillQuest',
+    title: 'Suis tes compétences, pas seulement tes tâches',
+    eyebrow: 'Suivi de compétences',
+    metaTitle: 'App de suivi de compétences | XP, niveaux et progression | SkillQuest',
     metaDescription:
-      'SkillQuest est un Skill Tracker pour études, sport, musique, lecture, code, travail créatif et routines. Lancez des timers et suivez XP, niveaux et progrès.',
+      'SkillQuest suit tes compétences en études, sport, musique, lecture, code, création et routines. Lance des minuteurs et suis tes XP, tes niveaux et tes progrès.',
     summary:
-      'SkillQuest vous aide à développer des compétences en reliant le vrai temps de pratique à la progression, XP, aux niveaux et aux statistiques.',
+      'SkillQuest t’aide à développer tes compétences en reliant ton vrai temps de pratique à la progression, aux XP, aux niveaux et aux statistiques.',
     cardSummary:
-      'Suivez compétences, XP, niveaux, séries et temps de concentration dans une app mobile.',
+      'Suis tes compétences, tes XP, tes niveaux, tes séries et ton temps de concentration dans une seule app mobile.',
     primaryCta: 'Télécharger SkillQuest',
-    secondaryCta: 'Voir les Focus Timers',
+    secondaryCta: 'Voir les minuteurs de concentration',
     sections: [
       {
-        title: 'Commencez par la compétence, pas par une tâche générique',
+        title: 'Pars de la compétence, pas d’une tâche générique',
         body:
-          'SkillQuest oriente chaque session vers une compétence, afin que travail, apprentissage et loisirs deviennent une progression visible.',
+          'SkillQuest rattache chaque session à une compétence, pour que travail, apprentissage et loisirs deviennent une progression visible.',
         bullets: [
-          'Utilisez des compétences de départ ou créez les vôtres.',
-          'Suivez études, sport, musique, lecture, code et création.',
-          'Associez timers, XP, niveaux et séries.',
-          'Voyez quelles compétences reçoivent vraiment votre attention.'
+          'Utilise les compétences de départ ou crée les tiennes.',
+          'Suis tes études, le sport, la musique, la lecture, le code et la création.',
+          'Associe minuteurs, XP, niveaux et séries.',
+          'Vois quelles compétences reçoivent vraiment ton attention.'
         ]
       },
       {
@@ -2620,12 +2622,12 @@ pages.fr = {
         ]
       },
       {
-        title: 'Commencez gratuitement, évoluez si besoin',
+        title: 'Commence gratuitement, passe à l’offre supérieure si besoin',
         body:
-          'Guest Mode et les fonctions Free aident à démarrer. Premium et Family ajoutent plus de profondeur lorsque SkillQuest fait partie de votre routine.',
+          'Le mode invité et les fonctions Free t’aident à démarrer. Premium et Family ajoutent plus de profondeur quand SkillQuest entre dans ta routine.',
         bullets: [
-          'Guest Mode pour commencer rapidement.',
-          'Premium pour plus de liberté de timer et de statistiques.',
+          'Mode invité pour commencer rapidement.',
+          'Premium pour plus de liberté côté minuteurs et statistiques.',
           'Family pour une structure parent-enfant.',
           'Synchronisation respectueuse de la vie privée pour les comptes.'
         ]
@@ -2640,21 +2642,22 @@ pages.fr = {
       {
         question: 'Puis-je créer mes propres compétences ?',
         answer:
-          'Oui. SkillQuest prend en charge les compétences personnalisées afin que l’app corresponde à votre vraie routine.'
+          'Oui. SkillQuest prend en charge les compétences personnalisées, pour que l’app colle à ta vraie routine.'
       },
       {
         question: 'SkillQuest est-elle une app de suivi d’habitudes ?',
         answer:
-          'SkillQuest recoupe certains usages des habit trackers, mais se concentre davantage sur les compétences, le temps de concentration, XP, les niveaux et le progrès mesurable.'
+          'SkillQuest ressemble en partie aux applis de suivi d’habitudes, mais met davantage l’accent sur les compétences, le temps de concentration, les XP, les niveaux et une progression mesurable.'
       }
     ]
   },
   'progress-statistics': {
     ...pages.en['progress-statistics'],
-    title: 'Voyez vos progrès avec statistiques, XP et historique de compétences',
-    metaTitle: 'Statistiques de progression | Skill Tracking et XP | SkillQuest',
+    title: 'Vois tes progrès avec les statistiques, les XP et l’historique de tes compétences',
+    eyebrow: 'Suivi de la progression',
+    metaTitle: 'Statistiques de progression | Suivi de compétences et XP | SkillQuest',
     metaDescription:
-      'Consultez les statistiques SkillQuest par jour, semaine, mois et année. Suivez XP, sessions, minutes, répartition des compétences et statistiques enfant avec Family.',
+      'Consulte tes statistiques SkillQuest par jour, semaine, mois et année : XP, sessions, minutes, répartition des compétences et, avec Family, statistiques des enfants.',
     summary:
       'SkillQuest rend le temps de pratique mesurable avec statistiques, répartitions par compétence, XP, historique de sessions et progrès par période.',
     cardSummary:
@@ -2663,18 +2666,18 @@ pages.fr = {
     secondaryCta: 'Comparer Premium',
     sections: [
       {
-        title: 'Comprenez où va votre temps',
+        title: 'Comprends où passe ton temps',
         body:
-          'Les statistiques aident à voir les tendances dans votre temps de pratique et votre focus par compétence, sans présenter cela comme un résultat garanti.',
+          'Les statistiques t’aident à repérer des tendances dans ton temps de pratique et ta concentration par compétence, sans les présenter comme un résultat garanti.',
         bullets: [
-          'Consultez sessions et minutes par période.',
-          'Comparez compétences et activité.',
-          'Utilisez XP et niveaux comme signaux de progression.',
-          'Vérifiez les sessions récentes et l’historique.'
+          'Consulte tes sessions et tes minutes par période.',
+          'Compare tes compétences et ton activité.',
+          'Utilise les XP et les niveaux comme repères de progression.',
+          'Vérifie tes sessions récentes et ton historique.'
         ]
       },
       {
-        title: 'Des insights plus profonds avec Premium',
+        title: 'Des analyses plus poussées avec Premium',
         body:
           'Premium s’adresse aux utilisateurs qui veulent aller au-delà des statistiques de base.',
         bullets: [
@@ -2686,10 +2689,10 @@ pages.fr = {
       {
         title: 'Rendre visible la progression des enfants avec Family',
         body:
-          'Avec Family, les parents peuvent consulter la progression des enfants et rendre le temps de pratique plus facile à discuter.',
+          'Avec Family, les parents peuvent consulter la progression des enfants et faciliter la discussion autour du temps de pratique.',
         bullets: [
           'Statistiques enfant avec sessions, minutes et XP.',
-          'Activité des timers pour voir quand la pratique commence.',
+          'Activité des minuteurs pour voir quand la pratique commence.',
           'Objectifs et compliments rendent l’accompagnement plus concret.',
           'Family est un abonnement séparé pour les familles.'
         ]
@@ -2704,12 +2707,12 @@ pages.fr = {
       {
         question: 'Puis-je voir des tendances à long terme ?',
         answer:
-          'Premium inclut des statistiques étendues et plus d’historique. Consultez l’app pour les fonctions actuellement visibles.'
+          'Premium inclut des statistiques étendues et plus d’historique. Regarde dans l’app pour voir les fonctions actuellement disponibles.'
       },
       {
         question: 'Les parents peuvent-ils voir les statistiques des enfants ?',
         answer:
-          'Oui. Family inclut des statistiques enfant pour les parents et propriétaires dans l’environnement familial.'
+          'Oui. Family inclut des statistiques des enfants pour les parents et le titulaire du compte au sein du groupe familial.'
       }
     ]
   },
@@ -2719,23 +2722,23 @@ pages.fr = {
     title: 'Un minuteur Pomodoro adapté à tes compétences',
     metaTitle: 'Appli Pomodoro | Séances d\'étude et de concentration | SkillQuest',
     metaDescription:
-      'Utilise SkillQuest comme minuteur Pomodoro gratuit pour étudier et travailler en toute concentration. Chaque sprint de 25 minutes te permet de gagner des XP, de passer au niveau supérieur et de progresser dans tes compétences.',
+      'Minuteur Pomodoro gratuit pour étudier et travailler en toute concentration. Chaque sprint de 25 minutes te rapporte des XP et fait progresser tes compétences.',
     summary:
       'Le rythme Pomodoro classique 25/5, intégré à SkillQuest, pour que chaque sprint te fasse gagner des XP, des niveaux et te fasse progresser dans la compétence que tu t\'entraînes à maîtriser.',
     cardSummary:
-      'Le rythme de progression classique 25/5, lié à l\'XP, aux niveaux et à la progression des compétences.',
+      'Le rythme Pomodoro classique 25/5, lié aux XP, aux niveaux et à la progression des compétences.',
     screenshot: '02-focus-timer.png',
     primaryCta: 'Télécharger SkillQuest',
-    secondaryCta: 'Comparer les techniques de minuterie',
+    secondaryCta: 'Comparer les techniques de minuteur',
     sections: [
       {
         title: 'La technique Pomodoro, sans avoir besoin d\'une appli spécifique',
         body:
-          'La méthode Pomodoro divise le travail en courtes sessions de concentration ponctuées de pauses régulières. SkillQuest intègre cette méthode parmi plusieurs autres techniques de chronométrage ; tu n\'as donc pas besoin d\'une appli Pomodoro séparée en plus de ton outil de suivi.',
+          'La méthode Pomodoro divise le travail en courtes sessions de concentration ponctuées de pauses régulières. SkillQuest intègre cette méthode parmi plusieurs autres techniques de minuteur ; tu n\'as donc pas besoin d\'une application Pomodoro distincte en plus de ton outil de suivi.',
         bullets: [
           'Des sprints de concentration de 25 minutes avec des pauses intégrées.',
           'Disponible dans la formule gratuite, sans abonnement.',
-          'Ça marche pour les études, le boulot, la lecture ou n\'importe quelle compétence que tu suis.',
+          'Cela fonctionne pour les études, le travail, la lecture ou n\'importe quelle compétence que tu suis.',
         ]
       },
       {
@@ -2745,7 +2748,7 @@ pages.fr = {
         bullets: [
           'Gagne des XP après chaque session Pomodoro terminée.',
           'Consulte les sessions classées par compétence dans tes statistiques.',
-          'Suis tes streaks pour adopter des habitudes Pomodoro régulières.',
+          'Suis tes séries pour adopter des habitudes Pomodoro régulières.',
         ]
       },
       {
@@ -2755,7 +2758,7 @@ pages.fr = {
         bullets: [
           '« Deep Work » et « 52-17 » pour les sessions plus longues.',
           '« Flowtime » et « Until Time » pour des durées flexibles.',
-          'Avec l\'abonnement Premium, tu débloques l\'ensemble des techniques de chronomètre.',
+          'Avec l\'abonnement Premium, tu débloques l\'ensemble des techniques de minuteur.',
         ]
       },
     ],
@@ -2779,65 +2782,65 @@ pages.fr = {
   },
   streaks: {
     slug: 'streaks',
-    eyebrow: 'Streaks',
-    title: 'Fais de ta régularité une streak de succès que tu peux constater',
-    metaTitle: 'L\'appli Streak Tracker avec XP | Développe des habitudes quotidiennes | SkillQuest',
+    eyebrow: 'Séries',
+    title: 'Transforme ta régularité en une série bien visible',
+    metaTitle: 'Séries quotidiennes avec XP | Crée des habitudes | SkillQuest',
     metaDescription:
-      'SkillQuest comptabilise une streak quotidienne pour chaque compétence que tu t\'entraînes à maîtriser, avec des XP, des niveaux et la possibilité de geler ta streak pour qu\'un jour manqué n\'efface pas ta progression.',
+      'SkillQuest compte ta série quotidienne pour chaque compétence, avec XP, niveaux et gels de série : un jour manqué n’efface pas ta progression.',
     summary:
-      'Une streak quotidienne te permet de suivre ta régularité, avec des XP et des niveaux pour que cette régularité te donne l\'impression de progresser, et pas seulement d\'accumuler des chiffres.',
+      'Une série quotidienne te permet de suivre ta régularité, avec des XP et des niveaux pour que cette régularité te donne l\'impression de progresser, et pas seulement d\'accumuler des chiffres.',
     cardSummary:
-      'Des streaks quotidiennes avec des XP et des pauses dans la streak, pour que ta régularité reste visible.',
+      'Des séries quotidiennes avec des XP et des gels de série, pour que ta régularité reste visible.',
     screenshot: '03-session-reward.png',
-    primaryCta: 'Commence ta streak',
-    secondaryCta: 'Découvre comment fonctionne XP',
+    primaryCta: 'Commencer ma série',
+    secondaryCta: 'Découvrir comment fonctionnent les XP',
     sections: [
       {
-        title: 'Des streaks qui te récompensent juste pour ta présence',
+        title: 'Des séries qui récompensent ta présence',
         body:
-          'Chaque jour où tu fais une séance de concentration, ta streak s\'allonge. C\'est un indicateur simple et visible qui transforme la question « Est-ce que je me suis entraîné aujourd\'hui ? » en un compteur qui ne s\'arrête pas.',
+          'Chaque jour où tu fais une séance de concentration, ta série s\'allonge. C\'est un indicateur simple et visible qui transforme la question « Est-ce que je me suis entraîné aujourd\'hui ? » en un compteur qui ne s\'arrête pas.',
         bullets: [
           'Gagne 10 XP pour chaque journée active, en plus des XP de session.',
-          'Les streaks s\'appliquent à toutes les compétences que tu suis.',
-          'Découvre d\'un seul coup d\'œil ta streak actuelle et ta plus longue streak.',
+          'Les séries s\'appliquent à toutes les compétences que tu suis.',
+          'Vois d\'un coup d\'œil ta série actuelle et ta série la plus longue.',
         ]
       },
       {
-        title: 'Les streaks te permettent de rattraper un raté de temps en temps',
+        title: 'Les gels de série te protègent d\'un jour raté de temps en temps',
         body:
-          'Parfois, la vie vient tout chambouler. Grâce aux Streak Freezes, un jour manqué ne remet pas à zéro des semaines d\'assiduité.',
+          'Parfois, la vie vient tout chambouler. Grâce aux gels de série, un jour manqué ne remet pas à zéro des semaines d\'assiduité.',
         bullets: [
-          'Évite de voir ta streak s\'interrompre à cause d\'un jour manqué de temps en temps.',
-          'Garde ta motivation sur le long terme sans te sentir obligé de tout donner ou de tout laisser tomber.',
-          'Les streaks de jours consécutifs (7, 30, 100+ jours) peuvent déclencher la publication de posts d\'activité que tu peux partager.',
+          'Évite de voir ta série s\'interrompre à cause d\'un jour manqué de temps en temps.',
+          'Garde ta motivation sur le long terme sans tomber dans le piège du tout ou rien.',
+          'Les séries de jours consécutifs (7, 30, 100 jours et plus) peuvent déclencher des publications d\'activité que tu peux partager.',
         ]
       },
       {
-        title: 'Les streaks, c\'est bien plus que de simples chiffres',
+        title: 'Les séries, c\'est bien plus que de simples chiffres',
         body:
-          'Dans SkillQuest, la cohérence ne se résume pas à un simple compteur : les thèmes et les récompenses sont liés à ta progression.',
+          'Dans SkillQuest, la régularité ne se résume pas à un simple compteur : les thèmes et les récompenses sont liés à ta progression.',
         bullets: [
           'Débloque des thèmes en progressant régulièrement.',
-          'Associe les streaks à l\'XP et aux niveaux pour avoir une vision plus complète.',
-          'Utilise les étapes importantes de ta streak comme points de repère naturels.',
+          'Associe les séries à l\'XP et aux niveaux pour avoir une vision plus complète.',
+          'Utilise les étapes importantes de ta série comme points de repère naturels.',
         ]
       },
     ],
     faq: [
       {
-        question: 'Comment fonctionne le système de streaks dans SkillQuest ?',
+        question: 'Comment fonctionne le système de séries dans SkillQuest ?',
         answer:
-          'Si tu termines une session ciblée un jour donné, ça te permet de maintenir ta streak d\'affilée et tu gagnes 10 XP pour cette journée, en plus des XP de la session.'
+          'Si tu termines une session de concentration dans la journée, ta série continue et tu gagnes 10 XP pour cette journée, en plus des XP de la session.'
       },
       {
         question: 'Que se passe-t-il si je rate une journée ?',
         answer:
-          'Les Streak Freezes te permettent de protéger ta streak en cas de jour manqué de temps en temps, pour qu\'un seul jour d\'interruption n\'efface pas tes progrès.'
+          'Les gels de série te permettent de protéger ta série en cas de jour manqué de temps en temps, pour qu\'une seule interruption n\'efface pas tes progrès.',
       },
       {
-        question: 'Est-ce que le suivi des streaks est gratuit ?',
+        question: 'Est-ce que le suivi des séries est gratuit ?',
         answer:
-          'Oui. Les streaks quotidiennes, les XP et les niveaux font partie de la formule gratuite.'
+          'Oui. Les séries quotidiennes, les XP et les niveaux font partie de la formule gratuite.'
       },
     ]
   },
@@ -2845,9 +2848,9 @@ pages.fr = {
     slug: 'friends-challenges',
     eyebrow: 'Amis et défis',
     title: 'Rends la progression un peu plus conviviale',
-    metaTitle: 'Application « Friends & Challenges » | Se responsabiliser pour améliorer sa concentration et ses compétences | SkillQuest',
+    metaTitle: 'Amis et défis | Garde la motivation pour tes compétences | SkillQuest',
     metaDescription:
-      'Ajoute des amis, participe aux défis « XP Race » et « Active Days », et partage tes progrès comme tu le souhaites grâce aux fonctionnalités sociales et aux paramètres de confidentialité de SkillQuest.',
+      'Ajoute des amis, lance des défis (Course XP, Bataille des jours actifs) et partage tes progrès comme tu veux, grâce aux paramètres de confidentialité de SkillQuest.',
     summary:
       'Ajoute des amis, lance des défis et trouve la motivation dont tu as besoin quand tu le souhaites, grâce à des paramètres de confidentialité qui te permettent de partager ce que tu veux, comme tu le veux.',
     cardSummary:
@@ -2859,27 +2862,27 @@ pages.fr = {
       {
         title: 'Ajoute des amis pour te motiver vraiment',
         body:
-          'Quand on suit ses progrès tout seul, on a tendance à les ignorer facilement. En ajoutant des amis sur SkillQuest, tu bénéficies de cette motivation que t\'apportent les gens que tu connais vraiment.',
+          'Quand on s’entraîne tout seul, on a vite tendance à perdre sa motivation. En ajoutant des amis sur SkillQuest, tu profites de l’élan que te donnent les personnes que tu connais vraiment.',
         bullets: [
           'Envoie et accepte des demandes d\'amis directement depuis l\'appli.',
-          'Tu peux voir les statistiques de tes amis quand les deux parties l\'autorisent.',
+          'Consulte les statistiques de tes amis dès que chacun a donné son accord.',
           'Un bouton de confidentialité te permet de contrôler le partage de tes données.',
         ]
       },
       {
         title: 'Des défis qui nous rapprochent d\'un objectif commun',
         body:
-          'Les défis transforment la pratique individuelle en un effort collectif, qu\'il s\'agisse d\'une course aux XP ou d\'une bataille « Active Days ».',
+          'Les défis transforment la pratique individuelle en un effort collectif, qu\'il s\'agisse d\'une Course XP ou d\'une Bataille des jours actifs.',
         bullets: [
-          'Lance une course XP ou une bataille « Active Days » avec tes potes.',
-          'Suivez ensemble la progression du défi et les dernières activités.',
+          'Lance une Course XP ou une Bataille des jours actifs avec tes amis.',
+          'Suis la progression du défi et les dernières activités avec tes amis.',
           'Découvre qui est en tête sans perdre de vue tes propres progrès.',
         ]
       },
       {
         title: 'Un fil d\'activité qui met à l\'honneur les moments forts',
         body:
-          'Les streaks et autres jalons peuvent apparaître sous forme de publications d\'activité, ce qui permet de mettre en avant tes progrès sans pour autant créer un fil d\'actualité public.',
+          'Les séries et autres jalons peuvent apparaître sous forme de publications d\'activité, ce qui permet de mettre en avant tes progrès sans pour autant créer un fil d\'actualité public.',
         bullets: [
           'Des publications automatiques pour marquer des étapes comme 7, 30 ou 100 jours d\'activité.',
           'La publication respectueuse de la vie privée tient compte de tes paramètres.',
@@ -2901,23 +2904,23 @@ pages.fr = {
       {
         question: 'Quels types de défis je peux lancer ?',
         answer:
-          'SkillQuest prend en charge différents types de défis, comme la « Course aux XP » et la « Bataille des jours actifs », avec un suivi commun des progrès.'
+          'SkillQuest prend en charge différents types de défis, comme la « Course XP » et la « Bataille des jours actifs », avec un suivi commun des progrès.'
       },
     ]
   },
   'study-timer': {
     slug: 'study-timer',
     eyebrow: 'Minuteur d\'étude',
-    title: 'Un minuteur d\'étude qui fait bien plus que simplement compter le temps',
-    metaTitle: 'Appli Study Timer | Suis tes sessions d\'étude par matière | SkillQuest',
+    title: 'Un minuteur d’étude qui fait bien plus que mesurer le temps',
+    metaTitle: 'Minuteur d\'étude | Suis tes sessions d\'étude par matière | SkillQuest',
     metaDescription:
-      'Utilise SkillQuest comme minuteur d\'étude pour tes examens, tes devoirs et tes révisions. Suis le temps passé à étudier par matière grâce aux XP, aux niveaux et aux statistiques.',
+      'Utilise SkillQuest comme minuteur d’étude pour tes examens, devoirs et révisions. Suis ton temps d’étude par matière avec XP, niveaux et statistiques.',
     summary:
       'Transforme tes sessions d\'étude en progrès visibles par matière, grâce à des minuteurs de concentration, des points d\'expérience (XP) et des statistiques conçues pour un apprentissage régulier, et pas seulement pour un simple compte à rebours.',
     cardSummary:
       'Suivi des sessions d\'étude par matière, avec les XP, les niveaux et les statistiques.',
     screenshot: '02-focus-timer.png',
-    primaryCta: 'Commence à étudier avec SkillQuest',
+    primaryCta: 'Commencer à étudier avec SkillQuest',
     secondaryCta: 'Comparer les minuteurs de concentration',
     sections: [
       {
@@ -2943,11 +2946,11 @@ pages.fr = {
       {
         title: 'La motivation pour tenir sur la durée',
         body:
-          'C\'est plus facile de garder ses habitudes d\'étude quand on voit clairement les progrès qu\'on fait, plutôt que de juste les deviner.',
+          'Il est plus facile de garder ses habitudes d’étude quand on voit clairement ses progrès, au lieu de devoir les deviner.',
         bullets: [
           'Les XP et les niveaux par matière te permettent de suivre tes progrès.',
-          'Les streaks quotidiennes t\'aident à prendre de bonnes habitudes d\'étude.',
-          'Les statistiques montrent quelles matières suscitent l\'intérêt et lesquelles n\'en suscitent pas.',
+          'Les séries quotidiennes t\'aident à prendre de bonnes habitudes d\'étude.',
+          'Les statistiques montrent quelles matières tu travailles le plus et lesquelles tu délaisses.',
         ]
       },
     ],
@@ -2973,16 +2976,16 @@ pages.fr = {
     slug: 'deep-work-flowtime',
     eyebrow: 'Deep Work & Flowtime',
     title: 'Des sessions de concentration plus longues pour les tâches qui demandent de la profondeur',
-    metaTitle: 'Minuteur Deep Work & Flowtime | Sessions de concentration Premium | SkillQuest',
+    metaTitle: 'Minuteur Deep Work et Flowtime | Concentration Premium | SkillQuest',
     metaDescription:
-      'Utilise Deep Work, 52-17 et Flowtime dans SkillQuest pour des sessions de concentration plus longues et sans interruption. Techniques de minuterie Premium avec durée personnalisable.',
+      'Deep Work, 52-17 et Flowtime dans SkillQuest : des sessions de concentration longues et sans interruption. Techniques de minuteur Premium, durée personnalisable.',
     summary:
       'Quand une tâche nécessite un sprint de plus de 25 minutes, les modes « Deep Work », « 52-17 » et « Flowtime » te permettent de bénéficier de plages de concentration plus longues et flexibles, qui comptent quand même pour tes XP et ta progression.',
     cardSummary:
       'Deep Work, 52-17 et Flowtime pour des séances de concentration plus longues et flexibles.',
     screenshot: '02-focus-timer.png',
     primaryCta: 'Comparer les formules Premium',
-    secondaryCta: 'Voir toutes les techniques de chronométrage',
+    secondaryCta: 'Voir toutes les techniques de minuteur',
     sections: [
       {
         title: 'Le « Deep Work » pour des sessions de concentration sans interruption',
@@ -2991,7 +2994,7 @@ pages.fr = {
         bullets: [
           'Des sessions de concentration plus longues que celles de la méthode Pomodoro, consacrées à une seule tâche.',
           'Ça compte pour les XP, les niveaux et les statistiques, comme n\'importe quelle autre session.',
-          'Ça fait partie des techniques de chronométrage « Premium ».',
+          'Ça fait partie des techniques de minuteur Premium.',
         ]
       },
       {
@@ -3001,7 +3004,7 @@ pages.fr = {
         bullets: [
           'Un rapport « concentration/détente » fixe, inspiré de la recherche.',
           'Idéal pour les sessions de travail ou d\'étude de plusieurs heures.',
-          'Inclus dans la version Premium, avec d\'autres techniques de minuterie.',
+          'Inclus dans la version Premium, avec d\'autres techniques de minuteur.',
         ]
       },
       {
@@ -3027,9 +3030,9 @@ pages.fr = {
           'Non. 52-17 propose des périodes de concentration et des pauses plus longues que le rythme Pomodoro classique 25/5.'
       },
       {
-        question: 'Ces techniques de minuterie sont-elles gratuites ?',
+        question: 'Ces techniques de minuteur sont-elles gratuites ?',
         answer:
-          'Deep Work, 52-17 et Flowtime font partie de l\'offre Premium, tout comme les durées de minuterie personnalisées et les statistiques plus détaillées.'
+          'Deep Work, 52-17 et Flowtime font partie de l\'offre Premium, tout comme les durées de minuteur personnalisées et les statistiques plus détaillées.'
       },
     ]
   },
@@ -3037,13 +3040,13 @@ pages.fr = {
     slug: 'leaderboards',
     eyebrow: 'Classements',
     title: 'Découvre où tu en es, à ton rythme',
-    metaTitle: 'Appli de classements et de tableaux d\'honneur | Mesure-toi aux autres en fonction de tes progrès | SkillQuest',
+    metaTitle: 'Classements et ligues | Compare-toi à ton rythme | SkillQuest',
     metaDescription:
-      'Les classements SkillQuest comparent les points d\'expérience (XP) et les jours d\'activité sur des périodes hebdomadaires, mensuelles et depuis le début, avec des divisions allant du bronze au diamant pour te motiver en permanence.',
+      'Les classements SkillQuest comparent les XP et les jours d\'activité par semaine, par mois et depuis le début, avec des ligues du bronze au diamant.',
     summary:
-      'Les classements transforment les XP et les jours d\'activité en un tableau des meilleurs que tu peux consulter chaque semaine, chaque mois ou depuis le début, avec des ligues qui donnent à la compétition un sentiment de progression.',
+      'Les classements transforment les XP et les jours d’activité en un classement que tu peux consulter chaque semaine, chaque mois ou depuis le début, avec des ligues qui donnent à la compétition un sentiment de progression.',
     cardSummary:
-      'Classements hebdomadaires, mensuels et historiques, avec des divisions allant du bronze au diamant.',
+      'Classements hebdomadaires, mensuels et historiques, avec des ligues allant du bronze au diamant.',
     screenshot: '05-rankings.png',
     primaryCta: 'Télécharger SkillQuest',
     secondaryCta: 'Ajouter des amis',
@@ -3061,11 +3064,11 @@ pages.fr = {
       {
         title: 'Les ligues apportent un sentiment de progression',
         body:
-          'Les divisions, du bronze au diamant, font de la compétition un parcours à franchir, et non un simple classement figé.',
+          'Les ligues, du bronze au diamant, font de la compétition un parcours à franchir, et non un simple classement figé.',
         bullets: [
-          'Gagne des échelons au fur et à mesure que tu restes actif.',
+          'Monte de ligue en ligue tant que tu restes actif.',
           'Affronte des adversaires de ton niveau, pas tout le monde en même temps.',
-          'Les ligues, c\'est l\'occasion de jouer avec tes potes et de relever des défis pour te motiver encore plus.',
+          'Les ligues s’associent aux amis et aux défis pour te motiver encore plus.',
         ]
       },
       {
@@ -3073,7 +3076,7 @@ pages.fr = {
         body:
           'Les classements viennent s\'ajouter à tes statistiques personnelles, ils ne les remplacent pas ; participer à la compétition ne signifie donc pas que tu dois perdre de vue ta propre progression.',
         bullets: [
-          'L\'XP personnelle, les niveaux et les streaks restent visibles, quel que soit ton rang.',
+          'Tes XP, tes niveaux et tes séries restent visibles, quel que soit ton rang.',
           'Les classements vont naturellement de pair avec les amis et les défis.',
           'Utile pour les utilisateurs qui aiment la compétition, facultatif pour tous les autres.',
         ]
@@ -3088,10 +3091,10 @@ pages.fr = {
       {
         question: 'C\'est quoi, les ligues ?',
         answer:
-          'Les ligues classent les joueurs de « bronze » à « diamant », ce qui permet de jouer contre des adversaires de niveau similaire plutôt que contre tout le monde en même temps.'
+          'Les ligues regroupent les utilisateurs de « bronze » à « diamant », ce qui permet de se mesurer à des personnes de niveau similaire plutôt qu’à tout le monde en même temps.'
       },
       {
-        question: 'Est-ce que je dois participer à un concours pour utiliser SkillQuest ?',
+        question: 'Est-ce que je dois participer à la compétition pour utiliser SkillQuest ?',
         answer:
           'Non. Les classements et les ligues sont facultatifs. Le suivi des compétences de base, les XP et les niveaux fonctionnent de la même manière, qu\'ils soient présents ou non.'
       },
@@ -3100,25 +3103,25 @@ pages.fr = {
   themes: {
     slug: 'themes',
     eyebrow: 'Thèmes',
-    title: 'Fais en sorte que SkillQuest te donne l\'impression que c\'est ton application',
-    metaTitle: 'Thèmes et personnalisation de l\'appli | Thèmes clair, sombre et à débloquer | SkillQuest',
+    title: 'Fais de SkillQuest une appli à ton image',
+    metaTitle: 'Thèmes et personnalisation | Clair, sombre et à débloquer | SkillQuest',
     metaDescription:
-      'SkillQuest prend en charge les modes clair, sombre et système, ainsi que des thèmes à débloquer en fonction de ta progression, pour que l\'appli ait exactement l\'apparence que tu souhaites.',
+      'Modes clair, sombre et système, plus des thèmes à débloquer selon ta progression : SkillQuest prend l’apparence que tu veux.',
     summary:
       'Le mode clair, le mode sombre, le mode système et toute une série de thèmes à débloquer te permettent de personnaliser l\'apparence et l\'ambiance de SkillQuest comme tu le souhaites, certains thèmes étant même liés à ta propre progression.',
     cardSummary:
       'Mode clair, mode sombre et mode système, ainsi que des thèmes que tu débloques au fur et à mesure de ta progression.',
     screenshot: '07-themes-profile.png',
     primaryCta: 'Télécharger SkillQuest',
-    secondaryCta: 'Découvre comment fonctionnent les streaks',
+    secondaryCta: 'Découvrir comment fonctionnent les séries',
     sections: [
       {
         title: 'Mode clair, mode sombre et mode système',
         body:
-          'SkillQuest s\'adapte par défaut à ton appareil, mais tu peux le verrouiller en mode clair ou foncé quand tu veux.',
+          'SkillQuest s\'adapte par défaut à ton appareil, mais tu peux le verrouiller en mode clair ou sombre quand tu veux.',
         bullets: [
           'Le mode système s\'adapte automatiquement à ton appareil.',
-          'Tu peux passer manuellement du mode clair au mode foncé à tout moment.',
+          'Tu peux passer manuellement du mode clair au mode sombre à tout moment.',
           'Chaque thème est conçu selon les normes de Material 3 pour garantir un contraste homogène.',
         ]
       },
@@ -3129,17 +3132,17 @@ pages.fr = {
         bullets: [
           'Débloque des thèmes supplémentaires en progressant régulièrement.',
           'Les déblocages gratuits coexistent avec les options de thèmes Premium.',
-          'Le déblocage des thèmes est lié au même système de streaks et d\'XP que tout le reste.',
+          'Le déblocage des thèmes est lié au même système de séries et d\'XP que tout le reste.',
         ]
       },
       {
         title: 'Une personnalisation qui reste cohérente',
         body:
-          'Les thèmes changent la couleur et l\'ambiance, mais pas la structure de l\'appli ; du coup, changer de thème ne t\'oblige jamais à réapprendre où se trouvent les choses.',
+          'Les thèmes changent la couleur et l’ambiance, mais pas la structure de l’appli : changer de thème ne t’oblige jamais à réapprendre où se trouvent tes fonctions.',
         bullets: [
           'Une mise en page homogène pour tous les thèmes.',
           'Les couleurs s\'adaptent sans nuire à la lisibilité ni au contraste.',
-          'Ça marche pareil pour le suivi des compétences, les chronomètres et les statistiques.',
+          'Le fonctionnement reste le même pour le suivi des compétences, les minuteurs et les statistiques.',
         ]
       },
     ],
@@ -3152,36 +3155,36 @@ pages.fr = {
       {
         question: 'Comment faire pour débloquer d\'autres thèmes ?',
         answer:
-          'Certains thèmes se débloquent en progressant régulièrement, par exemple grâce à des streaks de jours consécutifs, tandis que d\'autres sont disponibles avec l\'abonnement Premium.'
+          'Certains thèmes se débloquent en progressant régulièrement, par exemple grâce à des séries de jours consécutifs, tandis que d\'autres sont disponibles avec l\'abonnement Premium.'
       },
       {
         question: 'Est-ce que les thèmes modifient le fonctionnement de l\'appli ?',
         answer:
-          'Non. Les thèmes ne changent que l\'apparence. Le suivi des compétences, les chronomètres et les statistiques fonctionnent de la même manière quel que soit le thème.'
+          'Non. Les thèmes ne changent que l\'apparence. Le suivi des compétences, les minuteurs et les statistiques fonctionnent de la même manière quel que soit le thème.'
       },
     ]
   },
   'guest-mode': {
     slug: 'guest-mode',
-    eyebrow: 'Guest Mode',
+    eyebrow: 'Mode invité',
     title: 'Essaie SkillQuest avant de créer un compte',
-    metaTitle: 'Guest Mode | Essaie SkillQuest sans compte | SkillQuest',
+    metaTitle: 'Mode invité | Essaie SkillQuest sans compte | SkillQuest',
     metaDescription:
-      'Le Guest Mode de SkillQuest te permet de suivre tes compétences, d\'utiliser des minuteurs de concentration et de gagner des XP en local avant de créer un compte, pour que tu puisses l\'essayer sans risque.',
+      'Le mode invité de SkillQuest te permet de suivre tes compétences, de lancer des minuteurs de concentration et de gagner des XP en local avant de créer un compte.',
     summary:
-      'Le Guest Mode te permet de passer l\'étape d\'inscription. Suis tes compétences, lance des minuteurs de concentration et gagne des XP directement sur ton appareil, puis crée un compte quand tu seras prêt.',
+      'Le mode invité t\'épargne l\'inscription. Suis tes compétences, lance des minuteurs de concentration et gagne des XP directement sur ton appareil, puis crée un compte quand tu seras prêt.',
     cardSummary:
-      'Essaie les fonctionnalités de suivi des compétences clés et les minuteurs de concentration en mode hors ligne, avant de créer un compte.',
+      'Essaie le suivi des compétences et les minuteurs de concentration en local, avant de créer un compte.',
     screenshot: '01-home-progress.png',
-    primaryCta: 'Commence en tant qu\'invité',
-    secondaryCta: 'Compare les formules Gratuit, Premium et Family',
+    primaryCta: 'Commencer en tant qu\'invité',
+    secondaryCta: 'Comparer les formules Free, Premium et Family',
     sections: [
       {
         title: 'Pas besoin de compte pour commencer',
         body:
-          'Le Guest Mode te permet d\'ouvrir SkillQuest et de commencer tout de suite à suivre une compétence, sans avoir à t\'inscrire au préalable.',
+          'Le mode invité te permet d\'ouvrir SkillQuest et de commencer tout de suite à suivre une compétence, sans avoir à t\'inscrire au préalable.',
         bullets: [
-          'Le suivi des compétences principales, les minuteurs de concentration, l\'XP et les niveaux fonctionnent en Guest Mode.',
+          'Le suivi des compétences principales, les minuteurs de concentration, l\'XP et les niveaux fonctionnent en mode invité.',
           'Ta progression est enregistrée localement sur ton appareil.',
           'Pas besoin d\'adresse e-mail ni de compte pour essayer l\'appli.',
         ]
@@ -3189,21 +3192,21 @@ pages.fr = {
       {
         title: 'Crée un compte quand ça te semble utile',
         body:
-          'Le Guest Mode, c\'est un point de départ, pas une impasse. Quand tu seras prêt pour la synchronisation, les amis ou les classements, créer un compte te permettra de conserver ta progression locale.',
+          'Le mode invité, c\'est un point de départ, pas une impasse. Quand tu seras prêt pour la synchronisation, les amis ou les classements, créer un compte te permettra de conserver ta progression locale.',
         bullets: [
           'Passe à un compte complet sans perdre ta progression locale.',
-          'Permet la synchronisation entre tes appareils, tes amis et les classements.',
+          'Active la synchronisation entre tes appareils et débloque les amis et les classements.',
           'Pas besoin de te décider avant d\'avoir testé l\'appli.',
         ]
       },
       {
-        title: 'Ce qui reste limité en Guest Mode',
+        title: 'Ce qui reste limité en mode invité',
         body:
           'Certaines fonctionnalités nécessitent forcément un compte, car elles impliquent d\'autres personnes ou une synchronisation entre appareils.',
         bullets: [
           'Pour accéder à la section « Amis », aux défis et aux classements, il faut un compte.',
           'Pour profiter des fonctionnalités Family, il faut un compte et un groupe Family.',
-          'Ta progression locale n\'est pas sauvegardée tant que tu n\'as pas créé de compte.',
+          'Ta progression n’est pas sauvegardée en ligne tant que tu n’as pas créé de compte.',
         ]
       },
     ],
@@ -3211,15 +3214,15 @@ pages.fr = {
       {
         question: 'Est-ce que j\'ai besoin d\'un compte pour utiliser SkillQuest ?',
         answer:
-          'Non. Le Guest Mode te permet d\'utiliser les fonctionnalités principales de suivi des compétences et les minuteurs de concentration sans avoir à créer de compte.'
+          'Non. Le mode invité te permet d\'utiliser les fonctionnalités principales de suivi des compétences et les minuteurs de concentration sans avoir à créer de compte.'
       },
       {
         question: 'Qu\'est-ce qui va se passer avec ma progression si je crée un compte plus tard ?',
         answer:
-          'En quittant le Guest Mode, ta progression locale sera transférée vers ton nouveau compte.'
+          'En quittant le mode invité, ta progression locale sera transférée vers ton nouveau compte.'
       },
       {
-        question: 'Qu\'est-ce que je ne peux pas faire en Guest Mode ?',
+        question: 'Qu\'est-ce que je ne peux pas faire en mode invité ?',
         answer:
           'Les fonctionnalités « Amis », « Défis », « Classements » et « Family » nécessitent un compte, car elles impliquent une synchronisation avec d\'autres personnes.'
       },
@@ -4009,19 +4012,20 @@ pages.es = {
 pages.it = {
   'focus-timer': {
     ...pages.en['focus-timer'],
-    title: 'Un Focus Timer che tiene traccia dei tuoi progressi',
-    metaTitle: 'App Focus Timer | Pomodoro, Deep Work e Flowtime | SkillQuest',
+    title: 'Un timer di concentrazione che tiene traccia dei tuoi progressi',
+    eyebrow: 'Timer di concentrazione',
+    metaTitle: 'Timer di concentrazione | Pomodoro, Deep Work, Flowtime | SkillQuest',
     metaDescription:
-      'Usa SkillQuest come Focus Timer per Pomodoro, Deep Work, 52-17, Flowtime, Until Time ed EMOM. Ogni sessione conta per XP, livelli e progresso.',
+      'Usa SkillQuest come timer di concentrazione per Pomodoro, Deep Work, 52-17, Flowtime, Until Time ed EMOM. Ogni sessione conta per XP, livelli e progressi.',
     summary:
-      'Avvia un timer per la competenza su cui stai lavorando. SkillQuest collega i minuti di concentrazione a XP, livelli, statistiche e crescita visibile.',
+      'Avvia un timer per l’abilità su cui stai lavorando. SkillQuest collega i minuti di concentrazione a XP, livelli, statistiche e crescita visibile.',
     cardSummary:
-      'Pomodoro, Deep Work, Flowtime e altri modi timer collegati al progresso reale delle competenze.',
+      'Pomodoro, Deep Work, Flowtime e altre modalità timer collegate al progresso reale delle tue abilità.',
     primaryCta: 'Scarica SkillQuest',
     secondaryCta: 'Confronta Premium',
     sections: [
       {
-        title: 'Scegli il timer adatto al tuo compito',
+        title: 'Scegli il timer adatto alla tua attività',
         body:
           'SkillQuest supporta diverse forme di concentrazione, così non resti bloccato in un unico flusso Pomodoro.',
         bullets: [
@@ -4032,24 +4036,24 @@ pages.it = {
         ]
       },
       {
-        title: 'Ogni minuto conta per una competenza',
+        title: 'Ogni minuto conta per un’abilità',
         body:
-          'Un timer non è separato dai progressi. Prima scegli una competenza, poi vedi crescere XP, livelli e statistiche.',
+          'Il timer non è slegato dai tuoi progressi. Prima scegli un’abilità, poi vedi crescere XP, livelli e statistiche.',
         bullets: [
           'Guadagna XP dopo le sessioni completate.',
-          'Monitora il tempo di concentrazione per competenza.',
-          'Rivedi le sessioni per skill nelle statistiche.',
+          'Monitora il tempo di concentrazione per abilità.',
+          'Rivedi le sessioni per abilità nelle statistiche.',
           'Costruisci serie con la pratica ripetuta.'
         ]
       },
       {
         title: 'Premium per più libertà di concentrazione',
         body:
-          'Premium è pensato per utenti che vogliono più tecniche timer, durata personalizzata e statistiche più profonde.',
+          'Premium è pensato per chi vuole più tecniche timer, durata personalizzata e statistiche più approfondite.',
         bullets: [
           'Durata Flowtime personalizzata e timer personalizzati.',
-          'Modi timer avanzati per routine diverse.',
-          'Più storico e statistiche per il progresso a lungo termine.',
+          'Modalità timer avanzate per routine diverse.',
+          'Uno storico più esteso e statistiche per seguire i progressi a lungo termine.',
           'Premium costa EUR 3.99 al mese o EUR 39.99 all’anno.'
         ]
       }
@@ -4058,12 +4062,12 @@ pages.it = {
       {
         question: 'SkillQuest è un’app Pomodoro?',
         answer:
-          'Sì. SkillQuest supporta Pomodoro e altri modi di concentrazione come 52-17, Deep Work, Flowtime, Until Time ed EMOM. Alcune funzioni avanzate appartengono a Premium.'
+          'Sì. SkillQuest supporta Pomodoro e altre modalità di concentrazione come 52-17, Deep Work, Flowtime, Until Time ed EMOM. Alcune funzioni avanzate fanno parte di Premium.'
       },
       {
-        question: 'I timer sono collegati alle competenze?',
+        question: 'I timer sono collegati alle abilità?',
         answer:
-          'Sì. Le sessioni completate sono collegate alla skill selezionata, rendendo visibili XP, statistiche e progresso.'
+          'Sì. Le sessioni completate sono collegate all’abilità selezionata, rendendo visibili XP, statistiche e progresso.'
       },
       {
         question: 'Posso usare durate personalizzate?',
@@ -4074,47 +4078,47 @@ pages.it = {
   },
   family: {
     ...pages.en.family,
-    title: 'Aiuta i figli a praticare con struttura, obiettivi e progresso visibile',
-    metaTitle: 'App Family per genitori | Timer, obiettivi e statistiche figli | SkillQuest',
+    title: 'Aiuta i tuoi figli a esercitarsi con metodo, obiettivi e progressi visibili',
+    metaTitle: 'Family per genitori | Timer, obiettivi e statistiche | SkillQuest',
     metaDescription:
-      'Con SkillQuest Family, i genitori possono avviare timer per i figli, vedere statistiche dei figli, impostare obiettivi settimanali e inviare complimenti.',
+      'Con SkillQuest Family, i genitori possono avviare i timer per i figli, vedere le statistiche dei figli, impostare obiettivi settimanali e inviare complimenti.',
     summary:
-      'Family dà ai genitori una struttura senza prendere il controllo dei progressi del figlio. Timer, obiettivi, XP e complimenti rendono concreta la pratica.',
+      'Family offre ai genitori una struttura, senza togliere ai figli il controllo dei propri progressi. Timer, obiettivi, XP e complimenti rendono concreta la pratica.',
     cardSummary:
-      'I genitori possono avviare timer, vedere statistiche dei figli, impostare obiettivi e sostenere con feedback positivo.',
+      'I genitori possono avviare i timer, vedere le statistiche dei figli, impostare obiettivi e sostenerli con feedback positivi.',
     primaryCta: 'Vedi Family',
     secondaryCta: 'Scarica l’app',
     sections: [
       {
-        title: 'Vedi quando i figli praticano',
+        title: 'Vedi quando i tuoi figli si esercitano',
         body:
-          'Con Family, i genitori possono vedere quali sessioni sono state avviate e come si sviluppa il progresso per skill.',
+          'Con Family, i genitori possono vedere quali sessioni sono state avviate e come si sviluppa il progresso per abilità.',
         bullets: [
           'Consulta l’attività timer dei figli.',
           'Controlla statistiche dei figli per sessioni, minuti e XP.',
-          'Parla dei progressi per competenza.',
-          'Ambiente familiare privato con ruoli genitore.'
+          'Parla dei progressi per abilità.',
+          'Spazio familiare privato con ruoli per i genitori.'
         ]
       },
       {
         title: 'Avvia timer per i figli',
         body:
-          'Genitori e proprietari possono avviare un timer per un figlio. La sessione viene collegata al figlio, così il progresso resta visibile lì.',
+          'Genitori e proprietari possono avviare un timer per un figlio. La sessione viene collegata al figlio, così i suoi progressi restano visibili nel suo account.',
         bullets: [
-          'Scegli un figlio e una skill dall’ambiente famiglia.',
-          'Avvia il tempo di pratica quando serve un obiettivo chiaro.',
+          'Scegli un figlio e un’abilità dalla sezione Famiglia.',
+          'Avvia una sessione di pratica quando serve un obiettivo chiaro.',
           'Collega minuti di concentrazione a XP e progresso.',
           'I figli vedono i timer avviati dai genitori.'
         ]
       },
       {
-        title: 'Lavorate insieme verso obiettivi',
+        title: 'Obiettivi da raggiungere insieme',
         body:
-          'Family supporta obiettivi settimanali e complimenti, così la guida non diventa solo controllo.',
+          'Family supporta obiettivi settimanali e complimenti, così il sostegno dei genitori non si riduce al semplice controllo.',
         bullets: [
           'Imposta obiettivi in minuti o sessioni.',
           'Invia complimenti per impegno e crescita.',
-          'Dai alla famiglia un prossimo passo chiaro.',
+          'Offri alla famiglia un percorso chiaro da seguire.',
           'Family costa EUR 6.99 al mese o EUR 69.99 all’anno.'
         ]
       }
@@ -4123,12 +4127,12 @@ pages.it = {
       {
         question: 'I genitori possono avviare timer per i figli?',
         answer:
-          'Sì. Con Family, genitori e proprietari possono avviare timer per i figli dentro l’ambiente famiglia.'
+          'Sì. Con Family, genitori e proprietari possono avviare i timer per i figli all’interno della sezione Famiglia.'
       },
       {
         question: 'Posso vedere i progressi di mio figlio?',
         answer:
-          'Sì. Family include statistiche dei figli con sessioni, minuti, XP, suddivisione per skill e attività recente.'
+          'Sì. Family include statistiche dei figli con sessioni, minuti, XP, suddivisione per abilità e attività recente.'
       },
       {
         question: 'Family è incluso in Premium?',
@@ -4144,26 +4148,27 @@ pages.it = {
   },
   'skill-tracker': {
     ...pages.en['skill-tracker'],
-    title: 'Monitora competenze, non solo attività',
-    metaTitle: 'App Skill Tracker | XP, livelli e progresso | SkillQuest',
+    title: 'Monitora le abilità, non solo le attività',
+    eyebrow: 'Tracciamento delle abilità',
+    metaTitle: 'App per tracciare le abilità | XP, livelli e progresso | SkillQuest',
     metaDescription:
-      'SkillQuest è uno Skill Tracker per studio, sport, musica, lettura, codice, lavoro creativo e routine. Avvia timer e monitora XP, livelli e progresso.',
+      'SkillQuest ti aiuta a tracciare le abilità: studio, sport, musica, lettura, programmazione, lavoro creativo e routine. Avvia i timer e segui XP, livelli e progressi.',
     summary:
-      'SkillQuest ti aiuta a sviluppare competenze collegando tempo reale di pratica a progresso, XP, livelli e statistiche.',
+      'SkillQuest ti aiuta a sviluppare abilità collegando tempo reale di pratica a progresso, XP, livelli e statistiche.',
     cardSummary:
-      'Monitora competenze, XP, livelli, serie e tempo di concentrazione in un’app mobile.',
+      'Monitora abilità, XP, livelli, serie e tempo di concentrazione in un’app mobile.',
     primaryCta: 'Scarica SkillQuest',
-    secondaryCta: 'Vedi Focus Timer',
+    secondaryCta: 'Vedi i timer di concentrazione',
     sections: [
       {
-        title: 'Parti dalla competenza, non da un’attività generica',
+        title: 'Parti dall’abilità, non da un’attività generica',
         body:
-          'SkillQuest orienta ogni sessione verso una competenza, così lavoro, apprendimento e hobby diventano sviluppo visibile.',
+          'SkillQuest orienta ogni sessione verso un’abilità, così lavoro, apprendimento e hobby diventano sviluppo visibile.',
         bullets: [
-          'Usa skill iniziali o crea skill personali.',
-          'Monitora studio, sport, musica, lettura, codice e lavoro creativo.',
+          'Usa abilità iniziali o crea abilità personalizzate.',
+          'Monitora studio, sport, musica, lettura, programmazione e lavoro creativo.',
           'Combina timer con XP, livelli e serie.',
-          'Vedi quali competenze ricevono davvero attenzione.'
+          'Vedi quali abilità ricevono davvero attenzione.'
         ]
       },
       {
@@ -4180,65 +4185,66 @@ pages.it = {
       {
         title: 'Inizia gratis, passa a un piano superiore quando serve',
         body:
-          'Guest Mode e le funzioni Free aiutano a iniziare. Premium e Family aggiungono più profondità quando SkillQuest entra nella tua routine.',
+          'La Modalità ospite e le funzioni Free aiutano a iniziare. Premium e Family aggiungono più profondità quando SkillQuest entra nella tua routine.',
         bullets: [
-          'Guest Mode per iniziare rapidamente.',
-          'Premium per più libertà timer e statistiche.',
+          'Modalità ospite per iniziare subito.',
+          'Premium per più libertà con i timer e le statistiche.',
           'Family per struttura genitore-figlio.',
-          'Sincronizzazione attenta alla privacy per gli account.'
+          'Sincronizzazione rispettosa della privacy per gli account.'
         ]
       }
     ],
     faq: [
       {
-        question: 'Quali competenze posso monitorare?',
+        question: 'Quali abilità posso monitorare?',
         answer:
           'SkillQuest può essere usato per studio, lavoro, fitness, musica, lettura, programmazione, progetti creativi e routine personali.'
       },
       {
-        question: 'Posso creare skill personali?',
+        question: 'Posso creare abilità personalizzate?',
         answer:
-          'Sì. SkillQuest supporta skill personalizzate, così l’app si adatta alla tua routine reale.'
+          'Sì. SkillQuest supporta abilità personalizzate, così l’app si adatta alla tua routine reale.'
       },
       {
         question: 'SkillQuest è un habit tracker?',
         answer:
-          'SkillQuest si sovrappone in parte agli habit tracker, ma si concentra di più su competenze, tempo di concentrazione, XP, livelli e progresso misurabile.'
+          'SkillQuest si sovrappone in parte agli habit tracker, ma si concentra di più su abilità, tempo di concentrazione, XP, livelli e progresso misurabile.'
       }
     ]
   },
   'progress-statistics': {
     ...pages.en['progress-statistics'],
-    title: 'Vedi progressi in statistiche, XP e storico delle skill',
-    metaTitle: 'Statistiche di progresso | Skill Tracking e XP | SkillQuest',
+    title: 'Vedi i tuoi progressi con statistiche, XP e storico delle abilità',
+    eyebrow: 'Monitoraggio dei progressi',
+    metaTitle: 'Statistiche di progresso | Tracciamento abilità e XP | SkillQuest',
     metaDescription:
-      'Visualizza statistiche SkillQuest per giorno, settimana, mese e anno. Monitora XP, sessioni, minuti, suddivisioni per skill e statistiche dei figli con Family.',
+      'Consulta le statistiche di SkillQuest per giorno, settimana, mese e anno: XP, sessioni, minuti, suddivisione per abilità e statistiche dei figli con Family.',
     summary:
-      'SkillQuest rende misurabile il tempo di pratica con statistiche, suddivisioni per skill, XP, storico sessioni e progresso per periodo.',
+      'SkillQuest rende misurabile il tempo di pratica con statistiche, suddivisioni per abilità, XP, storico sessioni e progresso per periodo.',
     cardSummary:
-      'Statistiche per minuti di concentrazione, sessioni, XP, skill e progresso dei figli con Family.',
+      'Statistiche per minuti di concentrazione, sessioni, XP, abilità e progresso dei figli con Family.',
     primaryCta: 'Scarica SkillQuest',
     secondaryCta: 'Confronta Premium',
     sections: [
       {
         title: 'Capisci dove va il tuo tempo',
         body:
-          'Le statistiche aiutano a vedere schemi nel tempo di pratica e nel focus per skill, senza presentarli come risultati garantiti.',
+          'Le statistiche ti aiutano a individuare schemi nel tempo di pratica e nella concentrazione per abilità, senza presentarli come risultati garantiti.',
         bullets: [
           'Vedi sessioni e minuti per periodo.',
-          'Confronta skill e attività.',
+          'Confronta abilità e attività.',
           'Usa XP e livelli come segnali di progresso.',
           'Controlla sessioni recenti e storico.'
         ]
       },
       {
-        title: 'Insight più profondi con Premium',
+        title: 'Analisi più approfondite con Premium',
         body:
-          'Premium è pensato per utenti che vogliono andare oltre le statistiche di base.',
+          'Premium è pensato per chi vuole andare oltre le statistiche di base.',
         bullets: [
           'Statistiche e trend ampliati.',
           'Più storico per routine a lungo termine.',
-          'Migliore visibilità sulle suddivisioni per skill.'
+          'Migliore visibilità sulle suddivisioni per abilità.'
         ]
       },
       {
@@ -4248,7 +4254,7 @@ pages.it = {
         bullets: [
           'Statistiche dei figli con sessioni, minuti e XP.',
           'Attività timer per vedere quando inizia la pratica.',
-          'Obiettivi e complimenti rendono la guida più concreta.',
+          'Obiettivi e complimenti rendono il sostegno più concreto.',
           'Family è un abbonamento separato per famiglie.'
         ]
       }
@@ -4257,31 +4263,31 @@ pages.it = {
       {
         question: 'Quali statistiche mostra SkillQuest?',
         answer:
-          'SkillQuest mostra sessioni, minuti, XP, progresso per skill e attività su diversi periodi.'
+          'SkillQuest mostra sessioni, minuti, XP, progresso per abilità e attività su diversi periodi.'
       },
       {
         question: 'Posso vedere trend a lungo termine?',
         answer:
-          'Premium include statistiche ampliate e più storico. Controlla l’app per l’insieme attuale delle funzioni visibili.'
+          'Premium include statistiche ampliate e più storico. Controlla nell’app quali funzioni sono disponibili al momento.'
       },
       {
         question: 'I genitori possono vedere le statistiche dei figli?',
         answer:
-          'Sì. Family include statistiche dei figli per genitori e proprietari dentro l’ambiente famiglia.'
+          'Sì. Family include statistiche dei figli per genitori e proprietari nella sezione Famiglia.'
       }
     ]
   },
   'pomodoro-timer': {
     slug: 'pomodoro-timer',
     eyebrow: 'Timer Pomodoro',
-    title: 'Un timer Pomodoro pensato su misura per le tue capacità',
-    metaTitle: 'App Pomodoro Timer | Sessioni di studio e concentrazione | SkillQuest',
+    title: 'Un timer Pomodoro su misura per le tue abilità',
+    metaTitle: 'Timer Pomodoro | Sessioni di studio e concentrazione | SkillQuest',
     metaDescription:
-      'Usa SkillQuest come timer Pomodoro gratuito per studiare e lavorare con concentrazione. Ogni sprint di 25 minuti ti fa guadagnare XP, salire di livello e migliorare le tue abilità.',
+      'Timer Pomodoro gratuito per studiare e lavorare con concentrazione. Ogni sprint di 25 minuti ti fa guadagnare XP, salire di livello e crescere nelle tue abilità.',
     summary:
       'Il classico ritmo Pomodoro 25/5, integrato in SkillQuest in modo che ogni sprint ti faccia guadagnare XP, livelli e progressi per l\'abilità che stai esercitando.',
     cardSummary:
-      'Il classico ritmo di progressione 25/5, legato all\'XP, ai livelli e al progresso delle abilità.',
+      'Il classico ritmo Pomodoro 25/5, legato a XP, livelli e progressi nelle abilità.',
     screenshot: '02-focus-timer.png',
     primaryCta: 'Scarica SkillQuest',
     secondaryCta: 'Confronta le tecniche di timer',
@@ -4297,13 +4303,13 @@ pages.it = {
         ]
       },
       {
-        title: 'Ogni sprint conta ai fini dell\'acquisizione di un\'abilità',
+        title: 'Ogni sprint conta per un\'abilità',
         body:
-          'Un timer Pomodoro da solo misura solo il tempo. SkillQuest collega ogni sprint all’abilità che hai scelto, così la concentrazione si trasforma in un progresso tangibile.',
+          'Un semplice timer Pomodoro misura soltanto il tempo. SkillQuest collega ogni sprint all’abilità che hai scelto, così la concentrazione si trasforma in un progresso tangibile.',
         bullets: [
           'Guadagna XP dopo ogni sessione Pomodoro completata.',
           'Guarda le sessioni raggruppate per abilità nelle tue statistiche.',
-          'Tieni traccia delle serie consecutive per mantenere costanti le tue abitudini con il metodo Pomodoro.',
+          'Tieni traccia delle serie per restare costante con il metodo Pomodoro.',
         ]
       },
       {
@@ -4313,7 +4319,7 @@ pages.it = {
         bullets: [
           '"Deep Work" e "52-17" per le sessioni più lunghe.',
           '"Flowtime" e "Until Time" per durate flessibili.',
-          'Con l\'abbonamento Premium sblocchi tutte le tecniche relative al timer.',
+          'Con Premium sblocchi tutte le tecniche di timer.',
         ]
       },
     ],
@@ -4326,10 +4332,10 @@ pages.it = {
       {
         question: 'Posso usare il metodo Pomodoro per studiare?',
         answer:
-          'Sì. Molti utenti tengono traccia delle sessioni di studio con Pomodoro, associando ogni sprint a una competenza legata allo studio.'
+          'Sì. Molti utenti tengono traccia delle sessioni di studio con Pomodoro, associando ogni sprint a un’abilità legata allo studio.'
       },
       {
-        question: 'Cosa succede quando finisce una sessione del Pomodoro?',
+        question: 'Cosa succede quando finisce una sessione Pomodoro?',
         answer:
           'La sessione viene aggiunta alle statistiche delle tue abilità e ti fa guadagnare XP, così il tempo che dedichi alla concentrazione si trasforma in progressi tangibili.'
       },
@@ -4338,46 +4344,46 @@ pages.it = {
   streaks: {
     slug: 'streaks',
     eyebrow: 'Serie',
-    title: 'Trasforma la costanza in una serie di successi che puoi vedere con i tuoi occhi',
-    metaTitle: 'App Streak Tracker con XP | Crea abitudini quotidiane | SkillQuest',
+    title: 'Trasforma la costanza in una serie che puoi vedere crescere',
+    metaTitle: 'Serie giornaliere con XP | Crea abitudini quotidiane | SkillQuest',
     metaDescription:
-      'SkillQuest tiene traccia della serie giornaliera di ogni abilità che ti alleni, con XP, livelli e la possibilità di mettere in pausa la serie, così un giorno saltato non cancella i tuoi progressi.',
+      'SkillQuest tiene traccia della serie giornaliera per ogni abilità che alleni, con XP, livelli e congelamenti della serie: un giorno saltato non cancella i tuoi progressi.',
     summary:
-      'Una serie giornaliera tiene traccia della tua costanza nel partecipare, con l\'aggiunta di XP e livelli, così la costanza ti sembra un vero progresso, non solo un numero.',
+      'Una serie giornaliera misura la tua costanza e, insieme a XP e livelli, te la fa sentire come un vero progresso, non solo come un numero.',
     cardSummary:
-      'Serie giornaliere con XP e blocchi delle serie, così la costanza rimane ben visibile.',
+      'Serie giornaliere con XP e congelamenti della serie, così la costanza resta ben visibile.',
     screenshot: '03-session-reward.png',
-    primaryCta: 'Inizia la tua serie di vittorie consecutive',
-    secondaryCta: 'Scopri come funziona XP',
+    primaryCta: 'Inizia la tua serie',
+    secondaryCta: 'Scopri come funzionano gli XP',
     sections: [
       {
-        title: 'Serie che ti premiano solo per aver partecipato',
+        title: 'Una serie che premia la tua costanza',
         body:
-          'Ogni giorno che completi una sessione di concentrazione, la tua serie continua cresce. È un segnale semplice e visibile che trasforma la domanda “Mi sono allenato oggi?” in un conteggio progressivo.',
+          'Ogni giorno in cui completi una sessione di concentrazione, la tua serie cresce. È un segnale semplice e visibile che trasforma la domanda “Mi sono allenato oggi?” in un conteggio progressivo.',
         bullets: [
           'Guadagna 10 XP per ogni giornata attiva, oltre agli XP della sessione.',
-          'Le serie consecutive valgono per tutte le abilità che monitori.',
+          'Le serie valgono per tutte le abilità che monitori.',
           'Scopri subito la tua serie attuale e quella più lunga.',
         ]
       },
       {
-        title: 'I blocchi della serie proteggono da un errore occasionale',
+        title: 'I congelamenti della serie ti proteggono da un giorno saltato ogni tanto',
         body:
-          'A volte la vita ti mette i bastoni tra le ruote. Grazie alla funzione “Streak Freeze”, un giorno saltato non significa per forza dover ricominciare da capo dopo settimane di costanza.',
+          'A volte la vita ti mette i bastoni tra le ruote. Grazie ai congelamenti della serie, un giorno saltato non significa dover ricominciare da capo dopo settimane di costanza.',
         bullets: [
-          'Proteggi la tua serie di giorni consecutivi da qualche giorno saltato ogni tanto.',
+          'Proteggi la tua serie quando salti un giorno ogni tanto.',
           'Mantieni la motivazione a lungo termine senza quella sensazione di “tutto o niente”.',
-          'Le serie di giorni consecutivi (7, 30, 100+ giorni) possono far apparire dei post di attività che puoi condividere.',
+          'Le serie di 7, 30 o più di 100 giorni possono generare post di attività da condividere.',
         ]
       },
       {
-        title: 'Le serie di vittorie non sono solo una questione di numeri',
+        title: 'Le serie non sono solo numeri',
         body:
-          'In SkillQuest, la costanza non si limita solo a un contatore: i temi e le ricompense sono legati ai tuoi progressi.',
+          'In SkillQuest la costanza non è solo un contatore: temi e ricompense sono legati ai tuoi progressi.',
         bullets: [
           'Sblocca i temi continuando a progredire.',
-          'Combina le serie consecutive con i XP (XP) e i livelli per avere un quadro più completo.',
-          'Usa i traguardi della serie di giorni consecutivi come punti di controllo naturali.',
+          'Combina le serie con XP e livelli per avere un quadro più completo.',
+          'Usa i traguardi della serie come punti di riferimento naturali.',
         ]
       },
     ],
@@ -4390,10 +4396,10 @@ pages.it = {
       {
         question: 'Cosa succede se salto un giorno?',
         answer:
-          'I "freeze" della serie possono proteggere la tua serie da un giorno saltato ogni tanto, così un solo giorno di pausa non cancella i tuoi progressi.'
+          'I congelamenti della serie proteggono la tua serie da un giorno saltato ogni tanto, così un solo giorno di pausa non cancella i tuoi progressi.'
       },
       {
-        question: 'Il monitoraggio della serie di giorni consecutivi è gratuito?',
+        question: 'Le serie sono gratuite?',
         answer:
           'Sì. Le serie giornaliere, l\'XP e i livelli fanno parte del piano gratuito.'
       },
@@ -4403,11 +4409,11 @@ pages.it = {
     slug: 'friends-challenges',
     eyebrow: 'Amici e sfide',
     title: 'Rendi il progresso un po’ più social',
-    metaTitle: 'App "Friends & Challenges" | Responsabilità per concentrazione e competenze | SkillQuest',
+    metaTitle: 'Amici e sfide | Resta motivato e migliora le tue abilità | SkillQuest',
     metaDescription:
-      'Aggiungi amici, partecipa alle sfide XP Race e Active Days e condividi i tuoi progressi come preferisci grazie alle funzionalità social e alle impostazioni sulla privacy di SkillQuest.',
+      'Aggiungi amici, partecipa alle sfide (Gara XP, Battaglia dei giorni attivi) e condividi i progressi come vuoi, con le impostazioni sulla privacy di SkillQuest.',
     summary:
-      'Aggiungi amici, lancia delle sfide e trova qualcuno che ti sproni quando ne hai voglia, con impostazioni sulla privacy che ti permettono di condividere solo come vuoi tu.',
+      'Aggiungi amici, lancia delle sfide e trova qualcuno che ti sproni quando ne hai bisogno, con impostazioni sulla privacy che ti permettono di condividere solo come vuoi tu.',
     cardSummary:
       'Amici, sfide e un feed delle attività, con impostazioni sulla privacy che decidi tu.',
     screenshot: '06-social-family.png',
@@ -4415,21 +4421,21 @@ pages.it = {
     secondaryCta: 'Visualizza le classifiche',
     sections: [
       {
-        title: 'Aggiungi degli amici per sentirti davvero responsabile',
+        title: 'Aggiungi amici per sentirti davvero coinvolto',
         body:
-          'Se segui i tuoi progressi da solo, è facile non farci caso. Aggiungere amici su SkillQuest ti dà quel senso di responsabilità che ti danno le persone che conosci davvero.',
+          'Se segui i tuoi progressi da solo, è facile lasciar perdere. Con gli amici su SkillQuest hai la spinta in più che arriva dalle persone che conosci davvero.',
         bullets: [
           'Invia e accetta richieste di amicizia direttamente dall\'app.',
-          'Visualizza le statistiche dei tuoi amici quando entrambe le parti lo consentono.',
-          'Un pulsante per la privacy ti permette di gestire la condivisione come vuoi.',
+          'Visualizza le statistiche dei tuoi amici se entrambi avete attivato la condivisione.',
+          'Un’opzione per la privacy ti permette di gestire la condivisione come vuoi.',
         ]
       },
       {
-        title: 'Sfide che contribuiscono al raggiungimento di un obiettivo comune',
+        title: 'Sfide per raggiungere un obiettivo insieme',
         body:
-          'Le sfide trasformano l\'allenamento individuale in uno sforzo collettivo, che si tratti di una XP Race o di una Active Days Battle.',
+          'Le sfide trasformano l\'allenamento individuale in uno sforzo collettivo, che si tratti di una Gara XP o di una Battaglia dei giorni attivi.',
         bullets: [
-          'Avvia una gara XP o una battaglia "Active Days" con gli amici.',
+          'Avvia una Gara XP o una Battaglia dei giorni attivi con gli amici.',
           'Segui i progressi della sfida e le attività recenti insieme ai tuoi amici.',
           'Scopri chi è in testa senza perdere di vista i tuoi progressi.',
         ]
@@ -4437,10 +4443,10 @@ pages.it = {
       {
         title: 'Un feed delle attività che celebra i traguardi raggiunti',
         body:
-          'Le serie consecutive e altri traguardi possono apparire come post di attività, così i tuoi progressi si notano senza diventare un feed pubblico.',
+          'Le serie e altri traguardi possono apparire come post di attività, così i tuoi progressi si notano senza finire su una bacheca pubblica.',
         bullets: [
           'Post automatici per traguardi come 7, 30 o 100 giorni di attività.',
-          'La pubblicazione attenta alla privacy rispetta le tue impostazioni.',
+          'La condivisione rispetta sempre la tua privacy e le tue impostazioni.',
           'Pensato per gli amici e i contatti approvati, non per una bacheca pubblica.',
         ]
       },
@@ -4466,8 +4472,8 @@ pages.it = {
   'study-timer': {
     slug: 'study-timer',
     eyebrow: 'Timer per lo studio',
-    title: 'Un timer per lo studio che non si limita a tenere d’occhio l’orologio',
-    metaTitle: 'App Study Timer | Tieni traccia delle sessioni di studio per materia | SkillQuest',
+    title: 'Un timer per lo studio che non si limita a fare da cronometro',
+    metaTitle: 'Timer per lo studio | Sessioni per materia | SkillQuest',
     metaDescription:
       'Usa SkillQuest come timer per studiare in vista di esami, compiti e ripassi. Tieni traccia del tempo dedicato allo studio per ogni materia con XP, livelli e statistiche.',
     summary:
@@ -4476,14 +4482,14 @@ pages.it = {
       'Sessioni di studio registrate per materia, con XP, livelli e statistiche.',
     screenshot: '02-focus-timer.png',
     primaryCta: 'Inizia a studiare con SkillQuest',
-    secondaryCta: 'Confronta i timer di messa a fuoco',
+    secondaryCta: 'Confronta i timer di concentrazione',
     sections: [
       {
         title: 'Tieni traccia del tempo dedicato allo studio per materia, non solo del totale',
         body:
-          'Considera ogni materia o esame come una competenza a sé stante, così potrai vedere esattamente come si ripartisce il tempo dedicato allo studio, invece di avere solo un numero complessivo.',
+          'Considera ogni materia o esame come un’abilità a sé stante, così potrai vedere esattamente come si ripartisce il tempo dedicato allo studio, invece di avere solo un numero complessivo.',
         bullets: [
-          'Crea una competenza per materia, corso o esame.',
+          'Crea un’abilità per materia, corso o esame.',
           'Scegli tra Pomodoro, Deep Work o Flowtime a seconda dell\'attività.',
           'Visualizza la cronologia delle sessioni e i totali per materia.',
         ]
@@ -4494,7 +4500,7 @@ pages.it = {
           'Studiare per gli esami spesso significa alternare brevi sessioni di ripasso a sessioni più lunghe e approfondite. SkillQuest supporta entrambe le modalità senza bisogno di configurazioni aggiuntive.',
         bullets: [
           'Brevi sessioni Pomodoro con le flashcard e un ripasso veloce.',
-          'Sessioni più lunghe di “Deep Work” o “Flowtime” per gli esami di prova.',
+          'Sessioni più lunghe di Deep Work o Flowtime per le simulazioni d’esame.',
           'Pause intelligenti adatte alla tecnica che scegli.',
         ]
       },
@@ -4505,7 +4511,7 @@ pages.it = {
         bullets: [
           'I punti XP e i livelli per materia ti permettono di tenere sotto controllo i tuoi progressi.',
           'Le serie giornaliere aiutano a mantenere abitudini di studio costanti.',
-          'Le statistiche mostrano quali argomenti stanno riscuotendo attenzione e quali no.',
+          'Le statistiche mostrano a quali materie stai dedicando attenzione e a quali no.',
         ]
       },
     ],
@@ -4513,7 +4519,7 @@ pages.it = {
       {
         question: 'Posso tenere traccia del tempo dedicato allo studio per ogni materia?',
         answer:
-          'Sì. Crea un\'abilità per ogni materia o esame, e SkillQuest tiene traccia del tempo, dei XP e delle statistiche separatamente per ciascuna di esse.'
+          'Sì. Crea un\'abilità per ogni materia o esame, e SkillQuest tiene traccia del tempo, degli XP e delle statistiche separatamente per ciascuna di esse.'
       },
       {
         question: 'Qual è il timer migliore per studiare?',
@@ -4521,17 +4527,17 @@ pages.it = {
           'Il metodo Pomodoro funziona bene per le sessioni di ripasso veloci, mentre il Deep Work o il Flowtime sono più adatti a sessioni più lunghe di studio o di simulazioni d’esame.'
       },
       {
-        question: 'Lo Study Timer è gratuito?',
+        question: 'Il timer per lo studio è gratuito?',
         answer:
-          'Sì. Il monitoraggio delle competenze, il metodo Pomodoro, gli XP e i livelli sono disponibili anche nella versione gratuita.'
+          'Sì. Il monitoraggio delle abilità, il metodo Pomodoro, gli XP e i livelli sono disponibili anche nella versione gratuita.'
       },
     ]
   },
   'deep-work-flowtime': {
     slug: 'deep-work-flowtime',
     eyebrow: 'Deep Work & Flowtime',
-    title: 'Blocchi di concentrazione più lunghi per i lavori che richiedono maggiore approfondimento',
-    metaTitle: 'Timer per Deep Work & Flowtime | Sessioni di concentrazione Premium | SkillQuest',
+    title: 'Blocchi di concentrazione più lunghi per il lavoro che richiede approfondimento',
+    metaTitle: 'Timer Deep Work e Flowtime | Concentrazione Premium | SkillQuest',
     metaDescription:
       'Usa Deep Work, 52-17 e Flowtime su SkillQuest per sessioni di concentrazione più lunghe e senza interruzioni. Tecniche di timer Premium con durata personalizzabile.',
     summary:
@@ -4539,8 +4545,8 @@ pages.it = {
     cardSummary:
       'Deep Work, 52-17 e Flowtime per sessioni di concentrazione più lunghe e flessibili.',
     screenshot: '02-focus-timer.png',
-    primaryCta: 'Confronta le tariffe Premium',
-    secondaryCta: 'Visualizza tutte le tecniche relative al timer',
+    primaryCta: 'Confronta i piani Premium',
+    secondaryCta: 'Vedi tutte le tecniche di timer',
     sections: [
       {
         title: 'Deep Work per sessioni di concentrazione senza interruzioni',
@@ -4553,11 +4559,11 @@ pages.it = {
         ]
       },
       {
-        title: '52-17 per un ritmo strutturato a focus lungo',
+        title: '52-17 per un ritmo strutturato su sessioni lunghe',
         body:
           '52 minuti di concentrazione seguiti da una pausa di 17 minuti: è un ritmo che si basa sui cicli naturali dell\'attenzione, utile per sessioni di lavoro o studio più lunghe.',
         bullets: [
-          'Un rapporto fisso tra concentrazione e distensione, ispirato alla ricerca.',
+          'Un rapporto fisso tra concentrazione e pausa, ispirato alla ricerca.',
           'Ideale per sessioni di lavoro o studio che durano diverse ore.',
           'Incluso nella versione Premium insieme ad altre tecniche di timer.',
         ]
@@ -4585,21 +4591,21 @@ pages.it = {
           'No. Il metodo 52-17 prevede periodi di concentrazione e pause più lunghi rispetto al classico ritmo Pomodoro 25/5.'
       },
       {
-        question: 'Queste tecniche con il timer sono gratuite?',
+        question: 'Queste tecniche di timer sono gratuite?',
         answer:
-          'Deep Work, 52-17 e Flowtime fanno parte del pacchetto Premium, insieme alle durate personalizzate dei timer e alle statistiche più approfondite.'
+          'Deep Work, 52-17 e Flowtime fanno parte di Premium, insieme alle durate personalizzate dei timer e alle statistiche più approfondite.'
       },
     ]
   },
   leaderboards: {
     slug: 'leaderboards',
     eyebrow: 'Classifiche',
-    title: 'Scopri come stai andando rispetto agli altri, secondo i tuoi criteri',
-    metaTitle: 'App con classifiche e graduatorie | Mettiti alla prova e migliora le tue abilità | SkillQuest',
+    title: 'Scopri a che punto sei, con i tuoi tempi',
+    metaTitle: 'Classifiche e leghe | Mettiti alla prova a modo tuo | SkillQuest',
     metaDescription:
-      'Le classifiche di SkillQuest mettono a confronto i XP (XP) e i giorni di attività su base settimanale, mensile e complessiva, con leghe che vanno dal bronzo al diamante per motivarti sempre.',
+      'Le classifiche di SkillQuest confrontano XP e giorni di attività su base settimanale, mensile e complessiva, con leghe dal bronzo al diamante.',
     summary:
-      'Le classifiche trasformano i punti XP e i giorni di attività in una classifica che puoi controllare settimanalmente, mensilmente o di tutti i tempi, con campionati che danno alla competizione un senso di progressione.',
+      'Le classifiche trasformano XP e giorni di attività in una graduatoria che puoi controllare ogni settimana, ogni mese o di tutti i tempi, con leghe che danno alla competizione un senso di progressione.',
     cardSummary:
       'Classifiche settimanali, mensili e di tutti i tempi con leghe che vanno dal bronzo al diamante.',
     screenshot: '05-rankings.png',
@@ -4609,9 +4615,9 @@ pages.it = {
       {
         title: 'Classifiche relative a diversi periodi di tempo',
         body:
-          'Una classifica unica di tutti i tempi può sembrare irraggiungibile se sei appena agli inizi. SkillQuest, invece, stilano classifiche su base settimanale, mensile e di tutti i tempi.',
+          'Una classifica unica di tutti i tempi può sembrare irraggiungibile se sei appena agli inizi. SkillQuest, invece, propone classifiche su base settimanale, mensile e di tutti i tempi.',
         bullets: [
-          'Le classifiche settimanali e mensili azzerano regolarmente la gara.',
+          'Le classifiche settimanali e mensili ripartono da zero a ogni nuovo periodo.',
           'Le classifiche di tutti i tempi premiano la costanza nel lungo periodo.',
           'Le classifiche si basano sui punti XP e sui giorni di attività.',
         ]
@@ -4619,9 +4625,9 @@ pages.it = {
       {
         title: 'Le leghe danno un senso di progressione',
         body:
-          'I livelli, dal bronzo al diamante, trasformano la competizione in un percorso da affrontare, non in una classifica fissa e univoca.',
+          'Le leghe, dal bronzo al diamante, trasformano la competizione in un percorso da affrontare, non in una classifica fissa e univoca.',
         bullets: [
-          'Sali di livello nelle leghe man mano che rimani attivo.',
+          'Sali di lega man mano che resti attivo.',
           'Gareggia contro persone del tuo stesso livello, non contro tutti insieme.',
           'Le leghe si affiancano agli amici e alle sfide per darti una motivazione in più.',
         ]
@@ -4631,8 +4637,8 @@ pages.it = {
         body:
           'Le classifiche vanno di pari passo con le tue statistiche personali, non le sostituiscono, quindi competere non significa perdere di vista la tua crescita personale.',
         bullets: [
-          'L\'XP personale, i livelli e le serie consecutive rimangono visibili indipendentemente dal grado.',
-          'Le classifiche vanno di pari passo con gli amici e le sfide.',
+          'I tuoi XP, i livelli e le serie restano visibili qualunque sia la tua posizione.',
+          'Le classifiche si affiancano agli amici e alle sfide.',
           'Utile per chi ama competere, facoltativo per tutti gli altri.',
         ]
       },
@@ -4644,28 +4650,28 @@ pages.it = {
           'Le classifiche si basano sui punti XP e sui giorni di attività, riportati su base settimanale, mensile e complessiva.'
       },
       {
-        question: 'Cosa sono i campionati?',
+        question: 'Cosa sono le leghe?',
         answer:
           'Le leghe raggruppano gli utenti da bronzo a diamante, così ti trovi a competere contro persone di livello simile invece che contro tutti contemporaneamente.'
       },
       {
         question: 'Devo partecipare a una competizione per usare SkillQuest?',
         answer:
-          'No. Le classifiche e i campionati sono facoltativi. Il monitoraggio delle abilità principali, l\'XP e i livelli funzionano allo stesso modo sia con che senza di essi.'
+          'No. Le classifiche e le leghe sono facoltative. Il tracciamento delle abilità, gli XP e i livelli funzionano allo stesso modo con o senza di esse.'
       },
     ]
   },
   themes: {
     slug: 'themes',
     eyebrow: 'Temi',
-    title: 'Fai in modo che SkillQuest sembri proprio la tua app',
-    metaTitle: 'Temi e personalizzazione dell\'app | Temi chiari, scuri e sbloccabili | SkillQuest',
+    title: 'Personalizza SkillQuest per renderla davvero tua',
+    metaTitle: 'Temi e personalizzazione | Chiaro, scuro e sbloccabili | SkillQuest',
     metaDescription:
       'SkillQuest supporta la modalità chiara, scura e quella di sistema, oltre a temi sbloccabili legati ai tuoi progressi, così l\'app avrà proprio l\'aspetto che desideri.',
     summary:
       'La modalità chiara, quella scura, la modalità di sistema e una serie di temi sbloccabili ti permettono di personalizzare l\'aspetto e l\'esperienza di SkillQuest proprio come vuoi tu, con alcuni temi legati ai tuoi progressi.',
     cardSummary:
-      'Modalità chiara, scura e di sistema, oltre ai temi che sblocchi man mano che avanzi nel gioco.',
+      'Modalità chiara, scura e di sistema, oltre ai temi che sblocchi man mano che progredisci.',
     screenshot: '07-themes-profile.png',
     primaryCta: 'Scarica SkillQuest',
     secondaryCta: 'Scopri come funzionano le serie',
@@ -4685,9 +4691,9 @@ pages.it = {
         body:
           'Alcuni temi sono legati ai tuoi progressi, quindi la personalizzazione diventa un’altra forma di crescita visibile, non solo un menu delle impostazioni.',
         bullets: [
-          'Sblocca temi aggiuntivi continuando a progredire nel gioco.',
-          'Gli sblocchi gratuiti si affiancano alle opzioni dei temi Premium.',
-          'Lo sblocco dei temi è collegato allo stesso sistema di serie di vittorie consecutive e XP di tutte le altre funzionalità.',
+          'Sblocca temi aggiuntivi continuando a progredire.',
+          'I temi sbloccabili gratuitamente si affiancano alle opzioni del piano Premium.',
+          'Lo sblocco dei temi è collegato allo stesso sistema di serie e XP del resto dell\'app.',
         ]
       },
       {
@@ -4710,7 +4716,7 @@ pages.it = {
       {
         question: 'Come faccio a sbloccare altri temi?',
         answer:
-          'Alcuni temi si sbloccano man mano che vai avanti nel gioco, ad esempio con le serie di risultati positivi, oltre a quelli disponibili con l\'abbonamento Premium.'
+          'Alcuni temi si sbloccano man mano che progredisci, ad esempio con le serie, oltre a quelli disponibili con l\'abbonamento Premium.'
       },
       {
         question: 'I temi cambiano il funzionamento dell\'app?',
@@ -4721,15 +4727,15 @@ pages.it = {
   },
   'guest-mode': {
     slug: 'guest-mode',
-    eyebrow: 'Guest Mode',
+    eyebrow: 'Modalità ospite',
     title: 'Prova SkillQuest prima di creare un account',
-    metaTitle: 'Guest Mode | Prova SkillQuest senza account | SkillQuest',
+    metaTitle: 'Modalità ospite | Prova SkillQuest senza account | SkillQuest',
     metaDescription:
-      'La Guest Mode di SkillQuest ti permette di tenere traccia delle tue abilità, impostare timer di concentrazione e guadagnare XP in locale prima di creare un account, così puoi provarla senza rischi.',
+      'La Modalità ospite di SkillQuest ti permette di tracciare le tue abilità, usare i timer di concentrazione e guadagnare XP in locale, prima di creare un account.',
     summary:
-      'La Guest Mode ti permette di saltare la fase di registrazione. Tieni traccia delle tue abilità, imposta i timer di concentrazione e guadagna XP direttamente sul tuo dispositivo, poi crea un account quando sei pronto.',
+      'La Modalità ospite ti permette di saltare la fase di registrazione. Tieni traccia delle tue abilità, imposta i timer di concentrazione e guadagna XP direttamente sul tuo dispositivo, poi crea un account quando sei pronto.',
     cardSummary:
-      'Prova le funzioni di monitoraggio delle competenze fondamentali e i timer di concentrazione in locale, prima di creare un account.',
+      'Prova le funzioni di monitoraggio delle abilità fondamentali e i timer di concentrazione in locale, prima di creare un account.',
     screenshot: '01-home-progress.png',
     primaryCta: 'Inizia come ospite',
     secondaryCta: 'Confronta i piani Free, Premium e Family',
@@ -4737,17 +4743,17 @@ pages.it = {
       {
         title: 'Non serve un account per iniziare',
         body:
-          'La Guest Mode ti permette di aprire SkillQuest e iniziare subito a monitorare una competenza, senza dover prima registrarti.',
+          'La Modalità ospite ti permette di aprire SkillQuest e iniziare subito a monitorare un’abilità, senza dover prima registrarti.',
         bullets: [
-          'Il monitoraggio delle abilità principali, i timer di concentrazione, l\'XP e i livelli funzionano in Guest Mode.',
+          'Il monitoraggio delle abilità principali, i timer di concentrazione, l\'XP e i livelli funzionano in Modalità ospite.',
           'I progressi vengono salvati localmente sul tuo dispositivo.',
           'Non serve né un indirizzo email né un account per provare l\'app.',
         ]
       },
       {
-        title: 'Crea un account quando ti sembra opportuno',
+        title: 'Crea un account quando vuoi',
         body:
-          'La Guest Mode è un punto di partenza, non un vicolo cieco. Quando sarai pronto per la sincronizzazione, gli amici o le classifiche, creando un account potrai portare avanti i tuoi progressi locali.',
+          'La Modalità ospite è un punto di partenza, non un vicolo cieco. Quando sarai pronto per la sincronizzazione, gli amici o le classifiche, creando un account potrai portare avanti i tuoi progressi locali.',
         bullets: [
           'Passa a un account completo senza perdere i tuoi progressi locali.',
           'Sblocca la sincronizzazione tra dispositivi, amici e classifiche.',
@@ -4755,7 +4761,7 @@ pages.it = {
         ]
       },
       {
-        title: 'Cosa rimane limitato nella Guest Mode',
+        title: 'Cosa rimane limitato nella Modalità ospite',
         body:
           'Alcune funzioni sono per loro natura legate all\'account, dato che coinvolgono altre persone o la sincronizzazione tra dispositivi.',
         bullets: [
@@ -4769,15 +4775,15 @@ pages.it = {
       {
         question: 'Devo avere un account per usare SkillQuest?',
         answer:
-          'No. La Guest Mode ti permette di usare le funzioni principali di monitoraggio delle abilità e i timer di concentrazione senza creare un account.'
+          'No. La Modalità ospite ti permette di usare le funzioni principali di monitoraggio delle abilità e i timer di concentrazione senza creare un account.'
       },
       {
         question: 'Cosa succede ai miei progressi se creo un account più avanti?',
         answer:
-          'Se passi dalla Guest Mode, i tuoi progressi locali verranno trasferiti nel tuo nuovo account.'
+          'Se passi dalla Modalità ospite, i tuoi progressi locali verranno trasferiti nel tuo nuovo account.'
       },
       {
-        question: 'Cosa non posso fare in Guest Mode?',
+        question: 'Cosa non posso fare in Modalità ospite?',
         answer:
           'Le funzioni "Amici", "Sfide", "Classifiche" e "Family" richiedono un account, poiché prevedono la sincronizzazione con altre persone.'
       },

@@ -32,7 +32,7 @@ Se ti registri per l'accesso anticipato alla nostra beta Android, raccogliamo:
 - Nome (facoltativo)
 - Preferenza di piattaforma (Android)
 
-Questi dati vengono archiviati in modo sicuro in **Supabase** (server UE) e utilizzati per tenerti aggiornato sul lancio dell'app.
+Questi dati vengono archiviati in modo sicuro in **Supabase** (server negli Stati Uniti) e utilizzati per tenerti aggiornato sul lancio dell'app.
 
 ### 3.3 Moduli di Contatto
 Se ci contatti tramite un modulo di contatto, raccogliamo:
@@ -93,7 +93,7 @@ Utilizziamo i seguenti servizi conformi al GDPR:
 | Servizio | Scopo | Ubicazione | Stato GDPR |
 |----------|-------|------------|------------|
 | **Vercel** | Hosting web e analisi | UE/USA | Clausole Contrattuali Standard (SCC) |
-| **Supabase** | Database per lista d'attesa e dati dell'app | Server UE | Conforme GDPR |
+| **Supabase** | Database per lista d'attesa e dati dell'app | USA | Clausole Contrattuali Standard (SCC) |
 | **Resend** | Invio e-mail per moduli di contatto | USA | Conforme GDPR, SCC |
 | **Google Play Services** | Distribuzione app Android (futura) | USA | Conforme GDPR |
 
@@ -167,7 +167,7 @@ Alcuni dei nostri servizi di terze parti (ad es. Vercel, Resend) possono archivi
 - I servizi rispettino i requisiti del GDPR
 - Siano implementate misure tecniche e organizzative appropriate
 
-I tuoi dati principali dell'app vengono archiviati su **server UE** (regione UE di Supabase).
+I tuoi dati principali dell'app vengono archiviati da Supabase su server negli **Stati Uniti**.
 
 ## 13. Modifiche a Questa Informativa sulla Privacy
 

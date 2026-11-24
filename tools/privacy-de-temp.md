@@ -33,7 +33,7 @@ Wenn Sie sich f├╝r den fr├╝hen Zugang zu unserer Android Beta anmelden, 
 - Name (optional)
 - Plattformpr├ñferenz (Android)
 
-Diese Daten werden sicher in **Supabase** (EU-Server) gespeichert und verwendet, um Sie ├╝ber den Start der App auf dem Laufenden zu halten.
+Diese Daten werden sicher in **Supabase** (Server in den USA) gespeichert und verwendet, um Sie ├╝ber den Start der App auf dem Laufenden zu halten.
 
 ### 3.3 Kontaktformulare
 Wenn Sie uns ├╝ber ein Kontaktformular kontaktieren, sammeln wir:
@@ -94,7 +94,7 @@ Wir verwenden die folgenden DSGVO-konformen Dienste:
 | Dienst | Zweck | Standort | DSGVO-Status |
 |---|---|---|---|
 | **Vercel** | Website-Hosting und -Analysen | EU/US | Standardvertragsklauseln (SCC) |
-| **Supabase** | Datenbank f├╝r Warteliste und App-Daten | EU-Server | DSGVO-konform |
+| **Supabase** | Datenbank f├╝r Warteliste und App-Daten | US | Standardvertragsklauseln (SCC) |
 | **Resend** | E-Mail-Zustellung f├╝r Kontaktformulare | US | DSGVO-konform, SCC |
 | **Google Play Services** | Android App-Distribution (zuk├╝nftig) | US | DSGVO-konform |
 
@@ -168,7 +168,7 @@ Einige unserer Drittanbieterdienste (z.B. Vercel, Resend) k├Ânnen Daten auf S
 - Dienste die DSGVO-Anforderungen erf├╝llen
 - Angemessene technische und organisatorische Ma├ƒnahmen implementiert sind
 
-Ihre prim├ñren App-Daten werden auf **EU-Servern** (Supabase EU-Region) gespeichert.
+Ihre prim├ñren App-Daten werden von Supabase auf Servern in den **USA** gespeichert.
 
 ## 13. ├änderungen dieser Datenschutzrichtlinie
 

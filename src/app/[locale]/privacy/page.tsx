@@ -1,6 +1,7 @@
 import {getTranslations} from 'next-intl/server'
 import {routing} from '@/i18n/routing'
 import Footer from '@/components/Footer'
+import {normalizePrivacyHtml} from '@/lib/privacy-html.mjs'
 
 const locales = routing.locales
 
@@ -27,39 +28,39 @@ export async function generateMetadata({
 // Define section keys per locale - these must match the keys in messages/{locale}.json
 const SECTION_KEYS_BY_LOCALE: Record<string, string[]> = {
   nl: [
-    'introductie', 'gegevensbeheerder', 'welkeGegevensVerzamelenWe', 'campagneAttributie', 'hoeGebruikenWeJouwGegevens',
+    'introductie', 'gegevensbeheerder', 'welkeGegevensVerzamelenWe', 'nieuwsbrief', 'hoeGebruikenWeJouwGegevens',
     'juridischeGrondslagVoorVerwerking', 'hoeBeschermenWeJouwGegevens', 'derdePartijDiensten',
     'cookiesEnTracking', 'jouwAvgRechten', 'gegevensretentie', 'kinderenEnPrivacy',
     'internationaleGegevensoverdracht', 'wijzigingenInDitPrivacybeleid', 'contactOpnemen'
   ],
   en: [
-    'introduction', 'dataController', 'whatDataDoWeCollect', 'campaignAttribution', 'howDoWeUseYourData',
+    'introduction', 'dataController', 'whatDataDoWeCollect', 'newsletter', 'howDoWeUseYourData',
     'legalBasisForProcessing', 'howDoWeProtectYourData', 'thirdpartyServices',
     'cookiesAndTracking', 'yourGdprRights', 'dataRetention', 'childrenAndPrivacy',
     'internationalDataTransfer', 'changesToThisPrivacyPolicy', 'contactUs'
   ],
   de: [
     'einleitung', 'verantwortlicherFrDieDatenverarbeitung', 'welcheDatenSammelnWir',
-    'kampagnenzuordnung', 'wieVerwendenWirIhreDaten', 'rechtsgrundlageFrDieVerarbeitung', 'wieSchtzenWirIhreDaten',
+    'newsletter', 'wieVerwendenWirIhreDaten', 'rechtsgrundlageFrDieVerarbeitung', 'wieSchtzenWirIhreDaten',
     'diensteDritter', 'cookiesUndTracking', 'ihreDsgvorechte', 'datenaufbewahrung',
     'kinderUndDatenschutz', 'internationaleDatenbermittlung', 'nderungenDieserDatenschutzrichtlinie',
     'kontaktAufnehmen'
   ],
   fr: [
     'introduction', 'responsableDuTraitement', 'quellesDonnesCollectonsnous',
-    'attributionDeCampagne', 'commentUtilisonsnousVosDonnes', 'baseJuridiqueDuTraitement', 'commentProtgeonsnousVosDonnes',
+    'newsletter', 'commentUtilisonsnousVosDonnes', 'baseJuridiqueDuTraitement', 'commentProtgeonsnousVosDonnes',
     'servicesTiers', 'cookiesEtSuivi', 'vosDroitsEnVertuDuRgpd', 'conservationDesDonnes',
     'enfantsEtConfidentialit', 'transfertInternationalDeDonnes',
     'modificationsDeCettePolitiqueDeConfidentialit', 'nousContacter'
   ],
   es: [
-    'introduccin', 'responsableDelTratamiento', 'quDatosRecopilamos', 'atribucionDeCampana', 'cmoUsamosTusDatos',
+    'introduccin', 'responsableDelTratamiento', 'quDatosRecopilamos', 'boletin', 'cmoUsamosTusDatos',
     'baseLegalParaElTratamiento', 'cmoProtegemosTusDatos', 'serviciosDeTerceros',
     'cookiesYSeguimiento', 'tusDerechosBajoElRgpd', 'retencinDeDatos', 'niosYPrivacidad',
     'transferenciaInternacionalDeDatos', 'cambiosAEstaPolticaDePrivacidad', 'contactar'
   ],
   it: [
-    'introduzione', 'titolareDelTrattamento', 'qualiDatiRaccogliamo', 'attribuzioneCampagna', 'comeUtilizziamoITuoiDati',
+    'introduzione', 'titolareDelTrattamento', 'qualiDatiRaccogliamo', 'newsletter', 'comeUtilizziamoITuoiDati',
     'baseGiuridicaPerIlTrattamento', 'comeProteggiamoITuoiDati', 'serviziDiTerzeParti',
     'cookieETracciamento', 'iTuoiDirittiAiSensiDelGdpr', 'conservazioneDeiDati',
     'bambiniEPrivacy', 'trasferimentoInternazionaleDiDati',
@@ -78,15 +79,22 @@ export default async function PrivacyPage({
   // Get section keys for current locale
   const sectionKeys = SECTION_KEYS_BY_LOCALE[locale] || SECTION_KEYS_BY_LOCALE['nl']
 
-  const sections = sectionKeys.map((key, index) => ({
-    key,
-    // Anchor ids are positional rather than derived from the translated key, so
-    // the same section is /privacy#s-9 in every language.
-    id: `s-${index + 1}`,
-    number: String(index + 1).padStart(2, '0'),
-    title: t(`sections.${key}.title`),
-    content: t.raw(`sections.${key}.content`) as string
-  }))
+  const sections = sectionKeys.map((key, index) => {
+    const title = t(`sections.${key}.title`)
+
+    return {
+      key,
+      // Anchor ids are positional rather than derived from the translated key, so
+      // the same section is /privacy#s-9 in every language.
+      id: `s-${index + 1}`,
+      number: String(index + 1).padStart(2, '0'),
+      title,
+      // The bodies still carry a few Markdown leftovers (### headings, a pipe
+      // table); normalizePrivacyHtml turns those into real HTML. The section
+      // title names the scrolling box around a table for screen readers.
+      content: normalizePrivacyHtml(t.raw(`sections.${key}.content`) as string, {tableLabel: title})
+    }
+  })
 
   return (
     <>
@@ -126,7 +134,11 @@ export default async function PrivacyPage({
               </ol>
             </nav>
 
-            <article className="max-w-3xl">
+            {/* min-w-0: a grid item is never narrower than its widest child by
+                default, and the third-party table has a minimum width. Without
+                this the table widens the whole page on a phone instead of
+                scrolling inside its own box. */}
+            <article className="min-w-0 max-w-3xl">
               {sections.map((section, index) => (
                 <section
                   key={section.key}

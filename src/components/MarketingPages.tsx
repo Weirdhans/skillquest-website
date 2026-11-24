@@ -459,26 +459,7 @@ function QrHint({src, text}: {src: string; text: string}) {
   );
 }
 
-type DownloadMarketingPageProps = PageProps & {
-  // From the ?platform= query string, e.g. set by the Android CTAs so the
-  // lead capture form below opens with Android pre-selected.
-  requestedPlatform?: string;
-};
-
-function isLeadPlatform(
-  value: string | undefined
-): value is 'ios' | 'android' | 'both' {
-  return value === 'ios' || value === 'android' || value === 'both';
-}
-
-export function DownloadMarketingPage({
-  locale,
-  copy,
-  requestedPlatform
-}: DownloadMarketingPageProps) {
-  const initialPlatform = isLeadPlatform(requestedPlatform)
-    ? requestedPlatform
-    : 'both';
+export function DownloadMarketingPage({locale, copy}: PageProps) {
   return (
     <main className="theme-page pt-20">
       <section className="theme-hero-band section-hero text-white">
@@ -571,11 +552,7 @@ export function DownloadMarketingPage({
         </div>
       </section>
 
-      <LeadCapture
-        key={initialPlatform}
-        copy={copy.lead}
-        initialPlatform={initialPlatform}
-      />
+      <LeadCapture copy={copy.lead} />
 
       <section className="section-standard theme-section-muted">
         <div className="container-custom">

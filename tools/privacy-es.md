@@ -32,7 +32,7 @@ Si te registras para acceso anticipado a nuestra beta de Android, recopilamos:
 - Nombre (opcional)
 - Preferencia de plataforma (Android)
 
-Estos datos se almacenan de forma segura en **Supabase** (servidores de la UE) y se utilizan para mantenerte informado sobre el lanzamiento de la aplicación.
+Estos datos se almacenan de forma segura en **Supabase** (servidores en Estados Unidos) y se utilizan para mantenerte informado sobre el lanzamiento de la aplicación.
 
 ### 3.3 Formularios de Contacto
 Si nos contactas a través de un formulario de contacto, recopilamos:
@@ -93,7 +93,7 @@ Utilizamos los siguientes servicios conformes con el RGPD:
 | Servicio | Propósito | Ubicación | Estado RGPD |
 |----------|-----------|-----------|-------------|
 | **Vercel** | Alojamiento web y analítica | UE/EE.UU. | Cláusulas Contractuales Tipo (CCT) |
-| **Supabase** | Base de datos para lista de espera y datos de la aplicación | Servidores UE | Conforme RGPD |
+| **Supabase** | Base de datos para lista de espera y datos de la aplicación | EE.UU. | Cláusulas Contractuales Tipo (CCT) |
 | **Resend** | Entrega de correo electrónico para formularios de contacto | EE.UU. | Conforme RGPD, CCT |
 | **Google Play Services** | Distribución de aplicación Android (futura) | EE.UU. | Conforme RGPD |
 
@@ -167,7 +167,7 @@ Algunos de nuestros servicios de terceros (por ejemplo, Vercel, Resend) pueden a
 - Los servicios cumplan con los requisitos del RGPD
 - Se implementen medidas técnicas y organizativas apropiadas
 
-Tus datos principales de la aplicación se almacenan en **servidores de la UE** (región UE de Supabase).
+Tus datos principales de la aplicación se almacenan en Supabase, en servidores en **Estados Unidos**.
 
 ## 13. Cambios a Esta Política de Privacidad
 

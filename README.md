@@ -13,7 +13,8 @@ Family-tools. Live op [skill-quest.app](https://www.skill-quest.app).
 - **Iconen**: `@phosphor-icons/react`
 - **Fonts**: Bricolage Grotesque (display), Geist (body), Geist Mono (cijfers) via
   `next/font/google`, gedeeld in `src/lib/fonts.ts`
-- **Backend**: Supabase (auth, tester-lijst), Resend (verificatie- en reset-mails)
+- **Backend**: Supabase (auth, feedback, tellers tegen misbruik), Resend (nieuwsbrief,
+  bevestigings- en reset-mails); zie [docs/NEWSLETTER.md](./docs/NEWSLETTER.md)
 - **Deployment**: Vercel, auto-deploy vanaf `master`
 
 ## Design system
@@ -43,7 +44,7 @@ skillquest-website/
 │   │   ├── invite/[code]/      # Vriendschapsuitnodiging, geen locale-prefix (deellinks)
 │   │   ├── open/[[...path]]/   # App-link "open de app": stuurt door naar de uitlegpagina op app.skill-quest.app
 │   │   ├── family/invite/[code]/
-│   │   └── api/                # subscribe, resend-verification, auth/confirm, verify
+│   │   └── api/                # subscribe, newsletter/confirm, newsletter/unsubscribe, auth/confirm, feedback
 │   ├── components/             # MarketingPages, Navbar, AuthShell, Reveal, ProductScrollTour, ...
 │   ├── lib/                    # marketing.ts, feature-pages.ts, authI18n.ts, theme-script.ts, fonts.ts
 │   └── styles/

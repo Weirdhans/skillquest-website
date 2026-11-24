@@ -31,24 +31,17 @@ export async function generateMetadata({
 }
 
 export default async function DownloadPage({
-  params,
-  searchParams
+  params
 }: {
   params: Promise<{locale: string}>;
-  searchParams: Promise<{platform?: string}>;
 }) {
   const {locale} = await params;
-  const {platform} = await searchParams;
   const safeLocale: Locale = isLocale(locale) ? locale : routing.defaultLocale;
   const copy = getMarketingCopy(safeLocale);
 
   return (
     <>
-      <DownloadMarketingPage
-        locale={safeLocale}
-        copy={copy}
-        requestedPlatform={platform}
-      />
+      <DownloadMarketingPage locale={safeLocale} copy={copy} />
       <Footer />
     </>
   );

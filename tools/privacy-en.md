@@ -38,7 +38,7 @@ If you sign up for early access to our Android beta, we collect:
 - Name (optional)
 - Platform preference (Android)
 
-This data is securely stored in **Supabase** (EU servers) and used to keep you informed about the app launch.
+This data is securely stored in **Supabase** (servers in the United States) and used to keep you informed about the app launch.
 
 ### 3.3 Contact Forms
 If you contact us via a contact form, we collect:
@@ -99,7 +99,7 @@ We use the following GDPR-compliant services:
 | Service | Purpose | Location | GDPR Status |
 |--------|------|---------|-------------|
 | **Vercel** | Website hosting and analytics | EU/US | Standard Contractual Clauses (SCC) |
-| **Supabase** | Database for waitlist and app data | EU servers | GDPR-compliant |
+| **Supabase** | Database for waitlist and app data | US | Standard Contractual Clauses (SCC) |
 | **Resend** | Email delivery for contact forms | US | GDPR-compliant, SCC |
 | **Google Play Services** | Android app distribution (future) | US | GDPR-compliant |
 
@@ -173,7 +173,7 @@ Some of our third-party services (e.g., Vercel, Resend) may store data on server
 - Services comply with GDPR requirements
 - Appropriate technical and organizational measures are implemented
 
-Your primary app data is stored on **EU servers** (Supabase EU region).
+Your primary app data is stored by Supabase on servers in the **United States**.
 
 ## 13. Changes to This Privacy Policy
 

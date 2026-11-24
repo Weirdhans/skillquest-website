@@ -2,62 +2,35 @@
 
 import {useState} from 'react';
 import {useLocale} from 'next-intl';
+import {Link} from '@/i18n/routing';
 import type {MarketingCopy} from '@/lib/marketing';
 
-type Platform = 'ios' | 'android' | 'both';
-type CampaignAttribution = {
-  utmSource?: string;
-  utmMedium?: string;
-  utmCampaign?: string;
-  referrer?: string;
-};
+// Newsletter signup. Submitting only sends a confirmation email; the address
+// is added to the list once the link in that email is confirmed. The API
+// answers the same for new and existing addresses, so this form never shows
+// whether someone is already subscribed.
+
 type Status =
   | 'idle'
   | 'loading'
   | 'success'
-  | 'error'
-  | 'duplicate'
-  | 'pending_verification';
+  | 'invalid_email'
+  | 'rate_limited'
+  | 'busy'
+  | 'error';
 
 type LeadCaptureProps = {
   copy: MarketingCopy['lead'];
-  // Pass a `key` matching this value from the caller when it can change
-  // (e.g. `key={initialPlatform}`) so a same-page navigation that only
-  // changes the query remounts this component instead of being ignored by
-  // the lazy useState initializer below.
-  initialPlatform?: Platform;
 };
 
-function getCampaignAttribution(): CampaignAttribution {
-  const searchParams = new URLSearchParams(window.location.search);
-  let referrer: string | undefined;
+// The newsletter part of the privacy policy is section 4 in every language
+// (anchors are positional, see src/app/[locale]/privacy/page.tsx).
+const PRIVACY_NEWSLETTER_HREF = '/privacy#s-4';
 
-  if (document.referrer) {
-    try {
-      const referrerUrl = new URL(document.referrer);
-      referrer = `${referrerUrl.origin}${referrerUrl.pathname}`;
-    } catch {
-      // Ignore malformed referrers instead of blocking a signup.
-    }
-  }
-
-  return {
-    utmSource: searchParams.get('utm_source') || undefined,
-    utmMedium: searchParams.get('utm_medium') || undefined,
-    utmCampaign: searchParams.get('utm_campaign') || undefined,
-    referrer
-  };
-}
-
-export default function LeadCapture({
-  copy,
-  initialPlatform = 'both'
-}: LeadCaptureProps) {
+export default function LeadCapture({copy}: LeadCaptureProps) {
   const locale = useLocale();
   const [email, setEmail] = useState('');
-  const [platform, setPlatform] = useState<Platform>(initialPlatform);
   const [status, setStatus] = useState<Status>('idle');
-  const [pendingEmail, setPendingEmail] = useState<string | null>(null);
   // Honeypot: real users never see or fill this field. Bots that
   // auto-fill every input on the page do, and we quietly drop those
   // submissions server-side instead of telling the bot it was rejected.
@@ -68,37 +41,22 @@ export default function LeadCapture({
     setStatus('loading');
 
     try {
-      const attribution = getCampaignAttribution();
       const response = await fetch('/api/subscribe', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({
-          email,
-          platform,
-          locale,
-          company,
-          utm_source: attribution.utmSource,
-          utm_medium: attribution.utmMedium,
-          utm_campaign: attribution.utmCampaign,
-          referrer: attribution.referrer
-        })
+        body: JSON.stringify({email, locale, company})
       });
-
-      const data = await response.json();
-
-      if (response.status === 409) {
-        if (data.error === 'pending_verification') {
-          setPendingEmail(data.email);
-          setStatus('pending_verification');
-        } else {
-          setStatus('duplicate');
-        }
-        return;
-      }
+      const data = (await response.json().catch(() => ({}))) as {error?: string};
 
       if (response.ok) {
         setEmail('');
         setStatus('success');
+      } else if (data.error === 'invalid_email') {
+        setStatus('invalid_email');
+      } else if (data.error === 'rate_limited') {
+        setStatus('rate_limited');
+      } else if (data.error === 'busy') {
+        setStatus('busy');
       } else {
         setStatus('error');
       }
@@ -107,37 +65,22 @@ export default function LeadCapture({
     }
   }
 
-  async function handleResend() {
-    if (!pendingEmail) return;
-
-    setStatus('loading');
-
-    try {
-      const response = await fetch('/api/resend-verification', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({email: pendingEmail})
-      });
-
-      if (response.ok) {
-        setPendingEmail(null);
-        setStatus('success');
-      } else {
-        setStatus(response.status === 429 ? 'pending_verification' : 'error');
-      }
-    } catch {
-      setStatus('error');
-    }
-  }
-
-  const platformOptions: Array<{value: Platform; label: string}> = [
-    {value: 'ios', label: copy.platforms.ios},
-    {value: 'android', label: copy.platforms.android},
-    {value: 'both', label: copy.platforms.both}
-  ];
+  const problem =
+    status === 'invalid_email'
+      ? copy.invalidEmail
+      : status === 'rate_limited'
+        ? copy.rateLimited
+        : status === 'busy'
+          ? copy.busy
+          : status === 'error'
+            ? copy.error
+            : null;
 
   return (
-    <section className="scroll-mt-20 theme-final-band py-16 text-white md:py-20">
+    <section
+      id="newsletter"
+      className="scroll-mt-20 theme-final-band py-16 text-white md:py-20"
+    >
       <div className="container-custom">
         <div className="mx-auto max-w-3xl">
           <div className="mb-8">
@@ -169,38 +112,13 @@ export default function LeadCapture({
                 opacity: 0
               }}
             />
-            <div>
-              <p className="mb-3 text-sm font-medium text-primary-100">
-                {copy.platformQuestion}
-              </p>
-              <div
-                role="group"
-                aria-label={copy.platformQuestion}
-                className="grid grid-cols-3 gap-2"
-              >
-                {platformOptions.map((option) => (
-                  <button
-                    type="button"
-                    key={option.value}
-                    onClick={() => setPlatform(option.value)}
-                    aria-pressed={platform === option.value}
-                    className={`min-h-11 rounded-lg border px-3 py-2 text-sm font-semibold transition ${
-                      platform === option.value
-                        ? 'border-white bg-white text-primary-900'
-                        : 'border-white/30 text-white hover:bg-white/10'
-                    }`}
-                  >
-                    {option.label}
-                  </button>
-                ))}
-              </div>
-            </div>
 
             <div className="flex flex-col gap-3 sm:flex-row">
               <input
                 type="email"
                 name="email"
                 autoComplete="email"
+                aria-label={copy.emailLabel}
                 value={email}
                 onChange={(event) => {
                   setEmail(event.target.value);
@@ -224,38 +142,29 @@ export default function LeadCapture({
               </button>
             </div>
 
-            {status === 'success' && (
-              <p className="rounded-lg bg-green-500 px-4 py-3 text-sm font-medium text-white">
-                {copy.success}
-              </p>
-            )}
+            <div aria-live="polite">
+              {status === 'success' && (
+                <p className="rounded-lg bg-green-500 px-4 py-3 text-sm font-medium text-white">
+                  {copy.success}
+                </p>
+              )}
 
-            {status === 'duplicate' && (
-              <p className="rounded-lg bg-primary-600 px-4 py-3 text-sm font-medium text-white">
-                {copy.duplicate}
-              </p>
-            )}
+              {problem && (
+                <p className="rounded-lg bg-red-500 px-4 py-3 text-sm font-medium text-white">
+                  {problem}
+                </p>
+              )}
+            </div>
 
-            {status === 'pending_verification' && (
-              <div className="rounded-lg bg-amber-500 px-4 py-3 text-sm font-medium text-white">
-                <p>{copy.pendingVerification}</p>
-                <button
-                  type="button"
-                  onClick={handleResend}
-                  className="mt-2 underline hover:no-underline"
-                >
-                  {copy.resendLink}
-                </button>
-              </div>
-            )}
-
-            {status === 'error' && (
-              <p className="rounded-lg bg-red-500 px-4 py-3 text-sm font-medium text-white">
-                {copy.error}
-              </p>
-            )}
-
-            <p className="text-sm text-primary-200">{copy.privacy}</p>
+            <p className="text-sm text-primary-200">
+              {copy.privacy}{' '}
+              <Link
+                href={PRIVACY_NEWSLETTER_HREF}
+                className="underline hover:text-white"
+              >
+                {copy.privacyLink}
+              </Link>
+            </p>
           </form>
         </div>
       </div>

@@ -1,0 +1,143 @@
+name: Newsletter - daily
+
+# Every day at 06:17 UTC (off the hour, because GitHub delays runs at :00):
+#   - languages that Resend reports as sent are marked sent on the state branch,
+#   - an issue that waits for approval gets a reminder on day 7 and 14, and its drafts are
+#     removed on day 21 (the articles then go into the next issue),
+#   - from the first Monday of the month: this month's issue is prepared. One Resend draft
+#     per language with new content, a preview email per language to Hans, and an issue
+#     "Nieuwsbrief YYYY-MM" with a checkbox per language.
+# Nothing goes to subscribers here: that takes the label `approved` (newsletter-send.yml).
+# A run by hand is a dry run unless `dry_run` is unticked. See docs/NEWSLETTER.md.
+#
+# This repository is public: Actions minutes cost nothing, but run logs are public. The
+# script never prints addresses, and GitHub masks the secrets.
+# Secrets: RESEND_NEWSLETTER_API_KEY (full-access Resend key), NEWSLETTER_PREVIEW_TO.
+
+on:
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run: create, send and change nothing'
+        type: boolean
+        default: true
+      rebuild:
+        description: "Prepare this month's issue again (only while nothing of it is scheduled)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write   # the branch newsletter-state
+  issues: write     # the approval issue, reminders and alerts
+
+concurrency:
+  group: newsletter-state
+  cancel-in-progress: false
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          path: code
+          persist-credentials: false
+
+      - name: Check out the state branch (created on the first run)
+        run: bash code/scripts/newsletter-state.sh state
+
+      - name: Run the daily newsletter step
+        env:
+          RESEND_NEWSLETTER_API_KEY: ${{ secrets.RESEND_NEWSLETTER_API_KEY }}
+          NEWSLETTER_PREVIEW_TO: ${{ secrets.NEWSLETTER_PREVIEW_TO }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
+          REBUILD: ${{ github.event_name == 'workflow_dispatch' && inputs.rebuild }}
+        run: |
+          set -euo pipefail
+          node --version
+          args=(daily --state state --summary summary.json)
+          if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); fi
+          if [ "$REBUILD" = "true" ]; then args+=(--rebuild); fi
+          node code/scripts/newsletter.mjs "${args[@]}"
+
+      - name: Save the state branch
+        id: save
+        if: always()
+        run: bash code/scripts/newsletter-state.sh state commit "newsletter daily ${GITHUB_RUN_ID}"
+
+      # Also after a failed run: the script writes what it knows before it prepares,
+      # so issues of earlier months are still opened, reminded and closed. Never when
+      # the state could not be saved: issues must not run ahead of the state branch.
+      - name: Open, remind and close issues
+        if: always() && steps.save.outcome == 'success' && hashFiles('summary.json') != ''
+        run: |
+          set -euo pipefail
+          if [ "$(jq -r .dryRun summary.json)" = "true" ]; then
+            echo "Dry run: no issue is opened or changed."
+            jq -r '.preview.body // "Nothing would be prepared."' summary.json
+            jq -r '.warnings[] | "warning: " + .' summary.json
+            exit 0
+          fi
+          gh label create newsletter --color 0e8a16 --description "Monthly newsletter" --repo "$GITHUB_REPOSITORY" 2>/dev/null || true
+          gh label create approved --color 1d76db --description "Schedule the ticked languages" --repo "$GITHUB_REPOSITORY" 2>/dev/null || true
+
+          # The issue list itself, not GitHub search (search lags behind new issues).
+          gh issue list --repo "$GITHUB_REPOSITORY" --state all --label newsletter --limit 200 \
+            --json number,title,state > issues.json
+          find_issue() { # find_issue <open|all> <title>: number of the newsletter issue with exactly this title
+            jq -r --arg s "$1" --arg t "$2" \
+              '[.[] | select(.title == $t and ($s == "all" or .state == "OPEN"))][0].number // empty' issues.json
+          }
+
+          jq -c '.close[]' summary.json | while read -r item; do
+            n=$(find_issue open "$(jq -r .title <<<"$item")")
+            if [ -n "$n" ]; then
+              gh issue comment "$n" --repo "$GITHUB_REPOSITORY" --body "$(jq -r .comment <<<"$item")"
+              gh issue close "$n" --repo "$GITHUB_REPOSITORY" --reason "not planned"
+            fi
+          done
+
+          jq -c '.reminders[]' summary.json | while read -r item; do
+            n=$(find_issue open "$(jq -r .title <<<"$item")")
+            if [ -n "$n" ]; then
+              gh issue comment "$n" --repo "$GITHUB_REPOSITORY" --body "$(jq -r .comment <<<"$item")"
+            fi
+          done
+
+          # Open the approval issue of every issue that waits, unless one with that title
+          # exists already (open, or closed by Hans on purpose). Also repairs a run that
+          # stopped between saving the drafts and opening the issue. A rebuilt issue has
+          # a title of its own ("(versie 2)").
+          count=$(jq '.ensure | length' summary.json)
+          for i in $(seq 0 $((count - 1))); do
+            title=$(jq -r ".ensure[$i].title" summary.json)
+            if [ -z "$(find_issue all "$title")" ]; then
+              jq -r ".ensure[$i].body" summary.json > body.md
+              if [ "$(jq '.warnings | length' summary.json)" != "0" ]; then
+                { echo; echo "Waarschuwingen:"; jq -r '.warnings[] | "- " + .' summary.json; } >> body.md
+              fi
+              gh issue create --repo "$GITHUB_REPOSITORY" --title "$title" --body-file body.md --label newsletter
+            fi
+          done
+
+      - name: Report a failed run
+        if: failure() && github.event_name == 'schedule'
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          title="Nieuwsbrief: dagelijkse stap mislukt"
+          gh label create newsletter-alert --color d93f0b --description "Newsletter needs attention" --repo "$GITHUB_REPOSITORY" 2>/dev/null || true
+          n=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --label newsletter-alert --limit 50 --json number,title \
+            | jq -r --arg t "$title" '[.[] | select(.title == $t)][0].number // empty')
+          if [ -n "$n" ]; then
+            gh issue comment "$n" --repo "$GITHUB_REPOSITORY" --body "Weer mislukt: $RUN_URL"
+          else
+            gh issue create --repo "$GITHUB_REPOSITORY" --title "$title" --label newsletter-alert \
+              --body "De dagelijkse nieuwsbriefstap is mislukt. Er is niets naar inschrijvers gegaan. Zie $RUN_URL"
+          fi
