@@ -31,67 +31,6 @@
       "dashboard": "SkillQuest-dashboard"
     }
   },
-  "features": {
-    "heading": "Waarom gezinnen voor SkillQuest kiezen",
-    "subheading": "Alles wat je nodig hebt om je gezin te laten groeien",
-    "cards": {
-      "familyMode": {
-        "title": "Gezinsmodus",
-        "description": "Ouder-kind accounts met rolgebaseerde rechten. Jij bepaalt, zij concentreren. Handig voor gezinnen met kinderen van 6-18 jaar.",
-        "highlight": "Uniek!"
-      },
-      "gamification": {
-        "title": "Gamification die werkt",
-        "description": "XP, levels, streaks, klassementen, prestaties. Vaardigheden leren voelt als een spel, maar bouwt echte vaardigheden op."
-      },
-      "timerTechniques": {
-        "title": "7 Timer Technieken",
-        "description": "Pomodoro, Flowtime, 52/17, Ultradiaans, Aangepast - wetenschappelijk bewezen methoden voor focus."
-      },
-      "parentDashboard": {
-        "title": "Dashboard voor ouders",
-        "description": "Real-time inzicht in wat je kinderen oefenen. Geen micromanagement, alleen overzicht."
-      },
-      "autoFreezeStreaks": {
-        "title": "Strepen automatisch bevriezen",
-        "description": "Beschermt automatisch strepen op drukke dagen. Geen frustratie, alleen motivatie."
-      },
-      "privacyFirst": {
-        "title": "Privacy eerst",
-        "description": "Geen verkoop van gegevens. Jouw familie, jouw gegevens.",
-        "highlight": "100% veilig"
-      }
-    },
-    "benefits": {
-      "heading": "+ Nog veel meer voordelen",
-      "items": {
-        "skills78": {
-          "title": "78 Verschillende Vaardigheden",
-          "description": "Van codering tot sport, alles is te volgen"
-        },
-        "multiDevice": {
-          "title": "Synchronisatie met meerdere apparaten",
-          "description": "Werkt op iOS, Android, Web"
-        },
-        "offline": {
-          "title": "Offline modus",
-          "description": "Traceren zonder internet, later synchroniseren"
-        },
-        "weeklyReports": {
-          "title": "Wekelijkse rapporten",
-          "description": "Automatische voortgangsrapporten via e-mail"
-        },
-        "familyChallenges": {
-          "title": "Gezinsuitdagingen",
-          "description": "Familieleden kunnen elkaar uitdagen"
-        },
-        "languages": {
-          "title": "6 Talen",
-          "description": "NL, EN, DE, FR, ES, IT volledig ondersteund"
-        }
-      }
-    }
-  },
   "howItWorks": {
     "heading": "Hoe SkillQuest uw gezin helpt groeien",
     "subheading": "Van chaos naar structuur in 4 eenvoudige stappen",
