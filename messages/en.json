@@ -31,67 +31,6 @@
       "dashboard": "SkillQuest Dashboard"
     }
   },
-  "features": {
-    "heading": "Why Families Choose SkillQuest",
-    "subheading": "Everything you need to help your family grow",
-    "cards": {
-      "familyMode": {
-        "title": "Family Mode",
-        "description": "Parent-child accounts with role-based permissions. You control, they focus. Useful for families with children ages 6-18.",
-        "highlight": "Unique!"
-      },
-      "gamification": {
-        "title": "Gamification That Works",
-        "description": "XP, levels, streaks, rankings, achievements. Learning skills feels like a game, but builds real abilities."
-      },
-      "timerTechniques": {
-        "title": "7 Timer Techniques",
-        "description": "Pomodoro, Flowtime, 52/17, Ultradian, Custom - scientifically proven methods for focus."
-      },
-      "parentDashboard": {
-        "title": "Parent Dashboard",
-        "description": "Real-time insights into what your kids practice. No micromanagement, just overview."
-      },
-      "autoFreezeStreaks": {
-        "title": "Auto-Freeze Streaks",
-        "description": "Automatically protects streaks on busy days. No frustration, just motivation."
-      },
-      "privacyFirst": {
-        "title": "Privacy First",
-        "description": "No data sold. Your family, your data.",
-        "highlight": "100% Safe"
-      }
-    },
-    "benefits": {
-      "heading": "+ Many More Benefits",
-      "items": {
-        "skills78": {
-          "title": "78 Different Skills",
-          "description": "From coding to sports, everything is trackable"
-        },
-        "multiDevice": {
-          "title": "Multi-Device Sync",
-          "description": "Works on iOS, Android, Web"
-        },
-        "offline": {
-          "title": "Offline Mode",
-          "description": "Track without internet, sync later"
-        },
-        "weeklyReports": {
-          "title": "Weekly Reports",
-          "description": "Automatic progress reports via email"
-        },
-        "familyChallenges": {
-          "title": "Family Challenges",
-          "description": "Family members can challenge each other"
-        },
-        "languages": {
-          "title": "6 Languages",
-          "description": "NL, EN, DE, FR, ES, IT fully supported"
-        }
-      }
-    }
-  },
   "howItWorks": {
     "heading": "How SkillQuest Helps Your Family Grow",
     "subheading": "From chaos to structure in 4 simple steps",

@@ -31,67 +31,6 @@
       "dashboard": "Cruscotto SkillQuest"
     }
   },
-  "features": {
-    "heading": "Perché le famiglie scelgono SkillQuest",
-    "subheading": "Tutto ciò di cui avete bisogno per far crescere la vostra famiglia",
-    "cards": {
-      "familyMode": {
-        "title": "Modalità famiglia",
-        "description": "Account padre-figlio con autorizzazioni basate sui ruoli. Voi controllate, loro si concentrano. Utile per le famiglie con bambini dai 6 ai 18 anni.",
-        "highlight": "Unico!"
-      },
-      "gamification": {
-        "title": "Gamification che funziona",
-        "description": "XP, livelli, strisce, classifiche, risultati. L'apprendimento delle abilità ha l'aspetto di un gioco, ma crea abilità reali."
-      },
-      "timerTechniques": {
-        "title": "7 Tecniche di temporizzazione",
-        "description": "Pomodoro, Flowtime, 52/17, Ultradian, Custom - metodi scientificamente provati per la concentrazione."
-      },
-      "parentDashboard": {
-        "title": "Cruscotto genitori",
-        "description": "Informazioni in tempo reale su ciò che i vostri figli praticano. Nessuna microgestione, solo una visione d'insieme."
-      },
-      "autoFreezeStreaks": {
-        "title": "Strisce di congelamento automatico",
-        "description": "Protegge automaticamente le strisce nei giorni più impegnativi. Nessuna frustrazione, solo motivazione."
-      },
-      "privacyFirst": {
-        "title": "La privacy prima di tutto",
-        "description": "Nessun dato venduto. La vostra famiglia, i vostri dati.",
-        "highlight": "100% sicuro"
-      }
-    },
-    "benefits": {
-      "heading": "+ Molti altri vantaggi",
-      "items": {
-        "skills78": {
-          "title": "78 abilità diverse",
-          "description": "Dal coding allo sport, tutto è tracciabile"
-        },
-        "multiDevice": {
-          "title": "Sincronizzazione multidispositivo",
-          "description": "Funziona su iOS, Android, Web"
-        },
-        "offline": {
-          "title": "Modalità offline",
-          "description": "Traccia senza internet, sincronizzazione successiva"
-        },
-        "weeklyReports": {
-          "title": "Rapporti settimanali",
-          "description": "Rapporti automatici sullo stato di avanzamento via e-mail"
-        },
-        "familyChallenges": {
-          "title": "Sfide per la famiglia",
-          "description": "I membri della famiglia possono sfidarsi a vicenda"
-        },
-        "languages": {
-          "title": "6 Lingue",
-          "description": "NL, EN, DE, FR, ES, IT completamente supportati"
-        }
-      }
-    }
-  },
   "howItWorks": {
     "heading": "Come SkillQuest aiuta la famiglia a crescere",
     "subheading": "Dal caos alla struttura in 4 semplici passi",
