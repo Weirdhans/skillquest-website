@@ -251,5 +251,6 @@ test('messages hold only what the site renders: the privacy and account-deletion
     const messages = JSON.parse(await read(`messages/${locale}.json`));
     assert.deepEqual(Object.keys(messages), ['privacy', 'deleteAccount'], locale);
     assert.doesNotMatch(JSON.stringify(messages.deleteAccount), /achievement|\b78\b/i, locale);
+    assertNoStreak(JSON.stringify(messages.deleteAccount), `${locale} account deletion page`);
   }
 });

@@ -106,7 +106,7 @@
         "title": "Welke gegevens worden verwijderd?",
         "items": {
           "account": "Je account- en profielgegevens (bijv. e-mail, weergavenaam, avatar).",
-          "progress": "Je skills en voortgang die in onze backend staan (sessies, XP, streaks en historie).",
+          "progress": "Je skills en voortgang die in onze backend staan (sessies, XP, actieve dagen en historie).",
           "social": "Je sociale data die in onze backend staat (vrienden, challenges, berichten).",
           "push": "Push-notification tokens die aan je account gekoppeld zijn."
         }

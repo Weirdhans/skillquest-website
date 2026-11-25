@@ -106,7 +106,7 @@
         "title": "Qué se eliminará",
         "items": {
           "account": "Tu cuenta e información de perfil (p. ej., correo, nombre para mostrar, avatar).",
-          "progress": "Tus datos de habilidades y progreso almacenados en nuestro backend (sesiones, XP, rachas e historial).",
+          "progress": "Tus datos de habilidades y progreso almacenados en nuestro backend (sesiones, XP, días activos e historial).",
           "social": "Tus datos sociales almacenados en nuestro backend (amigos, desafíos, mensajes).",
           "push": "Tokens de notificaciones push vinculados a tu cuenta."
         }

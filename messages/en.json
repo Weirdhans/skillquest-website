@@ -106,7 +106,7 @@
         "title": "What will be deleted",
         "items": {
           "account": "Your account and profile information (e.g., email, display name, avatar).",
-          "progress": "Your skills and progress stored in our backend (sessions, XP, streaks and history).",
+          "progress": "Your skills and progress stored in our backend (sessions, XP, active days and history).",
           "social": "Your social data stored in our backend (friends, challenges, messages).",
           "push": "Push notification tokens linked to your account."
         }

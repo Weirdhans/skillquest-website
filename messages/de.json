@@ -106,7 +106,7 @@
         "title": "Welche Daten werden gelöscht?",
         "items": {
           "account": "Dein Konto und Profilinformationen (z. B. E-Mail, Anzeigename, Avatar).",
-          "progress": "Deine Skills- und Fortschrittsdaten in unserem Backend (Sitzungen, XP, Streaks und Historie).",
+          "progress": "Deine Skills- und Fortschrittsdaten in unserem Backend (Sitzungen, XP, aktive Tage und Historie).",
           "social": "Deine sozialen Daten in unserem Backend (Freunde, Challenges, Nachrichten).",
           "push": "Push-Benachrichtigungstokens, die mit deinem Konto verknüpft sind."
         }

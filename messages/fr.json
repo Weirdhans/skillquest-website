@@ -106,7 +106,7 @@
         "title": "Quelles données seront supprimées",
         "items": {
           "account": "Votre compte et les informations de profil (par ex. e-mail, nom d'affichage, avatar).",
-          "progress": "Vos données de compétences et de progression stockées dans notre backend (sessions, XP, séries et historique).",
+          "progress": "Vos données de compétences et de progression stockées dans notre backend (sessions, XP, jours actifs et historique).",
           "social": "Vos données sociales stockées dans notre backend (amis, défis, messages).",
           "push": "Les jetons de notifications push liés à votre compte."
         }
