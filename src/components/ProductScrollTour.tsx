@@ -7,10 +7,9 @@ import {usePrefersReducedMotion} from '@/lib/use-prefers-reduced-motion';
 
 // The phone stays pinned while the captions scroll past it, and the screen
 // changes to match the caption you are reading. The captions are the product
-// loop in order (pick a skill, focus, review, share, personalise), so the
-// section tells that loop instead of listing it. The session-reward and
-// rankings screenshots left the tour on 25 November 2026: the first says
-// "keep streaks" and the app has no streaks; the app hides rankings.
+// loop in order (pick a skill, focus, earn XP, review, family, personalise),
+// so the section tells that loop instead of listing it. The images are the
+// set of 29 October 2026: no Rankings tab and no "streaks" in a caption.
 //
 // Uses the screenshots that already ship for all six locales. No new assets.
 //

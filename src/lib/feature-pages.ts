@@ -375,7 +375,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         'Family geeft ouders houvast zonder de voortgang van het kind over te nemen. Timers, doelen, XP en complimenten maken oefentijd concreet.',
       cardSummary:
         'Ouders kunnen timers starten, kindstatistieken bekijken, doelen zetten en kinderen positief begeleiden.',
-      screenshot: '06-social-family.png',
+      screenshot: '08-family-progress.png',
       primaryCta: 'Bekijk Family',
       secondaryCta: 'Download de app',
       sections: [
@@ -700,7 +700,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         'Voeg vrienden toe, start challenges en zorg dat je accountability krijgt wanneer je dat wilt, met privacy-instellingen waarmee je alles op jouw manier deelt.',
       cardSummary:
         'Vrienden, challenges en een activiteitenfeed, met privacy-instellingen die je zelf bepaalt.',
-      screenshot: '06-social-family.png',
+      screenshot: '01-home-progress.png',
       primaryCta: 'Download SkillQuest',
       secondaryCta: 'Zo werken actieve dagen',
       sections: [
@@ -1088,7 +1088,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         'Family gives parents structure without taking over a child’s progress. Timers, goals, XP, and compliments make practice time concrete.',
       cardSummary:
         'Parents can start timers, view child statistics, set goals, and support children with positive feedback.',
-      screenshot: '06-social-family.png',
+      screenshot: '08-family-progress.png',
       primaryCta: 'View Family',
       secondaryCta: 'Download the app',
       sections: [
@@ -1413,7 +1413,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         'Add friends, start challenges, and get accountability when you want it, with privacy controls that keep sharing on your own terms.',
       cardSummary:
         'Friends, challenges, and an activity feed, with privacy controls you control.',
-      screenshot: '06-social-family.png',
+      screenshot: '01-home-progress.png',
       primaryCta: 'Download SkillQuest',
       secondaryCta: 'How active days work',
       sections: [
@@ -2132,7 +2132,7 @@ pages.de = {
       'Füge Freunde hinzu, starte Herausforderungen und lass dich motivieren, wann immer du willst – mit Datenschutzeinstellungen, mit denen du selbst bestimmst, was du teilst.',
     cardSummary:
       'Freunde, Herausforderungen und ein Aktivitätsfeed – mit Datenschutzeinstellungen, die du selbst festlegst.',
-    screenshot: '06-social-family.png',
+    screenshot: '01-home-progress.png',
     primaryCta: 'SkillQuest herunterladen',
     secondaryCta: 'So funktionieren aktive Tage',
     sections: [
@@ -2849,7 +2849,7 @@ pages.fr = {
       'Ajoute des amis, lance des défis et trouve la motivation dont tu as besoin quand tu le souhaites, grâce à des paramètres de confidentialité qui te permettent de partager ce que tu veux, comme tu le veux.',
     cardSummary:
       'Des amis, des défis et un fil d\'activité, avec des paramètres de confidentialité que tu gères toi-même.',
-    screenshot: '06-social-family.png',
+    screenshot: '01-home-progress.png',
     primaryCta: 'Télécharger SkillQuest',
     secondaryCta: 'Comment fonctionnent les jours actifs',
     sections: [
@@ -3563,7 +3563,7 @@ pages.es = {
       'Añade amigos, lanza retos y consigue que te animen cuando quieras, con controles de privacidad que te permiten compartir lo que quieras, como tú quieras.',
     cardSummary:
       'Amigos, retos y un feed de actividades, con opciones de privacidad que tú mismo gestionas.',
-    screenshot: '06-social-family.png',
+    screenshot: '01-home-progress.png',
     primaryCta: 'Descarga SkillQuest',
     secondaryCta: 'Cómo funcionan los días activos',
     sections: [
@@ -4280,7 +4280,7 @@ pages.it = {
       'Aggiungi amici, lancia delle sfide e trova qualcuno che ti sproni quando ne hai bisogno, con impostazioni sulla privacy che ti permettono di condividere solo come vuoi tu.',
     cardSummary:
       'Amici, sfide e un feed delle attività, con impostazioni sulla privacy che decidi tu.',
-    screenshot: '06-social-family.png',
+    screenshot: '01-home-progress.png',
     primaryCta: 'Scarica SkillQuest',
     secondaryCta: 'Come funzionano i giorni attivi',
     sections: [

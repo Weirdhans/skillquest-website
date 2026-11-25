@@ -133,7 +133,7 @@ function FamilySupportSection({locale, copy}: PageProps) {
           <Reveal className="order-2 lg:order-1">
             <div className="mx-auto w-56 overflow-hidden rounded-2xl border border-white/15 shadow-2xl md:w-72">
               <Image
-                src={screenshotPath(locale, '06-social-family.png')}
+                src={screenshotPath(locale, '06-family-dashboard.png')}
                 alt={copy.familySupport.imageAlt}
                 width={1080}
                 height={1920}
