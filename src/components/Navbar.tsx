@@ -1,7 +1,7 @@
 'use client';
 
 import type {CSSProperties} from 'react';
-import {useEffect, useState, useSyncExternalStore} from 'react';
+import {useEffect, useLayoutEffect, useState, useSyncExternalStore} from 'react';
 import Image from 'next/image';
 import {AnimatePresence, motion, useMotionValueEvent, useScroll} from 'framer-motion';
 import {CaretDown, Monitor, Moon, Sun} from '@phosphor-icons/react';
@@ -151,6 +151,18 @@ export default function Navbar() {
     query.addEventListener('change', handleChange);
     return () => query.removeEventListener('change', handleChange);
   }, [themePref]);
+
+  // Switching the language re-mounts the [locale] root layout. React then
+  // resets <html> to the attributes it rendered itself (only `lang`), which
+  // drops the `dark` class and data-theme that the init script set, and that
+  // script does not run again on a client-side navigation. The page fell back
+  // to light while the stored preference still said dark or system. Put the
+  // theme back before the browser paints. This reads the stored preference,
+  // not themePref: during hydration themePref is still the 'system' server
+  // snapshot and would overwrite a stored light or dark choice.
+  useLayoutEffect(() => {
+    applyTheme(resolveTheme(getClientPref()));
+  }, [locale]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

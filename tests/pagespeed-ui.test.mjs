@@ -39,3 +39,14 @@ test('trust items render li directly inside the list, not an animation wrapper',
   visit(tree);
   assert.ok(checked, 'the trust list was checked');
 });
+
+test('the navbar puts the theme back after a language switch', async () => {
+  // Switching the language re-mounts the [locale] root layout: React resets
+  // <html> to its own attributes and drops the `dark` class the init script
+  // set. The page fell back to light while the preference said dark or system.
+  const navbar = await readFile(new URL('../src/components/Navbar.tsx', import.meta.url), 'utf8');
+  assert.match(
+    navbar,
+    /useLayoutEffect\(\(\) => \{\s*applyTheme\(resolveTheme\(getClientPref\(\)\)\);\s*\}, \[locale\]\);/
+  );
+});
