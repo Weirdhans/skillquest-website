@@ -233,6 +233,8 @@ Voorzichtig:
 | Deep work / Flowtime | deep work timer, Flowtime timer | 52 17 rule timer, custom focus timer | `/features/deep-work-flowtime` | Premium timermodi voor langere focus. |
 | Habit/streak | habit tracker with streaks, streak tracker app | XP habit tracker, gamified habit tracker | `/features/streaks` | Streaks, freezes, XP en zichtbare consistentie. |
 | Study | study timer app, study tracker app | exam study timer, homework timer, leren tracker | `/features/study-timer` | Studie-uren meetbaar maken per vak/skill. |
+| Leestimer (alleen Engels) | reading timer for kids, reading timer app | daily reading practice timer | `/en/features/reading-timer` | Aftellende timer (standaard 10 min) voor dagelijks lezen, XP per minuut, Family optioneel. |
+| Huiswerktimer (alleen Engels) | homework timer, homework timer app | timer for homework time | `/en/features/homework-timer` | Vaste huiswerktijd met aftellende timer; eerlijk dat de app geen huiswerkplanner is. |
 | Progress stats | progress tracking app, productivity statistics | skill progress dashboard, time tracking statistics | `/features/progress-statistics` | Dag/week/maand/jaar en skill breakdown. |
 | Family | parent dashboard app, family productivity app | child progress tracker, kids habit tracker, ouder kind app | `/features/family` | Structuur, timers voor kinderen, child stats, doelen. |
 | Social accountability | friends challenges app, leaderboard productivity app | skill challenges, accountability app | `/features/friends-challenges` | Vrienden, challenges, rankings met privacygrenzen. |
@@ -343,6 +345,15 @@ Aanbevolen FAQ-vragen:
 10. `/features/leaderboards`
 11. `/features/themes`
 12. `/features/guest-mode`
+
+### Alleen Engels: app-zoekers (25 november 2026)
+
+13. `/en/features/reading-timer`
+14. `/en/features/homework-timer`
+
+Besluit Hans van 25 november 2026: ouders vinden de app vrijwel alleen via zoeken, en de site wordt op Google alleen gevonden op de homepage en `/en/features/skill-tracker`. Deze twee gidsen zijn voor mensen die een app zoeken (geen advies). Ze bestaan alleen in het Engels: in nl, de, fr, es en it geven ze 404, staan ze niet in de sitemap of de guides-lijst en verwijst hreflang alleen naar `en` (ook `x-default`). Technisch: `englishOnlyFeatureLandingSlugs` en `featureLandingLocales()` in `src/lib/feature-pages.ts`, en de optionele `locales` van `alternateLanguages`/`createPageMetadata` in `src/lib/marketing.ts`. Vertalen pas als Search Console laat zien dat de Engelse pagina's vertoningen krijgen; een vertaalde gids verhuist dan naar `translatedFeatureLandingSlugs`.
+
+Copyregels voor deze twee: alleen claims die al op `/en/parents`, de Engelse gidsen family, focus-timer, guest-mode, skill-tracker of progress-statistics of op `/pricing` staan; nooit "streak(s)" (de app telt actieve dagen); geen ranglijsten, geen leerresultaten of cijfers, geen medische claims. `tests/feature-pages.test.mjs` bewaakt de lengtes van metaTitle (60) en metaDescription (155) en de verboden woorden.
 
 ## Concrete copyblokken
 
