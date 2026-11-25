@@ -139,15 +139,17 @@ const featureOverviewCopy: Record<Locale, FeatureOverviewCopy> = {
 
 // Written for parents who search for an app. Every product claim here is also
 // made on the English /parents page, the family, focus-timer, guest-mode,
-// skill-tracker or progress-statistics guides, or /pricing.
+// skill-tracker or progress-statistics guides, or /pricing. The copy speaks to
+// parents ("your child") and never says "for kids" or "for children": the app
+// is not presented as a service directed to children.
 const englishOnlyPages: Record<EnglishOnlyFeatureLandingSlug, FeatureLandingPage> = {
   'reading-timer': {
     slug: 'reading-timer',
     eyebrow: 'Reading Timer',
-    title: 'A reading timer for kids that shows their progress',
-    metaTitle: 'Reading Timer for Kids | Daily Reading Practice | SkillQuest',
+    title: 'A reading timer that shows your child’s progress',
+    metaTitle: 'Reading Timer for Daily Reading Practice | SkillQuest',
     metaDescription:
-      'A reading timer app for kids: set 10 minutes, let your child read, and watch the minutes add up as XP and levels. Free to use, no account needed.',
+      'A reading timer app for parents: set 10 minutes, let your child read, and watch the minutes add up as XP and levels. Free to use, no account needed.',
     summary:
       'Set a countdown for your child’s daily reading, 10 minutes or whatever the school asks for. Every minute of reading earns XP for the Reading skill, so your child can see the reading add up.',
     cardSummary:
@@ -221,9 +223,9 @@ const englishOnlyPages: Record<EnglishOnlyFeatureLandingSlug, FeatureLandingPage
     slug: 'homework-timer',
     eyebrow: 'Homework Timer',
     title: 'A homework timer that gives homework time a clear start and end',
-    metaTitle: 'Homework Timer App for Kids | SkillQuest',
+    metaTitle: 'Homework Timer App for Families | SkillQuest',
     metaDescription:
-      'A homework timer app for kids: set a timer for homework time, let it count down, and see the minutes add up as XP and progress. Free, no account needed.',
+      'A homework timer app for parents: set a timer for homework time, let it count down, and see the minutes add up as XP and progress. Free, no account needed.',
     summary:
       'Give homework time a fixed length. Start a countdown, let your child work, and see the minutes add up afterward. SkillQuest is a timer with progress, not a homework planner.',
     cardSummary:
