@@ -73,7 +73,6 @@ export const PRICES = Object.fromEntries(
 export const screenshotNames = [
   '01-home-progress.png',
   '02-focus-timer.png',
-  '03-session-reward.png',
   '04-statistics.png',
   '05-rankings.png',
   '06-social-family.png',
@@ -264,7 +263,7 @@ export const marketingCopy = {
       eyebrow: 'Live on the App Store and Google Play.',
       title: 'Every focused minute counts toward a skill',
       subtitle:
-        'A skill tracker with built-in focus timers. Earn XP, build streaks, and see exactly where your practice time goes.',
+        'A skill tracker with built-in focus timers. Earn XP, collect active days, and see exactly where your practice time goes.',
       primaryCta: 'Download on the App Store',
       secondaryCta: 'Download for Android',
       tertiaryCta: 'Compare pricing',
@@ -320,11 +319,10 @@ export const marketingCopy = {
     product: {
       heading: 'Real progress, not another vague habit list',
       body:
-        'SkillQuest connects timers, skills, XP, streaks, stats, friends, rankings, and family features in one focused mobile app.',
+        'SkillQuest connects timers, skills, XP, active days, stats, friends, rankings, and family features in one focused mobile app.',
       captions: [
         'Build every skill',
         'Focus with timers',
-        'Earn XP daily',
         'See your progress',
         'Climb the rankings',
         'Grow together',
@@ -340,7 +338,7 @@ export const marketingCopy = {
             'Start a session for the skill you are building and keep the effort tied to real progress.'
         },
         {
-          title: 'XP, levels, and streaks',
+          title: 'XP, levels, and active days',
           body:
             'Make progress visible after every session with rewards that reinforce consistency.'
         },
@@ -533,7 +531,7 @@ export const marketingCopy = {
         {
           title: 'Progress you can inspect',
           body:
-            'XP, levels, streaks, session history, and charts show what you actually practiced.'
+            'XP, levels, active days, session history, and charts show what you actually practiced.'
         },
         {
           title: 'Motivation with boundaries',
@@ -566,7 +564,7 @@ export const marketingCopy = {
       eyebrow: 'Live in de App Store en op Google Play.',
       title: 'Elke minuut focus telt mee voor een vaardigheid',
       subtitle:
-        'Een skill tracker met ingebouwde focus timers. Verdien XP, bouw streaks op en zie precies waar je oefentijd heen gaat.',
+        'Een skill tracker met ingebouwde focus timers. Verdien XP, verzamel actieve dagen en zie precies waar je oefentijd heen gaat.',
       primaryCta: 'Download in de App Store',
       secondaryCta: 'Download voor Android',
       tertiaryCta: 'Vergelijk prijzen',
@@ -622,11 +620,10 @@ export const marketingCopy = {
     product: {
       heading: 'Echte voortgang, geen vage gewoontelijst',
       body:
-        'SkillQuest combineert timers, skills, XP, streaks, statistieken, vrienden, rankings en familie-tools in één gerichte mobiele app.',
+        'SkillQuest combineert timers, skills, XP, actieve dagen, statistieken, vrienden, rankings en familie-tools in één gerichte mobiele app.',
       captions: [
         'Bouw elke skill',
         'Focus met timers',
-        'Verdien dagelijks XP',
         'Bekijk je voortgang',
         'Klim in rankings',
         'Groei samen',
@@ -642,7 +639,7 @@ export const marketingCopy = {
             'Start een sessie voor de vaardigheid waaraan je werkt en koppel inzet aan echte voortgang.'
         },
         {
-          title: 'XP, levels en streaks',
+          title: 'XP, levels en actieve dagen',
           body:
             'Maak voortgang zichtbaar na elke sessie met beloningen die consistentie versterken.'
         },
@@ -835,7 +832,7 @@ export const marketingCopy = {
         {
           title: 'Voortgang die je kunt inspecteren',
           body:
-            'XP, levels, streaks, sessiegeschiedenis en grafieken laten zien wat je echt hebt geoefend.'
+            'XP, levels, actieve dagen, sessiegeschiedenis en grafieken laten zien wat je echt hebt geoefend.'
         },
         {
           title: 'Motivatie met grenzen',
@@ -868,7 +865,7 @@ export const marketingCopy = {
       eyebrow: 'Live im App Store und bei Google Play.',
       title: 'Jede fokussierte Minute zählt für einen Skill',
       subtitle:
-        'Ein Skill-Tracker mit integrierten Focus-Timern. Sammle XP, baue Streaks auf und sieh genau, wohin deine Übungszeit fließt.',
+        'Ein Skill-Tracker mit integrierten Focus-Timern. Sammle XP und aktive Tage und sieh genau, wohin deine Übungszeit fließt.',
       primaryCta: 'Im App Store laden',
       secondaryCta: 'Für Android herunterladen',
       tertiaryCta: 'Preise vergleichen',
@@ -924,11 +921,10 @@ export const marketingCopy = {
     product: {
       heading: 'Echter Fortschritt statt vager Gewohnheitsliste',
       body:
-        'SkillQuest verbindet Timer, Skills, XP, Streaks, Statistiken, Freunde, Rankings und Familienfunktionen in einer fokussierten mobilen App.',
+        'SkillQuest verbindet Timer, Skills, XP, aktive Tage, Statistiken, Freunde, Rankings und Familienfunktionen in einer fokussierten mobilen App.',
       captions: [
         'Jeden Skill aufbauen',
         'Mit Timern fokussieren',
-        'Täglich XP sammeln',
         'Fortschritt sehen',
         'Rankings erklimmen',
         'Gemeinsam wachsen',
@@ -944,7 +940,7 @@ export const marketingCopy = {
             'Starte eine Session für den Skill, an dem du arbeitest, und verbinde Aufwand mit echtem Fortschritt.'
         },
         {
-          title: 'XP, Levels und Streaks',
+          title: 'XP, Levels und aktive Tage',
           body:
             'Mache Fortschritt nach jeder Session sichtbar und stärke Konsistenz mit Belohnungen.'
         },
@@ -1137,7 +1133,7 @@ export const marketingCopy = {
         {
           title: 'Fortschritt zum Prüfen',
           body:
-            'XP, Levels, Streaks, Session-Verlauf und Diagramme zeigen, was du wirklich geübt hast.'
+            'XP, Levels, aktive Tage, Session-Verlauf und Diagramme zeigen, was du wirklich geübt hast.'
         },
         {
           title: 'Motivation mit Grenzen',
@@ -1170,7 +1166,7 @@ export const marketingCopy = {
       eyebrow: 'Disponible sur l’App Store et sur Google Play.',
       title: 'Chaque minute de concentration compte pour une compétence',
       subtitle:
-        'Une app de suivi de compétences avec minuteurs de concentration intégrés. Gagne des XP, construis des séries et vois exactement où passe ton temps de pratique.',
+        'Une app de suivi de compétences avec minuteurs de concentration intégrés. Gagne des XP, accumule des jours actifs et vois exactement où passe ton temps de pratique.',
       primaryCta: 'Télécharger sur l’App Store',
       secondaryCta: 'Télécharger pour Android',
       tertiaryCta: 'Comparer les prix',
@@ -1226,11 +1222,10 @@ export const marketingCopy = {
     product: {
       heading: 'Des progrès réels, pas une simple liste d’habitudes',
       body:
-        'SkillQuest relie minuteurs, compétences, XP, séries, statistiques, amis, classements et fonctions famille dans une app mobile qui va à l’essentiel.',
+        'SkillQuest relie minuteurs, compétences, XP, jours actifs, statistiques, amis, classements et fonctions famille dans une app mobile qui va à l’essentiel.',
       captions: [
         'Développe chaque compétence',
         'Concentre-toi avec les minuteurs',
-        'Gagne de l’XP chaque jour',
         'Vois tes progrès',
         'Grimpe dans les classements',
         'Progresse avec les autres',
@@ -1246,7 +1241,7 @@ export const marketingCopy = {
             'Lance une session pour la compétence que tu travailles et relie l’effort à des progrès concrets.'
         },
         {
-          title: 'XP, niveaux et séries',
+          title: 'XP, niveaux et jours actifs',
           body:
             'Rends tes progrès visibles après chaque session, avec des récompenses qui encouragent la régularité.'
         },
@@ -1439,7 +1434,7 @@ export const marketingCopy = {
         {
           title: 'Des progrès vérifiables',
           body:
-            'XP, niveaux, séries, historique des sessions et graphiques montrent ce que tu as réellement pratiqué.'
+            'XP, niveaux, jours actifs, historique des sessions et graphiques montrent ce que tu as réellement pratiqué.'
         },
         {
           title: 'Motivation avec limites',
@@ -1472,7 +1467,7 @@ export const marketingCopy = {
       eyebrow: 'Disponible en App Store y en Google Play.',
       title: 'Cada minuto de concentración cuenta para una habilidad',
       subtitle:
-        'Un skill tracker con focus timers integrados. Gana XP, crea streaks y ve exactamente adónde va tu tiempo de práctica.',
+        'Un skill tracker con focus timers integrados. Gana XP, suma días activos y ve exactamente adónde va tu tiempo de práctica.',
       primaryCta: 'Descargar en App Store',
       secondaryCta: 'Descárgala para Android',
       tertiaryCta: 'Comparar precios',
@@ -1528,11 +1523,10 @@ export const marketingCopy = {
     product: {
       heading: 'Progreso real, no otra lista vaga de hábitos',
       body:
-        'SkillQuest conecta temporizadores, habilidades, XP, rachas, estadísticas, amigos, rankings y funciones familiares en una app móvil enfocada.',
+        'SkillQuest conecta temporizadores, habilidades, XP, días activos, estadísticas, amigos, rankings y funciones familiares en una app móvil enfocada.',
       captions: [
         'Desarrolla cada habilidad',
         'Concéntrate con temporizadores',
-        'Gana XP a diario',
         'Ve tu progreso',
         'Sube en rankings',
         'Crezcan juntos',
@@ -1548,7 +1542,7 @@ export const marketingCopy = {
             'Inicia una sesión para la habilidad que trabajas y conecta el esfuerzo con progreso real.'
         },
         {
-          title: 'XP, niveles y rachas',
+          title: 'XP, niveles y días activos',
           body:
             'Haz visible el progreso después de cada sesión con recompensas que refuerzan la constancia.'
         },
@@ -1741,7 +1735,7 @@ export const marketingCopy = {
         {
           title: 'Progreso que puedes revisar',
           body:
-            'XP, niveles, rachas, historial de sesiones y gráficos muestran lo que realmente practicaste.'
+            'XP, niveles, días activos, historial de sesiones y gráficos muestran lo que realmente practicaste.'
         },
         {
           title: 'Motivación con límites',
@@ -1774,7 +1768,7 @@ export const marketingCopy = {
       eyebrow: 'Disponibile su App Store e su Google Play.',
       title: 'Ogni minuto di concentrazione conta per un’abilità',
       subtitle:
-        'Un’app per tracciare le tue abilità, con timer di concentrazione integrati. Guadagna XP, costruisci le tue serie e vedi esattamente dove va il tuo tempo di pratica.',
+        'Un’app per tracciare le tue abilità, con timer di concentrazione integrati. Guadagna XP, accumula giorni attivi e vedi esattamente dove va il tuo tempo di pratica.',
       primaryCta: 'Scarica da App Store',
       secondaryCta: 'Scarica per Android',
       tertiaryCta: 'Confronta i prezzi',
@@ -1830,11 +1824,10 @@ export const marketingCopy = {
     product: {
       heading: 'Progressi reali, non un’altra lista vaga di abitudini',
       body:
-        'SkillQuest collega timer, abilità, XP, serie, statistiche, amici, classifiche e funzioni famiglia in un’unica app mobile, semplice e mirata.',
+        'SkillQuest collega timer, abilità, XP, giorni attivi, statistiche, amici, classifiche e funzioni famiglia in un’unica app mobile, semplice e mirata.',
       captions: [
         'Sviluppa ogni abilità',
         'Concentrati con i timer',
-        'Guadagna XP ogni giorno',
         'Vedi i progressi',
         'Sali in classifica',
         'Cresci insieme agli altri',
@@ -1850,7 +1843,7 @@ export const marketingCopy = {
             'Avvia una sessione per l’abilità su cui lavori e collega l’impegno a progressi reali.'
         },
         {
-          title: 'XP, livelli e serie',
+          title: 'XP, livelli e giorni attivi',
           body:
             'Rendi visibili i progressi dopo ogni sessione con ricompense che rafforzano la costanza.'
         },
@@ -2043,7 +2036,7 @@ export const marketingCopy = {
         {
           title: 'Progressi verificabili',
           body:
-            'XP, livelli, serie, cronologia sessioni e grafici mostrano cosa hai davvero praticato.'
+            'XP, livelli, giorni attivi, cronologia sessioni e grafici mostrano cosa hai davvero praticato.'
         },
         {
           title: 'Motivazione senza pressioni',

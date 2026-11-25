@@ -24,6 +24,13 @@ const nextConfig = {
         destination: '/es/support#faq',
         permanent: true,
       },
+      // The app counts active days, not streaks (since 30 October 2026); the
+      // streaks guide became the active-days guide on 25 November 2026.
+      ...['nl', 'en', 'de', 'fr', 'es', 'it'].map((locale) => ({
+        source: `/${locale}/features/streaks`,
+        destination: `/${locale}/features/active-days`,
+        permanent: true,
+      })),
       // Short links for social bios. Temporary redirects, so the UTM values
       // can change later without browsers caching the old target.
       {

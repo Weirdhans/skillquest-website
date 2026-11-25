@@ -30,7 +30,7 @@ const CATEGORY_BY_SLUG: Record<FeatureLandingSlug, GuideCategory> = {
   'study-timer': 'focus',
   'deep-work-flowtime': 'focus',
   'progress-statistics': 'progress',
-  streaks: 'progress',
+  'active-days': 'progress',
   leaderboards: 'progress',
   'friends-challenges': 'progress',
   'skill-tracker': 'skillsFamily',

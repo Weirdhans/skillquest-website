@@ -8,7 +8,7 @@ export const translatedFeatureLandingSlugs = [
   'skill-tracker',
   'progress-statistics',
   'pomodoro-timer',
-  'streaks',
+  'active-days',
   'friends-challenges',
   'study-timer',
   'deep-work-flowtime',
@@ -463,7 +463,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         {
           title: 'Van oefentijd naar progressie',
           body:
-            'Elke sessie kan XP, levels, streaks en statistieken voeden. Daardoor zie je niet alleen wat je wilt doen, maar wat je echt hebt gedaan.',
+            'Elke sessie kan XP, levels, actieve dagen en statistieken voeden. Daardoor zie je niet alleen wat je wilt doen, maar wat je echt hebt gedaan.',
           bullets: [
             'XP en levels per skill.',
             'Session reward na afgeronde focus.',
@@ -594,7 +594,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
           bullets: [
             'Verdien XP na elke voltooide Pomodoro-sessie.',
             'Bekijk in je statistieken de sessies, gegroepeerd per vaardigheid.',
-            'Houd je streaks bij voor een consistent Pomodoro-ritme.'
+            'Verzamel actieve dagen als je regelmatig oefent.'
           ]
         },
         {
@@ -626,67 +626,67 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         }
       ]
     },
-    streaks: {
-      slug: 'streaks',
-      eyebrow: 'Streaks',
-      title: 'Maak van consistentie een streak die je echt kunt zien',
-      metaTitle: 'Streak Tracker-app met XP | Bouw dagelijkse gewoontes op | SkillQuest',
+    'active-days': {
+      slug: 'active-days',
+      eyebrow: 'Actieve dagen',
+      title: 'Actieve dagen: zie hoe regelmatig je oefent',
+      metaTitle: 'Actieve dagen | Zie hoe vaak je oefent | SkillQuest',
       metaDescription:
-        'SkillQuest houdt voor elke vaardigheid die je oefent een dagelijkse streak bij, met XP, levels en streak freezes, zodat één gemiste dag je voortgang niet tenietdoet.',
+        'SkillQuest telt actieve dagen: elke dag waarop je minstens 10 minuten oefent. Een gemiste dag kost niets, en je totaal gaat nooit terug naar nul.',
       summary:
-        'Met een dagelijkse streak houd je bij hoe regelmatig je meedoet, en dankzij XP en levels voelt die regelmaat echt als vooruitgang, niet alleen maar als een getal.',
+        'Een dag telt als actieve dag zodra je die dag in totaal minstens 10 minuten oefent. Je totaal gaat alleen omhoog, dus een gemiste dag kost je niets en regelmatig oefenen blijft zichtbaar.',
       cardSummary:
-        'Dagelijkse streaks met XP en streak freezes, zodat je consistentie zichtbaar blijft.',
-      screenshot: '03-session-reward.png',
-      primaryCta: 'Begin je streak',
-      secondaryCta: 'Kijk hoe XP werkt',
+        'Dagen met minstens 10 minuten oefenen tellen op tot een totaal dat nooit terug naar nul gaat.',
+      screenshot: '04-statistics.png',
+      primaryCta: 'Download SkillQuest',
+      secondaryCta: 'Bekijk focus timers',
       sections: [
         {
-          title: 'Streaks waarbij je beloond wordt als je meedoet',
+          title: 'Wat telt als actieve dag',
           body:
-            'Elke dag dat je een concentratiesessie voltooit, wordt je streak langer. Het is een simpel, zichtbaar signaal dat van de vraag "Heb ik vandaag geoefend?" een doorlopende telling maakt.',
+            'Oefen op een dag in totaal minstens 10 minuten, met elke timer en elke skill, en die dag telt als actieve dag.',
           bullets: [
-            'Verdien 10 XP voor een actieve dag, bovenop de XP die je per sessie krijgt.',
-            'Streaks gelden voor alle vaardigheden die je bijhoudt.',
-            'Bekijk in één oogopslag je huidige en langste streak.'
+            'Elke volle minuut oefenen levert 1 XP op, dus 10 minuten is 10 XP.',
+            'Kortere sessies op dezelfde dag tellen bij elkaar op.',
+            'Elke dag telt één keer, hoe lang je ook oefent.'
           ]
         },
         {
-          title: 'Streak freezes beschermen je tegen een incidentele misser',
+          title: 'Een gemiste dag kost niets',
           body:
-            'Soms zit het leven je gewoon in de weg. Dankzij streak freezes hoef je door één gemiste dag niet meteen weken van consistentie te verliezen.',
+            'Actieve dagen hoeven niet op elkaar te volgen. Sla je een dag over, dan blijft je totaal precies staan waar het stond.',
           bullets: [
-            'Bescherm je streak tegen een enkele gemiste dag.',
-            'Blijf op de lange termijn gemotiveerd, zonder dat het een alles-of-niets-gevoel wordt.',
-            'Mijlpaalstreaks (7, 30, 100+ dagen) kunnen deelbare activiteitsposts opleveren.'
+            'Je totaal gaat alleen omhoog en wordt nooit teruggezet.',
+            'Er valt niets te beschermen en niets te verliezen.',
+            'Pak het weer op wanneer het jou uitkomt.'
           ]
         },
         {
-          title: 'Streaks betekenen meer dan alleen maar cijfers',
+          title: 'Mijlpalen die regelmatig oefenen laten zien',
           body:
-            'Consistentie in SkillQuest draait om meer dan alleen een teller: thema’s en beloningen hangen samen met je voortgang.',
+            'Over weken en maanden laten actieve dagen zien hoe vaak je echt hebt geoefend, niet alleen hoe lang.',
           bullets: [
-            'Ontgrendel thema’s door gestaag vooruitgang te boeken.',
-            'Combineer streaks met XP en levels voor een completer beeld.',
-            'Gebruik streak-mijlpalen als natuurlijke momenten om even te kijken hoe het gaat.'
+            'Mijlpalen bij 7, 30 en 100 actieve dagen, en verder.',
+            'Sommige thema’s ontgrendel je bij een bepaald aantal actieve dagen.',
+            'Daag vrienden uit voor een Strijd om actieve dagen.'
           ]
         }
       ],
       faq: [
         {
-          question: 'Hoe werkt het streaksysteem in SkillQuest?',
+          question: 'Wat is een actieve dag in SkillQuest?',
           answer:
-            'Als je op een bepaalde dag een focussessie voltooit, blijft je streak intact en verdien je 10 XP voor die actieve dag, bovenop de XP van de sessie zelf.'
+            'Een dag waarop je in totaal minstens 10 minuten met een timer oefent. Elke dag telt één keer mee voor je totaal.'
         },
         {
-          question: 'Wat gebeurt er als ik een dag oversla?',
+          question: 'Wat gebeurt er als ik een dag mis?',
           answer:
-            'Streak freezes kunnen je streak beschermen tegen een incidentele gemiste dag, zodat één gemiste dag je voortgang niet tenietdoet.'
+            'Niets. Een gemiste dag haalt niets weg: je totaal blijft gelijk en wordt nooit teruggezet.'
         },
         {
-          question: 'Is streak tracking gratis?',
+          question: 'Zijn actieve dagen gratis?',
           answer:
-            'Ja. Dagelijkse streaks, XP en levels zitten bij het gratis abonnement inbegrepen.'
+            'Ja. Actieve dagen, XP, levels en statistieken horen bij de gratis app.'
         }
       ]
     },
@@ -728,7 +728,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         {
           title: 'Een activiteitenfeed die mijlpalen viert',
           body:
-            'Streaks en andere mijlpalen kunnen als activiteitsposts verschijnen, zodat voortgang wordt opgemerkt zonder een openbare feed te worden.',
+            'Mijlpalen in actieve dagen kunnen als activiteitsposts verschijnen, zodat voortgang wordt opgemerkt zonder een openbare feed te worden.',
           bullets: [
             'Automatische posts bij mijlpalen zoals 7, 30 of 100 actieve dagen.',
             'Privacybewust posten respecteert je instellingen.',
@@ -795,7 +795,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
             'Studieroutines zijn makkelijker vol te houden wanneer voortgang zichtbaar is, niet alleen verondersteld.',
           bullets: [
             'XP en levels per vak houden inzet zichtbaar.',
-            'Dagelijkse streaks ondersteunen consistente studiegewoontes.',
+            'Actieve dagen laten zien hoe regelmatig je studeert.',
             'Statistieken tonen welke vakken aandacht krijgen en welke niet.'
           ]
         }
@@ -959,7 +959,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         'Licht, donker en systeemmodus, plus thema’s die je ontgrendelt door voortgang.',
       screenshot: '07-themes-profile.png',
       primaryCta: 'Download SkillQuest',
-      secondaryCta: 'Bekijk hoe streaks werken',
+      secondaryCta: 'Bekijk hoe actieve dagen werken',
       sections: [
         {
           title: 'Licht, donker en systeemmodus',
@@ -978,7 +978,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
           bullets: [
             'Ontgrendel extra thema’s door consistente voortgang.',
             'Gratis ontgrendelingen staan naast Premium themaopties.',
-            'Thema-ontgrendelingen sluiten aan bij hetzelfde streak- en XP-systeem als de rest.'
+            'Thema’s ontgrendel je door levels en mijlpalen in actieve dagen te halen.'
           ]
         },
         {
@@ -1001,7 +1001,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         {
           question: 'Hoe ontgrendel ik meer thema’s?',
           answer:
-            'Sommige thema’s ontgrendel je door consistente voortgang, zoals streaks, naast thema’s beschikbaar met Premium.'
+            'Sommige thema’s ontgrendel je met je voortgang, zoals levels en actieve dagen. Premium voegt extra thema’s toe.'
         },
         {
           question: 'Veranderen thema’s hoe de app werkt?',
@@ -1240,7 +1240,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         {
           title: 'From practice time to progress',
           body:
-            'Every session can feed XP, levels, streaks, and statistics, so you see what you actually practiced.',
+            'Every session feeds XP, levels, active days, and statistics, so you see what you actually practiced.',
           bullets: [
             'XP and levels per skill.',
             'Session rewards after completed focus.',
@@ -1371,7 +1371,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
           bullets: [
             'Earn XP after every completed Pomodoro session.',
             'See sessions grouped by skill in your statistics.',
-            'Track streaks for consistent Pomodoro habits.'
+            'Collect active days when you practice regularly.'
           ]
         },
         {
@@ -1403,67 +1403,67 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         }
       ]
     },
-    streaks: {
-      slug: 'streaks',
-      eyebrow: 'Streaks',
-      title: 'Turn consistency into a streak you can see',
-      metaTitle: 'Streak Tracker App with XP | Build Daily Habits | SkillQuest',
+    'active-days': {
+      slug: 'active-days',
+      eyebrow: 'Active Days',
+      title: 'Active days: see how regularly you practice',
+      metaTitle: 'Active Days | See How Often You Practice | SkillQuest',
       metaDescription:
-        'SkillQuest tracks a daily streak for every skill you practice, with XP, levels, and streak freezes so one missed day does not erase your progress.',
+        'SkillQuest counts active days: every day with at least 10 minutes of practice. A missed day takes nothing away, and your total never resets.',
       summary:
-        'A daily streak tracks how consistently you show up, backed by XP and levels so consistency feels like progress, not just a number.',
+        'A day counts as an active day once you practice for at least 10 minutes in total that day. Your total only goes up, so a missed day costs you nothing and regular practice still shows.',
       cardSummary:
-        'Daily streaks with XP and streak freezes, so consistency stays visible.',
-      screenshot: '03-session-reward.png',
-      primaryCta: 'Start your streak',
-      secondaryCta: 'See how XP works',
+        'Days with at least 10 minutes of practice add up to a total that never resets.',
+      screenshot: '04-statistics.png',
+      primaryCta: 'Download SkillQuest',
+      secondaryCta: 'View focus timers',
       sections: [
         {
-          title: 'Streaks that reward showing up',
+          title: 'What counts as an active day',
           body:
-            'Every day you complete a focus session, your streak grows. It is a simple, visible signal that turns "did I practice today?" into a running count.',
+            'Practice for at least 10 minutes in total on a day, with any timer and any skill, and that day counts as an active day.',
           bullets: [
-            'Earn 10 XP for an active day, on top of session XP.',
-            'Streaks work across all the skills you track.',
-            'See your current and longest streak at a glance.'
+            'Every full minute of practice earns 1 XP, so 10 minutes earns 10 XP.',
+            'Shorter sessions on the same day add up.',
+            'Each day counts once, however long you practice.'
           ]
         },
         {
-          title: 'Streak freezes protect an occasional miss',
+          title: 'A missed day costs nothing',
           body:
-            'Life gets in the way sometimes. Streak freezes mean one missed day does not have to reset weeks of consistency.',
+            'Active days do not have to follow each other. Skip a day and your total stays exactly where it was.',
           bullets: [
-            'Protect your streak from an occasional missed day.',
-            'Keep long-term motivation without an all-or-nothing feel.',
-            'Milestone streaks (7, 30, 100+ days) can trigger shareable activity posts.'
+            'Your total only goes up and never resets.',
+            'There is nothing to protect and nothing to lose.',
+            'Pick up again whenever it suits you.'
           ]
         },
         {
-          title: 'Streaks unlock more than numbers',
+          title: 'Milestones that show regular practice',
           body:
-            'Consistency in SkillQuest is tied to more than a counter: themes and rewards connect to your progress.',
+            'Over weeks and months, active days show how often you actually practiced, not just how long.',
           bullets: [
-            'Unlock themes through consistent progress.',
-            'Combine streaks with XP and levels for a fuller picture.',
-            'Use streak milestones as natural check-in points.'
+            'Milestones at 7, 30, and 100 active days, and beyond.',
+            'Some themes unlock when you reach a number of active days.',
+            'Challenge friends to an Active Days Battle.'
           ]
         }
       ],
       faq: [
         {
-          question: 'How does the streak system work in SkillQuest?',
+          question: 'What is an active day in SkillQuest?',
           answer:
-            'Completing a focus session on a given day keeps your streak alive and earns 10 XP for that active day, on top of session XP.'
+            'A day on which you practice for at least 10 minutes in total with a timer. Each day counts once toward your total.'
         },
         {
           question: 'What happens if I miss a day?',
           answer:
-            'Streak freezes can protect your streak from an occasional missed day, so one gap does not erase your progress.'
+            'Nothing. A missed day takes nothing away: your total stays the same and never resets.'
         },
         {
-          question: 'Is streak tracking free?',
+          question: 'Are active days free?',
           answer:
-            'Yes. Daily streaks, XP, and levels are part of the free tier.'
+            'Yes. Active days, XP, levels, and statistics are part of the free app.'
         }
       ]
     },
@@ -1505,7 +1505,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         {
           title: 'An activity feed that celebrates milestones',
           body:
-            'Streaks and other milestones can show up as activity posts, so progress gets noticed without turning into a public feed.',
+            'Active-day milestones can show up as activity posts, so progress gets noticed without turning into a public feed.',
           bullets: [
             'Automatic posts for milestones like 7, 30, or 100 active days.',
             'Privacy-aware posting respects your settings.',
@@ -1572,7 +1572,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
             'Study routines are easier to keep up when progress is visible, not just implied.',
           bullets: [
             'XP and levels per subject keep effort visible.',
-            'Daily streaks support consistent study habits.',
+            'Active days show how regularly you study.',
             'Statistics show which subjects are getting attention and which are not.'
           ]
         }
@@ -1736,7 +1736,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         'Light, dark, and system mode, plus themes you unlock through progress.',
       screenshot: '07-themes-profile.png',
       primaryCta: 'Download SkillQuest',
-      secondaryCta: 'See how streaks work',
+      secondaryCta: 'See how active days work',
       sections: [
         {
           title: 'Light, dark, and system mode',
@@ -1755,7 +1755,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
           bullets: [
             'Unlock additional themes through consistent progress.',
             'Free unlocks sit alongside Premium theme options.',
-            'Theme unlocks connect to the same streak and XP system as everything else.'
+            'Themes unlock as you reach levels and active-day milestones.'
           ]
         },
         {
@@ -1778,7 +1778,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         {
           question: 'How do I unlock more themes?',
           answer:
-            'Some themes unlock through consistent progress, such as streaks, alongside themes available with Premium.'
+            'Some themes unlock through your progress, such as levels and active days. Premium adds extra themes.'
         },
         {
           question: 'Do themes change how the app works?',
@@ -1891,7 +1891,7 @@ pages.de = {
           'Verdiene XP nach abgeschlossenen Sessions.',
           'Verfolge Fokuszeit pro Fähigkeit.',
           'Sieh Sessions pro Skill in deinen Statistiken.',
-          'Baue Streaks durch wiederholtes Üben auf.'
+          'Sammle aktive Tage durch regelmäßiges Üben.'
         ]
       },
       {
@@ -2003,7 +2003,7 @@ pages.de = {
     summary:
       'SkillQuest hilft dir, Fähigkeiten aufzubauen, indem du echte Übungszeit mit Fortschritt, XP, Levels und Statistiken verbindest.',
     cardSummary:
-      'Verfolge Fähigkeiten, XP, Levels, Streaks und Fokuszeit in einer mobilen App.',
+      'Verfolge Fähigkeiten, XP, Levels, aktive Tage und Fokuszeit in einer mobilen App.',
     primaryCta: 'SkillQuest herunterladen',
     secondaryCta: 'Focus Timer ansehen',
     sections: [
@@ -2014,18 +2014,18 @@ pages.de = {
         bullets: [
           'Nutze Startskills oder erstelle eigene Skills.',
           'Verfolge Lernen, Sport, Musik, Lesen, Code und kreative Arbeit.',
-          'Kombiniere Timer mit XP, Levels und Streaks.',
+          'Kombiniere Timer mit XP, Levels und aktiven Tagen.',
           'Sieh, welche Fähigkeiten wirklich Aufmerksamkeit bekommen.'
         ]
       },
       {
         title: 'Gamification für wiederholtes Üben',
         body:
-          'XP, Levels und Streaks machen Fortschritt greifbar, ohne zu behaupten, dass Ergebnisse garantiert sind.',
+          'XP, Levels und aktive Tage machen Fortschritt greifbar, ohne zu behaupten, dass Ergebnisse garantiert sind.',
         bullets: [
           'XP nach abgeschlossenen Sessions.',
           'Levels als sichtbare Meilensteine.',
-          'Streaks für wiederkehrende Routinen.',
+          'Aktive Tage für wiederkehrende Routinen.',
           'Leaderboards und Challenges für zusätzliche Motivation.'
         ]
       },
@@ -2155,7 +2155,7 @@ pages.de = {
         bullets: [
           'Verdiene nach jeder abgeschlossenen Pomodoro-Sitzung XP.',
           'Sieh dir in deinen Statistiken die nach Fähigkeiten gruppierten Sitzungen an.',
-          'Verfolge deine Streaks, um deine Pomodoro-Gewohnheiten konsequent beizubehalten.'
+          'Sammle aktive Tage, wenn du regelmäßig übst.'
         ]
       },
       {
@@ -2187,67 +2187,66 @@ pages.de = {
       }
     ]
   },
-  streaks: {
-    slug: 'streaks',
-    eyebrow: 'Streaks',
-    title: 'Mach aus Beständigkeit eine Serie, die man sehen kann',
-    metaTitle: 'Streak Tracker App mit XP | Tägliche Gewohnheiten aufbauen | SkillQuest',
+  'active-days': {
+    ...pages.en['active-days'],
+    eyebrow: 'Aktive Tage',
+    title: 'Aktive Tage: Sieh, wie regelmäßig du übst',
+    metaTitle: 'Aktive Tage | Sieh, wie oft du übst | SkillQuest',
     metaDescription:
-      'SkillQuest verfolgt für jede Fähigkeit, die du übst, eine tägliche Serie – mit XP, Levels und Serien-Pausen, damit ein verpasster Tag deinen Fortschritt nicht zunichte macht.',
+      'SkillQuest zählt aktive Tage: jeden Tag mit mindestens 10 Minuten Übung. Ein verpasster Tag kostet nichts, und deine Gesamtzahl wird nie zurückgesetzt.',
     summary:
-      'Eine tägliche Serie hält fest, wie regelmäßig du dabei bist – unterstützt durch XP und Level, damit sich Regelmäßigkeit wie Fortschritt anfühlt und nicht nur wie eine Zahl.',
+      'Ein Tag zählt als aktiver Tag, sobald du an diesem Tag insgesamt mindestens 10 Minuten übst. Deine Gesamtzahl steigt nur, also kostet dich ein verpasster Tag nichts und regelmäßiges Üben bleibt sichtbar.',
     cardSummary:
-      'Tägliche Serien mit XP und Serienunterbrechungen, damit die Kontinuität sichtbar bleibt.',
-    screenshot: '03-session-reward.png',
-    primaryCta: 'Starte deine Serie',
-    secondaryCta: 'Schau dir an, wie XP funktioniert',
+      'Tage mit mindestens 10 Minuten Übung ergeben eine Gesamtzahl, die nie zurückgesetzt wird.',
+    primaryCta: 'SkillQuest herunterladen',
+    secondaryCta: 'Focus Timer ansehen',
     sections: [
       {
-        title: 'Serien, bei denen man schon fürs Mitmachen belohnt wird',
+        title: 'Was als aktiver Tag zählt',
         body:
-          'Jeden Tag, an dem du eine Fokus-Sitzung absolvierst, wächst deine Serie. Das ist ein einfaches, sichtbares Zeichen, das aus der Frage „Habe ich heute geübt?“ eine fortlaufende Zählung macht.',
+          'Übe an einem Tag insgesamt mindestens 10 Minuten, mit jedem Timer und jeder Fähigkeit, dann zählt dieser Tag als aktiver Tag.',
         bullets: [
-          'Du bekommst 10 XP für einen aktiven Tag – zusätzlich zu den XP aus der Sitzung.',
-          'Serien gelten für alle Fähigkeiten, die du verfolgst.',
-          'Hier siehst du deine aktuelle und deine längste Serie auf einen Blick.'
+          'Jede volle Minute Übung bringt 1 XP, 10 Minuten also 10 XP.',
+          'Kürzere Sessions am selben Tag werden zusammengezählt.',
+          'Jeder Tag zählt einmal, egal wie lange du übst.'
         ]
       },
       {
-        title: 'Serien-Freezes schützen vor gelegentlichen Fehlschlägen',
+        title: 'Ein verpasster Tag kostet nichts',
         body:
-          'Manchmal kommt einem das Leben einfach dazwischen. Dank der „Streak-Freeze“-Funktion muss ein versäumter Tag nicht gleich bedeuten, dass wochenlange Beständigkeit zunichte gemacht wird.',
+          'Aktive Tage müssen nicht aufeinanderfolgen. Lässt du einen Tag aus, bleibt deine Gesamtzahl genau, wo sie war.',
         bullets: [
-          'Schütze deine Serie vor einem gelegentlichen Ausfalltag.',
-          'Bleib langfristig motiviert, ohne das Gefühl zu haben, dass es nur „alles oder nichts“ gibt.',
-          'Meilenstein-Serien (7, 30, 100+ Tage) können Beiträge auslösen, die geteilt werden können.'
+          'Deine Gesamtzahl steigt nur und wird nie zurückgesetzt.',
+          'Es gibt nichts zu schützen und nichts zu verlieren.',
+          'Mach einfach weiter, wann es dir passt.'
         ]
       },
       {
-        title: 'Serien bringen mehr als nur Zahlen',
+        title: 'Meilensteine, die regelmäßiges Üben zeigen',
         body:
-          'Die Kontinuität bei SkillQuest beschränkt sich nicht nur auf einen Zähler: Themen und Belohnungen sind mit deinem Fortschritt verknüpft.',
+          'Über Wochen und Monate zeigen aktive Tage, wie oft du wirklich geübt hast, nicht nur wie lange.',
         bullets: [
-          'Schalte Themen durch kontinuierliche Fortschritte frei.',
-          'Kombiniere Serien mit XP und Levels, um ein umfassenderes Bild zu erhalten.',
-          'Nutze Meilensteine deiner Serie als natürliche Kontrollpunkte.'
+          'Meilensteine bei 7, 30 und 100 aktiven Tagen und darüber hinaus.',
+          'Manche Designs schaltest du mit einer bestimmten Zahl aktiver Tage frei.',
+          'Fordere Freunde zu einer Aktive-Tage-Schlacht heraus.'
         ]
       }
     ],
     faq: [
       {
-        question: 'Wie funktioniert das Streak-System bei SkillQuest?',
+        question: 'Was ist ein aktiver Tag in SkillQuest?',
         answer:
-          'Wenn du an einem bestimmten Tag eine Fokus-Session abschließt, bleibt deine Serie erhalten und du erhältst zusätzlich zu den XP für die Session 10 XP für diesen aktiven Tag.'
+          'Ein Tag, an dem du insgesamt mindestens 10 Minuten mit einem Timer übst. Jeder Tag zählt einmal für deine Gesamtzahl.'
       },
       {
-        question: 'Was passiert, wenn ich einen Tag auslasse?',
+        question: 'Was passiert, wenn ich einen Tag verpasse?',
         answer:
-          'Streak-Freezes können deine Serie vor einem gelegentlichen Ausfalltag schützen, sodass eine Lücke deinen Fortschritt nicht zunichte macht.'
+          'Nichts. Ein verpasster Tag nimmt dir nichts weg: Deine Gesamtzahl bleibt gleich und wird nie zurückgesetzt.'
       },
       {
-        question: 'Ist die Streak-Tracking-Funktion kostenlos?',
+        question: 'Sind aktive Tage kostenlos?',
         answer:
-          'Ja. Tägliche Serien, XP und Level sind Teil der kostenlosen Version.'
+          'Ja. Aktive Tage, XP, Levels und Statistiken gehören zur kostenlosen App.'
       }
     ]
   },
@@ -2289,7 +2288,7 @@ pages.de = {
       {
         title: 'Ein Aktivitäts-Feed, der Meilensteine feiert',
         body:
-          'Serien und andere Meilensteine können als Aktivitätsbeiträge angezeigt werden, sodass deine Fortschritte wahrgenommen werden, ohne dass daraus ein öffentlicher Feed wird.',
+          'Meilensteine bei aktiven Tagen können als Aktivitätsbeiträge angezeigt werden, sodass deine Fortschritte wahrgenommen werden, ohne dass daraus ein öffentlicher Feed wird.',
         bullets: [
           'Automatische Beiträge zu Meilensteinen wie 7, 30 oder 100 aktive Tage.',
           'Beim datenschutzbewussten Posten werden deine Einstellungen berücksichtigt.',
@@ -2356,7 +2355,7 @@ pages.de = {
           'Lernroutinen lassen sich leichter durchhalten, wenn der Fortschritt sichtbar ist und nicht nur angedeutet wird.',
         bullets: [
           'XP und Stufen pro Fach machen den Fortschritt sichtbar.',
-          'Tägliche Serien fördern beständige Lerngewohnheiten.',
+          'Aktive Tage zeigen, wie regelmäßig du lernst.',
           'Die Statistiken zeigen, welche Themen Beachtung finden und welche nicht.'
         ]
       }
@@ -2520,7 +2519,7 @@ pages.de = {
       'Hell-, Dunkel- und Systemmodus sowie Designs, die du im Laufe des Spiels freischaltest.',
     screenshot: '07-themes-profile.png',
     primaryCta: 'SkillQuest herunterladen',
-    secondaryCta: 'Schau dir an, wie Streaks funktionieren',
+    secondaryCta: 'Sieh dir an, wie aktive Tage funktionieren',
     sections: [
       {
         title: 'Hell-, Dunkel- und Systemmodus',
@@ -2539,7 +2538,7 @@ pages.de = {
         bullets: [
           'Schalte durch kontinuierliche Fortschritte weitere Designs frei.',
           'Neben den kostenlosen Freischaltungen gibt es auch Premium-Designoptionen.',
-          'Das Freischalten von Designs ist mit demselben Streak- und XP-System verknüpft wie alles andere auch.'
+          'Designs schaltest du mit Levels und Meilensteinen bei aktiven Tagen frei.'
         ]
       },
       {
@@ -2562,7 +2561,7 @@ pages.de = {
       {
         question: 'Wie schalte ich weitere Designs frei?',
         answer:
-          'Manche Designs schaltest du durch kontinuierlichen Fortschritt frei, zum Beispiel durch Streaks, während andere Designs mit Premium verfügbar sind.'
+          'Manche Designs schaltest du mit deinem Fortschritt frei, zum Beispiel mit Levels und aktiven Tagen. Premium bringt zusätzliche Designs.'
       },
       {
         question: 'Beeinflussen Designs die Funktionsweise der App?',
@@ -2671,7 +2670,7 @@ pages.fr = {
           'Gagne de l’XP après chaque session terminée.',
           'Suis ton temps de concentration par compétence.',
           'Consulte tes sessions par compétence dans les statistiques.',
-          'Construis des séries grâce à la pratique régulière.'
+          'Collectionne des jours actifs en pratiquant régulièrement.'
         ]
       },
       {
@@ -2784,7 +2783,7 @@ pages.fr = {
     summary:
       'SkillQuest t’aide à développer tes compétences en reliant ton vrai temps de pratique à la progression, aux XP, aux niveaux et aux statistiques.',
     cardSummary:
-      'Suis tes compétences, tes XP, tes niveaux, tes séries et ton temps de concentration dans une seule app mobile.',
+      'Suis tes compétences, tes XP, tes niveaux, tes jours actifs et ton temps de concentration dans une seule app mobile.',
     primaryCta: 'Télécharger SkillQuest',
     secondaryCta: 'Voir les minuteurs de concentration',
     sections: [
@@ -2795,18 +2794,18 @@ pages.fr = {
         bullets: [
           'Utilise les compétences de départ ou crée les tiennes.',
           'Suis tes études, le sport, la musique, la lecture, le code et la création.',
-          'Associe minuteurs, XP, niveaux et séries.',
+          'Associe minuteurs, XP, niveaux et jours actifs.',
           'Vois quelles compétences reçoivent vraiment ton attention.'
         ]
       },
       {
         title: 'Gamification pour pratiquer régulièrement',
         body:
-          'XP, niveaux et séries rendent le progrès concret, sans promettre de résultats garantis.',
+          'XP, niveaux et jours actifs rendent le progrès concret, sans promettre de résultats garantis.',
         bullets: [
           'XP après les sessions terminées.',
           'Niveaux comme jalons visibles.',
-          'Séries pour les routines répétées.',
+          'Jours actifs pour les routines répétées.',
           'Classements et défis pour une motivation supplémentaire.'
         ]
       },
@@ -2937,7 +2936,7 @@ pages.fr = {
         bullets: [
           'Gagne des XP après chaque session Pomodoro terminée.',
           'Consulte les sessions classées par compétence dans tes statistiques.',
-          'Suis tes séries pour adopter des habitudes Pomodoro régulières.',
+          'Collectionne des jours actifs en pratiquant régulièrement.',
         ]
       },
       {
@@ -2969,68 +2968,67 @@ pages.fr = {
       },
     ]
   },
-  streaks: {
-    slug: 'streaks',
-    eyebrow: 'Séries',
-    title: 'Transforme ta régularité en une série bien visible',
-    metaTitle: 'Séries quotidiennes avec XP | Crée des habitudes | SkillQuest',
+  'active-days': {
+    ...pages.en['active-days'],
+    eyebrow: 'Jours actifs',
+    title: 'Jours actifs : vois à quel point tu pratiques régulièrement',
+    metaTitle: 'Jours actifs | Vois à quelle fréquence tu pratiques | SkillQuest',
     metaDescription:
-      'SkillQuest compte ta série quotidienne pour chaque compétence, avec XP, niveaux et gels de série : un jour manqué n’efface pas ta progression.',
+      'SkillQuest compte les jours actifs : chaque jour avec au moins 10 minutes de pratique. Un jour manqué ne coûte rien et ton total ne revient jamais à zéro.',
     summary:
-      'Une série quotidienne te permet de suivre ta régularité, avec des XP et des niveaux pour que cette régularité te donne l\'impression de progresser, et pas seulement d\'accumuler des chiffres.',
+      'Une journée compte comme jour actif dès que tu pratiques au moins 10 minutes au total ce jour-là. Ton total ne fait qu’augmenter : un jour manqué ne te coûte rien et ta régularité reste visible.',
     cardSummary:
-      'Des séries quotidiennes avec des XP et des gels de série, pour que ta régularité reste visible.',
-    screenshot: '03-session-reward.png',
-    primaryCta: 'Commencer ma série',
-    secondaryCta: 'Découvrir comment fonctionnent les XP',
+      'Les jours avec au moins 10 minutes de pratique s’additionnent dans un total qui ne revient jamais à zéro.',
+    primaryCta: 'Télécharger SkillQuest',
+    secondaryCta: 'Voir les minuteurs de concentration',
     sections: [
       {
-        title: 'Des séries qui récompensent ta présence',
+        title: 'Ce qui compte comme jour actif',
         body:
-          'Chaque jour où tu fais une séance de concentration, ta série s\'allonge. C\'est un indicateur simple et visible qui transforme la question « Est-ce que je me suis entraîné aujourd\'hui ? » en un compteur qui ne s\'arrête pas.',
+          'Pratique au moins 10 minutes au total dans la journée, avec n’importe quel minuteur et n’importe quelle compétence, et ce jour compte comme jour actif.',
         bullets: [
-          'Gagne 10 XP pour chaque journée active, en plus des XP de session.',
-          'Les séries s\'appliquent à toutes les compétences que tu suis.',
-          'Vois d\'un coup d\'œil ta série actuelle et ta série la plus longue.',
+          'Chaque minute complète de pratique rapporte 1 XP : 10 minutes rapportent donc 10 XP.',
+          'Les sessions plus courtes d’une même journée s’additionnent.',
+          'Chaque jour compte une fois, quelle que soit la durée de ta pratique.'
         ]
       },
       {
-        title: 'Les gels de série te protègent d\'un jour raté de temps en temps',
+        title: 'Un jour manqué ne coûte rien',
         body:
-          'Parfois, la vie vient tout chambouler. Grâce aux gels de série, un jour manqué ne remet pas à zéro des semaines d\'assiduité.',
+          'Les jours actifs n’ont pas besoin de se suivre. Si tu sautes un jour, ton total reste exactement où il était.',
         bullets: [
-          'Évite de voir ta série s\'interrompre à cause d\'un jour manqué de temps en temps.',
-          'Garde ta motivation sur le long terme sans tomber dans le piège du tout ou rien.',
-          'Les séries de jours consécutifs (7, 30, 100 jours et plus) peuvent déclencher des publications d\'activité que tu peux partager.',
+          'Ton total ne fait qu’augmenter et ne revient jamais à zéro.',
+          'Il n’y a rien à protéger et rien à perdre.',
+          'Reprends quand ça te convient.'
         ]
       },
       {
-        title: 'Les séries, c\'est bien plus que de simples chiffres',
+        title: 'Des étapes qui montrent ta régularité',
         body:
-          'Dans SkillQuest, la régularité ne se résume pas à un simple compteur : les thèmes et les récompenses sont liés à ta progression.',
+          'Au fil des semaines et des mois, les jours actifs montrent à quelle fréquence tu as vraiment pratiqué, pas seulement combien de temps.',
         bullets: [
-          'Débloque des thèmes en progressant régulièrement.',
-          'Associe les séries à l\'XP et aux niveaux pour avoir une vision plus complète.',
-          'Utilise les étapes importantes de ta série comme points de repère naturels.',
+          'Des étapes à 7, 30 et 100 jours actifs, et au-delà.',
+          'Certains thèmes se débloquent quand tu atteins un certain nombre de jours actifs.',
+          'Défie tes amis dans une Bataille des jours actifs.'
         ]
-      },
+      }
     ],
     faq: [
       {
-        question: 'Comment fonctionne le système de séries dans SkillQuest ?',
+        question: 'Qu’est-ce qu’un jour actif dans SkillQuest ?',
         answer:
-          'Si tu termines une session de concentration dans la journée, ta série continue et tu gagnes 10 XP pour cette journée, en plus des XP de la session.'
+          'Un jour où tu pratiques au moins 10 minutes au total avec un minuteur. Chaque jour compte une fois dans ton total.'
       },
       {
-        question: 'Que se passe-t-il si je rate une journée ?',
+        question: 'Que se passe-t-il si je manque un jour ?',
         answer:
-          'Les gels de série te permettent de protéger ta série en cas de jour manqué de temps en temps, pour qu\'une seule interruption n\'efface pas tes progrès.',
+          'Rien. Un jour manqué ne t’enlève rien : ton total reste le même et ne revient jamais à zéro.'
       },
       {
-        question: 'Est-ce que le suivi des séries est gratuit ?',
+        question: 'Les jours actifs sont-ils gratuits ?',
         answer:
-          'Oui. Les séries quotidiennes, les XP et les niveaux font partie de la formule gratuite.'
-      },
+          'Oui. Les jours actifs, les XP, les niveaux et les statistiques font partie de l’app gratuite.'
+      }
     ]
   },
   'friends-challenges': {
@@ -3071,7 +3069,7 @@ pages.fr = {
       {
         title: 'Un fil d\'activité qui met à l\'honneur les moments forts',
         body:
-          'Les séries et autres jalons peuvent apparaître sous forme de publications d\'activité, ce qui permet de mettre en avant tes progrès sans pour autant créer un fil d\'actualité public.',
+          'Les étapes de jours actifs peuvent apparaître sous forme de publications d\'activité, ce qui permet de mettre en avant tes progrès sans pour autant créer un fil d\'actualité public.',
         bullets: [
           'Des publications automatiques pour marquer des étapes comme 7, 30 ou 100 jours d\'activité.',
           'La publication respectueuse de la vie privée tient compte de tes paramètres.',
@@ -3138,7 +3136,7 @@ pages.fr = {
           'Il est plus facile de garder ses habitudes d’étude quand on voit clairement ses progrès, au lieu de devoir les deviner.',
         bullets: [
           'Les XP et les niveaux par matière te permettent de suivre tes progrès.',
-          'Les séries quotidiennes t\'aident à prendre de bonnes habitudes d\'étude.',
+          'Les jours actifs montrent à quel point tu étudies régulièrement.',
           'Les statistiques montrent quelles matières tu travailles le plus et lesquelles tu délaisses.',
         ]
       },
@@ -3302,7 +3300,7 @@ pages.fr = {
       'Mode clair, mode sombre et mode système, ainsi que des thèmes que tu débloques au fur et à mesure de ta progression.',
     screenshot: '07-themes-profile.png',
     primaryCta: 'Télécharger SkillQuest',
-    secondaryCta: 'Découvrir comment fonctionnent les séries',
+    secondaryCta: 'Découvrir comment fonctionnent les jours actifs',
     sections: [
       {
         title: 'Mode clair, mode sombre et mode système',
@@ -3321,7 +3319,7 @@ pages.fr = {
         bullets: [
           'Débloque des thèmes supplémentaires en progressant régulièrement.',
           'Les déblocages gratuits coexistent avec les options de thèmes Premium.',
-          'Le déblocage des thèmes est lié au même système de séries et d\'XP que tout le reste.',
+          'Les thèmes se débloquent au fil des niveaux et des étapes de jours actifs.',
         ]
       },
       {
@@ -3344,7 +3342,7 @@ pages.fr = {
       {
         question: 'Comment faire pour débloquer d\'autres thèmes ?',
         answer:
-          'Certains thèmes se débloquent en progressant régulièrement, par exemple grâce à des séries de jours consécutifs, tandis que d\'autres sont disponibles avec l\'abonnement Premium.'
+          'Certains thèmes se débloquent avec ta progression, par exemple les niveaux et les jours actifs. Premium ajoute des thèmes supplémentaires.'
       },
       {
         question: 'Est-ce que les thèmes modifient le fonctionnement de l\'appli ?',
@@ -3452,7 +3450,7 @@ pages.es = {
           'Gana XP después de sesiones completadas.',
           'Sigue el tiempo de enfoque por habilidad.',
           'Revisa sesiones por habilidad en estadísticas.',
-          'Construye rachas mediante práctica repetida.'
+          'Suma días activos practicando con regularidad.'
         ]
       },
       {
@@ -3564,7 +3562,7 @@ pages.es = {
     summary:
       'SkillQuest te ayuda a desarrollar habilidades conectando tiempo real de práctica con progreso, XP, niveles y estadísticas.',
     cardSummary:
-      'Sigue habilidades, XP, niveles, rachas y tiempo de enfoque en una app móvil.',
+      'Sigue habilidades, XP, niveles, días activos y tiempo de enfoque en una app móvil.',
     primaryCta: 'Descargar SkillQuest',
     secondaryCta: 'Ver Focus Timers',
     sections: [
@@ -3575,18 +3573,18 @@ pages.es = {
         bullets: [
           'Usa habilidades iniciales o crea las tuyas.',
           'Sigue estudio, deporte, música, lectura, código y trabajo creativo.',
-          'Combina timers con XP, niveles y rachas.',
+          'Combina timers con XP, niveles y días activos.',
           'Ve qué habilidades reciben atención real.'
         ]
       },
       {
         title: 'Gamificación para practicar con regularidad',
         body:
-          'XP, niveles y rachas hacen tangible el progreso, sin prometer resultados garantizados.',
+          'XP, niveles y días activos hacen tangible el progreso, sin prometer resultados garantizados.',
         bullets: [
           'XP después de sesiones completadas.',
           'Niveles como hitos visibles.',
-          'Rachas para rutinas repetidas.',
+          'Días activos para rutinas repetidas.',
           'Clasificaciones y desafíos para motivación adicional.'
         ]
       },
@@ -3716,7 +3714,7 @@ pages.es = {
         bullets: [
           'Gana XP cada vez que termines una sesión de Pomodoro.',
           'Echa un vistazo a las sesiones agrupadas por habilidad en tus estadísticas.',
-          'Lleva un registro de tus rachas para mantener unos hábitos Pomodoro constantes.',
+          'Suma días activos practicando con regularidad.',
         ]
       },
       {
@@ -3748,68 +3746,67 @@ pages.es = {
       },
     ]
   },
-  streaks: {
-    slug: 'streaks',
-    eyebrow: 'Rachas',
-    title: 'Convierte la constancia en una racha que se note',
-    metaTitle: 'App Streak Tracker con XP | Crea hábitos diarios | SkillQuest',
+  'active-days': {
+    ...pages.en['active-days'],
+    eyebrow: 'Días activos',
+    title: 'Días activos: ve con qué regularidad practicas',
+    metaTitle: 'Días activos | Ve con qué frecuencia practicas | SkillQuest',
     metaDescription:
-      'SkillQuest lleva la cuenta de tu racha diaria para cada habilidad que practiques, con XP, niveles y la posibilidad de congelar la racha, para que un día sin practicar no borre tu progreso.',
+      'SkillQuest cuenta los días activos: cada día con al menos 10 minutos de práctica. Saltarte un día no cuesta nada y tu total nunca vuelve a cero.',
     summary:
-      'La racha diaria lleva la cuenta de tu constancia, con puntos de experiencia (XP) y niveles, para que esa constancia se sienta como un progreso, no solo como un número.',
+      'Un día cuenta como día activo en cuanto practicas al menos 10 minutos en total ese día. Tu total solo sube, así que saltarte un día no te cuesta nada y tu práctica regular se sigue viendo.',
     cardSummary:
-      'Rachas diarias con XP y pausas en las rachas, para que se vea bien la constancia.',
-    screenshot: '03-session-reward.png',
-    primaryCta: 'Empieza tu racha',
-    secondaryCta: 'Descubre cómo funciona XP',
+      'Los días con al menos 10 minutos de práctica suman un total que nunca vuelve a cero.',
+    primaryCta: 'Descargar SkillQuest',
+    secondaryCta: 'Ver temporizadores de concentración',
     sections: [
       {
-        title: 'Rachas que te recompensan por participar',
+        title: 'Qué cuenta como día activo',
         body:
-          'Cada día que haces una sesión de concentración, tu racha va aumentando. Es una señal sencilla y clara que convierte la pregunta «¿he practicado hoy?» en un recuento continuo.',
+          'Practica al menos 10 minutos en total en un día, con cualquier temporizador y cualquier habilidad, y ese día cuenta como día activo.',
         bullets: [
-          'Gana 10 XP por cada día activo, además de los XP de sesión.',
-          'Las rachas se aplican a todas las habilidades que sigues.',
-          'Echa un vistazo rápido a tu racha actual y a la más larga que has tenido.',
+          'Cada minuto completo de práctica te da 1 XP, así que 10 minutos son 10 XP.',
+          'Las sesiones más cortas del mismo día se suman.',
+          'Cada día cuenta una vez, practiques el tiempo que practiques.'
         ]
       },
       {
-        title: 'Las pausas en la racha te protegen si alguna vez fallas',
+        title: 'Saltarte un día no cuesta nada',
         body:
-          'A veces la vida se interpone. Con las pausas en la racha, un día que te saltes no tiene por qué echar por tierra semanas de constancia.',
+          'Los días activos no tienen que ser seguidos. Si te saltas un día, tu total se queda exactamente donde estaba.',
         bullets: [
-          'Protege tu racha por si alguna vez te saltas un día.',
-          'Mantén la motivación a largo plazo sin sentir que es «todo o nada».',
-          'Las rachas que marcan hitos (7, 30, 100 o más días) pueden generar publicaciones de actividad que se pueden compartir.',
+          'Tu total solo sube y nunca vuelve a cero.',
+          'No hay nada que proteger ni nada que perder.',
+          'Retómalo cuando te venga bien.'
         ]
       },
       {
-        title: 'Las rachas te dan mucho más que simples números',
+        title: 'Hitos que muestran tu práctica regular',
         body:
-          'En SkillQuest, la progresión no se limita a un simple contador: los temas y las recompensas están vinculados a tu progreso.',
+          'Con las semanas y los meses, los días activos muestran con qué frecuencia practicaste de verdad, no solo cuánto tiempo.',
         bullets: [
-          'Desbloquea temas a medida que vas avanzando.',
-          'Combina las rachas con los XP y los niveles para tener una visión más completa.',
-          'Usa los hitos de rachas como puntos de control naturales.',
+          'Hitos a los 7, 30 y 100 días activos, y más allá.',
+          'Algunos temas se desbloquean al alcanzar cierto número de días activos.',
+          'Reta a tus amigos a una Batalla de días activos.'
         ]
-      },
+      }
     ],
     faq: [
       {
-        question: '¿Cómo funciona el sistema de rachas en SkillQuest?',
+        question: '¿Qué es un día activo en SkillQuest?',
         answer:
-          'Si completas una sesión de concentración un día determinado, mantienes tu racha y ganas 10 XP por ese día activo, además de los XP de la sesión.'
+          'Un día en el que practicas al menos 10 minutos en total con un temporizador. Cada día cuenta una vez para tu total.'
       },
       {
         question: '¿Qué pasa si me salto un día?',
         answer:
-          'Las opciones para congelar la racha pueden proteger tu racha si alguna vez te saltas un día, para que un solo día sin hacer ejercicio no borre todo tu progreso.'
+          'Nada. Saltarte un día no te quita nada: tu total sigue igual y nunca vuelve a cero.'
       },
       {
-        question: '¿El seguimiento de rachas es gratis?',
+        question: '¿Los días activos son gratis?',
         answer:
-          'Sí. Las rachas diarias, los XP y los niveles forman parte del plan gratuito.'
-      },
+          'Sí. Los días activos, los XP, los niveles y las estadísticas forman parte de la app gratuita.'
+      }
     ]
   },
   'friends-challenges': {
@@ -3850,7 +3847,7 @@ pages.es = {
       {
         title: 'Un feed de actividades que celebra los hitos',
         body:
-          'Las rachas y otros hitos pueden aparecer como publicaciones de actividad, así que se nota tu progreso sin que se convierta en un feed público.',
+          'Los hitos de días activos pueden aparecer como publicaciones de actividad, así que se nota tu progreso sin que se convierta en un feed público.',
         bullets: [
           'Publicaciones automáticas para hitos como 7, 30 o 100 días de actividad.',
           'Las publicaciones que respetan la privacidad tienen en cuenta tu configuración.',
@@ -3917,7 +3914,7 @@ pages.es = {
           'Es más fácil mantener las rutinas de estudio cuando el progreso se ve, y no solo se intuye.',
         bullets: [
           'Los XP y los niveles por asignatura te permiten ver el progreso que vas haciendo.',
-          'Las rachas diarias te ayudan a mantener unos hábitos de estudio constantes.',
+          'Los días activos muestran con qué regularidad estudias.',
           'Las estadísticas muestran qué temas están llamando la atención y cuáles no.',
         ]
       },
@@ -4081,7 +4078,7 @@ pages.es = {
       'Modo claro, oscuro y de sistema, además de temas que vas desbloqueando a medida que avanzas.',
     screenshot: '07-themes-profile.png',
     primaryCta: 'Descarga SkillQuest',
-    secondaryCta: 'Descubre cómo funcionan las rachas',
+    secondaryCta: 'Descubre cómo funcionan los días activos',
     sections: [
       {
         title: 'Modo claro, oscuro y de sistema',
@@ -4100,7 +4097,7 @@ pages.es = {
         bullets: [
           'Desbloquea temas adicionales a medida que vas avanzando.',
           'Los desbloqueos gratuitos se ofrecen junto con las opciones de temas Premium.',
-          'Los desbloqueos de temas se vinculan al mismo sistema de rachas y XP que el resto de cosas.',
+          'Los temas se desbloquean al alcanzar niveles e hitos de días activos.',
         ]
       },
       {
@@ -4123,7 +4120,7 @@ pages.es = {
       {
         question: '¿Cómo puedo desbloquear más temas?',
         answer:
-          'Algunos temas se desbloquean al avanzar de forma constante, como las rachas, además de los temas disponibles con la versión Premium.'
+          'Algunos temas se desbloquean con tu progreso, como los niveles y los días activos. Premium añade temas extra.'
       },
       {
         question: '¿Los temas cambian el funcionamiento de la app?',
@@ -4232,7 +4229,7 @@ pages.it = {
           'Guadagna XP dopo le sessioni completate.',
           'Monitora il tempo di concentrazione per abilità.',
           'Rivedi le sessioni per abilità nelle statistiche.',
-          'Costruisci serie con la pratica ripetuta.'
+          'Accumula giorni attivi esercitandoti con regolarità.'
         ]
       },
       {
@@ -4345,7 +4342,7 @@ pages.it = {
     summary:
       'SkillQuest ti aiuta a sviluppare abilità collegando tempo reale di pratica a progresso, XP, livelli e statistiche.',
     cardSummary:
-      'Monitora abilità, XP, livelli, serie e tempo di concentrazione in un’app mobile.',
+      'Monitora abilità, XP, livelli, giorni attivi e tempo di concentrazione in un’app mobile.',
     primaryCta: 'Scarica SkillQuest',
     secondaryCta: 'Vedi i timer di concentrazione',
     sections: [
@@ -4356,18 +4353,18 @@ pages.it = {
         bullets: [
           'Usa abilità iniziali o crea abilità personalizzate.',
           'Monitora studio, sport, musica, lettura, programmazione e lavoro creativo.',
-          'Combina timer con XP, livelli e serie.',
+          'Combina timer con XP, livelli e giorni attivi.',
           'Vedi quali abilità ricevono davvero attenzione.'
         ]
       },
       {
         title: 'Gamification per praticare con costanza',
         body:
-          'XP, livelli e serie rendono il progresso concreto, senza promettere risultati garantiti.',
+          'XP, livelli e giorni attivi rendono il progresso concreto, senza promettere risultati garantiti.',
         bullets: [
           'XP dopo le sessioni completate.',
           'Livelli come traguardi visibili.',
-          'Serie per routine ricorrenti.',
+          'Giorni attivi per routine ricorrenti.',
           'Classifiche e sfide per motivazione extra.'
         ]
       },
@@ -4498,7 +4495,7 @@ pages.it = {
         bullets: [
           'Guadagna XP dopo ogni sessione Pomodoro completata.',
           'Guarda le sessioni raggruppate per abilità nelle tue statistiche.',
-          'Tieni traccia delle serie per restare costante con il metodo Pomodoro.',
+          'Accumula giorni attivi esercitandoti con regolarità.',
         ]
       },
       {
@@ -4530,68 +4527,67 @@ pages.it = {
       },
     ]
   },
-  streaks: {
-    slug: 'streaks',
-    eyebrow: 'Serie',
-    title: 'Trasforma la costanza in una serie che puoi vedere crescere',
-    metaTitle: 'Serie giornaliere con XP | Crea abitudini quotidiane | SkillQuest',
+  'active-days': {
+    ...pages.en['active-days'],
+    eyebrow: 'Giorni attivi',
+    title: 'Giorni attivi: guarda con quanta regolarità ti eserciti',
+    metaTitle: 'Giorni attivi | Scopri quanto spesso ti eserciti | SkillQuest',
     metaDescription:
-      'SkillQuest tiene traccia della serie giornaliera per ogni abilità che alleni, con XP, livelli e congelamenti della serie: un giorno saltato non cancella i tuoi progressi.',
+      'SkillQuest conta i giorni attivi: ogni giorno con almeno 10 minuti di pratica. Un giorno saltato non costa nulla e il tuo totale non si azzera mai.',
     summary:
-      'Una serie giornaliera misura la tua costanza e, insieme a XP e livelli, te la fa sentire come un vero progresso, non solo come un numero.',
+      'Un giorno conta come giorno attivo quando quel giorno ti eserciti per almeno 10 minuti in totale. Il tuo totale può solo salire, quindi un giorno saltato non ti costa nulla e la pratica regolare resta visibile.',
     cardSummary:
-      'Serie giornaliere con XP e congelamenti della serie, così la costanza resta ben visibile.',
-    screenshot: '03-session-reward.png',
-    primaryCta: 'Inizia la tua serie',
-    secondaryCta: 'Scopri come funzionano gli XP',
+      'I giorni con almeno 10 minuti di pratica si sommano in un totale che non si azzera mai.',
+    primaryCta: 'Scarica SkillQuest',
+    secondaryCta: 'Vedi i timer di concentrazione',
     sections: [
       {
-        title: 'Una serie che premia la tua costanza',
+        title: 'Cosa conta come giorno attivo',
         body:
-          'Ogni giorno in cui completi una sessione di concentrazione, la tua serie cresce. È un segnale semplice e visibile che trasforma la domanda “Mi sono allenato oggi?” in un conteggio progressivo.',
+          'Esercitati per almeno 10 minuti in totale in una giornata, con qualsiasi timer e qualsiasi abilità, e quel giorno conta come giorno attivo.',
         bullets: [
-          'Guadagna 10 XP per ogni giornata attiva, oltre agli XP della sessione.',
-          'Le serie valgono per tutte le abilità che monitori.',
-          'Scopri subito la tua serie attuale e quella più lunga.',
+          'Ogni minuto intero di pratica vale 1 XP, quindi 10 minuti valgono 10 XP.',
+          'Le sessioni più brevi della stessa giornata si sommano.',
+          'Ogni giorno conta una volta sola, per quanto tempo tu ti eserciti.'
         ]
       },
       {
-        title: 'I congelamenti della serie ti proteggono da un giorno saltato ogni tanto',
+        title: 'Un giorno saltato non costa nulla',
         body:
-          'A volte la vita ti mette i bastoni tra le ruote. Grazie ai congelamenti della serie, un giorno saltato non significa dover ricominciare da capo dopo settimane di costanza.',
+          'I giorni attivi non devono essere consecutivi. Se salti un giorno, il tuo totale resta esattamente dov’era.',
         bullets: [
-          'Proteggi la tua serie quando salti un giorno ogni tanto.',
-          'Mantieni la motivazione a lungo termine senza quella sensazione di “tutto o niente”.',
-          'Le serie di 7, 30 o più di 100 giorni possono generare post di attività da condividere.',
+          'Il tuo totale può solo salire e non si azzera mai.',
+          'Non c’è niente da proteggere e niente da perdere.',
+          'Riprendi quando ti va.'
         ]
       },
       {
-        title: 'Le serie non sono solo numeri',
+        title: 'Traguardi che mostrano la pratica regolare',
         body:
-          'In SkillQuest la costanza non è solo un contatore: temi e ricompense sono legati ai tuoi progressi.',
+          'Nel corso di settimane e mesi, i giorni attivi mostrano quanto spesso ti sei davvero esercitato, non solo per quanto tempo.',
         bullets: [
-          'Sblocca i temi continuando a progredire.',
-          'Combina le serie con XP e livelli per avere un quadro più completo.',
-          'Usa i traguardi della serie come punti di riferimento naturali.',
+          'Traguardi a 7, 30 e 100 giorni attivi, e oltre.',
+          'Alcuni temi si sbloccano quando raggiungi un certo numero di giorni attivi.',
+          'Sfida i tuoi amici in una Battaglia dei giorni attivi.'
         ]
-      },
+      }
     ],
     faq: [
       {
-        question: 'Come funziona il sistema delle serie in SkillQuest?',
+        question: 'Che cos’è un giorno attivo in SkillQuest?',
         answer:
-          'Se completi una sessione di concentrazione in un determinato giorno, mantieni viva la tua serie e guadagni 10 XP per quel giorno attivo, oltre agli XP della sessione.'
+          'Un giorno in cui ti eserciti per almeno 10 minuti in totale con un timer. Ogni giorno conta una volta nel tuo totale.'
       },
       {
         question: 'Cosa succede se salto un giorno?',
         answer:
-          'I congelamenti della serie proteggono la tua serie da un giorno saltato ogni tanto, così un solo giorno di pausa non cancella i tuoi progressi.'
+          'Niente. Un giorno saltato non ti toglie nulla: il tuo totale resta uguale e non si azzera mai.'
       },
       {
-        question: 'Le serie sono gratuite?',
+        question: 'I giorni attivi sono gratuiti?',
         answer:
-          'Sì. Le serie giornaliere, l\'XP e i livelli fanno parte del piano gratuito.'
-      },
+          'Sì. Giorni attivi, XP, livelli e statistiche fanno parte dell’app gratuita.'
+      }
     ]
   },
   'friends-challenges': {
@@ -4632,7 +4628,7 @@ pages.it = {
       {
         title: 'Un feed delle attività che celebra i traguardi raggiunti',
         body:
-          'Le serie e altri traguardi possono apparire come post di attività, così i tuoi progressi si notano senza finire su una bacheca pubblica.',
+          'I traguardi dei giorni attivi possono apparire come post di attività, così i tuoi progressi si notano senza finire su una bacheca pubblica.',
         bullets: [
           'Post automatici per traguardi come 7, 30 o 100 giorni di attività.',
           'La condivisione rispetta sempre la tua privacy e le tue impostazioni.',
@@ -4699,7 +4695,7 @@ pages.it = {
           'È più facile mantenere le abitudini di studio quando i progressi sono visibili, non solo intuibili.',
         bullets: [
           'I punti XP e i livelli per materia ti permettono di tenere sotto controllo i tuoi progressi.',
-          'Le serie giornaliere aiutano a mantenere abitudini di studio costanti.',
+          'I giorni attivi mostrano con quanta regolarità studi.',
           'Le statistiche mostrano a quali materie stai dedicando attenzione e a quali no.',
         ]
       },
@@ -4863,7 +4859,7 @@ pages.it = {
       'Modalità chiara, scura e di sistema, oltre ai temi che sblocchi man mano che progredisci.',
     screenshot: '07-themes-profile.png',
     primaryCta: 'Scarica SkillQuest',
-    secondaryCta: 'Scopri come funzionano le serie',
+    secondaryCta: 'Scopri come funzionano i giorni attivi',
     sections: [
       {
         title: 'Modalità chiara, scura e di sistema',
@@ -4882,7 +4878,7 @@ pages.it = {
         bullets: [
           'Sblocca temi aggiuntivi continuando a progredire.',
           'I temi sbloccabili gratuitamente si affiancano alle opzioni del piano Premium.',
-          'Lo sblocco dei temi è collegato allo stesso sistema di serie e XP del resto dell\'app.',
+          'I temi si sbloccano raggiungendo livelli e traguardi di giorni attivi.',
         ]
       },
       {
@@ -4905,7 +4901,7 @@ pages.it = {
       {
         question: 'Come faccio a sbloccare altri temi?',
         answer:
-          'Alcuni temi si sbloccano man mano che progredisci, ad esempio con le serie, oltre a quelli disponibili con l\'abbonamento Premium.'
+          'Alcuni temi si sbloccano con i tuoi progressi, ad esempio livelli e giorni attivi. Premium aggiunge temi extra.'
       },
       {
         question: 'I temi cambiano il funzionamento dell\'app?',

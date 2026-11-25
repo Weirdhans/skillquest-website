@@ -41,7 +41,7 @@ function secondaryHref(slug: string) {
   if (slug === 'focus-timer' || slug === 'progress-statistics' || slug === 'guest-mode') return '/pricing';
   if (slug === 'friends-challenges') return '/features/leaderboards';
   if (slug === 'leaderboards') return '/features/friends-challenges';
-  if (slug === 'themes') return '/features/streaks';
+  if (slug === 'themes') return '/features/active-days';
   return '/features/focus-timer';
 }
 

@@ -32,7 +32,9 @@ function assertLanguageMetadata(response, html, locale, path = '') {
 const redirects = [
   ['/en/app', '/en/download'],
   ['/nl/handleiding', '/nl/guides'],
-  ['/es/faq', '/es/support#faq']
+  ['/es/faq', '/es/support#faq'],
+  // The app counts active days, not streaks: the old guide URL moves on.
+  ...locales.map((locale) => [`/${locale}/features/streaks`, `/${locale}/features/active-days`])
 ];
 
 for (const [source, destination] of redirects) {

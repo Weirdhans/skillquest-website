@@ -39,7 +39,7 @@ const translated = [
   'skill-tracker',
   'progress-statistics',
   'pomodoro-timer',
-  'streaks',
+  'active-days',
   'friends-challenges',
   'study-timer',
   'deep-work-flowtime',
