@@ -241,3 +241,15 @@ test('the language switcher sends an English-only guide to the guides list of th
   const navbar = await read('src/components/Navbar.tsx');
   assert.match(navbar, /router\.push\(languageSwitchTarget\(pathname, newLocale\)\)/);
 });
+
+test('messages hold only what the site renders: the privacy and account-deletion pages', async () => {
+  // The old landing-page keys (hero, howItWorks, painPoints, navbar, footer)
+  // were rendered nowhere but still shipped to every visitor's browser, with
+  // "78 skills", "unlock achievements" (the app has no achievements) and a
+  // day-streak counter.
+  for (const locale of locales) {
+    const messages = JSON.parse(await read(`messages/${locale}.json`));
+    assert.deepEqual(Object.keys(messages), ['privacy', 'deleteAccount'], locale);
+    assert.doesNotMatch(JSON.stringify(messages.deleteAccount), /achievement|\b78\b/i, locale);
+  }
+});
