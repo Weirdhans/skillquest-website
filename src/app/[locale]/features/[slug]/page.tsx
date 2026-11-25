@@ -129,16 +129,16 @@ export default async function FeatureLandingPage({
                 </StaggerItem>
               </Stagger>
 
-              <div className="mx-auto hidden w-full max-w-[280px] lg:block">
+              <div className="mx-auto hidden w-full max-w-[250px] lg:block">
                 <div className="overflow-hidden rounded-2xl border border-white/15 shadow-2xl">
                   <Image
                     src={screenshotPath(safeLocale, page.screenshot)}
                     alt={page.title}
-                    width={1080}
-                    height={1920}
+                    width={604}
+                    height={1272}
                     priority
                     className="h-auto w-full"
-                    sizes="280px"
+                    sizes="250px"
                   />
                 </div>
               </div>

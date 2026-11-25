@@ -131,7 +131,7 @@ test('compact family image variants work and reduce bytes without lowering quali
   for (const width of [400, 448, 576, 640]) {
     const url = new URL('/_next/image', origin);
     url.search = new URLSearchParams({
-      url: '/screenshots/en/06-family-dashboard.png',
+      url: '/screenshots/2026-10/en/06-family-dashboard.png',
       w: String(width),
       q: '75'
     }).toString();

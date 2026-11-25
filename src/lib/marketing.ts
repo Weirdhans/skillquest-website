@@ -70,9 +70,15 @@ export const PRICES = Object.fromEntries(
   ])
 ) as Record<Locale, Record<keyof typeof PRICE_AMOUNTS, string>>;
 
-// The same seven images as the Google Play listing (app repo,
-// fastlane/metadata/android/<locale>/images/phoneScreenshots). The headline
-// and subtitle are part of the image, so a new set means new files here.
+// The seven app screens of the Google Play listing (app repo,
+// fastlane/metadata/android/<locale>/images/phoneScreenshots), cut out of the
+// store images: only the app screen, 604x1272, without the brand header, the
+// headline, the phone frame and the status bar. The site draws its own frame
+// and shows the caption as text.
+// The folder is named after the capture round. A new set gets a new folder, so
+// a browser or the image optimizer never serves an old image under a new page.
+export const SCREENSHOT_SET = '2026-10';
+
 export const screenshotNames = [
   '01-home-progress.png',
   '02-focus-timer.png',
@@ -87,7 +93,7 @@ export type ScreenshotName = (typeof screenshotNames)[number];
 
 export function screenshotPath(locale: string, name: ScreenshotName) {
   const safeLocale = isLocale(locale) ? locale : routing.defaultLocale;
-  return `/screenshots/${safeLocale}/${name}`;
+  return `/screenshots/${SCREENSHOT_SET}/${safeLocale}/${name}`;
 }
 
 export function isLocale(value: string): value is Locale {

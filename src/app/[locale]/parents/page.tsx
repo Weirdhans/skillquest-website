@@ -88,7 +88,7 @@ export default async function ParentsPage({
                 />
                 <p className="mt-4 text-sm text-gray-300">{copy.freeNote}</p>
               </div>
-              <div className="relative mx-auto hidden w-full max-w-[300px] lg:block">
+              <div className="relative mx-auto hidden w-full max-w-[260px] lg:block">
                 <div
                   aria-hidden
                   className="absolute -inset-8 rounded-full bg-primary-400/20 blur-3xl"
@@ -97,11 +97,11 @@ export default async function ParentsPage({
                   <Image
                     src={screenshotPath(safeLocale, '01-home-progress.png')}
                     alt=""
-                    width={1080}
-                    height={1920}
+                    width={604}
+                    height={1272}
                     priority
                     className="h-auto w-full"
-                    sizes="300px"
+                    sizes="260px"
                   />
                 </div>
               </div>

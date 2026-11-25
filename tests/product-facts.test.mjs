@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {readFile} from 'node:fs/promises';
+import {readdir, readFile} from 'node:fs/promises';
 import {test} from 'node:test';
 import ts from 'typescript';
 
@@ -98,6 +98,8 @@ test('every screenshot comes from the current set and exists in every language',
   // skills, no "streaks" in a caption. The two files below belonged to the old
   // set and showed the Rankings tab.
   const retired = ['05-rankings.png', '06-social-family.png'];
+  // Only the current set is on disk: the old per-language folders are gone.
+  assert.deepEqual(await readdir(new URL('public/screenshots/', root)), [marketing.SCREENSHOT_SET]);
   const used = new Set(marketing.screenshotNames);
   for (const locale of locales) {
     for (const page of features.getFeatureLandingPages(locale)) {
@@ -117,14 +119,14 @@ test('every screenshot comes from the current set and exists in every language',
   }
   for (const locale of locales) {
     for (const name of used) {
-      const file = await readFile(new URL(`public/screenshots/${locale}/${name}`, root));
+      const file = await readFile(new URL(`public/screenshots/${marketing.SCREENSHOT_SET}/${locale}/${name}`, root));
       // PNG header: width and height are the two 4-byte numbers from byte 16.
-      assert.equal(file.readUInt32BE(16), 1080, `${locale}/${name} width`);
-      assert.equal(file.readUInt32BE(20), 1920, `${locale}/${name} height`);
+      assert.equal(file.readUInt32BE(16), 604, `${locale}/${name} width`);
+      assert.equal(file.readUInt32BE(20), 1272, `${locale}/${name} height`);
     }
     for (const name of retired) {
       await assert.rejects(
-        readFile(new URL(`public/screenshots/${locale}/${name}`, root)),
+        readFile(new URL(`public/screenshots/${marketing.SCREENSHOT_SET}/${locale}/${name}`, root)),
         {code: 'ENOENT'},
         `${locale}/${name}`
       );

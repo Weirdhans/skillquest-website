@@ -78,7 +78,7 @@ export default function ProductScrollTour({
           className={`mt-12 grid gap-12 sm:grid-cols-2 ${reduce ? '' : 'lg:hidden'}`}
         >
           {screenshotNames.map((name, i) => (
-            <figure key={name}>
+            <figure key={name} className="mx-auto w-full max-w-[300px]">
               <div
                 className="overflow-hidden rounded-2xl border"
                 style={{borderColor: 'var(--sq-border)'}}
@@ -86,10 +86,10 @@ export default function ProductScrollTour({
                 <Image
                   src={screenshotPath(locale, name)}
                   alt={captions[i] ?? ''}
-                  width={1080}
-                  height={1920}
+                  width={604}
+                  height={1272}
                   className="h-auto w-full"
-                  sizes="(max-width: 640px) 90vw, 45vw"
+                  sizes="300px"
                 />
               </div>
               <figcaption className="mt-4 font-display text-subsection theme-title">
@@ -139,7 +139,7 @@ export default function ProductScrollTour({
                   the active one is opaque. */}
               <div className="relative">
                 <div className="sticky top-0 flex h-[100dvh] items-center">
-                  <div className="relative mx-auto aspect-[9/19.5] w-[300px]">
+                  <div className="relative mx-auto aspect-[604/1272] w-[300px]">
                     <div
                       aria-hidden
                       className="absolute -inset-10 rounded-full blur-3xl"
