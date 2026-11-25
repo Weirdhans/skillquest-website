@@ -311,7 +311,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         'Pomodoro, Deep Work, Flowtime en andere timermodi gekoppeld aan echte skill progressie.',
       screenshot: '02-focus-timer.png',
       primaryCta: 'Download SkillQuest',
-      secondaryCta: 'Vergelijk Premium',
+      secondaryCta: 'Vergelijk abonnementen',
       sections: [
         {
           title: 'Kies de timer die bij je taak past',
@@ -335,14 +335,14 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
           ]
         },
         {
-          title: 'Premium voor meer focusvrijheid',
+          title: 'Elke techniek is gratis',
           body:
-            'Premium is bedoeld voor gebruikers die meer timermodi, custom duur en diepere statistieken willen.',
+            'Alle timertechnieken en je eigen duur zitten in de gratis app. Premium voegt alleen extra thema’s toe.',
           bullets: [
-            'Geavanceerde technieken zoals Deep Work, 52-17 en Flowtime.',
-            'Custom Flowtime-duur en gepersonaliseerde timers.',
-            'Meer historie en uitgebreidere voortgangsinzichten.',
-            'Premium kost EUR 3.99 per maand of EUR 39.99 per jaar.'
+            'Pomodoro, 52-17, Deep Work en Flowtime zonder kosten.',
+            'Stel met Flowtime je eigen duur in.',
+            'Statistieken, XP en levels zijn ook gratis.',
+            'Premium kost EUR 3.99 per maand of EUR 39.99 per jaar en voegt extra thema’s toe.'
           ]
         }
       ],
@@ -355,7 +355,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         {
           question: 'Welke timermodi ondersteunt SkillQuest?',
           answer:
-            'De app ondersteunt Pomodoro, 52-17, Deep Work, Flowtime, Until Time en EMOM. Sommige geavanceerde functies horen bij Premium.'
+            'De app ondersteunt Pomodoro, 52-17, Deep Work, Flowtime, Until Time en EMOM. Ze zijn allemaal gratis.'
         },
         {
           question: 'Wordt mijn focus automatisch opgeslagen?',
@@ -425,7 +425,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         {
           question: 'Is Family hetzelfde als Premium?',
           answer:
-            'Nee. Family is een apart gezinsabonnement met Premium plus ouderrollen, kindstatistieken, timers voor kinderen, doelen en complimenten.'
+            'Nee. Family is een apart abonnement voor het hele huishouden. Het bevat de Premium-thema’s, plus gezinsbeheer, timers voor kinderen, kindstatistieken, doelen en complimenten.'
         },
         {
           question: 'Voor welke leeftijd is SkillQuest bedoeld?',
@@ -454,7 +454,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
           body:
             'Gebruik SkillQuest voor studie, sport, muziek, lezen, programmeren, creatief werk of elke routine die oefening vraagt.',
           bullets: [
-            '78 herkenbare skill-iconen in de app.',
+            '185 skills om uit te kiezen, elk met een herkenbaar icoon.',
             'Favorieten en meest gebruikte skills voor snelle toegang.',
             'Skillnamen en zoekdata zijn meertalig ingericht.'
           ]
@@ -511,7 +511,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         'Bekijk sessies, minuten, XP, skill breakdowns en trends per periode.',
       screenshot: '04-statistics.png',
       primaryCta: 'Bekijk de app',
-      secondaryCta: 'Vergelijk Premium',
+      secondaryCta: 'Vergelijk abonnementen',
       sections: [
         {
           title: 'Statistieken per periode',
@@ -524,12 +524,12 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
           ]
         },
         {
-          title: 'Diepere inzichten met Premium',
+          title: 'Actieve dagen laten regelmaat zien',
           body:
-            'Premium is bedoeld voor gebruikers die verder willen kijken dan de basisstatistieken.',
+            'Naast tijd en XP telt SkillQuest de dagen waarop je minstens 10 minuten hebt geoefend.',
           bullets: [
-            'Uitgebreidere statistieken en trends.',
-            'Meer sessiehistorie voor lange termijn inzicht.'
+            'Een gemiste dag haalt niets van je totaal af.',
+            'Alle statistieken zijn gratis; Premium voegt alleen extra thema’s toe.'
           ]
         },
         {
@@ -552,7 +552,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         {
           question: 'Kan ik lange termijn trends bekijken?',
           answer:
-            'Premium bevat uitgebreidere statistieken en meer historie. Controleer de app voor de actuele zichtbare functies.'
+            'Ja. Statistieken gaan per dag, week, maand en jaar, en ze zijn gratis voor iedereen.'
         },
         {
           question: 'Kunnen ouders statistieken van kinderen bekijken?',
@@ -603,7 +603,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
           bullets: [
             'Deep Work en 52-17 voor langere sessies.',
             'Flowtime en Until Time voor flexibele tijdsduur.',
-            'Met Premium krijg je toegang tot alle timertechnieken.'
+            'Alle timertechnieken zijn gratis.'
           ]
         }
       ],
@@ -611,7 +611,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         {
           question: 'Is de Pomodoro-timer gratis in SkillQuest?',
           answer:
-            'Ja. Pomodoro zit in het gratis abonnement, net als XP, levels en basisstatistieken.'
+            'Ja. Pomodoro zit in het gratis abonnement, net als XP, levels en statistieken.'
         },
         {
           question: 'Kan ik de Pomodoro-methode gebruiken om te studeren?',
@@ -821,15 +821,15 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
       slug: 'deep-work-flowtime',
       eyebrow: 'Deep Work & Flowtime',
       title: 'Langere focusblokken voor werk dat diepgang vraagt',
-      metaTitle: 'Deep Work & Flowtime Timer | Premium focussessies | SkillQuest',
+      metaTitle: 'Deep Work & Flowtime Timer | Langere focussessies | SkillQuest',
       metaDescription:
-        'Gebruik Deep Work, 52-17 en Flowtime in SkillQuest voor langere, ononderbroken focussessies. Premium timertechnieken met eigen duur.',
+        'Gebruik Deep Work, 52-17 en Flowtime in SkillQuest voor langere, ononderbroken focussessies. Gratis, met je eigen duur in Flowtime.',
       summary:
         'Wanneer een taak meer vraagt dan een sprint van 25 minuten, geven Deep Work, 52-17 en Flowtime je langere, flexibele focusblokken die nog steeds meetellen voor XP en voortgang.',
       cardSummary:
         'Deep Work, 52-17 en Flowtime voor langere, flexibele focussessies.',
       screenshot: '02-focus-timer.png',
-      primaryCta: 'Vergelijk Premium',
+      primaryCta: 'Download SkillQuest',
       secondaryCta: 'Bekijk alle timertechnieken',
       sections: [
         {
@@ -839,7 +839,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
           bullets: [
             'Langere focusblokken dan Pomodoro, gericht op één taak.',
             'Telt mee voor dezelfde XP, levels en statistieken als elke andere sessie.',
-            'Onderdeel van de Premium timertechnieken.'
+            'Gratis, net als elke andere timertechniek.'
           ]
         },
         {
@@ -849,7 +849,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
           bullets: [
             'Een vaste, onderzoeksgeïnspireerde verhouding tussen focus en pauze.',
             'Geschikt voor werk- of studiesessies van meerdere uren.',
-            'Inbegrepen bij Premium naast andere timertechnieken.'
+            'Gratis, naast de andere timertechnieken.'
           ]
         },
         {
@@ -877,7 +877,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         {
           question: 'Zijn deze timertechnieken gratis?',
           answer:
-            'Deep Work, 52-17 en Flowtime zijn onderdeel van Premium, samen met eigen timerduur en diepere statistieken.'
+            'Ja. Deep Work, 52-17 en Flowtime zijn gratis, inclusief je eigen duur in Flowtime.'
         }
       ]
     },
@@ -1024,7 +1024,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         'Pomodoro, Deep Work, Flowtime, and other timer modes connected to real skill progress.',
       screenshot: '02-focus-timer.png',
       primaryCta: 'Download SkillQuest',
-      secondaryCta: 'Compare Premium',
+      secondaryCta: 'Compare plans',
       sections: [
         {
           title: 'Choose the timer for the work ahead',
@@ -1048,14 +1048,14 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
           ]
         },
         {
-          title: 'Premium unlocks more focus freedom',
+          title: 'Every technique is free',
           body:
-            'Premium is for users who want more timer techniques, custom duration, and deeper statistics.',
+            'All timer techniques and your own duration are part of the free app. Premium only adds extra themes.',
           bullets: [
-            'Advanced techniques such as Deep Work, 52-17, and Flowtime.',
-            'Custom Flowtime duration and personalized timers.',
-            'More history and expanded progress insights.',
-            'Premium is EUR 3.99/month or EUR 39.99/year.'
+            'Pomodoro, 52-17, Deep Work, and Flowtime at no cost.',
+            'Set your own duration with Flowtime.',
+            'Statistics, XP, and levels are free as well.',
+            'Premium is EUR 3.99/month or EUR 39.99/year and adds extra themes.'
           ]
         }
       ],
@@ -1068,7 +1068,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         {
           question: 'Which timer methods does SkillQuest support?',
           answer:
-            'The app supports Pomodoro, 52-17, Deep Work, Flowtime, Until Time, and EMOM. Some advanced features belong to Premium.'
+            'The app supports Pomodoro, 52-17, Deep Work, Flowtime, Until Time, and EMOM. All of them are free.'
         },
         {
           question: 'Is my focus progress saved?',
@@ -1138,7 +1138,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         {
           question: 'Is Family included in Premium?',
           answer:
-            'No. Family is a separate household subscription with Premium plus parent roles, child stats, child timers, goals, and compliments.'
+            'No. Family is a separate subscription for the household. It includes the Premium themes, plus family management, timers for children, child statistics, goals, and compliments.'
         },
         {
           question: 'What age is SkillQuest for?',
@@ -1167,7 +1167,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
           body:
             'Use SkillQuest for study, sports, music, reading, coding, creative work, or any routine that needs practice.',
           bullets: [
-            '78 recognizable skill icons in the app.',
+            '185 skills to choose from, each with a recognizable icon.',
             'Favorites and most-used skills for quick access.',
             'Skill names and search data are localized.'
           ]
@@ -1224,7 +1224,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         'Review sessions, minutes, XP, skill breakdowns, and trends by period.',
       screenshot: '04-statistics.png',
       primaryCta: 'View the app',
-      secondaryCta: 'Compare Premium',
+      secondaryCta: 'Compare plans',
       sections: [
         {
           title: 'Statistics by period',
@@ -1237,12 +1237,12 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
           ]
         },
         {
-          title: 'Deeper insights with Premium',
+          title: 'Active days show regular practice',
           body:
-            'Premium is for users who want to look beyond basic statistics.',
+            'Next to time and XP, SkillQuest counts the days on which you practiced at least 10 minutes.',
           bullets: [
-            'Expanded statistics and trends.',
-            'More session history for long-term insight.'
+            'A missed day takes nothing away from your total.',
+            'All statistics are free; Premium only adds extra themes.'
           ]
         },
         {
@@ -1265,7 +1265,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         {
           question: 'Can I view long-term trends?',
           answer:
-            'Premium includes expanded statistics and more history. Check the app for the current visible feature set.'
+            'Yes. Statistics go by day, week, month, and year, and they are free for everyone.'
         },
         {
           question: 'Can parents view children’s statistics?',
@@ -1316,7 +1316,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
           bullets: [
             'Deep Work and 52-17 for longer sessions.',
             'Flowtime and Until Time for flexible durations.',
-            'Premium unlocks the full set of timer techniques.'
+            'Every timer technique is free.'
           ]
         }
       ],
@@ -1324,7 +1324,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         {
           question: 'Is the Pomodoro timer free in SkillQuest?',
           answer:
-            'Yes. Pomodoro is available on the free tier, along with XP, levels, and basic statistics.'
+            'Yes. Pomodoro is available on the free tier, along with XP, levels, and statistics.'
         },
         {
           question: 'Can I use Pomodoro for studying?',
@@ -1534,15 +1534,15 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
       slug: 'deep-work-flowtime',
       eyebrow: 'Deep Work & Flowtime',
       title: 'Longer focus blocks for work that needs depth',
-      metaTitle: 'Deep Work & Flowtime Timer | Premium Focus Sessions | SkillQuest',
+      metaTitle: 'Deep Work & Flowtime Timer | Longer Focus Sessions | SkillQuest',
       metaDescription:
-        'Use Deep Work, 52-17, and Flowtime in SkillQuest for longer, uninterrupted focus sessions. Premium timer techniques with custom duration.',
+        'Use Deep Work, 52-17, and Flowtime in SkillQuest for longer, uninterrupted focus sessions. Free, with your own duration in Flowtime.',
       summary:
         'When a task needs more than a 25-minute sprint, Deep Work, 52-17, and Flowtime give you longer, flexible focus blocks that still count toward XP and progress.',
       cardSummary:
         'Deep Work, 52-17, and Flowtime for longer, flexible focus sessions.',
       screenshot: '02-focus-timer.png',
-      primaryCta: 'Compare Premium',
+      primaryCta: 'Download SkillQuest',
       secondaryCta: 'View all timer techniques',
       sections: [
         {
@@ -1552,7 +1552,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
           bullets: [
             'Longer focus blocks than Pomodoro, aimed at a single task.',
             'Counts toward the same XP, levels, and statistics as any other session.',
-            'Part of the Premium timer techniques.'
+            'Free, like every other timer technique.'
           ]
         },
         {
@@ -1562,7 +1562,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
           bullets: [
             'A fixed, research-inspired focus-to-break ratio.',
             'Good for multi-hour work or study sessions.',
-            'Included with Premium alongside other timer techniques.'
+            'Free, alongside the other timer techniques.'
           ]
         },
         {
@@ -1590,7 +1590,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         {
           question: 'Are these timer techniques free?',
           answer:
-            'Deep Work, 52-17, and Flowtime are part of Premium, alongside custom timer durations and deeper statistics.'
+            'Yes. Deep Work, 52-17, and Flowtime are free, including your own duration in Flowtime.'
         }
       ]
     },
@@ -1741,7 +1741,7 @@ pages.de = {
     cardSummary:
       'Pomodoro, Deep Work, Flowtime und weitere Timer-Modi, verbunden mit echtem Skill-Fortschritt.',
     primaryCta: 'SkillQuest herunterladen',
-    secondaryCta: 'Premium vergleichen',
+    secondaryCta: 'Abos vergleichen',
     sections: [
       {
         title: 'Wähle den Timer, der zu deiner Aufgabe passt',
@@ -1766,14 +1766,14 @@ pages.de = {
         ]
       },
       {
-        title: 'Premium für mehr Fokusfreiheit',
+        title: 'Jede Technik ist kostenlos',
         body:
-          'Premium ist für Nutzer gedacht, die mehr Timer-Techniken, eigene Dauer und tiefere Statistiken wollen.',
+          'Alle Timer-Techniken und deine eigene Dauer gehören zur kostenlosen App. Premium bringt nur zusätzliche Designs.',
         bullets: [
-          'Eigene Flowtime-Dauer und personalisierte Timer.',
-          'Erweiterte Timer-Modi für verschiedene Routinen.',
-          'Mehr Verlauf und Statistiken für langfristigen Fortschritt.',
-          'Premium kostet EUR 3.99 pro Monat oder EUR 39.99 pro Jahr.'
+          'Pomodoro, 52-17, Deep Work und Flowtime ohne Kosten.',
+          'Lege mit Flowtime deine eigene Dauer fest.',
+          'Statistiken, XP und Levels sind ebenfalls kostenlos.',
+          'Premium kostet EUR 3.99 pro Monat oder EUR 39.99 pro Jahr und bringt zusätzliche Designs.'
         ]
       }
     ],
@@ -1781,7 +1781,7 @@ pages.de = {
       {
         question: 'Ist SkillQuest eine Pomodoro App?',
         answer:
-          'Ja. SkillQuest unterstützt Pomodoro und weitere Fokusmodi wie 52-17, Deep Work, Flowtime, Until Time und EMOM. Einige erweiterte Funktionen gehören zu Premium.'
+          'Ja. SkillQuest unterstützt Pomodoro und weitere Fokusmodi wie 52-17, Deep Work, Flowtime, Until Time und EMOM. Alle sind kostenlos.'
       },
       {
         question: 'Werden Timer mit Fähigkeiten verknüpft?',
@@ -1791,7 +1791,7 @@ pages.de = {
       {
         question: 'Kann ich eigene Timer-Dauern nutzen?',
         answer:
-          'Ja. Eigene Dauer und erweiterte Timer-Optionen sind Teil der Premium-Funktionen.'
+          'Ja. Mit Flowtime legst du deine eigene Dauer fest, und das ist kostenlos.'
       }
     ]
   },
@@ -1856,7 +1856,7 @@ pages.de = {
       {
         question: 'Ist Family in Premium enthalten?',
         answer:
-          'Nein. Family ist ein eigenes Familienabo mit Premium plus Elternrollen, Kinderstatistiken, Timern für Kinder, Zielen und Komplimenten.'
+          'Nein. Family ist ein eigenes Abo für den Haushalt. Es enthält die Premium-Designs, dazu Familienverwaltung, Timer für Kinder, Kinderstatistiken, Ziele und Komplimente.'
       },
       {
         question: 'Ist SkillQuest für junge Kinder gedacht?',
@@ -1903,10 +1903,10 @@ pages.de = {
       {
         title: 'Kostenlos starten, bei Bedarf upgraden',
         body:
-          'Guest Mode und Free-Funktionen helfen beim Einstieg. Premium und Family fügen mehr Tiefe hinzu, wenn SkillQuest Teil deiner Routine wird.',
+          'Guest Mode und Free-Funktionen helfen beim Einstieg. Premium bringt zusätzliche Designs, Family Werkzeuge für Eltern.',
         bullets: [
           'Guest Mode für schnellen Start.',
-          'Premium für mehr Timerfreiheit und Statistiken.',
+          'Premium für zusätzliche Designs.',
           'Family für Eltern-Kind-Struktur.',
           'Datenschutzorientierte Synchronisierung für Konten.'
         ]
@@ -1941,7 +1941,7 @@ pages.de = {
     cardSummary:
       'Statistiken für Fokusminuten, Sessions, XP, Skills und Family-Kinderfortschritt.',
     primaryCta: 'SkillQuest herunterladen',
-    secondaryCta: 'Premium vergleichen',
+    secondaryCta: 'Abos vergleichen',
     sections: [
       {
         title: 'Verstehe, wohin deine Zeit geht',
@@ -1955,13 +1955,13 @@ pages.de = {
         ]
       },
       {
-        title: 'Tiefere Einblicke mit Premium',
+        title: 'Aktive Tage zeigen regelmäßiges Üben',
         body:
-          'Premium ist für Nutzer gedacht, die mehr als Basisstatistiken sehen möchten.',
+          'Neben Zeit und XP zählt SkillQuest die Tage, an denen du mindestens 10 Minuten geübt hast.',
         bullets: [
-          'Erweiterte Statistiken und Trends.',
-          'Mehr Verlauf für langfristige Routinen.',
-          'Bessere Sicht auf Skill-Aufschlüsselungen.'
+          'Ein verpasster Tag nimmt deiner Gesamtzahl nichts weg.',
+          'Statistiken nach Tag, Woche, Monat und Jahr.',
+          'Alle Statistiken sind kostenlos; Premium bringt nur zusätzliche Designs.'
         ]
       },
       {
@@ -1985,7 +1985,7 @@ pages.de = {
       {
         question: 'Kann ich langfristige Trends sehen?',
         answer:
-          'Premium enthält erweiterte Statistiken und mehr Verlauf. Prüfe die App für den aktuell sichtbaren Funktionsumfang.'
+          'Ja. Statistiken gibt es nach Tag, Woche, Monat und Jahr, kostenlos für alle.'
       },
       {
         question: 'Können Eltern Kinderstatistiken ansehen?',
@@ -2036,7 +2036,7 @@ pages.de = {
         bullets: [
           'Deep Work und 52-17 für längere Sitzungen.',
           'Flowtime und Until Time für flexible Zeiträume.',
-          'Mit Premium schaltest du alle Timer-Techniken frei.'
+          'Alle Timer-Techniken sind kostenlos.'
         ]
       }
     ],
@@ -2253,15 +2253,15 @@ pages.de = {
     slug: 'deep-work-flowtime',
     eyebrow: 'Deep Work & Flowtime',
     title: 'Längere Konzentrationsphasen für Aufgaben, die Tiefenkonzentration erfordern',
-    metaTitle: 'Deep Work & Flowtime Timer | Premium-Konzentrationssitzungen | SkillQuest',
+    metaTitle: 'Deep Work & Flowtime Timer | Längere Konzentrationsphasen | SkillQuest',
     metaDescription:
-      'Nutze Deep Work, 52-17 und Flowtime in SkillQuest für längere, ununterbrochene Konzentrationsphasen. Premium-Timertechniken mit individuell einstellbarer Dauer.',
+      'Nutze Deep Work, 52-17 und Flowtime in SkillQuest für längere, ununterbrochene Konzentrationsphasen. Kostenlos, mit eigener Dauer in Flowtime.',
     summary:
       'Wenn eine Aufgabe mehr als einen 25-minütigen Sprint erfordert, bieten dir Deep Work, 52-17 und Flowtime längere, flexible Konzentrationsblöcke, die trotzdem für XP und deinen Fortschritt zählen.',
     cardSummary:
       'Deep Work, 52-17 und Flowtime für längere, flexible Konzentrationsphasen.',
     screenshot: '02-focus-timer.png',
-    primaryCta: 'Premium vergleichen',
+    primaryCta: 'SkillQuest herunterladen',
     secondaryCta: 'Alle Timer-Techniken anzeigen',
     sections: [
       {
@@ -2271,7 +2271,7 @@ pages.de = {
         bullets: [
           'Längere Konzentrationsphasen als beim Pomodoro-Prinzip, die auf eine einzige Aufgabe ausgerichtet sind.',
           'Zählt genauso für die XP, Stufen und Werte wie jede andere Sitzung auch.',
-          'Ein Teil der Premium-Timer-Techniken.'
+          'Kostenlos, wie jede andere Timer-Technik.'
         ]
       },
       {
@@ -2281,7 +2281,7 @@ pages.de = {
         bullets: [
           'Ein festgelegtes, wissenschaftlich fundiertes Verhältnis von Fokus zu Unterbrechung.',
           'Ideal für mehrstündige Arbeits- oder Lernsitzungen.',
-          'Im Premium-Paket enthalten, zusammen mit anderen Timer-Funktionen.'
+          'Kostenlos, zusammen mit den anderen Timer-Techniken.'
         ]
       },
       {
@@ -2309,7 +2309,7 @@ pages.de = {
       {
         question: 'Sind diese Timer-Techniken kostenlos?',
         answer:
-          'Deep Work, 52-17 und Flowtime gehören zum Premium-Paket, ebenso wie individuell einstellbare Timer-Dauern und detailliertere Statistiken.'
+          'Ja. Deep Work, 52-17 und Flowtime sind kostenlos, auch deine eigene Dauer in Flowtime.'
       }
     ]
   },
@@ -2456,7 +2456,7 @@ pages.fr = {
     cardSummary:
       'Pomodoro, Deep Work, Flowtime et autres modes de minuteur, reliés à une vraie progression de tes compétences.',
     primaryCta: 'Télécharger SkillQuest',
-    secondaryCta: 'Comparer Premium',
+    secondaryCta: 'Comparer les formules',
     sections: [
       {
         title: 'Choisis le minuteur adapté à ta tâche',
@@ -2481,14 +2481,14 @@ pages.fr = {
         ]
       },
       {
-        title: 'Premium pour plus de liberté de concentration',
+        title: 'Toutes les techniques sont gratuites',
         body:
-          'Premium s’adresse à celles et ceux qui veulent plus de techniques, des durées personnalisées et des statistiques plus poussées.',
+          'Toutes les techniques de minuteur et ta propre durée font partie de l’app gratuite. Premium ajoute seulement des thèmes supplémentaires.',
         bullets: [
-          'Durée Flowtime personnalisée et minuteurs personnalisés.',
-          'Modes de minuteur avancés pour différentes routines.',
-          'Plus d’historique et de statistiques pour suivre ta progression sur la durée.',
-          'Premium coûte EUR 3.99 par mois ou EUR 39.99 par an.'
+          'Pomodoro, 52-17, Deep Work et Flowtime sans frais.',
+          'Choisis ta propre durée avec Flowtime.',
+          'Les statistiques, les XP et les niveaux sont aussi gratuits.',
+          'Premium coûte EUR 3.99 par mois ou EUR 39.99 par an et ajoute des thèmes supplémentaires.'
         ]
       }
     ],
@@ -2496,7 +2496,7 @@ pages.fr = {
       {
         question: 'SkillQuest est-elle une application Pomodoro ?',
         answer:
-          'Oui. SkillQuest prend en charge Pomodoro et d’autres modes de concentration comme 52-17, Deep Work, Flowtime, Until Time et EMOM. Certaines fonctions avancées sont incluses dans Premium.'
+          'Oui. SkillQuest prend en charge Pomodoro et d’autres modes de concentration comme 52-17, Deep Work, Flowtime, Until Time et EMOM. Tous sont gratuits.'
       },
       {
         question: 'Les minuteurs sont-ils liés aux compétences ?',
@@ -2506,7 +2506,7 @@ pages.fr = {
       {
         question: 'Puis-je utiliser des durées personnalisées ?',
         answer:
-          'Oui. Les durées personnalisées et les options avancées de minuteur font partie des fonctions Premium.'
+          'Oui. Avec Flowtime, tu choisis ta propre durée, et c’est gratuit.'
       }
     ]
   },
@@ -2571,7 +2571,7 @@ pages.fr = {
       {
         question: 'Family est-il inclus dans Premium ?',
         answer:
-          'Non. Family est un abonnement familial séparé : il inclut Premium, avec en plus des rôles parent, des statistiques enfant, des minuteurs pour les enfants, des objectifs et des compliments.'
+          'Non. Family est un abonnement séparé pour le foyer. Il inclut les thèmes Premium, ainsi que la gestion de la famille, des minuteurs pour les enfants, des statistiques enfant, des objectifs et des compliments.'
       },
       {
         question: 'SkillQuest est-il destiné aux jeunes enfants ?',
@@ -2619,10 +2619,10 @@ pages.fr = {
       {
         title: 'Commence gratuitement, passe à l’offre supérieure si besoin',
         body:
-          'Le mode invité et les fonctions Free t’aident à démarrer. Premium et Family ajoutent plus de profondeur quand SkillQuest entre dans ta routine.',
+          'Le mode invité et les fonctions Free t’aident à démarrer. Premium ajoute des thèmes supplémentaires, Family des outils pour les parents.',
         bullets: [
           'Mode invité pour commencer rapidement.',
-          'Premium pour plus de liberté côté minuteurs et statistiques.',
+          'Premium pour des thèmes supplémentaires.',
           'Family pour une structure parent-enfant.',
           'Synchronisation respectueuse de la vie privée pour les comptes.'
         ]
@@ -2658,7 +2658,7 @@ pages.fr = {
     cardSummary:
       'Statistiques pour minutes de concentration, sessions, XP, compétences et progression enfant avec Family.',
     primaryCta: 'Télécharger SkillQuest',
-    secondaryCta: 'Comparer Premium',
+    secondaryCta: 'Comparer les formules',
     sections: [
       {
         title: 'Comprends où passe ton temps',
@@ -2672,13 +2672,13 @@ pages.fr = {
         ]
       },
       {
-        title: 'Des analyses plus poussées avec Premium',
+        title: 'Les jours actifs montrent ta régularité',
         body:
-          'Premium s’adresse aux utilisateurs qui veulent aller au-delà des statistiques de base.',
+          'En plus du temps et des XP, SkillQuest compte les jours où tu as pratiqué au moins 10 minutes.',
         bullets: [
-          'Statistiques et tendances étendues.',
-          'Plus d’historique pour les routines à long terme.',
-          'Meilleure visibilité sur les répartitions par compétence.'
+          'Un jour manqué n’enlève rien à ton total.',
+          'Statistiques par jour, semaine, mois et année.',
+          'Toutes les statistiques sont gratuites ; Premium ajoute seulement des thèmes supplémentaires.'
         ]
       },
       {
@@ -2702,7 +2702,7 @@ pages.fr = {
       {
         question: 'Puis-je voir des tendances à long terme ?',
         answer:
-          'Premium inclut des statistiques étendues et plus d’historique. Regarde dans l’app pour voir les fonctions actuellement disponibles.'
+          'Oui. Les statistiques sont disponibles par jour, semaine, mois et année, gratuitement pour tout le monde.'
       },
       {
         question: 'Les parents peuvent-ils voir les statistiques des enfants ?',
@@ -2753,7 +2753,7 @@ pages.fr = {
         bullets: [
           '« Deep Work » et « 52-17 » pour les sessions plus longues.',
           '« Flowtime » et « Until Time » pour des durées flexibles.',
-          'Avec l\'abonnement Premium, tu débloques l\'ensemble des techniques de minuteur.',
+          'Toutes les techniques de minuteur sont gratuites.',
         ]
       },
     ],
@@ -2761,7 +2761,7 @@ pages.fr = {
       {
         question: 'Le minuteur Pomodoro est-il gratuit dans SkillQuest ?',
         answer:
-          'Oui. Pomodoro est disponible dans la version gratuite, tout comme les XP, les niveaux et les statistiques de base.'
+          'Oui. Pomodoro est disponible dans la version gratuite, tout comme les XP, les niveaux et les statistiques.'
       },
       {
         question: 'Est-ce que je peux utiliser la méthode Pomodoro pour étudier ?',
@@ -2970,15 +2970,15 @@ pages.fr = {
     slug: 'deep-work-flowtime',
     eyebrow: 'Deep Work & Flowtime',
     title: 'Des sessions de concentration plus longues pour les tâches qui demandent de la profondeur',
-    metaTitle: 'Minuteur Deep Work et Flowtime | Concentration Premium | SkillQuest',
+    metaTitle: 'Minuteur Deep Work et Flowtime | Concentration longue | SkillQuest',
     metaDescription:
-      'Deep Work, 52-17 et Flowtime dans SkillQuest : des sessions de concentration longues et sans interruption. Techniques de minuteur Premium, durée personnalisable.',
+      'Deep Work, 52-17 et Flowtime dans SkillQuest : des sessions de concentration longues et sans interruption. Gratuit, avec ta propre durée dans Flowtime.',
     summary:
       'Quand une tâche nécessite un sprint de plus de 25 minutes, les modes « Deep Work », « 52-17 » et « Flowtime » te permettent de bénéficier de plages de concentration plus longues et flexibles, qui comptent quand même pour tes XP et ta progression.',
     cardSummary:
       'Deep Work, 52-17 et Flowtime pour des séances de concentration plus longues et flexibles.',
     screenshot: '02-focus-timer.png',
-    primaryCta: 'Comparer les formules Premium',
+    primaryCta: 'Télécharger SkillQuest',
     secondaryCta: 'Voir toutes les techniques de minuteur',
     sections: [
       {
@@ -2988,7 +2988,7 @@ pages.fr = {
         bullets: [
           'Des sessions de concentration plus longues que celles de la méthode Pomodoro, consacrées à une seule tâche.',
           'Ça compte pour les XP, les niveaux et les statistiques, comme n\'importe quelle autre session.',
-          'Ça fait partie des techniques de minuteur Premium.',
+          'Gratuit, comme toutes les autres techniques de minuteur.',
         ]
       },
       {
@@ -2998,7 +2998,7 @@ pages.fr = {
         bullets: [
           'Un rapport « concentration/détente » fixe, inspiré de la recherche.',
           'Idéal pour les sessions de travail ou d\'étude de plusieurs heures.',
-          'Inclus dans la version Premium, avec d\'autres techniques de minuteur.',
+          'Gratuit, avec les autres techniques de minuteur.',
         ]
       },
       {
@@ -3026,7 +3026,7 @@ pages.fr = {
       {
         question: 'Ces techniques de minuteur sont-elles gratuites ?',
         answer:
-          'Deep Work, 52-17 et Flowtime font partie de l\'offre Premium, tout comme les durées de minuteur personnalisées et les statistiques plus détaillées.'
+          'Oui. Deep Work, 52-17 et Flowtime sont gratuits, y compris ta propre durée dans Flowtime.'
       },
     ]
   },
@@ -3172,7 +3172,7 @@ pages.es = {
     cardSummary:
       'Pomodoro, Deep Work, Flowtime y otros modos de timer conectados con progreso real de habilidades.',
     primaryCta: 'Descargar SkillQuest',
-    secondaryCta: 'Comparar Premium',
+    secondaryCta: 'Comparar planes',
     sections: [
       {
         title: 'Elige el timer que encaja con tu tarea',
@@ -3197,14 +3197,14 @@ pages.es = {
         ]
       },
       {
-        title: 'Premium para más libertad de enfoque',
+        title: 'Todas las técnicas son gratis',
         body:
-          'Premium está pensado para usuarios que quieren más técnicas de timer, duración personalizada y estadísticas más profundas.',
+          'Todas las técnicas de temporizador y tu propia duración forman parte de la app gratuita. Premium solo añade temas extra.',
         bullets: [
-          'Duración Flowtime personalizada y timers personalizados.',
-          'Modos de timer avanzados para diferentes rutinas.',
-          'Más historial y estadísticas para progreso a largo plazo.',
-          'Premium cuesta EUR 3.99 al mes o EUR 39.99 al año.'
+          'Pomodoro, 52-17, Deep Work y Flowtime sin coste.',
+          'Elige tu propia duración con Flowtime.',
+          'Las estadísticas, los XP y los niveles también son gratis.',
+          'Premium cuesta EUR 3.99 al mes o EUR 39.99 al año y añade temas extra.'
         ]
       }
     ],
@@ -3212,7 +3212,7 @@ pages.es = {
       {
         question: '¿SkillQuest es una app Pomodoro?',
         answer:
-          'Sí. SkillQuest admite Pomodoro y otros modos de enfoque como 52-17, Deep Work, Flowtime, Until Time y EMOM. Algunas funciones avanzadas pertenecen a Premium.'
+          'Sí. SkillQuest admite Pomodoro y otros modos de enfoque como 52-17, Deep Work, Flowtime, Until Time y EMOM. Todos son gratis.'
       },
       {
         question: '¿Los timers se conectan con habilidades?',
@@ -3222,7 +3222,7 @@ pages.es = {
       {
         question: '¿Puedo usar duraciones personalizadas?',
         answer:
-          'Sí. Las duraciones personalizadas y opciones avanzadas de timer forman parte de las funciones Premium.'
+          'Sí. Con Flowtime eliges tu propia duración, y es gratis.'
       }
     ]
   },
@@ -3287,7 +3287,7 @@ pages.es = {
       {
         question: '¿Family está incluido en Premium?',
         answer:
-          'No. Family es una suscripción familiar separada con Premium más roles de padres, estadísticas infantiles, timers para niños, metas y cumplidos.'
+          'No. Family es una suscripción aparte para el hogar. Incluye los temas Premium, además de gestión familiar, timers para niños, estadísticas infantiles, metas y cumplidos.'
       },
       {
         question: '¿SkillQuest está pensado para niños pequeños?',
@@ -3334,10 +3334,10 @@ pages.es = {
       {
         title: 'Empieza gratis y mejora cuando lo necesites',
         body:
-          'Guest Mode y las funciones Free ayudan a empezar. Premium y Family añaden más profundidad cuando SkillQuest pasa a formar parte de tu rutina.',
+          'Guest Mode y las funciones Free ayudan a empezar. Premium añade temas extra y Family, herramientas para padres.',
         bullets: [
           'Guest Mode para empezar rápido.',
-          'Premium para más libertad de timers y estadísticas.',
+          'Premium para temas extra.',
           'Family para estructura entre padres e hijos.',
           'Sincronización centrada en la privacidad para cuentas.'
         ]
@@ -3372,7 +3372,7 @@ pages.es = {
     cardSummary:
       'Estadísticas de minutos de enfoque, sesiones, XP, habilidades y progreso infantil con Family.',
     primaryCta: 'Descargar SkillQuest',
-    secondaryCta: 'Comparar Premium',
+    secondaryCta: 'Comparar planes',
     sections: [
       {
         title: 'Entiende adónde va tu tiempo',
@@ -3386,13 +3386,13 @@ pages.es = {
         ]
       },
       {
-        title: 'Insights más profundos con Premium',
+        title: 'Los días activos muestran tu constancia',
         body:
-          'Premium está pensado para usuarios que quieren mirar más allá de las estadísticas básicas.',
+          'Además del tiempo y los XP, SkillQuest cuenta los días en los que practicaste al menos 10 minutos.',
         bullets: [
-          'Estadísticas y tendencias ampliadas.',
-          'Más historial para rutinas a largo plazo.',
-          'Mejor visibilidad de desgloses por habilidad.'
+          'Saltarte un día no le quita nada a tu total.',
+          'Estadísticas por día, semana, mes y año.',
+          'Todas las estadísticas son gratis; Premium solo añade temas extra.'
         ]
       },
       {
@@ -3416,7 +3416,7 @@ pages.es = {
       {
         question: '¿Puedo ver tendencias a largo plazo?',
         answer:
-          'Premium incluye estadísticas ampliadas y más historial. Revisa la app para ver el conjunto actual de funciones visibles.'
+          'Sí. Las estadísticas van por día, semana, mes y año, y son gratis para todos.'
       },
       {
         question: '¿Los padres pueden ver estadísticas de los niños?',
@@ -3467,7 +3467,7 @@ pages.es = {
         bullets: [
           '«Deep Work» y «52-17» para sesiones más largas.',
           '«Flowtime» y «Until Time» para duraciones flexibles.',
-          'Con la versión Premium se desbloquean todas las técnicas de temporizador.',
+          'Todas las técnicas de temporizador son gratis.',
         ]
       },
     ],
@@ -3475,7 +3475,7 @@ pages.es = {
       {
         question: '¿El temporizador Pomodoro es gratis en SkillQuest?',
         answer:
-          'Sí. Pomodoro está disponible en el plan gratuito, junto con los XP, los niveles y las estadísticas básicas.'
+          'Sí. Pomodoro está disponible en el plan gratuito, junto con los XP, los niveles y las estadísticas.'
       },
       {
         question: '¿Puedo usar la técnica Pomodoro para estudiar?',
@@ -3684,15 +3684,15 @@ pages.es = {
     slug: 'deep-work-flowtime',
     eyebrow: 'Deep Work & Flowtime',
     title: 'Bloques de concentración más largos para trabajos que requieren profundidad',
-    metaTitle: 'Temporizador para Deep Work & Flowtime | Sesiones de concentración Premium | SkillQuest',
+    metaTitle: 'Temporizador para Deep Work & Flowtime | Sesiones de concentración más largas | SkillQuest',
     metaDescription:
-      'Usa Deep Work, 52-17 y Flowtime en SkillQuest para sesiones de concentración más largas y sin interrupciones. Técnicas de temporizador Premium con duración personalizada.',
+      'Usa Deep Work, 52-17 y Flowtime en SkillQuest para sesiones de concentración más largas y sin interrupciones. Gratis, con tu propia duración en Flowtime.',
     summary:
       'Cuando una tarea requiere un sprint de más de 25 minutos, Deep Work, 52-17 y Flowtime te ofrecen bloques de concentración más largos y flexibles que, además, cuentan para los XP y el progreso.',
     cardSummary:
       'Deep Work, 52-17 y Flowtime para sesiones de concentración más largas y flexibles.',
     screenshot: '02-focus-timer.png',
-    primaryCta: 'Compara las tarifas Premium',
+    primaryCta: 'Descarga SkillQuest',
     secondaryCta: 'Ver todas las técnicas con el cronómetro',
     sections: [
       {
@@ -3702,7 +3702,7 @@ pages.es = {
         bullets: [
           'Bloques de concentración más largos que los del método Pomodoro, centrados en una sola tarea.',
           'Cuenta para la misma XP, los mismos niveles y las mismas estadísticas que cualquier otra sesión.',
-          'Forma parte de las técnicas del temporizador Premium.',
+          'Gratis, como cualquier otra técnica de temporizador.',
         ]
       },
       {
@@ -3712,7 +3712,7 @@ pages.es = {
         bullets: [
           'Una relación fija entre atención y distracción, basada en la investigación.',
           'Ideal para sesiones de trabajo o estudio de varias horas.',
-          'Se incluye en la versión Premium junto con otras técnicas de temporizador.',
+          'Gratis, junto con las demás técnicas de temporizador.',
         ]
       },
       {
@@ -3740,7 +3740,7 @@ pages.es = {
       {
         question: '¿Estas técnicas con el temporizador son gratis?',
         answer:
-          '«Deep Work», «52-17» y «Flowtime» forman parte de la versión Premium, junto con los temporizadores personalizables y estadísticas más detalladas.'
+          'Sí. «Deep Work», «52-17» y «Flowtime» son gratis, incluida tu propia duración en «Flowtime».'
       },
     ]
   },
@@ -3887,7 +3887,7 @@ pages.it = {
     cardSummary:
       'Pomodoro, Deep Work, Flowtime e altre modalità timer collegate al progresso reale delle tue abilità.',
     primaryCta: 'Scarica SkillQuest',
-    secondaryCta: 'Confronta Premium',
+    secondaryCta: 'Confronta i piani',
     sections: [
       {
         title: 'Scegli il timer adatto alla tua attività',
@@ -3912,14 +3912,14 @@ pages.it = {
         ]
       },
       {
-        title: 'Premium per più libertà di concentrazione',
+        title: 'Tutte le tecniche sono gratuite',
         body:
-          'Premium è pensato per chi vuole più tecniche timer, durata personalizzata e statistiche più approfondite.',
+          'Tutte le tecniche di timer e la tua durata personalizzata fanno parte dell’app gratuita. Premium aggiunge solo temi extra.',
         bullets: [
-          'Durata Flowtime personalizzata e timer personalizzati.',
-          'Modalità timer avanzate per routine diverse.',
-          'Uno storico più esteso e statistiche per seguire i progressi a lungo termine.',
-          'Premium costa EUR 3.99 al mese o EUR 39.99 all’anno.'
+          'Pomodoro, 52-17, Deep Work e Flowtime senza costi.',
+          'Imposta la tua durata con Flowtime.',
+          'Anche statistiche, XP e livelli sono gratuiti.',
+          'Premium costa EUR 3.99 al mese o EUR 39.99 all’anno e aggiunge temi extra.'
         ]
       }
     ],
@@ -3927,7 +3927,7 @@ pages.it = {
       {
         question: 'SkillQuest è un’app Pomodoro?',
         answer:
-          'Sì. SkillQuest supporta Pomodoro e altre modalità di concentrazione come 52-17, Deep Work, Flowtime, Until Time ed EMOM. Alcune funzioni avanzate fanno parte di Premium.'
+          'Sì. SkillQuest supporta Pomodoro e altre modalità di concentrazione come 52-17, Deep Work, Flowtime, Until Time ed EMOM. Sono tutte gratuite.'
       },
       {
         question: 'I timer sono collegati alle abilità?',
@@ -3937,7 +3937,7 @@ pages.it = {
       {
         question: 'Posso usare durate personalizzate?',
         answer:
-          'Sì. Durate personalizzate e opzioni timer avanzate fanno parte delle funzioni Premium.'
+          'Sì. Con Flowtime imposti tu la durata, ed è gratuito.'
       }
     ]
   },
@@ -4002,7 +4002,7 @@ pages.it = {
       {
         question: 'Family è incluso in Premium?',
         answer:
-          'No. Family è un abbonamento familiare separato con Premium più ruoli genitore, statistiche dei figli, timer per figli, obiettivi e complimenti.'
+          'No. Family è un abbonamento separato per la famiglia. Include i temi Premium, più gestione della famiglia, timer per i figli, statistiche dei figli, obiettivi e complimenti.'
       },
       {
         question: 'SkillQuest è pensato per bambini piccoli?',
@@ -4050,10 +4050,10 @@ pages.it = {
       {
         title: 'Inizia gratis, passa a un piano superiore quando serve',
         body:
-          'La Modalità ospite e le funzioni Free aiutano a iniziare. Premium e Family aggiungono più profondità quando SkillQuest entra nella tua routine.',
+          'La Modalità ospite e le funzioni Free aiutano a iniziare. Premium aggiunge temi extra, Family strumenti per i genitori.',
         bullets: [
           'Modalità ospite per iniziare subito.',
-          'Premium per più libertà con i timer e le statistiche.',
+          'Premium per temi extra.',
           'Family per struttura genitore-figlio.',
           'Sincronizzazione rispettosa della privacy per gli account.'
         ]
@@ -4089,7 +4089,7 @@ pages.it = {
     cardSummary:
       'Statistiche per minuti di concentrazione, sessioni, XP, abilità e progresso dei figli con Family.',
     primaryCta: 'Scarica SkillQuest',
-    secondaryCta: 'Confronta Premium',
+    secondaryCta: 'Confronta i piani',
     sections: [
       {
         title: 'Capisci dove va il tuo tempo',
@@ -4103,13 +4103,13 @@ pages.it = {
         ]
       },
       {
-        title: 'Analisi più approfondite con Premium',
+        title: 'I giorni attivi mostrano la tua costanza',
         body:
-          'Premium è pensato per chi vuole andare oltre le statistiche di base.',
+          'Oltre a tempo e XP, SkillQuest conta i giorni in cui ti sei esercitato per almeno 10 minuti.',
         bullets: [
-          'Statistiche e trend ampliati.',
-          'Più storico per routine a lungo termine.',
-          'Migliore visibilità sulle suddivisioni per abilità.'
+          'Un giorno saltato non toglie nulla al tuo totale.',
+          'Statistiche per giorno, settimana, mese e anno.',
+          'Tutte le statistiche sono gratuite; Premium aggiunge solo temi extra.'
         ]
       },
       {
@@ -4133,7 +4133,7 @@ pages.it = {
       {
         question: 'Posso vedere trend a lungo termine?',
         answer:
-          'Premium include statistiche ampliate e più storico. Controlla nell’app quali funzioni sono disponibili al momento.'
+          'Sì. Le statistiche sono per giorno, settimana, mese e anno, e sono gratuite per tutti.'
       },
       {
         question: 'I genitori possono vedere le statistiche dei figli?',
@@ -4184,7 +4184,7 @@ pages.it = {
         bullets: [
           '"Deep Work" e "52-17" per le sessioni più lunghe.',
           '"Flowtime" e "Until Time" per durate flessibili.',
-          'Con Premium sblocchi tutte le tecniche di timer.',
+          'Tutte le tecniche di timer sono gratuite.',
         ]
       },
     ],
@@ -4192,7 +4192,7 @@ pages.it = {
       {
         question: 'Il timer Pomodoro è gratuito su SkillQuest?',
         answer:
-          'Sì. Pomodoro è disponibile nel piano gratuito, insieme agli XP, ai livelli e alle statistiche di base.'
+          'Sì. Pomodoro è disponibile nel piano gratuito, insieme agli XP, ai livelli e alle statistiche.'
       },
       {
         question: 'Posso usare il metodo Pomodoro per studiare?',
@@ -4401,15 +4401,15 @@ pages.it = {
     slug: 'deep-work-flowtime',
     eyebrow: 'Deep Work & Flowtime',
     title: 'Blocchi di concentrazione più lunghi per il lavoro che richiede approfondimento',
-    metaTitle: 'Timer Deep Work e Flowtime | Concentrazione Premium | SkillQuest',
+    metaTitle: 'Timer Deep Work e Flowtime | Concentrazione più lunga | SkillQuest',
     metaDescription:
-      'Usa Deep Work, 52-17 e Flowtime su SkillQuest per sessioni di concentrazione più lunghe e senza interruzioni. Tecniche di timer Premium con durata personalizzabile.',
+      'Usa Deep Work, 52-17 e Flowtime su SkillQuest per sessioni di concentrazione più lunghe e senza interruzioni. Gratis, con la tua durata in Flowtime.',
     summary:
       'Quando un’attività richiede uno sprint più lungo di 25 minuti, Deep Work, 52-17 e Flowtime ti offrono blocchi di concentrazione più lunghi e flessibili che continuano a contare ai fini degli XP e dei progressi.',
     cardSummary:
       'Deep Work, 52-17 e Flowtime per sessioni di concentrazione più lunghe e flessibili.',
     screenshot: '02-focus-timer.png',
-    primaryCta: 'Confronta i piani Premium',
+    primaryCta: 'Scarica SkillQuest',
     secondaryCta: 'Vedi tutte le tecniche di timer',
     sections: [
       {
@@ -4419,7 +4419,7 @@ pages.it = {
         bullets: [
           'Blocchi di concentrazione più lunghi rispetto al metodo Pomodoro, dedicati a un’unica attività.',
           'Conta ai fini degli XP, dei livelli e delle statistiche proprio come qualsiasi altra sessione.',
-          'Fa parte delle tecniche di timer Premium.',
+          'Gratuita, come ogni altra tecnica di timer.',
         ]
       },
       {
@@ -4429,7 +4429,7 @@ pages.it = {
         bullets: [
           'Un rapporto fisso tra concentrazione e pausa, ispirato alla ricerca.',
           'Ideale per sessioni di lavoro o studio che durano diverse ore.',
-          'Incluso nella versione Premium insieme ad altre tecniche di timer.',
+          'Gratuita, insieme alle altre tecniche di timer.',
         ]
       },
       {
@@ -4457,7 +4457,7 @@ pages.it = {
       {
         question: 'Queste tecniche di timer sono gratuite?',
         answer:
-          'Deep Work, 52-17 e Flowtime fanno parte di Premium, insieme alle durate personalizzate dei timer e alle statistiche più approfondite.'
+          'Sì. Deep Work, 52-17 e Flowtime sono gratuiti, compresa la durata personalizzata in Flowtime.'
       },
     ]
   },

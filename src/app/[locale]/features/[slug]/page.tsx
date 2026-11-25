@@ -31,7 +31,7 @@ function JsonLd({data}: {data: unknown}) {
 }
 
 function primaryHref(slug: string) {
-  if (slug === 'family' || slug === 'deep-work-flowtime') return '/pricing';
+  if (slug === 'family') return '/pricing';
   return '/download';
 }
 

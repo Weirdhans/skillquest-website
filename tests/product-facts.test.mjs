@@ -160,3 +160,62 @@ test('no guide, marketing copy, support text, welcome mail or parents page claim
     assert.doesNotMatch(await read(path), rankingWords, path);
   }
 });
+
+// Premium locks only extra themes (PremiumFeatures.allFeatures in the app is
+// [premiumThemes]). Timer techniques, your own duration, statistics, XP,
+// levels, active days, friends and challenges are free. The catalog has 185
+// skills.
+const themeWord = {nl: /thema/i, en: /theme/i, de: /Design/, fr: /thème/i, es: /tema/i, it: /tem[ai]/i};
+
+test('the pricing page names only extra themes under Premium, in every locale', () => {
+  for (const locale of locales) {
+    const {plans} = marketing.getMarketingCopy(locale).pricing;
+    assert.deepEqual(plans.map((plan) => plan.name), ['Free', 'Premium', 'Family'], locale);
+    const [free, premium, family] = plans;
+    assert.equal(premium.features.length, 2, `${locale}: extra themes and everything in Free`);
+    assert.match(premium.features[0], themeWord[locale], `${locale}: Premium is extra themes`);
+    assert.match(premium.features[1], /Free/, `${locale}: plus everything in Free`);
+    assert.doesNotMatch(
+      JSON.stringify(premium),
+      /statist|timer|minuteur|temporizador|histor|verlauf|cronolog|unlimited|onbeperkt|unbegrenzt|illimit/i,
+      `${locale}: Premium claims only themes`
+    );
+    assert.ok(free.features.some((f) => f.startsWith('185 ')), `${locale}: 185 skills`);
+    assert.match(family.features.at(-1), /Premium/, `${locale}: Family includes the Premium themes`);
+  }
+});
+
+test('no guide or pricing text says a timer technique, own duration or statistics need Premium', () => {
+  const premiumClaim = [
+    /Premium (?:unlocks|timer techniques|focus sessions)/i,
+    /(?:Deeper|expanded) (?:insights|statistics) with Premium/i,
+    /part of (?:the )?Premium/i,
+    /belong to Premium/i,
+    /Included with Premium/i
+  ];
+  for (const page of features.getFeatureLandingPages('en')) {
+    for (const pattern of premiumClaim) {
+      assert.doesNotMatch(JSON.stringify(page), pattern, `en/${page.slug}`);
+    }
+  }
+  for (const locale of locales) {
+    const text = JSON.stringify(features.getFeatureLandingPages(locale)) +
+      JSON.stringify(marketing.getMarketingCopy(locale));
+    assert.doesNotMatch(text, /\b78\b/, `${locale}: the catalog has 185 skills, not 78`);
+  }
+});
+
+test('the Deep Work guide sends visitors to the download page, not to Premium', async () => {
+  const template = await read('src/app/[locale]/features/[slug]/page.tsx');
+  assert.match(template, /if \(slug === 'family'\) return '\/pricing';/);
+  assert.doesNotMatch(template, /deep-work-flowtime'\) return '\/pricing'/);
+});
+
+test('the support FAQ does not tie timer techniques or statistics to a plan', async () => {
+  const support = await read('src/app/[locale]/support/page.tsx');
+  assert.doesNotMatch(
+    support,
+    /depending on your plan|afhankelijk van je abonnement|je nach deinem Tarif|selon ta formule|dependiendo de tu plan|a seconda del tuo piano/
+  );
+  assert.doesNotMatch(support, /Premium adds more timer techniques|deeper statistics|meer timertechnieken/);
+});
