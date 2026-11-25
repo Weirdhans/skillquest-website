@@ -132,7 +132,7 @@ test('internal links point to active-days, never to streaks', async () => {
 // Rankings are switched off in the app (AppFeatureFlags.rankingsEnabled is
 // false). Friends and challenges exist. "Ranglijst", "Rangliste",
 // "classement", "clasificación" and "classifica" are the words per language.
-const rankingWords = /leaderboard|ranking|league|ranglijst|rangliste|classement|clasificaci|classific|ligas?|ligues?|leghe/i;
+const rankingWords = /leaderboard|ranking|league|ranglijst|rangliste|classement|clasificaci|classific|\bligas?\b|\bligues?\b|\bligen\b|\bleghe\b/i;
 
 test('the leaderboards guide is gone in every locale', () => {
   assert.ok(!features.translatedFeatureLandingSlugs.includes('leaderboards'));
@@ -177,7 +177,7 @@ test('the pricing page names only extra themes under Premium, in every locale', 
     assert.match(premium.features[1], /Free/, `${locale}: plus everything in Free`);
     assert.doesNotMatch(
       JSON.stringify(premium),
-      /statist|timer|minuteur|temporizador|histor|verlauf|cronolog|unlimited|onbeperkt|unbegrenzt|illimit/i,
+      /statist|estad[ií]stic|timer|minuteur|temporizador|histor|verlauf|cronolog|unlimited|onbeperkt|unbegrenzt|illimit|ilimitad/i,
       `${locale}: Premium claims only themes`
     );
     assert.ok(free.features.some((f) => f.startsWith('185 ')), `${locale}: 185 skills`);
@@ -196,6 +196,20 @@ test('no guide or pricing text says a timer technique, own duration or statistic
   for (const page of features.getFeatureLandingPages('en')) {
     for (const pattern of premiumClaim) {
       assert.doesNotMatch(JSON.stringify(page), pattern, `en/${page.slug}`);
+    }
+  }
+  // Every locale: a text that names Premium must be about themes, or compare
+  // it with Free or Family. "Premium unlocks every timer technique" fails.
+  const strings = (value) =>
+    typeof value === 'string' ? [value] : Object.values(value ?? {}).flatMap(strings);
+  for (const locale of locales) {
+    const texts = [
+      ...features.getFeatureLandingPages(locale).flatMap(strings),
+      ...strings(marketing.getMarketingCopy(locale).pricing),
+      ...strings(marketing.getMarketingCopy(locale).featuresPage)
+    ];
+    for (const text of texts.filter((item) => /Premium/.test(item) && item !== 'Premium')) {
+      assert.match(text, new RegExp(`${themeWord[locale].source}|Family|Free`, 'i'), `${locale}: ${text}`);
     }
   }
   for (const locale of locales) {
@@ -237,6 +251,12 @@ test('the language switcher sends an English-only guide to the guides list of th
   assert.equal(languageSwitchTarget('/nl/pricing', 'fr'), '/fr/pricing');
   assert.equal(languageSwitchTarget('/nl', 'it'), '/it');
   assert.equal(languageSwitchTarget('/download', 'es'), '/es/download');
+  // Edge cases: trailing slash, query or hash, a path without a locale prefix.
+  assert.equal(languageSwitchTarget('/en/features/reading-timer/', 'nl'), '/nl/guides');
+  assert.equal(languageSwitchTarget('/en/features/reading-timer?utm_source=x', 'de'), '/de/guides');
+  assert.equal(languageSwitchTarget('/features/homework-timer', 'fr'), '/fr/guides');
+  assert.equal(languageSwitchTarget('/en/pricing?ref=1#faq', 'it'), '/it/pricing?ref=1#faq');
+  assert.equal(languageSwitchTarget('/', 'es'), '/es');
 
   const navbar = await read('src/components/Navbar.tsx');
   assert.match(navbar, /router\.push\(languageSwitchTarget\(pathname, newLocale\)\)/);
