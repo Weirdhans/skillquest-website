@@ -14,15 +14,16 @@ function isLocale(value: string): boolean {
  * The path the language switcher opens for `pathname` in `newLocale`. The
  * same page in the other language, except for a guide that does not exist in
  * that language: then the guides list of that language, instead of a 404.
+ * A query string or hash is kept, except on that guides-list fallback.
  */
 export function languageSwitchTarget(pathname: string, newLocale: string): string {
-  const parts = pathname.split('/');
+  const cut = pathname.search(/[?#]/);
+  const path = cut === -1 ? pathname : pathname.slice(0, cut);
+  const suffix = cut === -1 ? '' : pathname.slice(cut);
+  const parts = path.split('/');
+  const hasLocale = isLocale(parts[1] ?? '');
 
-  if (!isLocale(parts[1] ?? '')) {
-    return `/${newLocale}${pathname}`;
-  }
-
-  const [section, slug, ...rest] = parts.slice(2);
+  const [section, slug, ...rest] = parts.slice(hasLocale ? 2 : 1);
   if (
     section === 'features' &&
     slug !== undefined &&
@@ -33,6 +34,10 @@ export function languageSwitchTarget(pathname: string, newLocale: string): strin
     return `/${newLocale}/guides`;
   }
 
+  if (!hasLocale) {
+    return `/${newLocale}${path === '/' ? '' : path}${suffix}`;
+  }
+
   parts[1] = newLocale;
-  return parts.join('/') || `/${newLocale}`;
+  return parts.join('/') + suffix;
 }
