@@ -32,7 +32,9 @@ function assertLanguageMetadata(response, html, locale, path = '') {
 const redirects = [
   ['/en/app', '/en/download'],
   ['/nl/handleiding', '/nl/guides'],
-  ['/es/faq', '/es/support#faq']
+  ['/es/faq', '/es/support#faq'],
+  // The app counts active days, not streaks: the old guide URL moves on.
+  ...locales.map((locale) => [`/${locale}/features/streaks`, `/${locale}/features/active-days`])
 ];
 
 for (const [source, destination] of redirects) {
@@ -59,7 +61,13 @@ for (const [source, destination] of redirects) {
   });
 }
 
-for (const path of ['/nl/does-not-exist', '/en/app/does-not-exist', '/es/faq/does-not-exist']) {
+for (const path of [
+  '/nl/does-not-exist',
+  '/en/app/does-not-exist',
+  '/es/faq/does-not-exist',
+  // Rankings are switched off in the app, so the guide is gone without a redirect.
+  ...locales.map((locale) => `/${locale}/features/leaderboards`)
+]) {
   test(`${path} remains a genuine 404`, async () => {
     const response = await fetch(`${origin}${path}`, {redirect: 'manual'});
     assert.equal(response.status, 404);

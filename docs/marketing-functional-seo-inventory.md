@@ -4,6 +4,17 @@ Datum: 2026-07-09
 Scope: website en marketingcopy voor `skillquest-website`  
 Primaire bron: Flutter-app, echte screenshots, store metadata, websitecopy en repo-documentatie
 
+## Stand 25 november 2026: website gelijkgetrokken met de app
+
+Deze inventaris is van juli 2026; de app is sindsdien veranderd. Op 25 november 2026 (akkoord Hans) is de website gecorrigeerd. Waar de tabellen hieronder iets anders zeggen, geldt dit:
+
+- **Geen streaks.** Sinds 30 oktober 2026 telt de app actieve dagen: een dag telt als je die dag in totaal minstens 10 minuten oefent (1 XP per volle minuut), een gemiste dag kost niets, het totaal wordt nooit teruggezet, er zijn mijlpalen (7, 14, 30, 50, 75, 100, 150, 200, 300, 500). Geen streak freezes. De gids `/features/streaks` is `/features/active-days` geworden in alle zes talen; de oude URL geeft een 308 naar de nieuwe (`next.config.js`). Termen: actieve dagen, active days, aktive Tage, jours actifs, días activos, giorni attivi.
+- **Geen ranglijsten.** Rankings en leagues staan uit in de app (`AppFeatureFlags.rankingsEnabled = false`). De gids `/features/leaderboards` is verwijderd in alle talen en geeft 404, zonder redirect (2 vertoningen, 0 klikken in drie maanden). Vrienden en uitdagingen (XP Race, Strijd om actieve dagen) bestaan wel.
+- **Premium = alleen extra thema's** (`PremiumFeatures.allFeatures = [premiumThemes]`). Alle timertechnieken, eigen duur (Flowtime), statistieken, XP, levels, actieve dagen, vrienden, uitdagingen en Guest Mode zijn gratis. Family: gezinsbeheer, timers voor kinderen, kindstatistieken (met toestemming), doelen en complimenten, plus de Premium-thema's. Prijzen ongewijzigd.
+- **185 vaardigheden** in de catalogus (`assets/catalog/skill_catalog.json`), niet 78.
+- **Screenshots** `03-session-reward.png` (onderschrift "keep streaks") en `05-rankings.png` staan niet meer in de producttour en op geen enkele gids. Alle screenshots tonen nog een tab "Rankings" onderin en `01-home-progress.png` toont "78 Skills": nieuwe screenshots nodig.
+- `tests/product-facts.test.mjs` bewaakt dit: geen streak- of ranglijstwoorden in de marketingbronnen, Premium alleen thema's, 185 vaardigheden, de redirect en de 404.
+
 ## Promptkeuzes verwerkt
 
 De prompt is aangescherpt met de keuzes uit het gesprek:
@@ -114,16 +125,15 @@ Voorzichtig:
 | --- | --- | --- | --- | --- | --- |
 | XP per focussessie | `family_timer_session.xpGained`, `xp_level_calculator`, screenshots | Free basis | Iedereen | Elke minuut voelt meetbaar. | Homepage, features |
 | Levels per skill | `Skill.level`, `xp_level_calculator` | Free basis | Zelfontwikkeling, studenten | Groei is zichtbaar per vaardigheid. | Skill tracker page |
-| Dagelijkse streak | `STREAK_SYSTEM.md`: 10 XP per dag | Free basis | Habit/focus gebruikers | Consistentie wordt zichtbaar. | `/features/streaks` |
-| Streak freezes | `STREAK_SYSTEM.md` | Free/Premium check nodig | Habit gebruikers | Een gemiste dag hoeft niet direct alles te breken. | Streaks FAQ |
-| Theme unlocks door progressie | `STREAK_SYSTEM.md`, `THEME_SYSTEM.md` | Free/Premium afhankelijk theme | Gamification, Premium | Beloningen voelen persoonlijk en zichtbaar. | Features, Premium |
-| Session reward screen | screenshot `03-session-reward` | Free basis | Iedereen | Positieve feedback na afronden. | Homepage visuals |
+| Actieve dagen (vervangt streaks sinds 30 okt 2026) | `activeDays_*` l10n, `active_days_service.dart` | Free | Habit/focus gebruikers | Een dag met minstens 10 minuten telt; een gemiste dag kost niets, het totaal wordt nooit teruggezet. | `/features/active-days` |
+| Theme unlocks door progressie (levels, actieve dagen) | `THEME_SYSTEM.md`, `theme_unlock_type_activeDays` | Free/Premium afhankelijk theme | Gamification, Premium | Beloningen voelen persoonlijk en zichtbaar. | Features, Premium |
+| Session reward screen | screenshot `03-session-reward` (niet meer gebruikt: onderschrift zegt "keep streaks") | Free basis | Iedereen | Positieve feedback na afronden. | Geen |
 | Progress notifications | `progress_notification_service.dart`, l10n weekly/monthly/yearly | Opt-in | Terugkerende gebruikers | Week-, maand- en jaaroverzichten houden motivatie vast. | FAQ, trust/privacy |
 
 Marketingtaal:
 
 - "Verdien XP voor de tijd die je investeert."
-- "Maak consistent oefenen zichtbaar met levels, streaks en voortgang per skill."
+- "Maak regelmatig oefenen zichtbaar met levels, actieve dagen en voortgang per vaardigheid."
 
 Voorzichtig:
 
@@ -133,10 +143,10 @@ Voorzichtig:
 
 | Klantvriendelijke naam | Productbewijs | Plan | Doelgroepen | Voordeel | SEO / pagina |
 | --- | --- | --- | --- | --- | --- |
-| Statistieken per dag/week/maand/jaar | `stats` feature, l10n, screenshot `04-statistics` | Basic + Premium advanced | Iedereen | Gebruiker ziet waar de tijd naartoe gaat. | `/features/progress-statistics` |
-| Skill breakdown | child stats l10n, stats widgets | Basic + Premium advanced | Studenten, ouders, zelfontwikkeling | Zicht op welke vaardigheden echt aandacht krijgen. | Features |
+| Statistieken per dag/week/maand/jaar | `stats` feature, l10n, screenshot `04-statistics` | Free | Iedereen | Gebruiker ziet waar de tijd naartoe gaat. | `/features/progress-statistics` |
+| Skill breakdown | child stats l10n, stats widgets | Free | Studenten, ouders, zelfontwikkeling | Zicht op welke vaardigheden echt aandacht krijgen. | Features |
 | Sessiehistorie | timer persistence interfaces, Premium unlimited history | Basic beperkt, Premium uitgebreid | Power users | Terugkijken op oefengedrag. | Premium |
-| Data export | `PremiumFeatures.dataExport` | Premium | Professionals, power users | Eigen analyse of rapportage buiten de app. | Pricing, FAQ |
+| Data export | Sinds nov 2026 niet meer in `PremiumFeatures` | Niet als Premium verkopen | Professionals, power users | Eigen analyse of rapportage buiten de app. | Pricing, FAQ |
 | Child stats dashboard | `child_stats_*` l10n, family providers | Family | Ouders/gezinnen | Ouders zien sessies, minuten, XP, skill breakdown en recente activiteit. | `/features/family`, pricing |
 
 Marketingtaal:
@@ -156,13 +166,12 @@ Voorzichtig:
 | Vriendstatistieken met privacy toggle | `SOCIAL_FRIENDS_STATS.md` | Account vereist | Sociale motivatie | Delen kan, maar staat onder controle van de gebruiker. | Trust, features |
 | Challenges | `challenge.dart`: XP Race, Active Days Battle; UI ondersteunt creation options | Account vereist | Studenten, vrienden, gezinnen | Samen naar een doel werken. | Features, FAQ |
 | Challenge detail met progress/activity | `challenge_detail_screen`, l10n | Account vereist | Sociale motivatie | Zicht op wie voorloopt en welke sessies meetellen. | Features |
-| Rankings | `ranking_period.dart`, screenshot `05-rankings` | Account vereist | Competitieve gebruikers | Vergelijken per week, maand en all-time. | `/features/leaderboards` |
-| Leagues | `league_tier.dart`: bronze t/m diamond | Account vereist | Sociale motivatie | Competitie voelt als seizoensprogressie. | Rankings landing |
+| Rankings en leagues | `ranking_period.dart`, `league_tier.dart` | Uit in de app (`rankingsEnabled = false`) | - | Niet noemen op de website. Gids `/features/leaderboards` verwijderd op 25 nov 2026 (404). | Geen |
 | Activity feed | `friend_activity.dart`, social docs | Account vereist, privacy-afhankelijk | Sociale motivatie | Successen zichtbaar maken zonder alles openbaar te maken. | Features |
 
 Marketingtaal:
 
-- "Gebruik vrienden, challenges en rankings wanneer accountability helpt."
+- "Gebruik vrienden en uitdagingen wanneer accountability helpt."
 - "Deel voortgang gecontroleerd: social stats staan achter een privacy-instelling."
 
 Voorzichtig:
@@ -204,19 +213,19 @@ Voorzichtig:
 | --- | --- | --- | --- | --- | --- |
 | Premium Monthly/Yearly | `SubscriptionProduct.monthly/yearly` | Premium: EUR 3.99/mnd, EUR 39.99/jr | Power users | Meer flexibiliteit en diepte. | Pricing |
 | Family Monthly/Yearly | `SubscriptionProduct.familyMonthly/familyYearly` | Family: EUR 6.99/mnd, EUR 69.99/jr | Gezinnen | Premium + gezinsstructuur. | Pricing |
-| Geavanceerde timermodi | `PremiumFeatures.timerTechniques` | Premium | Focus/productiviteit | Deep Work, 52-17, Flowtime. | Pricing, focus page |
-| Custom timer durations | `PremiumFeatures.customTimers` | Premium | Focus/productiviteit | Eigen Flowtime/persoonlijke timers. | Pricing |
-| Advanced stats | `PremiumFeatures.advancedStats` | Premium | Power users | Trends en historische data. | Pricing |
-| Unlimited history | `PremiumFeatures.unlimitedHistory` | Premium | Power users | Lange termijn inzicht. | Pricing |
-| Premium audio | `PremiumFeatures.premiumAudio` | Premium | Focus gebruikers | Meer geluiden/audio-opties. | Pricing |
+| Geavanceerde timermodi | Sinds nov 2026 niet meer in `PremiumFeatures` | Free | Focus/productiviteit | Deep Work, 52-17, Flowtime. | Pricing, focus page |
+| Custom timer durations | Sinds nov 2026 niet meer in `PremiumFeatures` | Free | Focus/productiviteit | Eigen Flowtime/persoonlijke timers. | Pricing |
+| Advanced stats | Sinds nov 2026 niet meer in `PremiumFeatures` | Niet als Premium verkopen | Power users | Trends en historische data. | Pricing |
+| Unlimited history | Sinds nov 2026 niet meer in `PremiumFeatures` | Niet als Premium verkopen | Power users | Lange termijn inzicht. | Pricing |
+| Premium audio | Sinds nov 2026 niet meer in `PremiumFeatures` | Niet als Premium verkopen | Focus gebruikers | Meer geluiden/audio-opties. | Pricing |
 | Themes | `THEME_SYSTEM.md`, screenshot `07-themes-profile` | Free unlocks + Premium themes | Iedereen, Premium | App voelt persoonlijker. | Features, Premium |
 | Light/dark/system mode | `THEME_SYSTEM.md`, theme mode system | Free/Premium afhankelijk themes | Iedereen | Werkt in elke omgeving. | Features |
 
 Aanbevolen pricing copy:
 
 - Free: "Start met skill tracking, focus timers, XP, levels en Guest Mode."
-- Premium: "Voor gebruikers die meer timermodi, diepere statistieken, personalisatie en historie willen."
-- Family: "Premium voor het gezin, plus ouderrollen, kindstatistieken, timers voor kinderen, weekdoelen en complimenten."
+- Premium (stand 25 nov 2026): "Voor gebruikers die extra thema's willen. Al het andere in SkillQuest is gratis."
+- Family: "Gezinsbeheer, timers voor kinderen, kindstatistieken, doelen en complimenten, plus de Premium-thema's."
 
 Voorzichtig:
 
@@ -335,14 +344,14 @@ Aanbevolen FAQ-vragen:
 ### Prioriteit 2
 
 5. `/features/pomodoro-timer`
-6. `/features/streaks`
+6. `/features/active-days` (was `/features/streaks`, 308 sinds 25 nov 2026)
 7. `/features/friends-challenges`
 8. `/features/study-timer`
 
 ### Prioriteit 3
 
 9. `/features/deep-work-flowtime`
-10. `/features/leaderboards`
+10. ~~`/features/leaderboards`~~ verwijderd op 25 nov 2026 (rankings staan uit in de app)
 11. `/features/themes`
 12. `/features/guest-mode`
 

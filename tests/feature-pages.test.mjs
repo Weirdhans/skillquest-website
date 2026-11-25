@@ -39,11 +39,10 @@ const translated = [
   'skill-tracker',
   'progress-statistics',
   'pomodoro-timer',
-  'streaks',
+  'active-days',
   'friends-challenges',
   'study-timer',
   'deep-work-flowtime',
-  'leaderboards',
   'themes',
   'guest-mode'
 ];
@@ -68,7 +67,7 @@ test('the two app-search guides exist in English only', () => {
   }
 });
 
-test('the twelve translated guides still exist in every locale', () => {
+test('the eleven translated guides exist in every locale', () => {
   assert.deepEqual([...features.translatedFeatureLandingSlugs], translated);
   for (const slug of translated) {
     assert.deepEqual([...features.featureLandingLocales(slug)], locales);
@@ -220,7 +219,7 @@ test('the copy of the new guides follows the rules for app-search pages', async 
     assert.doesNotMatch(text, /ADHD|grades? (?:improve|go up)|better grades|study shows|research/i, slug);
     assert.doesNotMatch(text, /count[- ]up|stopwatch/i, `${slug}: the timer counts down`);
     // The copy speaks to parents; the app is not presented as directed to children.
-    assert.doesNotMatch(text, /for (?:kids|children)/i, `${slug}: written for parents`);
+    assert.doesNotMatch(text, /for (?:kids|children)\b/i, `${slug}: written for parents`);
     assert.match(text, /10 minutes/, `${slug} names the 10-minute default`);
 
     // Family prices follow PRICE_AMOUNTS.

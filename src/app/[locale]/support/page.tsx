@@ -56,7 +56,7 @@ const copyByLocale: Record<string, SupportCopy> = {
       },
       {
         title: 'Timers en voortgang',
-        body: 'Vragen over focus timers, XP, streaks, statistieken, synchronisatie of meldingen.'
+        body: 'Vragen over focus timers, XP, actieve dagen, statistieken, synchronisatie of meldingen.'
       },
       {
         title: 'Abonnementen',
@@ -80,10 +80,10 @@ const copyByLocale: Record<string, SupportCopy> = {
     faqHeading: 'Veelgestelde vragen',
     faq: [
       {question: 'Kan ik SkillQuest gratis uitproberen?', answer: 'Ja. SkillQuest heeft een gratis versie met vaardigheidsregistratie, concentratietimers, XP, levels en een gastmodus, zodat je het kunt uitproberen voordat je een account aanmaakt of je abonneert.'},
-      {question: 'Wat is het verschil tussen Free, Premium en Family?', answer: 'Met de gratis versie kun je aan de slag met het bijhouden van vaardigheden, concentratietimers, XP en levels. Premium biedt meer timertechnieken, uitgebreidere statistieken, meer geschiedenis en personalisatiemogelijkheden. Family bevat Premium voor het hele gezin, plus ouderrollen, kinderstatistieken, timers voor kinderen, wekelijkse doelen en complimentjes.'},
-      {question: 'Welke focus-timer-technieken ondersteunt SkillQuest?', answer: 'SkillQuest ondersteunt Pomodoro, Deep Work, 52-17, Flowtime, Until Time en EMOM, afhankelijk van je abonnement.'},
+      {question: 'Wat is het verschil tussen Free, Premium en Family?', answer: 'De gratis versie biedt het bijhouden van vaardigheden, alle focustimertechnieken, XP, levels, statistieken, actieve dagen, vrienden en uitdagingen, en de gastmodus. Premium voegt extra thema’s toe. Family is voor het hele gezin: gezinsbeheer, timers voor kinderen, kindstatistieken (met toestemming), doelen en complimentjes, plus de Premium-thema’s.'},
+      {question: 'Welke focus-timer-technieken ondersteunt SkillQuest?', answer: 'SkillQuest ondersteunt Pomodoro, Deep Work, 52-17, Flowtime, Until Time en EMOM. Ze zijn allemaal gratis.'},
       {question: 'Kan ik Pomodoro gebruiken in SkillQuest?', answer: 'Ja, Pomodoro is een van de ingebouwde concentratietimers die je al in de gratis versie kunt gebruiken.'},
-      {question: 'Wat zijn XP, levels en streaks?', answer: 'Elke focus-sessie levert XP op voor de vaardigheid die je hebt geoefend. XP telt op tot levels per vaardigheid, en een dagelijkse streak houdt bij hoe regelmatig je meedoet, waarbij de streak wordt bevroren om hem te beschermen tegen een af en toe gemiste dag.'},
+      {question: 'Wat zijn XP, levels en actieve dagen?', answer: 'Elke focussessie levert XP op voor de vaardigheid die je hebt geoefend: 1 XP per volle minuut. XP telt op tot levels per vaardigheid. Een dag waarop je minstens 10 minuten oefent, telt als actieve dag. Een gemiste dag haalt niets weg, en je totaal aan actieve dagen wordt nooit teruggezet.'},
       {question: 'Wat kunnen ouders doen met Family?', answer: 'Met Family kunnen ouders timers voor hun kinderen starten, statistieken van hun kinderen bekijken, wekelijkse doelen instellen en complimentjes sturen, allemaal binnen een gedeelde gezinsgroep met duidelijke rollen voor ouders en kinderen.'},
       {question: 'Mogen ouders de timer voor hun kinderen aanzetten?', answer: 'Ja. Met Family kunnen ouders en de eigenaar van het gezin timers starten voor kinderen binnen de gezinsgroep. De sessie is gekoppeld aan het account van het kind, zodat zijn of haar voortgang en oefentijd zichtbaar blijven.'},
       {question: 'Kan ik de vorderingen van mijn kind zien?', answer: 'Met Family kunnen ouders de statistieken van hun kind bekijken, zoals sessies, minuten, XP, een overzicht van vaardigheden en recente activiteiten.'},
@@ -117,7 +117,7 @@ const copyByLocale: Record<string, SupportCopy> = {
       },
       {
         title: 'Timers and progress',
-        body: 'Questions about focus timers, XP, streaks, statistics, synchronization, or notifications.'
+        body: 'Questions about focus timers, XP, active days, statistics, synchronization, or notifications.'
       },
       {
         title: 'Subscriptions',
@@ -141,10 +141,10 @@ const copyByLocale: Record<string, SupportCopy> = {
     faqHeading: 'Frequently asked questions',
     faq: [
       {question: 'Can I try SkillQuest for free?', answer: 'Yes. SkillQuest has a free tier with skill tracking, focus timers, XP, levels, and Guest Mode, so you can try it before creating an account or subscribing.'},
-      {question: 'What is the difference between Free, Premium, and Family?', answer: 'Free gets you started with skill tracking, focus timers, XP, and levels. Premium adds more timer techniques, deeper statistics, more history, and personalization. Family includes Premium for the whole household plus parent roles, child statistics, timers for children, weekly goals, and compliments.'},
-      {question: 'Which focus timer techniques does SkillQuest support?', answer: 'SkillQuest supports Pomodoro, Deep Work, 52-17, Flowtime, Until Time, and EMOM, depending on your plan.'},
+      {question: 'What is the difference between Free, Premium, and Family?', answer: 'Free includes skill tracking, every focus timer technique, XP, levels, statistics, active days, friends and challenges, and Guest Mode. Premium adds extra themes. Family is for the household: family management, timers for children, child statistics (with permission), goals, and compliments, plus the Premium themes.'},
+      {question: 'Which focus timer techniques does SkillQuest support?', answer: 'SkillQuest supports Pomodoro, Deep Work, 52-17, Flowtime, Until Time, and EMOM. All of them are free.'},
       {question: 'Can I use Pomodoro in SkillQuest?', answer: 'Yes, Pomodoro is one of the built-in focus timer techniques, available on the free tier.'},
-      {question: 'What are XP, levels, and streaks?', answer: 'Every focus session earns XP toward the skill you practiced. XP adds up to levels per skill, and a daily streak tracks how consistently you show up, with streak freezes to protect it from an occasional missed day.'},
+      {question: 'What are XP, levels, and active days?', answer: 'Every focus session earns XP for the skill you practiced: 1 XP per full minute. XP adds up to levels per skill. A day on which you practice at least 10 minutes counts as an active day. A missed day takes nothing away, and your total of active days never resets.'},
       {question: 'What can parents do with Family?', answer: 'With Family, parents can start timers for their children, view child statistics, set weekly goals, and send compliments, all within a shared family group with clear parent and child roles.'},
       {question: 'Can parents start timers for their children?', answer: 'Yes. With Family, parents and the family owner can start timers for children within the family group. The session is linked to the child\'s account, so their progress and practice time stay visible.'},
       {question: 'Can I see my child\'s progress?', answer: 'With Family, parents can view child statistics, including sessions, minutes, XP, a skill breakdown, and recent activity.'},
@@ -178,7 +178,7 @@ const copyByLocale: Record<string, SupportCopy> = {
       },
       {
         title: 'Timer und Fortschritt',
-        body: 'Fragen zu Fokus-Timern, XP, Streaks, Statistiken, Synchronisierung oder Benachrichtigungen.'
+        body: 'Fragen zu Fokus-Timern, XP, aktiven Tagen, Statistiken, Synchronisierung oder Benachrichtigungen.'
       },
       {
         title: 'Abonnements',
@@ -202,10 +202,10 @@ const copyByLocale: Record<string, SupportCopy> = {
     faqHeading: 'Häufig gestellte Fragen',
     faq: [
       {question: 'Kann ich SkillQuest kostenlos ausprobieren?', answer: 'Ja. SkillQuest bietet eine kostenlose Version mit Funktionsüberwachung, Konzentrations-Timern, XP, Levels und einem Gastmodus, sodass du es ausprobieren kannst, bevor du ein Konto erstellst oder ein Abonnement abschließt.'},
-      {question: 'Was ist der Unterschied zwischen „Free“, „Premium“ und „Family“?', answer: 'Mit der kostenlosen Version kannst du loslegen: mit der Erfassung deiner Fähigkeiten, Konzentrations-Timern, XP und Levels. Die Premium-Version bietet zusätzliche Timer-Funktionen, detailliertere Statistiken, einen umfangreicheren Verlauf und individuelle Anpassungsmöglichkeiten. Die Family-Version umfasst die Premium-Funktionen für den ganzen Haushalt sowie Elternrollen, Statistiken für Kinder, Timer für Kinder, wöchentliche Ziele und Lob.'},
-      {question: 'Welche Techniken für den Fokus-Timer unterstützt SkillQuest?', answer: 'SkillQuest unterstützt je nach deinem Tarif die Methoden Pomodoro, Deep Work, 52-17, Flowtime, Until Time und EMOM.'},
+      {question: 'Was ist der Unterschied zwischen „Free“, „Premium“ und „Family“?', answer: 'Die kostenlose Version umfasst die Erfassung deiner Fähigkeiten, alle Techniken für den Fokus-Timer, XP, Levels, Statistiken, aktive Tage, Freunde und Herausforderungen sowie den Gastmodus. Premium bringt zusätzliche Designs. Family ist für den ganzen Haushalt: Familienverwaltung, Timer für Kinder, Statistiken für Kinder (mit Einwilligung), Ziele und Lob sowie die Premium-Designs.'},
+      {question: 'Welche Techniken für den Fokus-Timer unterstützt SkillQuest?', answer: 'SkillQuest unterstützt die Methoden Pomodoro, Deep Work, 52-17, Flowtime, Until Time und EMOM. Alle sind kostenlos.'},
       {question: 'Kann ich Pomodoro in SkillQuest nutzen?', answer: 'Ja, Pomodoro ist eine der integrierten Techniken zum Konzentrations-Timer, die in der kostenlosen Version verfügbar ist.'},
-      {question: 'Was sind XP, Level und Serien?', answer: 'Mit jeder Fokus-Sitzung sammelst du XP für die Fertigkeit, die du geübt hast. Die XP summieren sich zu Stufen pro Fertigkeit, und eine tägliche Serie zeigt an, wie regelmäßig du dabei bist – dabei wird die Serie eingefroren, um sie vor gelegentlichen Ausfällen zu schützen.'},
+      {question: 'Was sind XP, Level und aktive Tage?', answer: 'Mit jeder Fokus-Sitzung sammelst du XP für die Fertigkeit, die du geübt hast: 1 XP pro volle Minute. Die XP summieren sich zu Stufen pro Fertigkeit. Ein Tag, an dem du mindestens 10 Minuten übst, zählt als aktiver Tag. Ein verpasster Tag nimmt dir nichts weg, und deine Gesamtzahl aktiver Tage wird nie zurückgesetzt.'},
       {question: 'Was können Eltern mit „Family“ machen?', answer: 'Mit „Family“ können Eltern Timer für ihre Kinder starten, Statistiken zu ihren Kindern einsehen, wöchentliche Ziele festlegen und Lob aussprechen – und das alles innerhalb einer gemeinsamen Familiengruppe mit klar definierten Rollen für Eltern und Kinder.'},
       {question: 'Können Eltern für ihre Kinder einen Timer starten?', answer: 'Ja. Mit „Familie“ können Eltern und der Familieninhaber Timer für Kinder innerhalb der Familiengruppe starten. Die Sitzung ist mit dem Konto des Kindes verknüpft, sodass dessen Fortschritte und Übungszeit weiterhin sichtbar bleiben.'},
       {question: 'Kann ich die Fortschritte meines Kindes einsehen?', answer: 'Mit „Familie“ können Eltern Statistiken zu ihren Kindern einsehen, darunter Spielsitzungen, Spielzeit, XP, eine Aufschlüsselung der Fähigkeiten und die letzten Aktivitäten.'},
@@ -239,7 +239,7 @@ const copyByLocale: Record<string, SupportCopy> = {
       },
       {
         title: 'Minuteurs et progrès',
-        body: 'Questions sur les minuteurs, les XP, les séries, les statistiques, la synchronisation ou les notifications.'
+        body: 'Questions sur les minuteurs, les XP, les jours actifs, les statistiques, la synchronisation ou les notifications.'
       },
       {
         title: 'Abonnements',
@@ -263,10 +263,10 @@ const copyByLocale: Record<string, SupportCopy> = {
     faqHeading: 'Questions fréquentes',
     faq: [
       {question: 'Est-ce que je peux essayer SkillQuest gratuitement ?', answer: 'Oui. SkillQuest propose une version gratuite avec suivi des compétences, minuteurs de concentration, XP, niveaux et mode invité, ce qui te permet de l\'essayer avant de créer un compte ou de t\'abonner.'},
-      {question: 'Quelle est la différence entre les formules « Free », « Premium » et « Family » ?', answer: 'Avec la version gratuite, tu peux commencer à suivre tes compétences, utiliser des minuteurs de concentration, gagner des XP et passer des niveaux. La version Premium t\'offre davantage de techniques de minuteur, des statistiques plus détaillées, un historique plus complet et des options de personnalisation. La formule Family inclut Premium pour toute la famille, ainsi que des rôles pour les parents, des statistiques pour les enfants, des minuteurs pour les enfants, des objectifs hebdomadaires et des encouragements.'},
-      {question: 'Quelles techniques de minuteur de concentration SkillQuest prend-il en charge ?', answer: 'SkillQuest prend en charge les méthodes Pomodoro, Deep Work, 52-17, Flowtime, Until Time et EMOM, selon ta formule d\'abonnement.'},
+      {question: 'Quelle est la différence entre les formules « Free », « Premium » et « Family » ?', answer: 'La version gratuite comprend le suivi des compétences, toutes les techniques de minuteur de concentration, les XP, les niveaux, les statistiques, les jours actifs, les amis et les défis, ainsi que le mode invité. Premium ajoute des thèmes supplémentaires. La formule Family est pour toute la famille : gestion de la famille, minuteurs pour les enfants, statistiques des enfants (avec autorisation), objectifs et encouragements, ainsi que les thèmes Premium.'},
+      {question: 'Quelles techniques de minuteur de concentration SkillQuest prend-il en charge ?', answer: 'SkillQuest prend en charge les méthodes Pomodoro, Deep Work, 52-17, Flowtime, Until Time et EMOM. Toutes sont gratuites.'},
       {question: 'Est-ce que je peux utiliser Pomodoro dans SkillQuest ?', answer: 'Oui, la méthode Pomodoro fait partie des techniques de minuteur de concentration intégrées, disponibles dans la version gratuite.'},
-      {question: 'C\'est quoi, les XP, les niveaux et les séries ?', answer: 'Chaque séance te rapporte des XP pour la compétence que tu as travaillée. Les XP s\'accumulent pour te faire monter de niveau dans chaque compétence, tandis que la série quotidienne reflète ta régularité. Enfin, les gels de série te protègent quand tu manques un jour de temps en temps.'},
+      {question: 'C’est quoi, les XP, les niveaux et les jours actifs ?', answer: 'Chaque séance te rapporte des XP pour la compétence que tu as travaillée : 1 XP par minute complète. Les XP s’accumulent pour te faire monter de niveau dans chaque compétence. Un jour où tu pratiques au moins 10 minutes compte comme jour actif. Un jour manqué ne t’enlève rien, et ton total de jours actifs ne revient jamais à zéro.'},
       {question: 'Que peuvent faire les parents avec Family ?', answer: 'Avec « Family », les parents peuvent lancer des minuteurs pour leurs enfants, consulter leurs statistiques, définir des objectifs hebdomadaires et leur envoyer des compliments, le tout au sein d\'un groupe familial partagé où les rôles des parents et des enfants sont clairement définis.'},
       {question: 'Est-ce que les parents peuvent lancer un minuteur pour leurs enfants ?', answer: 'Oui. Avec Family, les parents et le titulaire du compte familial peuvent lancer des minuteurs pour les enfants du groupe familial. La session est associée au compte de l\'enfant, ce qui permet de suivre ses progrès et son temps d\'entraînement.'},
       {question: 'Est-ce que je peux suivre les progrès de mon enfant ?', answer: 'Avec Family, les parents peuvent consulter les statistiques de leur enfant, notamment les sessions, les minutes, les XP, le détail des compétences et l\'activité récente.'},
@@ -300,7 +300,7 @@ const copyByLocale: Record<string, SupportCopy> = {
       },
       {
         title: 'Temporizadores y progreso',
-        body: 'Preguntas sobre timers, XP, rachas, estadisticas, sincronizacion o notificaciones.'
+        body: 'Preguntas sobre timers, XP, días activos, estadísticas, sincronización o notificaciones.'
       },
       {
         title: 'Suscripciones',
@@ -324,10 +324,10 @@ const copyByLocale: Record<string, SupportCopy> = {
     faqHeading: 'Preguntas frecuentes',
     faq: [
       {question: '¿Puedo probar SkillQuest gratis?', answer: 'Sí. SkillQuest tiene una versión gratuita con seguimiento de habilidades, temporizadores de concentración, XP, niveles y el «Modo Invitado», así que puedes probarlo antes de crear una cuenta o suscribirte.'},
-      {question: '¿Cuál es la diferencia entre «Gratis», «Premium» y «Familia»?', answer: 'Con la versión gratuita puedes empezar a llevar un seguimiento de tus habilidades, usar temporizadores de concentración, ganar XP y subir de nivel. La versión Premium te ofrece más técnicas de temporizadores, estadísticas más detalladas, más historial y opciones de personalización. La versión Family incluye la Premium para toda la familia, además de funciones para padres, estadísticas de los niños, temporizadores para los niños, objetivos semanales y felicitaciones.'},
-      {question: '¿Qué técnicas de temporizador de concentración admite SkillQuest?', answer: 'SkillQuest es compatible con Pomodoro, Deep Work, 52-17, Flowtime, Until Time y EMOM, dependiendo de tu plan.'},
+      {question: '¿Cuál es la diferencia entre «Gratis», «Premium» y «Familia»?', answer: 'La versión gratuita incluye el seguimiento de habilidades, todas las técnicas de temporizador de concentración, XP, niveles, estadísticas, días activos, amigos y retos, y el modo invitado. Premium añade temas extra. Family es para toda la familia: gestión familiar, temporizadores para los niños, estadísticas de los niños (con permiso), objetivos y felicitaciones, además de los temas Premium.'},
+      {question: '¿Qué técnicas de temporizador de concentración admite SkillQuest?', answer: 'SkillQuest es compatible con Pomodoro, Deep Work, 52-17, Flowtime, Until Time y EMOM. Todas son gratis.'},
       {question: '¿Puedo usar Pomodoro en SkillQuest?', answer: 'Sí, Pomodoro es una de las técnicas de temporizador de concentración integradas, disponible en el plan gratuito.'},
-      {question: '¿Qué son los XP, los niveles y las rachas?', answer: 'Cada sesión de concentración te da XP para la habilidad que hayas practicado. Los XP se van sumando hasta subir de nivel en cada habilidad, y una racha diaria lleva la cuenta de tu constancia; además, la racha se congela para protegerla si alguna vez te saltas un día.'},
+      {question: '¿Qué son los XP, los niveles y los días activos?', answer: 'Cada sesión de concentración te da XP para la habilidad que hayas practicado: 1 XP por cada minuto completo. Los XP se van sumando hasta subir de nivel en cada habilidad. Un día en el que practicas al menos 10 minutos cuenta como día activo. Saltarte un día no te quita nada, y tu total de días activos nunca vuelve a cero.'},
       {question: '¿Qué pueden hacer los padres con «Family»?', answer: 'Con «Familia», los padres pueden poner temporizadores para sus hijos, ver las estadísticas de los niños, fijar objetivos semanales y enviarles mensajes de ánimo, todo ello dentro de un grupo familiar compartido en el que quedan claros los roles de padres e hijos.'},
       {question: '¿Pueden los padres poner el temporizador por sus hijos?', answer: 'Sí. Con la función «Familia», los padres y el titular de la cuenta familiar pueden activar temporizadores para los niños del grupo familiar. La sesión está vinculada a la cuenta del niño, así que su progreso y el tiempo que dedica a practicar siguen siendo visibles.'},
       {question: '¿Puedo ver cómo va mi hijo?', answer: 'Con «Familia», los padres pueden ver las estadísticas de sus hijos, como las sesiones, los minutos, los XP, un desglose de habilidades y la actividad reciente.'},
@@ -361,7 +361,7 @@ const copyByLocale: Record<string, SupportCopy> = {
       },
       {
         title: 'Timer e progressi',
-        body: 'Domande su timer, XP, serie, statistiche, sincronizzazione o notifiche.'
+        body: 'Domande su timer, XP, giorni attivi, statistiche, sincronizzazione o notifiche.'
       },
       {
         title: 'Abbonamenti',
@@ -385,10 +385,10 @@ const copyByLocale: Record<string, SupportCopy> = {
     faqHeading: 'Domande frequenti',
     faq: [
       {question: 'Posso provare SkillQuest gratis?', answer: 'Sì. SkillQuest offre un piano gratuito che include il monitoraggio delle abilità, i timer di concentrazione, l\'XP, i livelli e la Modalità ospite, così puoi provarlo prima di creare un account o di abbonarti.'},
-      {question: 'Qual è la differenza tra Free, Premium e Family?', answer: 'Con la versione gratuita puoi iniziare a monitorare le tue abilità, usare i timer di concentrazione, guadagnare XP e salire di livello. La versione Premium aggiunge altre tecniche di timer, statistiche più approfondite, una cronologia più ampia e opzioni di personalizzazione. Family include Premium per tutta la famiglia, oltre a ruoli per i genitori, statistiche dei figli, timer per i figli, obiettivi settimanali e complimenti.'},
-      {question: 'Quali tecniche di timer di concentrazione supporta SkillQuest?', answer: 'SkillQuest supporta le tecniche Pomodoro, Deep Work, 52-17, Flowtime, Until Time ed EMOM, a seconda del tuo piano.'},
+      {question: 'Qual è la differenza tra Free, Premium e Family?', answer: 'La versione gratuita include il monitoraggio delle abilità, tutte le tecniche di timer di concentrazione, XP, livelli, statistiche, giorni attivi, amici e sfide, e la Modalità ospite. Premium aggiunge temi extra. Family è per tutta la famiglia: gestione della famiglia, timer per i figli, statistiche dei figli (con autorizzazione), obiettivi e complimenti, oltre ai temi Premium.'},
+      {question: 'Quali tecniche di timer di concentrazione supporta SkillQuest?', answer: 'SkillQuest supporta le tecniche Pomodoro, Deep Work, 52-17, Flowtime, Until Time ed EMOM. Sono tutte gratuite.'},
       {question: 'Posso usare il metodo Pomodoro su SkillQuest?', answer: 'Sì, il Pomodoro è una delle tecniche di timer per la concentrazione integrate, disponibile nel piano gratuito.'},
-      {question: 'Cosa sono gli XP, i livelli e le serie?', answer: 'Ogni sessione ti fa guadagnare XP per l\'abilità che hai praticato. Gli XP si sommano per raggiungere i livelli di ogni abilità, mentre la serie giornaliera tiene traccia della tua costanza e i congelamenti della serie ti proteggono se salti un giorno ogni tanto.'},
+      {question: 'Cosa sono gli XP, i livelli e i giorni attivi?', answer: 'Ogni sessione ti fa guadagnare XP per l’abilità che hai praticato: 1 XP per ogni minuto intero. Gli XP si sommano per raggiungere i livelli di ogni abilità. Un giorno in cui ti eserciti per almeno 10 minuti conta come giorno attivo. Un giorno saltato non ti toglie nulla e il tuo totale di giorni attivi non si azzera mai.'},
       {question: 'Cosa possono fare i genitori con Family?', answer: 'Con Family, i genitori possono avviare i timer per i propri figli, visualizzare le statistiche dei figli, fissare obiettivi settimanali e inviare complimenti, il tutto all’interno di un gruppo familiare condiviso con ruoli ben definiti per genitori e figli.'},
       {question: 'I genitori possono avviare i timer per i propri figli?', answer: 'Sì. Con Family, i genitori e i proprietari possono avviare i timer per i figli all’interno del gruppo familiare. La sessione è collegata all’account del figlio, quindi i suoi progressi e il tempo dedicato alla pratica rimangono visibili.'},
       {question: 'Posso vedere i progressi di mio figlio?', answer: 'Con Family, i genitori possono visualizzare le statistiche dei propri figli, tra cui sessioni, minuti, XP, un riepilogo delle abilità e l\'attività recente.'},

@@ -7,10 +7,15 @@ import nextConfig from '../next.config.js';
 const legacyRoutes = [
   ['/en/app', '/en/download'],
   ['/nl/handleiding', '/nl/guides'],
-  ['/es/faq', '/es/support#faq']
+  ['/es/faq', '/es/support#faq'],
+  // The streaks guide became the active-days guide (25 November 2026).
+  ...['nl', 'en', 'de', 'fr', 'es', 'it'].map((locale) => [
+    `/${locale}/features/streaks`,
+    `/${locale}/features/active-days`
+  ])
 ];
 
-test('legacy redirects are permanent and limited to the three reviewed paths', async () => {
+test('legacy redirects are permanent and limited to the reviewed paths', async () => {
   const redirects = await nextConfig.redirects();
   assert.deepEqual(
     redirects.filter((redirect) => redirect.permanent),
