@@ -260,6 +260,16 @@ test('the guides list shows the English-only guides in en and in no other locale
   }
 });
 
+test('the features page links to the English-only guides in no locale other than en', async () => {
+  for (const locale of locales.filter((item) => item !== 'en')) {
+    const html = await (await fetch(`${origin}/${locale}/features`)).text();
+    assert.ok(html.includes(`href="/${locale}/features/focus-timer"`), `${locale} features grid is rendered`);
+    for (const path of englishOnlyGuides) {
+      assert.ok(!html.includes(`href="/${locale}${path}"`), `${locale}${path}`);
+    }
+  }
+});
+
 test('a translated guide keeps six languages plus x-default', async () => {
   const response = await fetch(`${origin}/de/features/focus-timer`, {redirect: 'manual'});
   assertLanguageMetadata(response, await response.text(), 'de', '/features/focus-timer');

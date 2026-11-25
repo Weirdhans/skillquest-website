@@ -104,6 +104,16 @@ test('the guides list shows the new guides in English and nowhere else', () => {
   }
 });
 
+test('the featured grid on the homepage and /features stays the four flagship guides', () => {
+  for (const locale of locales) {
+    assert.deepEqual(
+      features.getFeaturedFeatureLandingPages(locale).map((page) => page.slug),
+      ['focus-timer', 'family', 'skill-tracker', 'progress-statistics'],
+      locale
+    );
+  }
+});
+
 test('the related guides under a page are unchanged for the translated guides', () => {
   // The template shows the first three other guides; appending the English-only
   // guides must not change that for any existing page.
