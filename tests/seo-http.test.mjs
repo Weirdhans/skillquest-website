@@ -212,3 +212,86 @@ test('a public tip has carousel slides as JPEG, nothing outside the carousel and
     assert.equal(hidden.headers.get('cache-control'), 'no-store', 'a slide before publication is not cached as missing');
   }
 });
+
+// English-only guides for parents who search for an app (25 November 2026).
+const englishOnlyGuides = ['/features/reading-timer', '/features/homework-timer'];
+
+function hreflangLinks(html) {
+  return [...html.matchAll(/<link\b[^>]*rel="alternate"[^>]*>/g)]
+    .filter(([tag]) => /hreflang=/i.test(tag))
+    .map(([tag]) => [tag.match(/hreflang="([^"]+)"/i)?.[1], tag.match(/href="([^"]+)"/)?.[1]]);
+}
+
+for (const path of englishOnlyGuides) {
+  test(`/en${path} renders with hreflang to en only`, async () => {
+    const response = await fetch(`${origin}/en${path}`, {redirect: 'manual'});
+    const html = await response.text();
+
+    assert.equal(response.status, 200);
+    assert.ok(html.includes(`rel="canonical" href="https://www.skill-quest.app/en${path}"`));
+    assert.ok(html.includes('name="robots" content="index, follow"'));
+    assert.match(html, /<h1\b[^>]*>[^<]*(?:reading|homework) timer/i);
+    assert.ok(html.includes('"@type":"FAQPage"'), 'FAQ structured data');
+    assert.deepEqual(hreflangLinks(html), [
+      ['en-US', `https://www.skill-quest.app/en${path}`],
+      ['x-default', `https://www.skill-quest.app/en${path}`]
+    ]);
+    assert.doesNotMatch(html, /og:locale:alternate/);
+    assert.ok(html.includes('href="/en/download"'), 'primary CTA');
+    assert.ok(html.includes('href="/en/parents"'), 'secondary CTA');
+    assert.doesNotMatch(html, /href="\/en\/features\/(?:streaks|leaderboards)"/);
+  });
+
+  for (const locale of locales.filter((item) => item !== 'en')) {
+    test(`/${locale}${path} is a 404`, async () => {
+      const response = await fetch(`${origin}/${locale}${path}`, {redirect: 'manual'});
+      assert.equal(response.status, 404);
+    });
+  }
+}
+
+test('the guides list shows the English-only guides in en and in no other locale', async () => {
+  for (const locale of locales) {
+    const html = await (await fetch(`${origin}/${locale}/guides`)).text();
+    for (const path of englishOnlyGuides) {
+      assert.equal(html.includes(`href="/${locale}${path}"`), locale === 'en', `${locale}${path}`);
+    }
+    assert.ok(html.includes(`href="/${locale}/features/focus-timer"`), `${locale} still lists the translated guides`);
+  }
+});
+
+test('the features page links to the English-only guides in no locale other than en', async () => {
+  for (const locale of locales.filter((item) => item !== 'en')) {
+    const html = await (await fetch(`${origin}/${locale}/features`)).text();
+    assert.ok(html.includes(`href="/${locale}/features/focus-timer"`), `${locale} features grid is rendered`);
+    for (const path of englishOnlyGuides) {
+      assert.ok(!html.includes(`href="/${locale}${path}"`), `${locale}${path}`);
+    }
+  }
+});
+
+test('a translated guide keeps six languages plus x-default', async () => {
+  const response = await fetch(`${origin}/de/features/focus-timer`, {redirect: 'manual'});
+  assertLanguageMetadata(response, await response.text(), 'de', '/features/focus-timer');
+});
+
+test('the sitemap lists the English-only guides for en only, with en alternates', async () => {
+  const xml = await (await fetch(`${origin}/sitemap.xml`)).text();
+  const entries = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map(([, body]) => ({
+    loc: body.match(/<loc>([^<]+)<\/loc>/)?.[1],
+    alternates: [...body.matchAll(/hreflang="([^"]+)"\s+href="([^"]+)"/g)].map(([, language, href]) => [language, href])
+  }));
+
+  for (const path of englishOnlyGuides) {
+    const matching = entries.filter((entry) => entry.loc.endsWith(path));
+    assert.deepEqual(matching.map((entry) => entry.loc), [`https://www.skill-quest.app/en${path}`]);
+    assert.deepEqual(matching[0].alternates, [
+      ['en-US', `https://www.skill-quest.app/en${path}`],
+      ['x-default', `https://www.skill-quest.app/en${path}`]
+    ]);
+  }
+
+  const focus = entries.filter((entry) => entry.loc.endsWith('/features/focus-timer'));
+  assert.equal(focus.length, 6, 'a translated guide is still listed in all six locales');
+  assert.equal(focus[0].alternates.length, 7);
+});

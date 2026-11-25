@@ -1,7 +1,7 @@
 import type {MetadataRoute} from 'next';
 import {routing} from '@/i18n/routing';
-import {alternateLanguages, localizedPath} from '@/lib/marketing';
-import {featureLandingSlugs} from '@/lib/feature-pages';
+import {alternateLanguages, localizedPath, type Locale} from '@/lib/marketing';
+import {featureLandingLocales, getFeatureLandingSlugs} from '@/lib/feature-pages';
 import {
   blogAlternates,
   blogIndexAlternates,
@@ -35,22 +35,30 @@ const baseRoutes = [
   '/guides'
 ] as const;
 
-const routes = [
-  ...baseRoutes,
-  ...featureLandingSlugs.map((slug) => `/features/${slug}`)
-];
+// The routes of one locale with the locales each route exists in. Base routes
+// exist everywhere; a feature guide can be limited to some locales (English-only
+// guides appear for en only, with hreflang to en only).
+function routesFor(locale: Locale): Array<{route: string; locales: readonly Locale[]}> {
+  return [
+    ...baseRoutes.map((route) => ({route, locales: routing.locales})),
+    ...getFeatureLandingSlugs(locale).map((slug) => ({
+      route: `/features/${slug}`,
+      locales: featureLandingLocales(slug)
+    }))
+  ];
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
   const pages: MetadataRoute.Sitemap = routing.locales.flatMap((locale) =>
-    routes.map((route) => ({
+    routesFor(locale).map(({route, locales}) => ({
       url: localizedPath(locale, route),
       lastModified,
       changeFrequency: route === '' ? 'weekly' : 'monthly',
       priority: route === '' ? 1 : route === '/download' ? 0.9 : 0.7,
       alternates: {
-        languages: alternateLanguages(route)
+        languages: alternateLanguages(route, locales)
       }
     }))
   );

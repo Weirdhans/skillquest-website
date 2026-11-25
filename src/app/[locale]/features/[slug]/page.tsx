@@ -15,7 +15,8 @@ import {
   type Locale
 } from '@/lib/marketing';
 import {
-  featureLandingSlugs,
+  featureLandingLocales,
+  featureLandingStaticParams,
   getFeatureLandingPage,
   getFeatureLandingPages
 } from '@/lib/feature-pages';
@@ -36,6 +37,7 @@ function primaryHref(slug: string) {
 
 function secondaryHref(slug: string) {
   if (slug === 'family') return '/download';
+  if (slug === 'reading-timer' || slug === 'homework-timer') return '/parents';
   if (slug === 'focus-timer' || slug === 'progress-statistics' || slug === 'guest-mode') return '/pricing';
   if (slug === 'friends-challenges') return '/features/leaderboards';
   if (slug === 'leaderboards') return '/features/friends-challenges';
@@ -43,10 +45,11 @@ function secondaryHref(slug: string) {
   return '/features/focus-timer';
 }
 
+// English-only guides are generated for en only. In another locale their
+// slug is not a static param and getFeatureLandingPage returns null, so the
+// page answers 404.
 export function generateStaticParams() {
-  return routing.locales.flatMap((locale) =>
-    featureLandingSlugs.map((slug) => ({locale, slug}))
-  );
+  return featureLandingStaticParams();
 }
 
 export async function generateMetadata({
@@ -66,7 +69,8 @@ export async function generateMetadata({
     locale: safeLocale,
     path: `/features/${page.slug}`,
     title: page.metaTitle,
-    description: page.metaDescription
+    description: page.metaDescription,
+    locales: featureLandingLocales(page.slug)
   });
 }
 

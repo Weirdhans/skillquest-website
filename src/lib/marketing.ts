@@ -102,28 +102,40 @@ export function localizedPath(locale: Locale, path = '') {
   return `${SITE_URL}/${locale}${normalizedPath === '/' ? '' : normalizedPath}`;
 }
 
-export function alternateLanguages(path = '') {
-  return {
-    ...Object.fromEntries(
-      routing.locales.map((locale) => [
-        languageTags[locale],
-        localizedPath(locale, path)
-      ])
-    ),
-    'x-default': localizedPath(routing.defaultLocale, path)
-  };
+/**
+ * hreflang links for a page. `locales` lists the languages the page exists in
+ * (default: all of them). x-default points at the default locale when the page
+ * exists there, otherwise at the first listed locale.
+ */
+export function alternateLanguages(
+  path = '',
+  locales: readonly Locale[] = routing.locales
+): Record<string, string> {
+  const languages: Record<string, string> = Object.fromEntries(
+    locales.map((locale) => [languageTags[locale], localizedPath(locale, path)])
+  );
+  const fallback = locales.includes(routing.defaultLocale)
+    ? routing.defaultLocale
+    : locales[0];
+  if (fallback) {
+    languages['x-default'] = localizedPath(fallback, path);
+  }
+  return languages;
 }
 
 export function createPageMetadata({
   locale,
   path = '',
   title,
-  description
+  description,
+  locales = routing.locales
 }: {
   locale: Locale;
   path?: string;
   title: string;
   description: string;
+  /** The languages this page exists in; hreflang and og:locale:alternate list only these. */
+  locales?: readonly Locale[];
 }): Metadata {
   const canonical = localizedPath(locale, path);
 
@@ -133,7 +145,7 @@ export function createPageMetadata({
     description,
     alternates: {
       canonical,
-      languages: alternateLanguages(path)
+      languages: alternateLanguages(path, locales)
     },
     openGraph: {
       title,
@@ -141,7 +153,7 @@ export function createPageMetadata({
       url: canonical,
       siteName: 'SkillQuest',
       locale: localeToOg[locale],
-      alternateLocale: routing.locales
+      alternateLocale: locales
         .filter((item) => item !== locale)
         .map((item) => localeToOg[item]),
       type: 'website',
