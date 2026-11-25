@@ -50,11 +50,15 @@ export function getClientPref(): ThemePref {
 }
 
 export function storePref(next: ThemePref) {
-  memoryPref = next;
   try {
     window.localStorage.setItem(THEME_STORAGE_KEY, next);
+    // Stored, so read it from storage from now on. A page without the navbar
+    // has no storage listener, and a kept copy would go stale there when
+    // another tab changes the theme.
+    memoryPref = null;
   } catch {
     // The visible theme should still change if storage is unavailable.
+    memoryPref = next;
   }
   prefListeners.forEach((listener) => listener());
 }
