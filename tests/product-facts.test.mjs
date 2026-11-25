@@ -219,3 +219,25 @@ test('the support FAQ does not tie timer techniques or statistics to a plan', as
   );
   assert.doesNotMatch(support, /Premium adds more timer techniques|deeper statistics|meer timertechnieken/);
 });
+
+test('the language switcher sends an English-only guide to the guides list of the other language', async () => {
+  const {languageSwitchTarget} = await loadModule('src/lib/language-switch.ts');
+  const source = await read('src/lib/language-switch.ts');
+  const listed = [...source.match(/englishOnlyGuideSlugs = \[([^\]]+)\]/)[1].matchAll(/'([^']+)'/g)].map((m) => m[1]);
+  assert.deepEqual(listed, [...features.englishOnlyFeatureLandingSlugs], 'same list as feature-pages.ts');
+
+  for (const slug of features.englishOnlyFeatureLandingSlugs) {
+    for (const locale of locales.filter((item) => item !== 'en')) {
+      assert.equal(languageSwitchTarget(`/en/features/${slug}`, locale), `/${locale}/guides`);
+    }
+    assert.equal(languageSwitchTarget(`/en/features/${slug}`, 'en'), `/en/features/${slug}`);
+  }
+  // Every other page keeps its path in the other language.
+  assert.equal(languageSwitchTarget('/en/features/active-days', 'de'), '/de/features/active-days');
+  assert.equal(languageSwitchTarget('/nl/pricing', 'fr'), '/fr/pricing');
+  assert.equal(languageSwitchTarget('/nl', 'it'), '/it');
+  assert.equal(languageSwitchTarget('/download', 'es'), '/es/download');
+
+  const navbar = await read('src/components/Navbar.tsx');
+  assert.match(navbar, /router\.push\(languageSwitchTarget\(pathname, newLocale\)\)/);
+});

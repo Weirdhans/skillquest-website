@@ -8,6 +8,7 @@ import {CaretDown, Monitor, Moon, Sun} from '@phosphor-icons/react';
 import {useLocale} from 'next-intl';
 import {usePathname, useRouter} from 'next/navigation';
 import {Link, routing} from '@/i18n/routing';
+import {languageSwitchTarget} from '@/lib/language-switch';
 import {getMarketingCopy, isLocale, type Locale} from '@/lib/marketing';
 
 // Three preferences, two resolved themes. The stored value is the *preference*,
@@ -164,15 +165,7 @@ export default function Navbar() {
   }, [showLangMenu]);
 
   function switchLanguage(newLocale: Locale) {
-    const parts = pathname.split('/');
-
-    if (isLocale(parts[1] ?? '')) {
-      parts[1] = newLocale;
-      router.push(parts.join('/') || `/${newLocale}`);
-    } else {
-      router.push(`/${newLocale}${pathname}`);
-    }
-
+    router.push(languageSwitchTarget(pathname, newLocale));
     setShowLangMenu(false);
   }
 
