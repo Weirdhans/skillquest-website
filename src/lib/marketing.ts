@@ -930,7 +930,7 @@ export const marketingCopy = {
     product: {
       heading: 'Echter Fortschritt statt vager Gewohnheitsliste',
       body:
-        'SkillQuest verbindet Timer, Skills, XP, aktive Tage, Statistiken, Freunde, Challenges und Familienfunktionen in einer fokussierten mobilen App.',
+        'SkillQuest verbindet Timer, Skills, XP, aktive Tage, Statistiken, Freunde, Herausforderungen und Familienfunktionen in einer fokussierten mobilen App.',
       captions: [
         'Jeden Skill aufbauen',
         'Mit Timern fokussieren',
@@ -960,7 +960,7 @@ export const marketingCopy = {
         {
           title: 'Soziale und Familienmotivation',
           body:
-            'Nutze Freunde, Challenges und Familienfunktionen, wenn Verantwortung hilft.'
+            'Nutze Freunde, Herausforderungen und Familienfunktionen, wenn Verantwortung hilft.'
         },
         {
           title: 'Themes und Personalisierung',
@@ -1129,7 +1129,7 @@ export const marketingCopy = {
     featuresPage: {
       metaTitle: 'SkillQuest Funktionen | Fokus-Timer, XP, Statistiken, Freunde, Familie',
       metaDescription:
-        'Entdecke SkillQuest Funktionen für Skill Tracking, Fokus-Timer, XP, Levels, Statistiken, Freunde, Challenges, Familienfunktionen, Guest Mode und datenschutzorientierte Sync.',
+        'Entdecke SkillQuest Funktionen für Skill Tracking, Fokus-Timer, XP, Levels, Statistiken, Freunde, Herausforderungen, Familienfunktionen, Guest Mode und datenschutzorientierte Sync.',
       title: 'Funktionen, die Übung in Fortschritt verwandeln',
       subtitle:
         'SkillQuest basiert auf dem Ablauf, der zählt: Skill wählen, fokussieren, XP verdienen, Fortschritt prüfen und morgen zurückkommen.',
@@ -1152,7 +1152,7 @@ export const marketingCopy = {
         {
           title: 'Motivation mit Grenzen',
           body:
-            'Freunde, Challenges und Family Funktionen schaffen Verantwortung, ohne die echte Arbeit zu ersetzen.'
+            'Freunde, Herausforderungen und Family Funktionen schaffen Verantwortung, ohne die echte Arbeit zu ersetzen.'
         },
         {
           title: 'Von Eltern begleitete Übungszeit',
@@ -1542,7 +1542,7 @@ export const marketingCopy = {
     product: {
       heading: 'Progreso real, no otra lista vaga de hábitos',
       body:
-        'SkillQuest conecta temporizadores, habilidades, XP, días activos, estadísticas, amigos, desafíos y funciones familiares en una app móvil enfocada.',
+        'SkillQuest conecta temporizadores, habilidades, XP, días activos, estadísticas, amigos, retos y funciones familiares en una app móvil enfocada.',
       captions: [
         'Desarrolla cada habilidad',
         'Concéntrate con temporizadores',
@@ -1572,7 +1572,7 @@ export const marketingCopy = {
         {
           title: 'Motivación social y familiar',
           body:
-            'Usa amigos, desafíos y funciones familiares cuando la responsabilidad compartida ayuda.'
+            'Usa amigos, retos y funciones familiares cuando la responsabilidad compartida ayuda.'
         },
         {
           title: 'Temas y personalización',
@@ -1741,7 +1741,7 @@ export const marketingCopy = {
     featuresPage: {
       metaTitle: 'Funciones de SkillQuest | Temporizadores, XP, stats, amigos, familia',
       metaDescription:
-        'Explora funciones de SkillQuest para seguimiento de habilidades, temporizadores, XP, niveles, estadísticas, amigos, desafíos, familia, Guest Mode y sincronización privada.',
+        'Explora funciones de SkillQuest para seguimiento de habilidades, temporizadores, XP, niveles, estadísticas, amigos, retos, familia, Guest Mode y sincronización privada.',
       title: 'Funciones que convierten práctica en progreso',
       subtitle:
         'SkillQuest se basa en el ciclo importante: elige una habilidad, concéntrate, gana XP, revisa progreso y vuelve mañana.',
@@ -1764,7 +1764,7 @@ export const marketingCopy = {
         {
           title: 'Motivación con límites',
           body:
-            'Amigos, desafíos y funciones Family añaden responsabilidad sin sustituir el trabajo real.'
+            'Amigos, retos y funciones Family añaden responsabilidad sin sustituir el trabajo real.'
         },
         {
           title: 'Práctica guiada por padres',

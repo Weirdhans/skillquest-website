@@ -1897,7 +1897,7 @@ pages.de = {
           'XP nach abgeschlossenen Sessions.',
           'Levels als sichtbare Meilensteine.',
           'Aktive Tage für wiederkehrende Routinen.',
-          'Freunde und Challenges für zusätzliche Motivation.'
+          'Freunde und Herausforderungen für zusätzliche Motivation.'
         ]
       },
       {
@@ -3328,7 +3328,7 @@ pages.es = {
           'XP después de sesiones completadas.',
           'Niveles como hitos visibles.',
           'Días activos para rutinas repetidas.',
-          'Amigos y desafíos para motivación adicional.'
+          'Amigos y retos para motivación adicional.'
         ]
       },
       {
