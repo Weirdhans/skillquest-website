@@ -1,6 +1,8 @@
+import {routing} from '@/i18n/routing';
 import type {Locale, ScreenshotName} from '@/lib/marketing';
 
-export const featureLandingSlugs = [
+// Guides that exist in every locale.
+export const translatedFeatureLandingSlugs = [
   'focus-timer',
   'family',
   'skill-tracker',
@@ -15,7 +17,34 @@ export const featureLandingSlugs = [
   'guest-mode'
 ] as const;
 
-export type FeatureLandingSlug = (typeof featureLandingSlugs)[number];
+// Guides written for English searches only (decision of 25 November 2026).
+// They exist in no other locale: no page (404), no static params, no sitemap
+// entry, no place in the guides list and no hreflang link to another language.
+// Translate them only once Search Console shows the English pages get
+// impressions; a translated guide moves to translatedFeatureLandingSlugs.
+export const englishOnlyFeatureLandingSlugs = [
+  'reading-timer',
+  'homework-timer'
+] as const;
+
+const englishOnlyLocales: readonly Locale[] = ['en'];
+
+export type TranslatedFeatureLandingSlug = (typeof translatedFeatureLandingSlugs)[number];
+export type EnglishOnlyFeatureLandingSlug = (typeof englishOnlyFeatureLandingSlugs)[number];
+export type FeatureLandingSlug = TranslatedFeatureLandingSlug | EnglishOnlyFeatureLandingSlug;
+
+export const featureLandingSlugs: readonly FeatureLandingSlug[] = [
+  ...translatedFeatureLandingSlugs,
+  ...englishOnlyFeatureLandingSlugs
+];
+
+function isTranslatedSlug(slug: string): slug is TranslatedFeatureLandingSlug {
+  return translatedFeatureLandingSlugs.some((item) => item === slug);
+}
+
+function isEnglishOnlySlug(slug: string): slug is EnglishOnlyFeatureLandingSlug {
+  return englishOnlyFeatureLandingSlugs.some((item) => item === slug);
+}
 
 // The 4 flagship pages shown in the featured grid on the homepage and
 // /features. The rest are still fully built, indexed, and linked, just
@@ -25,7 +54,7 @@ export const featuredFeatureLandingSlugs = [
   'family',
   'skill-tracker',
   'progress-statistics'
-] as const satisfies readonly FeatureLandingSlug[];
+] as const satisfies readonly TranslatedFeatureLandingSlug[];
 
 export type FeatureLandingPage = {
   slug: FeatureLandingSlug;
@@ -108,7 +137,165 @@ const featureOverviewCopy: Record<Locale, FeatureOverviewCopy> = {
   }
 };
 
-const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
+// Written for parents who search for an app. Every product claim here is also
+// made on the English /parents page, the family, focus-timer, guest-mode,
+// skill-tracker or progress-statistics guides, or /pricing.
+const englishOnlyPages: Record<EnglishOnlyFeatureLandingSlug, FeatureLandingPage> = {
+  'reading-timer': {
+    slug: 'reading-timer',
+    eyebrow: 'Reading Timer',
+    title: 'A reading timer for kids that shows their progress',
+    metaTitle: 'Reading Timer for Kids | Daily Reading Practice | SkillQuest',
+    metaDescription:
+      'A reading timer app for kids: set 10 minutes, let your child read, and watch the minutes add up as XP and levels. Free to use, no account needed.',
+    summary:
+      'Set a countdown for your child’s daily reading, 10 minutes or whatever the school asks for. Every minute of reading earns XP for the Reading skill, so your child can see the reading add up.',
+    cardSummary:
+      'A countdown for daily reading, with XP, levels, and progress your child can see.',
+    screenshot: '01-home-progress.png',
+    primaryCta: 'Download SkillQuest',
+    secondaryCta: 'SkillQuest for parents',
+    sections: [
+      {
+        title: 'A countdown for daily reading',
+        body:
+          'Choose Reading as the skill, start the timer, and let your child read. SkillQuest started this way: the maker’s son had to read for 10 minutes a day for school, and keeping track with a timer worked better than expected.',
+        bullets: [
+          'The timer counts down and is set to 10 minutes by default.',
+          'Change the length to match what the school or teacher asks for.',
+          'The timer keeps running while your child reads; no one needs to watch the screen.'
+        ]
+      },
+      {
+        title: 'Reading time turns into visible progress',
+        body:
+          'Every minute of reading earns 1 XP for the Reading skill. Over the weeks, those minutes become levels and statistics your child can look back on.',
+        bullets: [
+          'XP and levels for the Reading skill.',
+          'Statistics by day, week, month, and year.',
+          'Active days show how many days your child read.',
+          'The app rewards practice, not performance.'
+        ]
+      },
+      {
+        title: 'Start free, add Family when you want it',
+        body:
+          'You can start without an account and without paying. The Family plan is for parents who want to follow their child’s reading from their own phone.',
+        bullets: [
+          'Guest Mode: no account or email needed to try it.',
+          'Free to install, with no ads.',
+          'With Family, you can start the timer on your own phone, and the minutes count toward your child’s progress.',
+          'Family is EUR 6.99/month or EUR 69.99/year.'
+        ]
+      }
+    ],
+    faq: [
+      {
+        question: 'How long should a child read each day?',
+        answer:
+          'There is no set rule. Ask what your child’s school recommends. The SkillQuest timer is set to 10 minutes by default, and you can change it to match. A little reading every day is usually easier to keep up than a long session now and then.'
+      },
+      {
+        question: 'Does the reading timer work without an account?',
+        answer:
+          'Yes. With Guest Mode, your child can use the timer, earn XP, and see progress without an account. Progress is stored on the device, and it carries over if you create an account later. Family features need an account.'
+      },
+      {
+        question: 'Does my child need their own phone?',
+        answer:
+          'No. SkillQuest runs on iPhone, iPad, and Android, so your child can use a device you already have at home. If your child is still young, the Family plan lets you start the timer on your own phone, and the reading time counts toward your child’s progress.'
+      },
+      {
+        question: 'Isn’t a reading app just more screen time?',
+        answer:
+          'The timer keeps running while your child reads; no one needs to look at the screen. The screen is only used to start the timer and view the progress afterward.'
+      },
+      {
+        question: 'What does SkillQuest cost?',
+        answer:
+          'Installing and using SkillQuest is free, and there are no ads. The Family plan, which lets a parent start timers for a child and see their statistics, is EUR 6.99/month or EUR 69.99/year.'
+      }
+    ]
+  },
+  'homework-timer': {
+    slug: 'homework-timer',
+    eyebrow: 'Homework Timer',
+    title: 'A homework timer that gives homework time a clear start and end',
+    metaTitle: 'Homework Timer App for Kids | SkillQuest',
+    metaDescription:
+      'A homework timer app for kids: set a timer for homework time, let it count down, and see the minutes add up as XP and progress. Free, no account needed.',
+    summary:
+      'Give homework time a fixed length. Start a countdown, let your child work, and see the minutes add up afterward. SkillQuest is a timer with progress, not a homework planner.',
+    cardSummary:
+      'A countdown for homework time, with the minutes adding up to XP and progress.',
+    screenshot: '02-focus-timer.png',
+    primaryCta: 'Download SkillQuest',
+    secondaryCta: 'SkillQuest for parents',
+    sections: [
+      {
+        title: 'A clear block of homework time',
+        body:
+          'Choose the homework skill and start the timer. It counts down from the length you set and keeps running while your child works; no one needs to watch the screen.',
+        bullets: [
+          'The timer is set to 10 minutes by default.',
+          'Set a longer or shorter time to suit the task.',
+          'The screen is only for starting the timer and checking progress afterward.'
+        ]
+      },
+      {
+        title: 'See the time add up',
+        body:
+          'Every minute earns 1 XP for the skill, so the effort counts, not the grade. Over the weeks, you and your child can see how much time went into homework.',
+        bullets: [
+          'XP and levels per skill.',
+          'Statistics by day, week, month, and year.',
+          'Active days show how many days your child put in the time.',
+          'Reading or an instrument can be tracked as separate skills.'
+        ]
+      },
+      {
+        title: 'Start free, add Family when you want it',
+        body:
+          'You can start without an account and without paying. The Family plan is for parents who want to start the timer and follow progress from their own phone.',
+        bullets: [
+          'Guest Mode: no account or email needed to try it.',
+          'Free to install, with no ads.',
+          'With Family, you can start the timer on your own phone and see your child’s statistics.',
+          'Family is EUR 6.99/month or EUR 69.99/year.'
+        ]
+      }
+    ],
+    faq: [
+      {
+        question: 'How long should my child spend on homework each day?',
+        answer:
+          'That depends on age, school, and class. Ask the school what it expects. In SkillQuest you then set the timer to that length; the default is 10 minutes.'
+      },
+      {
+        question: 'Can SkillQuest keep track of homework assignments?',
+        answer:
+          'No. SkillQuest is a timer with progress, made for daily practice such as reading or an instrument. It does not list assignments or deadlines. For homework, use it to time the work and see the minutes add up.'
+      },
+      {
+        question: 'Does the homework timer work without an account?',
+        answer:
+          'Yes. With Guest Mode, your child can use the timer, earn XP, and see progress without an account. Progress is stored on the device, and it carries over if you create an account later. Family features need an account.'
+      },
+      {
+        question: 'Does my child need their own phone?',
+        answer:
+          'No. SkillQuest runs on iPhone, iPad, and Android, so your child can use a device you already have at home. If your child is still young, the Family plan lets you start the timer on your own phone, and the time counts toward your child’s progress.'
+      },
+      {
+        question: 'What does SkillQuest cost?',
+        answer:
+          'Installing and using SkillQuest is free, and there are no ads. The Family plan, which lets a parent start timers for a child and see their statistics, is EUR 6.99/month or EUR 69.99/year.'
+      }
+    ]
+  }
+};
+
+const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingPage>> = {
   nl: {
     'focus-timer': {
       slug: 'focus-timer',
@@ -1663,10 +1850,10 @@ const pages: Record<Locale, Record<FeatureLandingSlug, FeatureLandingPage>> = {
       ]
     }
   },
-  de: {} as Record<FeatureLandingSlug, FeatureLandingPage>,
-  fr: {} as Record<FeatureLandingSlug, FeatureLandingPage>,
-  es: {} as Record<FeatureLandingSlug, FeatureLandingPage>,
-  it: {} as Record<FeatureLandingSlug, FeatureLandingPage>
+  de: {} as Record<TranslatedFeatureLandingSlug, FeatureLandingPage>,
+  fr: {} as Record<TranslatedFeatureLandingSlug, FeatureLandingPage>,
+  es: {} as Record<TranslatedFeatureLandingSlug, FeatureLandingPage>,
+  it: {} as Record<TranslatedFeatureLandingSlug, FeatureLandingPage>
 };
 
 pages.de = {
@@ -4795,9 +4982,28 @@ export function getFeatureLandingOverview(locale: Locale): FeatureOverviewCopy {
   return featureOverviewCopy[locale] ?? featureOverviewCopy.en;
 }
 
+/** The locales a guide exists in. hreflang, the sitemap and static params follow this. */
+export function featureLandingLocales(slug: FeatureLandingSlug): readonly Locale[] {
+  return isEnglishOnlySlug(slug) ? englishOnlyLocales : routing.locales;
+}
+
+/** The guides that exist in this locale, in display order. */
+export function getFeatureLandingSlugs(locale: Locale): FeatureLandingSlug[] {
+  return featureLandingSlugs.filter((slug) => featureLandingLocales(slug).includes(locale));
+}
+
+/** Every locale/slug pair that has a page, for generateStaticParams. */
+export function featureLandingStaticParams(): Array<{locale: Locale; slug: FeatureLandingSlug}> {
+  return routing.locales.flatMap((locale) =>
+    getFeatureLandingSlugs(locale).map((slug) => ({locale, slug}))
+  );
+}
+
 export function getFeatureLandingPages(locale: Locale): FeatureLandingPage[] {
-  const localizedPages = pages[locale] ?? pages.en;
-  return featureLandingSlugs.map((slug) => localizedPages[slug]);
+  return getFeatureLandingSlugs(locale).flatMap((slug) => {
+    const page = getFeatureLandingPage(locale, slug);
+    return page ? [page] : [];
+  });
 }
 
 export function getFeaturedFeatureLandingPages(locale: Locale): FeatureLandingPage[] {
@@ -4805,14 +5011,19 @@ export function getFeaturedFeatureLandingPages(locale: Locale): FeatureLandingPa
   return featuredFeatureLandingSlugs.map((slug) => localizedPages[slug]);
 }
 
+/** The guide for this locale and slug, or null when it does not exist in this locale. */
 export function getFeatureLandingPage(
   locale: Locale,
   slug: string
 ): FeatureLandingPage | null {
-  if (!featureLandingSlugs.includes(slug as FeatureLandingSlug)) {
+  if (isEnglishOnlySlug(slug)) {
+    return englishOnlyLocales.includes(locale) ? englishOnlyPages[slug] : null;
+  }
+
+  if (!isTranslatedSlug(slug)) {
     return null;
   }
 
   const localizedPages = pages[locale] ?? pages.en;
-  return localizedPages[slug as FeatureLandingSlug] ?? pages.en[slug as FeatureLandingSlug];
+  return localizedPages[slug] ?? pages.en[slug];
 }

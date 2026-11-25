@@ -35,6 +35,8 @@ const CATEGORY_BY_SLUG: Record<FeatureLandingSlug, GuideCategory> = {
   'friends-challenges': 'progress',
   'skill-tracker': 'skillsFamily',
   family: 'skillsFamily',
+  'reading-timer': 'skillsFamily',
+  'homework-timer': 'skillsFamily',
   themes: 'personalization',
   'guest-mode': 'personalization'
 };
