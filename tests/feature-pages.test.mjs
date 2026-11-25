@@ -43,7 +43,6 @@ const translated = [
   'friends-challenges',
   'study-timer',
   'deep-work-flowtime',
-  'leaderboards',
   'themes',
   'guest-mode'
 ];
@@ -68,7 +67,7 @@ test('the two app-search guides exist in English only', () => {
   }
 });
 
-test('the twelve translated guides still exist in every locale', () => {
+test('the eleven translated guides exist in every locale', () => {
   assert.deepEqual([...features.translatedFeatureLandingSlugs], translated);
   for (const slug of translated) {
     assert.deepEqual([...features.featureLandingLocales(slug)], locales);

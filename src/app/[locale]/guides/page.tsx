@@ -31,7 +31,6 @@ const CATEGORY_BY_SLUG: Record<FeatureLandingSlug, GuideCategory> = {
   'deep-work-flowtime': 'focus',
   'progress-statistics': 'progress',
   'active-days': 'progress',
-  leaderboards: 'progress',
   'friends-challenges': 'progress',
   'skill-tracker': 'skillsFamily',
   family: 'skillsFamily',

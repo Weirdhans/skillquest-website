@@ -12,7 +12,6 @@ export const translatedFeatureLandingSlugs = [
   'friends-challenges',
   'study-timer',
   'deep-work-flowtime',
-  'leaderboards',
   'themes',
   'guest-mode'
 ] as const;
@@ -476,7 +475,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
             'Guest Mode verlaagt de drempel. Je kunt starten voordat je een account maakt of voortgang synchroniseert.',
           bullets: [
             'Start direct met core skill tracking.',
-            'Maak later een account voor sync, vrienden, rankings en uitgebreidere functies.',
+            'Maak later een account voor sync, vrienden en challenges.',
             'Je voortgang wordt lokaal op je apparaat opgeslagen.'
           ]
         }
@@ -703,7 +702,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         'Vrienden, challenges en een activiteitenfeed, met privacy-instellingen die je zelf bepaalt.',
       screenshot: '06-social-family.png',
       primaryCta: 'Download SkillQuest',
-      secondaryCta: 'Bekijk de rankings',
+      secondaryCta: 'Zo werken actieve dagen',
       sections: [
         {
           title: 'Voeg vrienden toe voor echte accountability',
@@ -882,70 +881,6 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         }
       ]
     },
-    leaderboards: {
-      slug: 'leaderboards',
-      eyebrow: 'Rankings',
-      title: 'Zie hoe je voortgang zich verhoudt, op jouw voorwaarden',
-      metaTitle: 'Leaderboards & Rankings App | Vergelijk skill-voortgang | SkillQuest',
-      metaDescription:
-        'SkillQuest rankings vergelijken XP en actieve dagen per week, maand en all-time, met bronze-tot-diamond leagues voor blijvende motivatie.',
-      summary:
-        'Rankings maken van XP en actieve dagen een ranglijst die je wekelijks, maandelijks of all-time kunt bekijken, met leagues die competitie een gevoel van progressie geven.',
-      cardSummary:
-        'Wekelijkse, maandelijkse en all-time rankings met bronze-tot-diamond leagues.',
-      screenshot: '05-rankings.png',
-      primaryCta: 'Download SkillQuest',
-      secondaryCta: 'Voeg vrienden toe',
-      sections: [
-        {
-          title: 'Rankings over verschillende periodes',
-          body:
-            'Eén all-time ranglijst kan onbereikbaar aanvoelen als je net begint. SkillQuest rangschikt daarom over wekelijkse, maandelijkse en all-time periodes.',
-          bullets: [
-            'Wekelijkse en maandelijkse rankings resetten de race regelmatig.',
-            'All-time rankings belonen langdurige consistentie.',
-            'Rankings zijn gebaseerd op XP en actieve dagen.'
-          ]
-        },
-        {
-          title: 'Leagues geven een gevoel van progressie',
-          body:
-            'Leagues van bronze tot diamond maken van competitie iets waar je doorheen beweegt, geen enkele vaste ranglijst.',
-          bullets: [
-            'Stijg door leagues terwijl je actief blijft.',
-            'Concurreer met mensen op een vergelijkbaar niveau, niet iedereen tegelijk.',
-            'Leagues staan naast vrienden en challenges voor extra motivatie.'
-          ]
-        },
-        {
-          title: 'Competitie zonder je eigen voortgang te verliezen',
-          body:
-            'Rankings werken naast je persoonlijke statistieken, niet in plaats daarvan, zodat concurreren niet betekent dat je je eigen groei uit het oog verliest.',
-          bullets: [
-            'Persoonlijke XP, levels en streaks blijven zichtbaar, ongeacht rang.',
-            'Rankings passen van nature bij vrienden en challenges.',
-            'Nuttig voor competitieve gebruikers, optioneel voor de rest.'
-          ]
-        }
-      ],
-      faq: [
-        {
-          question: 'Hoe worden rankings berekend?',
-          answer:
-            'Rankings zijn gebaseerd op XP en actieve dagen, getoond per week, maand en all-time.'
-        },
-        {
-          question: 'Wat zijn leagues?',
-          answer:
-            'Leagues groeperen gebruikers van bronze tot diamond, zodat competitie plaatsvindt tussen mensen op een vergelijkbaar niveau in plaats van iedereen tegelijk.'
-        },
-        {
-          question: 'Moet ik concurreren om SkillQuest te gebruiken?',
-          answer:
-            'Nee. Rankings en leagues zijn optioneel. Kern skill tracking, XP en levels werken hetzelfde met of zonder.'
-        }
-      ]
-    },
     themes: {
       slug: 'themes',
       eyebrow: 'Thema’s',
@@ -1038,10 +973,10 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         {
           title: 'Maak een account wanneer het zinvol is',
           body:
-            'Guest Mode is een startpunt, geen doodlopende weg. Wanneer je klaar bent voor synchronisatie, vrienden of rankings, neemt het aanmaken van een account je lokale voortgang mee.',
+            'Guest Mode is een startpunt, geen doodlopende weg. Wanneer je klaar bent voor synchronisatie, vrienden of challenges, neemt het aanmaken van een account je lokale voortgang mee.',
           bullets: [
             'Zet om naar een volledig account zonder lokale voortgang te verliezen.',
-            'Ontgrendelt synchronisatie tussen apparaten, vrienden en rankings.',
+            'Ontgrendelt synchronisatie tussen apparaten, vrienden en challenges.',
             'Geen druk om te beslissen voordat je de app hebt geprobeerd.'
           ]
         },
@@ -1050,7 +985,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
           body:
             'Sommige functies zijn van nature afhankelijk van een account, omdat ze andere mensen of synchronisatie tussen apparaten betreffen.',
           bullets: [
-            'Vrienden, challenges en rankings vereisen een account.',
+            'Vrienden en challenges vereisen een account.',
             'Family-functies vereisen een account en een familiegroep.',
             'Alleen-lokale voortgang wordt niet geback-upt totdat je een account maakt.'
           ]
@@ -1070,7 +1005,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         {
           question: 'Wat kan ik niet doen in Guest Mode?',
           answer:
-            'Vrienden, challenges, rankings en Family-functies vereisen een account, omdat ze synchronisatie met andere mensen inhouden.'
+            'Vrienden, challenges en Family-functies vereisen een account, omdat ze synchronisatie met andere mensen inhouden.'
         }
       ]
     }
@@ -1253,7 +1188,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
             'Guest Mode lowers the barrier. Start before creating an account or syncing progress.',
           bullets: [
             'Start with core skill tracking immediately.',
-            'Create an account later for sync, friends, rankings, and expanded features.',
+            'Create an account later for sync, friends, and challenges.',
             'Your progress is stored locally on your device.'
           ]
         }
@@ -1480,7 +1415,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         'Friends, challenges, and an activity feed, with privacy controls you control.',
       screenshot: '06-social-family.png',
       primaryCta: 'Download SkillQuest',
-      secondaryCta: 'View leaderboards',
+      secondaryCta: 'How active days work',
       sections: [
         {
           title: 'Add friends for real accountability',
@@ -1659,70 +1594,6 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         }
       ]
     },
-    leaderboards: {
-      slug: 'leaderboards',
-      eyebrow: 'Leaderboards',
-      title: 'See how your progress compares, on your terms',
-      metaTitle: 'Leaderboards & Rankings App | Compete on Skill Progress | SkillQuest',
-      metaDescription:
-        'SkillQuest rankings compare XP and active days across weekly, monthly, and all-time periods, with bronze-to-diamond leagues for ongoing motivation.',
-      summary:
-        'Rankings turn XP and active days into a leaderboard you can check weekly, monthly, or all-time, with leagues that give competition a sense of progression.',
-      cardSummary:
-        'Weekly, monthly, and all-time rankings with bronze-to-diamond leagues.',
-      screenshot: '05-rankings.png',
-      primaryCta: 'Download SkillQuest',
-      secondaryCta: 'Add friends',
-      sections: [
-        {
-          title: 'Rankings across different time periods',
-          body:
-            'A single all-time ranking can feel out of reach if you are just starting out. SkillQuest ranks across weekly, monthly, and all-time periods instead.',
-          bullets: [
-            'Weekly and monthly rankings reset the race regularly.',
-            'All-time rankings reward long-term consistency.',
-            'Rankings are based on XP and active days.'
-          ]
-        },
-        {
-          title: 'Leagues add a sense of progression',
-          body:
-            'Leagues from bronze to diamond turn competition into something you move through, not a single fixed leaderboard.',
-          bullets: [
-            'Move up through leagues as you stay active.',
-            'Compete against people at a similar level, not everyone at once.',
-            'Leagues sit alongside friends and challenges for extra motivation.'
-          ]
-        },
-        {
-          title: 'Competition without losing your own progress',
-          body:
-            'Rankings work alongside your personal statistics, not instead of them, so competing does not mean losing sight of your own growth.',
-          bullets: [
-            'Personal XP, levels, and streaks stay visible regardless of rank.',
-            'Rankings pair naturally with friends and challenges.',
-            'Useful for competitive users, optional for everyone else.'
-          ]
-        }
-      ],
-      faq: [
-        {
-          question: 'How are rankings calculated?',
-          answer:
-            'Rankings are based on XP and active days, shown across weekly, monthly, and all-time periods.'
-        },
-        {
-          question: 'What are leagues?',
-          answer:
-            'Leagues group users from bronze to diamond, so competition happens against people at a similar level rather than everyone at once.'
-        },
-        {
-          question: 'Do I have to compete to use SkillQuest?',
-          answer:
-            'No. Rankings and leagues are optional. Core skill tracking, XP, and levels work the same with or without them.'
-        }
-      ]
-    },
     themes: {
       slug: 'themes',
       eyebrow: 'Themes',
@@ -1815,10 +1686,10 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         {
           title: 'Create an account when it makes sense',
           body:
-            'Guest Mode is a starting point, not a dead end. When you are ready for sync, friends, or rankings, creating an account carries your local progress forward.',
+            'Guest Mode is a starting point, not a dead end. When you are ready for sync, friends, or challenges, creating an account carries your local progress forward.',
           bullets: [
             'Convert to a full account without losing local progress.',
-            'Unlocks sync across devices, friends, and rankings.',
+            'Unlocks sync across devices, friends, and challenges.',
             'No pressure to decide before you have tried the app.'
           ]
         },
@@ -1827,7 +1698,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
           body:
             'Some features depend on an account by nature, since they involve other people or cross-device sync.',
           bullets: [
-            'Friends, challenges, and rankings need an account.',
+            'Friends and challenges need an account.',
             'Family features require an account and a family group.',
             'Local-only progress is not backed up until you create an account.'
           ]
@@ -1847,7 +1718,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         {
           question: 'What can I not do in Guest Mode?',
           answer:
-            'Friends, challenges, rankings, and Family features require an account, since they involve syncing with other people.'
+            'Friends, challenges, and Family features require an account, since they involve syncing with other people.'
         }
       ]
     }
@@ -2026,7 +1897,7 @@ pages.de = {
           'XP nach abgeschlossenen Sessions.',
           'Levels als sichtbare Meilensteine.',
           'Aktive Tage für wiederkehrende Routinen.',
-          'Leaderboards und Challenges für zusätzliche Motivation.'
+          'Freunde und Challenges für zusätzliche Motivation.'
         ]
       },
       {
@@ -2263,7 +2134,7 @@ pages.de = {
       'Freunde, Herausforderungen und ein Aktivitätsfeed – mit Datenschutzeinstellungen, die du selbst festlegst.',
     screenshot: '06-social-family.png',
     primaryCta: 'SkillQuest herunterladen',
-    secondaryCta: 'Ranglisten anzeigen',
+    secondaryCta: 'So funktionieren aktive Tage',
     sections: [
       {
         title: 'Füge Freunde hinzu, um dich wirklich zur Rechenschaft zu ziehen',
@@ -2442,70 +2313,6 @@ pages.de = {
       }
     ]
   },
-  leaderboards: {
-    slug: 'leaderboards',
-    eyebrow: 'Ranglisten',
-    title: 'Schau dir an, wie deine Fortschritte im Vergleich abschneiden – ganz nach deinen Vorstellungen',
-    metaTitle: 'App für Bestenlisten und Ranglisten | Messe dich im Fortschritt deiner Fähigkeiten | SkillQuest',
-    metaDescription:
-      'Die SkillQuest-Ranglisten vergleichen XP und aktive Tage über Wochen, Monate und den gesamten Zeitraum hinweg, wobei Ligen von Bronze bis Diamant für anhaltende Motivation sorgen.',
-    summary:
-      'In den Ranglisten werden XP und aktive Tage in eine Bestenliste umgewandelt, die du wöchentlich, monatlich oder als Gesamtwertung einsehen kannst – mit Ligen, die dem Wettbewerb ein Gefühl des Fortschritts verleihen.',
-    cardSummary:
-      'Wochen-, Monats- und Gesamt-Ranglisten mit Ligen von Bronze bis Diamant.',
-    screenshot: '05-rankings.png',
-    primaryCta: 'SkillQuest herunterladen',
-    secondaryCta: 'Freunde hinzufügen',
-    sections: [
-      {
-        title: 'Ranglisten über verschiedene Zeiträume hinweg',
-        body:
-          'Eine einzige Gesamtwertung kann sich unerreichbar anfühlen, wenn du gerade erst anfängst. SkillQuest erstellt stattdessen Ranglisten für wöchentliche, monatliche und Gesamtzeiträume.',
-        bullets: [
-          'Durch wöchentliche und monatliche Ranglisten wird das Rennen regelmäßig neu gestartet.',
-          'In den Allzeit-Ranglisten wird langfristige Beständigkeit belohnt.',
-          'Die Ranglisten basieren auf XP und aktiven Tagen.'
-        ]
-      },
-      {
-        title: 'Ligen sorgen für ein Gefühl des Fortschritts',
-        body:
-          'Ligen von Bronze bis Diamant machen den Wettbewerb zu etwas, das man durchläuft – und nicht zu einer einzigen festen Rangliste.',
-        bullets: [
-          'Steige in den Ligen auf, solange du aktiv bleibst.',
-          'Tritt gegen Leute an, die auf einem ähnlichen Niveau sind – nicht gegen alle auf einmal.',
-          'In den Ligen trittst du gegen Freunde an und nimmst Herausforderungen an, um dich zusätzlich zu motivieren.'
-        ]
-      },
-      {
-        title: 'Wettkampf, ohne den eigenen Fortschritt zu verlieren',
-        body:
-          'Ranglisten ergänzen deine persönlichen Statistiken, sie ersetzen sie nicht – daher bedeutet der Wettkampf nicht, dass du deine eigene Entwicklung aus den Augen verlierst.',
-        bullets: [
-          'Persönliche XP, Level und Streaks bleiben unabhängig vom Rang sichtbar.',
-          'Ranglisten passen einfach perfekt zu Freunden und Herausforderungen.',
-          'Nützlich für ambitionierte Nutzer, für alle anderen optional.'
-        ]
-      }
-    ],
-    faq: [
-      {
-        question: 'Wie werden die Ranglisten berechnet?',
-        answer:
-          'Die Ranglisten basieren auf XP und aktiven Tagen und werden für wöchentliche, monatliche und Gesamtzeiträume angezeigt.'
-      },
-      {
-        question: 'Was sind Ligen?',
-        answer:
-          'In den Ligen werden die Spieler von Bronze bis Diamant eingeteilt, sodass man gegen Leute auf einem ähnlichen Niveau antritt und nicht gegen alle auf einmal.'
-      },
-      {
-        question: 'Muss ich an einem Wettbewerb teilnehmen, um SkillQuest nutzen zu können?',
-        answer:
-          'Nein. Ranglisten und Ligen sind optional. Die Erfassung der Kernfähigkeiten, die XP und die Stufen funktionieren mit oder ohne sie genauso.'
-      }
-    ]
-  },
   themes: {
     slug: 'themes',
     eyebrow: 'Themen',
@@ -2598,10 +2405,10 @@ pages.de = {
       {
         title: 'Erstelle ein Konto, wenn es Sinn macht',
         body:
-          'Der Guest Mode ist ein Ausgangspunkt, keine Sackgasse. Wenn du bereit bist für Synchronisierung, Freunde oder Ranglisten, kannst du durch die Erstellung eines Kontos deinen lokalen Spielfortschritt übernehmen.',
+          'Der Guest Mode ist ein Ausgangspunkt, keine Sackgasse. Wenn du bereit bist für Synchronisierung, Freunde oder Herausforderungen, kannst du durch die Erstellung eines Kontos deinen lokalen Spielfortschritt übernehmen.',
         bullets: [
           'Wechsle zu einem Vollkonto, ohne deinen lokalen Spielfortschritt zu verlieren.',
-          'Ermöglicht die Synchronisierung über verschiedene Geräte, Freunde und Ranglisten hinweg.',
+          'Ermöglicht die Synchronisierung zwischen Geräten sowie Freunde und Herausforderungen.',
           'Du musst dich nicht entscheiden, bevor du die App ausprobiert hast.'
         ]
       },
@@ -2610,7 +2417,7 @@ pages.de = {
         body:
           'Manche Funktionen sind naturgemäß an ein Konto gebunden, da sie andere Personen betreffen oder eine geräteübergreifende Synchronisierung erfordern.',
         bullets: [
-          'Für Freunde, Herausforderungen und Ranglisten brauchst du ein Konto.',
+          'Für Freunde und Herausforderungen brauchst du ein Konto.',
           'Für die Family-Funktionen brauchst du ein Konto und eine Family-Gruppe.',
           'Der lokal gespeicherte Spielfortschritt wird erst gesichert, wenn du ein Konto erstellst.'
         ]
@@ -2630,7 +2437,7 @@ pages.de = {
       {
         question: 'Was kann ich im Guest Mode nicht tun?',
         answer:
-          'Für die Funktionen Freunde, Herausforderungen, Ranglisten und Family ist ein Konto erforderlich, da sie die Synchronisierung mit anderen Personen beinhalten.'
+          'Für die Funktionen Freunde, Herausforderungen und Family ist ein Konto erforderlich, da sie die Synchronisierung mit anderen Personen beinhalten.'
       }
     ]
   }
@@ -2806,7 +2613,7 @@ pages.fr = {
           'XP après les sessions terminées.',
           'Niveaux comme jalons visibles.',
           'Jours actifs pour les routines répétées.',
-          'Classements et défis pour une motivation supplémentaire.'
+          'Amis et défis pour une motivation supplémentaire.'
         ]
       },
       {
@@ -3044,7 +2851,7 @@ pages.fr = {
       'Des amis, des défis et un fil d\'activité, avec des paramètres de confidentialité que tu gères toi-même.',
     screenshot: '06-social-family.png',
     primaryCta: 'Télécharger SkillQuest',
-    secondaryCta: 'Voir les classements',
+    secondaryCta: 'Comment fonctionnent les jours actifs',
     sections: [
       {
         title: 'Ajoute des amis pour te motiver vraiment',
@@ -3223,70 +3030,6 @@ pages.fr = {
       },
     ]
   },
-  leaderboards: {
-    slug: 'leaderboards',
-    eyebrow: 'Classements',
-    title: 'Découvre où tu en es, à ton rythme',
-    metaTitle: 'Classements et ligues | Compare-toi à ton rythme | SkillQuest',
-    metaDescription:
-      'Les classements SkillQuest comparent les XP et les jours d\'activité par semaine, par mois et depuis le début, avec des ligues du bronze au diamant.',
-    summary:
-      'Les classements transforment les XP et les jours d’activité en un classement que tu peux consulter chaque semaine, chaque mois ou depuis le début, avec des ligues qui donnent à la compétition un sentiment de progression.',
-    cardSummary:
-      'Classements hebdomadaires, mensuels et historiques, avec des ligues allant du bronze au diamant.',
-    screenshot: '05-rankings.png',
-    primaryCta: 'Télécharger SkillQuest',
-    secondaryCta: 'Ajouter des amis',
-    sections: [
-      {
-        title: 'Classements sur différentes périodes',
-        body:
-          'Un classement général « de tous les temps » peut te sembler hors de portée si tu débutes. SkillQuest établit plutôt des classements hebdomadaires, mensuels et généraux.',
-        bullets: [
-          'Les classements hebdomadaires et mensuels remettent régulièrement les compteurs à zéro.',
-          'Les classements de tous les temps récompensent la régularité sur le long terme.',
-          'Les classements sont basés sur les XP et les jours d\'activité.',
-        ]
-      },
-      {
-        title: 'Les ligues apportent un sentiment de progression',
-        body:
-          'Les ligues, du bronze au diamant, font de la compétition un parcours à franchir, et non un simple classement figé.',
-        bullets: [
-          'Monte de ligue en ligue tant que tu restes actif.',
-          'Affronte des adversaires de ton niveau, pas tout le monde en même temps.',
-          'Les ligues s’associent aux amis et aux défis pour te motiver encore plus.',
-        ]
-      },
-      {
-        title: 'Rivaliser sans perdre tes progrès',
-        body:
-          'Les classements viennent s\'ajouter à tes statistiques personnelles, ils ne les remplacent pas ; participer à la compétition ne signifie donc pas que tu dois perdre de vue ta propre progression.',
-        bullets: [
-          'Tes XP, tes niveaux et tes séries restent visibles, quel que soit ton rang.',
-          'Les classements vont naturellement de pair avec les amis et les défis.',
-          'Utile pour les utilisateurs qui aiment la compétition, facultatif pour tous les autres.',
-        ]
-      },
-    ],
-    faq: [
-      {
-        question: 'Comment les classements sont-ils calculés ?',
-        answer:
-          'Les classements sont basés sur les XP et les jours d\'activité, et sont affichés sur des périodes hebdomadaires, mensuelles et depuis le début.'
-      },
-      {
-        question: 'C\'est quoi, les ligues ?',
-        answer:
-          'Les ligues regroupent les utilisateurs de « bronze » à « diamant », ce qui permet de se mesurer à des personnes de niveau similaire plutôt qu’à tout le monde en même temps.'
-      },
-      {
-        question: 'Est-ce que je dois participer à la compétition pour utiliser SkillQuest ?',
-        answer:
-          'Non. Les classements et les ligues sont facultatifs. Le suivi des compétences de base, les XP et les niveaux fonctionnent de la même manière, qu\'ils soient présents ou non.'
-      },
-    ]
-  },
   themes: {
     slug: 'themes',
     eyebrow: 'Thèmes',
@@ -3379,10 +3122,10 @@ pages.fr = {
       {
         title: 'Crée un compte quand ça te semble utile',
         body:
-          'Le mode invité, c\'est un point de départ, pas une impasse. Quand tu seras prêt pour la synchronisation, les amis ou les classements, créer un compte te permettra de conserver ta progression locale.',
+          'Le mode invité, c\'est un point de départ, pas une impasse. Quand tu seras prêt pour la synchronisation, les amis ou les défis, créer un compte te permettra de conserver ta progression locale.',
         bullets: [
           'Passe à un compte complet sans perdre ta progression locale.',
-          'Active la synchronisation entre tes appareils et débloque les amis et les classements.',
+          'Active la synchronisation entre tes appareils et débloque les amis et les défis.',
           'Pas besoin de te décider avant d\'avoir testé l\'appli.',
         ]
       },
@@ -3391,7 +3134,7 @@ pages.fr = {
         body:
           'Certaines fonctionnalités nécessitent forcément un compte, car elles impliquent d\'autres personnes ou une synchronisation entre appareils.',
         bullets: [
-          'Pour accéder à la section « Amis », aux défis et aux classements, il faut un compte.',
+          'Pour accéder aux amis et aux défis, il faut un compte.',
           'Pour profiter des fonctionnalités Family, il faut un compte et un groupe Family.',
           'Ta progression n’est pas sauvegardée en ligne tant que tu n’as pas créé de compte.',
         ]
@@ -3411,7 +3154,7 @@ pages.fr = {
       {
         question: 'Qu\'est-ce que je ne peux pas faire en mode invité ?',
         answer:
-          'Les fonctionnalités « Amis », « Défis », « Classements » et « Family » nécessitent un compte, car elles impliquent une synchronisation avec d\'autres personnes.'
+          'Les fonctionnalités « Amis », « Défis » et « Family » nécessitent un compte, car elles impliquent une synchronisation avec d\'autres personnes.'
       },
     ]
   },
@@ -3585,7 +3328,7 @@ pages.es = {
           'XP después de sesiones completadas.',
           'Niveles como hitos visibles.',
           'Días activos para rutinas repetidas.',
-          'Clasificaciones y desafíos para motivación adicional.'
+          'Amigos y desafíos para motivación adicional.'
         ]
       },
       {
@@ -3822,7 +3565,7 @@ pages.es = {
       'Amigos, retos y un feed de actividades, con opciones de privacidad que tú mismo gestionas.',
     screenshot: '06-social-family.png',
     primaryCta: 'Descarga SkillQuest',
-    secondaryCta: 'Ver las clasificaciones',
+    secondaryCta: 'Cómo funcionan los días activos',
     sections: [
       {
         title: 'Añade amigos para que te hagan rendir cuentas de verdad',
@@ -4001,70 +3744,6 @@ pages.es = {
       },
     ]
   },
-  leaderboards: {
-    slug: 'leaderboards',
-    eyebrow: 'Clasificaciones',
-    title: 'Comprueba cómo va tu progreso, a tu ritmo',
-    metaTitle: 'App de tablas de clasificación y rankings | Compite por tu progreso en habilidades | SkillQuest',
-    metaDescription:
-      'Las clasificaciones de SkillQuest comparan los puntos de experiencia (XP) y los días activos en periodos semanales, mensuales y totales, con ligas que van desde el bronce hasta el diamante para mantenerte motivado.',
-    summary:
-      'Las clasificaciones convierten los XP y los días activos en una tabla de clasificación que puedes consultar semanalmente, mensualmente o de todos los tiempos, con ligas que aportan a la competición una sensación de progresión.',
-    cardSummary:
-      'Clasificaciones semanales, mensuales y de todos los tiempos, con ligas que van desde el bronce hasta el diamante.',
-    screenshot: '05-rankings.png',
-    primaryCta: 'Descarga SkillQuest',
-    secondaryCta: 'Añadir amigos',
-    sections: [
-      {
-        title: 'Clasificaciones en diferentes periodos de tiempo',
-        body:
-          'Una clasificación única de todos los tiempos puede parecer inalcanzable si acabas de empezar. SkillQuest, en cambio, establece clasificaciones semanales, mensuales y de todos los tiempos.',
-        bullets: [
-          'Las clasificaciones semanales y mensuales reinician la carrera con regularidad.',
-          'Las clasificaciones históricas premian la constancia a largo plazo.',
-          'Las clasificaciones se basan en los XP y los días de actividad.',
-        ]
-      },
-      {
-        title: 'Las ligas te dan la sensación de ir avanzando',
-        body:
-          'Las ligas, desde la de bronce hasta la de diamante, hacen que la competición sea algo por lo que vas avanzando, en lugar de una única clasificación fija.',
-        bullets: [
-          'Ve subiendo de categoría a medida que te mantienes activo.',
-          'Compite contra gente de tu mismo nivel, no contra todo el mundo a la vez.',
-          'Las ligas te permiten jugar junto a tus amigos y participar en retos para tener un poco más de motivación.',
-        ]
-      },
-      {
-        title: 'Competir sin perder lo que ya has avanzado',
-        body:
-          'Las clasificaciones complementan tus estadísticas personales, no las sustituyen, así que competir no significa perder de vista tu propio progreso.',
-        bullets: [
-          'La XP personal, los niveles y las rachas siguen apareciendo independientemente del rango.',
-          'Las clasificaciones van de la mano con los amigos y los retos.',
-          'Útil para los usuarios más exigentes, opcional para el resto.',
-        ]
-      },
-    ],
-    faq: [
-      {
-        question: '¿Cómo se calculan las clasificaciones?',
-        answer:
-          'Las clasificaciones se basan en los XP y los días de actividad, y se muestran por periodos semanales, mensuales y totales.'
-      },
-      {
-        question: '¿Qué son las ligas?',
-        answer:
-          'Las ligas agrupan a los usuarios desde el nivel Bronce hasta el Diamante, así que compites contra gente de un nivel similar en lugar de contra todo el mundo a la vez.'
-      },
-      {
-        question: '¿Tengo que participar en una competición para usar SkillQuest?',
-        answer:
-          'No. Las clasificaciones y las ligas son opcionales. El seguimiento de las habilidades básicas, la XP y los niveles funcionan igual tanto si las tienes como si no.'
-      },
-    ]
-  },
   themes: {
     slug: 'themes',
     eyebrow: 'Temas',
@@ -4157,10 +3836,10 @@ pages.es = {
       {
         title: 'Crea una cuenta cuando te parezca oportuno',
         body:
-          'El «Guest Mode» es un punto de partida, no un callejón sin salida. Cuando estés listo para la sincronización, los amigos o las clasificaciones, al crear una cuenta podrás conservar tu progreso local.',
+          'El «Guest Mode» es un punto de partida, no un callejón sin salida. Cuando estés listo para la sincronización, los amigos o los retos, al crear una cuenta podrás conservar tu progreso local.',
         bullets: [
           'Cambia a una cuenta completa sin perder el progreso local.',
-          'Te permite sincronizar entre dispositivos, amigos y clasificaciones.',
+          'Te permite sincronizar entre dispositivos y usar amigos y retos.',
           'No te sientas presionado a decidirte antes de haber probado la app.',
         ]
       },
@@ -4169,7 +3848,7 @@ pages.es = {
         body:
           'Algunas funciones dependen, por su propia naturaleza, de tener una cuenta, ya que implican a otras personas o la sincronización entre dispositivos.',
         bullets: [
-          'Para acceder a la sección de amigos, los retos y las clasificaciones, necesitas una cuenta.',
+          'Para acceder a los amigos y los retos, necesitas una cuenta.',
           'Para usar las funciones Family, necesitas una cuenta y un grupo Family.',
           'El progreso que solo se guarda localmente no se guarda en la nube hasta que crees una cuenta.',
         ]
@@ -4189,7 +3868,7 @@ pages.es = {
       {
         question: '¿Qué es lo que no puedo hacer en el Guest Mode?',
         answer:
-          'Las funciones de «Amigos», «Retos», «Clasificaciones» y «Family» requieren una cuenta, ya que implican sincronizarse con otras personas.'
+          'Las funciones de «Amigos», «Retos» y «Family» requieren una cuenta, ya que implican sincronizarse con otras personas.'
       },
     ]
   },
@@ -4365,7 +4044,7 @@ pages.it = {
           'XP dopo le sessioni completate.',
           'Livelli come traguardi visibili.',
           'Giorni attivi per routine ricorrenti.',
-          'Classifiche e sfide per motivazione extra.'
+          'Amici e sfide per motivazione extra.'
         ]
       },
       {
@@ -4603,7 +4282,7 @@ pages.it = {
       'Amici, sfide e un feed delle attività, con impostazioni sulla privacy che decidi tu.',
     screenshot: '06-social-family.png',
     primaryCta: 'Scarica SkillQuest',
-    secondaryCta: 'Visualizza le classifiche',
+    secondaryCta: 'Come funzionano i giorni attivi',
     sections: [
       {
         title: 'Aggiungi amici per sentirti davvero coinvolto',
@@ -4782,70 +4461,6 @@ pages.it = {
       },
     ]
   },
-  leaderboards: {
-    slug: 'leaderboards',
-    eyebrow: 'Classifiche',
-    title: 'Scopri a che punto sei, con i tuoi tempi',
-    metaTitle: 'Classifiche e leghe | Mettiti alla prova a modo tuo | SkillQuest',
-    metaDescription:
-      'Le classifiche di SkillQuest confrontano XP e giorni di attività su base settimanale, mensile e complessiva, con leghe dal bronzo al diamante.',
-    summary:
-      'Le classifiche trasformano XP e giorni di attività in una graduatoria che puoi controllare ogni settimana, ogni mese o di tutti i tempi, con leghe che danno alla competizione un senso di progressione.',
-    cardSummary:
-      'Classifiche settimanali, mensili e di tutti i tempi con leghe che vanno dal bronzo al diamante.',
-    screenshot: '05-rankings.png',
-    primaryCta: 'Scarica SkillQuest',
-    secondaryCta: 'Aggiungi amici',
-    sections: [
-      {
-        title: 'Classifiche relative a diversi periodi di tempo',
-        body:
-          'Una classifica unica di tutti i tempi può sembrare irraggiungibile se sei appena agli inizi. SkillQuest, invece, propone classifiche su base settimanale, mensile e di tutti i tempi.',
-        bullets: [
-          'Le classifiche settimanali e mensili ripartono da zero a ogni nuovo periodo.',
-          'Le classifiche di tutti i tempi premiano la costanza nel lungo periodo.',
-          'Le classifiche si basano sui punti XP e sui giorni di attività.',
-        ]
-      },
-      {
-        title: 'Le leghe danno un senso di progressione',
-        body:
-          'Le leghe, dal bronzo al diamante, trasformano la competizione in un percorso da affrontare, non in una classifica fissa e univoca.',
-        bullets: [
-          'Sali di lega man mano che resti attivo.',
-          'Gareggia contro persone del tuo stesso livello, non contro tutti insieme.',
-          'Le leghe si affiancano agli amici e alle sfide per darti una motivazione in più.',
-        ]
-      },
-      {
-        title: 'Gareggia senza perdere i tuoi progressi',
-        body:
-          'Le classifiche vanno di pari passo con le tue statistiche personali, non le sostituiscono, quindi competere non significa perdere di vista la tua crescita personale.',
-        bullets: [
-          'I tuoi XP, i livelli e le serie restano visibili qualunque sia la tua posizione.',
-          'Le classifiche si affiancano agli amici e alle sfide.',
-          'Utile per chi ama competere, facoltativo per tutti gli altri.',
-        ]
-      },
-    ],
-    faq: [
-      {
-        question: 'Come vengono calcolate le classifiche?',
-        answer:
-          'Le classifiche si basano sui punti XP e sui giorni di attività, riportati su base settimanale, mensile e complessiva.'
-      },
-      {
-        question: 'Cosa sono le leghe?',
-        answer:
-          'Le leghe raggruppano gli utenti da bronzo a diamante, così ti trovi a competere contro persone di livello simile invece che contro tutti contemporaneamente.'
-      },
-      {
-        question: 'Devo partecipare a una competizione per usare SkillQuest?',
-        answer:
-          'No. Le classifiche e le leghe sono facoltative. Il tracciamento delle abilità, gli XP e i livelli funzionano allo stesso modo con o senza di esse.'
-      },
-    ]
-  },
   themes: {
     slug: 'themes',
     eyebrow: 'Temi',
@@ -4938,10 +4553,10 @@ pages.it = {
       {
         title: 'Crea un account quando vuoi',
         body:
-          'La Modalità ospite è un punto di partenza, non un vicolo cieco. Quando sarai pronto per la sincronizzazione, gli amici o le classifiche, creando un account potrai portare avanti i tuoi progressi locali.',
+          'La Modalità ospite è un punto di partenza, non un vicolo cieco. Quando sarai pronto per la sincronizzazione, gli amici o le sfide, creando un account potrai portare avanti i tuoi progressi locali.',
         bullets: [
           'Passa a un account completo senza perdere i tuoi progressi locali.',
-          'Sblocca la sincronizzazione tra dispositivi, amici e classifiche.',
+          'Sblocca la sincronizzazione tra dispositivi, gli amici e le sfide.',
           'Non c\'è alcuna fretta di decidere prima di aver provato l\'app.',
         ]
       },
@@ -4950,7 +4565,7 @@ pages.it = {
         body:
           'Alcune funzioni sono per loro natura legate all\'account, dato che coinvolgono altre persone o la sincronizzazione tra dispositivi.',
         bullets: [
-          'Per gli amici, le sfide e le classifiche serve un account.',
+          'Per gli amici e le sfide serve un account.',
           'Per usare le funzioni Family servono un account e un gruppo Family.',
           'I progressi salvati solo in locale non vengono sottoposti a backup finché non crei un account.',
         ]
@@ -4970,7 +4585,7 @@ pages.it = {
       {
         question: 'Cosa non posso fare in Modalità ospite?',
         answer:
-          'Le funzioni "Amici", "Sfide", "Classifiche" e "Family" richiedono un account, poiché prevedono la sincronizzazione con altre persone.'
+          'Le funzioni "Amici", "Sfide" e "Family" richiedono un account, poiché prevedono la sincronizzazione con altre persone.'
       },
     ]
   },

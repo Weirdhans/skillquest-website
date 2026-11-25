@@ -50,7 +50,6 @@ function assertNoStreak(text, label) {
 test('no guide, in any locale, says the app has streaks', () => {
   for (const locale of locales) {
     for (const page of features.getFeatureLandingPages(locale)) {
-      if (page.slug === 'leaderboards') continue; // removed in the next commit
       assertNoStreak(JSON.stringify(page), `${locale}/features/${page.slug}`);
     }
   }
@@ -128,4 +127,36 @@ test('internal links point to active-days, never to streaks', async () => {
   const guides = await read('src/app/[locale]/guides/page.tsx');
   assert.match(guides, /'active-days': 'progress'/);
   assert.doesNotMatch(guides, /\bstreaks:/);
+});
+
+// Rankings are switched off in the app (AppFeatureFlags.rankingsEnabled is
+// false). Friends and challenges exist. "Ranglijst", "Rangliste",
+// "classement", "clasificación" and "classifica" are the words per language.
+const rankingWords = /leaderboard|ranking|league|ranglijst|rangliste|classement|clasificaci|classific|ligas?|ligues?|leghe/i;
+
+test('the leaderboards guide is gone in every locale', () => {
+  assert.ok(!features.translatedFeatureLandingSlugs.includes('leaderboards'));
+  for (const locale of locales) {
+    assert.equal(features.getFeatureLandingPage(locale, 'leaderboards'), null, locale);
+  }
+});
+
+test('no guide, marketing copy, support text, welcome mail or parents page claims rankings', async () => {
+  for (const locale of locales) {
+    for (const page of features.getFeatureLandingPages(locale)) {
+      assert.doesNotMatch(JSON.stringify(page), rankingWords, `${locale}/features/${page.slug}`);
+      assert.notEqual(page.screenshot, '05-rankings.png', `${locale}/${page.slug}`);
+    }
+    assert.doesNotMatch(JSON.stringify(marketing.getMarketingCopy(locale)), rankingWords, `marketing ${locale}`);
+  }
+  assert.ok(!marketing.screenshotNames.includes('05-rankings.png'));
+  for (const path of [
+    'src/app/[locale]/support/page.tsx',
+    'src/lib/email-templates.mjs',
+    'src/lib/parents-page.ts',
+    'src/app/[locale]/features/[slug]/page.tsx',
+    'src/app/[locale]/guides/page.tsx'
+  ]) {
+    assert.doesNotMatch(await read(path), rankingWords, path);
+  }
 });

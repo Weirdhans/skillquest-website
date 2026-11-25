@@ -61,7 +61,13 @@ for (const [source, destination] of redirects) {
   });
 }
 
-for (const path of ['/nl/does-not-exist', '/en/app/does-not-exist', '/es/faq/does-not-exist']) {
+for (const path of [
+  '/nl/does-not-exist',
+  '/en/app/does-not-exist',
+  '/es/faq/does-not-exist',
+  // Rankings are switched off in the app, so the guide is gone without a redirect.
+  ...locales.map((locale) => `/${locale}/features/leaderboards`)
+]) {
   test(`${path} remains a genuine 404`, async () => {
     const response = await fetch(`${origin}${path}`, {redirect: 'manual'});
     assert.equal(response.status, 404);

@@ -39,8 +39,7 @@ function secondaryHref(slug: string) {
   if (slug === 'family') return '/download';
   if (slug === 'reading-timer' || slug === 'homework-timer') return '/parents';
   if (slug === 'focus-timer' || slug === 'progress-statistics' || slug === 'guest-mode') return '/pricing';
-  if (slug === 'friends-challenges') return '/features/leaderboards';
-  if (slug === 'leaderboards') return '/features/friends-challenges';
+  if (slug === 'friends-challenges') return '/features/active-days';
   if (slug === 'themes') return '/features/active-days';
   return '/features/focus-timer';
 }

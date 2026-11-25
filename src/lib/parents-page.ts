@@ -71,7 +71,7 @@ export const parentsPage: Record<Locale, ParentsPageCopy> = {
     "safeHeading": "Gemaakt met kinderen in gedachten",
     "safe": [
       "Geen reclame in de app.",
-      "Voor kinderaccounts staan vrienden, ranglijsten en aankopen uit.",
+      "Voor kinderaccounts staan vrienden en aankopen uit.",
       "Je kind kiest zelf wat het oefent; de app beloont oefenen, niet presteren."
     ],
     "faqHeading": "Veelgestelde vragen",
@@ -136,7 +136,7 @@ export const parentsPage: Record<Locale, ParentsPageCopy> = {
     "safeHeading": "Created with children in mind",
     "safe": [
       "No ads in the app.",
-      "Friends, leaderboards, and in-app purchases are disabled for children’s accounts.",
+      "Friends and in-app purchases are disabled for children’s accounts.",
       "Your child chooses what to practice; the app rewards practice, not performance."
     ],
     "faqHeading": "Frequently asked questions",
@@ -201,7 +201,7 @@ export const parentsPage: Record<Locale, ParentsPageCopy> = {
     "safeHeading": "Entwickelt mit Blick auf Kinder",
     "safe": [
       "Keine Werbung in der App.",
-      "Für Kinderkonten sind Freunde, Ranglisten und Käufe deaktiviert.",
+      "Für Kinderkonten sind Freunde und Käufe deaktiviert.",
       "Dein Kind entscheidet selbst, was es übt; die App belohnt das Üben, nicht die Leistung."
     ],
     "faqHeading": "Häufig gestellte Fragen",
@@ -266,7 +266,7 @@ export const parentsPage: Record<Locale, ParentsPageCopy> = {
     "safeHeading": "Conçue en pensant aux enfants",
     "safe": [
       "Pas de pub dans l'appli.",
-      "Pour les comptes enfants, les amis, les classements et les achats sont désactivés.",
+      "Pour les comptes enfants, les amis et les achats sont désactivés.",
       "C'est ton enfant qui choisit lui-même à quoi il s'entraîne ; l'appli récompense l'entraînement, pas la performance."
     ],
     "faqHeading": "Foire aux questions",
@@ -331,7 +331,7 @@ export const parentsPage: Record<Locale, ParentsPageCopy> = {
     "safeHeading": "Creada pensando en los niños",
     "safe": [
       "No hay publicidad en la app.",
-      "En las cuentas infantiles, las funciones de amigos, clasificaciones y compras están desactivadas.",
+      "En las cuentas infantiles, las funciones de amigos y compras están desactivadas.",
       "Tu hijo elige por sí mismo qué practicar; la app premia el hecho de practicar, no el resultado."
     ],
     "faqHeading": "Preguntas frecuentes",
@@ -396,7 +396,7 @@ export const parentsPage: Record<Locale, ParentsPageCopy> = {
     "safeHeading": "Realizzata pensando ai bambini",
     "safe": [
       "Nessuna pubblicità nell'app.",
-      "Per gli account dei bambini, le funzioni \"amici\", \"classifiche\" e \"acquisti\" sono disattivate.",
+      "Per gli account dei bambini, le funzioni \"amici\" e \"acquisti\" sono disattivate.",
       "È tuo figlio a scegliere su cosa esercitarsi; l’app premia l’impegno, non il risultato."
     ],
     "faqHeading": "Domande frequenti",

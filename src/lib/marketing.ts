@@ -74,7 +74,6 @@ export const screenshotNames = [
   '01-home-progress.png',
   '02-focus-timer.png',
   '04-statistics.png',
-  '05-rankings.png',
   '06-social-family.png',
   '07-themes-profile.png'
 ] as const;
@@ -319,12 +318,11 @@ export const marketingCopy = {
     product: {
       heading: 'Real progress, not another vague habit list',
       body:
-        'SkillQuest connects timers, skills, XP, active days, stats, friends, rankings, and family features in one focused mobile app.',
+        'SkillQuest connects timers, skills, XP, active days, stats, friends, challenges, and family features in one focused mobile app.',
       captions: [
         'Build every skill',
         'Focus with timers',
         'See your progress',
-        'Climb the rankings',
         'Grow together',
         'Make it yours'
       ]
@@ -350,7 +348,7 @@ export const marketingCopy = {
         {
           title: 'Social and family motivation',
           body:
-            'Use friends, challenges, leaderboards, and family tools when accountability helps.'
+            'Use friends, challenges, and family tools when accountability helps.'
         },
         {
           title: 'Themes and personalization',
@@ -513,7 +511,7 @@ export const marketingCopy = {
     featuresPage: {
       metaTitle: 'SkillQuest Features | Focus Timers, XP, Stats, Friends, Family',
       metaDescription:
-        'Explore SkillQuest features for skill tracking, focus timers, XP, levels, statistics, leaderboards, friends, family tools, Guest Mode, and privacy-first sync.',
+        'Explore SkillQuest features for skill tracking, focus timers, XP, levels, statistics, friends, challenges, family tools, Guest Mode, and privacy-first sync.',
       title: 'Features that turn practice into progress',
       subtitle:
         'SkillQuest is built around the loop that matters: choose a skill, focus, earn XP, review progress, and come back tomorrow.',
@@ -536,7 +534,7 @@ export const marketingCopy = {
         {
           title: 'Motivation with boundaries',
           body:
-            'Friends, challenges, rankings, and Family tools add accountability without replacing the real work.'
+            'Friends, challenges, and Family tools add accountability without replacing the real work.'
         },
         {
           title: 'Parent-guided practice',
@@ -620,12 +618,11 @@ export const marketingCopy = {
     product: {
       heading: 'Echte voortgang, geen vage gewoontelijst',
       body:
-        'SkillQuest combineert timers, skills, XP, actieve dagen, statistieken, vrienden, rankings en familie-tools in één gerichte mobiele app.',
+        'SkillQuest combineert timers, skills, XP, actieve dagen, statistieken, vrienden, challenges en familie-tools in één gerichte mobiele app.',
       captions: [
         'Bouw elke skill',
         'Focus met timers',
         'Bekijk je voortgang',
-        'Klim in rankings',
         'Groei samen',
         'Maak het persoonlijk'
       ]
@@ -651,7 +648,7 @@ export const marketingCopy = {
         {
           title: 'Sociale en familie-motivatie',
           body:
-            'Gebruik vrienden, challenges, leaderboards en familie-tools wanneer accountability helpt.'
+            'Gebruik vrienden, challenges en familie-tools wanneer accountability helpt.'
         },
         {
           title: 'Thema’s en personalisatie',
@@ -814,7 +811,7 @@ export const marketingCopy = {
     featuresPage: {
       metaTitle: 'SkillQuest Functies | Focus timers, XP, statistieken, vrienden, familie',
       metaDescription:
-        'Ontdek SkillQuest functies voor skill tracking, focus timers, XP, levels, statistieken, leaderboards, vrienden, familie-tools, Guest Mode en privacygerichte sync.',
+        'Ontdek SkillQuest functies voor skill tracking, focus timers, XP, levels, statistieken, vrienden, challenges, familie-tools, Guest Mode en privacygerichte sync.',
       title: 'Functies die oefenen omzetten in voortgang',
       subtitle:
         'SkillQuest draait om de loop die telt: kies een skill, focus, verdien XP, bekijk voortgang en kom morgen terug.',
@@ -837,7 +834,7 @@ export const marketingCopy = {
         {
           title: 'Motivatie met grenzen',
           body:
-            'Vrienden, challenges, rankings en Family tools voegen accountability toe zonder het echte werk te vervangen.'
+            'Vrienden, challenges en Family tools voegen accountability toe zonder het echte werk te vervangen.'
         },
         {
           title: 'Ouderbegeleide oefentijd',
@@ -921,12 +918,11 @@ export const marketingCopy = {
     product: {
       heading: 'Echter Fortschritt statt vager Gewohnheitsliste',
       body:
-        'SkillQuest verbindet Timer, Skills, XP, aktive Tage, Statistiken, Freunde, Rankings und Familienfunktionen in einer fokussierten mobilen App.',
+        'SkillQuest verbindet Timer, Skills, XP, aktive Tage, Statistiken, Freunde, Challenges und Familienfunktionen in einer fokussierten mobilen App.',
       captions: [
         'Jeden Skill aufbauen',
         'Mit Timern fokussieren',
         'Fortschritt sehen',
-        'Rankings erklimmen',
         'Gemeinsam wachsen',
         'Persönlich anpassen'
       ]
@@ -952,7 +948,7 @@ export const marketingCopy = {
         {
           title: 'Soziale und Familienmotivation',
           body:
-            'Nutze Freunde, Challenges, Leaderboards und Familienfunktionen, wenn Verantwortung hilft.'
+            'Nutze Freunde, Challenges und Familienfunktionen, wenn Verantwortung hilft.'
         },
         {
           title: 'Themes und Personalisierung',
@@ -1115,7 +1111,7 @@ export const marketingCopy = {
     featuresPage: {
       metaTitle: 'SkillQuest Funktionen | Fokus-Timer, XP, Statistiken, Freunde, Familie',
       metaDescription:
-        'Entdecke SkillQuest Funktionen für Skill Tracking, Fokus-Timer, XP, Levels, Statistiken, Leaderboards, Freunde, Familienfunktionen, Guest Mode und datenschutzorientierte Sync.',
+        'Entdecke SkillQuest Funktionen für Skill Tracking, Fokus-Timer, XP, Levels, Statistiken, Freunde, Challenges, Familienfunktionen, Guest Mode und datenschutzorientierte Sync.',
       title: 'Funktionen, die Übung in Fortschritt verwandeln',
       subtitle:
         'SkillQuest basiert auf dem Ablauf, der zählt: Skill wählen, fokussieren, XP verdienen, Fortschritt prüfen und morgen zurückkommen.',
@@ -1138,7 +1134,7 @@ export const marketingCopy = {
         {
           title: 'Motivation mit Grenzen',
           body:
-            'Freunde, Challenges, Rankings und Family Funktionen schaffen Verantwortung, ohne die echte Arbeit zu ersetzen.'
+            'Freunde, Challenges und Family Funktionen schaffen Verantwortung, ohne die echte Arbeit zu ersetzen.'
         },
         {
           title: 'Von Eltern begleitete Übungszeit',
@@ -1222,12 +1218,11 @@ export const marketingCopy = {
     product: {
       heading: 'Des progrès réels, pas une simple liste d’habitudes',
       body:
-        'SkillQuest relie minuteurs, compétences, XP, jours actifs, statistiques, amis, classements et fonctions famille dans une app mobile qui va à l’essentiel.',
+        'SkillQuest relie minuteurs, compétences, XP, jours actifs, statistiques, amis, défis et fonctions famille dans une app mobile qui va à l’essentiel.',
       captions: [
         'Développe chaque compétence',
         'Concentre-toi avec les minuteurs',
         'Vois tes progrès',
-        'Grimpe dans les classements',
         'Progresse avec les autres',
         'Personnalise l’expérience'
       ]
@@ -1253,7 +1248,7 @@ export const marketingCopy = {
         {
           title: 'Motivation sociale et familiale',
           body:
-            'Appuie-toi sur les amis, les défis, les classements et les fonctions famille quand s’engager devant les autres t’aide à tenir.'
+            'Appuie-toi sur les amis, les défis et les fonctions famille quand s’engager devant les autres t’aide à tenir.'
         },
         {
           title: 'Thèmes et personnalisation',
@@ -1416,7 +1411,7 @@ export const marketingCopy = {
     featuresPage: {
       metaTitle: 'Fonctions SkillQuest | Minuteurs, XP, stats, amis, famille',
       metaDescription:
-        'Découvre les fonctions de SkillQuest : suivi des compétences, minuteurs, XP, niveaux, statistiques, classements, amis, famille, mode invité et synchronisation privée.',
+        'Découvre les fonctions de SkillQuest : suivi des compétences, minuteurs, XP, niveaux, statistiques, amis, défis, famille, mode invité et synchronisation privée.',
       title: 'Des fonctions qui transforment la pratique en progrès',
       subtitle:
         'SkillQuest repose sur la boucle essentielle : choisir une compétence, se concentrer, gagner de l’XP, revoir ses progrès et revenir demain.',
@@ -1439,7 +1434,7 @@ export const marketingCopy = {
         {
           title: 'Motivation avec limites',
           body:
-            'Amis, défis, classements et fonctions Family ajoutent de l’engagement sans remplacer le vrai travail.'
+            'Amis, défis et fonctions Family ajoutent de l’engagement sans remplacer le vrai travail.'
         },
         {
           title: 'Pratique guidée par les parents',
@@ -1523,12 +1518,11 @@ export const marketingCopy = {
     product: {
       heading: 'Progreso real, no otra lista vaga de hábitos',
       body:
-        'SkillQuest conecta temporizadores, habilidades, XP, días activos, estadísticas, amigos, rankings y funciones familiares en una app móvil enfocada.',
+        'SkillQuest conecta temporizadores, habilidades, XP, días activos, estadísticas, amigos, desafíos y funciones familiares en una app móvil enfocada.',
       captions: [
         'Desarrolla cada habilidad',
         'Concéntrate con temporizadores',
         'Ve tu progreso',
-        'Sube en rankings',
         'Crezcan juntos',
         'Hazlo tuyo'
       ]
@@ -1554,7 +1548,7 @@ export const marketingCopy = {
         {
           title: 'Motivación social y familiar',
           body:
-            'Usa amigos, desafíos, leaderboards y funciones familiares cuando la responsabilidad compartida ayuda.'
+            'Usa amigos, desafíos y funciones familiares cuando la responsabilidad compartida ayuda.'
         },
         {
           title: 'Temas y personalización',
@@ -1717,7 +1711,7 @@ export const marketingCopy = {
     featuresPage: {
       metaTitle: 'Funciones de SkillQuest | Temporizadores, XP, stats, amigos, familia',
       metaDescription:
-        'Explora funciones de SkillQuest para seguimiento de habilidades, temporizadores, XP, niveles, estadísticas, rankings, amigos, familia, Guest Mode y sincronización privada.',
+        'Explora funciones de SkillQuest para seguimiento de habilidades, temporizadores, XP, niveles, estadísticas, amigos, desafíos, familia, Guest Mode y sincronización privada.',
       title: 'Funciones que convierten práctica en progreso',
       subtitle:
         'SkillQuest se basa en el ciclo importante: elige una habilidad, concéntrate, gana XP, revisa progreso y vuelve mañana.',
@@ -1740,7 +1734,7 @@ export const marketingCopy = {
         {
           title: 'Motivación con límites',
           body:
-            'Amigos, desafíos, rankings y funciones Family añaden responsabilidad sin sustituir el trabajo real.'
+            'Amigos, desafíos y funciones Family añaden responsabilidad sin sustituir el trabajo real.'
         },
         {
           title: 'Práctica guiada por padres',
@@ -1824,12 +1818,11 @@ export const marketingCopy = {
     product: {
       heading: 'Progressi reali, non un’altra lista vaga di abitudini',
       body:
-        'SkillQuest collega timer, abilità, XP, giorni attivi, statistiche, amici, classifiche e funzioni famiglia in un’unica app mobile, semplice e mirata.',
+        'SkillQuest collega timer, abilità, XP, giorni attivi, statistiche, amici, sfide e funzioni famiglia in un’unica app mobile, semplice e mirata.',
       captions: [
         'Sviluppa ogni abilità',
         'Concentrati con i timer',
         'Vedi i progressi',
-        'Sali in classifica',
         'Cresci insieme agli altri',
         'Personalizza a modo tuo'
       ]
@@ -1855,7 +1848,7 @@ export const marketingCopy = {
         {
           title: 'Motivazione sociale e familiare',
           body:
-            'Usa amici, sfide, classifiche e funzioni famiglia quando condividere i tuoi impegni con qualcuno ti dà la spinta giusta.'
+            'Usa amici, sfide e funzioni famiglia quando condividere i tuoi impegni con qualcuno ti dà la spinta giusta.'
         },
         {
           title: 'Temi e personalizzazione',
@@ -2018,7 +2011,7 @@ export const marketingCopy = {
     featuresPage: {
       metaTitle: 'Funzioni SkillQuest | Timer, XP, statistiche, amici, famiglia',
       metaDescription:
-        'Scopri le funzioni di SkillQuest: tracciamento delle abilità, timer, XP, livelli, statistiche, classifiche, amici, famiglia, Modalità ospite e sincronizzazione attenta alla privacy.',
+        'Scopri le funzioni di SkillQuest: tracciamento delle abilità, timer, XP, livelli, statistiche, amici, sfide, famiglia, Modalità ospite e sincronizzazione attenta alla privacy.',
       title: 'Funzioni che trasformano la pratica in progresso',
       subtitle:
         'SkillQuest si basa sul ciclo che conta: scegli un’abilità, concentrati, guadagna XP, rivedi i progressi e torna domani.',
@@ -2041,7 +2034,7 @@ export const marketingCopy = {
         {
           title: 'Motivazione senza pressioni',
           body:
-            'Amici, sfide, classifiche e funzioni Family ti danno un motivo in più per impegnarti, senza sostituire il lavoro vero.'
+            'Amici, sfide e funzioni Family ti danno un motivo in più per impegnarti, senza sostituire il lavoro vero.'
         },
         {
           title: 'Pratica guidata dai genitori',
