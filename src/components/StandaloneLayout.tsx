@@ -1,3 +1,4 @@
+import ThemeSync from '@/components/ThemeSync';
 import {fontVariables} from '@/lib/fonts';
 import {themeInitScript} from '@/lib/theme-script';
 import '../styles/globals.css';
@@ -16,6 +17,9 @@ export default function StandaloneLayout({
   return (
     <div className={`${fontVariables} font-sans`}>
       <script dangerouslySetInnerHTML={{__html: themeInitScript}} />
+      {/* The script above only runs on a full page load; ThemeSync covers
+          arriving here through a link on the marketing site. */}
+      <ThemeSync />
       {children}
     </div>
   );

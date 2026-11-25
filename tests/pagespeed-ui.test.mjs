@@ -39,3 +39,21 @@ test('trust items render li directly inside the list, not an animation wrapper',
   visit(tree);
   assert.ok(checked, 'the trust list was checked');
 });
+
+test('the theme survives a client-side navigation that resets <html>', async () => {
+  // Only the [locale] layout renders <html>. A language switch re-mounts it and
+  // the footer link to /auth/forgot-password unmounts it; React then drops the
+  // `dark` class the init script set, and that script does not run again. The
+  // page fell back to light while the preference said dark or system.
+  const load = (path) => readFile(new URL(`../${path}`, import.meta.url), 'utf8');
+  const sync = await load('src/components/ThemeSync.tsx');
+  assert.match(sync, /useLayoutEffect\(/, 'before paint, so no frame in the wrong theme');
+  assert.match(sync, /applyTheme\(resolveTheme\(getClientPref\(\)\)\)/);
+  // Both trees that can be reached by a link must mount it.
+  assert.match(await load('src/app/[locale]/layout.tsx'), /<ThemeSync \/>/);
+  assert.match(await load('src/components/StandaloneLayout.tsx'), /<ThemeSync \/>/);
+  // The init script and the navbar must agree when storage is blocked: both
+  // fall back to the OS preference.
+  const script = await load('src/lib/theme-script.ts');
+  assert.match(script, /catch \{\s*\/\/ Storage is blocked[^}]*\}\s*try \{[\s\S]*prefers-color-scheme/);
+});

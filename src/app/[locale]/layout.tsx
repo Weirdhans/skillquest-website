@@ -2,6 +2,7 @@ import {fontVariables} from '@/lib/fonts'
 import {Analytics} from '@vercel/analytics/next'
 import '../../styles/globals.css'
 import Navbar from '@/components/Navbar'
+import ThemeSync from '@/components/ThemeSync'
 import {BlogNavProvider} from '@/components/BlogNavContext';
 import {blogLocales} from '@/lib/blog';
 import {NextIntlClientProvider} from 'next-intl';
@@ -67,6 +68,7 @@ export default async function LocaleLayout({
         <script dangerouslySetInnerHTML={{__html: themeInitScript}} />
       </head>
       <body className={`${fontVariables} font-sans`}>
+        <ThemeSync />
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           <BlogNavProvider enabled={blogLocales().includes(locale as Locale)}>

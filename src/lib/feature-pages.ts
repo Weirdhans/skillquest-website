@@ -430,7 +430,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         {
           question: 'Voor welke leeftijd is SkillQuest bedoeld?',
           answer:
-            'SkillQuest is bedoeld voor gebruikers van 13 jaar en ouder, ook binnen Family.'
+            'SkillQuest is voor volwassenen en kinderen. Onder de toestemmingsleeftijd van je land (13 tot 16 jaar) heeft een kind toestemming van een ouder nodig voor een account. Met Family kan een ouder ook een timer voor het kind starten.'
         }
       ]
     },
@@ -1143,7 +1143,7 @@ const pages: Record<Locale, Record<TranslatedFeatureLandingSlug, FeatureLandingP
         {
           question: 'What age is SkillQuest for?',
           answer:
-            'SkillQuest is intended for users aged 13 and up, including those using Family.'
+            'SkillQuest is for adults and children. Below the age of consent in your country (13 to 16), a child needs a parent’s permission for an account. With Family, a parent can also start a timer for the child.'
         }
       ]
     },
@@ -1861,7 +1861,7 @@ pages.de = {
       {
         question: 'Ist SkillQuest für junge Kinder gedacht?',
         answer:
-          'SkillQuest richtet sich an Nutzer ab 13 Jahren, auch innerhalb von Family.'
+          'SkillQuest ist für Erwachsene und Kinder. Unter dem Einwilligungsalter deines Landes (13 bis 16 Jahre) braucht ein Kind für ein Konto die Erlaubnis eines Elternteils. Mit Family kann ein Elternteil auch einen Timer für das Kind starten.'
       }
     ]
   },
@@ -2576,7 +2576,7 @@ pages.fr = {
       {
         question: 'SkillQuest est-il destiné aux jeunes enfants ?',
         answer:
-          'SkillQuest est destiné aux utilisateurs de 13 ans et plus, y compris dans Family.'
+          'SkillQuest s’adresse aux adultes et aux enfants. En dessous de l’âge du consentement numérique de ton pays (13 à 16 ans), un enfant a besoin de l’autorisation d’un parent pour avoir un compte. Avec Family, un parent peut aussi lancer un minuteur pour l’enfant.'
       }
     ]
   },
@@ -3292,7 +3292,7 @@ pages.es = {
       {
         question: '¿SkillQuest está pensado para niños pequeños?',
         answer:
-          'SkillQuest está dirigido a usuarios de 13 años o más, también dentro de Family.'
+          'SkillQuest es para adultos y niños. Por debajo de la edad de consentimiento de tu país (de 13 a 16 años), un niño necesita el permiso de un padre o una madre para tener una cuenta. Con Family, un padre o una madre también puede iniciar un temporizador para el niño.'
       }
     ]
   },
@@ -4007,7 +4007,7 @@ pages.it = {
       {
         question: 'SkillQuest è pensato per bambini piccoli?',
         answer:
-          'SkillQuest è destinato a utenti dai 13 anni in su, anche con Family.'
+          'SkillQuest è per adulti e bambini. Sotto l’età del consenso del tuo paese (da 13 a 16 anni), un bambino ha bisogno del permesso di un genitore per avere un account. Con Family, un genitore può anche avviare un timer per il bambino.'
       }
     ]
   },

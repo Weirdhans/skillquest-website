@@ -274,3 +274,34 @@ test('messages hold only what the site renders: the privacy and account-deletion
     assertNoStreak(JSON.stringify(messages.deleteAccount), `${locale} account deletion page`);
   }
 });
+
+test('the support page and the family guide state no minimum age of 13', async () => {
+  // The terms and the privacy policy say SkillQuest is for adults and
+  // children: below the age of consent of the country (13 to 16) a child needs
+  // the permission of a parent. The FAQ answers used to say "aged 13 and up"
+  // and "not designed or marketed as an app for young children".
+  const support = await read('src/app/[locale]/support/page.tsx');
+  const guides = await read('src/lib/feature-pages.ts');
+  const oldClaims = [
+    /aged 13 and up/i,
+    /13 jaar en ouder/i,
+    /ab 13 Jahren/i,
+    /13 ans et plus/i,
+    /a partir de 13 años/i,
+    /13 años o más/i,
+    /dai 13 anni in su/i,
+    /not designed or marketed/i,
+    /children under 13/i
+  ];
+  for (const claim of oldClaims) {
+    assert.doesNotMatch(support, claim, 'support page');
+    assert.doesNotMatch(guides, claim, 'feature guides');
+  }
+  // One answer per locale names the range of the age of consent.
+  for (const range of ['13 en 16', '13 and 16', '13 und 16', '13 et 16', '13 y 16', '13 e 16']) {
+    assert.ok(support.includes(range), `support page: ${range}`);
+  }
+  for (const range of ['13 tot 16', '13 to 16', '13 bis 16', '13 à 16', '13 a 16 años', '13 a 16 anni']) {
+    assert.ok(guides.includes(range), `family guide: ${range}`);
+  }
+});
