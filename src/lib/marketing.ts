@@ -70,11 +70,22 @@ export const PRICES = Object.fromEntries(
   ])
 ) as Record<Locale, Record<keyof typeof PRICE_AMOUNTS, string>>;
 
+// The seven app screens of the Google Play listing (app repo,
+// fastlane/metadata/android/<locale>/images/phoneScreenshots), cut out of the
+// store images: only the app screen, 604x1272, without the brand header, the
+// headline, the phone frame and the status bar. The site draws its own frame
+// and shows the caption as text.
+// The folder is named after the capture round. A new set gets a new folder, so
+// a browser or the image optimizer never serves an old image under a new page.
+export const SCREENSHOT_SET = '2026-10';
+
 export const screenshotNames = [
   '01-home-progress.png',
   '02-focus-timer.png',
+  '03-session-reward.png',
   '04-statistics.png',
-  '06-social-family.png',
+  '06-family-dashboard.png',
+  '08-family-progress.png',
   '07-themes-profile.png'
 ] as const;
 
@@ -82,7 +93,7 @@ export type ScreenshotName = (typeof screenshotNames)[number];
 
 export function screenshotPath(locale: string, name: ScreenshotName) {
   const safeLocale = isLocale(locale) ? locale : routing.defaultLocale;
-  return `/screenshots/${safeLocale}/${name}`;
+  return `/screenshots/${SCREENSHOT_SET}/${safeLocale}/${name}`;
 }
 
 export function isLocale(value: string): value is Locale {
@@ -313,7 +324,7 @@ export const marketingCopy = {
       note:
         'Family features require a Family subscription and are designed to create guidance, structure, and shared motivation.',
       cta: 'View Family plan',
-      imageAlt: 'SkillQuest family and social tools screenshot'
+      imageAlt: 'SkillQuest family group screenshot'
     },
     product: {
       heading: 'Real progress, not another vague habit list',
@@ -322,8 +333,10 @@ export const marketingCopy = {
       captions: [
         'Build every skill',
         'Focus with timers',
+        'Earn XP rewards',
         'See your progress',
         'Grow together',
+        'Guide every child’s growth',
         'Make it yours'
       ]
     },
@@ -619,7 +632,7 @@ export const marketingCopy = {
       note:
         'Familiefuncties vereisen een Family abonnement en zijn bedoeld voor houvast, structuur en gedeelde motivatie.',
       cta: 'Bekijk Family',
-      imageAlt: 'SkillQuest familie- en sociale tools screenshot'
+      imageAlt: 'Screenshot van de familiegroep in SkillQuest'
     },
     product: {
       heading: 'Echte voortgang, geen vage gewoontelijst',
@@ -628,8 +641,10 @@ export const marketingCopy = {
       captions: [
         'Bouw elke skill',
         'Focus met timers',
+        'Verdien XP-beloningen',
         'Bekijk je voortgang',
         'Groei samen',
+        'Begeleid de groei van elk kind',
         'Maak het persoonlijk'
       ]
     },
@@ -925,7 +940,7 @@ export const marketingCopy = {
       note:
         'Familienfunktionen erfordern ein Family Abo und sind für Orientierung, Struktur und gemeinsame Motivation gedacht.',
       cta: 'Family ansehen',
-      imageAlt: 'SkillQuest Screenshot mit Familien- und Sozialfunktionen'
+      imageAlt: 'SkillQuest Screenshot der Familiengruppe'
     },
     product: {
       heading: 'Echter Fortschritt statt vager Gewohnheitsliste',
@@ -934,8 +949,10 @@ export const marketingCopy = {
       captions: [
         'Jeden Skill aufbauen',
         'Mit Timern fokussieren',
+        'XP-Belohnungen sammeln',
         'Fortschritt sehen',
         'Gemeinsam wachsen',
+        'Das Wachstum jedes Kindes begleiten',
         'Persönlich anpassen'
       ]
     },
@@ -1231,7 +1248,7 @@ export const marketingCopy = {
       note:
         'Les fonctions famille nécessitent un abonnement Family. Elles sont conçues pour apporter un cadre et une motivation partagée.',
       cta: 'Voir Family',
-      imageAlt: 'Capture d’écran des fonctions famille et sociales de SkillQuest'
+      imageAlt: 'Capture d’écran du groupe familial dans SkillQuest'
     },
     product: {
       heading: 'Des progrès réels, pas une simple liste d’habitudes',
@@ -1240,8 +1257,10 @@ export const marketingCopy = {
       captions: [
         'Développe chaque compétence',
         'Concentre-toi avec les minuteurs',
+        'Gagne des récompenses XP',
         'Vois tes progrès',
         'Progresse avec les autres',
+        'Accompagne chaque enfant',
         'Personnalise l’expérience'
       ]
     },
@@ -1537,7 +1556,7 @@ export const marketingCopy = {
       note:
         'Las funciones familiares requieren una suscripción Family y están pensadas para crear guía, estructura y motivación compartida.',
       cta: 'Ver Family',
-      imageAlt: 'Captura de SkillQuest con funciones familiares y sociales'
+      imageAlt: 'Captura del grupo familiar en SkillQuest'
     },
     product: {
       heading: 'Progreso real, no otra lista vaga de hábitos',
@@ -1546,8 +1565,10 @@ export const marketingCopy = {
       captions: [
         'Desarrolla cada habilidad',
         'Concéntrate con temporizadores',
+        'Gana recompensas de XP',
         'Ve tu progreso',
         'Crezcan juntos',
+        'Guía el crecimiento de cada hijo',
         'Hazlo tuyo'
       ]
     },
@@ -1843,7 +1864,7 @@ export const marketingCopy = {
       note:
         'Le funzioni famiglia richiedono un abbonamento Family e sono pensate per offrire orientamento, struttura e motivazione condivisa.',
       cta: 'Vedi Family',
-      imageAlt: 'Screenshot SkillQuest con funzioni famiglia e social'
+      imageAlt: 'Screenshot del gruppo famiglia in SkillQuest'
     },
     product: {
       heading: 'Progressi reali, non un’altra lista vaga di abitudini',
@@ -1852,8 +1873,10 @@ export const marketingCopy = {
       captions: [
         'Sviluppa ogni abilità',
         'Concentrati con i timer',
+        'Ottieni ricompense XP',
         'Vedi i progressi',
         'Cresci insieme agli altri',
+        'Guida la crescita di ogni figlio',
         'Personalizza a modo tuo'
       ]
     },

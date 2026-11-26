@@ -85,8 +85,8 @@ function ScreenshotGallery({
             <Image
               src={screenshotPath(locale, name)}
               alt={captions[index] ?? 'SkillQuest app screenshot'}
-              width={1080}
-              height={1920}
+              width={604}
+              height={1272}
               className="h-auto w-full"
               sizes="(max-width: 768px) 48vw, 256px"
             />
@@ -133,10 +133,10 @@ function FamilySupportSection({locale, copy}: PageProps) {
           <Reveal className="order-2 lg:order-1">
             <div className="mx-auto w-56 overflow-hidden rounded-2xl border border-white/15 shadow-2xl md:w-72">
               <Image
-                src={screenshotPath(locale, '06-social-family.png')}
+                src={screenshotPath(locale, '06-family-dashboard.png')}
                 alt={copy.familySupport.imageAlt}
-                width={1080}
-                height={1920}
+                width={604}
+                height={1272}
                 className="h-auto w-full"
                 sizes="(max-width: 768px) 224px, 288px"
               />
@@ -205,8 +205,8 @@ function FeatureLandingGrid({locale}: {locale: Locale}) {
                   <Image
                     src={screenshotPath(locale, page.screenshot)}
                     alt={page.title}
-                    width={1080}
-                    height={1920}
+                    width={604}
+                    height={1272}
                     className="aspect-[9/14] w-full object-cover object-top transition duration-500 group-hover:scale-[1.04]"
                     sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 260px"
                   />
@@ -276,7 +276,7 @@ export function HomeMarketingPage({locale, copy}: PageProps) {
               {/* The screenshot was a 0.18-opacity background wash. Shipping the
                   full 1080x1920 PNG for a decorative blur was also the LCP cost
                   centre. It is a real element now, at a bounded size. */}
-              <div className="relative mx-auto hidden w-full max-w-[300px] lg:block">
+              <div className="relative mx-auto hidden w-full max-w-[260px] lg:block">
                 <div
                   aria-hidden
                   className="absolute -inset-8 rounded-full bg-primary-400/20 blur-3xl"
@@ -285,11 +285,11 @@ export function HomeMarketingPage({locale, copy}: PageProps) {
                   <Image
                     src={screenshotPath(locale, '01-home-progress.png')}
                     alt={copy.product.captions[0] ?? ''}
-                    width={1080}
-                    height={1920}
+                    width={604}
+                    height={1272}
                     priority
                     className="h-auto w-full"
-                    sizes="300px"
+                    sizes="260px"
                   />
                 </div>
               </div>
@@ -477,16 +477,16 @@ export function DownloadMarketingPage({locale, copy}: PageProps) {
                 </p>
               </StaggerItem>
             </Stagger>
-            <div className="mx-auto hidden w-full max-w-[280px] lg:block">
+            <div className="mx-auto hidden w-full max-w-[250px] lg:block">
               <div className="overflow-hidden rounded-2xl border border-white/15 shadow-2xl">
                 <Image
                   src={screenshotPath(locale, '02-focus-timer.png')}
                   alt=""
-                  width={1080}
-                  height={1920}
+                  width={604}
+                  height={1272}
                   priority
                   className="h-auto w-full"
-                  sizes="280px"
+                  sizes="250px"
                 />
               </div>
             </div>
@@ -728,8 +728,8 @@ export function FeaturesMarketingPage({locale, copy}: PageProps) {
                     <Image
                       src={screenshotPath(locale, name)}
                       alt=""
-                      width={1080}
-                      height={1920}
+                      width={604}
+                      height={1272}
                       className="h-auto w-full"
                       priority={i === 0}
                       sizes="160px"

@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {readFile} from 'node:fs/promises';
+import {readdir, readFile} from 'node:fs/promises';
 import {test} from 'node:test';
 import ts from 'typescript';
 
@@ -90,22 +90,47 @@ test('the streaks guide became the active-days guide in every locale', () => {
     assert.equal(page.faq.length, 3, locale);
     assert.match(page.title, terms[locale], `${locale} title uses the app's own term`);
     assert.match(JSON.stringify(page), /10/, `${locale} names the 10-minute threshold`);
-    // Not the session-reward screenshot: its caption says "keep streaks".
-    assert.notEqual(page.screenshot, '03-session-reward.png', locale);
   }
 });
 
-test('no page uses the screenshot whose caption says "keep streaks"', () => {
-  assert.ok(!marketing.screenshotNames.includes('03-session-reward.png'));
+test('every screenshot comes from the current set and exists in every language', async () => {
+  // The set of 29 October 2026 (the Google Play listing): no Rankings tab, 185
+  // skills, no "streaks" in a caption. The two files below belonged to the old
+  // set and showed the Rankings tab.
+  const retired = ['05-rankings.png', '06-social-family.png'];
+  // Only the current set is on disk: the old per-language folders are gone.
+  assert.deepEqual(await readdir(new URL('public/screenshots/', root)), [marketing.SCREENSHOT_SET]);
+  const used = new Set(marketing.screenshotNames);
   for (const locale of locales) {
     for (const page of features.getFeatureLandingPages(locale)) {
-      assert.notEqual(page.screenshot, '03-session-reward.png', `${locale}/${page.slug}`);
+      used.add(page.screenshot);
     }
     assert.equal(
       marketing.getMarketingCopy(locale).product.captions.length,
       marketing.screenshotNames.length,
       `${locale}: one caption per screenshot`
     );
+  }
+  for (const name of retired) {
+    assert.ok(!used.has(name), `${name} is retired`);
+  }
+  for (const source of ['src/components/MarketingPages.tsx', 'src/app/[locale]/parents/page.tsx']) {
+    assert.doesNotMatch(await read(source), /05-rankings|06-social-family/, source);
+  }
+  for (const locale of locales) {
+    for (const name of used) {
+      const file = await readFile(new URL(`public/screenshots/${marketing.SCREENSHOT_SET}/${locale}/${name}`, root));
+      // PNG header: width and height are the two 4-byte numbers from byte 16.
+      assert.equal(file.readUInt32BE(16), 604, `${locale}/${name} width`);
+      assert.equal(file.readUInt32BE(20), 1272, `${locale}/${name} height`);
+    }
+    for (const name of retired) {
+      await assert.rejects(
+        readFile(new URL(`public/screenshots/${marketing.SCREENSHOT_SET}/${locale}/${name}`, root)),
+        {code: 'ENOENT'},
+        `${locale}/${name}`
+      );
+    }
   }
 });
 

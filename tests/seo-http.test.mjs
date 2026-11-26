@@ -85,7 +85,7 @@ for (const locale of locales) {
 
     const familyImage = [...html.matchAll(/<img\b[^>]*>/g)]
       .map(([tag]) => tag)
-      .find((tag) => tag.includes('06-social-family.png'));
+      .find((tag) => tag.includes('06-family-dashboard.png'));
     assert.ok(familyImage, 'family screenshot is present');
     assert.match(familyImage, /loading="lazy"/);
     const srcSet = familyImage.match(/\bsrcset="([^"]+)"/i)?.[1];
@@ -131,7 +131,7 @@ test('compact family image variants work and reduce bytes without lowering quali
   for (const width of [400, 448, 576, 640]) {
     const url = new URL('/_next/image', origin);
     url.search = new URLSearchParams({
-      url: '/screenshots/en/06-social-family.png',
+      url: '/screenshots/2026-10/en/06-family-dashboard.png',
       w: String(width),
       q: '75'
     }).toString();
